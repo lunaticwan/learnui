@@ -1,0 +1,7 @@
+Error: /app/playwright.config.ts does not exist
+    at resolveConfigFile2 (/home/jules/.npm/_npx/e41f203b7505f1fb/node_modules/playwright/lib/common/index.js:1536:11)
+    at resolveConfigLocation (/home/jules/.npm/_npx/e41f203b7505f1fb/node_modules/playwright/lib/common/index.js:1517:30)
+    at Object.loadConfigFromFile (/home/jules/.npm/_npx/e41f203b7505f1fb/node_modules/playwright/lib/common/index.js:1546:27)
+    at runTests (/home/jules/.npm/_npx/e41f203b7505f1fb/node_modules/playwright/lib/cli/testActions.js:46:51)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async _Command.<anonymous> (/home/jules/.npm/_npx/e41f203b7505f1fb/node_modules/playwright/lib/program.js:55:7)
