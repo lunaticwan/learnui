@@ -1,12 +1,6 @@
-# OS/editor junk
+node_modules
+dist
+dist-ssr
+*.local
 .DS_Store
-
-# original-site reference material (not for publication)
-reference/
-
-# build output (deployed artifact; regenerate with build.py)
-site/
-
-# python
-__pycache__/
-*.pyc
+*.png
