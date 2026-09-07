@@ -4,6 +4,7 @@ import { STYLES, STYLES_META } from '../data/styles';
 import { UI_COPY } from '../data/uiCopy';
 import { SpecimenViewer } from '../components/SpecimenViewer';
 import { BilingualText } from '../components/BilingualText';
+import { useLanguage } from '../context/LanguageContext';
 import { getLocalizedString } from '../types/ui';
 
 const STYLE_NEW_SLUGS = new Set([
@@ -14,6 +15,7 @@ const STYLE_NEW_SLUGS = new Set([
 ]);
 
 export const StylesHubView: React.FC = () => {
+  const { langMode } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
 
   const getCopy = (key: string, param?: number) => {
@@ -28,20 +30,33 @@ export const StylesHubView: React.FC = () => {
     return str;
   };
 
+  const getCopyKo = (key: string, param?: number) => {
+    let str = getLocalizedString(UI_COPY[key] as any, 'ko');
+    if (param !== undefined) str = str.replace('{n}', String(param));
+    return str;
+  };
+
   const filteredStyles = useMemo(() => {
     return STYLES.filter((s) => {
       if (!searchQuery.trim()) return true;
       const q = searchQuery.toLowerCase();
       const matchNameEn = (s.name?.en || '').toLowerCase().includes(q);
       const matchNameZh = (s.name?.zh || '').toLowerCase().includes(q);
+      const matchNameKo = (s.name?.ko || '').toLowerCase().includes(q);
       const matchTaglineEn = (s.tagline?.en || '').toLowerCase().includes(q);
       const matchTaglineZh = (s.tagline?.zh || '').toLowerCase().includes(q);
+      const matchTaglineKo = (s.tagline?.ko || '').toLowerCase().includes(q);
       const matchAliases = (s.aliases?.en || []).some((a: string) => a.toLowerCase().includes(q)) ||
-                           (s.aliases?.zh || []).some((a: string) => a.toLowerCase().includes(q));
+                           (s.aliases?.zh || []).some((a: string) => a.toLowerCase().includes(q)) ||
+                           (s.aliases?.ko || []).some((a: string) => a.toLowerCase().includes(q));
 
-      return matchNameEn || matchNameZh || matchTaglineEn || matchTaglineZh || matchAliases;
+      return matchNameEn || matchNameZh || matchNameKo || matchTaglineEn || matchTaglineZh || matchTaglineKo || matchAliases;
     });
   }, [searchQuery]);
+
+  const placeholderText = langMode === 'ko'
+    ? getCopyKo('searchStylesPlaceholder')
+    : `${getCopyZh('searchStylesPlaceholder')} / ${getCopy('searchStylesPlaceholder')}`;
 
   return (
     <main className="wrap">
@@ -49,11 +64,13 @@ export const StylesHubView: React.FC = () => {
         <Link to="/">
           <span className="lang-en">{getCopy('indexCrumb')}</span>
           <span className="lang-zh">{getCopyZh('indexCrumb')}</span>
+          <span className="lang-ko">{getCopyKo('indexCrumb')}</span>
         </Link>
         <span className="crumb-sep">/</span>
         <span className="crumb-cur">
           <span className="lang-en">{getCopy('stylesCrumb')}</span>
           <span className="lang-zh">{getCopyZh('stylesCrumb')}</span>
+          <span className="lang-ko">{getCopyKo('stylesCrumb')}</span>
         </span>
       </nav>
 
@@ -61,6 +78,7 @@ export const StylesHubView: React.FC = () => {
         <h1 className="hero-title" style={{ fontSize: 'clamp(32px, 4.6vw, 48px)' }}>
           <span className="lang-en">{getCopy('stylesTitle')}</span>
           <span className="lang-zh hero-title-zh">{getCopyZh('stylesTitle')}</span>
+          <span className="lang-ko hero-title-zh">{getCopyKo('stylesTitle')}</span>
         </h1>
 
         <BilingualText text={STYLES_META.hubTagline} tag="p" className="hero-sub" />
@@ -70,6 +88,9 @@ export const StylesHubView: React.FC = () => {
             <span className="lang-en">{getCopy('governedTitle')}</span>{' '}
             <span className="lang-zh" style={{ fontWeight: 400, fontSize: '12.5px' }}>
               {getCopyZh('governedTitle')}
+            </span>
+            <span className="lang-ko" style={{ fontWeight: 400, fontSize: '12.5px', marginLeft: '6px' }}>
+              {getCopyKo('governedTitle')}
             </span>
           </h2>
           <BilingualText text={STYLES_META.governedNote} tag="p" />
@@ -92,7 +113,7 @@ export const StylesHubView: React.FC = () => {
               autoComplete="off"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={`${getCopyZh('searchStylesPlaceholder')} / ${getCopy('searchStylesPlaceholder')}`}
+              placeholder={placeholderText}
               aria-label="Search styles"
             />
             <kbd className="search-kbd">/</kbd>
@@ -101,6 +122,7 @@ export const StylesHubView: React.FC = () => {
           <p className="count-note" id="style-count">
             <span className="lang-en">{getCopy('stylesCount', filteredStyles.length)}</span>
             <span className="lang-zh">{getCopyZh('stylesCount', filteredStyles.length)}</span>
+            <span className="lang-ko">{getCopyKo('stylesCount', filteredStyles.length)}</span>
           </p>
         </div>
       </section>
@@ -118,6 +140,7 @@ export const StylesHubView: React.FC = () => {
                     {isNew && <span className="tag tag-new">{getCopy('newBadge')}</span>}
                   </span>
                   <span className="lang-zh card-name-zh">{s.name?.zh}</span>
+                  <span className="lang-ko card-name-zh">{s.name?.ko || s.name?.en}</span>
                 </h3>
                 {s.tagline && <BilingualText text={s.tagline} tag="p" className="card-tag" />}
               </div>
@@ -130,6 +153,7 @@ export const StylesHubView: React.FC = () => {
         <p id="style-no-result" className="no-result">
           <span className="lang-en">{getCopy('searchNoResult')}</span>
           <span className="lang-zh">{getCopyZh('searchNoResult')}</span>
+          <span className="lang-ko">{getCopyKo('searchNoResult')}</span>
         </p>
       )}
     </main>
