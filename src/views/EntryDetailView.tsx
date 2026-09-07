@@ -24,6 +24,7 @@ export const EntryDetailView: React.FC = () => {
 
   const getCopy = (key: string) => getLocalizedString(UI_COPY[key] as any, 'en');
   const getCopyZh = (key: string) => getLocalizedString(UI_COPY[key] as any, 'zh');
+  const getCopyKo = (key: string) => getLocalizedString(UI_COPY[key] as any, 'ko');
 
   const platLabel = entry.platform === 'web' ? 'Web' : 'macOS';
   const isNew = NEW_SLUGS.has(entry.slug);
@@ -107,6 +108,7 @@ export const EntryDetailView: React.FC = () => {
         <Link to="/">
           <span className="lang-en">{getCopy('indexCrumb')}</span>
           <span className="lang-zh">{getCopyZh('indexCrumb')}</span>
+          <span className="lang-ko">{getCopyKo('indexCrumb')}</span>
         </Link>
         <span className="crumb-sep">/</span>
         <Link to={`/?platform=${entry.platform}#dictionary`}>{platLabel}</Link>
@@ -114,6 +116,7 @@ export const EntryDetailView: React.FC = () => {
         <span className="crumb-cur">
           <span className="lang-en">{entry.name?.en}</span>
           <span className="lang-zh">{entry.name?.zh}</span>
+          <span className="lang-ko">{entry.name?.ko || entry.name?.en}</span>
         </span>
       </nav>
 
@@ -123,6 +126,7 @@ export const EntryDetailView: React.FC = () => {
             {entry.name?.en} {isNew && <span className="tag tag-new">{getCopy('newBadge')}</span>}
           </span>
           <span className="lang-zh entry-title-zh">{entry.name?.zh}</span>
+          <span className="lang-ko entry-title-zh">{entry.name?.ko || entry.name?.en}</span>
           <span className="tag tag-platform">{entry.platform}</span>
         </h1>
         <BilingualText text={entry.tagline} tag="p" className="entry-tag" />
@@ -130,19 +134,22 @@ export const EntryDetailView: React.FC = () => {
         <dl className="entry-meta">
           <div className="meta-row">
             <dt>
-              {getCopy('alsoCalled')}
+              <span className="lang-en">{getCopy('alsoCalled')}</span>
               <span className="lang-zh dt-zh">{getCopyZh('alsoCalled')}</span>
+              <span className="lang-ko dt-zh">{getCopyKo('alsoCalled')}</span>
             </dt>
             <dd>
               <span className="lang-en">{(entry.aka?.en || []).join(', ')}</span>
               <span className="lang-zh zh-line">{(entry.aka?.zh || []).join('、')}</span>
+              <span className="lang-ko ko-line">{(entry.aka?.ko || entry.aka?.en || []).join(', ')}</span>
             </dd>
           </div>
 
           <div className="meta-row">
             <dt>
-              {getCopy('ifYouCalledIt')}
+              <span className="lang-en">{getCopy('ifYouCalledIt')}</span>
               <span className="lang-zh dt-zh">{getCopyZh('ifYouCalledIt')}</span>
+              <span className="lang-ko dt-zh">{getCopyKo('ifYouCalledIt')}</span>
             </dt>
             <dd>
               <ul className="fuzzy-list">
@@ -150,6 +157,7 @@ export const EntryDetailView: React.FC = () => {
                   <li key={idx}>
                     <span className="lang-en">“{fEn}”</span>
                     <span className="lang-zh zh-line">「{entry.fuzzy?.zh?.[idx] || ''}」</span>
+                    <span className="lang-ko ko-line">“{entry.fuzzy?.ko?.[idx] || fEn}”</span>
                   </li>
                 ))}
               </ul>
@@ -159,13 +167,18 @@ export const EntryDetailView: React.FC = () => {
       </header>
 
       <SpecimenViewer slug={entry.slug} detail />
-      <p className="stage-hint lang-zh">标本可交互 —— 点点看。Specimen is live — try it.</p>
+      <p className="stage-hint">
+        <span className="lang-en">Specimen is live — try it.</span>
+        <span className="lang-zh">标本可交互 —— 点点看。</span>
+        <span className="lang-ko">인터랙티브 예시 — 클릭해보세요.</span>
+      </p>
 
       {entry.parts && entry.parts.length > 0 && (
         <section className="sect">
           <h2 className="section-title">
             <span className="lang-en">{getCopy('anatomy')}</span>
             <span className="lang-zh">{getCopyZh('anatomy')}</span>
+            <span className="lang-ko">{getCopyKo('anatomy')}</span>
           </h2>
           <ol className="parts">
             {entry.parts.map((p: any, idx: number) => (
@@ -175,6 +188,7 @@ export const EntryDetailView: React.FC = () => {
                   <span className="part-name">
                     <span className="lang-en">{p.name?.en}</span>
                     <span className="lang-zh part-name-zh">{p.name?.zh}</span>
+                    <span className="lang-ko part-name-zh">{p.name?.ko || p.name?.en}</span>
                   </span>
                   <code className="part-api">{p.api}</code>
                 </div>
@@ -184,9 +198,11 @@ export const EntryDetailView: React.FC = () => {
                     <span className="part-prompt-label">
                       <span className="lang-en">{getCopy('promptFragment')}</span>
                       <span className="lang-zh">{getCopyZh('promptFragment')}</span>
+                      <span className="lang-ko">{getCopyKo('promptFragment')}</span>
                     </span>
                     <p className="lang-en mono-sm">{p.prompt.en}</p>
                     <p className="lang-zh mono-sm">{p.prompt.zh}</p>
+                    <p className="lang-ko mono-sm">{p.prompt.ko || p.prompt.en}</p>
                   </div>
                 )}
               </li>
@@ -200,6 +216,7 @@ export const EntryDetailView: React.FC = () => {
           <h2 className="section-title">
             <span className="lang-en">{getCopy('promptSection')}</span>
             <span className="lang-zh">{getCopyZh('promptSection')}</span>
+            <span className="lang-ko">{getCopyKo('promptSection')}</span>
           </h2>
           <div className="copy-block">
             <button
@@ -209,10 +226,12 @@ export const EntryDetailView: React.FC = () => {
             >
               <span className="lang-en">{copiedPrompt ? getCopy('copied') : getCopy('copy')}</span>
               <span className="lang-zh">{copiedPrompt ? getCopyZh('copied') : getCopyZh('copy')}</span>
+              <span className="lang-ko">{copiedPrompt ? getCopyKo('copied') : getCopyKo('copy')}</span>
             </button>
             <div className="copy-text">
               <p className="lang-en">{entry.prompt?.en}</p>
               <p className="lang-zh zh-copy">{entry.prompt?.zh}</p>
+              <p className="lang-ko zh-copy">{entry.prompt?.ko || entry.prompt?.en}</p>
             </div>
           </div>
         </section>
@@ -223,6 +242,7 @@ export const EntryDetailView: React.FC = () => {
           <h2 className="section-title">
             <span className="lang-en">{getCopy('debugSection')}</span>
             <span className="lang-zh">{getCopyZh('debugSection')}</span>
+            <span className="lang-ko">{getCopyKo('debugSection')}</span>
           </h2>
           <div className="copy-block">
             <button
@@ -232,10 +252,12 @@ export const EntryDetailView: React.FC = () => {
             >
               <span className="lang-en">{copiedDebug ? getCopy('copied') : getCopy('copy')}</span>
               <span className="lang-zh">{copiedDebug ? getCopyZh('copied') : getCopyZh('copy')}</span>
+              <span className="lang-ko">{copiedDebug ? getCopyKo('copied') : getCopyKo('copy')}</span>
             </button>
             <div className="copy-text">
               <p className="lang-en">{entry.debugPrompt?.en}</p>
               <p className="lang-zh zh-copy">{entry.debugPrompt?.zh}</p>
+              <p className="lang-ko zh-copy">{entry.debugPrompt?.ko || entry.debugPrompt?.en}</p>
             </div>
           </div>
         </section>
@@ -246,22 +268,26 @@ export const EntryDetailView: React.FC = () => {
           <h2 className="section-title">
             <span className="lang-en">{getCopy('inCode')}</span>
             <span className="lang-zh">{getCopyZh('inCode')}</span>
+            <span className="lang-ko">{getCopyKo('inCode')}</span>
           </h2>
           <div className="table-scroll">
             <table className="api-table">
               <thead>
                 <tr>
                   <th>
-                    {getCopy('framework')}
+                    <span className="lang-en">{getCopy('framework')}</span>
                     <span className="lang-zh th-zh">{getCopyZh('framework')}</span>
+                    <span className="lang-ko th-zh">{getCopyKo('framework')}</span>
                   </th>
                   <th>
-                    {getCopy('symbol')}
+                    <span className="lang-en">{getCopy('symbol')}</span>
                     <span className="lang-zh th-zh">{getCopyZh('symbol')}</span>
+                    <span className="lang-ko th-zh">{getCopyKo('symbol')}</span>
                   </th>
                   <th>
-                    {getCopy('note')}
+                    <span className="lang-en">{getCopy('note')}</span>
                     <span className="lang-zh th-zh">{getCopyZh('note')}</span>
+                    <span className="lang-ko th-zh">{getCopyKo('note')}</span>
                   </th>
                 </tr>
               </thead>
@@ -275,6 +301,7 @@ export const EntryDetailView: React.FC = () => {
                         <>
                           <span className="lang-en">{a.note.en}</span>
                           <span className="lang-zh zh-line">{a.note.zh}</span>
+                          <span className="lang-ko ko-line">{a.note.ko || a.note.en}</span>
                         </>
                       )}
                     </td>
@@ -291,6 +318,7 @@ export const EntryDetailView: React.FC = () => {
           <h2 className="section-title">
             <span className="lang-en">{getCopy('seeAlso')}</span>
             <span className="lang-zh">{getCopyZh('seeAlso')}</span>
+            <span className="lang-ko">{getCopyKo('seeAlso')}</span>
           </h2>
           <div className="rel-grid">
             {relatedEntries.map((re: any, idx: number) => (
@@ -298,6 +326,7 @@ export const EntryDetailView: React.FC = () => {
                 <span className="rel-name">
                   <span className="lang-en">{re?.name?.en}</span>
                   <span className="lang-zh rel-name-zh">{re?.name?.zh}</span>
+                  <span className="lang-ko rel-name-zh">{re?.name?.ko || re?.name?.en}</span>
                 </span>
                 <span className="rel-sym">{re?.api?.[0]?.symbol}</span>
               </Link>
@@ -314,6 +343,7 @@ export const EntryDetailView: React.FC = () => {
         >
           ⧉ <span className="lang-en">{copiedMd ? getCopy('copied') : getCopy('copyPage')}</span>
           <span className="lang-zh">{copiedMd ? getCopyZh('copied') : getCopyZh('copyPage')}</span>
+          <span className="lang-ko">{copiedMd ? getCopyKo('copied') : getCopyKo('copyPage')}</span>
         </button>
       </section>
     </main>

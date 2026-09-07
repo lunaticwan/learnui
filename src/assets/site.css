@@ -67,10 +67,15 @@ nav a:hover, .crumbs a:hover { text-decoration: none; }
 
 /* ---------- bilingual mode ---------- */
 .lang-zh { color: var(--gray-600); }
-[data-lang-mode="en"] .lang-zh { display: none !important; }
-[data-lang-mode="zh"] .lang-en { display: none !important; }
+.lang-ko { color: var(--gray-600); }
+[data-lang-mode="en"] .lang-zh, [data-lang-mode="en"] .lang-ko { display: none !important; }
+[data-lang-mode="zh"] .lang-en, [data-lang-mode="zh"] .lang-ko { display: none !important; }
 [data-lang-mode="zh"] .lang-zh { color: inherit; }
+[data-lang-mode="ko"] .lang-en, [data-lang-mode="ko"] .lang-zh { display: none !important; }
+[data-lang-mode="ko"] .lang-ko { color: inherit; }
+[data-lang-mode="bilingual"] .lang-ko { display: none !important; }
 .zh-line { display: block; }
+.ko-line { display: block; }
 
 mark { background: var(--blue-soft); color: inherit; border-radius: 2px; padding: 0 1px; }
 

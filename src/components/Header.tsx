@@ -13,35 +13,48 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCmdPalette }) => {
 
   const getCopy = (key: string) => getLocalizedString(UI_COPY[key] as any, 'en');
   const getCopyZh = (key: string) => getLocalizedString(UI_COPY[key] as any, 'zh');
+  const getCopyKo = (key: string) => getLocalizedString(UI_COPY[key] as any, 'ko');
+
+  const cmdTitle = langMode === 'ko'
+    ? '명령 팔레트 열기 (⌘K)'
+    : langMode === 'zh'
+    ? '打开命令面板 (⌘K)'
+    : 'Open Command Palette (⌘K)';
 
   return (
     <header className="site-header">
       <div className="wrap header-in">
         <Link className="wordmark" to="/">
-          Learn UI Name
-          <span className="wordmark-zh">界面叫啥</span>
+          <span className="lang-en">Learn UI Name</span>
+          <span className="lang-zh">Learn UI Name<span className="wordmark-zh">界面叫啥</span></span>
+          <span className="lang-ko">Learn UI Name</span>
         </Link>
 
         <nav className="site-nav">
           <NavLink to="/" end>
             <span className="lang-en">Dictionary</span>
             <span className="lang-zh nav-zh">词典</span>
+            <span className="lang-ko nav-zh">사전</span>
           </NavLink>
           <NavLink to="/styles">
             <span className="lang-en">{getCopy('stylesCrumb')}</span>
             <span className="lang-zh nav-zh">{getCopyZh('stylesCrumb')}</span>
+            <span className="lang-ko nav-zh">{getCopyKo('stylesCrumb')}</span>
           </NavLink>
           <NavLink to="/quiz">
             <span className="lang-en">{getCopy('quizCrumb')}</span>
             <span className="lang-zh nav-zh">{getCopyZh('quizCrumb')}</span>
+            <span className="lang-ko nav-zh">{getCopyKo('quizCrumb')}</span>
           </NavLink>
           <NavLink to="/guides/appkit-vs-swiftui">
             <span className="lang-en">{getCopy('guideCrumb')}</span>
             <span className="lang-zh nav-zh">{getCopyZh('guideCrumb')}</span>
+            <span className="lang-ko nav-zh">{getCopyKo('guideCrumb')}</span>
           </NavLink>
           <NavLink to="/guides/translate">
             <span className="lang-en">Translation</span>
             <span className="lang-zh nav-zh">翻译表</span>
+            <span className="lang-ko nav-zh">번역 테이블</span>
           </NavLink>
         </nav>
 
@@ -50,7 +63,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCmdPalette }) => {
           onClick={onOpenCmdPalette}
           className="search-kbd"
           style={{ cursor: 'pointer', padding: '4px 8px', fontSize: '11px' }}
-          title="Open Command Palette (⌘K)"
+          title={cmdTitle}
         >
           ⌘K
         </button>

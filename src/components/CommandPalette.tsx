@@ -111,6 +111,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
 
   if (!open) return null;
 
+  const emptyText = langMode === 'ko'
+    ? '검색 결과가 없습니다.'
+    : langMode === 'zh'
+    ? '未找到相关结果。'
+    : 'No results found.';
+
   return (
     <div
       className="cmd-overlay"
@@ -151,7 +157,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
             <Command.Input
               value={query}
               onValueChange={setQuery}
-              placeholder={getLocalizedString(UI_COPY['searchPlaceholder'] as any, langMode === 'bilingual' ? 'en' : langMode) || 'Search... / 搜索...'}
+              placeholder={getLocalizedString(UI_COPY['searchPlaceholder'] as any, langMode === 'bilingual' ? 'en' : langMode) || 'Search...'}
               autoFocus
               style={{
                 width: '100%',
@@ -181,7 +187,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
                 fontSize: '14px',
               }}
             >
-              No results found.
+              {emptyText}
             </Command.Empty>
 
             {filteredItems.map((item) => (
@@ -204,7 +210,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
               >
                 <div>
                   <div style={{ fontWeight: 500, fontSize: '14px', color: '#0a0a0a' }}>
-                    {item.title} {item.titleZh && <span style={{ color: '#737373', fontWeight: 400, marginLeft: '6px' }}>{item.titleZh}</span>}
+                    {item.title}{' '}
+                    {langMode === 'ko' && item.titleKo ? (
+                      <span style={{ color: '#737373', fontWeight: 400, marginLeft: '6px' }}>{item.titleKo}</span>
+                    ) : item.titleZh ? (
+                      <span style={{ color: '#737373', fontWeight: 400, marginLeft: '6px' }}>{item.titleZh}</span>
+                    ) : null}
                   </div>
                   {item.subtitle && (
                     <div style={{ fontSize: '12px', color: '#737373', marginTop: '2px' }}>
