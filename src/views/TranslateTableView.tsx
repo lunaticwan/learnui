@@ -55,12 +55,12 @@ export const TranslateTableView: React.FC = () => {
               <th>
                 <span className="lang-en">AppKit Symbol</span>
                 <span className="lang-zh th-zh">AppKit 符号</span>
-                <span className="lang-ko th-zh">AppKit 심볼</span>
+                <span className="lang-ko th-zh">AppKit Symbol</span>
               </th>
               <th>
                 <span className="lang-en">SwiftUI Symbol</span>
                 <span className="lang-zh th-zh">SwiftUI 符号</span>
-                <span className="lang-ko th-zh">SwiftUI 심볼</span>
+                <span className="lang-ko th-zh">SwiftUI Symbol</span>
               </th>
             </tr>
           </thead>
