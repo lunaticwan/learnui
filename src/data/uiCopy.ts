@@ -9,7 +9,7 @@ export const UI_COPY: UICopy = {
   "tagline": {
     "en": "the visual dictionary of UI",
     "zh": "UI 视觉词典",
-    "ko": "UI 시각적 사전"
+    "ko": "UI 비주얼 사전"
   },
   "heroTitle": {
     "en": "What’s this called?",
@@ -19,7 +19,7 @@ export const UI_COPY: UICopy = {
   "heroSub": {
     "en": "The visual dictionary of UI. See the element, learn its real name, and prompt your coding agent with precision. Double-press any word on the site for a plain-English definition.",
     "zh": "UI 视觉词典。看到元素，学会它的真名，然后精准地指挥你的 AI 编程代理。双击站内任意英文单词，查看通俗释义。",
-    "ko": "UI 시각적 사전. 요소를 눈으로 확인하고 정확한 명칭을 배워 AI 코딩 에이전트에 정교한 프롬프트를 작성하세요. 사이트 내 단어를 더블 클릭하면 쉬운 영어 정의를 확인할 수 있습니다."
+    "ko": "UI 비주얼 사전. 요소를 눈으로 확인하고 정확한 명칭을 배워 AI 코딩 에이전트에 정교한 프롬프트를 작성하세요. 사이트 내 단어를 더블 클릭하면 Plain English 정의를 확인할 수 있습니다."
   },
   "vibePromo": {
     "en": "Can’t name the look either? Try Name That Vibe",
@@ -59,7 +59,7 @@ export const UI_COPY: UICopy = {
   "guidesTitle": {
     "en": "Guides — the decisions before the names",
     "zh": "指南 —— 起名之前要做的决定",
-    "ko": "가이드 — 명칭을 결정하기 전 가이드"
+    "ko": "가이드 — 명칭을 선택하기 전의 고려사항"
   },
   "guide1Title": {
     "en": "AppKit vs SwiftUI",
@@ -69,7 +69,7 @@ export const UI_COPY: UICopy = {
   "guide1Desc": {
     "en": "The same Mac element has two real names — which one to say in a prompt.",
     "zh": "同一个 Mac 元素有两个真名 —— 写 prompt 时该说哪一个。",
-    "ko": "동일한 Mac 요소도 프레임워크에 따라 두 명칭을 가집니다. 프롬프트 작성 시 어떤 것을 사용할지 확인하세요."
+    "ko": "동일한 Mac 요소도 두 개의 실제 이름을 가집니다 — 프롬프트에서 어떤 이름을 사용할지 확인하세요."
   },
   "guide2Title": {
     "en": "Swift vs Electron",
@@ -84,7 +84,7 @@ export const UI_COPY: UICopy = {
   "guide3Title": {
     "en": "The Translation Table",
     "zh": "翻译表",
-    "ko": "번역 테이블"
+    "ko": "트랜스레이션 테이블"
   },
   "guide3Desc": {
     "en": "60+ elements: plain name → AppKit → SwiftUI, searchable.",
@@ -114,7 +114,7 @@ export const UI_COPY: UICopy = {
   "anatomy": {
     "en": "Anatomy — every part, named",
     "zh": "解剖 —— 每个部件的名字",
-    "ko": "해부 — 각 구성 요소의 명칭"
+    "ko": "Anatomy — 각 구성 요소의 명칭"
   },
   "promptSection": {
     "en": "Prompt — paste into your agent",
@@ -129,7 +129,7 @@ export const UI_COPY: UICopy = {
   "inCode": {
     "en": "In code",
     "zh": "代码里叫什么",
-    "ko": "코드 표현"
+    "ko": "In Code — 코드상 명칭"
   },
   "seeAlso": {
     "en": "See also",
@@ -164,7 +164,7 @@ export const UI_COPY: UICopy = {
   "promptFragment": {
     "en": "Prompt fragment",
     "zh": "Prompt 片段",
-    "ko": "프롬프트 조각"
+    "ko": "프롬프트 프래그먼트"
   },
   "framework": {
     "en": "Framework",
@@ -174,22 +174,22 @@ export const UI_COPY: UICopy = {
   "symbol": {
     "en": "Symbol",
     "zh": "符号",
-    "ko": "심볼"
+    "ko": "Symbol"
   },
   "note": {
     "en": "Note",
     "zh": "说明",
-    "ko": "설명"
+    "ko": "비고"
   },
   "translateTitle": {
     "en": "The Translation Table",
     "zh": "翻译表",
-    "ko": "번역 테이블"
+    "ko": "트랜스레이션 테이블"
   },
   "translateSubtitle": {
     "en": "plain English · AppKit · SwiftUI",
     "zh": "通俗英文 · AppKit · SwiftUI",
-    "ko": "일반 영어 · AppKit · SwiftUI"
+    "ko": "Plain English · AppKit · SwiftUI"
   },
   "translateLede": {
     "en": "The same Mac element has two real names, one per framework. Find the thing, take the column your project speaks — not sure which? Read this first.",
@@ -209,7 +209,7 @@ export const UI_COPY: UICopy = {
   "bilingual": {
     "en": "对照",
     "zh": "对照",
-    "ko": "대조"
+    "ko": "한영 대조"
   },
   "langEn": {
     "en": "EN",
@@ -229,12 +229,12 @@ export const UI_COPY: UICopy = {
   "defSource": {
     "en": "plain-English definition",
     "zh": "通俗英文释义",
-    "ko": "쉬운 영어 정의"
+    "ko": "Plain English 정의"
   },
   "searchNoResult": {
     "en": "Nothing matches. Try describing it differently — “the dots menu”, “mac window buttons”.",
     "zh": "没有匹配的词条。换个说法试试 ——「三个点的菜单」「Mac 窗口按钮」。",
-    "ko": "일치하는 항목이 없습니다. “점 3개 메뉴”, “mac 창 버튼” 등 다른 설명으로 검색해 보세요."
+    "ko": "일치하는 항목이 없습니다. “점 3개 메뉴”, “macOS 창 버튼” 등 다른 설명으로 검색해 보세요."
   },
   "entriesCount": {
     "en": "{n} elements, each one seeable, nameable, promptable",
@@ -269,7 +269,7 @@ export const UI_COPY: UICopy = {
   "governedTitle": {
     "en": "A governed atlas, not a style dump",
     "zh": "有治理的图鉴，不是风格仓库",
-    "ko": "체계적으로 정립된 도감"
+    "ko": "체계적으로 정립된 스타일 아틀라스"
   },
   "researchingLabel": {
     "en": "In research now:",
@@ -289,7 +289,7 @@ export const UI_COPY: UICopy = {
   "styleCodeTitle": {
     "en": "In code — optional starting points",
     "zh": "代码写法 —— 可选起点",
-    "ko": "코드 표현 — 참고용 시작점"
+    "ko": "In Code — 참고용 시작점"
   },
   "briefTitle": {
     "en": "Style brief — paste into your agent",
@@ -299,32 +299,32 @@ export const UI_COPY: UICopy = {
   "a11yTitle": {
     "en": "Accessibility & misuse",
     "zh": "可访问性与误用",
-    "ko": "접근성 및 오용 주의사항"
+    "ko": "접근성(Accessibility) 및 오용 주의사항"
   },
   "originTitle": {
     "en": "Origin",
     "zh": "起源",
-    "ko": "기원"
+    "ko": "Origin (기원)"
   },
   "roleDefining": {
     "en": "defining",
     "zh": "定义特征",
-    "ko": "핵심 특징"
+    "ko": "Defining (핵심 특징)"
   },
   "roleSupporting": {
     "en": "supporting",
     "zh": "辅助特征",
-    "ko": "보조 특징"
+    "ko": "Supporting (보조 특징)"
   },
   "roleVariable": {
     "en": "variable",
     "zh": "可变特征",
-    "ko": "가변 특징"
+    "ko": "Variable (가변 특징)"
   },
   "roleAvoid": {
     "en": "avoid",
     "zh": "避免",
-    "ko": "지양 사항"
+    "ko": "Avoid (지양 사항)"
   },
   "quizCrumb": {
     "en": "Quiz",

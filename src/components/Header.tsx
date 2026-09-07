@@ -16,7 +16,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCmdPalette }) => {
   const getCopyKo = (key: string) => getLocalizedString(UI_COPY[key] as any, 'ko');
 
   const cmdTitle = langMode === 'ko'
-    ? '명령 팔레트 열기 (⌘K)'
+    ? '커맨드 팔레트 열기 (⌘K)'
     : langMode === 'zh'
     ? '打开命令面板 (⌘K)'
     : 'Open Command Palette (⌘K)';
@@ -54,7 +54,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCmdPalette }) => {
           <NavLink to="/guides/translate">
             <span className="lang-en">Translation</span>
             <span className="lang-zh nav-zh">翻译表</span>
-            <span className="lang-ko nav-zh">번역 테이블</span>
+            <span className="lang-ko nav-zh">{getCopyKo('translateTitle')}</span>
           </NavLink>
         </nav>
 

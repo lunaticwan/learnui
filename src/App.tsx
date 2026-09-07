@@ -24,13 +24,13 @@ export const App: React.FC = () => {
 
         <Routes>
           <Route path="/" element={<HomeView />} />
-          <Route path="/:platform/:slug" element={<EntryDetailView />} />
           <Route path="/styles" element={<StylesHubView />} />
-          <Route path="/styles/:slug" element={<StyleDetailView />} />
           <Route path="/styles/vs/:pair" element={<StyleVsView />} />
+          <Route path="/styles/:slug" element={<StyleDetailView />} />
           <Route path="/guides/translate" element={<TranslateTableView />} />
           <Route path="/guides/:slug" element={<GuideDetailView />} />
           <Route path="/quiz" element={<QuizView />} />
+          <Route path="/:platform/:slug" element={<EntryDetailView />} />
           <Route path="*" element={<HomeView />} />
         </Routes>
 
