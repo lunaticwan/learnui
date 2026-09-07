@@ -32,12 +32,12 @@ export const StylesHubView: React.FC = () => {
     return STYLES.filter((s) => {
       if (!searchQuery.trim()) return true;
       const q = searchQuery.toLowerCase();
-      const matchNameEn = s.name.en.toLowerCase().includes(q);
-      const matchNameZh = (s.name.zh || '').toLowerCase().includes(q);
+      const matchNameEn = (s.name?.en || '').toLowerCase().includes(q);
+      const matchNameZh = (s.name?.zh || '').toLowerCase().includes(q);
       const matchTaglineEn = (s.tagline?.en || '').toLowerCase().includes(q);
       const matchTaglineZh = (s.tagline?.zh || '').toLowerCase().includes(q);
-      const matchAliases = (s.aliases?.en || []).some((a) => a.toLowerCase().includes(q)) ||
-                           (s.aliases?.zh || []).some((a) => a.toLowerCase().includes(q));
+      const matchAliases = (s.aliases?.en || []).some((a: string) => a.toLowerCase().includes(q)) ||
+                           (s.aliases?.zh || []).some((a: string) => a.toLowerCase().includes(q));
 
       return matchNameEn || matchNameZh || matchTaglineEn || matchTaglineZh || matchAliases;
     });
@@ -74,7 +74,7 @@ export const StylesHubView: React.FC = () => {
           </h2>
           <BilingualText text={STYLES_META.governedNote} tag="p" />
           <div className="research-chips">
-            {STYLES_META.researching.map((item, idx) => (
+            {(STYLES_META.researching || []).map((item: string, idx: number) => (
               <span key={idx}>{item}</span>
             ))}
           </div>
@@ -114,10 +114,10 @@ export const StylesHubView: React.FC = () => {
               <div className="card-meta">
                 <h3 className="card-name">
                   <span className="lang-en">
-                    {s.name.en}
+                    {s.name?.en}
                     {isNew && <span className="tag tag-new">{getCopy('newBadge')}</span>}
                   </span>
-                  <span className="lang-zh card-name-zh">{s.name.zh}</span>
+                  <span className="lang-zh card-name-zh">{s.name?.zh}</span>
                 </h3>
                 {s.tagline && <BilingualText text={s.tagline} tag="p" className="card-tag" />}
               </div>

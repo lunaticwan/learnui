@@ -33,15 +33,15 @@ export const HomeView: React.FC = () => {
       if (!searchQuery.trim()) return true;
 
       const q = searchQuery.toLowerCase();
-      const matchNameEn = e.name.en.toLowerCase().includes(q);
-      const matchNameZh = (e.name.zh || '').toLowerCase().includes(q);
-      const matchTaglineEn = e.tagline.en.toLowerCase().includes(q);
-      const matchTaglineZh = (e.tagline.zh || '').toLowerCase().includes(q);
-      const matchSymbol = e.api.some((a) => a.symbol.toLowerCase().includes(q));
-      const matchAka = (e.aka.en || []).some((a) => a.toLowerCase().includes(q)) ||
-                       (e.aka.zh || []).some((a) => a.toLowerCase().includes(q));
-      const matchFuzzy = (e.fuzzy.en || []).some((f) => f.toLowerCase().includes(q)) ||
-                        (e.fuzzy.zh || []).some((f) => f.toLowerCase().includes(q));
+      const matchNameEn = (e.name?.en || '').toLowerCase().includes(q);
+      const matchNameZh = (e.name?.zh || '').toLowerCase().includes(q);
+      const matchTaglineEn = (e.tagline?.en || '').toLowerCase().includes(q);
+      const matchTaglineZh = (e.tagline?.zh || '').toLowerCase().includes(q);
+      const matchSymbol = (e.api || []).some((a: any) => (a.symbol || '').toLowerCase().includes(q));
+      const matchAka = (e.aka?.en || []).some((a: string) => a.toLowerCase().includes(q)) ||
+                       (e.aka?.zh || []).some((a: string) => a.toLowerCase().includes(q));
+      const matchFuzzy = (e.fuzzy?.en || []).some((f: string) => f.toLowerCase().includes(q)) ||
+                        (e.fuzzy?.zh || []).some((f: string) => f.toLowerCase().includes(q));
 
       return matchNameEn || matchNameZh || matchTaglineEn || matchTaglineZh || matchSymbol || matchAka || matchFuzzy;
     });
@@ -132,7 +132,7 @@ export const HomeView: React.FC = () => {
       <section id="dictionary" className="grid" aria-live="polite">
         {filteredEntries.map((e) => {
           const isNew = NEW_SLUGS.has(e.slug);
-          const symbol = e.api[0]?.symbol || '';
+          const symbol = e.api?.[0]?.symbol || '';
 
           return (
             <Link key={e.slug} className="card" data-platform={e.platform} data-slug={e.slug} to={`/${e.platform}/${e.slug}`}>
@@ -140,10 +140,10 @@ export const HomeView: React.FC = () => {
               <div className="card-meta">
                 <h3 className="card-name">
                   <span className="lang-en">
-                    {e.name.en}
+                    {e.name?.en}
                     {isNew && <span className="tag tag-new">{getCopy('newBadge')}</span>}
                   </span>
-                  <span className="lang-zh card-name-zh">{e.name.zh}</span>
+                  <span className="lang-zh card-name-zh">{e.name?.zh}</span>
                   <span className="tag tag-platform">{e.platform}</span>
                 </h3>
                 <p className="card-symbol">{symbol}</p>
@@ -185,12 +185,12 @@ export const HomeView: React.FC = () => {
         <div className="guide-grid">
           <Link className="guide-card" to="/guides/appkit-vs-swiftui">
             <span className="guide-kind">Guide</span>
-            <span className="guide-title">{g1?.title.en}</span>
+            <span className="guide-title">{g1?.title?.en}</span>
             <BilingualText text={UI_COPY['guide1Desc'] as any} tag="span" className="guide-desc" />
           </Link>
           <Link className="guide-card" to="/guides/swift-vs-electron">
             <span className="guide-kind">Guide</span>
-            <span className="guide-title">{g2?.title.en}</span>
+            <span className="guide-title">{g2?.title?.en}</span>
             <BilingualText text={UI_COPY['guide2Desc'] as any} tag="span" className="guide-desc" />
           </Link>
           <Link className="guide-card" to="/guides/translate">

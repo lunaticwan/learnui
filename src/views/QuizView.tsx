@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ENTRIES } from '../data/entries';
 import { useLanguage } from '../context/LanguageContext';
 import { BilingualText } from '../components/BilingualText';
+import { getLocalizedString } from '../types/ui';
 
 export const QuizView: React.FC = () => {
   const { locale } = useLanguage();
@@ -14,23 +15,28 @@ export const QuizView: React.FC = () => {
 
   if (!currentEntry) return null;
 
-  // Generate 4 options including correct answer
-  const getOptions = () => {
-    const correct = currentEntry.name[locale];
+  const getNameStr = (entryItem: typeof currentEntry) => {
+    return getLocalizedString(entryItem.name, locale) || entryItem.slug;
+  };
+
+  const getOptionsForEntry = (entryItem: typeof currentEntry) => {
+    const correct = getNameStr(entryItem);
     const others = ENTRIES
-      .filter(e => e.id !== currentEntry.id)
-      .map(e => e.name[locale])
+      .filter(e => e.slug !== entryItem.slug)
+      .map(e => getNameStr(e))
       .sort(() => 0.5 - Math.random())
       .slice(0, 3);
     return [correct, ...others].sort(() => 0.5 - Math.random());
   };
 
-  const [options, setOptions] = useState<string[]>(getOptions());
+  const [options, setOptions] = useState<string[]>(() => getOptionsForEntry(currentEntry));
+
+  const currentName = getNameStr(currentEntry);
 
   const handleSelect = (option: string) => {
     if (selectedOption !== null) return;
     setSelectedOption(option);
-    if (option === currentEntry.name[locale]) {
+    if (option === currentName) {
       setScore(s => s + 1);
     }
   };
@@ -41,13 +47,7 @@ export const QuizView: React.FC = () => {
       setCurrentIndex(nextIdx);
       setSelectedOption(null);
       const nextEntry = ENTRIES[nextIdx];
-      const correct = nextEntry.name[locale];
-      const others = ENTRIES
-        .filter(e => e.id !== nextEntry.id)
-        .map(e => e.name[locale])
-        .sort(() => 0.5 - Math.random())
-        .slice(0, 3);
-      setOptions([correct, ...others].sort(() => 0.5 - Math.random()));
+      setOptions(getOptionsForEntry(nextEntry));
     } else {
       setShowResult(true);
     }
@@ -75,7 +75,7 @@ export const QuizView: React.FC = () => {
             {options.map((opt, i) => {
               let btnClass = "w-full text-left p-4 rounded-lg border border-border hover:bg-surface-elevated transition-colors";
               if (selectedOption !== null) {
-                if (opt === currentEntry.name[locale]) {
+                if (opt === currentName) {
                   btnClass = "w-full text-left p-4 rounded-lg border border-emerald-500 bg-emerald-500/10 font-semibold";
                 } else if (opt === selectedOption) {
                   btnClass = "w-full text-left p-4 rounded-lg border border-rose-500 bg-rose-500/10";
@@ -99,7 +99,7 @@ export const QuizView: React.FC = () => {
         <div className="surface-card p-8 rounded-xl border border-border text-center">
           <h2 className="text-2xl font-bold mb-4">Quiz Completed!</h2>
           <p className="text-xl mb-6">Your score: {score} / {Math.min(ENTRIES.length, 10)}</p>
-          <button onClick={() => { setCurrentIndex(0); setScore(0); setShowResult(false); setSelectedOption(null); }} className="btn btn-primary">
+          <button onClick={() => { setCurrentIndex(0); setScore(0); setShowResult(false); setSelectedOption(null); setOptions(getOptionsForEntry(ENTRIES[0])); }} className="btn btn-primary">
             Try Again
           </button>
         </div>

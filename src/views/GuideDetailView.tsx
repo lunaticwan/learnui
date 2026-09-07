@@ -8,7 +8,7 @@ export const GuideDetailView: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { locale } = useLanguage();
 
-  const guide = GUIDES.find(g => g.slug === slug);
+  const guide = slug ? GUIDES[slug] : undefined;
 
   if (!guide) {
     return (
@@ -19,14 +19,16 @@ export const GuideDetailView: React.FC = () => {
     );
   }
 
+  const titleStr = guide.title ? (guide.title[locale] || guide.title.en || '') : '';
+
   return (
     <main className="container view-container py-12">
       <nav className="text-sm mb-6 text-subtle">
-        <Link to="/" className="hover:underline">Home</Link> &gt; Guides &gt; {guide.title[locale]}
+        <Link to="/" className="hover:underline">Home</Link> &gt; Guides &gt; {titleStr}
       </nav>
 
       <h1 className="text-3xl font-bold mb-4"><BilingualText text={guide.title} /></h1>
-      <p className="text-subtle text-lg mb-8"><BilingualText text={guide.summary} /></p>
+      {guide.lede && <p className="text-subtle text-lg mb-8"><BilingualText text={guide.lede} /></p>}
 
       {guide.sections && guide.sections.map((sec, idx) => (
         <div key={idx} className="surface-card p-6 rounded-xl border border-border mb-6">
