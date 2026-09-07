@@ -44,41 +44,49 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
     const items: SearchItem[] = [];
 
     ENTRIES.forEach((e) => {
+      const titleEn = e.name?.en || e.slug;
+      const titleZh = e.name?.zh || '';
+      const titleKo = e.name?.ko || '';
+      const subtitle = e.tagline?.en || '';
       items.push({
         id: `entry-${e.slug}`,
         type: 'component',
-        title: e.name.en,
-        titleZh: e.name.zh || '',
-        titleKo: e.name.ko || '',
-        subtitle: e.tagline.en,
+        title: titleEn,
+        titleZh,
+        titleKo,
+        subtitle,
         url: `/${e.platform}/${e.slug}`,
         keywords: [
-          e.name.en,
-          e.name.zh || '',
-          e.name.ko || '',
-          ...(e.aka.en || []),
-          ...(e.aka.zh || []),
-          ...(e.aka.ko || []),
-          ...(e.fuzzy.en || []),
-          ...(e.fuzzy.zh || []),
-          ...(e.fuzzy.ko || []),
+          titleEn,
+          titleZh,
+          titleKo,
+          ...(e.aka?.en || []),
+          ...(e.aka?.zh || []),
+          ...(e.aka?.ko || []),
+          ...(e.fuzzy?.en || []),
+          ...(e.fuzzy?.zh || []),
+          ...(e.fuzzy?.ko || []),
         ],
       });
     });
 
     STYLES.forEach((s) => {
+      const titleEn = s.name?.en || s.slug;
+      const titleZh = s.name?.zh || '';
+      const titleKo = s.name?.ko || '';
+      const subtitle = s.tagline?.en || '';
       items.push({
         id: `style-${s.slug}`,
         type: 'style',
-        title: s.name.en,
-        titleZh: s.name.zh || '',
-        titleKo: s.name.ko || '',
-        subtitle: s.tagline?.en || '',
+        title: titleEn,
+        titleZh,
+        titleKo,
+        subtitle,
         url: `/styles/${s.slug}`,
         keywords: [
-          s.name.en,
-          s.name.zh || '',
-          s.name.ko || '',
+          titleEn,
+          titleZh,
+          titleKo,
           ...(s.aliases?.en || []),
           ...(s.aliases?.zh || []),
           ...(s.aliases?.ko || []),

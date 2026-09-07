@@ -1,16 +1,12 @@
-/* Learn UI Name — service worker. Version stamped by build.py. */
-var VERSION = "__SW_VERSION__";
+/* Learn UI Name — service worker. */
+var VERSION = "v1.0.0";
 var SHELL = "learnui-shell-" + VERSION;
 var PAGES = "learnui-pages-" + VERSION;
 
 var PRECACHE = [
   "/",
-  "/styles/",
-  "/quiz/",
-  "/assets/quiz.js",
   "/manifest.webmanifest",
   "/assets/site.css",
-  "/assets/site.js",
   "/assets/fonts/geist-vf.woff2",
   "/assets/fonts/geist-mono-vf.woff2",
   "/assets/icons/favicon.svg",
@@ -21,7 +17,11 @@ var PRECACHE = [
 
 self.addEventListener("install", function (ev) {
   ev.waitUntil(
-    caches.open(SHELL).then(function (c) { return c.addAll(PRECACHE); }).then(function () {
+    caches.open(SHELL).then(function (c) {
+      return c.addAll(PRECACHE).catch(function (err) {
+        console.warn("SW precache partial fail", err);
+      });
+    }).then(function () {
       return self.skipWaiting();
     })
   );
@@ -59,7 +59,7 @@ self.addEventListener("fetch", function (ev) {
     return;
   }
 
-  // Pages: network-first, fall back to cache, then to cached home.
+  // Pages: network-first, fall back to cache, then to cached home index.html.
   if (req.mode === "navigate" || (req.headers.get("accept") || "").indexOf("text/html") !== -1) {
     ev.respondWith(
       fetch(req).then(function (res) {

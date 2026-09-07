@@ -1,11 +1,8 @@
 import React from 'react';
-import { useLanguage } from '../context/LanguageContext';
 import { UI_COPY } from '../data/uiCopy';
 import { getLocalizedString } from '../types/ui';
 
 export const Footer: React.FC = () => {
-  const { langMode } = useLanguage();
-
   const getCopy = (key: string) => getLocalizedString(UI_COPY[key] as any, 'en');
   const getCopyZh = (key: string) => getLocalizedString(UI_COPY[key] as any, 'zh');
 
