@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCmdPalette }) => {
         <Link className="wordmark" to="/">
           <span className="lang-en">Learn UI Name</span>
           <span className="lang-zh">Learn UI Name<span className="wordmark-zh">界面叫啥</span></span>
-          <span className="lang-ko">Learn UI Name</span>
+          <span className="lang-ko">Learn UI Name<span className="wordmark-zh">UI 비주얼 사전</span></span>
         </Link>
 
         <nav className="site-nav">
