@@ -16,8 +16,8 @@
 }
 
 :root {
-  --font-sans: "Geist", -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  --font-mono: 'Cascadia Code', Consolas, Monaco, monospace;
 
   /* Vercel/Geist light scale */
   --bg: #ffffff;
