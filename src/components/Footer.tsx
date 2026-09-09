@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { UI_COPY } from '../data/uiCopy';
 import { getLocalizedString } from '../types/ui';
 
@@ -14,6 +15,10 @@ export const Footer: React.FC = () => {
         </p>
 
         <p className="foot-links">
+          <Link to="/quiz">
+            {getCopyKo('quizTitle')}
+          </Link>
+          <span className="sep">·</span>
           <a href="https://github.com/joeseesun/learnui" rel="noopener" target="_blank">
             GitHub
           </a>

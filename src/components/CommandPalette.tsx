@@ -9,7 +9,7 @@ import { getLocalizedString } from '../types/ui';
 
 interface SearchItem {
   id: string;
-  type: 'component' | 'style';
+  type: 'component' | 'style' | 'page';
   title: string;
   titleKo?: string;
   subtitle: string;
@@ -39,6 +39,17 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
 
   const searchItems: SearchItem[] = useMemo(() => {
     const items: SearchItem[] = [];
+
+    // 퀴즈 및 정적 페이지
+    items.push({
+      id: 'page-quiz',
+      type: 'page',
+      title: 'Quiz / 퀴즈',
+      titleKo: 'UI 명칭 테스트',
+      subtitle: getLocalizedString(UI_COPY['quizDesc'] as any, 'ko') || '대화형 UI 퀴즈 테스트',
+      url: '/quiz',
+      keywords: ['quiz', '퀴즈', '테스트', '맞추기', '시험'],
+    });
 
     ENTRIES.forEach((e) => {
       const titleEn = e.name?.en || e.slug;
