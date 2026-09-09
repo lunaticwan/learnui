@@ -9,9 +9,7 @@ import { EntryDetailView } from './views/EntryDetailView';
 import { StylesHubView } from './views/StylesHubView';
 import { StyleDetailView } from './views/StyleDetailView';
 import { StyleVsView } from './views/StyleVsView';
-import { GuideDetailView } from './views/GuideDetailView';
 import { TranslateTableView } from './views/TranslateTableView';
-import { QuizView } from './views/QuizView';
 
 export const App: React.FC = () => {
   const [cmdPaletteOpen, setCmdPaletteOpen] = useState(false);
@@ -27,9 +25,8 @@ export const App: React.FC = () => {
           <Route path="/styles" element={<StylesHubView />} />
           <Route path="/styles/vs/:pair" element={<StyleVsView />} />
           <Route path="/styles/:slug" element={<StyleDetailView />} />
+          <Route path="/translate" element={<TranslateTableView />} />
           <Route path="/guides/translate" element={<TranslateTableView />} />
-          <Route path="/guides/:slug" element={<GuideDetailView />} />
-          <Route path="/quiz" element={<QuizView />} />
           <Route path="/:platform/:slug" element={<EntryDetailView />} />
           <Route path="*" element={<HomeView />} />
         </Routes>

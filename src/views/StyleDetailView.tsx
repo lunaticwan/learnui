@@ -19,35 +19,7 @@ export const StyleDetailView: React.FC = () => {
     return <Navigate to="/styles" replace />;
   }
 
-  const getCopy = (key: string, param?: Record<string, string>) => {
-    let str = getLocalizedString(UI_COPY[key] as any, 'en');
-    if (param) {
-      Object.entries(param).forEach(([k, v]) => {
-        str = str.replace(`{${k}}`, v);
-      });
-    }
-    return str;
-  };
-
-  const getCopyZh = (key: string, param?: Record<string, string>) => {
-    let str = getLocalizedString(UI_COPY[key] as any, 'zh');
-    if (param) {
-      Object.entries(param).forEach(([k, v]) => {
-        str = str.replace(`{${k}}`, v);
-      });
-    }
-    return str;
-  };
-
-  const getCopyKo = (key: string, param?: Record<string, string>) => {
-    let str = getLocalizedString(UI_COPY[key] as any, 'ko');
-    if (param) {
-      Object.entries(param).forEach(([k, v]) => {
-        str = str.replace(`{${k}}`, v);
-      });
-    }
-    return str;
-  };
+  const getCopyKo = (key: string) => getLocalizedString(UI_COPY[key] as any, 'ko');
 
   const handleCopyCode = (code: string, idx: number) => {
     navigator.clipboard.writeText(code).then(() => {
@@ -70,43 +42,41 @@ export const StyleDetailView: React.FC = () => {
 
   const generateMarkdown = () => {
     const lines = [
-      `# ${style.name?.en || style.slug} · ${style.name?.zh || ''}`,
+      `# ${style.name?.en || style.slug} · ${style.name?.ko || ''}`,
       '',
       `Style reference — https://learnui.qiaomu.ai/styles/${style.slug}/`,
       '',
     ];
 
     if (style.tagline) {
-      lines.push(style.tagline.en || '', style.tagline.zh || '', '');
+      lines.push(style.tagline.ko || style.tagline.en || '', '');
     }
 
-    if (style.aliases && style.aliases.en) {
-      lines.push('## If you called it… / 如果你管它叫……', '');
-      style.aliases.en.forEach((a: string, i: number) => {
-        const zh = style.aliases?.zh?.[i] || '';
-        lines.push(`- “${a}” / 「${zh}」`);
+    if (style.aliases && style.aliases.ko) {
+      lines.push('## If you called it…', '');
+      style.aliases.ko.forEach((a: string) => {
+        lines.push(`- “${a}”`);
       });
       lines.push('');
     }
 
     if (style.signals) {
-      lines.push('## Full style DNA / 完整风格 DNA', '');
+      lines.push('## Full style DNA', '');
       style.signals.forEach((sig: any) => {
         lines.push(
-          `- **[${sig.role}] ${sig.name?.en || ''} · ${sig.name?.zh || ''}** (${sig.facet})`,
-          `  ${sig.description?.en || ''}`,
-          `  ${sig.description?.zh || ''}`
+          `- **[${sig.role}] ${sig.name?.en || ''} · ${sig.name?.ko || ''}** (${sig.facet})`,
+          `  ${sig.description?.ko || sig.description?.en || ''}`
         );
       });
       lines.push('');
     }
 
     if (style.brief) {
-      lines.push('## Style brief / 风格 Brief', '', style.brief.en || '', '', style.brief.zh || '', '');
+      lines.push('## Style brief', '', style.brief.ko || style.brief.en || '', '');
     }
 
     if (style.origin) {
-      lines.push('## Origin / 起源', '', style.origin.en || '', '', style.origin.zh || '');
+      lines.push('## Origin', '', style.origin.ko || style.origin.en || '');
     }
 
     return lines.join('\n');
@@ -119,30 +89,19 @@ export const StyleDetailView: React.FC = () => {
   return (
     <main className="wrap entry">
       <nav className="crumbs">
-        <Link to="/">
-          <span className="lang-en">{getCopy('indexCrumb')}</span>
-          <span className="lang-zh">{getCopyZh('indexCrumb')}</span>
-          <span className="lang-ko">{getCopyKo('indexCrumb')}</span>
-        </Link>
+        <Link to="/">{getCopyKo('indexCrumb')}</Link>
         <span className="crumb-sep">/</span>
-        <Link to="/styles">
-          <span className="lang-en">{getCopy('stylesCrumb')}</span>
-          <span className="lang-zh">{getCopyZh('stylesCrumb')}</span>
-          <span className="lang-ko">{getCopyKo('stylesCrumb')}</span>
-        </Link>
+        <Link to="/styles">{getCopyKo('stylesCrumb')}</Link>
         <span className="crumb-sep">/</span>
         <span className="crumb-cur">
-          <span className="lang-en">{style.name?.en}</span>
-          <span className="lang-zh">{style.name?.zh}</span>
-          <span className="lang-ko">{style.name?.ko || style.name?.en}</span>
+          <span>{style.name?.en} ({style.name?.ko})</span>
         </span>
       </nav>
 
       <header className="entry-head">
         <h1 className="entry-title">
-          <span className="lang-en">{style.name?.en}</span>
-          <span className="lang-zh entry-title-zh">{style.name?.zh}</span>
-          <span className="lang-ko entry-title-zh">{style.name?.ko || style.name?.en}</span>
+          <span>{style.name?.en}</span>
+          <span className="card-name-sub">{style.name?.ko}</span>
         </h1>
         {style.tagline && <BilingualText text={style.tagline} tag="p" className="entry-tag" />}
         {style.scope && <BilingualText text={style.scope} tag="p" className="guide-para" />}
@@ -150,24 +109,16 @@ export const StyleDetailView: React.FC = () => {
 
       <SpecimenViewer slug={`style-${style.slug}`} detail />
       <p className="stage-hint">
-        <span className="lang-en">Specimen is live — try it.</span>
-        <span className="lang-zh">标本可交互 —— 点点看。</span>
-        <span className="lang-ko">인터랙티브 예시 — 클릭해보세요.</span>
+        <span>인터랙티브 예시 — 직접 조작해보세요.</span>
       </p>
 
-      {style.aliases?.en && style.aliases.en.length > 0 && (
+      {style.aliases?.ko && style.aliases.ko.length > 0 && (
         <section className="sect">
-          <h2 className="section-title">
-            <span className="lang-en">{getCopy('ifYouCalledIt')}</span>
-            <span className="lang-zh">{getCopyZh('ifYouCalledIt')}</span>
-            <span className="lang-ko">{getCopyKo('ifYouCalledIt')}</span>
-          </h2>
+          <h2 className="section-title">{getCopyKo('ifYouCalledIt')}</h2>
           <div className="alias-chips">
-            {style.aliases.en.map((a: string, idx: number) => (
+            {style.aliases.ko.map((a: string, idx: number) => (
               <span key={idx} className="alias-chip">
-                <span className="lang-en">“{a}”</span>
-                <span className="lang-zh">「{style.aliases?.zh?.[idx] || ''}」</span>
-                <span className="lang-ko">“{style.aliases?.ko?.[idx] || a}”</span>
+                <span>“{a}”</span>
               </span>
             ))}
           </div>
@@ -176,11 +127,7 @@ export const StyleDetailView: React.FC = () => {
 
       {style.signals && style.signals.length > 0 && (
         <section className="sect" style={{ maxWidth: 'none' }}>
-          <h2 className="section-title">
-            <span className="lang-en">{getCopy('dnaTitle')}</span>
-            <span className="lang-zh">{getCopyZh('dnaTitle')}</span>
-            <span className="lang-ko">{getCopyKo('dnaTitle')}</span>
-          </h2>
+          <h2 className="section-title">{getCopyKo('dnaTitle')}</h2>
           <ol className="dna">
             {style.signals.map((sig: any) => {
               const roleKeyMap: Record<string, string> = {
@@ -195,15 +142,12 @@ export const StyleDetailView: React.FC = () => {
                 <li key={sig.id} className="dna-item">
                   <div className="dna-head">
                     <span className="dna-name">
-                      <span className="lang-en">{sig.name?.en}</span>
-                      <span className="lang-zh dna-name-zh">{sig.name?.zh}</span>
-                      <span className="lang-ko dna-name-zh">{sig.name?.ko || sig.name?.en}</span>
+                      <span>{sig.name?.en}</span>
+                      <span className="card-name-sub">{sig.name?.ko}</span>
                     </span>
                     <span className="dna-facet">{sig.facet}</span>
                     <span className={`dna-role dna-role-${sig.role}`}>
-                      <span className="lang-en">{getCopy(roleKey)}</span>
-                      <span className="lang-zh">{getCopyZh(roleKey)}</span>
-                      <span className="lang-ko">{getCopyKo(roleKey)}</span>
+                      <span>{getCopyKo(roleKey)}</span>
                     </span>
                   </div>
                   <BilingualText text={sig.description} tag="p" className="dna-desc" />
@@ -217,25 +161,19 @@ export const StyleDetailView: React.FC = () => {
       {style.confusedWith && otherStyle && (
         <section className="sect" style={{ maxWidth: 'none' }}>
           <h2 className="section-title">
-            <span className="lang-en">{getCopy('confusedTitle')}: {style.confusedWith.name}</span>
-            <span className="lang-zh">{getCopyZh('confusedTitle')}：{otherStyle.name?.zh || style.confusedWith.name}</span>
-            <span className="lang-ko">{getCopyKo('confusedTitle')}: {otherStyle.name?.ko || style.confusedWith.name}</span>
+            {getCopyKo('confusedTitle')}: {otherStyle.name?.ko || style.confusedWith.name}
           </h2>
           <div className="vs-pair">
             <div className="vs-cell">
               <SpecimenViewer slug={`style-${style.slug}`} />
               <p className="vs-cell-label">
-                <span className="lang-en">{style.name?.en}</span>
-                <span className="lang-zh">{style.name?.zh}</span>
-                <span className="lang-ko">{style.name?.ko || style.name?.en}</span>
+                <span>{style.name?.en} ({style.name?.ko})</span>
               </p>
             </div>
             <div className="vs-cell">
               <SpecimenViewer slug={`style-${otherStyle.slug}`} />
               <p className="vs-cell-label">
-                <span className="lang-en">{otherStyle.name?.en}</span>
-                <span className="lang-zh">{otherStyle.name?.zh}</span>
-                <span className="lang-ko">{otherStyle.name?.ko || otherStyle.name?.en}</span>
+                <span>{otherStyle.name?.en} ({otherStyle.name?.ko})</span>
               </p>
             </div>
           </div>
@@ -249,9 +187,7 @@ export const StyleDetailView: React.FC = () => {
           </div>
           <p className="vs-more">
             <Link to={`/styles/vs/${[style.slug, otherStyle.slug].sort().join('-vs-')}`}>
-              <span className="lang-en">{getCopy('vsCrumb')}: {style.name?.en} vs {otherStyle.name?.en} →</span>
-              <span className="lang-zh">{getCopyZh('vsCrumb')}页 →</span>
-              <span className="lang-ko">{getCopyKo('vsCrumb')}: {style.name?.ko || style.name?.en} vs {otherStyle.name?.ko || otherStyle.name?.en} →</span>
+              <span>{getCopyKo('vsCrumb')}: {style.name?.ko || style.name?.en} vs {otherStyle.name?.ko || otherStyle.name?.en} →</span>
             </Link>
           </p>
         </section>
@@ -259,11 +195,7 @@ export const StyleDetailView: React.FC = () => {
 
       {style.code && style.code.length > 0 && (
         <section className="sect">
-          <h2 className="section-title">
-            <span className="lang-en">{getCopy('styleCodeTitle')}</span>
-            <span className="lang-zh">{getCopyZh('styleCodeTitle')}</span>
-            <span className="lang-ko">{getCopyKo('styleCodeTitle')}</span>
-          </h2>
+          <h2 className="section-title">{getCopyKo('styleCodeTitle')}</h2>
           {style.code.map((c: any, idx: number) => (
             <div key={idx} className="code-block">
               <button
@@ -271,9 +203,7 @@ export const StyleDetailView: React.FC = () => {
                 className={`btn btn-copy ${copiedCodeIndex === idx ? 'done' : ''}`}
                 onClick={() => handleCopyCode(c.code, idx)}
               >
-                <span className="lang-en">{copiedCodeIndex === idx ? getCopy('copied') : getCopy('copy')}</span>
-                <span className="lang-zh">{copiedCodeIndex === idx ? getCopyZh('copied') : getCopyZh('copy')}</span>
-                <span className="lang-ko">{copiedCodeIndex === idx ? getCopyKo('copied') : getCopyKo('copy')}</span>
+                <span>{copiedCodeIndex === idx ? getCopyKo('copied') : getCopyKo('copy')}</span>
               </button>
               {c.title && <p className="code-title">{c.title}</p>}
               <pre>
@@ -286,25 +216,17 @@ export const StyleDetailView: React.FC = () => {
 
       {style.brief && (
         <section className="sect">
-          <h2 className="section-title">
-            <span className="lang-en">{getCopy('briefTitle')}</span>
-            <span className="lang-zh">{getCopyZh('briefTitle')}</span>
-            <span className="lang-ko">{getCopyKo('briefTitle')}</span>
-          </h2>
+          <h2 className="section-title">{getCopyKo('briefTitle')}</h2>
           <div className="copy-block">
             <button
               type="button"
               className={`btn btn-copy ${copiedBrief ? 'done' : ''}`}
-              onClick={() => handleCopyText(style.brief?.en || '', 'brief')}
+              onClick={() => handleCopyText(style.brief?.ko || style.brief?.en || '', 'brief')}
             >
-              <span className="lang-en">{copiedBrief ? getCopy('copied') : getCopy('copy')}</span>
-              <span className="lang-zh">{copiedBrief ? getCopyZh('copied') : getCopyZh('copy')}</span>
-              <span className="lang-ko">{copiedBrief ? getCopyKo('copied') : getCopyKo('copy')}</span>
+              <span>{copiedBrief ? getCopyKo('copied') : getCopyKo('copy')}</span>
             </button>
             <div className="copy-text">
-              <p className="lang-en">{style.brief.en}</p>
-              <p className="lang-zh zh-copy">{style.brief.zh}</p>
-              <p className="lang-ko zh-copy">{style.brief.ko || style.brief.en}</p>
+              <p>{style.brief.ko || style.brief.en}</p>
             </div>
           </div>
         </section>
@@ -312,33 +234,21 @@ export const StyleDetailView: React.FC = () => {
 
       {style.accessibility && (
         <section className="sect">
-          <h2 className="section-title">
-            <span className="lang-en">{getCopy('a11yTitle')}</span>
-            <span className="lang-zh">{getCopyZh('a11yTitle')}</span>
-            <span className="lang-ko">{getCopyKo('a11yTitle')}</span>
-          </h2>
+          <h2 className="section-title">{getCopyKo('a11yTitle')}</h2>
           <BilingualText text={style.accessibility} tag="p" className="guide-para" />
         </section>
       )}
 
       {style.origin && (
         <section className="sect">
-          <h2 className="section-title">
-            <span className="lang-en">{getCopy('originTitle')}</span>
-            <span className="lang-zh">{getCopyZh('originTitle')}</span>
-            <span className="lang-ko">{getCopyKo('originTitle')}</span>
-          </h2>
+          <h2 className="section-title">{getCopyKo('originTitle')}</h2>
           <BilingualText text={style.origin} tag="p" className="guide-para" />
         </section>
       )}
 
       {style.seeAlso && style.seeAlso.length > 0 && (
         <section className="sect">
-          <h2 className="section-title">
-            <span className="lang-en">{getCopy('seeAlso')}</span>
-            <span className="lang-zh">{getCopyZh('seeAlso')}</span>
-            <span className="lang-ko">{getCopyKo('seeAlso')}</span>
-          </h2>
+          <h2 className="section-title">{getCopyKo('seeAlso')}</h2>
           <div className="rel-grid">
             {style.seeAlso.map((sa: any, idx: number) => {
               let ref = sa.slug || '';
@@ -349,9 +259,8 @@ export const StyleDetailView: React.FC = () => {
                 return (
                   <Link key={idx} className="rel-card" to={`/styles/${targetStyle.slug}`}>
                     <span className="rel-name">
-                      <span className="lang-en">{targetStyle.name?.en}</span>
-                      <span className="lang-zh rel-name-zh">{targetStyle.name?.zh}</span>
-                      <span className="lang-ko rel-name-zh">{targetStyle.name?.ko || targetStyle.name?.en}</span>
+                      <span>{targetStyle.name?.en}</span>
+                      <span className="card-name-sub">{targetStyle.name?.ko}</span>
                     </span>
                   </Link>
                 );
@@ -362,9 +271,8 @@ export const StyleDetailView: React.FC = () => {
                 return (
                   <Link key={idx} className="rel-card" to={`/${targetEntry.platform}/${targetEntry.slug}`}>
                     <span className="rel-name">
-                      <span className="lang-en">{targetEntry.name?.en}</span>
-                      <span className="lang-zh rel-name-zh">{targetEntry.name?.zh}</span>
-                      <span className="lang-ko rel-name-zh">{targetEntry.name?.ko || targetEntry.name?.en}</span>
+                      <span>{targetEntry.name?.en}</span>
+                      <span className="card-name-sub">{targetEntry.name?.ko}</span>
                     </span>
                     <span className="rel-sym">{targetEntry.api?.[0]?.symbol}</span>
                   </Link>
@@ -383,9 +291,7 @@ export const StyleDetailView: React.FC = () => {
           className="btn btn-ghost"
           onClick={() => handleCopyText(generateMarkdown(), 'md')}
         >
-          ⧉ <span className="lang-en">{copiedMd ? getCopy('copied') : getCopy('copyPage')}</span>
-          <span className="lang-zh">{copiedMd ? getCopyZh('copied') : getCopyZh('copyPage')}</span>
-          <span className="lang-ko">{copiedMd ? getCopyKo('copied') : getCopyKo('copyPage')}</span>
+          ⧉ <span>{copiedMd ? getCopyKo('copied') : getCopyKo('copyPage')}</span>
         </button>
       </section>
     </main>
