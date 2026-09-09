@@ -14,7 +14,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCmdPalette }) => {
     <header className="site-header">
       <div className="wrap header-in">
         <Link className="wordmark" to="/">
-          <span>Learn UI Name</span>
+          <span className="brand-highlight">iM뱅크</span> <span>Learn UI</span>
           <span className="wordmark-sub">UI 비주얼 사전</span>
         </Link>
 

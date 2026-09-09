@@ -1,6 +1,6 @@
-# LearnUI (React + TypeScript + Vite)
+# iM뱅크 Learn UI (React + TypeScript + Vite)
 
-LearnUI / NameThatUI는 웹, macOS, iOS 등 다양한 플랫폼의 UI 요소, 컴포넌트, 인터페이스 디자인 스타일 및 다국어 용어를 학습하고 검색할 수 있는 모던 UI 비주얼 사전 애플리케이션입니다.
+iM뱅크 Learn UI는 웹, macOS, iOS 등 다양한 플랫폼의 UI 요소, 컴포넌트, 인터페이스 디자인 스타일 및 다국어 용어를 학습하고 검색할 수 있는 모던 UI 비주얼 사전 애플리케이션입니다.
 
 UI 요소의 정확한 공식 명칭과 사양을 확인하고, AI 코딩 에이전트(LLM / Prompting)에 적용 가능한 프롬프트를 직관적으로 습득할 수 있도록 설계되었습니다.
 

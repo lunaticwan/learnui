@@ -2,11 +2,11 @@ import { UICopy } from "../types/ui";
 
 export const UI_COPY: UICopy = {
   "siteName": {
-    "en": "Learn UI Name",
-    "ko": "Learn UI Name"
+    "en": "iM뱅크 Learn UI",
+    "ko": "iM뱅크 Learn UI"
   },
   "tagline": {
-    "en": "the visual dictionary of UI",
+    "en": "iM Bank Learn UI",
     "ko": "UI 비주얼 사전"
   },
   "heroTitle": {
@@ -142,8 +142,8 @@ export const UI_COPY: UICopy = {
     "ko": "총 {n}개 요소, 시각적 확인 및 정확한 명칭 제공"
   },
   "builtNote": {
-    "en": "Replica of namethatui.com for learning. Original content © its author.",
-    "ko": "학습용 namethatui.com 비주얼 사전. 원본 콘텐츠 저작권은 원작자에게 있습니다."
+    "en": "iM Bank Learn UI Dictionary. All rights reserved.",
+    "ko": "iM뱅크 Learn UI 비주얼 사전. UI 표준 가이드 및 인터랙티브 학습 아틀라스."
   },
   "stylesCrumb": {
     "en": "Styles",
