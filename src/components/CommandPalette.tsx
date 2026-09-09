@@ -9,7 +9,7 @@ import { getLocalizedString } from '../types/ui';
 
 interface SearchItem {
   id: string;
-  type: 'component' | 'style';
+  type: 'component' | 'style' | 'page';
   title: string;
   titleKo?: string;
   subtitle: string;
@@ -40,10 +40,22 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
   const searchItems: SearchItem[] = useMemo(() => {
     const items: SearchItem[] = [];
 
+    // 주요 정적 페이지 추가
+    items.push({
+      id: 'page-translate',
+      type: 'page',
+      title: 'The Translation Table / 번역표',
+      titleKo: '플랫폼별 UI 명칭 대조표',
+      subtitle: getLocalizedString(UI_COPY['translateLede'] as any, 'ko') || 'AppKit · SwiftUI · iOS · Android UI 용어 대조',
+      url: '/translate',
+      keywords: ['translate', '번역', '대조표', '용어', 'swiftui', 'appkit', 'ios', 'android'],
+    });
+
     ENTRIES.forEach((e) => {
       const titleEn = e.name?.en || e.slug;
       const titleKo = e.name?.ko || '';
       const subtitle = e.tagline?.ko || e.tagline?.en || '';
+      const apiSymbols = (e.api || []).map((a: any) => a.symbol || '');
       items.push({
         id: `entry-${e.slug}`,
         type: 'component',
@@ -54,6 +66,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         keywords: [
           titleEn,
           titleKo,
+          e.platform,
+          ...apiSymbols,
           ...(e.aka?.en || []),
           ...(e.aka?.ko || []),
           ...(e.fuzzy?.en || []),
@@ -87,8 +101,13 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
 
   const fuse = useMemo(() => {
     return new Fuse(searchItems, {
-      keys: ['title', 'titleKo', 'subtitle', 'keywords'],
-      threshold: 0.35,
+      keys: [
+        { name: 'title', weight: 0.4 },
+        { name: 'titleKo', weight: 0.3 },
+        { name: 'keywords', weight: 0.2 },
+        { name: 'subtitle', weight: 0.1 }
+      ],
+      threshold: 0.3,
     });
   }, [searchItems]);
 

@@ -155,22 +155,22 @@ export const EntryDetailView: React.FC = () => {
           <h2 className="section-title">
             <span>{getCopyKo('anatomy')}</span>
           </h2>
-          <ol className="parts">
+          <ol className="parts" style={{ display: 'grid', gap: '16px' }}>
             {entry.parts.map((p: any, idx: number) => (
-              <li key={p.id || idx} className="part">
-                <div className="part-head">
-                  <span className="part-num">{idx + 1}</span>
-                  <span className="part-name">
+              <li key={p.id || idx} className="part" style={{ padding: '20px', borderRadius: '12px', border: '1px solid #eaeaea', background: '#ffffff', listStyle: 'none' }}>
+                <div className="part-head" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <span className="part-num" style={{ background: '#f5f5f5', padding: '2px 8px', borderRadius: '4px', fontSize: '12px', fontWeight: 600 }}>{idx + 1}</span>
+                  <span className="part-name" style={{ fontSize: '16px', fontWeight: 600 }}>
                     <span>{p.name?.en}</span>
-                    <span className="card-name-sub">{p.name?.ko}</span>
+                    {p.name?.ko && <span className="card-name-sub" style={{ marginLeft: '8px', color: '#737373', fontWeight: 400 }}>{p.name?.ko}</span>}
                   </span>
-                  <code className="part-api">{p.api}</code>
+                  {p.api && <code className="part-api" style={{ marginLeft: 'auto', fontFamily: 'var(--font-mono)', fontSize: '12px', background: '#f5f5f5', padding: '2px 6px', borderRadius: '4px' }}>{p.api}</code>}
                 </div>
-                <BilingualText text={p.description} tag="p" className="part-desc" />
+                <BilingualText text={p.description} tag="p" className="part-desc" style={{ fontSize: '14px', color: '#525252', lineHeight: '1.6' }} />
                 {p.prompt && (
-                  <div className="part-prompt">
-                    <span className="part-prompt-label">{getCopyKo('promptFragment')}</span>
-                    <p className="mono-sm">{p.prompt.ko || p.prompt.en}</p>
+                  <div className="part-prompt" style={{ marginTop: '12px', padding: '12px', background: '#fafafa', borderRadius: '8px', border: '1px solid #f0f0f0' }}>
+                    <span className="part-prompt-label" style={{ fontSize: '11px', textTransform: 'uppercase', color: '#a3a3a3', fontWeight: 600, display: 'block', marginBottom: '4px' }}>{getCopyKo('promptFragment')}</span>
+                    <p className="mono-sm" style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: '#171717', margin: 0 }}>{p.prompt.ko || p.prompt.en}</p>
                   </div>
                 )}
               </li>
