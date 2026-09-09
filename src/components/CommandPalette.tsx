@@ -56,6 +56,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
       const titleKo = e.name?.ko || '';
       const subtitle = e.tagline?.ko || e.tagline?.en || '';
       const apiSymbols = (e.api || []).map((a: any) => a.symbol || '');
+      const partsKeywords = (e.parts || []).flatMap((p: any) => [
+        p.name?.en, p.name?.ko, p.prompt?.en, p.prompt?.ko
+      ]).filter(Boolean);
+
       items.push({
         id: `entry-${e.slug}`,
         type: 'component',
@@ -72,6 +76,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
           ...(e.aka?.ko || []),
           ...(e.fuzzy?.en || []),
           ...(e.fuzzy?.ko || []),
+          ...partsKeywords,
         ],
       });
     });
@@ -80,6 +85,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
       const titleEn = s.name?.en || s.slug;
       const titleKo = s.name?.ko || '';
       const subtitle = s.tagline?.ko || s.tagline?.en || '';
+      const signalsKeywords = (s.signals || []).flatMap((sig: any) => [
+        sig.name?.en, sig.name?.ko
+      ]).filter(Boolean);
+
       items.push({
         id: `style-${s.slug}`,
         type: 'style',
@@ -92,6 +101,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
           titleKo,
           ...(s.aliases?.en || []),
           ...(s.aliases?.ko || []),
+          ...signalsKeywords,
         ],
       });
     });
@@ -102,18 +112,21 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
   const fuse = useMemo(() => {
     return new Fuse(searchItems, {
       keys: [
-        { name: 'title', weight: 0.4 },
-        { name: 'titleKo', weight: 0.3 },
-        { name: 'keywords', weight: 0.2 },
+        { name: 'titleKo', weight: 0.35 },
+        { name: 'keywords', weight: 0.35 },
+        { name: 'title', weight: 0.2 },
         { name: 'subtitle', weight: 0.1 }
       ],
-      threshold: 0.3,
+      threshold: 0.35,
+      ignoreLocation: true,
+      minMatchCharLength: 1,
     });
   }, [searchItems]);
 
   const filteredItems = useMemo(() => {
-    if (!query.trim()) return searchItems;
-    return fuse.search(query).map((res) => res.item);
+    const trimmed = query.trim();
+    if (!trimmed) return searchItems.slice(0, 20);
+    return fuse.search(trimmed).map((res) => res.item);
   }, [query, searchItems, fuse]);
 
   if (!open) return null;

@@ -190,8 +190,13 @@ export const EntryDetailView: React.FC = () => {
             >
               <span>{copiedPrompt ? getCopyKo('copied') : getCopyKo('copy')}</span>
             </button>
-            <div className="copy-text">
-              <p>{entry.prompt?.ko || entry.prompt?.en}</p>
+            <div className="copy-text" style={{ padding: '16px', background: '#fafafa', borderRadius: '8px', border: '1px solid #f0f0f0' }}>
+              <p style={{ margin: 0, fontSize: '14px', lineHeight: '1.7', color: '#171717' }}>{entry.prompt?.ko || entry.prompt?.en}</p>
+              {entry.prompt?.ko && entry.prompt?.en && (
+                <p style={{ marginTop: '10px', paddingTop: '10px', borderTop: '1px dashed #e5e5e5', fontSize: '13px', lineHeight: '1.6', color: '#737373' }}>
+                  {entry.prompt.en}
+                </p>
+              )}
             </div>
           </div>
         </section>
@@ -208,8 +213,13 @@ export const EntryDetailView: React.FC = () => {
             >
               <span>{copiedDebug ? getCopyKo('copied') : getCopyKo('copy')}</span>
             </button>
-            <div className="copy-text">
-              <p>{entry.debugPrompt?.ko || entry.debugPrompt?.en}</p>
+            <div className="copy-text" style={{ padding: '16px', background: '#fafafa', borderRadius: '8px', border: '1px solid #f0f0f0' }}>
+              <p style={{ margin: 0, fontSize: '14px', lineHeight: '1.7', color: '#171717' }}>{entry.debugPrompt?.ko || entry.debugPrompt?.en}</p>
+              {entry.debugPrompt?.ko && entry.debugPrompt?.en && (
+                <p style={{ marginTop: '10px', paddingTop: '10px', borderTop: '1px dashed #e5e5e5', fontSize: '13px', lineHeight: '1.6', color: '#737373' }}>
+                  {entry.debugPrompt.en}
+                </p>
+              )}
             </div>
           </div>
         </section>

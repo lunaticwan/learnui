@@ -9,11 +9,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Skeuomorphism carries real-world materials and objects into digital UI: controls are rendered as if physically made of something — glossy plastic, brushed metal, leather, paper — with the lighting, texture, and affordances of the real thing. A skeuomorphic app teaches itself: a page that looks tearable invites turning, a raised glossy button invites pressing. It peaked in early iOS and Mac OS X, and was largely displaced by flat design around 2013.",
-      "ko": "： —— 、、、 —— 、。 App ：，。 iOS Mac OS X ，2013 。"
+      "ko": "Skeuomorphism carries real-world materials and objects into digital UI: controls are rendered as if physically made of something — glossy plastic, brushed metal, leather, paper — with the lighting, texture, and affordances of the real thing. A skeuomorphic app teaches itself: a page that looks tearable invites turning, a raised glossy button invites pressing. It peaked in early iOS and Mac OS X, and was largely displaced by flat design around 2013."
     },
     "scope": {
       "en": "Scope: This entry covers the visual style. The interaction-metaphor sense (a 'trash can' you drag files to) is the same idea one level up, and NN/g treats both together — but the atlas signals below are about pixels, not metaphors.",
-      "ko": "：。「」，NN/g —— ，。"
+      "ko": "Scope: This entry covers the visual style. The interaction-metaphor sense (a 'trash can' you drag files to) is the same idea one level up, and NN/g treats both together — but the atlas signals below are about pixels, not metaphors."
     },
     "aliases": {
       "en": [
@@ -42,7 +42,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Surfaces look made of something physical — leather, paper, linen, brushed metal, green felt — usually with visible texture or grain.",
-          "ko": "—— 、、、、 —— 。"
+          "ko": "Surfaces look made of something physical — leather, paper, linen, brushed metal, green felt — usually with visible texture or grain."
         }
       },
       {
@@ -81,7 +81,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Stitching, torn-paper edges, embossed or letterpress text, rivets — ornamental traces of how the 'real' object would be manufactured.",
-          "ko": "、、、 —— 「」。"
+          "ko": "Stitching, torn-paper edges, embossed or letterpress text, rivets — ornamental traces of how the 'real' object would be manufactured."
         }
       },
       {
@@ -94,7 +94,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Buttons and bars carry vertical gradients with a specular top highlight — the 'gel' or 'aqua' look of pressable plastic.",
-          "ko": "， —— 「」 Aqua 。"
+          "ko": "Buttons and bars carry vertical gradients with a specular top highlight — the 'gel' or 'aqua' look of pressable plastic."
         }
       },
       {
@@ -124,15 +124,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "neumorphism",
+        "name": "Neumorphism",
+        "because": {
+          "en": "This is skeuomorphism because surfaces imitate REAL, nameable materials — leather, paper, metal — with rich lighting, texture, and object metaphors.",
+          "ko": "This is skeuomorphism because surfaces imitate REAL, nameable materials — leather, paper, metal — with rich lighting, texture, and object metaphors."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become neumorphism if every material and texture vanished and all controls were instead extruded from one continuous matte surface with soft dual shadows.",
+          "ko": "It would become neumorphism if every material and texture vanished and all controls were instead extruded from one continuous matte surface with soft dual shadows."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using skeuomorphism. Defining signals: controls rendered as simulated physical materials (e.g. leather, paper, brushed metal) with visible texture; a consistent lighting model — gloss highlights on raised elements, inner shadows on recessed fields; real-object metaphors for whole surfaces (a notepad drawn as ruled paper); crafted physical details like stitching or embossed text. Keep the specific material palette and density flexible. Use layered gradients with specular highlights, inset box-shadows for recessed fields, and subtle texture images or noise. Do not drift into neumorphism: the decisive difference is that skeuomorphic surfaces imitate real nameable materials, not one uniform soft-extruded surface. Preserve readable text contrast on textured backgrounds, visible controls and focus states, and reduced-motion support.",
-      "ko": "（skeuomorphism）。：（、、），； —— ，；（）；、。。、 inset box-shadow ，。：、，。、， reduced-motion。"
+      "ko": "Create the surface using skeuomorphism. Defining signals: controls rendered as simulated physical materials (e.g. leather, paper, brushed metal) with visible texture; a consistent lighting model — gloss highlights on raised elements, inner shadows on recessed fields; real-object metaphors for whole surfaces (a notepad drawn as ruled paper); crafted physical details like stitching or embossed text. Keep the specific material palette and density flexible. Use layered gradients with specular highlights, inset box-shadows for recessed fields, and subtle texture images or noise. Do not drift into neumorphism: the decisive difference is that skeuomorphic surfaces imitate real nameable materials, not one uniform soft-extruded surface. Preserve readable text contrast on textured backgrounds, visible controls and focus states, and reduced-motion support."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Text over textures (leather, linen, wood) needs a measured 4.5:1 contrast against the BUSIEST region of the texture, not its average color.\n\nDecorative bevels and gloss must not be the only pressed/unpressed signal — pair states with a color or content change.\n\nHeavy texture images add page weight; ship them compressed and let the UI stand without them.",
+      "ko": "Text over textures (leather, linen, wood) needs a measured 4.5:1 contrast against the BUSIEST region of the texture, not its average color.\n\nDecorative bevels and gloss must not be the only pressed/unpressed signal — pair states with a color or content change.\n\nHeavy texture images add page weight; ship them compressed and let the UI stand without them."
+    },
     "origin": {
       "en": "As old as the GUI itself (the 1980s desktop metaphor), but the style label usually points at Apple's 2007–2012 era — iOS's leather calendars, felt Game Center, and reel-to-reel Podcasts app under Scott Forstall — ended publicly by iOS 7's flat redesign in 2013.",
-      "ko": "GUI （ 80 ）， Apple 2007–2012 —— Scott Forstall iOS 、 Game Center、 App —— 2013 iOS 7 。"
+      "ko": "As old as the GUI itself (the 1980s desktop metaphor), but the style label usually points at Apple's 2007–2012 era — iOS's leather calendars, felt Game Center, and reel-to-reel Podcasts app under Scott Forstall — ended publicly by iOS 7's flat redesign in 2013."
     },
     "meta": {}
   },
@@ -144,11 +160,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Neumorphism renders every control as if extruded from, or pressed into, the page itself: background and controls share one matte color, and shape comes entirely from a pair of soft shadows — light from the top-left, dark toward the bottom-right. Nothing has a border and nothing floats; the whole interface reads as one continuous molded surface. It photographs beautifully and tests poorly: the same softness that makes it distinctive erases the contrast real controls need.",
-      "ko": "、：， —— ，。，；。，：，。"
+      "ko": "Neumorphism renders every control as if extruded from, or pressed into, the page itself: background and controls share one matte color, and shape comes entirely from a pair of soft shadows — light from the top-left, dark toward the bottom-right. Nothing has a border and nothing floats; the whole interface reads as one continuous molded surface. It photographs beautifully and tests poorly: the same softness that makes it distinctive erases the contrast real controls need."
     },
     "scope": {
       "en": "Scope: Covers the 2019–2021 'Soft UI' trend look. Its 3D-clay sibling with thicker, toy-like inflation is usually called claymorphism and is a separate (future) entry.",
-      "ko": "： 2019–2021 「Soft UI」（ UI）。、 3D （claymorphism），（）。"
+      "ko": "Scope: Covers the 2019–2021 'Soft UI' trend look. Its 3D-clay sibling with thicker, toy-like inflation is usually called claymorphism and is a separate (future) entry."
     },
     "aliases": {
       "en": [
@@ -216,7 +232,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Edges exist only where the shadows fade — no outlines, no strong fills; the whole UI sits within a narrow band of one hue.",
-          "ko": "—— ，；。"
+          "ko": "Edges exist only where the shadows fade — no outlines, no strong fills; the whole UI sits within a narrow band of one hue."
         }
       },
       {
@@ -242,7 +258,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Classically a pale grey-blue (#e0e5ec), but the effect works on any light, low-saturation base; one saturated accent may survive for the primary action.",
-          "ko": "（#e0e5ec），、；。"
+          "ko": "Classically a pale grey-blue (#e0e5ec), but the effect works on any light, low-saturation base; one saturated accent may survive for the primary action."
         }
       },
       {
@@ -255,19 +271,35 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Leather, paper, or gloss would reintroduce skeuomorphism — neumorphic surfaces are matte, uniform, and material-less.",
-          "ko": "、 —— 、、。"
+          "ko": "Leather, paper, or gloss would reintroduce skeuomorphism — neumorphic surfaces are matte, uniform, and material-less."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "skeuomorphism",
+        "name": "Skeuomorphism",
+        "because": {
+          "en": "This is neumorphism because the controls and the background are one material-less matte surface, shaped only by soft dual shadows.",
+          "ko": "This is neumorphism because the controls and the background are one material-less matte surface, shaped only by soft dual shadows."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become skeuomorphism if surfaces started imitating real nameable materials — leather grain, glossy plastic, brushed metal — with textures and object metaphors.",
+          "ko": "It would become skeuomorphism if surfaces started imitating real nameable materials — leather grain, glossy plastic, brushed metal — with textures and object metaphors."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using neumorphism (Soft UI). Defining signals: controls share the background's exact matte color; raised elements get dual soft shadows (light top-left, dark bottom-right); pressed/input states invert the shadows inward (inset); no borders anywhere; generous rounded corners. Keep the base hue flexible (classically a pale grey-blue like #e0e5ec) and allow one saturated accent for the primary action. Use CSS box-shadow pairs, e.g. raised: box-shadow: -6px -6px 12px rgba(255,255,255,.85), 6px 6px 12px rgba(163,177,198,.6); pressed: the same pair with inset. Do not drift into skeuomorphism; the decisive difference is that neumorphic surfaces are one uniform material-less matte — no textures, gloss, or imitated materials. Preserve readable text contrast, a visible non-shadow cue for focus and states (WCAG non-text contrast will fail on shadows alone), and reduced-motion support.",
-      "ko": "（Soft UI）。：；（、）；/（inset）；；。（ #e0e5ec ），。 CSS box-shadow，：box-shadow: -6px -6px 12px rgba(255,255,255,.85), 6px 6px 12px rgba(163,177,198,.6)；： inset。；、 —— 、、。，（ WCAG ）， reduced-motion。"
+      "ko": "Create the surface using neumorphism (Soft UI). Defining signals: controls share the background's exact matte color; raised elements get dual soft shadows (light top-left, dark bottom-right); pressed/input states invert the shadows inward (inset); no borders anywhere; generous rounded corners. Keep the base hue flexible (classically a pale grey-blue like #e0e5ec) and allow one saturated accent for the primary action. Use CSS box-shadow pairs, e.g. raised: box-shadow: -6px -6px 12px rgba(255,255,255,.85), 6px 6px 12px rgba(163,177,198,.6); pressed: the same pair with inset. Do not drift into skeuomorphism; the decisive difference is that neumorphic surfaces are one uniform material-less matte — no textures, gloss, or imitated materials. Preserve readable text contrast, a visible non-shadow cue for focus and states (WCAG non-text contrast will fail on shadows alone), and reduced-motion support."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "The style's signature IS a WCAG problem: shadow-only boundaries rarely reach the 3:1 non-text contrast minimum — add a real focus ring and at least one non-shadow state cue (color, icon, label).\n\nDisabled vs enabled vs pressed all look similar in pure neumorphism; users with low vision may not find the controls at all. NN/g and the coining authors themselves warn against shipping it for functional UI.\n\nIf you keep it, reserve it for large decorative containers and give interactive elements stronger contrast than the style would like.",
+      "ko": "The style's signature IS a WCAG problem: shadow-only boundaries rarely reach the 3:1 non-text contrast minimum — add a real focus ring and at least one non-shadow state cue (color, icon, label).\n\nDisabled vs enabled vs pressed all look similar in pure neumorphism; users with low vision may not find the controls at all. NN/g and the coining authors themselves warn against shipping it for functional UI.\n\nIf you keep it, reserve it for large decorative containers and give interactive elements stronger contrast than the style would like."
+    },
     "origin": {
       "en": "A Dribbble-era trend: Alexander Plyuto's 2019 'Skeuomorph Mobile Banking' shots went viral, Jason Kelley's comment coined the name, and Michal Malewicz's 2019–2020 articles defined and then warned about it. It stayed mostly a concept-shot style — few shipping products survived its accessibility costs.",
-      "ko": "Dribbble ：Alexander Plyuto 2019 「Skeuomorph Mobile Banking」，Jason Kelley ，Michal Malewicz 2019–2020 、。 —— 접근성。"
+      "ko": "A Dribbble-era trend: Alexander Plyuto's 2019 'Skeuomorph Mobile Banking' shots went viral, Jason Kelley's comment coined the name, and Michal Malewicz's 2019–2020 articles defined and then warned about it. It stayed mostly a concept-shot style — few shipping products survived its accessibility costs."
     },
     "meta": {}
   },
@@ -279,11 +311,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Glassmorphism builds interfaces from translucent, frosted panels: the background — usually something vivid — blurs through each surface, a thin light border catches the 'edge' of the glass, and layers stack with soft shadows to sell the depth. The style lives or dies by its backdrop: over a plain background the glass reads as plain grey; over a colorful gradient it glows.",
-      "ko": "： —— —— ，「」，。：，；，。"
+      "ko": "Glassmorphism builds interfaces from translucent, frosted panels: the background — usually something vivid — blurs through each surface, a thin light border catches the 'edge' of the glass, and layers stack with soft shadows to sell the depth. The style lives or dies by its backdrop: over a plain background the glass reads as plain grey; over a colorful gradient it glows."
     },
     "scope": {
       "en": "Scope: Covers the generic frosted-glass content style. Apple's system-wide adaptive material is Liquid Glass (its own entry), and the older macOS behind-window blur is vibrancy — a UI term, not a style.",
-      "ko": "：。Apple （Liquid Glass，）， macOS vibrancy —— UI ，。"
+      "ko": "Scope: Covers the generic frosted-glass content style. Apple's system-wide adaptive material is Liquid Glass (its own entry), and the older macOS behind-window blur is vibrancy — a UI term, not a style."
     },
     "aliases": {
       "en": [
@@ -312,7 +344,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Surfaces are semi-transparent with a strong background blur — content behind is visible but softened, like frosted glass.",
-          "ko": "， —— ，。"
+          "ko": "Surfaces are semi-transparent with a strong background blur — content behind is visible but softened, like frosted glass."
         }
       },
       {
@@ -338,7 +370,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "A 1px semi-transparent white border (often brighter on top) catches the rim of each panel, separating glass from glass.",
-          "ko": "1px （），。"
+          "ko": "A 1px semi-transparent white border (often brighter on top) catches the rim of each panel, separating glass from glass."
         }
       },
       {
@@ -351,7 +383,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Panels float above the backdrop and above each other with soft, wide shadows — the stack of sheets is part of the look.",
-          "ko": "、， —— 「」。"
+          "ko": "Panels float above the backdrop and above each other with soft, wide shadows — the stack of sheets is part of the look."
         }
       },
       {
@@ -377,7 +409,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Gradient mesh, aurora, photography, or brand color field — any vivid, soft backdrop works; the glass recipe stays the same.",
-          "ko": "、、、 —— ；。"
+          "ko": "Gradient mesh, aurora, photography, or brand color field — any vivid, soft backdrop works; the glass recipe stays the same."
         }
       },
       {
@@ -390,19 +422,35 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Solid cards (or transparency without blur) lose the frosted read — transparency alone is just low opacity, not glass.",
-          "ko": "（） —— ，。"
+          "ko": "Solid cards (or transparency without blur) lose the frosted read — transparency alone is just low opacity, not glass."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "liquid-glass",
+        "name": "Liquid Glass",
+        "because": {
+          "en": "This is glassmorphism because the frosted treatment is a generic decorative skin — content cards, dashboards, whole panels can all be glass over a wallpaper you chose.",
+          "ko": "This is glassmorphism because the frosted treatment is a generic decorative skin — content cards, dashboards, whole panels can all be glass over a wallpaper you chose."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Liquid Glass if the glass were reserved for the CONTROL layer — bars, buttons, navigation floating above app content — using Apple's adaptive material that lenses and re-tints from whatever scrolls beneath it.",
+          "ko": "It would become Liquid Glass if the glass were reserved for the CONTROL layer — bars, buttons, navigation floating above app content — using Apple's adaptive material that lenses and re-tints from whatever scrolls beneath it."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using glassmorphism. Defining signals: semi-transparent panels with a strong backdrop blur; a vivid gradient or photographic backdrop whose color bleeds through every panel; a thin 1px semi-transparent white border on each panel edge; layered floating depth with soft wide shadows. Keep the backdrop's specific colors and imagery flexible. Use CSS backdrop-filter: blur(16px) with background: rgba(255,255,255,0.12) (or a dark equivalent) and border: 1px solid rgba(255,255,255,0.25). Do not drift into Apple's Liquid Glass; the decisive difference is that glassmorphism is a decorative skin for any surface including content cards, while Liquid Glass reserves glass for the floating control layer above content. Preserve readable text over every region the backdrop can produce (add a contrast scrim if needed), visible controls and focus states, and reduced-motion/reduced-transparency fallbacks.",
-      "ko": "（glassmorphism）。：；，； 1px ；。。 CSS backdrop-filter: blur(16px)， background: rgba(255,255,255,0.12)（） border: 1px solid rgba(255,255,255,0.25)。 Apple ；，。（ scrim），， reduced-motion / reduced-transparency 。"
+      "ko": "Create the surface using glassmorphism. Defining signals: semi-transparent panels with a strong backdrop blur; a vivid gradient or photographic backdrop whose color bleeds through every panel; a thin 1px semi-transparent white border on each panel edge; layered floating depth with soft wide shadows. Keep the backdrop's specific colors and imagery flexible. Use CSS backdrop-filter: blur(16px) with background: rgba(255,255,255,0.12) (or a dark equivalent) and border: 1px solid rgba(255,255,255,0.25). Do not drift into Apple's Liquid Glass; the decisive difference is that glassmorphism is a decorative skin for any surface including content cards, while Liquid Glass reserves glass for the floating control layer above content. Preserve readable text over every region the backdrop can produce (add a contrast scrim if needed), visible controls and focus states, and reduced-motion/reduced-transparency fallbacks."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Text contrast over glass is unstable: the backdrop moves and varies, so measure against the worst region or add a translucent contrast scrim behind text.\n\nHonor prefers-reduced-transparency (and OS 'Reduce transparency') with near-opaque fallbacks.\n\nbackdrop-filter is expensive on low-end devices; the layout must survive its absence — never hide content behind a failed blur.",
+      "ko": "Text contrast over glass is unstable: the backdrop moves and varies, so measure against the worst region or add a translucent contrast scrim behind text.\n\nHonor prefers-reduced-transparency (and OS 'Reduce transparency') with near-opaque fallbacks.\n\nbackdrop-filter is expensive on low-end devices; the layout must survive its absence — never hide content behind a failed blur."
+    },
     "origin": {
       "en": "The effect is decades old — Windows Vista's Aero glass (2006), iOS 7's blur layers (2013), macOS vibrancy — but the style label dates to Michal Malewicz's 2020 article, after the look spread through Dribbble and Big Sur-era redesigns.",
-      "ko": "—— Windows Vista Aero （2006）、iOS 7 （2013）、macOS vibrancy —— Michal Malewicz 2020 ， Dribbble Big Sur 。"
+      "ko": "The effect is decades old — Windows Vista's Aero glass (2006), iOS 7's blur layers (2013), macOS vibrancy — but the style label dates to Michal Malewicz's 2020 article, after the look spread through Dribbble and Big Sur-era redesigns."
     },
     "meta": {}
   },
@@ -414,11 +462,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Liquid Glass is Apple's adaptive material for controls and navigation: toolbars, tab bars, buttons, and sliders render as lens-like glass that floats in its own layer above app content, refracting what scrolls beneath and re-tinting itself for legibility in light and dark contexts. It is functional, not decorative — Apple applies it to the control layer and keeps content itself opaque. Capsule shapes and concentric corner radii are part of the geometry.",
-      "ko": "Apple ：、、，，，。， —— Apple ，。。"
+      "ko": "Liquid Glass is Apple's adaptive material for controls and navigation: toolbars, tab bars, buttons, and sliders render as lens-like glass that floats in its own layer above app content, refracting what scrolls beneath and re-tinting itself for legibility in light and dark contexts. It is functional, not decorative — Apple applies it to the control layer and keeps content itself opaque. Capsule shapes and concentric corner radii are part of the geometry."
     },
     "scope": {
       "en": "Scope: 'SwiftUI style' is not a style — SwiftUI is Apple's UI framework. Apps built with it currently LOOK like Liquid Glass; before 2025 they had the flatter platform-native Apple look, and early Mac OS X's candy-and-pinstripes look was Aqua. If someone says 'make it look like SwiftUI', they usually mean this entry.",
-      "ko": "：「SwiftUI 」 —— SwiftUI Apple UI 。 App ；2025 Apple ， Mac OS X Aqua。「 SwiftUI 」，。"
+      "ko": "Scope: 'SwiftUI style' is not a style — SwiftUI is Apple's UI framework. Apps built with it currently LOOK like Liquid Glass; before 2025 they had the flatter platform-native Apple look, and early Mac OS X's candy-and-pinstripes look was Aqua. If someone says 'make it look like SwiftUI', they usually mean this entry."
     },
     "aliases": {
       "en": [
@@ -447,7 +495,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Only controls and navigation are glass — bars, buttons, sliders float above the app; the content beneath stays opaque and full-contrast.",
-          "ko": "—— 、、；、。"
+          "ko": "Only controls and navigation are glass — bars, buttons, sliders float above the app; the content beneath stays opaque and full-contrast."
         }
       },
       {
@@ -460,7 +508,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "The material behaves like a real lens: it bends and concentrates light from what's beneath, with bright edge highlights — richer than a flat frosted blur.",
-          "ko": "：， —— 。"
+          "ko": "The material behaves like a real lens: it bends and concentrates light from what's beneath, with bright edge highlights — richer than a flat frosted blur."
         }
       },
       {
@@ -499,7 +547,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Glass elements merge, split, and reshape as context changes — a tab bar shrinking on scroll, a button expanding into a menu.",
-          "ko": "、、 —— ，。"
+          "ko": "Glass elements merge, split, and reshape as context changes — a tab bar shrinking on scroll, a button expanding into a menu."
         }
       },
       {
@@ -512,7 +560,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Anything can sit beneath the glass — photos, maps, lists; the material adapts to it rather than requiring a curated backdrop.",
-          "ko": "—— 、、；，。"
+          "ko": "Anything can sit beneath the glass — photos, maps, lists; the material adapts to it rather than requiring a curated backdrop."
         }
       },
       {
@@ -525,19 +573,35 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Making content itself translucent — glass cards on glass backgrounds — is exactly what Apple's guidance avoids; that's generic glassmorphism, and it costs legibility.",
-          "ko": "—— —— Apple ；，。"
+          "ko": "Making content itself translucent — glass cards on glass backgrounds — is exactly what Apple's guidance avoids; that's generic glassmorphism, and it costs legibility."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "glassmorphism",
+        "name": "Glassmorphism",
+        "because": {
+          "en": "This is Liquid Glass because the glass is a functional system material reserved for controls and navigation floating above opaque content, adapting its own tint for legibility.",
+          "ko": "This is Liquid Glass because the glass is a functional system material reserved for controls and navigation floating above opaque content, adapting its own tint for legibility."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become glassmorphism if the frosted treatment spread to the content itself — translucent cards over a decorative wallpaper, blur as a skin rather than a control layer.",
+          "ko": "It would become glassmorphism if the frosted treatment spread to the content itself — translucent cards over a decorative wallpaper, blur as a skin rather than a control layer."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface in the spirit of Apple's Liquid Glass. Defining signals: glass is reserved for the floating control layer (toolbars, tab bars, buttons) above opaque content; the material lenses what's beneath it — blur plus refraction-like edge highlights, not flat frost; controls adapt their tint to stay legible over changing content; capsule shapes with concentric corner radii. Keep the underlying content unrestricted. On Apple platforms use the real APIs — SwiftUI .glassEffect(), glassEffect(.regular, in: .capsule), and standard bars get it automatically; on the web approximate with backdrop-filter: blur + saturate, layered inner highlights, and capsule radii. Do not drift into generic glassmorphism; the decisive difference is that content never becomes glass — only controls float as glass above it. Preserve legibility over every content region (the real material self-adapts — your approximation must too), visible focus states, and honor Reduce Transparency / Reduce Motion.",
-      "ko": "Apple （Liquid Glass）。：（、、）； —— ，；；。。 Apple API —— SwiftUI .glassEffect()、glassEffect(.regular, in: .capsule)，； Web backdrop-filter: blur + saturate、。； —— 。（ —— ），， Reduce Transparency / Reduce Motion。"
+      "ko": "Create the surface in the spirit of Apple's Liquid Glass. Defining signals: glass is reserved for the floating control layer (toolbars, tab bars, buttons) above opaque content; the material lenses what's beneath it — blur plus refraction-like edge highlights, not flat frost; controls adapt their tint to stay legible over changing content; capsule shapes with concentric corner radii. Keep the underlying content unrestricted. On Apple platforms use the real APIs — SwiftUI .glassEffect(), glassEffect(.regular, in: .capsule), and standard bars get it automatically; on the web approximate with backdrop-filter: blur + saturate, layered inner highlights, and capsule radii. Do not drift into generic glassmorphism; the decisive difference is that content never becomes glass — only controls float as glass above it. Preserve legibility over every content region (the real material self-adapts — your approximation must too), visible focus states, and honor Reduce Transparency / Reduce Motion."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Apple's material self-adjusts for legibility — a hand-rolled web imitation does not; test text over the worst content that can scroll beneath and add contrast treatment.\n\nHonor Reduce Transparency (near-opaque fallback) and Reduce Motion (disable morphing).\n\nNever place critical text directly on imitation glass without a measured 4.5:1 against live worst-case backgrounds.",
+      "ko": "Apple's material self-adjusts for legibility — a hand-rolled web imitation does not; test text over the worst content that can scroll beneath and add contrast treatment.\n\nHonor Reduce Transparency (near-opaque fallback) and Reduce Motion (disable morphing).\n\nNever place critical text directly on imitation glass without a measured 4.5:1 against live worst-case backgrounds."
+    },
     "origin": {
       "en": "Introduced by Apple at WWDC 2025 as the first unified design language across iPhone, iPad, Mac, Watch, and TV — Apple credits visionOS's glass optics as the inspiration, and ships it as a system material with SwiftUI/UIKit/AppKit APIs rather than a mere visual theme.",
-      "ko": "Apple WWDC 2025 ， iPhone、iPad、Mac、Watch TV —— Apple visionOS ， SwiftUI/UIKit/AppKit API ，。"
+      "ko": "Introduced by Apple at WWDC 2025 as the first unified design language across iPhone, iPad, Mac, Watch, and TV — Apple credits visionOS's glass optics as the inspiration, and ships it as a system material with SwiftUI/UIKit/AppKit APIs rather than a mere visual theme."
     },
     "meta": {}
   },
@@ -549,11 +613,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Web Brutalism treats the browser's own materials as the finished surface: default or system fonts, unstyled-looking links, visible document structure, plain borders and horizontal rules, and density over polish. Nothing pretends to be anything else — no gradients imitating glass, no shadows imitating depth. At its best it's honest and fast (Craigslist, Hacker News, early-web personal sites); at its worst the label gets stretched over anything unpolished.",
-      "ko": "：、、、，。——，。（Craigslist、Hacker News、）；，。"
+      "ko": "Web Brutalism treats the browser's own materials as the finished surface: default or system fonts, unstyled-looking links, visible document structure, plain borders and horizontal rules, and density over polish. Nothing pretends to be anything else — no gradients imitating glass, no shadows imitating depth. At its best it's honest and fast (Craigslist, Hacker News, early-web personal sites); at its worst the label gets stretched over anything unpolished."
     },
     "scope": {
       "en": "Scope: Distinct from architectural Brutalism (exposed concrete and mass — the analogy's source), and from Neobrutalism (a styled, saturated, thick-border graphic look that is anything but default). The nostalgic table-and-GIF personal-site look is Vernacular Web, a separate (future) entry.",
-      "ko": "：（——），（、、，「」）。 GIF （Vernacular Web），（）。"
+      "ko": "Scope: Distinct from architectural Brutalism (exposed concrete and mass — the analogy's source), and from Neobrutalism (a styled, saturated, thick-border graphic look that is anything but default). The nostalgic table-and-GIF personal-site look is Vernacular Web, a separate (future) entry."
     },
     "aliases": {
       "en": [
@@ -582,7 +646,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Times/system serif or monospace, default-blue underlined links, visited-purple — the stack looks unstyled even when it's deliberate.",
-          "ko": "Times/，，——，。"
+          "ko": "Times/system serif or monospace, default-blue underlined links, visited-purple — the stack looks unstyled even when it's deliberate."
         }
       },
       {
@@ -595,7 +659,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "The page reads as a document: headings, lists, tables, and <hr> dividers in source order — structure IS the layout.",
-          "ko": "：、、 <hr> ——。"
+          "ko": "The page reads as a document: headings, lists, tables, and <hr> dividers in source order — structure IS the layout."
         }
       },
       {
@@ -608,7 +672,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "No shadows, gradients, rounded corners, or imitation materials; at most 1px solid borders. Flat white (or single-color) ground.",
-          "ko": "、、； 1px 。（）。"
+          "ko": "No shadows, gradients, rounded corners, or imitation materials; at most 1px solid borders. Flat white (or single-color) ground."
         }
       },
       {
@@ -647,19 +711,35 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Saturated color blocks, thick designed borders, and hard offset shadows are a costume of rawness — that's Neobrutalism.",
-          "ko": "、「」——。"
+          "ko": "Saturated color blocks, thick designed borders, and hard offset shadows are a costume of rawness — that's Neobrutalism."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "neobrutalism",
+        "name": "Neobrutalism",
+        "because": {
+          "en": "This is Web Brutalism because the page is genuinely built from browser defaults — system type, blue links, bare structure, no decorative rendering at all.",
+          "ko": "This is Web Brutalism because the page is genuinely built from browser defaults — system type, blue links, bare structure, no decorative rendering at all."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Neobrutalism if the rawness were styled: saturated color blocks, thick uniform black borders, hard offset shadows, and chunky display type — a designed graphic language, not defaults.",
+          "ko": "It would become Neobrutalism if the rawness were styled: saturated color blocks, thick uniform black borders, hard offset shadows, and chunky display type — a designed graphic language, not defaults."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the page using strict Web Brutalism. Defining signals: browser-default materials (Times/system serif or monospace, default-blue underlined links); exposed document structure — headings, lists, tables, horizontal rules in source order; zero decorative rendering (no shadows, gradients, or rounded corners; at most 1px solid borders on a plain ground); utility-first density that loads instantly. Keep monospace vs serif and all-caps accents flexible. Use semantic HTML with minimal CSS — default UA styles are the design; resist resets that soften them. Do not drift into Neobrutalism; the decisive difference is that nothing here is styled to look raw — saturated blocks, thick designed borders, and offset shadows would make it a graphic costume. Preserve readable text sizes, focus visibility, and honest link affordances (underlines stay).",
-      "ko": "。：（Times/、）；——、、、；（、、； 1px ）；、。、。 HTML CSS——UA ； reset。；「」——、。、，（）。"
+      "ko": "Create the page using strict Web Brutalism. Defining signals: browser-default materials (Times/system serif or monospace, default-blue underlined links); exposed document structure — headings, lists, tables, horizontal rules in source order; zero decorative rendering (no shadows, gradients, or rounded corners; at most 1px solid borders on a plain ground); utility-first density that loads instantly. Keep monospace vs serif and all-caps accents flexible. Use semantic HTML with minimal CSS — default UA styles are the design; resist resets that soften them. Do not drift into Neobrutalism; the decisive difference is that nothing here is styled to look raw — saturated blocks, thick designed borders, and offset shadows would make it a graphic costume. Preserve readable text sizes, focus visibility, and honest link affordances (underlines stay)."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Brutalism is accidentally accessible — semantic structure, honest links, no contrast-eating decoration — as long as text sizes stay readable and density leaves tap targets big enough.\n\nDefault-blue on white passes contrast; keep the default focus outline (removing it would be the one truly anti-brutalist move).\n\nDense tables need proper headers/scope for screen readers — visual rawness doesn't excuse structural rawness.",
+      "ko": "Brutalism is accidentally accessible — semantic structure, honest links, no contrast-eating decoration — as long as text sizes stay readable and density leaves tap targets big enough.\n\nDefault-blue on white passes contrast; keep the default focus outline (removing it would be the one truly anti-brutalist move).\n\nDense tables need proper headers/scope for screen readers — visual rawness doesn't excuse structural rawness."
+    },
     "origin": {
       "en": "Named by analogy to architecture's béton brut ('raw concrete'); the web usage spread in the mid-2010s through Pascal Deville's brutalistwebsites.com and essays like Smashing Magazine's 'split personality of brutalist web development', as a reaction against the sameness of polished startup sites.",
-      "ko": "béton brut（「」）；2010 ， Pascal Deville brutalistwebsites.com Smashing Magazine 「split personality of brutalist web development」，。"
+      "ko": "Named by analogy to architecture's béton brut ('raw concrete'); the web usage spread in the mid-2010s through Pascal Deville's brutalistwebsites.com and essays like Smashing Magazine's 'split personality of brutalist web development', as a reaction against the sameness of polished startup sites."
     },
     "meta": {}
   },
@@ -671,11 +751,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Neobrutalism is a designed graphic language: flat, saturated color blocks outlined in thick black strokes, with hard offset shadows — solid black rectangles displaced a few pixels, no blur — and chunky display type. Elements read like stickers or risograph prints; pressing a button often physically 'pushes' it into its shadow. Despite the name it is the opposite of raw: every border and shadow is a deliberate illustration choice.",
-      "ko": "：，——、——。 Riso ；，「」。，「」：。"
+      "ko": "Neobrutalism is a designed graphic language: flat, saturated color blocks outlined in thick black strokes, with hard offset shadows — solid black rectangles displaced a few pixels, no blur — and chunky display type. Elements read like stickers or risograph prints; pressing a button often physically 'pushes' it into its shadow. Despite the name it is the opposite of raw: every border and shadow is a deliberate illustration choice."
     },
     "scope": {
       "en": "Scope: Takes brutalism's name but not its method — see Web Brutalism for the genuinely-raw sibling, and architectural Brutalism (exposed concrete) for where the word started. Memphis-style geometric confetti often decorates neobrutalist pages but is its own movement.",
-      "ko": "：，——「」，（）。，。"
+      "ko": "Scope: Takes brutalism's name but not its method — see Web Brutalism for the genuinely-raw sibling, and architectural Brutalism (exposed concrete) for where the word started. Memphis-style geometric confetti often decorates neobrutalist pages but is its own movement."
     },
     "aliases": {
       "en": [
@@ -704,7 +784,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Every element — cards, buttons, inputs, even images — wears a uniform 2–3px solid black border, like an inked comic panel.",
-          "ko": "——、、，—— 2–3px ，。"
+          "ko": "Every element — cards, buttons, inputs, even images — wears a uniform 2–3px solid black border, like an inked comic panel."
         }
       },
       {
@@ -717,7 +797,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Shadows are solid black shapes displaced down-right with ZERO blur — graphic depth, not simulated lighting. Pressing collapses the offset.",
-          "ko": "，——，。。"
+          "ko": "Shadows are solid black shapes displaced down-right with ZERO blur — graphic depth, not simulated lighting. Pressing collapses the offset."
         }
       },
       {
@@ -730,7 +810,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Unapologetic fills — yellow, hot pink, lime, cyan — laid flat next to each other on a cream or white ground; no gradients.",
-          "ko": "——、、、——；。"
+          "ko": "Unapologetic fills — yellow, hot pink, lime, cyan — laid flat next to each other on a cream or white ground; no gradients."
         }
       },
       {
@@ -743,7 +823,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Bold, blocky grotesks or display faces, often oversized; body text stays plain so the headings can shout.",
-          "ko": "、 grotesk ，；，。"
+          "ko": "Bold, blocky grotesks or display faces, often oversized; body text stays plain so the headings can shout."
         }
       },
       {
@@ -769,7 +849,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Hover/active states translate the element toward its shadow, as if pressing a physical sticker flat.",
-          "ko": "hover/active ，。"
+          "ko": "Hover/active states translate the element toward its shadow, as if pressing a physical sticker flat."
         }
       },
       {
@@ -795,19 +875,35 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Blurred shadows, gradients, or translucency dissolve the inked-print effect instantly — softness is the enemy.",
-          "ko": "、——「」。"
+          "ko": "Blurred shadows, gradients, or translucency dissolve the inked-print effect instantly — softness is the enemy."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "web-brutalism",
+        "name": "Web Brutalism",
+        "because": {
+          "en": "This is Neobrutalism because the rawness is a designed costume: uniform thick borders, hard offset shadows, and saturated blocks are deliberate graphic choices.",
+          "ko": "This is Neobrutalism because the rawness is a designed costume: uniform thick borders, hard offset shadows, and saturated blocks are deliberate graphic choices."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Web Brutalism if the styling were removed rather than exaggerated — browser-default type, plain blue links, bare structure, and no decorative rendering at all.",
+          "ko": "It would become Web Brutalism if the styling were removed rather than exaggerated — browser-default type, plain blue links, bare structure, and no decorative rendering at all."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using Neobrutalism. Defining signals: a uniform 2–3px solid black border on every element; hard offset shadows — solid black, displaced ~4px down-right, zero blur (box-shadow: 4px 4px 0 #000); flat saturated color blocks (e.g. yellow, hot pink, lime) on a cream or white ground with no gradients; bold chunky display type for headings. Keep the specific palette and any sticker doodads flexible. Active states translate the element into its shadow (transform: translate(4px,4px) with the shadow removed). Do not drift into Web Brutalism; the decisive difference is that this look is heavily styled — removing the borders, shadows, and color in favor of browser defaults would make it brutalist proper. Preserve 4.5:1 text contrast on every colored block (black text on saturated fills usually passes; white on yellow never does), visible focus indicators distinct from the decorative borders, and reduced-motion support for press animations.",
-      "ko": "。： 2–3px ；——、 4px、（box-shadow: 4px 4px 0 #000）；（、、），；。。active （transform: translate(4px,4px) ）。；——、、，。 4.5:1（；），， reduced-motion。"
+      "ko": "Create the surface using Neobrutalism. Defining signals: a uniform 2–3px solid black border on every element; hard offset shadows — solid black, displaced ~4px down-right, zero blur (box-shadow: 4px 4px 0 #000); flat saturated color blocks (e.g. yellow, hot pink, lime) on a cream or white ground with no gradients; bold chunky display type for headings. Keep the specific palette and any sticker doodads flexible. Active states translate the element into its shadow (transform: translate(4px,4px) with the shadow removed). Do not drift into Web Brutalism; the decisive difference is that this look is heavily styled — removing the borders, shadows, and color in favor of browser defaults would make it brutalist proper. Preserve 4.5:1 text contrast on every colored block (black text on saturated fills usually passes; white on yellow never does), visible focus indicators distinct from the decorative borders, and reduced-motion support for press animations."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Saturated fills need checked text contrast: black ink on yellow/lime passes easily; white ink on yellow, pink, or cyan usually fails 4.5:1.\n\nThe decorative black borders look like focus rings — give keyboard focus a distinct, higher-visibility indicator (e.g. an offset outline in a reserved color).\n\nNN/g's caution: the loudness taxes readability at length — keep body text plain and reserve the shout for structure and actions.",
+      "ko": "Saturated fills need checked text contrast: black ink on yellow/lime passes easily; white ink on yellow, pink, or cyan usually fails 4.5:1.\n\nThe decorative black borders look like focus rings — give keyboard focus a distinct, higher-visibility indicator (e.g. an offset outline in a reserved color).\n\nNN/g's caution: the loudness taxes readability at length — keep body text plain and reserve the shout for structure and actions."
+    },
     "origin": {
       "en": "Emerged around 2020–2022 in product marketing and portfolio sites (Gumroad's 2021 redesign is the era's poster child), catalogued by NN/g in 2023 as a reaction to soft, same-looking SaaS design — flat design turned up to eleven with comic-book construction.",
-      "ko": "2020–2022 （Gumroad 2021 ），2023 NN/g ——、 SaaS ：，。"
+      "ko": "Emerged around 2020–2022 in product marketing and portfolio sites (Gumroad's 2021 redesign is the era's poster child), catalogued by NN/g in 2023 as a reaction to soft, same-looking SaaS design — flat design turned up to eleven with comic-book construction."
     },
     "meta": {}
   },
@@ -819,11 +915,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "The Y2K digital aesthetic is millennium-turn techno-optimism rendered literally: liquid chrome and brushed metal, glossy gel and plastic surfaces, iridescent blue-silver palettes, orbs and blobs, wide techno type, and rendered 3D everything. It's the look of a future imagined through new consumer tech — translucent iMacs, early CGI, rave flyers, and 'cyber' branding — shiny, synthetic, and unembarrassed.",
-      "ko": "Y2K ：、、、、， 3D 。 —— iMac、 CGI、 “cyber” —— 、，。"
+      "ko": "The Y2K digital aesthetic is millennium-turn techno-optimism rendered literally: liquid chrome and brushed metal, glossy gel and plastic surfaces, iridescent blue-silver palettes, orbs and blobs, wide techno type, and rendered 3D everything. It's the look of a future imagined through new consumer tech — translucent iMacs, early CGI, rave flyers, and 'cyber' branding — shiny, synthetic, and unembarrassed."
     },
     "scope": {
       "en": "Scope: Covers the digital/graphic look, not Y2K fashion. The darker neon-grid retro strain is Synthwave/Retrofuturism (future entries); the glossy NATURE-infused successor is Frutiger Aero, its own entry and this one's closest neighbor.",
-      "ko": "：/， Y2K 。 Synthwave/Retrofuturism（）； Frutiger Aero，，。"
+      "ko": "Scope: Covers the digital/graphic look, not Y2K fashion. The darker neon-grid retro strain is Synthwave/Retrofuturism (future entries); the glossy NATURE-infused successor is Frutiger Aero, its own entry and this one's closest neighbor."
     },
     "aliases": {
       "en": [
@@ -852,7 +948,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Mirror-finish chrome, brushed steel, and silver gradients — type and frames rendered as if machined and polished.",
-          "ko": "、 —— 。"
+          "ko": "Mirror-finish chrome, brushed steel, and silver gradients — type and frames rendered as if machined and polished."
         }
       },
       {
@@ -865,7 +961,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Translucent candy-like buttons and blobs with strong specular highlights — the Aqua-era 'you want to lick it' gloss.",
-          "ko": "， —— Aqua “” 。"
+          "ko": "Translucent candy-like buttons and blobs with strong specular highlights — the Aqua-era 'you want to lick it' gloss."
         }
       },
       {
@@ -878,7 +974,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Electric blue, silver, white, and holographic cyan-magenta shifts — cool synthetic color, rarely earthy.",
-          "ko": "、、，- —— ，。"
+          "ko": "Electric blue, silver, white, and holographic cyan-magenta shifts — cool synthetic color, rarely earthy."
         }
       },
       {
@@ -891,7 +987,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Extended, rounded or squared techno faces (Eurostile-flavored), often italicized, outlined, or chromed.",
-          "ko": "、（Eurostile ），、。"
+          "ko": "Extended, rounded or squared techno faces (Eurostile-flavored), often italicized, outlined, or chromed."
         }
       },
       {
@@ -917,7 +1013,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Tiny pixel fonts, scanlines, and 'cyber' interface chrome appear in some strains and not others.",
-          "ko": "、 “cyber” ，、。"
+          "ko": "Tiny pixel fonts, scanlines, and 'cyber' interface chrome appear in some strains and not others."
         }
       },
       {
@@ -930,19 +1026,35 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Grass, water, fish, and sky shift the mood from synthetic futurism to eco-tech — that's Frutiger Aero territory.",
-          "ko": "、、 —— Frutiger Aero 。"
+          "ko": "Grass, water, fish, and sky shift the mood from synthetic futurism to eco-tech — that's Frutiger Aero territory."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "frutiger-aero",
+        "name": "Frutiger Aero",
+        "because": {
+          "en": "This is Y2K because the optimism is synthetic — chrome, gel plastic, iridescent blue-silver, techno type; the future is machines and cyberspace.",
+          "ko": "This is Y2K because the optimism is synthetic — chrome, gel plastic, iridescent blue-silver, techno type; the future is machines and cyberspace."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Frutiger Aero if the gloss stayed but nature flooded in — blue skies, water, grass, and bubbles fused with clean humanist type into eco-tech Web 2.0 optimism.",
+          "ko": "It would become Frutiger Aero if the gloss stayed but nature flooded in — blue skies, water, grass, and bubbles fused with clean humanist type into eco-tech Web 2.0 optimism."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the piece using the Y2K digital aesthetic. Defining signals: liquid-chrome/metallic surfaces (silver gradient fills with mirror highlights); glossy translucent gel buttons and blobs with strong specular top highlights; an iridescent electric-blue/silver/white palette with occasional holographic cyan-magenta shifts; wide techno display type (Eurostile-flavored, often italic or chromed). Supporting garnish to use sparingly: rendered orbs, globes, wireframe grids, lens flares, tiny pixel-font labels. Keep the exact palette temperature and garnish density flexible. Use layered CSS gradients for chrome (alternating light/dark stops), radial-gradient highlights for gel, and background-clip: text for chromed type. Do not drift into Frutiger Aero; the decisive difference is that Y2K's optimism is synthetic — no grass, water, sky, or nature photography. Preserve readable text (chrome type needs a dark backing or outline to hit 4.5:1), visible focus states, and reduced-motion support for any shine sweeps.",
-      "ko": "Y2K 。：/（）；，；//，-；（Eurostile ，）。：、、、、。。 CSS （）， radial-gradient， background-clip: text。 Frutiger Aero； Y2K —— 、、。（ 4.5:1）、， reduced-motion。"
+      "ko": "Create the piece using the Y2K digital aesthetic. Defining signals: liquid-chrome/metallic surfaces (silver gradient fills with mirror highlights); glossy translucent gel buttons and blobs with strong specular top highlights; an iridescent electric-blue/silver/white palette with occasional holographic cyan-magenta shifts; wide techno display type (Eurostile-flavored, often italic or chromed). Supporting garnish to use sparingly: rendered orbs, globes, wireframe grids, lens flares, tiny pixel-font labels. Keep the exact palette temperature and garnish density flexible. Use layered CSS gradients for chrome (alternating light/dark stops), radial-gradient highlights for gel, and background-clip: text for chromed type. Do not drift into Frutiger Aero; the decisive difference is that Y2K's optimism is synthetic — no grass, water, sky, or nature photography. Preserve readable text (chrome type needs a dark backing or outline to hit 4.5:1), visible focus states, and reduced-motion support for any shine sweeps."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Chrome-gradient text is decorative at heart: back it with a solid dark plate or duplicate it as real high-contrast text — the gradient's mid-greys fail 4.5:1 on their own.\n\nSpecular gloss steals contrast from labels on gel buttons; keep label ink dark/white against the button's DARKEST region.\n\nLens flares and shine sweeps are motion garnish — disable under prefers-reduced-motion.",
+      "ko": "Chrome-gradient text is decorative at heart: back it with a solid dark plate or duplicate it as real high-contrast text — the gradient's mid-greys fail 4.5:1 on their own.\n\nSpecular gloss steals contrast from labels on gel buttons; keep label ink dark/white against the button's DARKEST region.\n\nLens flares and shine sweeps are motion garnish — disable under prefers-reduced-motion."
+    },
     "origin": {
       "en": "Roughly 1997–2004: Apple's translucent iMac G3 and Aqua, PlayStation-era CGI, Designers Republic-style rave graphics, and dot-com 'cyber' branding. Rediscovered and named by 2010s–2020s internet archaeology (CARI et al.) and the fashion/graphics revival that followed.",
-      "ko": "1997–2004 ： iMac G3 Aqua、PlayStation CGI、Designers Republic ， dot-com “cyber” 。2010 2020 （CARI ），。"
+      "ko": "Roughly 1997–2004: Apple's translucent iMac G3 and Aqua, PlayStation-era CGI, Designers Republic-style rave graphics, and dot-com 'cyber' branding. Rediscovered and named by 2010s–2020s internet archaeology (CARI et al.) and the fashion/graphics revival that followed."
     },
     "meta": {}
   },
@@ -954,11 +1066,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Frutiger Aero is the glossy, nature-infused optimism of roughly 2004–2013: bright blue skies and water, green grass, bubbles, fish, and light rays fused with translucent glass panels, aqua buttons, and clean humanist type. Technology presents itself as fresh, ecological, and frictionless — the future as a sunny day. It's the era of Windows Vista/7 wallpapers, glossy media players, and Web 2.0 product sites.",
-      "ko": "Frutiger Aero 2004–2013 、：、、、，、aqua 、。、、 —— 。 Windows Vista/7 、 Web 2.0 。"
+      "ko": "Frutiger Aero is the glossy, nature-infused optimism of roughly 2004–2013: bright blue skies and water, green grass, bubbles, fish, and light rays fused with translucent glass panels, aqua buttons, and clean humanist type. Technology presents itself as fresh, ecological, and frictionless — the future as a sunny day. It's the era of Windows Vista/7 wallpapers, glossy media players, and Web 2.0 product sites."
     },
     "scope": {
       "en": "Scope: Windows Aero is Microsoft's vendor design language of the same era — an ingredient and namesake, not an exact alias. The synthetic chrome-and-cyber look that PRECEDED it is Y2K, this entry's closest neighbor.",
-      "ko": "：Windows Aero —— ，。 Y2K，。"
+      "ko": "Scope: Windows Aero is Microsoft's vendor design language of the same era — an ingredient and namesake, not an exact alias. The synthetic chrome-and-cyber look that PRECEDED it is Y2K, this entry's closest neighbor."
     },
     "aliases": {
       "en": [
@@ -987,7 +1099,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Skies, water, grass, leaves, fish, and bubbles as the ambient world the UI floats in — ecology as a tech promise.",
-          "ko": "、、、、， UI —— 。"
+          "ko": "Skies, water, grass, leaves, fish, and bubbles as the ambient world the UI floats in — ecology as a tech promise."
         }
       },
       {
@@ -1000,7 +1112,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Translucent panels and buttons with strong curved specular highlights — wet, light-filled gloss rather than matte frost.",
-          "ko": "， —— 、，。"
+          "ko": "Translucent panels and buttons with strong curved specular highlights — wet, light-filled gloss rather than matte frost."
         }
       },
       {
@@ -1013,7 +1125,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Luminous cyan-blues and fresh greens with white light — bright, clean, and warm-lit, never murky.",
-          "ko": "， —— 、、，。"
+          "ko": "Luminous cyan-blues and fresh greens with white light — bright, clean, and warm-lit, never murky."
         }
       },
       {
@@ -1026,7 +1138,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Friendly rounded-humanist sans-serifs (the Frutiger/Segoe flavor) in white or sky-dark blue — clarity, not techno styling.",
-          "ko": "（Frutiger/Segoe ）， —— ，。"
+          "ko": "Friendly rounded-humanist sans-serifs (the Frutiger/Segoe flavor) in white or sky-dark blue — clarity, not techno styling."
         }
       },
       {
@@ -1052,7 +1164,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Underwater scenes, meadows, droplets on leaves, goldfish, wind turbines — any fresh, sunlit nature reads as the style.",
-          "ko": "、、、、 —— 、。"
+          "ko": "Underwater scenes, meadows, droplets on leaves, goldfish, wind turbines — any fresh, sunlit nature reads as the style."
         }
       },
       {
@@ -1065,19 +1177,35 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Mirror chrome, techno type, and wireframe grids pull the mood back to synthetic Y2K futurism.",
-          "ko": "、 Y2K 。"
+          "ko": "Mirror chrome, techno type, and wireframe grids pull the mood back to synthetic Y2K futurism."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "y2k",
+        "name": "Y2K Digital Aesthetic",
+        "because": {
+          "en": "This is Frutiger Aero because the gloss is in service of nature-tech optimism — skies, water, grass, and bubbles behind clean humanist type.",
+          "ko": "This is Frutiger Aero because the gloss is in service of nature-tech optimism — skies, water, grass, and bubbles behind clean humanist type."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Y2K if the nature drained out and the surfaces turned synthetic — chrome, gel plastic, iridescent blue-silver, and wide techno type.",
+          "ko": "It would become Y2K if the nature drained out and the surfaces turned synthetic — chrome, gel plastic, iridescent blue-silver, and wide techno type."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the piece using Frutiger Aero. Defining signals: nature imagery fused with technology (blue sky, water, grass, bubbles, light rays) as the ambient backdrop; glossy translucent 'aqua' surfaces with curved specular highlights; a luminous sky-blue and grass-green palette full of white light; clean humanist sans-serif type (Frutiger/Segoe flavor). Supporting: bokeh circles, sun rays, diagonal sheen sweeps. Keep the specific slice of nature (underwater, meadow, droplets) flexible. Use layered radial/linear gradients for the sky and gloss caps, rgba white overlays for sheen, and generous rounded panels. Do not drift into Y2K; the decisive difference is nature — if chrome, techno type, or cyber grids replace the skies and grass, you've crossed over. Preserve 4.5:1 text contrast over photographic backgrounds (back text with a panel), visible focus states, and reduced-motion support for sheen and bubble effects.",
-      "ko": "Frutiger Aero 。：（、、、、）； “aqua” ，；；（Frutiger/Segoe ）。：、、。（、、）。 radial/linear ， rgba ，。 Y2K； —— 、，。 4.5:1 （）、， reduced-motion。"
+      "ko": "Create the piece using Frutiger Aero. Defining signals: nature imagery fused with technology (blue sky, water, grass, bubbles, light rays) as the ambient backdrop; glossy translucent 'aqua' surfaces with curved specular highlights; a luminous sky-blue and grass-green palette full of white light; clean humanist sans-serif type (Frutiger/Segoe flavor). Supporting: bokeh circles, sun rays, diagonal sheen sweeps. Keep the specific slice of nature (underwater, meadow, droplets) flexible. Use layered radial/linear gradients for the sky and gloss caps, rgba white overlays for sheen, and generous rounded panels. Do not drift into Y2K; the decisive difference is nature — if chrome, techno type, or cyber grids replace the skies and grass, you've crossed over. Preserve 4.5:1 text contrast over photographic backgrounds (back text with a panel), visible focus states, and reduced-motion support for sheen and bubble effects."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "White type straight on sky/grass photography fails contrast in bright regions — put text on a translucent panel with a measured 4.5:1.\n\nGloss highlights across a control's top half can wash out its label; keep the label's zone below the sheen or darken the plate behind it.\n\nBubbles, rays, and sheen sweeps are ambience — never meaning — and stop under prefers-reduced-motion.",
+      "ko": "White type straight on sky/grass photography fails contrast in bright regions — put text on a translucent panel with a measured 4.5:1.\n\nGloss highlights across a control's top half can wash out its label; keep the label's zone below the sheen or darken the plate behind it.\n\nBubbles, rays, and sheen sweeps are ambience — never meaning — and stop under prefers-reduced-motion."
+    },
     "origin": {
       "en": "Roughly 2004–2013 across consumer tech (Windows Vista/7 era, glossy device UIs, Wii-era menus, Web 2.0 branding). Named retroactively around 2017 by CARI's cataloguers, after Adrian Frutiger's humanist typefaces plus Windows Aero; the nostalgia wave made the label mainstream in the 2020s.",
-      "ko": "2004–2013 （Windows Vista/7 、 UI、Wii 、Web 2.0 ）。2017 CARI ， Adrian Frutiger Windows Aero；2020 。"
+      "ko": "Roughly 2004–2013 across consumer tech (Windows Vista/7 era, glossy device UIs, Wii-era menus, Web 2.0 branding). Named retroactively around 2017 by CARI's cataloguers, after Adrian Frutiger's humanist typefaces plus Windows Aero; the nostalgia wave made the label mainstream in the 2020s."
     },
     "meta": {}
   },
@@ -1089,11 +1217,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Flat Design renders the interface as pure 2D: surfaces are solid color fills, icons are simple geometric glyphs, and nothing pretends to be lit, embossed, or made of a material. Hierarchy comes from color, size, and typography instead of shadows and bevels. It became the dominant look around 2012–2013 (Windows 8's Metro, then iOS 7) as the direct rejection of skeuomorphism's gloss and texture.",
-      "ko": "2D：，，、。、，。 2012–2013 （Windows 8 Metro， iOS 7），。"
+      "ko": "Flat Design renders the interface as pure 2D: surfaces are solid color fills, icons are simple geometric glyphs, and nothing pretends to be lit, embossed, or made of a material. Hierarchy comes from color, size, and typography instead of shadows and bevels. It became the dominant look around 2012–2013 (Windows 8's Metro, then iOS 7) as the direct rejection of skeuomorphism's gloss and texture."
     },
     "scope": {
       "en": "Scope: This entry covers strict flat rendering. 'Flat 2.0' — flat surfaces with a few functional shadows reintroduced (Material Design's elevation is the systematic version) — is the common modern compromise, not a separate entry.",
-      "ko": "：。「 2.0」——（Material Design elevation ）——，。"
+      "ko": "Scope: This entry covers strict flat rendering. 'Flat 2.0' — flat surfaces with a few functional shadows reintroduced (Material Design's elevation is the systematic version) — is the common modern compromise, not a separate entry."
     },
     "aliases": {
       "en": [
@@ -1124,7 +1252,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Every surface is one flat color — no gradients, no gloss, no texture, no material of any kind.",
-          "ko": "——、、，。"
+          "ko": "Every surface is one flat color — no gradients, no gloss, no texture, no material of any kind."
         }
       },
       {
@@ -1189,7 +1317,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Flat governs RENDERING only — a flat UI can be a sparse landing page or a dense dashboard.",
-          "ko": "—— UI ，。"
+          "ko": "Flat governs RENDERING only — a flat UI can be a sparse landing page or a dense dashboard."
         }
       },
       {
@@ -1206,15 +1334,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "skeuomorphism",
+        "name": "Skeuomorphism",
+        "because": {
+          "en": "This is Flat Design because surfaces are unshaded solid fills and icons are abstract glyphs — nothing imitates a physical object or material.",
+          "ko": "This is Flat Design because surfaces are unshaded solid fills and icons are abstract glyphs — nothing imitates a physical object or material."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become skeuomorphism if the fills grew gloss, texture, and lighting until controls read as physical things you could touch.",
+          "ko": "It would become skeuomorphism if the fills grew gloss, texture, and lighting until controls read as physical things you could touch."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using flat design. Defining signals: every surface a solid single-color fill — zero gradients, gloss, or texture; no simulated depth — no drop shadows, bevels, or specular highlights, edges drawn by color change alone; icons as simple one-color geometric glyphs; hierarchy carried by color blocks, size, and clean sans-serif type. Keep the palette and density flexible — flat can be sparse or dense. In CSS this means background-color instead of background-image gradients, border: none or 1px solid, box-shadow: none. Do not drift into skeuomorphism: the decisive difference is that nothing imitates a lit physical material. Preserve 4.5:1 text contrast, and make interactive elements identifiable without shadows — clear color affordance, visible hover/pressed states, and visible focus rings.",
-      "ko": "。：——、、；——、，；；、。——。 CSS background-color background-image ，border: none 1px solid，box-shadow: none。：。 4.5:1 ，——（affordance）、 hover/pressed 。"
+      "ko": "Create the surface using flat design. Defining signals: every surface a solid single-color fill — zero gradients, gloss, or texture; no simulated depth — no drop shadows, bevels, or specular highlights, edges drawn by color change alone; icons as simple one-color geometric glyphs; hierarchy carried by color blocks, size, and clean sans-serif type. Keep the palette and density flexible — flat can be sparse or dense. In CSS this means background-color instead of background-image gradients, border: none or 1px solid, box-shadow: none. Do not drift into skeuomorphism: the decisive difference is that nothing imitates a lit physical material. Preserve 4.5:1 text contrast, and make interactive elements identifiable without shadows — clear color affordance, visible hover/pressed states, and visible focus rings."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "NN/g measured the cost: flat UIs with weak signifiers make users uncertain what is clickable — give buttons and links unmistakable color affordance, not just proximity.\n\nWith shadows gone, color is doing double duty — check 4.5:1 contrast for text AND 3:1 for the boundaries of controls against their background.\n\nNever remove focus outlines to keep things 'clean'; a flat UI without focus rings is unusable by keyboard.",
+      "ko": "NN/g measured the cost: flat UIs with weak signifiers make users uncertain what is clickable — give buttons and links unmistakable color affordance, not just proximity.\n\nWith shadows gone, color is doing double duty — check 4.5:1 contrast for text AND 3:1 for the boundaries of controls against their background.\n\nNever remove focus outlines to keep things 'clean'; a flat UI without focus rings is unusable by keyboard."
+    },
     "origin": {
       "en": "Rose to prominence around 2012: Microsoft's Metro language (Windows Phone 7 in 2010, Windows 8 in 2012) proved it at OS scale, and Apple's iOS 7 redesign in 2013 ended the skeuomorphic era for good. NN/g traces the deeper roots to Swiss/International typographic style.",
-      "ko": "2012 ： Metro （2010 Windows Phone 7，2012 Windows 8）， 2013 iOS 7 。NN/g / 。"
+      "ko": "Rose to prominence around 2012: Microsoft's Metro language (Windows Phone 7 in 2010, Windows 8 in 2012) proved it at OS scale, and Apple's iOS 7 redesign in 2013 ended the skeuomorphic era for good. NN/g traces the deeper roots to Swiss/International typographic style."
     },
     "meta": {}
   },
@@ -1226,11 +1370,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Minimalism governs what is ON the screen, not how it's drawn: strip the interface to the fewest elements that still do the job, then let generous negative space and one or two dramatic typographic moments carry the composition. NN/g's study of 112 minimalist sites found the recurring traits — flat-ish surfaces, limited or monochrome palettes, restricted element counts, negative space, and large type as the hero.",
-      "ko": "「」，「」：，。NN/g 112 ，——、、、，。"
+      "ko": "Minimalism governs what is ON the screen, not how it's drawn: strip the interface to the fewest elements that still do the job, then let generous negative space and one or two dramatic typographic moments carry the composition. NN/g's study of 112 minimalist sites found the recurring traits — flat-ish surfaces, limited or monochrome palettes, restricted element counts, negative space, and large type as the hero."
     },
     "scope": {
       "en": "Scope: Minimalism and Flat Design are different axes: flat governs rendering, minimalism governs content, features, and layout. A UI can be flat but crowded, or minimalist while still using depth and shadow.",
-      "ko": "：：，、。 UI ，。"
+      "ko": "Scope: Minimalism and Flat Design are different axes: flat governs rendering, minimalism governs content, features, and layout. A UI can be flat but crowded, or minimalist while still using depth and shadow."
     },
     "aliases": {
       "en": [
@@ -1274,7 +1418,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Few things on screen, and every one earns its place: one nav, one message, one action — decoration is deleted, not restyled.",
-          "ko": "，：、、——，。"
+          "ko": "Few things on screen, and every one earns its place: one nav, one message, one action — decoration is deleted, not restyled."
         }
       },
       {
@@ -1313,7 +1457,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Most minimalist sites render flat, but shadow and depth are allowed — minimalism constrains WHAT is shown, not HOW it's lit.",
-          "ko": "，——「」，「」。"
+          "ko": "Most minimalist sites render flat, but shadow and depth are allowed — minimalism constrains WHAT is shown, not HOW it's lit."
         }
       },
       {
@@ -1330,15 +1474,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "flat-design",
+        "name": "Flat Design",
+        "because": {
+          "en": "This is minimalism because the content itself is reduced — few elements, vast negative space, one dramatic headline — whatever the rendering.",
+          "ko": "This is minimalism because the content itself is reduced — few elements, vast negative space, one dramatic headline — whatever the rendering."
+        },
+        "wouldBecomeIf": {
+          "en": "It would be merely Flat Design if the screen filled up with content again and only the unshaded 2D rendering remained.",
+          "ko": "It would be merely Flat Design if the screen filled up with content again and only the unshaded 2D rendering remained."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using minimalism. Defining signals: the fewest elements that still do the job — one navigation, one message, one primary action, decoration deleted; generous negative space around everything (think 40 to 60 percent of the viewport empty); a limited palette — near-monochrome with at most one accent color; one dramatic typographic moment, an oversized headline that is the loudest thing on screen. Rendering is flexible — flat fills or subtle shadows both fit. Do not confuse this with flat design: minimalism constrains content and layout, not rendering — if you add content back until the page is busy, it stops being minimalist no matter how flat it is. Preserve discoverability: core actions must stay visible, never hidden behind mystery-meat icons to keep the page empty, and text keeps 4.5:1 contrast even in grey-on-white palettes.",
-      "ko": "。：——、、，；（ 40% 60% ）；——，；，。——。：，——，。：，「」；， 4.5:1 。"
+      "ko": "Create the surface using minimalism. Defining signals: the fewest elements that still do the job — one navigation, one message, one primary action, decoration deleted; generous negative space around everything (think 40 to 60 percent of the viewport empty); a limited palette — near-monochrome with at most one accent color; one dramatic typographic moment, an oversized headline that is the loudest thing on screen. Rendering is flexible — flat fills or subtle shadows both fit. Do not confuse this with flat design: minimalism constrains content and layout, not rendering — if you add content back until the page is busy, it stops being minimalist no matter how flat it is. Preserve discoverability: core actions must stay visible, never hidden behind mystery-meat icons to keep the page empty, and text keeps 4.5:1 contrast even in grey-on-white palettes."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Light-grey-on-white is the classic minimalist contrast failure — measure text at 4.5:1, muted palettes included.\n\nDon't purge affordances along with the decoration: hiding navigation or labels to preserve emptiness trades clutter for mystery.\n\nHuge display type needs responsive clamping — a 96px headline that fits a desktop can wrap into an unreadable wall on a phone.",
+      "ko": "Light-grey-on-white is the classic minimalist contrast failure — measure text at 4.5:1, muted palettes included.\n\nDon't purge affordances along with the decoration: hiding navigation or labels to preserve emptiness trades clutter for mystery.\n\nHuge display type needs responsive clamping — a 96px headline that fits a desktop can wrap into an unreadable wall on a phone."
+    },
     "origin": {
       "en": "The reduction ethos of mid-century movements (Bauhaus, Swiss typography, 'less is more') applied to interfaces; on the web it became the dominant 'serious brand' register through the 2010s, with Apple's product pages as the most-copied specimen. NN/g's definitional study is from 2015.",
-      "ko": "（、、「」）； Web ， 2010 「」，。NN/g 2015 。"
+      "ko": "The reduction ethos of mid-century movements (Bauhaus, Swiss typography, 'less is more') applied to interfaces; on the web it became the dominant 'serious brand' register through the 2010s, with Apple's product pages as the most-copied specimen. NN/g's definitional study is from 2015."
     },
     "meta": {}
   },
@@ -1350,11 +1510,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Claymorphism makes UI elements look molded from soft modeling clay: fat rounded corners, a light pastel fill, and the signature construction — two inner shadows (a bright one catching the top edge, a darker one shading the bottom) plus one soft outer drop shadow that floats the object above the page. Each element is independently colored and clearly separate from the background, usually paired with chunky 3D 'clay' illustrations.",
-      "ko": "UI ：、，——（，），。、， 3D「」。"
+      "ko": "Claymorphism makes UI elements look molded from soft modeling clay: fat rounded corners, a light pastel fill, and the signature construction — two inner shadows (a bright one catching the top edge, a darker one shading the bottom) plus one soft outer drop shadow that floats the object above the page. Each element is independently colored and clearly separate from the background, usually paired with chunky 3D 'clay' illustrations."
     },
     "scope": {
       "en": "Scope: This entry covers the UI treatment. The matching 3D character-illustration style (inflated Blender people with smooth plastic skin) travels with it but is an illustration fashion, not an interface style.",
-      "ko": "： UI 。 3D （ Blender ），，。"
+      "ko": "Scope: This entry covers the UI treatment. The matching 3D character-illustration style (inflated Blender people with smooth plastic skin) travels with it but is an illustration fashion, not an interface style."
     },
     "aliases": {
       "en": [
@@ -1385,7 +1545,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "The signature recipe: a light inner shadow on top, a darker inner shadow at the bottom, and a soft drop shadow below — the surface reads as inflated, not carved.",
-          "ko": "：，，——，。"
+          "ko": "The signature recipe: a light inner shadow on top, a darker inner shadow at the bottom, and a soft drop shadow below — the surface reads as inflated, not carved."
         }
       },
       {
@@ -1398,7 +1558,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Corners are dramatically round — radii around a third of the element's height — so every shape reads as a soft blob, never a card with rounded corners.",
-          "ko": "————，「」。"
+          "ko": "Corners are dramatically round — radii around a third of the element's height — so every shape reads as a soft blob, never a card with rounded corners."
         }
       },
       {
@@ -1424,7 +1584,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Milky lavenders, mints, corals, and creams — the shadows need light fills to read as volume, and the toy-like mood needs the softness.",
-          "ko": "、、——，。"
+          "ko": "Milky lavenders, mints, corals, and creams — the shadows need light fills to read as volume, and the toy-like mood needs the softness."
         }
       },
       {
@@ -1454,15 +1614,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "neumorphism",
+        "name": "Neumorphism",
+        "because": {
+          "en": "This is claymorphism because each puffy element is independently colored and FLOATS above the background on a real drop shadow.",
+          "ko": "This is claymorphism because each puffy element is independently colored and FLOATS above the background on a real drop shadow."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become neumorphism if every element took the background's exact color and sat flush in the surface, with only dual light/dark shadows implying shape — molded from one continuous material instead of placed on it.",
+          "ko": "It would become neumorphism if every element took the background's exact color and sat flush in the surface, with only dual light/dark shadows implying shape — molded from one continuous material instead of placed on it."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using claymorphism. Defining signals: the clay shadow recipe on cards and buttons — two inner shadows (light at top, darker at bottom) plus one soft outer drop shadow, e.g. box-shadow: 0 24px 40px rgba(x,.18), inset 0 -8px 16px rgba(x,.15), inset 0 8px 16px rgba(255,255,255,.55); oversized corner radii (border-radius roughly 26px on a 56px control); each element independently colored in light pastels, clearly floating above a soft tinted background; chunky friendly type. Keep the exact hues and illustration flexible. Do not drift into neumorphism: the decisive difference is that clay objects have their own color and a visible drop shadow — never the background's color with shadows alone implying shape. Preserve 4.5:1 text contrast on pastel fills, pressed/hover states that deepen the inner shadows rather than removing them, and visible focus rings.",
-      "ko": "。：——（）， box-shadow: 0 24px 40px rgba(x,.18), inset 0 -8px 16px rgba(x,.15), inset 0 8px 16px rgba(255,255,255,.55)；（56px 26px border-radius）；，；。。：——。 4.5:1 ，pressed/hover ，。"
+      "ko": "Create the surface using claymorphism. Defining signals: the clay shadow recipe on cards and buttons — two inner shadows (light at top, darker at bottom) plus one soft outer drop shadow, e.g. box-shadow: 0 24px 40px rgba(x,.18), inset 0 -8px 16px rgba(x,.15), inset 0 8px 16px rgba(255,255,255,.55); oversized corner radii (border-radius roughly 26px on a 56px control); each element independently colored in light pastels, clearly floating above a soft tinted background; chunky friendly type. Keep the exact hues and illustration flexible. Do not drift into neumorphism: the decisive difference is that clay objects have their own color and a visible drop shadow — never the background's color with shadows alone implying shape. Preserve 4.5:1 text contrast on pastel fills, pressed/hover states that deepen the inner shadows rather than removing them, and visible focus rings."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Pastel-on-pastel is the trap: white or cream text on mint/lavender fills usually fails 4.5:1 — darken the text, not the toy palette.\n\nThe soft shadows are decorative, not state — pair pressed/selected with a color or content change, not shadow depth alone.\n\nTriple-layer shadows on many elements can shimmer on scroll in low-power mode; keep the recipe to key surfaces.",
+      "ko": "Pastel-on-pastel is the trap: white or cream text on mint/lavender fills usually fails 4.5:1 — darken the text, not the toy palette.\n\nThe soft shadows are decorative, not state — pair pressed/selected with a color or content change, not shadow depth alone.\n\nTriple-layer shadows on many elements can shimmer on scroll in low-power mode; keep the recipe to key surfaces."
+    },
     "origin": {
       "en": "Named in 2021 by Michal Malewicz as the friendlier successor to neumorphism, riding the wave of soft-3D illustration in fintech and edtech marketing; the recipe (two inner shadows + one outer, oversized radii) comes from his original article.",
-      "ko": "2021 Michal Malewicz ，， 3D ；（、）。"
+      "ko": "Named in 2021 by Michal Malewicz as the friendlier successor to neumorphism, riding the wave of soft-3D illustration in fintech and edtech marketing; the recipe (two inner shadows + one outer, oversized radii) comes from his original article."
     },
     "meta": {}
   },
@@ -1474,11 +1650,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "The Vernacular Web is the folk architecture of the early web: personal homepages built by amateurs from collected materials — tiled star backgrounds, animated sparkle and flame GIFs, rainbow divider rules, 'welcome to my home page' banners, visitor counters, guestbook links, under-construction signs, and webring badges. It is decorative, personal, and sincere: every ornament was chosen because its owner loved it, not because a system prescribed it.",
-      "ko": "：——、 GIF、、「」、、、（webring）。、、：，。"
+      "ko": "The Vernacular Web is the folk architecture of the early web: personal homepages built by amateurs from collected materials — tiled star backgrounds, animated sparkle and flame GIFs, rainbow divider rules, 'welcome to my home page' banners, visitor counters, guestbook links, under-construction signs, and webring badges. It is decorative, personal, and sincere: every ornament was chosen because its owner loved it, not because a system prescribed it."
     },
     "scope": {
       "en": "Scope: This entry covers the genuine 90s amateur look and its faithful revivals. Ironic, deliberately-broken 'ugly on purpose' design is a different move (Internet Ugly, in research), and raw exposed structure is Web Brutalism.",
-      "ko": "： 90 。、「」（Internet Ugly，），。"
+      "ko": "Scope: This entry covers the genuine 90s amateur look and its faithful revivals. Ironic, deliberately-broken 'ugly on purpose' design is a different move (Internet Ugly, in research), and raw exposed structure is Web Brutalism."
     },
     "aliases": {
       "en": [
@@ -1509,7 +1685,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "A small image repeated edge to edge — starry night sky, clouds, marble — behind everything; the page has wallpaper, not a background color.",
-          "ko": "——、、——；，。"
+          "ko": "A small image repeated edge to edge — starry night sky, clouds, marble — behind everything; the page has wallpaper, not a background color."
         }
       },
       {
@@ -1522,7 +1698,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Twinkling sparkles, spinning @ signs, flaming rules, the striped UNDER CONSTRUCTION sign — small looping animations used as pure decoration.",
-          "ko": "、 @ 、、「」——。"
+          "ko": "Twinkling sparkles, spinning @ signs, flaming rules, the striped UNDER CONSTRUCTION sign — small looping animations used as pure decoration."
         }
       },
       {
@@ -1535,7 +1711,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "A visitor counter, 'sign my guestbook', webring prev/next buttons, 'best viewed in Netscape' badges — trophies of participation, stacked at the page's foot.",
-          "ko": "、「」、/、「 Netscape 」——，。"
+          "ko": "A visitor counter, 'sign my guestbook', webring prev/next buttons, 'best viewed in Netscape' badges — trophies of participation, stacked at the page's foot."
         }
       },
       {
@@ -1548,7 +1724,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "System serif or Comic Sans over the wallpaper, centered, with rainbow horizontal rules and multicolored or blinking emphasis — typography as celebration, not system.",
-          "ko": "Comic Sans，——，。"
+          "ko": "System serif or Comic Sans over the wallpaper, centered, with rainbow horizontal rules and multicolored or blinking emphasis — typography as celebration, not system."
         }
       },
       {
@@ -1561,7 +1737,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Everything center-aligned down one narrow column, section by section, the way <center> made easy.",
-          "ko": "，， <center> 。"
+          "ko": "Everything center-aligned down one narrow column, section by section, the way <center> made easy."
         }
       },
       {
@@ -1574,7 +1750,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Autoplaying MIDI, cursor trails, scrolling marquees — beloved extras that vary page to page.",
-          "ko": "MIDI、、——，。"
+          "ko": "Autoplaying MIDI, cursor trails, scrolling marquees — beloved extras that vary page to page."
         }
       },
       {
@@ -1587,19 +1763,35 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "The moment the decoration is a deliberate statement about design itself — exposed structure, ugly-on-purpose — it stops being vernacular and becomes brutalism or anti-design.",
-          "ko": "——、——，。"
+          "ko": "The moment the decoration is a deliberate statement about design itself — exposed structure, ugly-on-purpose — it stops being vernacular and becomes brutalism or anti-design."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "web-brutalism",
+        "name": "Web Brutalism",
+        "because": {
+          "en": "This is the Vernacular Web because the page is DECORATED with love — wallpaper, sparkles, badges, a counter — by an amateur showing off their collection.",
+          "ko": "This is the Vernacular Web because the page is DECORATED with love — wallpaper, sparkles, badges, a counter — by an amateur showing off their collection."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become web brutalism if all decoration were stripped and the bare HTML skeleton — default type, blue links, no ornament — were exposed as a deliberate designer statement.",
+          "ko": "It would become web brutalism if all decoration were stripped and the bare HTML skeleton — default type, blue links, no ornament — were exposed as a deliberate designer statement."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface in the Vernacular Web style — a sincere 90s GeoCities-era personal homepage, not a parody. Defining signals: a tiled repeating background image (starry sky reads instantly); animated GIF-style ornaments — twinkling sparkles, a striped under-construction badge; a centered single column of system serif type with a rainbow-gradient horizontal rule between sections; the collected-participation footer — visitor counter in green LED digits on black, 'sign my guestbook' link, webring badge, 'best viewed at 800x600' line. Loud colored or blinking emphasis text is period-correct. Keep the specific ornaments flexible — the mood is a proud amateur's decorated scrapbook. Do not drift into web brutalism: this page is ornamented with love, never stripped bare as a statement. Preserve legibility (solid or high-contrast panels behind text over busy wallpaper), respect prefers-reduced-motion by pausing blinks and twinkles, and keep counters and badges decorative, not functional claims.",
-      "ko": "—— 90 GeoCities ，。：（）；GIF ——、；，；—— LED 、「」、（webring）、「 800x600」。。——。：，。（）， prefers-reduced-motion ，，。"
+      "ko": "Create the surface in the Vernacular Web style — a sincere 90s GeoCities-era personal homepage, not a parody. Defining signals: a tiled repeating background image (starry sky reads instantly); animated GIF-style ornaments — twinkling sparkles, a striped under-construction badge; a centered single column of system serif type with a rainbow-gradient horizontal rule between sections; the collected-participation footer — visitor counter in green LED digits on black, 'sign my guestbook' link, webring badge, 'best viewed at 800x600' line. Loud colored or blinking emphasis text is period-correct. Keep the specific ornaments flexible — the mood is a proud amateur's decorated scrapbook. Do not drift into web brutalism: this page is ornamented with love, never stripped bare as a statement. Preserve legibility (solid or high-contrast panels behind text over busy wallpaper), respect prefers-reduced-motion by pausing blinks and twinkles, and keep counters and badges decorative, not functional claims."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Text directly over a busy tiled background is unreadable — put body copy on a solid panel, and save the wallpaper for the margins.\n\nBlinking and twinkling must pause under prefers-reduced-motion, and nothing should blink faster than 3 times per second (WCAG seizure threshold).\n\nRainbow and neon text colors rarely hit 4.5:1 on dark wallpaper — reserve them for decoration, keep content text plain and high-contrast.",
+      "ko": "Text directly over a busy tiled background is unreadable — put body copy on a solid panel, and save the wallpaper for the margins.\n\nBlinking and twinkling must pause under prefers-reduced-motion, and nothing should blink faster than 3 times per second (WCAG seizure threshold).\n\nRainbow and neon text colors rarely hit 4.5:1 on dark wallpaper — reserve them for decoration, keep content text plain and high-contrast."
+    },
     "origin": {
       "en": "The mid-1990s free-hosting web — GeoCities, Angelfire, Tripod — where millions of first-time authors decorated pages from shared GIF collections. Olia Lialina documented and named the culture in 'A Vernacular Web' (2005) and, with Dragan Espenschied, preserved a terabyte of GeoCities before its 2009 shutdown.",
-      "ko": "90 ——GeoCities、Angelfire、Tripod—— GIF 。Olia Lialina 《A Vernacular Web》(2005) ， Dragan Espenschied ， GeoCities 2009 1TB 。"
+      "ko": "The mid-1990s free-hosting web — GeoCities, Angelfire, Tripod — where millions of first-time authors decorated pages from shared GIF collections. Olia Lialina documented and named the culture in 'A Vernacular Web' (2005) and, with Dragan Espenschied, preserved a terabyte of GeoCities before its 2009 shutdown."
     },
     "meta": {}
   },
@@ -1611,11 +1803,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Aqua is the design language Mac OS X launched with in 2000: controls rendered as translucent candy gel — deep specular highlights over luminous water-blue — on pinstriped surfaces, with gumdrop red/yellow/green window controls, soft drop shadows layering the windows, and fluid animation everywhere (the default button literally pulsed, and windows poured into the Dock through the genie effect). Apple pitched it as an interface with the fluidity and depth of water.",
-      "ko": "Aqua Mac OS X 2000 ： —— —— ，、，（， Dock）。。"
+      "ko": "Aqua is the design language Mac OS X launched with in 2000: controls rendered as translucent candy gel — deep specular highlights over luminous water-blue — on pinstriped surfaces, with gumdrop red/yellow/green window controls, soft drop shadows layering the windows, and fluid animation everywhere (the default button literally pulsed, and windows poured into the Dock through the genie effect). Apple pitched it as an interface with the fluidity and depth of water."
     },
     "scope": {
       "en": "Scope: This entry covers the original 2000s-era Aqua (Mac OS X 10.0 through roughly Tiger). Later macOS flattened and frosted the language step by step — don't blend brushed-metal-era, Yosemite, or today's macOS into it; Apple's current glass language is Liquid Glass.",
-      "ko": "： 2000 Aqua（Mac OS X 10.0 Tiger ）。 macOS 、 —— 、Yosemite macOS ；（Liquid Glass）。"
+      "ko": "Scope: This entry covers the original 2000s-era Aqua (Mac OS X 10.0 through roughly Tiger). Later macOS flattened and frosted the language step by step — don't blend brushed-metal-era, Yosemite, or today's macOS into it; Apple's current glass language is Liquid Glass."
     },
     "aliases": {
       "en": [
@@ -1659,7 +1851,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Window backgrounds and title bars carry fine alternating light stripes — the signature Aqua wallpaper-of-the-chrome.",
-          "ko": "—— Aqua 。"
+          "ko": "Window backgrounds and title bars carry fine alternating light stripes — the signature Aqua wallpaper-of-the-chrome."
         }
       },
       {
@@ -1672,7 +1864,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "The close/minimize/zoom trio as glossy red, yellow, and green candy spheres in the title bar's top-left corner.",
-          "ko": "//、、，。"
+          "ko": "The close/minimize/zoom trio as glossy red, yellow, and green candy spheres in the title bar's top-left corner."
         }
       },
       {
@@ -1685,7 +1877,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "The palette centers on Aqua's namesake: saturated, water-lit blue for default buttons, selection, scrollbars, and progress.",
-          "ko": "Aqua ：、，、、。"
+          "ko": "The palette centers on Aqua's namesake: saturated, water-lit blue for default buttons, selection, scrollbars, and progress."
         }
       },
       {
@@ -1698,7 +1890,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "The default button pulses like breathing, and windows minimize through the liquid genie effect — motion sells the water metaphor.",
-          "ko": "， Dock —— 。"
+          "ko": "The default button pulses like breathing, and windows minimize through the liquid genie effect — motion sells the water metaphor."
         }
       },
       {
@@ -1711,7 +1903,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Deep, soft drop shadows float windows in real layers over the desktop — depth Mac OS 9 never had.",
-          "ko": "—— Mac OS 9 。"
+          "ko": "Deep, soft drop shadows float windows in real layers over the desktop — depth Mac OS 9 never had."
         }
       },
       {
@@ -1724,19 +1916,35 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "A blurred panel without the gel gloss is a different, later idea — that's glassmorphism/vibrancy territory, not Aqua.",
-          "ko": "、 —— /vibrancy ， Aqua。"
+          "ko": "A blurred panel without the gel gloss is a different, later idea — that's glassmorphism/vibrancy territory, not Aqua."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "y2k",
+        "name": "Y2K Digital Aesthetic",
+        "because": {
+          "en": "This is Aqua because it's one vendor's complete, systematic OS language — the same gel buttons, pinstripes, and gumdrops on every Mac.",
+          "ko": "This is Aqua because it's one vendor's complete, systematic OS language — the same gel buttons, pinstripes, and gumdrops on every Mac."
+        },
+        "wouldBecomeIf": {
+          "en": "It would be just Y2K if it were the era's freelance futurism — liquid chrome, lens flares, techno type — without Apple's specific system behind it. (Aqua is the OS-shaped island inside the Y2K sea.)",
+          "ko": "It would be just Y2K if it were the era's freelance futurism — liquid chrome, lens flares, techno type — without Apple's specific system behind it. (Aqua is the OS-shaped island inside the Y2K sea.)"
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using Apple's original Aqua (early Mac OS X) design language. Defining signals: candy-gel controls — luminous water-blue fills with a bright specular highlight across the top half and an inner glow, e.g. layered radial-gradient highlight over linear-gradient(#5f9ff5, #1862d8); fine pinstriped window surfaces (repeating-linear-gradient, ~1px stripes at low contrast); gumdrop red/yellow/green window controls as glossy spheres, top-left; the default button gently pulsing (a slow glow loop, disabled under prefers-reduced-motion); soft deep window shadows. Keep layout and density flexible — this is chrome and controls, not a layout system. Do not drift into generic glassmorphism: Aqua's material is glossy opaque gel on pinstripes, not blurred frosted panels. Preserve 4.5:1 text contrast on gel fills (white text with a subtle down-shadow is period-correct), full keyboard focus states, and reduced-motion alternatives for the pulse.",
-      "ko": "Aqua（ Mac OS X）。： —— ，，， linear-gradient(#5f9ff5, #1862d8) radial-gradient ；（repeating-linear-gradient， 1px ）；，；（， prefers-reduced-motion ）；。 —— ，。：Aqua ，。 4.5:1 （）、， reduced-motion 。"
+      "ko": "Create the surface using Apple's original Aqua (early Mac OS X) design language. Defining signals: candy-gel controls — luminous water-blue fills with a bright specular highlight across the top half and an inner glow, e.g. layered radial-gradient highlight over linear-gradient(#5f9ff5, #1862d8); fine pinstriped window surfaces (repeating-linear-gradient, ~1px stripes at low contrast); gumdrop red/yellow/green window controls as glossy spheres, top-left; the default button gently pulsing (a slow glow loop, disabled under prefers-reduced-motion); soft deep window shadows. Keep layout and density flexible — this is chrome and controls, not a layout system. Do not drift into generic glassmorphism: Aqua's material is glossy opaque gel on pinstripes, not blurred frosted panels. Preserve 4.5:1 text contrast on gel fills (white text with a subtle down-shadow is period-correct), full keyboard focus states, and reduced-motion alternatives for the pulse."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "White label text on mid-blue gel hovers near the contrast line — keep the gel's center dark enough for 4.5:1, as Apple's own dark-bottom gradient did.\n\nThe pulsing default button is motion with no information — pause it under prefers-reduced-motion and never make the pulse the only 'default action' cue.\n\nPinstripes behind small text add visual noise; drop the stripe contrast (2 to 3 percent) or mask them behind content panels.",
+      "ko": "White label text on mid-blue gel hovers near the contrast line — keep the gel's center dark enough for 4.5:1, as Apple's own dark-bottom gradient did.\n\nThe pulsing default button is motion with no information — pause it under prefers-reduced-motion and never make the pulse the only 'default action' cue.\n\nPinstripes behind small text add visual noise; drop the stripe contrast (2 to 3 percent) or mask them behind content panels."
+    },
     "origin": {
       "en": "Introduced by Steve Jobs at Macworld San Francisco, January 2000, alongside Mac OS X's public debut; shipped in Mac OS X 10.0 (2001) and defined the Mac's look for the decade, its gel gloss echoing the era's translucent iMac hardware.",
-      "ko": "2000 1 Steve Jobs Macworld Mac OS X ； Mac OS X 10.0（2001）， Mac ， iMac 。"
+      "ko": "Introduced by Steve Jobs at Macworld San Francisco, January 2000, alongside Mac OS X's public debut; shipped in Mac OS X 10.0 (2001) and defined the Mac's look for the decade, its gel gloss echoing the era's translucent iMac hardware."
     },
     "meta": {}
   },
@@ -1748,11 +1956,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Windows Aero is Microsoft's Vista and Windows 7 desktop language: window FRAMES rendered as transparent blurred glass with specular light sweeps, so the desktop glows through every title bar; luminous color gradients; caption buttons that light up under the cursor (the red close glow); shimmering green progress bars; and smooth window motion like Flip 3D and the minimize animation. Microsoft's launch messaging named the glass, the reflections, and the animation as the product.",
-      "ko": "Windows Aero Vista Windows 7 ：，，；；（）；； Flip 3D 。、。"
+      "ko": "Windows Aero is Microsoft's Vista and Windows 7 desktop language: window FRAMES rendered as transparent blurred glass with specular light sweeps, so the desktop glows through every title bar; luminous color gradients; caption buttons that light up under the cursor (the red close glow); shimmering green progress bars; and smooth window motion like Flip 3D and the minimize animation. Microsoft's launch messaging named the glass, the reflections, and the animation as the product."
     },
     "scope": {
       "en": "Scope: This entry covers Microsoft's actual OS chrome (Vista 2006 to Windows 7, retired by Windows 8's flat Metro). The broader glossy eco-tech mood of the same years — sky, grass, water imagery — is Frutiger Aero, a retrospective label that borrowed Aero's name.",
-      "ko": "： OS （2006 Vista Windows 7， Windows 8 Metro ）。 —— 、、 —— Frutiger Aero， Aero 。"
+      "ko": "Scope: This entry covers Microsoft's actual OS chrome (Vista 2006 to Windows 7, retired by Windows 8's flat Metro). The broader glossy eco-tech mood of the same years — sky, grass, water imagery — is Frutiger Aero, a retrospective label that borrowed Aero's name."
     },
     "aliases": {
       "en": [
@@ -1796,7 +2004,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Diagonal light streaks cross the glass and controls, as if the chrome were polished — reflection is part of the material, not an accent.",
-          "ko": "， —— ，。"
+          "ko": "Diagonal light streaks cross the glass and controls, as if the chrome were polished — reflection is part of the material, not an accent."
         }
       },
       {
@@ -1809,7 +2017,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Controls light up under the cursor: the close button floods red, min/max glow blue, buttons gain a luminous halo — glow is the hover language.",
-          "ko": "：，/， —— 。"
+          "ko": "Controls light up under the cursor: the close button floods red, min/max glow blue, buttons gain a luminous halo — glow is the hover language."
         }
       },
       {
@@ -1822,7 +2030,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Blues and greens that glow as if backlit — the shimmering green progress bar and pearlescent button fills, never flat color.",
-          "ko": "—— 、，。"
+          "ko": "Blues and greens that glow as if backlit — the shimmering green progress bar and pearlescent button fills, never flat color."
         }
       },
       {
@@ -1835,7 +2043,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Windows animate open, minimize with a swoop, and stack in Flip 3D — composited motion was the point of the new rendering engine.",
-          "ko": "、、 Flip 3D —— 。"
+          "ko": "Windows animate open, minimize with a swoop, and stack in Flip 3D — composited motion was the point of the new rendering engine."
         }
       },
       {
@@ -1848,7 +2056,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Window corners and buttons are gently rounded with 1px bright edge highlights lining the glass.",
-          "ko": "， 1px 。"
+          "ko": "Window corners and buttons are gently rounded with 1px bright edge highlights lining the glass."
         }
       },
       {
@@ -1861,19 +2069,35 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Grass, sky, and fish belong to the era's mood, not the OS chrome — needing them means you're describing Frutiger Aero.",
-          "ko": "、， OS —— ，설명 Frutiger Aero。"
+          "ko": "Grass, sky, and fish belong to the era's mood, not the OS chrome — needing them means you're describing Frutiger Aero."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "frutiger-aero",
+        "name": "Frutiger Aero",
+        "because": {
+          "en": "This is Windows Aero because it's the OS chrome itself — glass window frames, glowing caption buttons, luminous progress bars, shipped by Microsoft.",
+          "ko": "This is Windows Aero because it's the OS chrome itself — glass window frames, glowing caption buttons, luminous progress bars, shipped by Microsoft."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Frutiger Aero if you meant the whole era's optimistic eco-tech MOOD — glossy nature wallpapers, water droplets, skies — which surrounded the chrome but isn't the chrome.",
+          "ko": "It would become Frutiger Aero if you meant the whole era's optimistic eco-tech MOOD — glossy nature wallpapers, water droplets, skies — which surrounded the chrome but isn't the chrome."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using Windows Aero (Vista/7) styling. Defining signals: the window frame as transparent blurred glass — title bar and border show the scene behind them (backdrop-filter: blur(12px) saturate(1.3) on a rgba white/blue tint) while the content area stays opaque; diagonal specular light sweeps across the glass (a rotated linear-gradient white streak at low opacity); caption buttons that GLOW on hover — close floods red with a soft outer halo; luminous gradients for accents, like the shimmering green progress bar (gradient + a slow-moving highlight); 1px bright inner edge lining every glass pane; softly rounded chrome corners. Keep wallpaper and layout flexible — the glass needs something colorful behind it to read. Do not drift into Frutiger Aero: no nature imagery is required — this is the chrome language, not the era's mood board. Preserve title text legibility over unpredictable wallpapers (Aero drew a soft glow behind window titles — replicate it), 4.5:1 contrast for content text, hover glows paired with visible focus states, and reduced-motion alternatives for shimmer and window animation.",
-      "ko": "Windows Aero（Vista/7）。： —— （/ rgba backdrop-filter: blur(12px) saturate(1.3)），；（ linear-gradient ，）； —— ，；，（）； 1px ；。 —— 。 Frutiger Aero： —— ，。（Aero —— ）， 4.5:1 ，， reduced-motion 。"
+      "ko": "Create the surface using Windows Aero (Vista/7) styling. Defining signals: the window frame as transparent blurred glass — title bar and border show the scene behind them (backdrop-filter: blur(12px) saturate(1.3) on a rgba white/blue tint) while the content area stays opaque; diagonal specular light sweeps across the glass (a rotated linear-gradient white streak at low opacity); caption buttons that GLOW on hover — close floods red with a soft outer halo; luminous gradients for accents, like the shimmering green progress bar (gradient + a slow-moving highlight); 1px bright inner edge lining every glass pane; softly rounded chrome corners. Keep wallpaper and layout flexible — the glass needs something colorful behind it to read. Do not drift into Frutiger Aero: no nature imagery is required — this is the chrome language, not the era's mood board. Preserve title text legibility over unpredictable wallpapers (Aero drew a soft glow behind window titles — replicate it), 4.5:1 contrast for content text, hover glows paired with visible focus states, and reduced-motion alternatives for shimmer and window animation."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Glass over an unknown wallpaper makes title text unpredictable — Aero itself painted a soft white glow behind captions; do the same or guarantee a dark tint.\n\nHover glow is invisible to keyboard users — every glowing control needs an equally visible :focus-visible treatment.\n\nbackdrop-filter over animated content is expensive; on low-power devices provide a solid fallback (Vista itself shipped 'Aero Basic' for exactly this).",
+      "ko": "Glass over an unknown wallpaper makes title text unpredictable — Aero itself painted a soft white glow behind captions; do the same or guarantee a dark tint.\n\nHover glow is invisible to keyboard users — every glowing control needs an equally visible :focus-visible treatment.\n\nbackdrop-filter over animated content is expensive; on low-power devices provide a solid fallback (Vista itself shipped 'Aero Basic' for exactly this)."
+    },
     "origin": {
       "en": "Shipped with Windows Vista in 2006 (premium editions) as the flagship of the Desktop Window Manager's new composited rendering, refined and default in Windows 7 (2009); Windows 8 (2012) removed the glass for flat Metro chrome.",
-      "ko": "2006 Windows Vista（）， Desktop Window Manager ； Windows 7（2009）；Windows 8（2012）， Metro 。"
+      "ko": "Shipped with Windows Vista in 2006 (premium editions) as the flagship of the Desktop Window Manager's new composited rendering, refined and default in Windows 7 (2009); Windows 8 (2012) removed the glass for flat Metro chrome."
     },
     "meta": {}
   },
@@ -1885,11 +2109,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Swiss Style treats graphic design as engineering: content locked to a mathematical grid, set in one neutral grotesk (Helvetica, Akzidenz-Grotesk), aligned flush left, ragged right, printed black on white with a single flat accent — classically Swiss red. Photography is objective documentation, never illustration; decoration is abolished. Crystallized in 1950s Switzerland, it became the default voice of corporate identity and wayfinding, and its grid logic still underpins most 'clean' interfaces.",
-      "ko": "：， grotesk （Helvetica、Akzidenz-Grotesk），、， —— 。，；。 1950 ，，「」。"
+      "ko": "Swiss Style treats graphic design as engineering: content locked to a mathematical grid, set in one neutral grotesk (Helvetica, Akzidenz-Grotesk), aligned flush left, ragged right, printed black on white with a single flat accent — classically Swiss red. Photography is objective documentation, never illustration; decoration is abolished. Crystallized in 1950s Switzerland, it became the default voice of corporate identity and wayfinding, and its grid logic still underpins most 'clean' interfaces."
     },
     "scope": {
       "en": "Scope: Covers the typographic discipline — grid system, neutral grotesk type, flush-left setting, objective photography — wherever it surfaces, from posters to app UIs. The wider 'Swiss design' umbrella (furniture, watches, architecture) stays out; the Minimalism boundary is drawn in confusedWith.",
-      "ko": "： —— 、 grotesk、、 —— 。「」（、、）； confusedWith。"
+      "ko": "Scope: Covers the typographic discipline — grid system, neutral grotesk type, flush-left setting, objective photography — wherever it surfaces, from posters to app UIs. The wider 'Swiss design' umbrella (furniture, watches, architecture) stays out; the Minimalism boundary is drawn in confusedWith."
     },
     "aliases": {
       "en": [
@@ -1920,7 +2144,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Every edge and baseline locks to an underlying column grid — classically 4–12 columns with constant gutters, plus a vertical baseline rhythm (e.g. 8px steps). An element that misses its grid line is a defect, not a choice.",
-          "ko": "、 —— 4–12 、，（ 8px ）。，。"
+          "ko": "Every edge and baseline locks to an underlying column grid — classically 4–12 columns with constant gutters, plus a vertical baseline rhythm (e.g. 8px steps). An element that misses its grid line is a defect, not a choice."
         }
       },
       {
@@ -1928,12 +2152,12 @@ export const STYLES: UIStyle[] = [
         "role": "defining",
         "name": {
           "en": "One neutral grotesk",
-          "ko": "grotesk"
+          "ko": "One neutral grotesk"
         },
         "facet": "typography",
         "description": {
           "en": "Helvetica, Akzidenz-Grotesk, or Univers (Inter or Arial on the web) carries everything alone; hierarchy comes from size and weight only — 700 headlines against 400 body — never from decorative faces.",
-          "ko": "Helvetica、Akzidenz-Grotesk Univers（Web Inter Arial）； —— 700 400 —— 。"
+          "ko": "Helvetica, Akzidenz-Grotesk, or Univers (Inter or Arial on the web) carries everything alone; hierarchy comes from size and weight only — 700 headlines against 400 body — never from decorative faces."
         }
       },
       {
@@ -1959,7 +2183,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Paper-white ground (#fff or #f4f4f0), near-black ink (#111), and exactly one flat accent — classic Swiss red #e30613. No gradients, no second hue.",
-          "ko": "（#fff #f4f4f0）、（#111）， —— #e30613。，。"
+          "ko": "Paper-white ground (#fff or #f4f4f0), near-black ink (#111), and exactly one flat accent — classic Swiss red #e30613. No gradients, no second hue."
         }
       },
       {
@@ -1998,7 +2222,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Swiss red is the cliché; the rule is one flat accent per composition — blue or orange versions stay Swiss as long as the rest of the discipline holds.",
-          "ko": "； —— ，。"
+          "ko": "Swiss red is the cliché; the rule is one flat accent per composition — blue or orange versions stay Swiss as long as the rest of the discipline holds."
         }
       },
       {
@@ -2011,19 +2235,35 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Drop shadows, gradients, rounded corners, serifs, textures — decoration of any kind marks another school. Swiss surfaces are flat paper and ink.",
-          "ko": "、、、、 —— 。。"
+          "ko": "Drop shadows, gradients, rounded corners, serifs, textures — decoration of any kind marks another school. Swiss surfaces are flat paper and ink."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "minimalism",
+        "name": "Minimalism",
+        "because": {
+          "en": "This is Swiss Style because it is a complete discipline, not an absence: an explicit mathematical grid, one neutral grotesk set flush left, and objective photography — the page is organized by rules, not merely emptied.",
+          "ko": "This is Swiss Style because it is a complete discipline, not an absence: an explicit mathematical grid, one neutral grotesk set flush left, and objective photography — the page is organized by rules, not merely emptied."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Minimalism if you kept the white space but dropped the system — center the type, switch to a serif or a rounded face, or place elements by feel instead of snapping them to grid lines — because then only the emptiness remains.",
+          "ko": "It would become Minimalism if you kept the white space but dropped the system — center the type, switch to a serif or a rounded face, or place elements by feel instead of snapping them to grid lines — because then only the emptiness remains."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface as a Swiss Style composition. Defining signals: an explicit 12-column grid, 24px gutters, every edge and baseline snapping to it on an 8px rhythm; one neutral grotesk (Helvetica, Arial, or Inter) with hierarchy by size and weight only — 16px body, 72–96px headlines at weight 700, line-height 0.95, letter-spacing -0.02em; all text flush left, ragged right — never justified, never centered; flat paper ground #ffffff, near-black ink #111111, one flat accent — Swiss red #e30613 — spent on one element (marker, rule, or word); imagery as documentary black-and-white photography cropped to grid rectangles; box-shadow: none, border-radius: 0, no gradients, no textures. Keep accent hue and photo subject flexible. Balance asymmetrically: the big type mass sits off-center, white space counterweighs it. Do not drift into Minimalism; the decisive difference is that Swiss is a system, not an absence — center the type or pick a serif and you have left it. Keep contrast at 4.5:1 (black/white is 21:1; #e30613 on white ~4.9:1), visible keyboard focus, and reduced-motion support.",
-      "ko": "（Swiss Style）。： 12 ，24px ，、， 8px ； grotesk（Helvetica、Arial Inter）， —— 16px， 72–96px、 700、line-height 0.95、letter-spacing -0.02em；、 —— ，； #ffffff， #111111， —— #e30613 —— （、）；，；box-shadow: none，border-radius: 0，，。。：，。；「」 —— ，。 4.5:1（ 21:1；#e30613 4.9:1），， reduced-motion。"
+      "ko": "Create the surface as a Swiss Style composition. Defining signals: an explicit 12-column grid, 24px gutters, every edge and baseline snapping to it on an 8px rhythm; one neutral grotesk (Helvetica, Arial, or Inter) with hierarchy by size and weight only — 16px body, 72–96px headlines at weight 700, line-height 0.95, letter-spacing -0.02em; all text flush left, ragged right — never justified, never centered; flat paper ground #ffffff, near-black ink #111111, one flat accent — Swiss red #e30613 — spent on one element (marker, rule, or word); imagery as documentary black-and-white photography cropped to grid rectangles; box-shadow: none, border-radius: 0, no gradients, no textures. Keep accent hue and photo subject flexible. Balance asymmetrically: the big type mass sits off-center, white space counterweighs it. Do not drift into Minimalism; the decisive difference is that Swiss is a system, not an absence — center the type or pick a serif and you have left it. Keep contrast at 4.5:1 (black/white is 21:1; #e30613 on white ~4.9:1), visible keyboard focus, and reduced-motion support."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "The black-on-white core is a strength — #111 on #fff measures 21:1 — but Swiss red #e30613 on white is only ~4.9:1: fine for text, yet pairings like red on black fail, so measure every accent combination before shipping.\n\nPoster habits do not all transfer: 9–10px captions under 96px headlines are illegible on screen, so keep body text at 16px or above and captions at 12px or above. The ragged-right setting genuinely helps here — it reads easier than justified text for many readers, including people with dyslexia, so discipline and accessibility agree for once.\n\nA rigid 12-column grid can shatter under 200% text zoom; build it with relative units and minmax() so columns reflow instead of clipping. Motion is minimal by nature in this style, but any scroll-triggered grid reveals still need a prefers-reduced-motion fallback.",
+      "ko": "The black-on-white core is a strength — #111 on #fff measures 21:1 — but Swiss red #e30613 on white is only ~4.9:1: fine for text, yet pairings like red on black fail, so measure every accent combination before shipping.\n\nPoster habits do not all transfer: 9–10px captions under 96px headlines are illegible on screen, so keep body text at 16px or above and captions at 12px or above. The ragged-right setting genuinely helps here — it reads easier than justified text for many readers, including people with dyslexia, so discipline and accessibility agree for once.\n\nA rigid 12-column grid can shatter under 200% text zoom; build it with relative units and minmax() so columns reflow instead of clipping. Motion is minimal by nature in this style, but any scroll-triggered grid reveals still need a prefers-reduced-motion fallback."
+    },
     "origin": {
       "en": "Crystallized in Switzerland in the 1950s around two poles — Ernst Keller's teaching at the Kunstgewerbeschule Zürich, and the Basel school where Armin Hofmann and Emil Ruder taught, with Max Bill carrying the Bauhaus inheritance — and codified by Josef Müller-Brockmann, whose 'Grid Systems in Graphic Design' (1981) remains the manual. Its voice, Helvetica, was drawn by Max Miedinger with Eduard Hoffmann at the Haas foundry in 1957 (renamed from Neue Haas Grotesk in 1960); its elder cousin Akzidenz-Grotesk dates to 1896. The journal Neue Grafik (1958–1965) exported the system worldwide, where it became the default language of corporate identity, posters, and wayfinding.",
-      "ko": "1950 —— Ernst Keller （Kunstgewerbeschule Zürich）， Armin Hofmann Emil Ruder ，Max Bill —— Josef Müller-Brockmann ，《Grid Systems in Graphic Design》（1981）。 Helvetica Max Miedinger Eduard Hoffmann 1957 Haas （1960 Neue Haas Grotesk ）； Akzidenz-Grotesk 1896 。《Neue Grafik》（1958–1965），、。"
+      "ko": "Crystallized in Switzerland in the 1950s around two poles — Ernst Keller's teaching at the Kunstgewerbeschule Zürich, and the Basel school where Armin Hofmann and Emil Ruder taught, with Max Bill carrying the Bauhaus inheritance — and codified by Josef Müller-Brockmann, whose 'Grid Systems in Graphic Design' (1981) remains the manual. Its voice, Helvetica, was drawn by Max Miedinger with Eduard Hoffmann at the Haas foundry in 1957 (renamed from Neue Haas Grotesk in 1960); its elder cousin Akzidenz-Grotesk dates to 1896. The journal Neue Grafik (1958–1965) exported the system worldwide, where it became the default language of corporate identity, posters, and wayfinding."
     },
     "meta": {}
   },
@@ -2035,11 +2275,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Bauhaus is the visual language of the 1919–1933 German school that set out to unify art, craft, and industrial production: compositions are built from the primary shapes — circle, triangle, square — filled with unmixed primaries red, yellow, and blue against black and white, while headlines drop capital letters for Herbert Bayer's all-lowercase geometric alphabet. A century later it is still the default shorthand for geometric modernism in posters, logos, and landing pages.",
-      "ko": "1919–1933 ，、： —— 、、 —— ，、、，；， Herbert Bayer 。，、Logo 「」。"
+      "ko": "Bauhaus is the visual language of the 1919–1933 German school that set out to unify art, craft, and industrial production: compositions are built from the primary shapes — circle, triangle, square — filled with unmixed primaries red, yellow, and blue against black and white, while headlines drop capital letters for Herbert Bayer's all-lowercase geometric alphabet. A century later it is still the default shorthand for geometric modernism in posters, logos, and landing pages."
     },
     "scope": {
       "en": "Scope: Covers the Bauhaus look as it appears in graphic and UI design — primary-shape construction, a primaries-plus-ink palette, lowercase geometric type. It is not the whole of modernism: Swiss Style is the later grid-locked successor, and De Stijl shares the primaries but locks them into orthogonal black grids.",
-      "ko": "： UI —— 、、。：；（De Stijl），。"
+      "ko": "Scope: Covers the Bauhaus look as it appears in graphic and UI design — primary-shape construction, a primaries-plus-ink palette, lowercase geometric type. It is not the whole of modernism: Swiss Style is the later grid-locked successor, and De Stijl shares the primaries but locks them into orthogonal black grids."
     },
     "aliases": {
       "en": [
@@ -2068,7 +2308,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Every decorative element is one of the three pure shapes — no blobs, stars, or freehand curves. Kandinsky's 1923 mapping still reads: yellow triangle, red square, blue circle.",
-          "ko": "—— blob、。 1923 ：、、。"
+          "ko": "Every decorative element is one of the three pure shapes — no blobs, stars, or freehand curves. Kandinsky's 1923 mapping still reads: yellow triangle, red square, blue circle."
         }
       },
       {
@@ -2081,7 +2321,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Unmixed red (#e3000f), yellow (#ffd300) and blue (#0057a8) on paper white with ink black — flat opaque fills, no tints, no mid-greys, no gradients.",
-          "ko": "（#e3000f）、（#ffd300）、（#0057a8） —— ，、。"
+          "ko": "Unmixed red (#e3000f), yellow (#ffd300) and blue (#0057a8) on paper white with ink black — flat opaque fills, no tints, no mid-greys, no gradients."
         }
       },
       {
@@ -2094,7 +2334,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Headlines and labels run with text-transform: lowercase in a constructed geometric sans (Futura, Century Gothic) — Bayer's universal-alphabet gesture: capitals abolished, letters built from circles and straight strokes.",
-          "ko": "text-transform: lowercase，（Futura、Century Gothic）—— universal ：，。"
+          "ko": "Headlines and labels run with text-transform: lowercase in a constructed geometric sans (Futura, Century Gothic) — Bayer's universal-alphabet gesture: capitals abolished, letters built from circles and straight strokes."
         }
       },
       {
@@ -2107,7 +2347,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Shapes overlap off-center and collide at angles — diagonal rules and unbalanced placement give the page constructivist energy instead of grid-locked calm.",
-          "ko": "、 —— ，。"
+          "ko": "Shapes overlap off-center and collide at angles — diagonal rules and unbalanced placement give the page constructivist energy instead of grid-locked calm."
         }
       },
       {
@@ -2120,7 +2360,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Solid black bars 4–8px thick and thin rules cut across and around the color shapes, acting as scaffolding and punctuation.",
-          "ko": "4–8px 、，，。"
+          "ko": "Solid black bars 4–8px thick and thin rules cut across and around the color shapes, acting as scaffolding and punctuation."
         }
       },
       {
@@ -2133,7 +2373,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Zero depth rendering: no shadows, glows, gradients, or textures — each shape is a single solid color with a hard edge.",
-          "ko": "：、、 —— 。"
+          "ko": "Zero depth rendering: no shadows, glows, gradients, or textures — each shape is a single solid color with a hard edge."
         }
       },
       {
@@ -2146,7 +2386,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "When things move, they translate or rotate on straight paths in 150–250ms with linear or crisp easing — machine-like, never springy.",
-          "ko": "，150–250ms，linear —— ，。"
+          "ko": "When things move, they translate or rotate on straight paths in 150–250ms with linear or crisp easing — machine-like, never springy."
         }
       },
       {
@@ -2159,19 +2399,35 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Drop shadows, cute rounded corners, gradients, serifs, or decorative flourishes break it instantly — in Bauhaus the construction is the only ornament.",
-          "ko": "、、、 —— ，。"
+          "ko": "Drop shadows, cute rounded corners, gradients, serifs, or decorative flourishes break it instantly — in Bauhaus the construction is the only ornament."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "swiss-style",
+        "name": "Swiss Style",
+        "because": {
+          "en": "This is Bauhaus because the layout is an expressive construction of pure circle, triangle and square in red, yellow and blue with all-lowercase geometric lettering — the composition itself performs, instead of an invisible grid organizing neutral content.",
+          "ko": "This is Bauhaus because the layout is an expressive construction of pure circle, triangle and square in red, yellow and blue with all-lowercase geometric lettering — the composition itself performs, instead of an invisible grid organizing neutral content."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Swiss Style if the shape play were replaced by documentary photography, the lettering went back to mixed-case neutral grotesk locked to a strict mathematical grid, and the palette drained to black, white and grey plus a single accent — objectivity replacing expression.",
+          "ko": "It would become Swiss Style if the shape play were replaced by documentary photography, the lettering went back to mixed-case neutral grotesk locked to a strict mathematical grid, and the palette drained to black, white and grey plus a single accent — objectivity replacing expression."
+        }
+      }
+    ],
     "brief": {
       "en": "Build the surface as a Bauhaus composition. Canvas: warm paper #f2eee3, ink #141414. Closed palette: red #e3000f, yellow #ffd300, blue #0057a8 — flat opaque fills only; no tints, gradients, shadows, or textures; corner radius 0–4px. Every decorative element is a pure circle, square, or CSS border-trick triangle (yellow triangle, red square, blue circle); overlap them asymmetrically with one or two diagonal ink bars 4–8px thick — the geometry is the only ornament. Type: constructed geometric sans (Futura, Century Gothic, Avenir Next; web: Jost/Montserrat); headlines/labels use text-transform: lowercase — never a capital; body copy may keep sentence case. Buttons are solid primary blocks with hard edges; hover swaps the fill to another primary, never adds depth. Motion is mechanical: translate/rotate on straight paths, 150–250ms, linear or crisp ease, no spring. Do not drift into Swiss Style: no documentary photography, no mixed-case grotesk on a strict grid, no drained monochrome palette. Keep 4.5:1 text contrast (ink on paper/yellow, paper on red/blue) and a visible focus outline.",
-      "ko": "。： #f2eee3， #141414。： #e3000f、 #ffd300、 #0057a8 —— ；、、； 0–4px。、 CSS border （、、）；， 4–8px —— 。：（Futura、Century Gothic、Avenir Next；Web Jost/Montserrat）；/ text-transform: lowercase —— ；。；hover ，。：/，150–250ms，linear ，。：， grotesk，。 4.5:1（/；/），。"
+      "ko": "Build the surface as a Bauhaus composition. Canvas: warm paper #f2eee3, ink #141414. Closed palette: red #e3000f, yellow #ffd300, blue #0057a8 — flat opaque fills only; no tints, gradients, shadows, or textures; corner radius 0–4px. Every decorative element is a pure circle, square, or CSS border-trick triangle (yellow triangle, red square, blue circle); overlap them asymmetrically with one or two diagonal ink bars 4–8px thick — the geometry is the only ornament. Type: constructed geometric sans (Futura, Century Gothic, Avenir Next; web: Jost/Montserrat); headlines/labels use text-transform: lowercase — never a capital; body copy may keep sentence case. Buttons are solid primary blocks with hard edges; hover swaps the fill to another primary, never adds depth. Motion is mechanical: translate/rotate on straight paths, 150–250ms, linear or crisp ease, no spring. Do not drift into Swiss Style: no documentary photography, no mixed-case grotesk on a strict grid, no drained monochrome palette. Keep 4.5:1 text contrast (ink on paper/yellow, paper on red/blue) and a visible focus outline."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Red-on-blue and blue-on-red pairings vibrate and fall well below 4.5:1 — never set text or small functional shapes in one primary on another. Ink on paper and on yellow passes easily; paper-white on red (#e3000f) or blue (#0057a8) must be measured per combination. Yellow on white fails badly: reserve yellow for shapes, never for text or thin icons.\n\nAll-lowercase headlines remove the word-shape cues that mixed case provides — acceptable for short display lines, but keep body copy, form labels, and anything longer than a phrase in sentence case, and build hierarchy with size and weight rather than relying on capitals.\n\nOverlapping saturated shapes and diagonal layouts raise cognitive load and can mask interaction order: give every interactive element a visible focus outline (2–3px ink with offset), never communicate state by primary color alone — pair it with a shape or icon change — and honor prefers-reduced-motion for any rotating or sliding geometry.",
+      "ko": "Red-on-blue and blue-on-red pairings vibrate and fall well below 4.5:1 — never set text or small functional shapes in one primary on another. Ink on paper and on yellow passes easily; paper-white on red (#e3000f) or blue (#0057a8) must be measured per combination. Yellow on white fails badly: reserve yellow for shapes, never for text or thin icons.\n\nAll-lowercase headlines remove the word-shape cues that mixed case provides — acceptable for short display lines, but keep body copy, form labels, and anything longer than a phrase in sentence case, and build hierarchy with size and weight rather than relying on capitals.\n\nOverlapping saturated shapes and diagonal layouts raise cognitive load and can mask interaction order: give every interactive element a visible focus outline (2–3px ink with offset), never communicate state by primary color alone — pair it with a shape or icon change — and honor prefers-reduced-motion for any rotating or sliding geometry."
+    },
     "origin": {
       "en": "The Staatliches Bauhaus was founded in Weimar in 1919 by architect Walter Gropius, merging the city's art academy and crafts school to unite art, craft, and industrial production; it moved to Dessau in 1925 and Berlin in 1932 before closing in 1933 under Nazi pressure. Wassily Kandinsky and Paul Klee taught its formal grammar — Kandinsky's 1923 questionnaire fixed the yellow triangle, red square, and blue circle — while Herbert Bayer's 1925 'universal' alphabet pushed the all-lowercase geometric lettering. After the closure its masters emigrated — Gropius to Harvard, László Moholy-Nagy to found Chicago's New Bauhaus in 1937 — turning a fourteen-year school into the world's default modernist vocabulary.",
-      "ko": "（Staatliches Bauhaus）1919 Walter Gropius ，，、；1925 ，1932 ，1933 。Wassily Kandinsky Paul Klee —— 1923 、、 —— Herbert Bayer 1925 universal 。 —— ，László Moholy-Nagy 1937 —— ，。"
+      "ko": "The Staatliches Bauhaus was founded in Weimar in 1919 by architect Walter Gropius, merging the city's art academy and crafts school to unite art, craft, and industrial production; it moved to Dessau in 1925 and Berlin in 1932 before closing in 1933 under Nazi pressure. Wassily Kandinsky and Paul Klee taught its formal grammar — Kandinsky's 1923 questionnaire fixed the yellow triangle, red square, and blue circle — while Herbert Bayer's 1925 'universal' alphabet pushed the all-lowercase geometric lettering. After the closure its masters emigrated — Gropius to Harvard, László Moholy-Nagy to found Chicago's New Bauhaus in 1937 — turning a fourteen-year school into the world's default modernist vocabulary."
     },
     "meta": {}
   },
@@ -2183,11 +2439,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Memphis is the postmodern design language launched by the Memphis Group in Milan in 1981: calculated 'bad taste' — hot pink, lemon yellow, teal and purple slammed together on white grounds, black-outlined toy geometry, and an allover confetti of squiggles, zigzags, dots and triangles. Born as radical furniture in printed plastic laminate, it was mocked and worshipped alike, dissolved in 1987, and resurrected as the default visual shorthand for 'the eighties' in graphic and UI design.",
-      "ko": "1981 （Memphis Group）：「」—— 、、、，，、、。，，1987 ， UI 「」。"
+      "ko": "Memphis is the postmodern design language launched by the Memphis Group in Milan in 1981: calculated 'bad taste' — hot pink, lemon yellow, teal and purple slammed together on white grounds, black-outlined toy geometry, and an allover confetti of squiggles, zigzags, dots and triangles. Born as radical furniture in printed plastic laminate, it was mocked and worshipped alike, dissolved in 1987, and resurrected as the default visual shorthand for 'the eighties' in graphic and UI design."
     },
     "scope": {
       "en": "Scope: Covers the Memphis Group's original postmodern language (1981–87) and its later revival as pattern-driven 80s styling in graphics and UI. 'Corporate Memphis' — flat, big-limbed vector illustration — is a later namesake with its own entry. Solid color blocks with hard offset shadows and zero patterning belong to Neobrutalism.",
-      "ko": "：（1981–87） UI 80 。「Corporate Memphis」—— 、 —— ，；、。"
+      "ko": "Scope: Covers the Memphis Group's original postmodern language (1981–87) and its later revival as pattern-driven 80s styling in graphics and UI. 'Corporate Memphis' — flat, big-limbed vector illustration — is a later namesake with its own entry. Solid color blocks with hard offset shadows and zero patterning belong to Neobrutalism."
     },
     "aliases": {
       "en": [
@@ -2218,7 +2474,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Squiggles, zigzags, dots, crosses and tiny triangles scattered edge-to-edge over a white ground — the pattern IS the background, not an accent strip.",
-          "ko": "、、、 —— ，。"
+          "ko": "Squiggles, zigzags, dots, crosses and tiny triangles scattered edge-to-edge over a white ground — the pattern IS the background, not an accent strip."
         }
       },
       {
@@ -2231,7 +2487,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Hand-feeling wavy lines and lightning zigzags, usually 2–4px black strokes — the most-quoted Memphis mark, descended from Sottsass's 1978 'Bacterio' laminate print.",
-          "ko": "， 2–4px —— ， Sottsass 1978 「Bacterio」。"
+          "ko": "Hand-feeling wavy lines and lightning zigzags, usually 2–4px black strokes — the most-quoted Memphis mark, descended from Sottsass's 1978 'Bacterio' laminate print."
         }
       },
       {
@@ -2244,7 +2500,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Hot pink, lemon yellow, teal and purple (e.g. #ff5fa2, #ffd500, #2ec4b6, #7b61ff) placed side by side with no harmonic bridging — the clash is the point.",
-          "ko": "、、（ #ff5fa2、#ffd500、#2ec4b6、#7b61ff）， —— 。"
+          "ko": "Hot pink, lemon yellow, teal and purple (e.g. #ff5fa2, #ffd500, #2ec4b6, #7b61ff) placed side by side with no harmonic bridging — the clash is the point."
         }
       },
       {
@@ -2257,7 +2513,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Circles, triangles, half-donuts and blobs outlined in 2–3px solid black, like cut paper or screen-print ink — playful geometry over grids.",
-          "ko": "、、 2–3px ， —— 。"
+          "ko": "Circles, triangles, half-donuts and blobs outlined in 2–3px solid black, like cut paper or screen-print ink — playful geometry over grids."
         }
       },
       {
@@ -2270,7 +2526,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Depth comes only from overlapping flat shapes; nothing casts a shadow — it reads as screen print or laminated paper, not simulated light.",
-          "ko": "； —— ，。"
+          "ko": "Depth comes only from overlapping flat shapes; nothing casts a shadow — it reads as screen print or laminated paper, not simulated light."
         }
       },
       {
@@ -2296,7 +2552,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "The furniture originals wore glossy printed laminate and terrazzo; UI versions sometimes echo it with speckle textures or a sticker finish — optional.",
-          "ko": "；UI —— 。"
+          "ko": "The furniture originals wore glossy printed laminate and terrazzo; UI versions sometimes echo it with speckle textures or a sticker finish — optional."
         }
       },
       {
@@ -2313,15 +2569,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "neobrutalism",
+        "name": "Neobrutalism",
+        "because": {
+          "en": "This is Memphis because the look is pattern-first: squiggles, zigzags, dots and triangles scattered edge-to-edge across the ground, pink/yellow/teal/purple fills clashing underneath, and print-flat depth with no cast shadows.",
+          "ko": "This is Memphis because the look is pattern-first: squiggles, zigzags, dots and triangles scattered edge-to-edge across the ground, pink/yellow/teal/purple fills clashing underneath, and print-flat depth with no cast shadows."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become neobrutalism if you swept the confetti off the ground, locked every element into a uniform 2–3px black border, and gave each one a hard black offset shadow — playful pattern collage traded for clean sticker-block construction.",
+          "ko": "It would become neobrutalism if you swept the confetti off the ground, locked every element into a uniform 2–3px black border, and gave each one a hard black offset shadow — playful pattern collage traded for clean sticker-block construction."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface in the spirit of Memphis (Memphis Group, 1981). Defining signals: allover confetti (squiggles, zigzags, dots, crosses, tiny triangles) on a white #ffffff ground; deliberate clashes of hot pink #ff5fa2, lemon yellow #ffd500, teal #2ec4b6, purple #7b61ff with no harmonic bridging; shapes inked with 2–3px solid #000000 outlines; print-flat depth — overlap alone layers shapes, NOTHING casts a shadow (no box-shadow, gradients, blur). Compose as playful collage: chips rotated ±2–4deg, broken grid, mixed geometries — a circle button beside square tags, squiggle for a divider. Headings: chunky rounded display grotesk, black, weight 700–900; body plain black 14–16px. Interactions bounce: cubic-bezier(.34,1.56,.64,1) overshoot on hover/press. Pattern stays dense in decor zones; long text sits on solid fills. Do not drift into neobrutalism: confetti removed plus uniform borders with 4px 4px 0 #000 offset shadows IS neobrutalism — Memphis is pattern-first with zero cast shadows. Text stays at 4.5:1 on solid fills (never white on yellow or pink); honor prefers-reduced-motion.",
-      "ko": "（Memphis Group，1981）。： #ffffff （、、、、）； #ff5fa2、 #ffd500、 #2ec4b6、 #7b61ff ，； 2–3px #000000 ； —— ，（ box-shadow、、）。： ±2–4deg、、 —— ，。 grotesk，， 700–900； 14–16px。：hover/press cubic-bezier(.34,1.56,.64,1) 。；。： 4px 4px 0 #000 —— 、。 4.5:1（）； prefers-reduced-motion。"
+      "ko": "Create the surface in the spirit of Memphis (Memphis Group, 1981). Defining signals: allover confetti (squiggles, zigzags, dots, crosses, tiny triangles) on a white #ffffff ground; deliberate clashes of hot pink #ff5fa2, lemon yellow #ffd500, teal #2ec4b6, purple #7b61ff with no harmonic bridging; shapes inked with 2–3px solid #000000 outlines; print-flat depth — overlap alone layers shapes, NOTHING casts a shadow (no box-shadow, gradients, blur). Compose as playful collage: chips rotated ±2–4deg, broken grid, mixed geometries — a circle button beside square tags, squiggle for a divider. Headings: chunky rounded display grotesk, black, weight 700–900; body plain black 14–16px. Interactions bounce: cubic-bezier(.34,1.56,.64,1) overshoot on hover/press. Pattern stays dense in decor zones; long text sits on solid fills. Do not drift into neobrutalism: confetti removed plus uniform borders with 4px 4px 0 #000 offset shadows IS neobrutalism — Memphis is pattern-first with zero cast shadows. Text stays at 4.5:1 on solid fills (never white on yellow or pink); honor prefers-reduced-motion."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "A busy patterned ground destroys text legibility fast: never set body copy directly on the confetti — give text a solid fill (white or one of the palette colors) and measure 4.5:1. White text on #ffd500 or #ff5fa2 fails; black text on those same fills passes.\n\nHigh-saturation clashes plus allover pattern are real cognitive load — the eye gets no resting place. Reserve dense confetti for hero and decoration zones, drop the density behind content, and avoid tiny high-frequency marks (1px dots moiré on screens and vibrate for sensitive readers).\n\nTilted elements and bouncy easing need limits: keep rotations small (±4deg) so text stays readable, and under prefers-reduced-motion replace the overshoot easing with instant state changes — the style survives the swap intact.",
+      "ko": "A busy patterned ground destroys text legibility fast: never set body copy directly on the confetti — give text a solid fill (white or one of the palette colors) and measure 4.5:1. White text on #ffd500 or #ff5fa2 fails; black text on those same fills passes.\n\nHigh-saturation clashes plus allover pattern are real cognitive load — the eye gets no resting place. Reserve dense confetti for hero and decoration zones, drop the density behind content, and avoid tiny high-frequency marks (1px dots moiré on screens and vibrate for sensitive readers).\n\nTilted elements and bouncy easing need limits: keep rotations small (±4deg) so text stays readable, and under prefers-reduced-motion replace the overshoot easing with instant state changes — the style survives the swap intact."
+    },
     "origin": {
       "en": "The Memphis Group was founded in Milan by designer Ettore Sottsass with a circle of young collaborators — Michele De Lucchi, Nathalie du Pasquier, George Sowden, Marco Zanini, Martine Bedin and others — at a December 1980 meeting where Bob Dylan's 'Stuck Inside of Mobile with the Memphis Blues Again' kept spinning, giving the group its name. Its first collection, shown in Milan in 1981, wrapped toy-like furniture in printed plastic laminates such as Sottsass's squiggly 1978 'Bacterio' pattern; the group disbanded in 1987, and its graphics became the era's shorthand for eighties pop design, revived wholesale by pattern and UI designers in the 2010s.",
-      "ko": "Ettore Sottsass —— Michele De Lucchi、Nathalie du Pasquier、George Sowden、Marco Zanini、Martine Bedin —— ，1980 12 Bob Dylan 《Stuck Inside of Mobile with the Memphis Blues Again》，。1981 ， Sottsass 1978 「Bacterio」； 1987 ，「」， 2010 UI 。"
+      "ko": "The Memphis Group was founded in Milan by designer Ettore Sottsass with a circle of young collaborators — Michele De Lucchi, Nathalie du Pasquier, George Sowden, Marco Zanini, Martine Bedin and others — at a December 1980 meeting where Bob Dylan's 'Stuck Inside of Mobile with the Memphis Blues Again' kept spinning, giving the group its name. Its first collection, shown in Milan in 1981, wrapped toy-like furniture in printed plastic laminates such as Sottsass's squiggly 1978 'Bacterio' pattern; the group disbanded in 1987, and its graphics became the era's shorthand for eighties pop design, revived wholesale by pattern and UI designers in the 2010s."
     },
     "meta": {}
   },
@@ -2333,11 +2605,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Vaporwave is the visual dialect of the early-2010s internet music microgenre of the same name: a collage of 1980s–90s consumer debris — pastel pink-to-cyan gradient skies, Greek marble busts, Japanese katakana, Windows 95 window chrome, palm-tree sunsets over grid floors — degraded with VHS scanlines, chromatic aberration, and glitch. It treats corporate-utopian imagery as found footage: dreamy, ironic, and worn. A nostalgia remix, not a period original.",
-      "ko": "2010 ： 80–90 —— 、、、Windows 95 、 —— VHS 、。：、、。 remix，。"
+      "ko": "Vaporwave is the visual dialect of the early-2010s internet music microgenre of the same name: a collage of 1980s–90s consumer debris — pastel pink-to-cyan gradient skies, Greek marble busts, Japanese katakana, Windows 95 window chrome, palm-tree sunsets over grid floors — degraded with VHS scanlines, chromatic aberration, and glitch. It treats corporate-utopian imagery as found footage: dreamy, ironic, and worn. A nostalgia remix, not a period original."
     },
     "scope": {
       "en": "Scope: Covers the visual remix aesthetic, not the music's chopped-and-screwed production. The neon-outrun cousin that shares the sunset grid is synthwave/retrofuturism; the genuine turn-of-millennium original it samples is Y2K Digital Aesthetic (its own entry), and GeoCities-era amateur pages belong to Vernacular Web.",
-      "ko": "： remix ， chopped-and-screwed 。 synthwave/retrofuturism； Y2K （），GeoCities 。"
+      "ko": "Scope: Covers the visual remix aesthetic, not the music's chopped-and-screwed production. The neon-outrun cousin that shares the sunset grid is synthwave/retrofuturism; the genuine turn-of-millennium original it samples is Y2K Digital Aesthetic (its own entry), and GeoCities-era amateur pages belong to Vernacular Web."
     },
     "aliases": {
       "en": [
@@ -2368,7 +2640,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "The Floral Shoppe wash: cyan #01cdfe at the horizon bleeding through pink #ff71ce and purple #b967ff into deep indigo night. Applied to skies, washes, and type fills — never to chrome or metal.",
-          "ko": "《Floral Shoppe》： #01cdfe #ff71ce、 #b967ff，。、 —— 。"
+          "ko": "The Floral Shoppe wash: cyan #01cdfe at the horizon bleeding through pink #ff71ce and purple #b967ff into deep indigo night. Applied to skies, washes, and type fills — never to chrome or metal."
         }
       },
       {
@@ -2381,7 +2653,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "White-to-grey classical busts, heads, and torsos floating in the composition, sometimes sliced, masked, or duplicated. Antiquity is sampled like stock footage — the statue is the mascot.",
-          "ko": "、，、。 —— 。"
+          "ko": "White-to-grey classical busts, heads, and torsos floating in the composition, sometimes sliced, masked, or duplicated. Antiquity is sampled like stock footage — the statue is the mascot."
         }
       },
       {
@@ -2389,12 +2661,12 @@ export const STYLES: UIStyle[] = [
         "role": "defining",
         "name": {
           "en": "Windows 95 window chrome",
-          "ko": "Windows 95"
+          "ko": "Windows 95 window chrome"
         },
         "facet": "surface",
         "description": {
           "en": "Battleship-grey #c0c0c0 panels with 1–2px hard bevels, blue-gradient title bars, pixel icons, and dialog boxes used as decoration. The dead desktop is a collage element, not a working UI.",
-          "ko": "#c0c0c0 1–2px 、、，。， UI。"
+          "ko": "Battleship-grey #c0c0c0 panels with 1–2px hard bevels, blue-gradient title bars, pixel icons, and dialog boxes used as decoration. The dead desktop is a collage element, not a working UI."
         }
       },
       {
@@ -2407,7 +2679,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Japanese katakana — occasionally Chinese signage — placed as pure decoration, beside full-width spaced latin (ＡＥＳＴＨＥＴＩＣ). Meaning is optional; the exotic-mood texture is the point.",
-          "ko": "—— —— ，（ＡＥＳＴＨＥＴＩＣ）。，。"
+          "ko": "Japanese katakana — occasionally Chinese signage — placed as pure decoration, beside full-width spaced latin (ＡＥＳＴＨＥＴＩＣ). Meaning is optional; the exotic-mood texture is the point."
         }
       },
       {
@@ -2420,7 +2692,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "1px horizontal scanlines, chromatic aberration (RGB-split edges), tracking bands, tape noise, PLAY overlays and timestamps. Everything looks copied, worn, and re-recorded rather than rendered clean.",
-          "ko": "1px 、（RGB ）、、、PLAY 。、、，。"
+          "ko": "1px horizontal scanlines, chromatic aberration (RGB-split edges), tracking bands, tape noise, PLAY overlays and timestamps. Everything looks copied, worn, and re-recorded rather than rendered clean."
         }
       },
       {
@@ -2433,7 +2705,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "A striped or pixelated sun setting over a perspective grid plane, usually with palm silhouettes — borrowed from synthwave but washed out to pastel.",
-          "ko": "， —— synthwave，。"
+          "ko": "A striped or pixelated sun setting over a perspective grid plane, usually with palm silhouettes — borrowed from synthwave but washed out to pastel."
         }
       },
       {
@@ -2446,7 +2718,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Elements slice-shift, stutter, and RGB-split in short loops; motion feels like a damaged tape, never a smooth physics animation.",
-          "ko": "、、RGB ；，。"
+          "ko": "Elements slice-shift, stutter, and RGB-split in short loops; motion feels like a damaged tape, never a smooth physics animation."
         }
       },
       {
@@ -2459,19 +2731,35 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Mirror chrome, gel gloss, lens flares, and iridescent blue-silver belong to Y2K's forward-looking sheen. Vaporwave surfaces stay matte, faded, and degraded — polish kills the nostalgia.",
-          "ko": "、、 Y2K 。、、 —— 。"
+          "ko": "Mirror chrome, gel gloss, lens flares, and iridescent blue-silver belong to Y2K's forward-looking sheen. Vaporwave surfaces stay matte, faded, and degraded — polish kills the nostalgia."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "y2k",
+        "name": "Y2K Digital Aesthetic",
+        "because": {
+          "en": "This is Vaporwave because it looks BACK: a 2010s remix of 80s/90s debris — pink-to-cyan gradient skies, marble busts, katakana, Windows 95 chrome, and VHS wear — nostalgia as collage, not millennium optimism.",
+          "ko": "This is Vaporwave because it looks BACK: a 2010s remix of 80s/90s debris — pink-to-cyan gradient skies, marble busts, katakana, Windows 95 chrome, and VHS wear — nostalgia as collage, not millennium optimism."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Y2K if the gaze flipped forward: drop the busts, katakana, and tape decay, and re-render everything in mirror chrome, gel plastic, and iridescent blue-silver as if the future had just shipped.",
+          "ko": "It would become Y2K if the gaze flipped forward: drop the busts, katakana, and tape decay, and re-render everything in mirror chrome, gel plastic, and iridescent blue-silver as if the future had just shipped."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using Vaporwave. Defining signals: gradient sky running cyan #01cdfe at the horizon through pink #ff71ce and purple #b967ff into indigo #2d1b69; floating white Greek marble statuary; Windows 95 chrome — #c0c0c0 panels with hard 1–2px bevels (inset -1px -1px 0 #0a0a0a, inset 1px 1px 0 #fff), blue-gradient title bars, square corners, zero blur; decorative Japanese katakana plus full-width spaced latin (ＡＥＳＴＨＥＴＩＣ); VHS decay — 1px scanlines at ~20% black, chromatic aberration (text-shadow: -2px 0 #ff71ce, 2px 0 #01cdfe), glitch slice-shifts; a striped sun over a perspective grid floor with palm silhouettes. Keep the choice of consumer fragments (logos, mall imagery) flexible. Type: small plain system sans, black on the grey chrome, white with RGB split over the art. Do not drift into Y2K: the decisive difference is gaze direction — vaporwave looks BACK at the 80s/90s through worn tape, so no mirror chrome, gel gloss, or iridescent blue-silver. Hold text at 4.5:1 on solid plates (never over scanlines), glitch under 3 flashes/sec, and honor prefers-reduced-motion.",
-      "ko": "（Vaporwave）。： #01cdfe #ff71ce、 #b967ff #2d1b69；；Windows 95 —— #c0c0c0 1–2px （inset -1px -1px 0 #0a0a0a、inset 1px 1px 0 #fff）、、、；（ＡＥＳＴＨＥＴＩＣ）；VHS —— 20% 1px 、（text-shadow: -2px 0 #ff71ce, 2px 0 #01cdfe）、；，。（logo、）。：，， RGB 。 Y2K： —— 80/90 ，、。 4.5:1（）， 3 ， prefers-reduced-motion。"
+      "ko": "Create the surface using Vaporwave. Defining signals: gradient sky running cyan #01cdfe at the horizon through pink #ff71ce and purple #b967ff into indigo #2d1b69; floating white Greek marble statuary; Windows 95 chrome — #c0c0c0 panels with hard 1–2px bevels (inset -1px -1px 0 #0a0a0a, inset 1px 1px 0 #fff), blue-gradient title bars, square corners, zero blur; decorative Japanese katakana plus full-width spaced latin (ＡＥＳＴＨＥＴＩＣ); VHS decay — 1px scanlines at ~20% black, chromatic aberration (text-shadow: -2px 0 #ff71ce, 2px 0 #01cdfe), glitch slice-shifts; a striped sun over a perspective grid floor with palm silhouettes. Keep the choice of consumer fragments (logos, mall imagery) flexible. Type: small plain system sans, black on the grey chrome, white with RGB split over the art. Do not drift into Y2K: the decisive difference is gaze direction — vaporwave looks BACK at the 80s/90s through worn tape, so no mirror chrome, gel gloss, or iridescent blue-silver. Hold text at 4.5:1 on solid plates (never over scanlines), glitch under 3 flashes/sec, and honor prefers-reduced-motion."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Pastel-on-pastel is the core failure: pink text over the cyan or purple gradient reads around 1.5–2:1. Put body text on the solid #c0c0c0 chrome (black ink, 15:1+) or on solid dark plates over the art, and treat gradient or chromatic type as decoration with a readable duplicate.\n\nGlitch strobes, slice-shifts, and RGB-split flicker can trigger photosensitive reactions — keep any flashing under 3 per second, disable slice-shifts and flicker under prefers-reduced-motion, and never gate content behind the effect.\n\nDecorative katakana and full-width latin are meaningless to many users and get spelled out character-by-character by screen readers — mark them aria-hidden. Scanline and noise overlays cut effective contrast for low-vision users, so keep those layers out of text.",
+      "ko": "Pastel-on-pastel is the core failure: pink text over the cyan or purple gradient reads around 1.5–2:1. Put body text on the solid #c0c0c0 chrome (black ink, 15:1+) or on solid dark plates over the art, and treat gradient or chromatic type as decoration with a readable duplicate.\n\nGlitch strobes, slice-shifts, and RGB-split flicker can trigger photosensitive reactions — keep any flashing under 3 per second, disable slice-shifts and flicker under prefers-reduced-motion, and never gate content behind the effect.\n\nDecorative katakana and full-width latin are meaningless to many users and get spelled out character-by-character by screen readers — mark them aria-hidden. Scanline and noise overlays cut effective contrast for low-vision users, so keep those layers out of text."
+    },
     "origin": {
       "en": "Vaporwave began as a music microgenre around 2010–2011 in online communities — Bandcamp, Tumblr, and their forums — with Daniel Lopatin's Eccojams Vol. 1 (2010, released under the alias Chuck Person) and the Macintosh Plus album Floral Shoppe (2011, an alias of producer Vektroid) as founding documents; the Floral Shoppe cover — pink wash, marble bust, katakana — set the visual template. James Ferraro's Far Side Virtual (2011) supplied the corporate-utopia source material, and the name puns on 'vaporware'. The collage aesthetic peaked on Tumblr around 2012–2015.",
-      "ko": "2010–2011 （Bandcamp、Tumblr ）， Daniel Lopatin Chuck Person 《Eccojams Vol. 1》（2010） Macintosh Plus（ Vektroid ）《Floral Shoppe》（2011）—— （、、）。James Ferraro 《Far Side Virtual》（2011），「vaporware」。 2012–2015 Tumblr 。"
+      "ko": "Vaporwave began as a music microgenre around 2010–2011 in online communities — Bandcamp, Tumblr, and their forums — with Daniel Lopatin's Eccojams Vol. 1 (2010, released under the alias Chuck Person) and the Macintosh Plus album Floral Shoppe (2011, an alias of producer Vektroid) as founding documents; the Floral Shoppe cover — pink wash, marble bust, katakana — set the visual template. James Ferraro's Far Side Virtual (2011) supplied the corporate-utopia source material, and the name puns on 'vaporware'. The collage aesthetic peaked on Tumblr around 2012–2015."
     },
     "meta": {}
   },
@@ -2483,11 +2771,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Art Deco is the geometry of luxury: mirror symmetry, sunburst and fan motifs, stepped ziggurat silhouettes, and gold linework on lacquer black with jewel accents. Named after the 1925 Paris Exposition des arts décoratifs, it gave the Chrysler Building its crown and Gatsby its glow. Where Bauhaus stripped geometry to function, Deco piled it on — gilded all-caps lettering and ornament dense enough to feel machined. It faded with wartime austerity and revives whenever design wants opulence.",
-      "ko": "「」：、、（ziggurat），。 1925 ，。， —— 、。，「」。"
+      "ko": "Art Deco is the geometry of luxury: mirror symmetry, sunburst and fan motifs, stepped ziggurat silhouettes, and gold linework on lacquer black with jewel accents. Named after the 1925 Paris Exposition des arts décoratifs, it gave the Chrysler Building its crown and Gatsby its glow. Where Bauhaus stripped geometry to function, Deco piled it on — gilded all-caps lettering and ornament dense enough to feel machined. It faded with wartime austerity and revives whenever design wants opulence."
     },
     "scope": {
       "en": "Scope: This entry covers the ornamental 1920s–30s Deco look and its later revivals as a UI and branding style. Its chrome-and-speed-lines 1930s offshoot, Streamline Moderne, is a related but distinct flavor; the era's functional-geometry movement across the Atlantic is Bauhaus.",
-      "ko": "： 1920–30 Deco ， UI 。 1930 Streamline Moderne（），；，。"
+      "ko": "Scope: This entry covers the ornamental 1920s–30s Deco look and its later revivals as a UI and branding style. Its chrome-and-speed-lines 1930s offshoot, Streamline Moderne, is a related but distinct flavor; the era's functional-geometry movement across the Atlantic is Bauhaus."
     },
     "aliases": {
       "en": [
@@ -2518,7 +2806,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Everything hangs on one vertical center axis: ornaments, frames and type blocks mirror exactly left-to-right, often in nested symmetrical tiers. An off-center layout instantly stops reading as Deco.",
-          "ko": "：、，。，。"
+          "ko": "Everything hangs on one vertical center axis: ornaments, frames and type blocks mirror exactly left-to-right, often in nested symmetrical tiers. An off-center layout instantly stops reading as Deco."
         }
       },
       {
@@ -2531,7 +2819,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Rays radiating from a single point (sunburst), scalloped fan shells, chevrons and zigzag bands — the canonical ornament kit, drawn as thin gold strokes 1–2px wide.",
-          "ko": "（）、、 —— ， 1–2px 。"
+          "ko": "Rays radiating from a single point (sunburst), scalloped fan shells, chevrons and zigzag bands — the canonical ornament kit, drawn as thin gold strokes 1–2px wide."
         }
       },
       {
@@ -2544,7 +2832,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Silhouettes recede in symmetric stair-steps — three to five shrinking tiers like the Chrysler Building crown — used for frame corners, badges and panel tops.",
-          "ko": "—— ， —— 、。"
+          "ko": "Silhouettes recede in symmetric stair-steps — three to five shrinking tiers like the Chrysler Building crown — used for frame corners, badges and panel tops."
         }
       },
       {
@@ -2557,7 +2845,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Metallic gold linework (#c9a227, highlights #f0dc9a) on near-black lacquer (#0b0b0e), accented with deep emerald, sapphire or ruby; pastels or flat primaries break the spell.",
-          "ko": "（#c9a227， #f0dc9a）（#0b0b0e），、；，。"
+          "ko": "Metallic gold linework (#c9a227, highlights #f0dc9a) on near-black lacquer (#0b0b0e), accented with deep emerald, sapphire or ruby; pastels or flat primaries break the spell."
         }
       },
       {
@@ -2570,7 +2858,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Headings set in ALL CAPS geometric or high-contrast display faces with letter-spacing 0.15–0.35em, rendered in gold — reading like inscriptions over a hotel entrance.",
-          "ko": "，letter-spacing 0.15–0.35em， —— 。"
+          "ko": "Headings set in ALL CAPS geometric or high-contrast display faces with letter-spacing 0.15–0.35em, rendered in gold — reading like inscriptions over a hotel entrance."
         }
       },
       {
@@ -2583,7 +2871,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Borders are paired strokes — a 2px gold line with a 1px inner hairline 4–6px inside it, mimicking engraved gilt frames. A single thick black border reads as neobrutalism, not Deco.",
-          "ko": "—— 2px ， 4–6px 1px ，。，。"
+          "ko": "Borders are paired strokes — a 2px gold line with a 1px inner hairline 4–6px inside it, mimicking engraved gilt frames. A single thick black border reads as neobrutalism, not Deco."
         }
       },
       {
@@ -2596,7 +2884,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Yellow gold is the default, but chrome-silver (the Streamline Moderne branch) and copper read equally Deco; what matters is metallic contrast on a dark ground, not the hue.",
-          "ko": "，（Streamline Moderne ）；，。"
+          "ko": "Yellow gold is the default, but chrome-silver (the Streamline Moderne branch) and copper read equally Deco; what matters is metallic contrast on a dark ground, not the hue."
         }
       },
       {
@@ -2609,19 +2897,35 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Flat red/yellow/blue blocks on white with asymmetric grids and bare grotesk type belong to Bauhaus and De Stijl — ornament-free primaries are a different movement that happens to share the decade.",
-          "ko": "、 grotesk —— 。"
+          "ko": "Flat red/yellow/blue blocks on white with asymmetric grids and bare grotesk type belong to Bauhaus and De Stijl — ornament-free primaries are a different movement that happens to share the decade."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "bauhaus",
+        "name": "Bauhaus",
+        "because": {
+          "en": "This is Art Deco because the geometry is ornamental luxury: mirror symmetry, gilded linework, sunburst and fan motifs, jewel tones on black — the decoration itself is the point, not a byproduct.",
+          "ko": "This is Art Deco because the geometry is ornamental luxury: mirror symmetry, gilded linework, sunburst and fan motifs, jewel tones on black — the decoration itself is the point, not a byproduct."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Bauhaus if the ornament were stripped away and the symmetry broken — asymmetric grid, flat primary-color blocks, unadorned grotesk type, and not a gram of gold left.",
+          "ko": "It would become Bauhaus if the ornament were stripped away and the symmetry broken — asymmetric grid, flat primary-color blocks, unadorned grotesk type, and not a gram of gold left."
+        }
+      }
+    ],
     "brief": {
       "en": "Build the surface as 1920s–30s Art Deco. Ground: near-black lacquer #0b0b0e; optional deep emerald panel #0f3d2e. Metal: gold linework — stops #f0dc9a/#c9a227/#9c7f22 (highlight/base/shade) as vertical gradients on strokes and display text (background-clip: text). Composition: strict mirror symmetry on one vertical axis; hero centered. Typography: ALL CAPS display face (Cinzel, Poiret One or Didot; fallback Georgia), letter-spacing 0.2–0.35em, headings in gradient gold; body small, sentence case, ivory #efe9dc. Ornament kit: sunburst fan — repeating-conic-gradient, ~2deg gold rays on 11deg spacing from bottom-center; stepped ziggurat corners on frames/badges; paired border rules: 2px gold stroke plus 1px inner hairline 4–6px inside (box-shadow: inset 0 0 0 5px #0b0b0e, inset 0 0 0 6px #c9a227). Cut button corners into octagons (clip-path). Depth comes from metal and line, never blurred drop shadows. Motion: almost none — one fade, or rays turning over 40s at most. Avoid: primary-color blocks, asymmetry, bubble radii, soft shadows, caps body text — that way lies Bauhaus or kitsch.",
-      "ko": "1920–30 （Art Deco）。： #0b0b0e； #0f3d2e。： —— #f0dc9a/#c9a227/#9c7f22（//），（background-clip: text）。：，。：（Cinzel、Poiret One Didot； Georgia），letter-spacing 0.2–0.35em，；、、 #efe9dc。： —— repeating-conic-gradient， 2deg 、11deg 、；；：2px ， 4–6px 1px （box-shadow: inset 0 0 0 5px #0b0b0e, inset 0 0 0 6px #c9a227）。 clip-path 。，。： —— ， 40s 。：、、、、 —— 。"
+      "ko": "Build the surface as 1920s–30s Art Deco. Ground: near-black lacquer #0b0b0e; optional deep emerald panel #0f3d2e. Metal: gold linework — stops #f0dc9a/#c9a227/#9c7f22 (highlight/base/shade) as vertical gradients on strokes and display text (background-clip: text). Composition: strict mirror symmetry on one vertical axis; hero centered. Typography: ALL CAPS display face (Cinzel, Poiret One or Didot; fallback Georgia), letter-spacing 0.2–0.35em, headings in gradient gold; body small, sentence case, ivory #efe9dc. Ornament kit: sunburst fan — repeating-conic-gradient, ~2deg gold rays on 11deg spacing from bottom-center; stepped ziggurat corners on frames/badges; paired border rules: 2px gold stroke plus 1px inner hairline 4–6px inside (box-shadow: inset 0 0 0 5px #0b0b0e, inset 0 0 0 6px #c9a227). Cut button corners into octagons (clip-path). Depth comes from metal and line, never blurred drop shadows. Motion: almost none — one fade, or rays turning over 40s at most. Avoid: primary-color blocks, asymmetry, bubble radii, soft shadows, caps body text — that way lies Bauhaus or kitsch."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Gradient gold text fails silently: on #0b0b0e the base gold #c9a227 measures about 8.1:1, but a dark stop like #8a6d1d drops to 4.0:1 — keep every gradient stop at #9c7f22 (5.1:1) or lighter, or set the text in solid #c9a227.\n\nALL CAPS with 0.2em+ tracking is measurably slower to read and harder for dyslexic and low-vision users — reserve it for headings and short labels, and set body copy in sentence case with normal spacing. Dense ray and zigzag patterns cause visual vibration; keep ornament out of text zones and mark decorative layers aria-hidden.\n\nRotating sunbursts and shimmer must stop under prefers-reduced-motion. Gradient text made with background-clip disappears entirely in Windows forced-colors mode — add a @media (forced-colors: active) fallback that resets it to solid CanvasText with background: none.",
+      "ko": "Gradient gold text fails silently: on #0b0b0e the base gold #c9a227 measures about 8.1:1, but a dark stop like #8a6d1d drops to 4.0:1 — keep every gradient stop at #9c7f22 (5.1:1) or lighter, or set the text in solid #c9a227.\n\nALL CAPS with 0.2em+ tracking is measurably slower to read and harder for dyslexic and low-vision users — reserve it for headings and short labels, and set body copy in sentence case with normal spacing. Dense ray and zigzag patterns cause visual vibration; keep ornament out of text zones and mark decorative layers aria-hidden.\n\nRotating sunbursts and shimmer must stop under prefers-reduced-motion. Gradient text made with background-clip disappears entirely in Windows forced-colors mode — add a @media (forced-colors: active) fallback that resets it to solid CanvasText with background: none."
+    },
     "origin": {
       "en": "Named after the Exposition internationale des arts décoratifs et industriels modernes held in Paris in 1925 — though the label only stuck after Bevis Hillier's 1968 book 'Art Deco of the 20s and 30s'. The look had crystallized in 1910s–20s France around designers such as furniture maker Émile-Jacques Ruhlmann, absorbing Cubist geometry and, after Tutankhamun's tomb was opened in 1922, Egyptian sunburst and stepped forms. In America it became the architecture of ambition: William Van Alen's Chrysler Building (1930) crowned New York with a stainless-steel sunburst, followed by the Empire State Building (1931). Depression-era and wartime austerity ended the party, and Baz Luhrmann's 2013 film 'The Great Gatsby' later gave the black-and-gold revival its pop-culture template.",
-      "ko": "1925 （Exposition internationale des arts décoratifs et industriels modernes）—— Bevis Hillier 1968 《Art Deco of the 20s and 30s》。 1910–20 ， Émile-Jacques Ruhlmann ，；1922 ，。，：William Van Alen （1930），（1931）。；Baz Luhrmann 2013 《》。"
+      "ko": "Named after the Exposition internationale des arts décoratifs et industriels modernes held in Paris in 1925 — though the label only stuck after Bevis Hillier's 1968 book 'Art Deco of the 20s and 30s'. The look had crystallized in 1910s–20s France around designers such as furniture maker Émile-Jacques Ruhlmann, absorbing Cubist geometry and, after Tutankhamun's tomb was opened in 1922, Egyptian sunburst and stepped forms. In America it became the architecture of ambition: William Van Alen's Chrysler Building (1930) crowned New York with a stainless-steel sunburst, followed by the Empire State Building (1931). Depression-era and wartime austerity ended the party, and Baz Luhrmann's 2013 film 'The Great Gatsby' later gave the black-and-gold revival its pop-culture template."
     },
     "meta": {}
   },
@@ -2633,11 +2937,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Cyberpunk is the visual language of 'high tech, low life': near-black interfaces lit by neon magenta, cyan, and electric yellow, like signage over a rain-soaked street. Luminous hairline borders, bloom halos, scanlines, and glitch tears turn panels into hacked terminals, while monospace type and HUD brackets supply the instrumentation. Born in 1980s science fiction and pushed into UI by films and games like Cyberpunk 2077, it treats darkness as the canvas — every accent must earn its glow.",
-      "ko": "「，」（high tech, low life）：、、，。、、， HUD 。 1980 ，《》《 2077》 UI——，。"
+      "ko": "Cyberpunk is the visual language of 'high tech, low life': near-black interfaces lit by neon magenta, cyan, and electric yellow, like signage over a rain-soaked street. Luminous hairline borders, bloom halos, scanlines, and glitch tears turn panels into hacked terminals, while monospace type and HUD brackets supply the instrumentation. Born in 1980s science fiction and pushed into UI by films and games like Cyberpunk 2077, it treats darkness as the canvas — every accent must earn its glow."
     },
     "scope": {
       "en": "Scope: The screen-interface expression of the genre — dark HUDs, terminals, neon signage, glitch artifacts — not its literary themes, and not simply 'dark mode with purple'. Bright pastel retro-futurism (synthwave sunsets, VHS nostalgia) belongs to the vaporwave family, not to this entry.",
-      "ko": "：—— HUD、、、——，「」。（、VHS ），。"
+      "ko": "Scope: The screen-interface expression of the genre — dark HUDs, terminals, neon signage, glitch artifacts — not its literary themes, and not simply 'dark mode with purple'. Bright pastel retro-futurism (synthwave sunsets, VHS nostalgia) belongs to the vaporwave family, not to this entry."
     },
     "aliases": {
       "en": [
@@ -2668,7 +2972,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Backgrounds live at #05070f–#0a0e17; magenta #ff2a6d, cyan #05d9e8, and electric yellow #f9f002 sit on top at full glow. A light background disqualifies the style on sight.",
-          "ko": "#05070f–#0a0e17 ； #ff2a6d、 #05d9e8、 #f9f002 。。"
+          "ko": "Backgrounds live at #05070f–#0a0e17; magenta #ff2a6d, cyan #05d9e8, and electric yellow #f9f002 sit on top at full glow. A light background disqualifies the style on sight."
         }
       },
       {
@@ -2681,7 +2985,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Panels and buttons wear 1px bright strokes with matching bloom — box-shadow: 0 0 8px plus 0 0 24px in the border color — so every edge reads as neon tubing or a hologram seam.",
-          "ko": "1px ，——box-shadow: 0 0 8px 0 0 24px ——。"
+          "ko": "Panels and buttons wear 1px bright strokes with matching bloom — box-shadow: 0 0 8px plus 0 0 24px in the border color — so every edge reads as neon tubing or a hologram seam."
         }
       },
       {
@@ -2694,7 +2998,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Corner brackets, tick marks, crosshair rules, and tiny numeric readouts frame content like a cockpit overlay; corners are sharp or chamfered with clip-path cuts, never bubbly.",
-          "ko": "、、 overlay； clip-path ，。"
+          "ko": "Corner brackets, tick marks, crosshair rules, and tiny numeric readouts frame content like a cockpit overlay; corners are sharp or chamfered with clip-path cuts, never bubbly."
         }
       },
       {
@@ -2707,7 +3011,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "UI text is set in monospace or squared techno faces, often uppercase at 10–12px with .1–.2em letter-spacing, decorated with > _ :: // glyphs — the console is the voice of the interface.",
-          "ko": "， 10–12px .1–.2em ， > _ :: // ——。"
+          "ko": "UI text is set in monospace or squared techno faces, often uppercase at 10–12px with .1–.2em letter-spacing, decorated with > _ :: // glyphs — the console is the voice of the interface."
         }
       },
       {
@@ -2720,7 +3024,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "RGB-split text shadows (magenta/cyan offsets), occasional slice-and-skew jitters, and a repeating 1px scanline overlay simulate a damaged feed — short bursts of seasoning, not constant noise.",
-          "ko": "RGB （/）、， 1px ，——，。"
+          "ko": "RGB-split text shadows (magenta/cyan offsets), occasional slice-and-skew jitters, and a repeating 1px scanline overlay simulate a damaged feed — short bursts of seasoning, not constant noise."
         }
       },
       {
@@ -2746,7 +3050,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Yellow-black diagonal warning bands, mega-corp logos, and barcode livery mark the world as dangerous and owned; density runs from a single striped edge to full industrial cladding.",
-          "ko": "、 logo、，；。"
+          "ko": "Yellow-black diagonal warning bands, mega-corp logos, and barcode livery mark the world as dangerous and owned; density runs from a single striped edge to full industrial cladding."
         }
       },
       {
@@ -2759,19 +3063,35 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Light grounds, soft pink/lavender palettes, marble busts, and VHS timestamps are vaporwave's retro consumerism — warmth and daylight are the giveaway that this isn't cyberpunk.",
-          "ko": "、/、 VHS ——「」。"
+          "ko": "Light grounds, soft pink/lavender palettes, marble busts, and VHS timestamps are vaporwave's retro consumerism — warmth and daylight are the giveaway that this isn't cyberpunk."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "vaporwave",
+        "name": "Vaporwave",
+        "because": {
+          "en": "This is Cyberpunk because the canvas is near-black and the light comes from neon — saturated magenta/cyan glow on a dark, high-contrast future city, framed by HUD furniture and monospace data. The mood is dystopian and forward-looking; the glitch reads as a hacked signal, not a worn tape.",
+          "ko": "This is Cyberpunk because the canvas is near-black and the light comes from neon — saturated magenta/cyan glow on a dark, high-contrast future city, framed by HUD furniture and monospace data. The mood is dystopian and forward-looking; the glitch reads as a hacked signal, not a worn tape."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become vaporwave if someone turned the lights on and the calendar back — bright pastel pink and teal on light grounds, 80s–90s consumer nostalgia (Greek busts, VHS date stamps, early-Windows chrome), dreamy irony instead of dystopia. Both share glitch effects, but vaporwave's is VHS decay in daylight while cyberpunk's is signal interference in the dark.",
+          "ko": "It would become vaporwave if someone turned the lights on and the calendar back — bright pastel pink and teal on light grounds, 80s–90s consumer nostalgia (Greek busts, VHS date stamps, early-Windows chrome), dreamy irony instead of dystopia. Both share glitch effects, but vaporwave's is VHS decay in daylight while cyberpunk's is signal interference in the dark."
+        }
+      }
+    ],
     "brief": {
       "en": "Build a cyberpunk HUD. Canvas: near-black with a blue cast — page #05070f, panels #0a0e17. Signal colors: magenta #ff2a6d and cyan #05d9e8; yellow #f9f002 for warnings/primary actions only. Text: off-white #d1f7ff, secondary #7f9bb3, monospace (ui-monospace / JetBrains Mono); micro-labels uppercase at 10–11px, letter-spacing .15em, prefixed with >_ or //. Every panel and button wears a 1px neon border with bloom — box-shadow: 0 0 8px rgba(5,217,232,.5), 0 0 24px rgba(5,217,232,.2), inset 0 0 12px rgba(5,217,232,.12) — corners sharp (2px) or 8–12px clip-path chamfers. Add HUD furniture: corner brackets, tick marks, tiny numeric readouts. Season with glitch: RGB-split headings (text-shadow: -2px 0 #ff2a6d, 2px 0 #05d9e8), rare 100–200ms skew/translate stutters, plus scanlines (1px rgba(255,255,255,.05) every 3px). Hazard stripes (45deg #f9f002/#0a0a0a, 12px steps) for danger zones only; CJK neon signage optional. Avoid light backgrounds, pastels, soft white shadows, bubbly radii, and VHS nostalgia — that's vaporwave. Keep motion intermittent: a hacked signal stutters, never floats.",
-      "ko": "HUD。：—— #05070f， #0a0e17。： #ff2a6d #05d9e8； #f9f002 。： #d1f7ff， #7f9bb3，（ui-monospace / JetBrains Mono）； 10–11px 、letter-spacing .15em， >_ //。 1px ——box-shadow: 0 0 8px rgba(5,217,232,.5)、0 0 24px rgba(5,217,232,.2)、inset 0 0 12px rgba(5,217,232,.12)——（2px） clip-path 8–12px 。 HUD ：、、。： RGB （text-shadow: -2px 0 #ff2a6d, 2px 0 #05d9e8）， 100–200ms skew/translate ，（ 3px 1px rgba(255,255,255,.05)）。（45deg #f9f002/#0a0a0a，12px ）；。、、、 VHS ——。：，。"
+      "ko": "Build a cyberpunk HUD. Canvas: near-black with a blue cast — page #05070f, panels #0a0e17. Signal colors: magenta #ff2a6d and cyan #05d9e8; yellow #f9f002 for warnings/primary actions only. Text: off-white #d1f7ff, secondary #7f9bb3, monospace (ui-monospace / JetBrains Mono); micro-labels uppercase at 10–11px, letter-spacing .15em, prefixed with >_ or //. Every panel and button wears a 1px neon border with bloom — box-shadow: 0 0 8px rgba(5,217,232,.5), 0 0 24px rgba(5,217,232,.2), inset 0 0 12px rgba(5,217,232,.12) — corners sharp (2px) or 8–12px clip-path chamfers. Add HUD furniture: corner brackets, tick marks, tiny numeric readouts. Season with glitch: RGB-split headings (text-shadow: -2px 0 #ff2a6d, 2px 0 #05d9e8), rare 100–200ms skew/translate stutters, plus scanlines (1px rgba(255,255,255,.05) every 3px). Hazard stripes (45deg #f9f002/#0a0a0a, 12px steps) for danger zones only; CJK neon signage optional. Avoid light backgrounds, pastels, soft white shadows, bubbly radii, and VHS nostalgia — that's vaporwave. Keep motion intermittent: a hacked signal stutters, never floats."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Neon on dark is not automatically high-contrast: cyan #05d9e8 on #0a0e17 clears 4.5:1 comfortably, but magenta #ff2a6d at small sizes and yellow #f9f002 against glow halos can fall short — measure body text against the real background, keep glow out of the contrast equation, and never set long copy in the dimmest accent.\n\nGlitch flicker, RGB-split flashes, and sweeping scanlines are exactly the motion that bothers vestibular and photosensitive users: keep flashes under 3 per second, make glitches rare and short, and honor prefers-reduced-motion by freezing jitter, blink, and rain effects entirely.\n\nHUD decoration is cognitive noise: brackets, tickers, and blinking readouts compete with content, and uppercase wide-tracked monospace reads slowly at length. Mark decorative readouts aria-hidden, keep body copy in a comfortable size and face, and give focus a visible state that is more than a glow-color change (an offset outline in a reserved color works).",
+      "ko": "Neon on dark is not automatically high-contrast: cyan #05d9e8 on #0a0e17 clears 4.5:1 comfortably, but magenta #ff2a6d at small sizes and yellow #f9f002 against glow halos can fall short — measure body text against the real background, keep glow out of the contrast equation, and never set long copy in the dimmest accent.\n\nGlitch flicker, RGB-split flashes, and sweeping scanlines are exactly the motion that bothers vestibular and photosensitive users: keep flashes under 3 per second, make glitches rare and short, and honor prefers-reduced-motion by freezing jitter, blink, and rain effects entirely.\n\nHUD decoration is cognitive noise: brackets, tickers, and blinking readouts compete with content, and uppercase wide-tracked monospace reads slowly at length. Mark decorative readouts aria-hidden, keep body copy in a comfortable size and face, and give focus a visible state that is more than a glow-color change (an offset outline in a reserved color works)."
+    },
     "origin": {
       "en": "The genre was named by Bruce Bethke's 1983 short story 'Cyberpunk' and defined as literature by William Gibson's 1984 novel Neuromancer, but its visual language was set by film: Ridley Scott's Blade Runner (1982) fused the neon signage of Asian megacities with rain, smog, and towering video billboards into the 'high tech, low life' metropolis, and Katsuhiro Otomo's Akira (1988) added Neo-Tokyo's holographic advertising. The look became an actual interface kit through 1990s sci-fi screen graphics and, most decisively, CD Projekt Red's Cyberpunk 2077 (2020), whose glitching yellow-and-black HUD turned cyberpunk into a literal UI style.",
-      "ko": "Bruce Bethke 1983 《Cyberpunk》， William Gibson 1984 《》（Neuromancer），：Ridley Scott 《》（Blade Runner，1982）、、「，」，《》（Akira，1988）。 1990 、 CD Projekt Red《 2077》（2020）—— HUD UI 。"
+      "ko": "The genre was named by Bruce Bethke's 1983 short story 'Cyberpunk' and defined as literature by William Gibson's 1984 novel Neuromancer, but its visual language was set by film: Ridley Scott's Blade Runner (1982) fused the neon signage of Asian megacities with rain, smog, and towering video billboards into the 'high tech, low life' metropolis, and Katsuhiro Otomo's Akira (1988) added Neo-Tokyo's holographic advertising. The look became an actual interface kit through 1990s sci-fi screen graphics and, most decisively, CD Projekt Red's Cyberpunk 2077 (2020), whose glitching yellow-and-black HUD turned cyberpunk into a literal UI style."
     },
     "meta": {}
   },
@@ -2783,11 +3103,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Pixel Art is a graphic language born from hardware limits: on the 8- and 16-bit consoles and arcade boards of the 1980s–90s, artists drew with visible square pixels and tiny indexed palettes, placing every sprite, glyph, and health bar pixel by pixel. What began as a constraint is now a deliberate retro aesthetic — crisp stair-stepped edges with no anti-aliasing, limited color ramps, dithered shading, chunky bitmap type, and frame-by-frame animation chosen for charm, not necessity.",
-      "ko": "： 20 80–90 8/16 ，，、、。 —— 、、（dithering）、、，，。"
+      "ko": "Pixel Art is a graphic language born from hardware limits: on the 8- and 16-bit consoles and arcade boards of the 1980s–90s, artists drew with visible square pixels and tiny indexed palettes, placing every sprite, glyph, and health bar pixel by pixel. What began as a constraint is now a deliberate retro aesthetic — crisp stair-stepped edges with no anti-aliasing, limited color ramps, dithered shading, chunky bitmap type, and frame-by-frame animation chosen for charm, not necessity."
     },
     "scope": {
       "en": "Scope: Covers the deliberate retro game-art style applied to UI and illustration — the craft of placing individual pixels. It is not the 90s amateur-homepage look (that's Vernacular Web), and merely low-resolution or blurry images are not pixel art: without deliberate pixel-level construction and a limited palette, it's just a small picture.",
-      "ko": "： UI —— 。 90 （）；：，。"
+      "ko": "Scope: Covers the deliberate retro game-art style applied to UI and illustration — the craft of placing individual pixels. It is not the 90s amateur-homepage look (that's Vernacular Web), and merely low-resolution or blurry images are not pixel art: without deliberate pixel-level construction and a limited palette, it's just a small picture."
     },
     "aliases": {
       "en": [
@@ -2818,7 +3138,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Artwork is built from visible, uniform square pixels — edges stair-step in fixed increments with no anti-aliasing; no amount of zoom ever reveals a smooth curve.",
-          "ko": "、 —— ，；，。"
+          "ko": "Artwork is built from visible, uniform square pixels — edges stair-step in fixed increments with no anti-aliasing; no amount of zoom ever reveals a smooth curve."
         }
       },
       {
@@ -2831,7 +3151,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "A piece commits to a handful of indexed colors — 8, 16, or 32 — with hue-shifted ramps for shading; gradients are faked with dot patterns, never blended.",
-          "ko": "—— 8、16 32 —— ；，。"
+          "ko": "A piece commits to a handful of indexed colors — 8, 16, or 32 — with hue-shifted ramps for shading; gradients are faked with dot patterns, never blended."
         }
       },
       {
@@ -2844,7 +3164,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Sprites and bitmaps scale with hard edges — image-rendering: pixelated, canvas imageSmoothing off; a single smoothed edge breaks the illusion instantly.",
-          "ko": "—— image-rendering: pixelated、canvas imageSmoothing；，。"
+          "ko": "Sprites and bitmaps scale with hard edges — image-rendering: pixelated, canvas imageSmoothing off; a single smoothed edge breaks the illusion instantly."
         }
       },
       {
@@ -2857,7 +3177,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Headings and HUD text use pixel fonts or blocky uppercase with a hard 1–2px offset shadow — every glyph visibly assembled from squares, zero blur anywhere.",
-          "ko": "HUD ， 1–2px —— ，。"
+          "ko": "Headings and HUD text use pixel fonts or blocky uppercase with a hard 1–2px offset shadow — every glyph visibly assembled from squares, zero blur anywhere."
         }
       },
       {
@@ -2870,7 +3190,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Controls are game controls: segmented HP/MP bars, RPG dialog boxes with stepped borders, blinking PRESS-START prompts, 8-bit icons like hearts, coins, and stars.",
-          "ko": "： HP/MP 、 RPG 、 PRESS START 、 8-bit 。"
+          "ko": "Controls are game controls: segmented HP/MP bars, RPG dialog boxes with stepped borders, blinking PRESS-START prompts, 8-bit icons like hearts, coins, and stars."
         }
       },
       {
@@ -2883,7 +3203,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Animation advances in discrete frames — steps() easing, sprites flipping between two poses, 1–2 frame blinks; nothing tweens smoothly.",
-          "ko": "—— steps() 、、1–2 ；。"
+          "ko": "Animation advances in discrete frames — steps() easing, sprites flipping between two poses, 1–2 frame blinks; nothing tweens smoothly."
         }
       },
       {
@@ -2909,19 +3229,35 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Anti-aliased curves, soft shadows, true gradients, or high-color photos dissolve the style — one blurred edge and it reads as a low-res image, not pixel art.",
-          "ko": "、、 —— ，，。"
+          "ko": "Anti-aliased curves, soft shadows, true gradients, or high-color photos dissolve the style — one blurred edge and it reads as a low-res image, not pixel art."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "vernacular-web",
+        "name": "Vernacular Web",
+        "because": {
+          "en": "This is Pixel Art because the retro look is constructed with pixel precision — a limited fixed palette, stair-stepped un-antialiased edges, bitmap type, and game controls like HP bars and dialog boxes; it is deliberate game art, not default browser output.",
+          "ko": "This is Pixel Art because the retro look is constructed with pixel precision — a limited fixed palette, stair-stepped un-antialiased edges, bitmap type, and game controls like HP bars and dialog boxes; it is deliberate game art, not default browser output."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become the Vernacular Web if the pixel craft were dropped in favor of whatever the browser and a GIF collection gave you — default blue links, Times text, tiled wallpaper, a visitor counter — a page decorated by an amateur rather than drawn by an artist.",
+          "ko": "It would become the Vernacular Web if the pixel craft were dropped in favor of whatever the browser and a GIF collection gave you — default blue links, Times text, tiled wallpaper, a visitor counter — a page decorated by an amateur rather than drawn by an artist."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface as Pixel Art — deliberate 8/16-bit game UI. Defining signals: graphics of visible uniform square pixels, stair-stepped edges, no anti-aliasing; a small fixed palette — night #1a1c2c, purple #5d275d, red #b13e53, orange #ef7d57, yellow #ffcd75, pale #94b0c2, green #38b764; all bitmaps scaled nearest-neighbor (image-rendering: pixelated; canvas imageSmoothingEnabled = false); headings in a bitmap font ('Press Start 2P', uppercase, letter-spacing 2px) or blocky caps with hard 2px 2px 0 shadow, zero blur; controls as game chrome — segmented HP bars (2px gaps every 12px), RPG dialog panels (#1a1c2c fill, 3px solid #f4f4f4 border, border-radius 0), prompts blinking with steps(1); shading via checkerboard dithering, never gradients. Motion: steps() easing, two-frame blinks; no tweens or soft shadows. Do not drift into Vernacular Web: no browser defaults (blue links, system serif, tiled wallpaper); every pixel deliberate. Keep 4.5:1 text contrast (#ffcd75/#f4f4f4 on #1a1c2c passes; red fails), pause blinks under prefers-reduced-motion, body copy in readable mono or sans.",
-      "ko": "（Pixel Art）—— 8/16 UI。：，，； —— #1a1c2c、 #5d275d、 #b13e53、 #ef7d57、 #ffcd75、 #94b0c2、 #38b764；（image-rendering: pixelated；canvas imageSmoothingEnabled = false）；（'Press Start 2P'，，letter-spacing 2px） 2px 2px 0 ，； —— HP （ 12px 2px ）、RPG （#1a1c2c 、3px #f4f4f4 、border-radius 0）、 steps(1) ；，。：steps() 、；。：（、、）；。 4.5:1（#ffcd75/#f4f4f4 #1a1c2c ，），prefers-reduced-motion ， mono sans。"
+      "ko": "Create the surface as Pixel Art — deliberate 8/16-bit game UI. Defining signals: graphics of visible uniform square pixels, stair-stepped edges, no anti-aliasing; a small fixed palette — night #1a1c2c, purple #5d275d, red #b13e53, orange #ef7d57, yellow #ffcd75, pale #94b0c2, green #38b764; all bitmaps scaled nearest-neighbor (image-rendering: pixelated; canvas imageSmoothingEnabled = false); headings in a bitmap font ('Press Start 2P', uppercase, letter-spacing 2px) or blocky caps with hard 2px 2px 0 shadow, zero blur; controls as game chrome — segmented HP bars (2px gaps every 12px), RPG dialog panels (#1a1c2c fill, 3px solid #f4f4f4 border, border-radius 0), prompts blinking with steps(1); shading via checkerboard dithering, never gradients. Motion: steps() easing, two-frame blinks; no tweens or soft shadows. Do not drift into Vernacular Web: no browser defaults (blue links, system serif, tiled wallpaper); every pixel deliberate. Keep 4.5:1 text contrast (#ffcd75/#f4f4f4 on #1a1c2c passes; red fails), pause blinks under prefers-reduced-motion, body copy in readable mono or sans."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Pixel and bitmap fonts are decorative: they degrade fast at small sizes and in long reading — reserve them for headings and HUD labels, set body text in a readable sans or mono, and respect each font's minimum size (most pixel fonts need 8px+ and generous line-height).\n\nBlinking, flashing, and CRT-style flicker must stay under the 3-flashes-per-second seizure threshold and pause entirely under prefers-reduced-motion; scanline or screen-flicker overlays should be off by default.\n\nRetro palettes skew low-contrast (red on navy, green on black are classic failures): verify 4.5:1 for real text, and never encode state by hue alone — an HP bar's red versus green needs an icon or label too, or color-blind players can't read it.",
+      "ko": "Pixel and bitmap fonts are decorative: they degrade fast at small sizes and in long reading — reserve them for headings and HUD labels, set body text in a readable sans or mono, and respect each font's minimum size (most pixel fonts need 8px+ and generous line-height).\n\nBlinking, flashing, and CRT-style flicker must stay under the 3-flashes-per-second seizure threshold and pause entirely under prefers-reduced-motion; scanline or screen-flicker overlays should be off by default.\n\nRetro palettes skew low-contrast (red on navy, green on black are classic failures): verify 4.5:1 for real text, and never encode state by hue alone — an HP bar's red versus green needs an icon or label too, or color-blind players can't read it."
+    },
     "origin": {
       "en": "The look was born from hardware limits: arcade boards and consoles like Nintendo's Famicom/NES (1983) and Super Famicom/SNES (1990) forced artists into tiny sprites and indexed palettes of a handful of colors, and the teams behind games like Super Mario Bros. and Final Fantasy turned that constraint into craft. The term 'pixel art' itself dates to a 1982 letter by Adele Goldberg and Robert Flegal at Xerox PARC. Once 3D and high-color displays made the limits obsolete, the style returned as a deliberate choice — illustration collectives like eBoy in the late 1990s and the 2000s indie-game wave (Cave Story, 2004) recast it as a retro aesthetic that now surfaces in UI wherever a product wants game-era charm.",
-      "ko": "： Famicom/NES（1983 ） Super Famicom/SNES（1990 ），，《》《》。「」 1982 Xerox PARC Adele Goldberg Robert Flegal 。3D ， —— 90 eBoy 2000 （《》，2004 ）； UI ，。"
+      "ko": "The look was born from hardware limits: arcade boards and consoles like Nintendo's Famicom/NES (1983) and Super Famicom/SNES (1990) forced artists into tiny sprites and indexed palettes of a handful of colors, and the teams behind games like Super Mario Bros. and Final Fantasy turned that constraint into craft. The term 'pixel art' itself dates to a 1982 letter by Adele Goldberg and Robert Flegal at Xerox PARC. Once 3D and high-color displays made the limits obsolete, the style returned as a deliberate choice — illustration collectives like eBoy in the late 1990s and the 2000s indie-game wave (Cave Story, 2004) recast it as a retro aesthetic that now surfaces in UI wherever a product wants game-era charm."
     },
     "meta": {}
   },
@@ -2933,11 +3269,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Corporate Memphis is the flat vector illustration style of late-2010s tech marketing: faceless people with tiny heads and disproportionately long, rubbery limbs, skin in blues, purples, and greens instead of real tones, bent into over-acted poses against blobs, dots, and arcs. Named after Alegria, the illustration system Facebook introduced around 2017, it became the default look of SaaS landing pages and empty states within years — then a byword for corporate sameness ('blanding').",
-      "ko": "2010 ：，，、、，、。 Facebook 2017 Alegria； SaaS —— 「」「」（blanding）。"
+      "ko": "Corporate Memphis is the flat vector illustration style of late-2010s tech marketing: faceless people with tiny heads and disproportionately long, rubbery limbs, skin in blues, purples, and greens instead of real tones, bent into over-acted poses against blobs, dots, and arcs. Named after Alegria, the illustration system Facebook introduced around 2017, it became the default look of SaaS landing pages and empty states within years — then a byword for corporate sameness ('blanding')."
     },
     "scope": {
       "en": "Scope: Covers the figurative illustration language — the people, their proportions, and the palette — not the page chrome underneath, which is usually plain flat design. The 1980s Memphis Group's squiggle-and-confetti patterns get their own entry (Memphis); this style only borrows the name and some background geometry.",
-      "ko": "： —— 、 —— ，。 80 Memphis Group （）；。"
+      "ko": "Scope: Covers the figurative illustration language — the people, their proportions, and the palette — not the page chrome underneath, which is usually plain flat design. The 1980s Memphis Group's squiggle-and-confetti patterns get their own entry (Memphis); this style only borrows the name and some background geometry."
     },
     "aliases": {
       "en": [
@@ -2968,7 +3304,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Characters are drawn with heads half the natural size, arms and legs 1.5–2x too long and bending like rubber hoses, with oversized hands and feet — bodies assembled from simple capsules and blobs.",
-          "ko": "， 1.5–2 、， —— 。"
+          "ko": "Characters are drawn with heads half the natural size, arms and legs 1.5–2x too long and bending like rubber hoses, with oversized hands and feet — bodies assembled from simple capsules and blobs."
         }
       },
       {
@@ -2981,7 +3317,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Skin is filled with blue (#6C8CFF), purple (#A78BFA), green, or pink — never real skin colors; the abstraction was sold as universal and is the style's fastest tell.",
-          "ko": "（#6C8CFF）、（#A78BFA）、 —— ；「」，。"
+          "ko": "Skin is filled with blue (#6C8CFF), purple (#A78BFA), green, or pink — never real skin colors; the abstraction was sold as universal and is the style's fastest tell."
         }
       },
       {
@@ -2994,7 +3330,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Every shape is one solid color: no gradients, no texture, no cast shadows; outlines are absent or a single thin line in a darker shade of the fill.",
-          "ko": "：、、；， 2px 。"
+          "ko": "Every shape is one solid color: no gradients, no texture, no cast shadows; outlines are absent or a single thin line in a darker shade of the fill."
         }
       },
       {
@@ -3007,7 +3343,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Lavender, periwinkle, soft pink, butter yellow, and mint laid on off-white (#FBFAFF) — friendly and low-aggression, bright without neobrutalism's harsh saturation.",
-          "ko": "、、、、，（#FBFAFF） —— 、，。"
+          "ko": "Lavender, periwinkle, soft pink, butter yellow, and mint laid on off-white (#FBFAFF) — friendly and low-aggression, bright without neobrutalism's harsh saturation."
         }
       },
       {
@@ -3020,7 +3356,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Figures leap, stretch, high-five, or hug oversized objects (a giant phone, a huge credit card) in impossible, cheerfully contorted stances.",
-          "ko": "、、，（、），。"
+          "ko": "Figures leap, stretch, high-five, or hug oversized objects (a giant phone, a huge credit card) in impossible, cheerfully contorted stances."
         }
       },
       {
@@ -3033,7 +3369,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Organic blobs, half-circles, arcs, and floating dots frame the scene — the only genuine echo of 1980s Memphis, and the reason the nickname stuck.",
-          "ko": "、、 —— 80 ，。"
+          "ko": "Organic blobs, half-circles, arcs, and floating dots frame the scene — the only genuine echo of 1980s Memphis, and the reason the nickname stuck."
         }
       },
       {
@@ -3046,19 +3382,35 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Anatomically correct figures, photos of real people, or 3D-rendered humans disqualify the look instantly — the style is defined by deliberately wrong bodies.",
-          "ko": "、 3D —— 。"
+          "ko": "Anatomically correct figures, photos of real people, or 3D-rendered humans disqualify the look instantly — the style is defined by deliberately wrong bodies."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "memphis",
+        "name": "Memphis",
+        "because": {
+          "en": "This is Corporate Memphis because the image is built around flat vector people — tiny heads, noodle limbs, non-naturalistic skin — acting out a scene; the squiggles and dots behind them are just set dressing.",
+          "ko": "This is Corporate Memphis because the image is built around flat vector people — tiny heads, noodle limbs, non-naturalistic skin — acting out a scene; the squiggles and dots behind them are just set dressing."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Memphis if the people walked off the page and only the geometric confetti remained — squiggles, triangles, and clashing patterns as pure surface decoration, with no characters at all.",
+          "ko": "It would become Memphis if the people walked off the page and only the geometric confetti remained — squiggles, triangles, and clashing patterns as pure surface decoration, with no characters at all."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface in Corporate Memphis style. Canvas: SaaS hero or empty state on off-white #FBFAFF, generous whitespace, friendly geometric sans (Inter/Gilroy/Circular; headings 700, ink #2E2A5B). Build flat vector figures: tiny heads (~0.6x natural), rubber-hose limbs 1.5–2x natural drawn as capsules (border-radius: 999px), oversized hands and feet; skin in blue #6C8CFF, purple #A78BFA, or mint #6EE7B7 — never real tones; clothes and props flat pink #F9A8D4, butter #FDE68A. Zero gradients, texture, or drop shadows; outlines absent or one 2px line in a darker fill shade. Pose figures mid-action — leaping, stretching, hugging oversized objects. Backdrop: organic blobs (border-radius: 46% 54% 52% 48% / 58% 60% 40% 42%), half-circles, floating dots — all flat pastels. UI chrome: pill buttons (border-radius: 999px, flat fill, hover: translateY(-2px)); no shadows anywhere. Text contrast 4.5:1 — ink on pastel fills, never white on yellow. Avoid realistic proportions, real-people photography, gradients, and all-over Memphis confetti: figures are the point, geometry only the backdrop.",
-      "ko": "（Corporate Memphis）。： #FBFAFF SaaS ，，（Inter/Gilroy/Circular； 700 ， #2E2A5B）。：（ 0.6 ）、 1.5–2 、（border-radius: 999px）、； #6C8CFF、 #A78BFA #6EE7B7 —— ； #F9A8D4、 #FDE68A。、、；， 2px 。 —— 、、。：（border-radius: 46% 54% 52% 48% / 58% 60% 40% 42%）、、、 —— 。UI ：（border-radius: 999px、、hover translateY(-2px)）；。 4.5:1 —— ，。、、 —— ，。"
+      "ko": "Create the surface in Corporate Memphis style. Canvas: SaaS hero or empty state on off-white #FBFAFF, generous whitespace, friendly geometric sans (Inter/Gilroy/Circular; headings 700, ink #2E2A5B). Build flat vector figures: tiny heads (~0.6x natural), rubber-hose limbs 1.5–2x natural drawn as capsules (border-radius: 999px), oversized hands and feet; skin in blue #6C8CFF, purple #A78BFA, or mint #6EE7B7 — never real tones; clothes and props flat pink #F9A8D4, butter #FDE68A. Zero gradients, texture, or drop shadows; outlines absent or one 2px line in a darker fill shade. Pose figures mid-action — leaping, stretching, hugging oversized objects. Backdrop: organic blobs (border-radius: 46% 54% 52% 48% / 58% 60% 40% 42%), half-circles, floating dots — all flat pastels. UI chrome: pill buttons (border-radius: 999px, flat fill, hover: translateY(-2px)); no shadows anywhere. Text contrast 4.5:1 — ink on pastel fills, never white on yellow. Avoid realistic proportions, real-people photography, gradients, and all-over Memphis confetti: figures are the point, geometry only the backdrop."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "The pastel palette invites pastel-on-pastel text: white on butter yellow #FDE68A or lavender on off-white fails badly. Put ink #2E2A5B text on the light fills and measure every combination at 4.5:1 — soft does not have to mean low-contrast.\n\nBobbing, bouncing figures and parallax blobs are common on this style's landing pages; gate all of it behind prefers-reduced-motion, and keep the figures decorative — marked aria-hidden so screen readers skip the meaningless SVG.\n\nThe blue-skinned abstraction was meant to sidestep representation, but in practice it can read as erasing real diversity while infantilizing users with clownish bodies — pair the illustration with genuine representation elsewhere (photography, avatars, copy) rather than letting noodle people carry the whole brand.",
+      "ko": "The pastel palette invites pastel-on-pastel text: white on butter yellow #FDE68A or lavender on off-white fails badly. Put ink #2E2A5B text on the light fills and measure every combination at 4.5:1 — soft does not have to mean low-contrast.\n\nBobbing, bouncing figures and parallax blobs are common on this style's landing pages; gate all of it behind prefers-reduced-motion, and keep the figures decorative — marked aria-hidden so screen readers skip the meaningless SVG.\n\nThe blue-skinned abstraction was meant to sidestep representation, but in practice it can read as erasing real diversity while infantilizing users with clownish bodies — pair the illustration with genuine representation elsewhere (photography, avatars, copy) rather than letting noodle people carry the whole brand."
+    },
     "origin": {
       "en": "Named after Alegria, the illustration system Facebook commissioned from the design studio Buck around 2017, whose flat, bendy-limbed characters became the template for big-tech marketing art. The dismissive label 'Corporate Memphis' stuck because the shapes floating behind the figures echo the 1980s Memphis Group's geometry — the two movements are otherwise unrelated. By 2019–2021 it was the default illustration style for SaaS landing pages and empty states across the industry, and the backlash to its sameness ('blanding') turned it into a cliché almost as fast.",
-      "ko": "Alegria —— Facebook 2017 Buck ，、。「」， 80 Memphis Group —— 。 2019–2021 ， SaaS ，（「」 blanding）。"
+      "ko": "Named after Alegria, the illustration system Facebook commissioned from the design studio Buck around 2017, whose flat, bendy-limbed characters became the template for big-tech marketing art. The dismissive label 'Corporate Memphis' stuck because the shapes floating behind the figures echo the 1980s Memphis Group's geometry — the two movements are otherwise unrelated. By 2019–2021 it was the default illustration style for SaaS landing pages and empty states across the industry, and the backlash to its sameness ('blanding') turned it into a cliché almost as fast."
     },
     "meta": {}
   },
@@ -3070,11 +3422,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Material Design is Google's physics-based design language: UIs are digital paper layered along a z-axis, each surface resting at a measured elevation that casts a soft shadow, the main action hovering as a circular FAB, every touch answered with an ink ripple. Bold brand color, white cards, and Roboto type align to an 8dp grid, and motion expresses hierarchy. Shipped with Android 5.0 in 2014, it became Android's default look — the systematic rebuttal to flat design's shadowless austerity.",
-      "ko": "Google ： z ， elevation 、， FAB，。、 Roboto 8dp ，。2014 Android 5.0 ， Android —— 「」。"
+      "ko": "Material Design is Google's physics-based design language: UIs are digital paper layered along a z-axis, each surface resting at a measured elevation that casts a soft shadow, the main action hovering as a circular FAB, every touch answered with an ink ripple. Bold brand color, white cards, and Roboto type align to an 8dp grid, and motion expresses hierarchy. Shipped with Android 5.0 in 2014, it became Android's default look — the systematic rebuttal to flat design's shadowless austerity."
     },
     "scope": {
       "en": "Scope: Covers Google's design language across its generations — 2014's paper-and-ink system, 2018 Material Theming, and 2021's Material You. The generic 'flat with one soft shadow' SaaS look it inspired is not this entry: without the elevation scale, the FAB, and ripple physics, that is just Flat Design 2.0.",
-      "ko": "： Google —— 2014 、2018 Material Theming、2021 Material You。「」 SaaS ： elevation 、FAB ， Flat Design 2.0。"
+      "ko": "Scope: Covers Google's design language across its generations — 2014's paper-and-ink system, 2018 Material Theming, and 2021's Material You. The generic 'flat with one soft shadow' SaaS look it inspired is not this entry: without the elevation scale, the FAB, and ripple physics, that is just Flat Design 2.0."
     },
     "aliases": {
       "en": [
@@ -3100,12 +3452,12 @@ export const STYLES: UIStyle[] = [
         "role": "defining",
         "name": {
           "en": "Stepped z-axis elevation",
-          "ko": "z elevation"
+          "ko": "Stepped z-axis elevation"
         },
         "facet": "depth",
         "description": {
           "en": "Every surface rests at a measured height — 2dp cards, 4dp app bars, 6dp FABs, 8dp raised menus, 16dp drawers — and the soft shadow beneath it encodes exactly that height; press, and the shadow grows as the surface lifts toward you.",
-          "ko": "—— 2dp 、4dp 、6dp FAB、8dp 、16dp —— ；，。"
+          "ko": "Every surface rests at a measured height — 2dp cards, 4dp app bars, 6dp FABs, 8dp raised menus, 16dp drawers — and the soft shadow beneath it encodes exactly that height; press, and the shadow grows as the surface lifts toward you."
         }
       },
       {
@@ -3118,7 +3470,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "The UI is sheets of paper sliding over each other: white cards with crisp 2–4px corners floating on a light gray ground, their edges cut by shadow rather than by borders.",
-          "ko": "： 2–4px ，「」，。"
+          "ko": "The UI is sheets of paper sliding over each other: white cards with crisp 2–4px corners floating on a light gray ground, their edges cut by shadow rather than by borders."
         }
       },
       {
@@ -3131,7 +3483,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "One circular button (56dp diameter, 6dp elevation) in the accent color hovers above the content — the screen's single promoted action, often straddling the seam between header and content.",
-          "ko": "（ 56dp、6dp elevation） —— ，。"
+          "ko": "One circular button (56dp diameter, 6dp elevation) in the accent color hovers above the content — the screen's single promoted action, often straddling the seam between header and content."
         }
       },
       {
@@ -3144,7 +3496,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Touch answers with a ripple of ink spreading from the exact contact point across the surface — feedback is rendered as a physical event, not a hover-color swap.",
-          "ko": "—— ， hover 。"
+          "ko": "Touch answers with a ripple of ink spreading from the exact contact point across the surface — feedback is rendered as a physical event, not a hover-color swap."
         }
       },
       {
@@ -3157,7 +3509,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "A saturated primary (Indigo 500 #3F51B5 class) owns bars and large areas; a contrasting accent (Pink A200 #FF4081 class) is reserved for the FAB and key controls against white cards.",
-          "ko": "（Indigo 500 #3F51B5 ）；（Pink A200 #FF4081 ） FAB ，。"
+          "ko": "A saturated primary (Indigo 500 #3F51B5 class) owns bars and large areas; a contrasting accent (Pink A200 #FF4081 class) is reserved for the FAB and key controls against white cards."
         }
       },
       {
@@ -3170,7 +3522,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Transitions run 200–300ms on the standard curve cubic-bezier(0.4, 0, 0.2, 1); new surfaces grow out of the element that spawned them, so animation shows cause, not decoration.",
-          "ko": "200–300ms cubic-bezier(0.4, 0, 0.2, 1)；，，。"
+          "ko": "Transitions run 200–300ms on the standard curve cubic-bezier(0.4, 0, 0.2, 1); new surfaces grow out of the element that spawned them, so animation shows cause, not decoration."
         }
       },
       {
@@ -3183,7 +3535,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Components align to an 8dp baseline grid — spacing in 8/16/24px multiples, 16px screen margins — so unrelated screens share the same rhythm.",
-          "ko": "8dp —— 8/16/24px ， 16px —— 。"
+          "ko": "Components align to an 8dp baseline grid — spacing in 8/16/24px multiples, 16px screen margins — so unrelated screens share the same rhythm."
         }
       },
       {
@@ -3196,19 +3548,35 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Pure 2D fills where hierarchy comes from color alone — zero elevation, zero ripple physics — is Flat Design; Material's entire point is the restored, measurable z-axis.",
-          "ko": "2D 、 —— elevation、 —— ；、 z 。"
+          "ko": "Pure 2D fills where hierarchy comes from color alone — zero elevation, zero ripple physics — is Flat Design; Material's entire point is the restored, measurable z-axis."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "flat-design",
+        "name": "Flat Design",
+        "because": {
+          "en": "This is Material Design because depth is restored as a physics system — every surface sits at a measured z-axis elevation casting a shadow that encodes its height, and motion expresses where elements come from.",
+          "ko": "This is Material Design because depth is restored as a physics system — every surface sits at a measured z-axis elevation casting a shadow that encodes its height, and motion expresses where elements come from."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Flat Design if the z-axis were collapsed back to zero — shadows deleted, the FAB flattened into a solid color block, hierarchy left to color and type alone.",
+          "ko": "It would become Flat Design if the z-axis were collapsed back to zero — shadows deleted, the FAB flattened into a solid color block, hierarchy left to color and type alone."
+        }
+      }
+    ],
     "brief": {
       "en": "Build the surface in classic Material Design (2014 paper-and-ink generation). Canvas: light gray #FAFAFA ground, white #FFFFFF cards floating on a stepped dp elevation scale — 2dp card: box-shadow 0 2px 2px rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px rgba(0,0,0,.12); 8dp raised: 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12), 0 5px 5px -3px rgba(0,0,0,.2). Palette: primary Indigo 500 #3F51B5 for bars and large areas, accent Pink A200 #FF4081 for the FAB and key controls; text #212121 / #757575. Type: Roboto (fallback system sans), medium titles. Geometry: cards 2–4px radius; one circular FAB (56px, 6dp, lifts to 12dp pressed) in the accent. Interaction: ink ripples spread from the touch point; transitions 200–300ms cubic-bezier(0.4, 0, 0.2, 1), surfaces growing from their parent. Layout on an 8dp grid — 8/16/24px spacing. Do not drift into Flat Design: elevation shadows, the FAB, and ripples are mandatory — hierarchy by color alone with zero shadows is the neighbor style. Keep text on accent fills at 4.5:1 and honor prefers-reduced-motion.",
-      "ko": "（2014 ）。： #FAFAFA ， #FFFFFF dp elevation —— 2dp ：box-shadow 0 2px 2px rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px rgba(0,0,0,.12)；8dp ：0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12), 0 5px 5px -3px rgba(0,0,0,.2)。： Indigo 500 #3F51B5 ， Pink A200 #FF4081 FAB ； #212121 / #757575。：Roboto（）， medium 。： 2–4px ； FAB（56px、6dp、 12dp），。：； 200–300ms cubic-bezier(0.4, 0, 0.2, 1)，。 8dp —— 8/16/24px。：elevation 、FAB —— 、。 4.5:1 ， prefers-reduced-motion。"
+      "ko": "Build the surface in classic Material Design (2014 paper-and-ink generation). Canvas: light gray #FAFAFA ground, white #FFFFFF cards floating on a stepped dp elevation scale — 2dp card: box-shadow 0 2px 2px rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px rgba(0,0,0,.12); 8dp raised: 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12), 0 5px 5px -3px rgba(0,0,0,.2). Palette: primary Indigo 500 #3F51B5 for bars and large areas, accent Pink A200 #FF4081 for the FAB and key controls; text #212121 / #757575. Type: Roboto (fallback system sans), medium titles. Geometry: cards 2–4px radius; one circular FAB (56px, 6dp, lifts to 12dp pressed) in the accent. Interaction: ink ripples spread from the touch point; transitions 200–300ms cubic-bezier(0.4, 0, 0.2, 1), surfaces growing from their parent. Layout on an 8dp grid — 8/16/24px spacing. Do not drift into Flat Design: elevation shadows, the FAB, and ripples are mandatory — hierarchy by color alone with zero shadows is the neighbor style. Keep text on accent fills at 4.5:1 and honor prefers-reduced-motion."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Elevation alone is a weak affordance: a white card on a #FAFAFA ground can fail the 3:1 boundary ratio for controls, and shadows vanish entirely in forced-colors mode — interactive elements must read as interactive by color, label, and shape, not by lift alone.\n\nWhite ink on hot accent colors is the classic trap: white on Pink A200 #FF4081 measures roughly 3.3:1 — acceptable for the FAB's icon, too weak for text; white on Indigo 500 #3F51B5 passes at about 6.9:1. Check every pair against 4.5:1, or step down to a 700 shade.\n\nMotion is load-bearing here — surfaces grow and travel to explain where things came from — so prefers-reduced-motion needs a real fallback: replace growing and traveling transitions with instant cuts or simple crossfades, and drop the ripple animation.",
+      "ko": "Elevation alone is a weak affordance: a white card on a #FAFAFA ground can fail the 3:1 boundary ratio for controls, and shadows vanish entirely in forced-colors mode — interactive elements must read as interactive by color, label, and shape, not by lift alone.\n\nWhite ink on hot accent colors is the classic trap: white on Pink A200 #FF4081 measures roughly 3.3:1 — acceptable for the FAB's icon, too weak for text; white on Indigo 500 #3F51B5 passes at about 6.9:1. Check every pair against 4.5:1, or step down to a 700 shade.\n\nMotion is load-bearing here — surfaces grow and travel to explain where things came from — so prefers-reduced-motion needs a real fallback: replace growing and traveling transitions with instant cuts or simple crossfades, and drop the ripple animation."
+    },
     "origin": {
       "en": "Unveiled by Google at its I/O conference in June 2014 — led by design VP Matías Duarte and developed under the internal codename Quantum Paper — and shipped that year with Android 5.0 Lollipop as the company's first unified cross-platform design language. Its paper-and-ink metaphor and the Roboto typeface (designed by Christian Robertson) became the visual identity of Android; Google extended the system with Material Theming at I/O 2018 and with the wallpaper-tinted, personalized Material You alongside Android 12 in 2021.",
-      "ko": "2014 6 Google I/O —— Matías Duarte ， Quantum Paper —— Android 5.0 Lollipop ，。 Roboto （Christian Robertson ） Android ；Google I/O 2018 Material Theming，2021 Android 12 Material You。"
+      "ko": "Unveiled by Google at its I/O conference in June 2014 — led by design VP Matías Duarte and developed under the internal codename Quantum Paper — and shipped that year with Android 5.0 Lollipop as the company's first unified cross-platform design language. Its paper-and-ink metaphor and the Roboto typeface (designed by Christian Robertson) became the visual identity of Android; Google extended the system with Material Theming at I/O 2018 and with the wallpaper-tinted, personalized Material You alongside Android 12 in 2021."
     },
     "meta": {}
   },
@@ -3220,11 +3588,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Terminal Hacker turns the screen into a vintage character terminal: a pure black CRT glowing in a single phosphor ink — matrix green or amber — with monospace glyphs, a soft halo around every character, scanlines and flicker laid over everything, and a blinking block cursor typing content out like a machine. Born from 1970s–80s hardware limits, canonized by hacker cinema and The Matrix, it is now pure retro-futurist costume: the interface pretends to be forty-year-old equipment.",
-      "ko": "： CRT —— —— 、、，。 1970–80 ，《》，：。"
+      "ko": "Terminal Hacker turns the screen into a vintage character terminal: a pure black CRT glowing in a single phosphor ink — matrix green or amber — with monospace glyphs, a soft halo around every character, scanlines and flicker laid over everything, and a blinking block cursor typing content out like a machine. Born from 1970s–80s hardware limits, canonized by hacker cinema and The Matrix, it is now pure retro-futurist costume: the interface pretends to be forty-year-old equipment."
     },
     "scope": {
       "en": "Scope: This entry is the retro CRT emulation — black ground, one phosphor color, glow, scanlines, block cursor. The broader neon-drenched dystopian look (magenta/cyan skylines, chrome, rain) is Cyberpunk; genuinely unstyled default HTML is Web Brutalism; blocky low-res game graphics are Pixel Art.",
-      "ko": "： CRT —— 、、、、。（/、、）； HTML ；。"
+      "ko": "Scope: This entry is the retro CRT emulation — black ground, one phosphor color, glow, scanlines, block cursor. The broader neon-drenched dystopian look (magenta/cyan skylines, chrome, rain) is Cyberpunk; genuinely unstyled default HTML is Web Brutalism; blocky low-res game graphics are Pixel Art."
     },
     "aliases": {
       "en": [
@@ -3255,7 +3623,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Pure black ground (#000–#050805) with a single luminous ink for text, borders, and graphics — matrix green #00ff41 or amber #ffb000. One electron gun, one hue; a second color already feels wrong.",
-          "ko": "（#000–#050805），、 —— #00ff41 #ffb000。；。"
+          "ko": "Pure black ground (#000–#050805) with a single luminous ink for text, borders, and graphics — matrix green #00ff41 or amber #ffb000. One electron gun, one hue; a second color already feels wrong."
         }
       },
       {
@@ -3268,7 +3636,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Text and line art carry a same-hue halo — text-shadow: 0 0 6px rgba(0,255,65,.6), 0 0 20px rgba(0,255,65,.25) — as if the phosphor is still warm. Flat, matte text breaks the spell.",
-          "ko": "—— text-shadow: 0 0 6px rgba(0,255,65,.6), 0 0 20px rgba(0,255,65,.25) —— 。。"
+          "ko": "Text and line art carry a same-hue halo — text-shadow: 0 0 6px rgba(0,255,65,.6), 0 0 20px rgba(0,255,65,.25) — as if the phosphor is still warm. Flat, matte text breaks the spell."
         }
       },
       {
@@ -3281,7 +3649,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "A repeating-linear-gradient of 1px dark lines every 2–4px overlays the whole screen, plus a subtle brightness flicker in steps timing. The image should read as emitted by a tube, not printed.",
-          "ko": "repeating-linear-gradient 2–4px 1px ， steps 。，。"
+          "ko": "A repeating-linear-gradient of 1px dark lines every 2–4px overlays the whole screen, plus a subtle brightness flicker in steps timing. The image should read as emitted by a tube, not printed."
         }
       },
       {
@@ -3294,7 +3662,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "A solid full-cell block █ at the input position, toggling on/off roughly once a second with steps(1) — a hard blink, never a fade. It marks where the machine is listening.",
-          "ko": "█，， steps(1) —— ，。。"
+          "ko": "A solid full-cell block █ at the input position, toggling on/off roughly once a second with steps(1) — a hard blink, never a fade. It marks where the machine is listening."
         }
       },
       {
@@ -3307,7 +3675,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Screens open with BIOS-style self-tests ('MEM CHECK ...... OK') in terse ALL-CAPS machine voice behind prompt symbols (>, $, #), and content appears character-by-character at ~30–60ms per glyph.",
-          "ko": "BIOS （「MEM CHECK ...... OK」），（>、$、#）， 30–60ms 。"
+          "ko": "Screens open with BIOS-style self-tests ('MEM CHECK ...... OK') in terse ALL-CAPS machine voice behind prompt symbols (>, $, #), and content appears character-by-character at ~30–60ms per glyph."
         }
       },
       {
@@ -3320,7 +3688,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Frames drawn from +---+ and |, progress bars as [██████░░░░], waveforms and logos built from characters on the monospace grid — graphics rendered as text because the hardware had nothing else.",
-          "ko": "+---+ | ， [██████░░░░]， —— ，。"
+          "ko": "Frames drawn from +---+ and |, progress bars as [██████░░░░], waveforms and logos built from characters on the monospace grid — graphics rendered as text because the hardware had nothing else."
         }
       },
       {
@@ -3333,7 +3701,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Green #00ff41 is the Matrix cliché; amber #ffb000 reads warmer and more 'office 1983'; cool white is the sober variant. The construction carries the style, not the hue.",
-          "ko": "#00ff41 ； #ffb000 、「1983 」；。，。"
+          "ko": "Green #00ff41 is the Matrix cliché; amber #ffb000 reads warmer and more 'office 1983'; cool white is the sober variant. The construction carries the style, not the hue."
         }
       },
       {
@@ -3346,19 +3714,35 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Full-color imagery, gradients, rounded glass cards, and drop shadows dissolve the illusion instantly — if it looks like a modern app tinted green, it isn't terminal.",
-          "ko": "、、 —— App，。"
+          "ko": "Full-color imagery, gradients, rounded glass cards, and drop shadows dissolve the illusion instantly — if it looks like a modern app tinted green, it isn't terminal."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "web-brutalism",
+        "name": "Web Brutalism",
+        "because": {
+          "en": "This is terminal-hacker because the page is a styled simulation of vintage CRT hardware: black ground, one glowing phosphor color, monospace glyphs, scanlines, and a blinking block cursor.",
+          "ko": "This is terminal-hacker because the page is a styled simulation of vintage CRT hardware: black ground, one glowing phosphor color, monospace glyphs, scanlines, and a blinking block cursor."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Web Brutalism if the CRT costume were removed — white ground, default serif type, plain blue links, bare HTML structure. One emulates a 1982 monitor; the other is no CSS at all.",
+          "ko": "It would become Web Brutalism if the CRT costume were removed — white ground, default serif type, plain blue links, bare HTML structure. One emulates a 1982 monitor; the other is no CSS at all."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface as a terminal-hacker CRT emulation. Canvas: pure black (#000 to #050805), border-radius 0–2px, 1px borders in dim phosphor rgba(0,255,65,.35). Ink: one phosphor hue only — matrix green #00ff41 (amber #ffb000 acceptable) — for all text, icons, and graphics; dim states are the same hue at 40–60% opacity, never gray or a second hue. Type: monospace everywhere (ui-monospace, 'IBM Plex Mono', 'JetBrains Mono'), 12–14px, ALL CAPS for status lines; every glyph glows via text-shadow: 0 0 6px rgba(0,255,65,.6), 0 0 20px rgba(0,255,65,.25). Overlay the panel with scanlines (repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 1px, transparent 1px 3px)) plus subtle flicker (<3 flashes/sec). End input lines with a blinking block cursor █ (1.1s, steps(1), no fade). Reveal headings typewriter-style, prefix lines with > or $, draw boxes and bars as ASCII (+---+, [████░░]). Avoid color imagery, gradients, rounded capsules, drop shadows, white backgrounds — they break the tube. Honor prefers-reduced-motion: kill flicker, blink, and typewriter, showing full text instantly.",
-      "ko": "CRT 。：（#000 #050805），border-radius 0–2px，1px rgba(0,255,65,.35)。： —— #00ff41（ #ffb000 ）—— 、； 40–60% ，。：（ui-monospace、'IBM Plex Mono'、'JetBrains Mono'），12–14px，； text-shadow: 0 0 6px rgba(0,255,65,.6), 0 0 20px rgba(0,255,65,.25) 。（repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 1px, transparent 1px 3px)），（ 3 ）。 █（1.1s、steps(1)、）。， > $， ASCII （+---+、[████░░]）。、、、 —— 。 prefers-reduced-motion：、，。"
+      "ko": "Create the surface as a terminal-hacker CRT emulation. Canvas: pure black (#000 to #050805), border-radius 0–2px, 1px borders in dim phosphor rgba(0,255,65,.35). Ink: one phosphor hue only — matrix green #00ff41 (amber #ffb000 acceptable) — for all text, icons, and graphics; dim states are the same hue at 40–60% opacity, never gray or a second hue. Type: monospace everywhere (ui-monospace, 'IBM Plex Mono', 'JetBrains Mono'), 12–14px, ALL CAPS for status lines; every glyph glows via text-shadow: 0 0 6px rgba(0,255,65,.6), 0 0 20px rgba(0,255,65,.25). Overlay the panel with scanlines (repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 1px, transparent 1px 3px)) plus subtle flicker (<3 flashes/sec). End input lines with a blinking block cursor █ (1.1s, steps(1), no fade). Reveal headings typewriter-style, prefix lines with > or $, draw boxes and bars as ASCII (+---+, [████░░]). Avoid color imagery, gradients, rounded capsules, drop shadows, white backgrounds — they break the tube. Honor prefers-reduced-motion: kill flicker, blink, and typewriter, showing full text instantly."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Full-brightness phosphor on black passes contrast easily (#00ff41 on #000 is roughly 13:1), but the glow and the dim 'muted' states eat it — keep body text at full brightness, test any dimmed line against 4.5:1, and remember bright-vs-dim is the only emphasis axis in a one-hue palette, so don't let dimmed text carry essential information.\n\nFlicker and jitter are the real hazard: keep any flashing below three per second and low in amplitude, and under prefers-reduced-motion disable flicker, cursor blink, and typewriter entirely — content must already be present in the DOM and fully readable without the animation.\n\nALL-CAPS log lines and dense monospace slow long-form reading, and some screen readers announce all-caps strings letter by letter — keep caps to short status strings, write body copy in normal case, and never let a long boot sequence gate access to the actual content.",
+      "ko": "Full-brightness phosphor on black passes contrast easily (#00ff41 on #000 is roughly 13:1), but the glow and the dim 'muted' states eat it — keep body text at full brightness, test any dimmed line against 4.5:1, and remember bright-vs-dim is the only emphasis axis in a one-hue palette, so don't let dimmed text carry essential information.\n\nFlicker and jitter are the real hazard: keep any flashing below three per second and low in amplitude, and under prefers-reduced-motion disable flicker, cursor blink, and typewriter entirely — content must already be present in the DOM and fully readable without the animation.\n\nALL-CAPS log lines and dense monospace slow long-form reading, and some screen readers announce all-caps strings letter by letter — keep caps to short status strings, write body copy in normal case, and never let a long boot sequence gate access to the actual content."
+    },
     "origin": {
       "en": "Descends from 1970s–80s character terminals, when one electron gun meant one color: green- and amber-phosphor CRTs like IBM's 3270 (1971) and DEC's VT100 (1978) produced the look out of pure hardware necessity. Hollywood turned it into 'hacker' shorthand — WarGames (1983), and above all The Matrix (1999), whose falling green 'digital rain' was created by production designer Simon Whiteley from glyphs scanned out of Japanese cookbooks. The style survives as deliberate retro-futurism: CSS scanlines, boot sequences, and block cursors running on hardware that has never seen a tube.",
-      "ko": "1970–80 ，：IBM 3270（1971） DEC VT100（1978）、 CRT 。「」 —— 《》（1983），《》（1999），「」 Simon Whiteley ，。：CSS 、，。"
+      "ko": "Descends from 1970s–80s character terminals, when one electron gun meant one color: green- and amber-phosphor CRTs like IBM's 3270 (1971) and DEC's VT100 (1978) produced the look out of pure hardware necessity. Hollywood turned it into 'hacker' shorthand — WarGames (1983), and above all The Matrix (1999), whose falling green 'digital rain' was created by production designer Simon Whiteley from glyphs scanned out of Japanese cookbooks. The style survives as deliberate retro-futurism: CSS scanlines, boot sequences, and block cursors running on hardware that has never seen a tube."
     },
     "meta": {}
   },
@@ -3370,11 +3754,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Frutiger Metro, also known as Vectordelia, is the late-millennium vector-maximalist graphic style that flourished roughly 2005–2013 alongside Frutiger Aero but moved in the opposite direction: instead of skies and water, it built cities out of pure vector — subway lines, bright saturated gradients, abstract floral flourishes and swirls, humanist sans type, glossy vector shapes, and multicolored silhouette figures. It is the visual language of iPod commercials, Xbox 360 dashboards, Windows 7 stock imagery, and city-themed event graphics: optimistic, urban, geometrically neat, and deliberately non-photorealistic.",
-      "ko": "Frutiger Metro， Vectordelia（）， Frutiger Aero 2005–2013 ，：， —— 、、、、，。 iPod 、Xbox 360 、Windows 7 ：、、，。"
+      "ko": "Frutiger Metro, also known as Vectordelia, is the late-millennium vector-maximalist graphic style that flourished roughly 2005–2013 alongside Frutiger Aero but moved in the opposite direction: instead of skies and water, it built cities out of pure vector — subway lines, bright saturated gradients, abstract floral flourishes and swirls, humanist sans type, glossy vector shapes, and multicolored silhouette figures. It is the visual language of iPod commercials, Xbox 360 dashboards, Windows 7 stock imagery, and city-themed event graphics: optimistic, urban, geometrically neat, and deliberately non-photorealistic."
     },
     "scope": {
       "en": "Scope: This entry covers the vector-maximalist graphic style commonly called Frutiger Metro or Vectordelia, not Microsoft's Metro/Modern UI design language, which shares the name but is flat, typographic, and tile-based. It sits beside Frutiger Aero as a sibling style, not a subset.",
-      "ko": "： Frutiger Metro Vectordelia ， Microsoft Metro/Modern UI —— ，、、。 Frutiger Aero ，。"
+      "ko": "Scope: This entry covers the vector-maximalist graphic style commonly called Frutiger Metro or Vectordelia, not Microsoft's Metro/Modern UI design language, which shares the name but is flat, typographic, and tile-based. It sits beside Frutiger Aero as a sibling style, not a subset."
     },
     "aliases": {
       "en": [
@@ -3405,7 +3789,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Routes, intersections, and stations are drawn as clean vector lines with 90° and 45° angles, rounded caps, and circular nodes — the interface reads like a transit diagram.",
-          "ko": "、， 90° 45° ，， —— 。"
+          "ko": "Routes, intersections, and stations are drawn as clean vector lines with 90° and 45° angles, rounded caps, and circular nodes — the interface reads like a transit diagram."
         }
       },
       {
@@ -3418,7 +3802,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Large flat panels use hard, cheerful gradients — magenta #ec008c into cyan #00b6e3 into yellow #ffd400 — at sharp diagonal angles, never soft natural tones.",
-          "ko": "—— #ec008c #00b6e3 #ffd400，，。"
+          "ko": "Large flat panels use hard, cheerful gradients — magenta #ec008c into cyan #00b6e3 into yellow #ffd400 — at sharp diagonal angles, never soft natural tones."
         }
       },
       {
@@ -3431,7 +3815,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Decorative vines, swirls, starbursts, and geometric flowers are drawn as single-color vector shapes with crisp 1–2px outlines, purely illustrative and non-photorealistic.",
-          "ko": "、、， 1–2px ， purely ，。"
+          "ko": "Decorative vines, swirls, starbursts, and geometric flowers are drawn as single-color vector shapes with crisp 1–2px outlines, purely illustrative and non-photorealistic."
         }
       },
       {
@@ -3444,7 +3828,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Text is set in open, rounded-humanist sans-serifs such as Frutiger, Segoe UI, or Myriad — friendly and legible, never chrome or techno.",
-          "ko": "、， Frutiger、Segoe UI Myriad —— 、，。"
+          "ko": "Text is set in open, rounded-humanist sans-serifs such as Frutiger, Segoe UI, or Myriad — friendly and legible, never chrome or techno."
         }
       },
       {
@@ -3457,7 +3841,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Circles, pills, and ribbons carry a white top sheen (linear-gradient rgba(255,255,255,.75) to transparent at ~48%) and a subtle vector shadow, mimicking polished plastic without texture.",
-          "ko": "、（linear-gradient rgba(255,255,255,.75) transparent， 48% ），。"
+          "ko": "Circles, pills, and ribbons carry a white top sheen (linear-gradient rgba(255,255,255,.75) to transparent at ~48%) and a subtle vector shadow, mimicking polished plastic without texture."
         }
       },
       {
@@ -3470,7 +3854,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Flat human silhouettes in saturated single colors dance, point, or hold devices — the iPod-commercial signature, used as accent rather than hero.",
-          "ko": "、 —— iPod ，。"
+          "ko": "Flat human silhouettes in saturated single colors dance, point, or hold devices — the iPod-commercial signature, used as accent rather than hero."
         }
       },
       {
@@ -3496,19 +3880,35 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Photographic skies, water, grass, glass blur, or organic light effects push the look toward Frutiger Aero — Metro stays synthetic and vector-flat.",
-          "ko": "、、、 Frutiger Aero；Metro 。"
+          "ko": "Photographic skies, water, grass, glass blur, or organic light effects push the look toward Frutiger Aero — Metro stays synthetic and vector-flat."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "frutiger-aero",
+        "name": "Frutiger Aero",
+        "because": {
+          "en": "This is Frutiger Metro because the world is built from flat, hard-edged vector graphics — subway maps, gradient blocks, and stylized silhouettes — not from photorealistic skies, water droplets, grass, or glassy nature scenes.",
+          "ko": "This is Frutiger Metro because the world is built from flat, hard-edged vector graphics — subway maps, gradient blocks, and stylized silhouettes — not from photorealistic skies, water droplets, grass, or glassy nature scenes."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Frutiger Aero if the vector city dissolved into glossy nature photography — blue skies, green grass, water droplets, bubbles, and soft organic light behind translucent glass panels.",
+          "ko": "It would become Frutiger Aero if the vector city dissolved into glossy nature photography — blue skies, green grass, water droplets, bubbles, and soft organic light behind translucent glass panels."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the piece using Frutiger Metro (Vectordelia). Defining signals: build the layout from subway-map geometry — routes at 90° and 45° with rounded caps, station nodes as 12–18px circles (#ec008c, #00b6e3, #ffd400); fill panels with bright saturated diagonal gradients (magenta #ec008c → cyan #00b6e3 → yellow #ffd400 at 135°); scatter abstract vector flourishes and swirls behind content as single-color shapes with 1–2px crisp outlines (#00a9e0 or #ec008c). Use a clean humanist sans-serif such as Frutiger, Segoe UI, or system-ui; headings at 24–36px with tight tracking, body at 14–16px, ink in white or near-black. Add glossy vector accents — circles, pills, ribbons — with a white top sheen (linear-gradient rgba(255,255,255,.75) to transparent at 48%) and subtle drop shadow (0 4px 10px rgba(0,0,0,.12)). Include multicolored silhouette figures as supporting garnish. Avoid nature photography, water droplets, grass, sky gradients, glass blur, or chrome; those belong to Frutiger Aero. Keep tile spacing at 8–12px, block border-radius at 8–16px, pills at 999px. Ensure text sits on solid or gradient regions that hit 4.5:1 contrast, reserve maximalism for decorative zones, and honor prefers-reduced-motion.",
-      "ko": "Frutiger Metro（Vectordelia / ）。： —— 90° 45° 、、12–18px （#ec008c、#00b6e3、#ffd400）；（ #ec008c → #00b6e3 → #ffd400，135°）；， 1–2px （#00a9e0 #ec008c）。， Frutiger、Segoe UI system-ui； 24–36px、， 14–16px，。 —— 、、 —— （linear-gradient rgba(255,255,255,.75) transparent，48% ）（0 4px 10px rgba(0,0,0,.12)）。。、、、、； Frutiger Aero。 8–12px， 8–16px， 999px。 4.5:1 ，，， prefers-reduced-motion。"
+      "ko": "Create the piece using Frutiger Metro (Vectordelia). Defining signals: build the layout from subway-map geometry — routes at 90° and 45° with rounded caps, station nodes as 12–18px circles (#ec008c, #00b6e3, #ffd400); fill panels with bright saturated diagonal gradients (magenta #ec008c → cyan #00b6e3 → yellow #ffd400 at 135°); scatter abstract vector flourishes and swirls behind content as single-color shapes with 1–2px crisp outlines (#00a9e0 or #ec008c). Use a clean humanist sans-serif such as Frutiger, Segoe UI, or system-ui; headings at 24–36px with tight tracking, body at 14–16px, ink in white or near-black. Add glossy vector accents — circles, pills, ribbons — with a white top sheen (linear-gradient rgba(255,255,255,.75) to transparent at 48%) and subtle drop shadow (0 4px 10px rgba(0,0,0,.12)). Include multicolored silhouette figures as supporting garnish. Avoid nature photography, water droplets, grass, sky gradients, glass blur, or chrome; those belong to Frutiger Aero. Keep tile spacing at 8–12px, block border-radius at 8–16px, pills at 999px. Ensure text sits on solid or gradient regions that hit 4.5:1 contrast, reserve maximalism for decorative zones, and honor prefers-reduced-motion."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Small white labels on bright magenta or yellow gradient blocks often fail 4.5:1 contrast; place text on the darkest part of a gradient or add a dark translucent scrim behind it.\n\nFast, outward-flowing vector animations can trigger vestibular issues; under prefers-reduced-motion, freeze flourishes and switch any expanding radial burst to an instant fade.\n\nThe dense overlap of swirls, silhouettes, and color blocks raises cognitive load for low-vision and neurodivergent users; reserve the maximalism for decorative regions and keep interactive controls on clean, high-contrast plates.",
+      "ko": "Small white labels on bright magenta or yellow gradient blocks often fail 4.5:1 contrast; place text on the darkest part of a gradient or add a dark translucent scrim behind it.\n\nFast, outward-flowing vector animations can trigger vestibular issues; under prefers-reduced-motion, freeze flourishes and switch any expanding radial burst to an instant fade.\n\nThe dense overlap of swirls, silhouettes, and color blocks raises cognitive load for low-vision and neurodivergent users; reserve the maximalism for decorative regions and keep interactive controls on clean, high-contrast plates."
+    },
     "origin": {
       "en": "Roughly 2005–2013, peaking in the late 2000s: the look emerged from vector stock-art packs, iPod silhouette advertising, Xbox 360 dashboard visuals, Windows 7 stock imagery, and city-themed event graphics. The label Frutiger Metro is retroactive, coined by online aesthetics communities in the 2010s–2020s by analogy to Adrian Frutiger's humanist type and the urban/subway 'metro' mood; Vectordelia is the term used by CARI/Evan Collins and the Frutiger Aero Archive community. Microsoft's Metro design language shares the name but is a separate, later flat-typographic system.",
-      "ko": "2005–2013 ， 2000 ：、iPod 、Xbox 360 、Windows 7 。Frutiger Metro ， 2010–2020 Adrian Frutiger /；Vectordelia CARI/Evan Collins Frutiger Aero Archive 。Microsoft Metro ，。"
+      "ko": "Roughly 2005–2013, peaking in the late 2000s: the look emerged from vector stock-art packs, iPod silhouette advertising, Xbox 360 dashboard visuals, Windows 7 stock imagery, and city-themed event graphics. The label Frutiger Metro is retroactive, coined by online aesthetics communities in the 2010s–2020s by analogy to Adrian Frutiger's humanist type and the urban/subway 'metro' mood; Vectordelia is the term used by CARI/Evan Collins and the Frutiger Aero Archive community. Microsoft's Metro design language shares the name but is a separate, later flat-typographic system."
     },
     "meta": {}
   },
@@ -3520,11 +3920,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Anti-design / Dada Web treats visual conflict as the whole aesthetic: clashing typefaces, overlapping elements, broken grids, high-saturation colors that fight each other, and system defaults pushed to absurdity. It is deliberately ugly, but ugly by design — a collage-like rebellion against clean UX, grid systems, and brand-safe palettes. It flourishes in experimental portfolios, zine sites, art-school projects, and any screen that wants to look like it escaped from a Dadaist cut-up magazine rather than a design system.",
-      "ko": "/ Dada Web ：、、、，。，—— UX、。、、，。"
+      "ko": "Anti-design / Dada Web treats visual conflict as the whole aesthetic: clashing typefaces, overlapping elements, broken grids, high-saturation colors that fight each other, and system defaults pushed to absurdity. It is deliberately ugly, but ugly by design — a collage-like rebellion against clean UX, grid systems, and brand-safe palettes. It flourishes in experimental portfolios, zine sites, art-school projects, and any screen that wants to look like it escaped from a Dadaist cut-up magazine rather than a design system."
     },
     "scope": {
       "en": "Scope: This entry covers the intentionally transgressive web/graphic look. It is distinct from Web Brutalism (honest bare-browser defaults) and Neobrutalism (a styled, thick-border graphic language). The line between anti-design and zine-collage is thin, but anti-design is more about rule-breaking and visual aggression than about editorial collage narrative.",
-      "ko": "：/。（）（）。，，。"
+      "ko": "Scope: This entry covers the intentionally transgressive web/graphic look. It is distinct from Web Brutalism (honest bare-browser defaults) and Neobrutalism (a styled, thick-border graphic language). The line between anti-design and zine-collage is thin, but anti-design is more about rule-breaking and visual aggression than about editorial collage narrative."
     },
     "aliases": {
       "en": [
@@ -3555,7 +3955,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Two to four unrelated fonts collide in one view — system serif next to monospace next to a wavy display face — often at mismatched sizes (e.g. 12px body beside 64px headline) and with competing weights.",
-          "ko": "——，——（ 12px 64px ），。"
+          "ko": "Two to four unrelated fonts collide in one view — system serif next to monospace next to a wavy display face — often at mismatched sizes (e.g. 12px body beside 64px headline) and with competing weights."
         }
       },
       {
@@ -3581,7 +3981,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Neon magenta, acid green, warning orange, and electric blue appear side by side with no attempt at harmony; backgrounds may be #ff0040 behind #00ff66 text, deliberately flirting with illegibility.",
-          "ko": "、、，； #ff0040， #00ff66 ，。"
+          "ko": "Neon magenta, acid green, warning orange, and electric blue appear side by side with no attempt at harmony; backgrounds may be #ff0040 behind #00ff66 text, deliberately flirting with illegibility."
         }
       },
       {
@@ -3594,7 +3994,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Default form controls, system cursors, scrollbars, and raw HTML elements are retained but exaggerated — giant default checkboxes, default-blue links at 32px, or system alerts used as ornament.",
-          "ko": "、、 HTML ，——、32px ，。"
+          "ko": "Default form controls, system cursors, scrollbars, and raw HTML elements are retained but exaggerated — giant default checkboxes, default-blue links at 32px, or system alerts used as ornament."
         }
       },
       {
@@ -3607,7 +4007,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Images, text blocks, and UI chrome layer on top of one another with mixed blend modes or no blending at all, as if cut out and glued down in stages.",
-          "ko": "、 chrome ，，，。"
+          "ko": "Images, text blocks, and UI chrome layer on top of one another with mixed blend modes or no blending at all, as if cut out and glued down in stages."
         }
       },
       {
@@ -3620,7 +4020,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Common patterns are deliberately warped — buttons that rotate on hover, cursors replaced by giant symbols, scroll direction inverted — to make the user notice the interface instead of disappearing into it.",
-          "ko": "——hover 、、——，。"
+          "ko": "Common patterns are deliberately warped — buttons that rotate on hover, cursors replaced by giant symbols, scroll direction inverted — to make the user notice the interface instead of disappearing into it."
         }
       },
       {
@@ -3650,15 +4050,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "web-brutalism",
+        "name": "Web Brutalism",
+        "because": {
+          "en": "This is Anti-design because the chaos is actively manufactured: overlapping shapes, clashing type, and aggressive color are deliberate aesthetic choices, not the browser's default bare materials.",
+          "ko": "This is Anti-design because the chaos is actively manufactured: overlapping shapes, clashing type, and aggressive color are deliberate aesthetic choices, not the browser's default bare materials."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Web Brutalism if the manufactured conflict were stripped away and the page were rebuilt from browser defaults — Times, blue links, white ground, visible document structure, and no decorative rendering at all.",
+          "ko": "It would become Web Brutalism if the manufactured conflict were stripped away and the page were rebuilt from browser defaults — Times, blue links, white ground, visible document structure, and no decorative rendering at all."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the interface in the Anti-design / Dada Web spirit. Defining signals: intentionally conflicting typefaces (mix Times New Roman, system-ui, and a wavy/italic display face in one view); a broken, overlapping grid where elements bleed and collide; high-saturation color clashes such as #ff0040, #00ff66, #00ccff, and #ffaa00 used side by side; system defaults pushed to absurdity (giant default-blue #0000ee links, oversized raw checkboxes, default scrollbars left visible); collage-style overlap with absolute positioning and mixed z-index; anti-usability gestures like rotating buttons on hover or inverted hover states. Use hard-edged shapes — dashed 3px #000 borders, zero blur on shadows if any, and mismatched border radii (0px, 50%, 24px). Avoid soft rendering: no backdrop-filter, no glass, no gradients, no blurred shadows. Keep the specific color set and rotation angles flexible. Preserve the core function — buttons must still be clickable, progress must still be readable — but make the visual argument loud. Ensure focus states remain visible with a thick #000 outline, and honor prefers-reduced-motion by disabling rotation/tilt animations.",
-      "ko": "/ Dada Web 。：（ Times New Roman、system-ui /）；，、；， #ff0040、#00ff66、#00ccff、#ffaa00 ；（ #0000ee 、 oversized 、）；， z-index；， hover hover 。——3px #000 、、（0px、50%、24px）。： backdrop-filter、、。。——，——。， #000 outline； prefers-reduced-motion，/。"
+      "ko": "Create the interface in the Anti-design / Dada Web spirit. Defining signals: intentionally conflicting typefaces (mix Times New Roman, system-ui, and a wavy/italic display face in one view); a broken, overlapping grid where elements bleed and collide; high-saturation color clashes such as #ff0040, #00ff66, #00ccff, and #ffaa00 used side by side; system defaults pushed to absurdity (giant default-blue #0000ee links, oversized raw checkboxes, default scrollbars left visible); collage-style overlap with absolute positioning and mixed z-index; anti-usability gestures like rotating buttons on hover or inverted hover states. Use hard-edged shapes — dashed 3px #000 borders, zero blur on shadows if any, and mismatched border radii (0px, 50%, 24px). Avoid soft rendering: no backdrop-filter, no glass, no gradients, no blurred shadows. Keep the specific color set and rotation angles flexible. Preserve the core function — buttons must still be clickable, progress must still be readable — but make the visual argument loud. Ensure focus states remain visible with a thick #000 outline, and honor prefers-reduced-motion by disabling rotation/tilt animations."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Anti-design deliberately courts low contrast and cognitive overload, so the real risk is excluding users with low vision, photosensitivity, or cognitive disabilities. Never let decoration block function: keep text on a solid high-contrast backing wherever the user must read or act.\n\nDisable all rotation, shake, cursor replacement, and rapid motion under prefers-reduced-motion, and keep any flashing color transitions below the WCAG 2.5.3 / three-flashes-per-second threshold.\n\nProvide a visible, unambiguous focus indicator (e.g. a 3px solid #000 outline with 2px offset) that survives clashing backgrounds; keyboard users must never have to hunt for the active element.",
+      "ko": "Anti-design deliberately courts low contrast and cognitive overload, so the real risk is excluding users with low vision, photosensitivity, or cognitive disabilities. Never let decoration block function: keep text on a solid high-contrast backing wherever the user must read or act.\n\nDisable all rotation, shake, cursor replacement, and rapid motion under prefers-reduced-motion, and keep any flashing color transitions below the WCAG 2.5.3 / three-flashes-per-second threshold.\n\nProvide a visible, unambiguous focus indicator (e.g. a 3px solid #000 outline with 2px offset) that survives clashing backgrounds; keyboard users must never have to hunt for the active element."
+    },
     "origin": {
       "en": "The term descends from the Italian Anti-design / Radical Design movement of the late 1960s and early 1970s — groups such as Archizoom and Superstudio in Florence, and figures including Ettore Sottsass, who rejected functionalist 'good design' in favor of provocation, kitsch, and social critique. On the web, the sensibility resurfaced in the late 2010s alongside web brutalism and was increasingly labeled anti-design or 'Dada Web' by the early 2020s as designers deliberately broke grids, clashed type, and weaponized ugliness against the sameness of polished SaaS interfaces.",
-      "ko": "1960 1970 / —— Archizoom、Superstudio ， Ettore Sottsass ——「」，、。， 2010 ， 2020 ，、、 SaaS ，「Dada Web」。"
+      "ko": "The term descends from the Italian Anti-design / Radical Design movement of the late 1960s and early 1970s — groups such as Archizoom and Superstudio in Florence, and figures including Ettore Sottsass, who rejected functionalist 'good design' in favor of provocation, kitsch, and social critique. On the web, the sensibility resurfaced in the late 2010s alongside web brutalism and was increasingly labeled anti-design or 'Dada Web' by the early 2020s as designers deliberately broke grids, clashed type, and weaponized ugliness against the sameness of polished SaaS interfaces."
     },
     "meta": {}
   },
@@ -3670,11 +4086,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Acid Graphics is the dark, psychedelic cousin of millennium chrome: black backgrounds set off by toxic neon gradients, metallic 3D lettering that looks extruded from liquid mercury, and wireframe grids that melt, twist, and mirror themselves into distortion. It grew out of 1990s acid-house and rave flyers, then was revived in the 2010s as a club-culture visual language for electronic music, streetwear, and underground editorial — less 'future that shipped' than a future seen through a funhouse lens.",
-      "ko": "：， 3D ，、、。 1990 acid house ， 2010 ，、 —— 「」，。"
+      "ko": "Acid Graphics is the dark, psychedelic cousin of millennium chrome: black backgrounds set off by toxic neon gradients, metallic 3D lettering that looks extruded from liquid mercury, and wireframe grids that melt, twist, and mirror themselves into distortion. It grew out of 1990s acid-house and rave flyers, then was revived in the 2010s as a club-culture visual language for electronic music, streetwear, and underground editorial — less 'future that shipped' than a future seen through a funhouse lens."
     },
     "scope": {
       "en": "Scope: This entry covers the graphic/UI look, not the broader Y2K fashion revival or the brighter 'chrome bubblegum' branch of turn-of-millennium design. The melancholic neon-grid strain is closer to synthwave/retrowave; this entry stays with the distorted, subcultural rave signal.",
-      "ko": "：/UI ， Y2K ，「」。 Synthwave/Retrowave；、。"
+      "ko": "Scope: This entry covers the graphic/UI look, not the broader Y2K fashion revival or the brighter 'chrome bubblegum' branch of turn-of-millennium design. The melancholic neon-grid strain is closer to synthwave/retrowave; this entry stays with the distorted, subcultural rave signal."
     },
     "aliases": {
       "en": [
@@ -3705,7 +4121,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Letterforms are extruded, beveled, and filled with mirror-to-dark chrome gradients so they read as freshly cast metal; stacked text-shadows give them a 3D drop.",
-          "ko": "、，，； text-shadow 3D 。"
+          "ko": "Letterforms are extruded, beveled, and filled with mirror-to-dark chrome gradients so they read as freshly cast metal; stacked text-shadows give them a 3D drop."
         }
       },
       {
@@ -3718,7 +4134,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Forms appear to melt, drip, or warp like viscous fluid — letters sag, grids liquefy, and borders bulge as if gravity is optional.",
-          "ko": "、 —— 、、，。"
+          "ko": "Forms appear to melt, drip, or warp like viscous fluid — letters sag, grids liquefy, and borders bulge as if gravity is optional."
         }
       },
       {
@@ -3731,7 +4147,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "High-saturation acid green (#39ff14), hot magenta (#ff00a0), electric cyan (#00f0ff), and toxic yellow (#ccff00) glow against a near-black ground (#050505–#0a0a0a).",
-          "ko": "（#39ff14）、（#ff00a0）、（#00f0ff）（#ccff00）（#050505–#0a0a0a）。"
+          "ko": "High-saturation acid green (#39ff14), hot magenta (#ff00a0), electric cyan (#00f0ff), and toxic yellow (#ccff00) glow against a near-black ground (#050505–#0a0a0a)."
         }
       },
       {
@@ -3744,7 +4160,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Perspective grids, wireframe globes, and mesh planes bend, twist, or dissolve — the grid is a structure being pulled apart, not a neutral scaffold.",
-          "ko": "、、 —— ，。"
+          "ko": "Perspective grids, wireframe globes, and mesh planes bend, twist, or dissolve — the grid is a structure being pulled apart, not a neutral scaffold."
         }
       },
       {
@@ -3757,7 +4173,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Chrome and glass planes are twisted into funhouse reflections — rippled, stretched, or fragmented rather than flat and pristine.",
-          "ko": "—— 、，。"
+          "ko": "Chrome and glass planes are twisted into funhouse reflections — rippled, stretched, or fragmented rather than flat and pristine."
         }
       },
       {
@@ -3770,7 +4186,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "The imagery belongs to warehouse parties and electronic music: dark, maximal, psychedelic, and anti-polish — not corporate or optimistic.",
-          "ko": "：、、、 —— 、。"
+          "ko": "The imagery belongs to warehouse parties and electronic music: dark, maximal, psychedelic, and anti-polish — not corporate or optimistic."
         }
       },
       {
@@ -3783,7 +4199,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Type, grids, chrome shapes, and neon washes overlap in dense collages with little breathing room, creating a horror-vacui effect.",
-          "ko": "、、， horror vacui（）。"
+          "ko": "Type, grids, chrome shapes, and neon washes overlap in dense collages with little breathing room, creating a horror-vacui effect."
         }
       },
       {
@@ -3796,19 +4212,35 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Bright electric-blue/silver/white palettes, clean chrome, and bubbly gel buttons signal Y2K — this style stays darker and more twisted.",
-          "ko": "//、 Y2K —— 、。"
+          "ko": "Bright electric-blue/silver/white palettes, clean chrome, and bubbly gel buttons signal Y2K — this style stays darker and more twisted."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "y2k",
+        "name": "Y2K Digital Aesthetic",
+        "because": {
+          "en": "This is Acid Graphics because the chrome is twisted, the ground is black, and the mood is underground rave — toxic neon gradients, melting grids, and funhouse mirrors replace Y2K's silver bubblegum optimism.",
+          "ko": "This is Acid Graphics because the chrome is twisted, the ground is black, and the mood is underground rave — toxic neon gradients, melting grids, and funhouse mirrors replace Y2K's silver bubblegum optimism."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Y2K Digital Aesthetic if the background lightened, the chrome straightened into clean mirror-metal, the palette shifted to electric blue/silver/white, and the tone turned optimistic and bubbly.",
+          "ko": "It would become Y2K Digital Aesthetic if the background lightened, the chrome straightened into clean mirror-metal, the palette shifted to electric blue/silver/white, and the tone turned optimistic and bubbly."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using Acid Graphics. Defining signals: a near-black ground (#050505 or #0a0a0a) set against toxic neon gradients — acid green (#39ff14), hot magenta (#ff00a0), electric cyan (#00f0ff), and toxic yellow (#ccff00); metallic 3D lettering rendered with stacked text-shadows and a chrome gradient fill (`background-clip: text` with `#e0e0e0 → #8a8a8a → #ffffff → #707070 → #e0e0e0`); wireframe grids that bend, twist, or melt using CSS transforms, SVG filters, or perspective distortion; distorted mirror surfaces that warp reflections like funhouse glass; dense maximal layering where type, grids, and chrome shapes overlap. Keep the specific acid hues and grid density flexible. Use compressed grotesks such as `Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif` for display type; set chrome type with `-webkit-background-clip: text; color: transparent;` plus a dark drop-shadow for legibility. Avoid Y2K's clean silver bubblegum optimism — if the palette turns electric-blue/silver/white and the grids straighten, you've crossed into Y2K. Preserve contrast by keeping functional text off the neon gradients (place labels on solid black or dark grey #1a1a1a panels), provide visible focus states, and disable any liquid shimmer/warp animations under prefers-reduced-motion.",
-      "ko": "（Acid Graphics）。：（#050505 #0a0a0a） —— （#39ff14）、（#ff00a0）、（#00f0ff）（#ccff00）； text-shadow （`background-clip: text`， `#e0e0e0 → #8a8a8a → #ffffff → #707070 → #e0e0e0`） 3D ； CSS transform、SVG filter 、；；、 dense 。。 grotesk， `Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif`； `-webkit-background-clip: text; color: transparent;` drop-shadow 。 Y2K —— //、，。 #1a1a1a ，；； prefers-reduced-motion /。"
+      "ko": "Create the surface using Acid Graphics. Defining signals: a near-black ground (#050505 or #0a0a0a) set against toxic neon gradients — acid green (#39ff14), hot magenta (#ff00a0), electric cyan (#00f0ff), and toxic yellow (#ccff00); metallic 3D lettering rendered with stacked text-shadows and a chrome gradient fill (`background-clip: text` with `#e0e0e0 → #8a8a8a → #ffffff → #707070 → #e0e0e0`); wireframe grids that bend, twist, or melt using CSS transforms, SVG filters, or perspective distortion; distorted mirror surfaces that warp reflections like funhouse glass; dense maximal layering where type, grids, and chrome shapes overlap. Keep the specific acid hues and grid density flexible. Use compressed grotesks such as `Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif` for display type; set chrome type with `-webkit-background-clip: text; color: transparent;` plus a dark drop-shadow for legibility. Avoid Y2K's clean silver bubblegum optimism — if the palette turns electric-blue/silver/white and the grids straighten, you've crossed into Y2K. Preserve contrast by keeping functional text off the neon gradients (place labels on solid black or dark grey #1a1a1a panels), provide visible focus states, and disable any liquid shimmer/warp animations under prefers-reduced-motion."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Acid Graphics loves maximum contrast in hue but minimum contrast in value: neon gradients on black can be dazzling yet the mid-tones within them often fail 4.5:1 for text. Keep readable labels on solid dark panels (#1a1a1a or #0f0f0f) rather than directly over neon gradients.\n\nLiquid distortion, warping grids, and shimmering chrome can trigger vestibular or photosensitive responses; respect prefers-reduced-motion by freezing or simplifying these animations, and keep any flashing or rapid cycling below the WCAG three-flashes-per-second threshold.\n\nMaximal layering and distorted letterforms hurt readability and cognitive parsing; reserve acid effects for headings, hero art, and decorative chrome, and keep body text in a plain sans-serif at a comfortable size with clear hierarchy.",
+      "ko": "Acid Graphics loves maximum contrast in hue but minimum contrast in value: neon gradients on black can be dazzling yet the mid-tones within them often fail 4.5:1 for text. Keep readable labels on solid dark panels (#1a1a1a or #0f0f0f) rather than directly over neon gradients.\n\nLiquid distortion, warping grids, and shimmering chrome can trigger vestibular or photosensitive responses; respect prefers-reduced-motion by freezing or simplifying these animations, and keep any flashing or rapid cycling below the WCAG three-flashes-per-second threshold.\n\nMaximal layering and distorted letterforms hurt readability and cognitive parsing; reserve acid effects for headings, hero art, and decorative chrome, and keep body text in a plain sans-serif at a comfortable size with clear hierarchy."
+    },
     "origin": {
       "en": "Acid Graphics grew directly from the flyer art of the 1990s acid-house and rave scenes in the UK and Europe, where black backgrounds, day-glo colors, warped type, and sci-fi textures advertised illegal warehouse parties. In a 2019 Eye on Design survey, designer and art director Hugo Hoppmann cited David Rudnick as the touchstone of the contemporary acid-mania, and the Instagram account @acidgraphix — started by designer Luigi Brusciano in 2018 — became a key showcase for the revived style. The contemporary wave also includes designers such as Anja Kaiser and Jonathan Castro, and has spread through electronic-music cover art, club posters, streetwear branding, and experimental editorial.",
-      "ko": "1990 acid house ：、、。2019 Eye on Design ， Hugo Hoppmann David Rudnick ； Luigi Brusciano 2018 Instagram @acidgraphix 。 Anja Kaiser、Jonathan Castro ，、、。"
+      "ko": "Acid Graphics grew directly from the flyer art of the 1990s acid-house and rave scenes in the UK and Europe, where black backgrounds, day-glo colors, warped type, and sci-fi textures advertised illegal warehouse parties. In a 2019 Eye on Design survey, designer and art director Hugo Hoppmann cited David Rudnick as the touchstone of the contemporary acid-mania, and the Instagram account @acidgraphix — started by designer Luigi Brusciano in 2018 — became a key showcase for the revived style. The contemporary wave also includes designers such as Anja Kaiser and Jonathan Castro, and has spread through electronic-music cover art, club posters, streetwear branding, and experimental editorial."
     },
     "meta": {}
   },
@@ -3820,11 +4252,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Risograph is the look of a Japanese stencil duplicator pushed into graphic art: layered spot colors — hot pink, cyan, sunflower yellow — printed slightly out of register, leaving halos and color moiré; a visible grain from soy-based inks; and edges that look cut from a stencil rather than rendered by a laser. It migrated from churches and schools in the 1980s into zines, posters, and indie publishing, where its accidents became the signature.",
-      "ko": "（Riso）：——、、——，，；；，。 1980 zine、，「」。"
+      "ko": "Risograph is the look of a Japanese stencil duplicator pushed into graphic art: layered spot colors — hot pink, cyan, sunflower yellow — printed slightly out of register, leaving halos and color moiré; a visible grain from soy-based inks; and edges that look cut from a stencil rather than rendered by a laser. It migrated from churches and schools in the 1980s into zines, posters, and indie publishing, where its accidents became the signature."
     },
     "scope": {
       "en": "Scope: This entry covers the visual style of Risograph prints as adapted to UI and graphic design. It is distinct from screen printing (which uses mesh and squeegee, not a digital stencil master) and from Memphis-style pattern collage — both are common neighbors.",
-      "ko": "： Risograph UI 。（，），——。"
+      "ko": "Scope: This entry covers the visual style of Risograph prints as adapted to UI and graphic design. It is distinct from screen printing (which uses mesh and squeegee, not a digital stencil master) and from Memphis-style pattern collage — both are common neighbors."
     },
     "aliases": {
       "en": [
@@ -3855,7 +4287,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Palette is built from separate opaque inks — hot pink #ff4da6, cyan #00b4d8, sunflower #ffd60a — layered so each new color physically prints on top of the last, producing new hues at overlaps.",
-          "ko": "—— #ff4da6、 #00b4d8、 #ffd60a——，。"
+          "ko": "Palette is built from separate opaque inks — hot pink #ff4da6, cyan #00b4d8, sunflower #ffd60a — layered so each new color physically prints on top of the last, producing new hues at overlaps."
         }
       },
       {
@@ -3868,7 +4300,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Color channels sit a few pixels off from one another (translate 1–3px), creating visible halos and moiré; perfect alignment reads as digital, not Riso.",
-          "ko": "1–3px，；， Riso。"
+          "ko": "Color channels sit a few pixels off from one another (translate 1–3px), creating visible halos and moiré; perfect alignment reads as digital, not Riso."
         }
       },
       {
@@ -3881,7 +4313,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Flat fills are broken by a fine, irregular dot grain — especially visible in darker inks — from the soy-oil based ink and stencil mesh; add it with a noise texture at ~15–25% opacity.",
-          "ko": "，； 15–25% 。"
+          "ko": "Flat fills are broken by a fine, irregular dot grain — especially visible in darker inks — from the soy-oil based ink and stencil mesh; add it with a noise texture at ~15–25% opacity."
         }
       },
       {
@@ -3894,7 +4326,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Shapes have slightly jagged or feathered outlines, as if cut from a wax stencil; crisp 1px vector edges look pre-press, not printed.",
-          "ko": "，；1px ，。"
+          "ko": "Shapes have slightly jagged or feathered outlines, as if cut from a wax stencil; crisp 1px vector edges look pre-press, not printed."
         }
       },
       {
@@ -3907,7 +4339,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Compositions rely on two or three flat inks against off-white paper; the limitation is part of the look — more than four colors stops being Riso.",
-          "ko": "；， Riso 。"
+          "ko": "Compositions rely on two or three flat inks against off-white paper; the limitation is part of the look — more than four colors stops being Riso."
         }
       },
       {
@@ -3920,7 +4352,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Background reads as uncoated cream or newsprint (#f6f1e7 or #f4ecd8), soaking ink and letting grain show through.",
-          "ko": "（#f6f1e7 #f4ecd8），。"
+          "ko": "Background reads as uncoated cream or newsprint (#f6f1e7 or #f4ecd8), soaking ink and letting grain show through."
         }
       },
       {
@@ -3933,7 +4365,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Headings often use chunky grotesks or hand-lettered forms; body stays plain because the texture does the talking.",
-          "ko": "grotesk ；，。"
+          "ko": "Headings often use chunky grotesks or hand-lettered forms; body stays plain because the texture does the talking."
         }
       },
       {
@@ -3950,15 +4382,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "memphis",
+        "name": "Memphis",
+        "because": {
+          "en": "This is Risograph because the style comes from printing artifacts: grainy ink texture, spot-color overprints shifted slightly out of register, and stencil-cut edges — not from toy geometry, squiggles, or allover pattern.",
+          "ko": "This is Risograph because the style comes from printing artifacts: grainy ink texture, spot-color overprints shifted slightly out of register, and stencil-cut edges — not from toy geometry, squiggles, or allover pattern."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Memphis if you replaced the ink grain and misregistration with flat squiggles, zigzags, dots, and triangles on a white ground, making pattern the subject instead of print texture.",
+          "ko": "It would become Memphis if you replaced the ink grain and misregistration with flat squiggles, zigzags, dots, and triangles on a white ground, making pattern the subject instead of print texture."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface in the spirit of Risograph (Riso) print. Defining signals: a limited palette of opaque spot inks — hot pink #ff4da6, cyan #00b4d8, sunflower #ffd60a, and black #1a1a1a — layered as separate passes so overlaps create new hues (pink over cyan makes violet, yellow over pink makes orange); deliberate misregistration of 1–3px between color passes to produce visible halos and color moiré; a fine irregular grain/stipple texture over every flat fill, simulating soy-based ink pushed through a stencil mesh at ~15–25% opacity; rough stencil-cut edges with slight feathering rather than crisp vector outlines; high-contrast duotone or tritone layouts against an off-white porous paper ground (#f6f1e7). Use chunky grotesk or hand-lettered headings, plain body text, and no gradients, shadows, or photorealism. Buttons and cards should feel like separate ink passes — flat color fields with the grain texture, 2px solid black outlines optional. Do not drift into Memphis; the decisive difference is that Risograph is print-texture-first (grain, misregistration, spot overprint) while Memphis is pattern-first (squiggles, zigzags, geometric confetti). Preserve text contrast: black ink on the spot colors usually passes; thin type over textured fills can fail, so keep labels large and on solid panels.",
-      "ko": "（Risograph / Riso）。：—— #ff4da6、 #00b4d8、 #ffd60a #1a1a1a——，（，）； 1–3px，；/，， 15–25%；，，；/，（#f6f1e7）。 grotesk ，，、。 pass——， 2px 。；「」（、、），「」（、、）。：；，、。"
+      "ko": "Create the surface in the spirit of Risograph (Riso) print. Defining signals: a limited palette of opaque spot inks — hot pink #ff4da6, cyan #00b4d8, sunflower #ffd60a, and black #1a1a1a — layered as separate passes so overlaps create new hues (pink over cyan makes violet, yellow over pink makes orange); deliberate misregistration of 1–3px between color passes to produce visible halos and color moiré; a fine irregular grain/stipple texture over every flat fill, simulating soy-based ink pushed through a stencil mesh at ~15–25% opacity; rough stencil-cut edges with slight feathering rather than crisp vector outlines; high-contrast duotone or tritone layouts against an off-white porous paper ground (#f6f1e7). Use chunky grotesk or hand-lettered headings, plain body text, and no gradients, shadows, or photorealism. Buttons and cards should feel like separate ink passes — flat color fields with the grain texture, 2px solid black outlines optional. Do not drift into Memphis; the decisive difference is that Risograph is print-texture-first (grain, misregistration, spot overprint) while Memphis is pattern-first (squiggles, zigzags, geometric confetti). Preserve text contrast: black ink on the spot colors usually passes; thin type over textured fills can fail, so keep labels large and on solid panels."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Misregistration and grain are decorative, but they must not hide information: never set small body text directly over a grain texture without a solid backing panel; measure 4.5:1 for any text ink against its paper ground.\n\nThe limited spot palette can produce unpredictable combinations where two inks overlap; check the resulting mixed colors for contrast, especially yellow (#ffd60a) overlaid with black text.\n\nHeavy texture and high chroma increase visual fatigue; reserve dense grain for decorative zones, offer a reduced-texture mode under prefers-reduced-motion or a user toggle, and avoid rapid flashing or high-frequency dot patterns.",
+      "ko": "Misregistration and grain are decorative, but they must not hide information: never set small body text directly over a grain texture without a solid backing panel; measure 4.5:1 for any text ink against its paper ground.\n\nThe limited spot palette can produce unpredictable combinations where two inks overlap; check the resulting mixed colors for contrast, especially yellow (#ffd60a) overlaid with black text.\n\nHeavy texture and high chroma increase visual fatigue; reserve dense grain for decorative zones, offer a reduced-texture mode under prefers-reduced-motion or a user toggle, and avoid rapid flashing or high-frequency dot patterns."
+    },
     "origin": {
       "en": "Riso Kagaku Corporation developed the Risograph in Japan in the early 1980s as a high-speed, low-cost stencil duplicator for schools, churches, and offices, using soy-based inks and a digital master wrapped around an ink drum. It remained an office tool through the 1990s, then was adopted by independent publishers, zine makers, and graphic artists in the 2000s–2010s who turned its registration drift, ink grain, and limited color passes into an intentional aesthetic.",
-      "ko": "（Riso Kagaku Corporation） 1980 Risograph，、，。 1990 ， 2000–2010 、zine ，、。"
+      "ko": "Riso Kagaku Corporation developed the Risograph in Japan in the early 1980s as a high-speed, low-cost stencil duplicator for schools, churches, and offices, using soy-based inks and a digital master wrapped around an ink drum. It remained an office tool through the 1990s, then was adopted by independent publishers, zine makers, and graphic artists in the 2000s–2010s who turned its registration drift, ink grain, and limited color passes into an intentional aesthetic."
     },
     "meta": {}
   },
@@ -3970,11 +4418,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Zine / Collage treats the interface as a photocopied, hand-cut magazine spread: pieces of paper are torn or trimmed, layered at odd angles, and taped into place with masking tape; text alternates between handwriting, typewriter, and clipped headlines, all sitting on a grainy, high-contrast, DIY surface. It is not polished — the scissor slip, the tape wrinkle, and the over-copied halftone are the whole point. The look migrated from punk fanzines and Riot Grrrl photocopies into web portfolios and editorial sites looking for warmth outside the SaaS grid.",
-      "ko": "、：，，；、，、、DIY 。——、、。 fanzine Riot Grrrl ， SaaS 。"
+      "ko": "Zine / Collage treats the interface as a photocopied, hand-cut magazine spread: pieces of paper are torn or trimmed, layered at odd angles, and taped into place with masking tape; text alternates between handwriting, typewriter, and clipped headlines, all sitting on a grainy, high-contrast, DIY surface. It is not polished — the scissor slip, the tape wrinkle, and the over-copied halftone are the whole point. The look migrated from punk fanzines and Riot Grrrl photocopies into web portfolios and editorial sites looking for warmth outside the SaaS grid."
     },
     "scope": {
       "en": "Scope: This entry covers the visual language of cut-and-paste, self-published zines translated into UI. It overlaps with risograph printing and Memphis-style pattern energy, but zine collage is specifically paper-first: torn edges, tape, handwriting, and photocopier artifacts. Corporate illustration systems and clean mood boards are not zine collage.",
-      "ko": "：「」 UI 。 Riso ，「」：、、、。。"
+      "ko": "Scope: This entry covers the visual language of cut-and-paste, self-published zines translated into UI. It overlaps with risograph printing and Memphis-style pattern energy, but zine collage is specifically paper-first: torn edges, tape, handwriting, and photocopier artifacts. Corporate illustration systems and clean mood boards are not zine collage."
     },
     "aliases": {
       "en": [
@@ -4005,7 +4453,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Surfaces are not clean vector rectangles; edges look torn, scissor-cut, deckled, or clipped from another page, often exposed as a 1–2px ragged silhouette.",
-          "ko": "；、， 1–2px 。"
+          "ko": "Surfaces are not clean vector rectangles; edges look torn, scissor-cut, deckled, or clipped from another page, often exposed as a 1–2px ragged silhouette."
         }
       },
       {
@@ -4018,7 +4466,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Strips of translucent tape — usually beige or washi yellow — hold pieces down at corners or seams; they are rotated a few degrees and often overlap the layer beneath.",
-          "ko": "————；，。"
+          "ko": "Strips of translucent tape — usually beige or washi yellow — hold pieces down at corners or seams; they are rotated a few degrees and often overlap the layer beneath."
         }
       },
       {
@@ -4031,7 +4479,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "High-contrast black-only or limited-spot images show dot halftone, xerox streaks, and paper fiber texture; gradients are replaced by grainy black dots.",
-          "ko": "-only 、；。"
+          "ko": "High-contrast black-only or limited-spot images show dot halftone, xerox streaks, and paper fiber texture; gradients are replaced by grainy black dots."
         }
       },
       {
@@ -4044,7 +4492,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Labels appear in marker handwriting, monospaced typewriter, or all-caps cutout letters — never one slick font family carrying the whole page.",
-          "ko": "、—— slick 。"
+          "ko": "Labels appear in marker handwriting, monospaced typewriter, or all-caps cutout letters — never one slick font family carrying the whole page."
         }
       },
       {
@@ -4057,7 +4505,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Pieces overlap at slight rotations (-3° to +4°), each casting a soft, low offset shadow that reads as physical paper thickness rather than elevation.",
-          "ko": "（-3° +4°），，，。"
+          "ko": "Pieces overlap at slight rotations (-3° to +4°), each casting a soft, low offset shadow that reads as physical paper thickness rather than elevation."
         }
       },
       {
@@ -4083,7 +4531,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Black ink plus one or two flat accent colors — hot pink, mustard, cyan — on off-white newsprint; the palette mimics cheap riso or xerox duplication.",
-          "ko": "——、、——； Riso 。"
+          "ko": "Black ink plus one or two flat accent colors — hot pink, mustard, cyan — on off-white newsprint; the palette mimics cheap riso or xerox duplication."
         }
       },
       {
@@ -4096,7 +4544,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Magazine photos, ticket stubs, receipts, stamps, and doodles can decorate the surface; what matters is that each piece reads as found and pasted.",
-          "ko": "、、、；「」。"
+          "ko": "Magazine photos, ticket stubs, receipts, stamps, and doodles can decorate the surface; what matters is that each piece reads as found and pasted."
         }
       },
       {
@@ -4109,19 +4557,35 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "backdrop-filter blur, translucent panels, and lens-like gloss dissolve the paper-and-tape materiality — that look is glassmorphism or Liquid Glass, not zine.",
-          "ko": "backdrop-filter 、——，。"
+          "ko": "backdrop-filter blur, translucent panels, and lens-like gloss dissolve the paper-and-tape materiality — that look is glassmorphism or Liquid Glass, not zine."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "anti-design",
+        "name": "Anti-design",
+        "because": {
+          "en": "This is Zine / Collage because the artifacts are physical paper things — torn edges, masking tape, photocopier grain, handwriting, and layered cutouts. The imperfection comes from scissors and glue, not from digital conflict.",
+          "ko": "This is Zine / Collage because the artifacts are physical paper things — torn edges, masking tape, photocopier grain, handwriting, and layered cutouts. The imperfection comes from scissors and glue, not from digital conflict."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Anti-design if the paper, tape, and grain vanished and were replaced by digital chaos — clashing neon gradients, broken grids, overlapping glitchy type, and deliberate usability hostility with no DIY materiality left.",
+          "ko": "It would become Anti-design if the paper, tape, and grain vanished and were replaced by digital chaos — clashing neon gradients, broken grids, overlapping glitchy type, and deliberate usability hostility with no DIY materiality left."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the interface as a Zine / Collage (zine-collage). Defining signals: every card or panel should read as torn or scissor-cut paper, not a vector rectangle — use irregular clip-path polygons or jagged border-radius and expose a 1–2px dark silhouette; attach pieces with visible masking tape hinges (#e8d78b at ~78% opacity, 40–50px wide, rotated -12° to +10°) overlapping corners; apply photocopied halftone grain to images and surfaces using a radial dot pattern (#1a1a1a dots on #f4f1ea paper), then boost contrast and grayscale; mix typography so headings use a handwritten marker family ('Bradley Hand', 'Chalkboard SE', 'Comic Sans MS', cursive), metadata uses a monospaced typewriter ('Courier New', 'Courier Prime', monospace), and accents look like clipped magazine all-caps. Layer pieces at slight rotations (-3° to +4°) with soft paper shadows (2px 3px 0 rgba(26,26,26,.15) or 0 2px 5px rgba(0,0,0,.18)), and keep deliberate DIY imperfection — wobbly rules, misalignment, and scissor marks. Palette: black #1a1a1a on off-white #f4f1ea newsprint, plus one or two flat spot accents such as hot pink #ff4f87 or mustard #f2c94c. Avoid digital glass, backdrop blur, gradients, and clean centered symmetry; those kill the paper materiality. Keep body text at least 14px and on solid paper fills so the rough edges do not sacrifice readability.",
-      "ko": "（zine-collage）。：，—— clip-path border-radius， 1–2px ；（#e8d78b、 78% 、 40–50px、 -12° +10°），；（#1a1a1a #f4f1ea ），；：（'Bradley Hand'、'Chalkboard SE'、'Comic Sans MS'、cursive），（'Courier New'、'Courier Prime'、monospace），。（-3° +4°），（2px 3px 0 rgba(26,26,26,.15) 0 2px 5px rgba(0,0,0,.18)）， DIY ——、。：#1a1a1a #f4f1ea ，， #ff4f87 #f2c94c。、backdrop 、，。 14px，，。"
+      "ko": "Create the interface as a Zine / Collage (zine-collage). Defining signals: every card or panel should read as torn or scissor-cut paper, not a vector rectangle — use irregular clip-path polygons or jagged border-radius and expose a 1–2px dark silhouette; attach pieces with visible masking tape hinges (#e8d78b at ~78% opacity, 40–50px wide, rotated -12° to +10°) overlapping corners; apply photocopied halftone grain to images and surfaces using a radial dot pattern (#1a1a1a dots on #f4f1ea paper), then boost contrast and grayscale; mix typography so headings use a handwritten marker family ('Bradley Hand', 'Chalkboard SE', 'Comic Sans MS', cursive), metadata uses a monospaced typewriter ('Courier New', 'Courier Prime', monospace), and accents look like clipped magazine all-caps. Layer pieces at slight rotations (-3° to +4°) with soft paper shadows (2px 3px 0 rgba(26,26,26,.15) or 0 2px 5px rgba(0,0,0,.18)), and keep deliberate DIY imperfection — wobbly rules, misalignment, and scissor marks. Palette: black #1a1a1a on off-white #f4f1ea newsprint, plus one or two flat spot accents such as hot pink #ff4f87 or mustard #f2c94c. Avoid digital glass, backdrop blur, gradients, and clean centered symmetry; those kill the paper materiality. Keep body text at least 14px and on solid paper fills so the rough edges do not sacrifice readability."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Handwriting and torn edges are decorative, but they become risky when used for body text or labels. Keep paragraph text in a clean typewriter or sans-serif at 14px or larger, and reserve marker handwriting for short headings or tags that do not need to be read at speed.\n\nHigh-contrast photocopy and busy collage backgrounds can wreck text contrast. Place readable text on solid paper fills (#f4f1ea or a flat accent block) and check that black ink on those fills passes 4.5:1; never float small text directly over halftone imagery.\n\nOverlapping cutouts and decorative tape must not hide interactive elements or trap focus. Make controls reachable by keyboard, show a clear focus indicator (a thick dashed marker outline works well), and honor prefers-reduced-motion by turning off rotation/shake transitions.",
+      "ko": "Handwriting and torn edges are decorative, but they become risky when used for body text or labels. Keep paragraph text in a clean typewriter or sans-serif at 14px or larger, and reserve marker handwriting for short headings or tags that do not need to be read at speed.\n\nHigh-contrast photocopy and busy collage backgrounds can wreck text contrast. Place readable text on solid paper fills (#f4f1ea or a flat accent block) and check that black ink on those fills passes 4.5:1; never float small text directly over halftone imagery.\n\nOverlapping cutouts and decorative tape must not hide interactive elements or trap focus. Make controls reachable by keyboard, show a clear focus indicator (a thick dashed marker outline works well), and honor prefers-reduced-motion by turning off rotation/shake transitions."
+    },
     "origin": {
       "en": "Modern zines descend from 1930s science-fiction fanzines; the word 'fanzine' was coined by fan Louis Russel Chauvenet around 1940. The cut-and-paste visual identity took shape in the 1970s UK punk scene with photocopied zines like Sniffin' Glue (1976), then spread through the network zine directory Factsheet Five, launched by Mike Gunderloy in 1982. The 1990s Riot Grrrl movement — including the Bikini Kill zine — pushed the DIY collage aesthetic into feminist punk publishing. As a named UI look, Zine / Collage surfaced in the 2020s as a reaction to the sameness of polished SaaS grids, with designers borrowing torn paper, tape, halftone, and handwriting to make screens feel physically assembled.",
-      "ko": "zine 1930 fanzine；「fanzine」 1940 Louis Russel Chauvenet 。 1970 ， zine《Sniffin' Glue》（1976）， Mike Gunderloy 1982 zine 《Factsheet Five》。1990 Riot Grrrl —— Bikini Kill zine—— DIY 。 UI ， 2020 ， SaaS ，、、 physically 。"
+      "ko": "Modern zines descend from 1930s science-fiction fanzines; the word 'fanzine' was coined by fan Louis Russel Chauvenet around 1940. The cut-and-paste visual identity took shape in the 1970s UK punk scene with photocopied zines like Sniffin' Glue (1976), then spread through the network zine directory Factsheet Five, launched by Mike Gunderloy in 1982. The 1990s Riot Grrrl movement — including the Bikini Kill zine — pushed the DIY collage aesthetic into feminist punk publishing. As a named UI look, Zine / Collage surfaced in the 2020s as a reaction to the sameness of polished SaaS grids, with designers borrowing torn paper, tape, halftone, and handwriting to make screens feel physically assembled."
     },
     "meta": {}
   },
@@ -4133,11 +4597,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Steampunk dresses the interface in the brass, leather and rivets of a Victorian machine room that never was: warm sepia grounds, burnished copper and bronze, gear-edged frames, engraved serif lettering, pressure-gauge meters and visible mechanical fasteners. It is retro-futurism from the age of steam — the screen pretending to be a 19th-century astrolabe, pocket watch or steamship console rather than a digital surface.",
-      "ko": "： sepia 、、、、，。—— 19 、，。"
+      "ko": "Steampunk dresses the interface in the brass, leather and rivets of a Victorian machine room that never was: warm sepia grounds, burnished copper and bronze, gear-edged frames, engraved serif lettering, pressure-gauge meters and visible mechanical fasteners. It is retro-futurism from the age of steam — the screen pretending to be a 19th-century astrolabe, pocket watch or steamship console rather than a digital surface."
     },
     "scope": {
       "en": "Scope: This entry covers the Victorian/Industrial-Revolution retro-futurist visual style as applied to UI. It does not cover the 1920s–40s streamlined machine aesthetic (Dieselpunk) or the geometric luxury of Art Deco, both of which sit in different centuries and moods.",
-      "ko": "：/ UI 。 1920–40 （Dieselpunk）， Art Deco；。"
+      "ko": "Scope: This entry covers the Victorian/Industrial-Revolution retro-futurist visual style as applied to UI. It does not cover the 1920s–40s streamlined machine aesthetic (Dieselpunk) or the geometric luxury of Art Deco, both of which sit in different centuries and moods."
     },
     "aliases": {
       "en": [
@@ -4163,12 +4627,12 @@ export const STYLES: UIStyle[] = [
         "role": "defining",
         "name": {
           "en": "Brass, copper and sepia palette",
-          "ko": "、 sepia"
+          "ko": "Brass, copper and sepia palette"
         },
         "facet": "color",
         "description": {
           "en": "The dominant reads are warm metal — brass #d4a35b, burnished copper #b87333, dark bronze #6e4c2e — against sepia parchment #e6dcc8 or chocolate leather #4a3425, never cool chrome or neon.",
-          "ko": "： #d4a35b、 #b87333、 #6e4c2e， sepia #e6dcc8 #4a3425 ，。"
+          "ko": "The dominant reads are warm metal — brass #d4a35b, burnished copper #b87333, dark bronze #6e4c2e — against sepia parchment #e6dcc8 or chocolate leather #4a3425, never cool chrome or neon."
         }
       },
       {
@@ -4194,7 +4658,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Headings and labels use high-contrast serifs (Georgia, Times New Roman, or similar), often small-caps, with letter-spacing around 0.04em and a faint highlight to suggest engraved metal or letterpress.",
-          "ko": "（Georgia、Times New Roman ）， small-caps， 0.04em，，。"
+          "ko": "Headings and labels use high-contrast serifs (Georgia, Times New Roman, or similar), often small-caps, with letter-spacing around 0.04em and a faint highlight to suggest engraved metal or letterpress."
         }
       },
       {
@@ -4246,7 +4710,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Everything is warmed by a sepia overlay or vignette; bright white and pure grey look out of place unless they read as porcelain enamel.",
-          "ko": "sepia ；，。"
+          "ko": "Everything is warmed by a sepia overlay or vignette; bright white and pure grey look out of place unless they read as porcelain enamel."
         }
       },
       {
@@ -4259,19 +4723,35 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Mirror symmetry, gold sunbursts and lacquer-black glamour are Art Deco; Steampunk is asymmetrical, patched-together machinery.",
-          "ko": "、、 glamour Art Deco；、。"
+          "ko": "Mirror symmetry, gold sunbursts and lacquer-black glamour are Art Deco; Steampunk is asymmetrical, patched-together machinery."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "art-deco",
+        "name": "Art Deco",
+        "because": {
+          "en": "This is Steampunk because the materials are industrial-Victorian: burnished brass, copper, riveted leather and visible gears — asymmetrical, mechanical, and sepia-warm rather than gilded-luxury.",
+          "ko": "This is Steampunk because the materials are industrial-Victorian: burnished brass, copper, riveted leather and visible gears — asymmetrical, mechanical, and sepia-warm rather than gilded-luxury."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Art Deco if the brass machinery were replaced by mirror symmetry, gold sunburst linework, black lacquer, and jewel-tone luxury ornament — geometry for glamour, not for engineering.",
+          "ko": "It would become Art Deco if the brass machinery were replaced by mirror symmetry, gold sunburst linework, black lacquer, and jewel-tone luxury ornament — geometry for glamour, not for engineering."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the interface as a Victorian machine-room console. Start with a warm sepia ground (#f5efe4 or #e6dcc8) and dark leather panels (#4a3425). Primary metals: brass #d4a35b, burnished copper #b87333, dark bronze #6e4c2e; add tarnish with linear-gradient(180deg, #e8c887, #b8864b 55%, #7a5428). Surfaces need inset highlights (box-shadow: inset 0 1px 0 rgba(255,255,255,.2), inset 0 -2px 0 rgba(0,0,0,.25)) and a 2px solid #5c4028 outer frame. Frames should read as brass gear borders — use an inline SVG border-image or repeating cog motif in #a67c3b. Typography: Victorian/Edwardian high-contrast serif (Georgia, 'Times New Roman', serif) for headings; letter-spacing 0.04em; small-caps labels in #3e2b1f. Buttons are riveted metal discs: 40–44px circles with radial-gradient brass, border 2px #6e4c2e, inset box-shadow 0 1px 1px rgba(255,255,255,.5), and four corner rivets. Progress bars become pressure gauges: a 10–12px channel inside a rounded brass casing (border 2px #b8864b, background #2a1d14), filled with copper gradient #d47f39 to #9e5b25 and overlaid with faint tick marks every 10%. Avoid Art Deco symmetry, chrome streamline, flat vector minimalism, neon, or screen-default sans-serif. Preserve contrast: dark #2e2119 text on sepia grounds and light labels on dark metal; keep focus rings as visible brass outlines.",
-      "ko": "。 sepia （#f5efe4 #e6dcc8）（#4a3425）。： #d4a35b、 #b87333、 #6e4c2e； linear-gradient(180deg, #e8c887, #b8864b 55%, #7a5428) 。（box-shadow: inset 0 1px 0 rgba(255,255,255,.2), inset 0 -2px 0 rgba(0,0,0,.25)） 2px solid #5c4028 。—— SVG border-image #a67c3b 。：/（Georgia、'Times New Roman', serif）， 0.04em，small-caps #3e2b1f。：40–44px ，， 2px #6e4c2e， inset 0 1px 1px rgba(255,255,255,.5)，。：10–12px （border 2px #b8864b， #2a1d14）， #d47f39 #9e5b25， 10% 。 Art Deco 、、、，。：sepia #2e2119 ，；。"
+      "ko": "Create the interface as a Victorian machine-room console. Start with a warm sepia ground (#f5efe4 or #e6dcc8) and dark leather panels (#4a3425). Primary metals: brass #d4a35b, burnished copper #b87333, dark bronze #6e4c2e; add tarnish with linear-gradient(180deg, #e8c887, #b8864b 55%, #7a5428). Surfaces need inset highlights (box-shadow: inset 0 1px 0 rgba(255,255,255,.2), inset 0 -2px 0 rgba(0,0,0,.25)) and a 2px solid #5c4028 outer frame. Frames should read as brass gear borders — use an inline SVG border-image or repeating cog motif in #a67c3b. Typography: Victorian/Edwardian high-contrast serif (Georgia, 'Times New Roman', serif) for headings; letter-spacing 0.04em; small-caps labels in #3e2b1f. Buttons are riveted metal discs: 40–44px circles with radial-gradient brass, border 2px #6e4c2e, inset box-shadow 0 1px 1px rgba(255,255,255,.5), and four corner rivets. Progress bars become pressure gauges: a 10–12px channel inside a rounded brass casing (border 2px #b8864b, background #2a1d14), filled with copper gradient #d47f39 to #9e5b25 and overlaid with faint tick marks every 10%. Avoid Art Deco symmetry, chrome streamline, flat vector minimalism, neon, or screen-default sans-serif. Preserve contrast: dark #2e2119 text on sepia grounds and light labels on dark metal; keep focus rings as visible brass outlines."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Sepia and brass palettes can hide contrast problems: dark #2e2119 text on #f5efe4 passes WCAG AAA, but light labels on copper or brass often fail — either darken the label or add a solid backing strip behind small text.\n\nVictorian serifs and small-caps ornament look period-correct but hurt readability at small sizes; keep body text at 16px minimum, avoid blackletter or ultra-condensed display faces, and use the decorative serif for headings only.\n\nAny rotating gears, hissing steam, or ticking animations can trigger vestibular issues; honor prefers-reduced-motion by pausing rotation and removing parallax, and make sure all rivet buttons still have a visible focus state and a 44×44 CSS hit area.",
+      "ko": "Sepia and brass palettes can hide contrast problems: dark #2e2119 text on #f5efe4 passes WCAG AAA, but light labels on copper or brass often fail — either darken the label or add a solid backing strip behind small text.\n\nVictorian serifs and small-caps ornament look period-correct but hurt readability at small sizes; keep body text at 16px minimum, avoid blackletter or ultra-condensed display faces, and use the decorative serif for headings only.\n\nAny rotating gears, hissing steam, or ticking animations can trigger vestibular issues; honor prefers-reduced-motion by pausing rotation and removing parallax, and make sure all rivet buttons still have a visible focus state and a 44×44 CSS hit area."
+    },
     "origin": {
       "en": "The term was coined by science-fiction author K. W. Jeter in a 1987 letter to Locus magazine, where he jokingly proposed 'steampunk' as a label for the Victorian-set fiction he, Tim Powers and James Blaylock were writing — work that borrowed the speculative machinery of H. G. Wells and Jules Verne. The visual vocabulary grew from 19th-century industrial hardware — riveted boilers, brass instrumentation, pocket watches and leather-strapped aviator gear — and entered Web and game UI through retro-futurist projects such as Arcanum: Of Steamworks and Magick Obscura (2001).",
-      "ko": "K. W. Jeter 1987 《Locus》，“steampunk” Tim Powers、James Blaylock —— H. G. Wells Jules Verne 。 19 ：、、； Web UI，《Arcanum: Of Steamworks and Magick Obscura》（2001）。"
+      "ko": "The term was coined by science-fiction author K. W. Jeter in a 1987 letter to Locus magazine, where he jokingly proposed 'steampunk' as a label for the Victorian-set fiction he, Tim Powers and James Blaylock were writing — work that borrowed the speculative machinery of H. G. Wells and Jules Verne. The visual vocabulary grew from 19th-century industrial hardware — riveted boilers, brass instrumentation, pocket watches and leather-strapped aviator gear — and entered Web and game UI through retro-futurist projects such as Arcanum: Of Steamworks and Magick Obscura (2001)."
     },
     "meta": {}
   },
@@ -4283,11 +4763,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Dieselpunk is the visual language of 1920s–1940s industrial war machines rendered as UI: riveted gunmetal panels, aviation gauges, oxidized copper and olive drab, oil stains, and stenciled lettering. Where steampunk dreams of brass gentlemen and clockwork wonder, dieselpunk wakes up in a sooty hangar full of propellers, diesel exhaust, and Art Deco machinery. It is darker, heavier, and more militaristic — the aesthetic of function pushed to the edge of romance.",
-      "ko": "1920–1940 UI ：、、、，。，、 Art Deco 。、、——。"
+      "ko": "Dieselpunk is the visual language of 1920s–1940s industrial war machines rendered as UI: riveted gunmetal panels, aviation gauges, oxidized copper and olive drab, oil stains, and stenciled lettering. Where steampunk dreams of brass gentlemen and clockwork wonder, dieselpunk wakes up in a sooty hangar full of propellers, diesel exhaust, and Art Deco machinery. It is darker, heavier, and more militaristic — the aesthetic of function pushed to the edge of romance."
     },
     "scope": {
       "en": "Scope: This entry covers the dieselpunk graphic/UI style. The narrative genre and cosplay scene overlap, but the signals below are about pixels: metal, rivets, gauges, and wartime palette. Decopunk and raygun-gothic share the era but lean more glamorous or atomic-fantastic; this entry stays on the grimy military-industrial side.",
-      "ko": "：/UI 。，：、、。Decopunk raygun-gothic ，；。"
+      "ko": "Scope: This entry covers the dieselpunk graphic/UI style. The narrative genre and cosplay scene overlap, but the signals below are about pixels: metal, rivets, gauges, and wartime palette. Decopunk and raygun-gothic share the era but lean more glamorous or atomic-fantastic; this entry stays on the grimy military-industrial side."
     },
     "aliases": {
       "en": [
@@ -4318,7 +4798,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Base surfaces sit in dark, desaturated metallics (#2a2b28, #3c3d39) and military olive (#4b5320, #575c3f), accented by oxidized copper (#8c6239), dull brass (#b87333), and soot black (#0f0f0d).",
-          "ko": "（#2a2b28、#3c3d39）（#4b5320、#575c3f），（#8c6239）、（#b87333）（#0f0f0d）。"
+          "ko": "Base surfaces sit in dark, desaturated metallics (#2a2b28, #3c3d39) and military olive (#4b5320, #575c3f), accented by oxidized copper (#8c6239), dull brass (#b87333), and soot black (#0f0f0d)."
         }
       },
       {
@@ -4357,7 +4837,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Surfaces carry scratches, oil streaks, rust blooms, and uneven patina — never pristine. Edges are chamfered by use rather than by clean vector rounding.",
-          "ko": "、、——。，。"
+          "ko": "Surfaces carry scratches, oil streaks, rust blooms, and uneven patina — never pristine. Edges are chamfered by use rather than by clean vector rounding."
         }
       },
       {
@@ -4370,7 +4850,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Labels use stencil, compressed sans-serif, or military slab faces, often set in all caps with wide tracking; body text stays small and utilitarian.",
-          "ko": "stencil、 slab ，；。"
+          "ko": "Labels use stencil, compressed sans-serif, or military slab faces, often set in all caps with wide tracking; body text stays small and utilitarian."
         }
       },
       {
@@ -4378,12 +4858,12 @@ export const STYLES: UIStyle[] = [
         "role": "supporting",
         "name": {
           "en": "Art Deco-mechanical geometry",
-          "ko": "Art Deco"
+          "ko": "Art Deco-mechanical geometry"
         },
         "facet": "geometry",
         "description": {
           "en": "Forms combine stepped ziggurat profiles, radiused machine housings, and symmetrical arrays of bolts and vents — structure follows manufacturing, not whimsy.",
-          "ko": "ziggurat 、，——，。"
+          "ko": "Forms combine stepped ziggurat profiles, radiused machine housings, and symmetrical arrays of bolts and vents — structure follows manufacturing, not whimsy."
         }
       },
       {
@@ -4413,15 +4893,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "steampunk",
+        "name": "Steampunk",
+        "because": {
+          "en": "This is Dieselpunk because the palette is dark, oil-stained, and military — gunmetal, olive drab, oxidized copper — and the surfaces are riveted steel or aluminum rather than polished brass, Victorian wood, and leather filigree.",
+          "ko": "This is Dieselpunk because the palette is dark, oil-stained, and military — gunmetal, olive drab, oxidized copper — and the surfaces are riveted steel or aluminum rather than polished brass, Victorian wood, and leather filigree."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Steampunk if the metal turned to gleaming brass and copper, visible clockwork and pipes replaced riveted sheet metal, top hats and leather straps appeared, and the palette lifted toward sepia, cream, and burgundy.",
+          "ko": "It would become Steampunk if the metal turned to gleaming brass and copper, visible clockwork and pipes replaced riveted sheet metal, top hats and leather straps appeared, and the palette lifted toward sepia, cream, and burgundy."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface in the spirit of Dieselpunk. Defining signals: a dark gunmetal and olive-drab base (#2a2b28, #4b5320, #575c3f) with oxidized copper (#8c6239) and dull brass (#b87333) accents; backgrounds built as overlapping riveted sheet-metal panels — use radial-gradient rivets (~3–4px dots) along panel seams; aviation and engine gauges rendered as circular dials or half-moon meters with needles and stenciled numerals; surfaces distressed with scratches, oil streaks, and rust via layered noise gradients or texture overlays; stencil, compressed sans, or military slab type in all caps with wide letter-spacing. Keep radii small (2–4px) or chamfered; avoid Victorian filigree, exposed gears, polished brass, and sepia palettes. Use directional inset highlights to read as beveled metal, and heavy shadows (0 8px 24px rgba(0,0,0,.6)) to sink panels into a dark hangar-like space. Provide visible focus outlines (#b87333 2px) and respect reduced-motion for gauge needles.",
-      "ko": "（Dieselpunk）。：（#2a2b28、#4b5320、#575c3f），（#8c6239）（#b87333）；——（ 3–4px ）；；、、，； stencil、 slab，。（2–4px）；、、。，（0 8px 24px rgba(0,0,0,.6)）。（#b87333 2px）， reduced-motion 。"
+      "ko": "Create the surface in the spirit of Dieselpunk. Defining signals: a dark gunmetal and olive-drab base (#2a2b28, #4b5320, #575c3f) with oxidized copper (#8c6239) and dull brass (#b87333) accents; backgrounds built as overlapping riveted sheet-metal panels — use radial-gradient rivets (~3–4px dots) along panel seams; aviation and engine gauges rendered as circular dials or half-moon meters with needles and stenciled numerals; surfaces distressed with scratches, oil streaks, and rust via layered noise gradients or texture overlays; stencil, compressed sans, or military slab type in all caps with wide letter-spacing. Keep radii small (2–4px) or chamfered; avoid Victorian filigree, exposed gears, polished brass, and sepia palettes. Use directional inset highlights to read as beveled metal, and heavy shadows (0 8px 24px rgba(0,0,0,.6)) to sink panels into a dark hangar-like space. Provide visible focus outlines (#b87333 2px) and respect reduced-motion for gauge needles."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "The default palette is intentionally low-contrast: gunmetal text on darker metal or olive panels can fall below 4.5:1. Reserve high-contrast copper/brass (#b87333, #f4c97f) for functional text and keep decorative grime away from readable labels.\n\nGauge needles, sweeping dials, and flickering readouts are decorative motion that can trigger vestibular issues. Honor prefers-reduced-motion by freezing needle animations and removing any flicker faster than 3 Hz.\n\nStencil and ultra-compressed type can hurt legibility at small sizes; use stencil faces only for labels ≥ 12px and keep body text in a plain sans-serif with normal tracking.",
+      "ko": "The default palette is intentionally low-contrast: gunmetal text on darker metal or olive panels can fall below 4.5:1. Reserve high-contrast copper/brass (#b87333, #f4c97f) for functional text and keep decorative grime away from readable labels.\n\nGauge needles, sweeping dials, and flickering readouts are decorative motion that can trigger vestibular issues. Honor prefers-reduced-motion by freezing needle animations and removing any flicker faster than 3 Hz.\n\nStencil and ultra-compressed type can hurt legibility at small sizes; use stencil faces only for labels ≥ 12px and keep body text in a plain sans-serif with normal tracking."
+    },
     "origin": {
       "en": "The term 'dieselpunk' was coined in 2001 by game designer Lewis Pollak to market his tabletop RPG Children of the Sun, which he described as the darker, dirtier side of steampunk. Its visual roots are the real industrial and military design of the interwar period through World War II — riveted aircraft fuselages, tank armor, factory gauge panels, and diesel engines — filtered through Art Deco and Streamline Moderne geometry. Since the 2000s it has spread through games, film, and illustration as a distinct retro-futuristic look.",
-      "ko": "「dieselpunk」 Lewis Pollak 2001 ， RPG《Children of the Sun》，설명、。——、、—— Art Deco Streamline Moderne 。2000 ，、。"
+      "ko": "The term 'dieselpunk' was coined in 2001 by game designer Lewis Pollak to market his tabletop RPG Children of the Sun, which he described as the darker, dirtier side of steampunk. Its visual roots are the real industrial and military design of the interwar period through World War II — riveted aircraft fuselages, tank armor, factory gauge panels, and diesel engines — filtered through Art Deco and Streamline Moderne geometry. Since the 2000s it has spread through games, film, and illustration as a distinct retro-futuristic look."
     },
     "meta": {}
   },
@@ -4433,11 +4929,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Biopunk drags cyberpunk out of the chrome-and-neon city and into the wet lab: interfaces look grown rather than machined — viscous gels, semi-translucent membranes, throbbing vascular progress bars, and sterile medical readouts tinted in sickly greens, bruised pinks, and cold laboratory whites. It is the visual language of gene editing, biohacked implants, and cultures bubbling in petri dishes. Where cyberpunk asks 'what if the network owns you', biopunk asks 'what if your own cells do'.",
-      "ko": "：「」，——、、，、。、。「」，「」。"
+      "ko": "Biopunk drags cyberpunk out of the chrome-and-neon city and into the wet lab: interfaces look grown rather than machined — viscous gels, semi-translucent membranes, throbbing vascular progress bars, and sterile medical readouts tinted in sickly greens, bruised pinks, and cold laboratory whites. It is the visual language of gene editing, biohacked implants, and cultures bubbling in petri dishes. Where cyberpunk asks 'what if the network owns you', biopunk asks 'what if your own cells do'."
     },
     "scope": {
       "en": "Scope: This entry covers the visual and interface language of biopunk — organic surfaces, lab-equipment geometry, bio-data visualization, and medical UI accents. The literary subgenre (Greg Bear, Paul Di Filippo) and the DIY biohacker movement share the name but are only background; this atlas is about pixels.",
-      "ko": "：——、、 UI 。（Greg Bear、Paul Di Filippo） DIY ，；。"
+      "ko": "Scope: This entry covers the visual and interface language of biopunk — organic surfaces, lab-equipment geometry, bio-data visualization, and medical UI accents. The literary subgenre (Greg Bear, Paul Di Filippo) and the DIY biohacker movement share the name but are only background; this atlas is about pixels."
     },
     "aliases": {
       "en": [
@@ -4468,7 +4964,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Buttons and cards read as gel pads, agar plates, or semi-translucent tissue — soft, yielding, often slightly irregular edges rather than crisp geometric shapes.",
-          "ko": "、——、，，。"
+          "ko": "Buttons and cards read as gel pads, agar plates, or semi-translucent tissue — soft, yielding, often slightly irregular edges rather than crisp geometric shapes."
         }
       },
       {
@@ -4481,7 +4977,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Dominant hues are bio-luminescent greens (#39ff14, #7fff00, #4ade80), mucous yellows, cold lab whites (#e8f4f8), and infected fleshy pinks (#ff6b9d, #ff85a1) against near-black or sterile grey grounds.",
-          "ko": "（#39ff14、#7fff00、#22c55e）、、（#e8f4f8），（#ff6b9d、#ff85a1），。"
+          "ko": "Dominant hues are bio-luminescent greens (#39ff14, #7fff00, #4ade80), mucous yellows, cold lab whites (#e8f4f8), and infected fleshy pinks (#ff6b9d, #ff85a1) against near-black or sterile grey grounds."
         }
       },
       {
@@ -4494,7 +4990,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Loaders and progress bars behave like flowing fluid, creeping mold, or a heartbeat — slow organic movement with irregular pulse beats, not mechanical linear scans.",
-          "ko": "、——，，。"
+          "ko": "Loaders and progress bars behave like flowing fluid, creeping mold, or a heartbeat — slow organic movement with irregular pulse beats, not mechanical linear scans."
         }
       },
       {
@@ -4507,7 +5003,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Petri dishes, test tubes, pipettes, centrifuge rings, cell grids, and DNA helixes appear as iconography, container shapes, or decorative motifs.",
-          "ko": "、、、、 DNA 、。"
+          "ko": "Petri dishes, test tubes, pipettes, centrifuge rings, cell grids, and DNA helixes appear as iconography, container shapes, or decorative motifs."
         }
       },
       {
@@ -4520,7 +5016,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Monospaced or squared-off sans-serif labels that mimic hospital monitors, sequencer logs, and assay readouts — clinical, small, and data-dense.",
-          "ko": "，、——、、。"
+          "ko": "Monospaced or squared-off sans-serif labels that mimic hospital monitors, sequencer logs, and assay readouts — clinical, small, and data-dense."
         }
       },
       {
@@ -4533,7 +5029,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Subtle gradients, noise, or layered blur suggest a wet surface — think amniotic sheen, bacterial film, or the opalescent skin of a jellyfish.",
-          "ko": "、——、，。"
+          "ko": "Subtle gradients, noise, or layered blur suggest a wet surface — think amniotic sheen, bacterial film, or the opalescent skin of a jellyfish."
         }
       },
       {
@@ -4546,7 +5042,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Tiny codons, base-pair sequences, heart-rate traces, and waveform readouts fill margins and corners, as if the UI is monitoring a living sample.",
-          "ko": "、、， UI 。"
+          "ko": "Tiny codons, base-pair sequences, heart-rate traces, and waveform readouts fill margins and corners, as if the UI is monitoring a living sample."
         }
       },
       {
@@ -4563,15 +5059,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "cyberpunk",
+        "name": "Cyberpunk",
+        "because": {
+          "en": "This is biopunk because the material world is organic, wet, and bodily — gels, membranes, flesh textures, and lab hardware — rather than chrome, neon, rain-slicked streets, and circuitry.",
+          "ko": "This is biopunk because the material world is organic, wet, and bodily — gels, membranes, flesh textures, and lab hardware — rather than chrome, neon, rain-slicked streets, and circuitry."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become cyberpunk if the slime hardened into brushed metal, the petri dishes turned into holographic billboards, the palette flipped to hot magenta and electric cyan, and the backdrop became a rain-soaked dystopian cityscape.",
+          "ko": "It would become cyberpunk if the slime hardened into brushed metal, the petri dishes turned into holographic billboards, the palette flipped to hot magenta and electric cyan, and the backdrop became a rain-soaked dystopian cityscape."
+        }
+      }
+    ],
     "brief": {
       "en": "Build the interface as Biopunk. Canvas: near-black lab bench (#0a120f) or sterile clinical grey (#e8f4f8), depending on whether you want a dark incubation chamber or a bright clean-room readout. Defining signals: controls render as grown organic forms — gel pads, agar dishes, or semi-translucent tissue with soft irregular edges; palette anchored in sickly bio-luminescent greens (#39ff14, #7fff00, #22c55e), mucous yellows, infected fleshy pinks (#ff6b9d, #ff85a1), and cold lab whites (#e8f4f8); progress and loaders behave like pulsing fluid or creeping mold, not mechanical scans. Use layered gradients and inner shadows to create wet membrane sheen: e.g. gel button — radial-gradient(circle at 30% 25%, rgba(255,255,255,.35), transparent 45%) over linear-gradient(180deg, #4ade80, #22c55e, #15803d), with inset 0 -6px 12px rgba(0,60,20,.35) for depth. Progress bars: #0d1f17 track, #39ff14 fill with background-size: 200% 100% and a slow translate/gradient animation to suggest slime flow, plus 0 0 14px rgba(57,255,20,.55) glow. Typography: clinical monospaced or squared sans for readouts, 11–13px data labels. Imagery: petri dishes, test tubes, centrifuge rings, DNA helixes, cell grids. Do not drift into cyberpunk; the decisive difference is wet/organic/lab versus chrome/neon/dystopia. Avoid hard metal textures, circuit patterns, and hot magenta-cyan neon. Preserve text contrast (greens on black can be too dim — push luminous greens to at least #22c55e against #0a120f), visible focus states, and honor prefers-reduced-motion by stopping the slime pulse.",
-      "ko": "（Biopunk）。：（#0a120f）（#e8f4f8），。：——、，；（#39ff14、#7fff00、#22c55e）、、（#ff6b9d、#ff85a1）（#e8f4f8）；，。：—— linear-gradient(180deg, #4ade80, #22c55e, #15803d) radial-gradient(circle at 30% 25%, rgba(255,255,255,.35), transparent 45%)， inset 0 -6px 12px rgba(0,60,20,.35) 。： #0d1f17， #39ff14，background-size: 200% 100%，/， 0 0 14px rgba(57,255,20,.55) 。：，11–13px 。：、、、DNA 、。；// versus //。、-。（—— #22c55e #0a120f），， prefers-reduced-motion 。"
+      "ko": "Build the interface as Biopunk. Canvas: near-black lab bench (#0a120f) or sterile clinical grey (#e8f4f8), depending on whether you want a dark incubation chamber or a bright clean-room readout. Defining signals: controls render as grown organic forms — gel pads, agar dishes, or semi-translucent tissue with soft irregular edges; palette anchored in sickly bio-luminescent greens (#39ff14, #7fff00, #22c55e), mucous yellows, infected fleshy pinks (#ff6b9d, #ff85a1), and cold lab whites (#e8f4f8); progress and loaders behave like pulsing fluid or creeping mold, not mechanical scans. Use layered gradients and inner shadows to create wet membrane sheen: e.g. gel button — radial-gradient(circle at 30% 25%, rgba(255,255,255,.35), transparent 45%) over linear-gradient(180deg, #4ade80, #22c55e, #15803d), with inset 0 -6px 12px rgba(0,60,20,.35) for depth. Progress bars: #0d1f17 track, #39ff14 fill with background-size: 200% 100% and a slow translate/gradient animation to suggest slime flow, plus 0 0 14px rgba(57,255,20,.55) glow. Typography: clinical monospaced or squared sans for readouts, 11–13px data labels. Imagery: petri dishes, test tubes, centrifuge rings, DNA helixes, cell grids. Do not drift into cyberpunk; the decisive difference is wet/organic/lab versus chrome/neon/dystopia. Avoid hard metal textures, circuit patterns, and hot magenta-cyan neon. Preserve text contrast (greens on black can be too dim — push luminous greens to at least #22c55e against #0a120f), visible focus states, and honor prefers-reduced-motion by stopping the slime pulse."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Glowing greens and low-luminance pinks on near-black are atmospheric but often fail 4.5:1 text contrast — push functional text to at least #22c55e on #0a120f and avoid setting small labels directly on dark translucent gels without a backing layer.\n\nPulsing, creeping, and heartbeat animations can trigger vestibular symptoms or anxiety; keep them slow and non-essential, and pause them under prefers-reduced-motion and prefers-reduced-transparency.\n\nDense medical readouts and tiny monospaced data labels raise cognitive load: reserve them for decorative corners, keep primary actions in a larger clean sans, and never rely on color alone to communicate health/critical state.",
+      "ko": "Glowing greens and low-luminance pinks on near-black are atmospheric but often fail 4.5:1 text contrast — push functional text to at least #22c55e on #0a120f and avoid setting small labels directly on dark translucent gels without a backing layer.\n\nPulsing, creeping, and heartbeat animations can trigger vestibular symptoms or anxiety; keep them slow and non-essential, and pause them under prefers-reduced-motion and prefers-reduced-transparency.\n\nDense medical readouts and tiny monospaced data labels raise cognitive load: reserve them for decorative corners, keep primary actions in a larger clean sans, and never rely on color alone to communicate health/critical state."
+    },
     "origin": {
       "en": "Biopunk grew out of cyberpunk in the late 1980s as writers turned from silicon networks to biotechnology: Greg Bear's 'Blood Music' (1985 novel, based on a 1983 short story) is the most-cited early landmark, and Paul Di Filippo's 'Ribofunk' (1996) coined the playful funk-biology tone. Around the same time, the term attached to a DIY biohacker movement experimenting with garage genetic engineering. As a visual style it crystallized in games, film, and app concepts that needed 'the organic opposite of cyberpunk' — all mucus, lab glass, and twitching wetware.",
-      "ko": "1980 ，：Greg Bear 《Blood Music》（1985 ， 1983 ），Paul Di Filippo 《Ribofunk》（1996） playful funk-。， DIY 。，、「」——、。"
+      "ko": "Biopunk grew out of cyberpunk in the late 1980s as writers turned from silicon networks to biotechnology: Greg Bear's 'Blood Music' (1985 novel, based on a 1983 short story) is the most-cited early landmark, and Paul Di Filippo's 'Ribofunk' (1996) coined the playful funk-biology tone. Around the same time, the term attached to a DIY biohacker movement experimenting with garage genetic engineering. As a visual style it crystallized in games, film, and app concepts that needed 'the organic opposite of cyberpunk' — all mucus, lab glass, and twitching wetware."
     },
     "meta": {}
   },
@@ -4583,11 +5095,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Afrofuturism projects African and diasporic culture into science fiction and the cosmos: interfaces that read like a star chart, a royal banner, and a launch console at once. Deep space black is edged with gold, burnt orange, and royal purple; African geometric patterns frame sunbursts and constellations instead of neoclassical ornament. It has traveled from Sun Ra's cosmic jazz to the Wakandan UI of Black Panther.",
-      "ko": "：、。、；，。 Sun Ra ，《》 UI。"
+      "ko": "Afrofuturism projects African and diasporic culture into science fiction and the cosmos: interfaces that read like a star chart, a royal banner, and a launch console at once. Deep space black is edged with gold, burnt orange, and royal purple; African geometric patterns frame sunbursts and constellations instead of neoclassical ornament. It has traveled from Sun Ra's cosmic jazz to the Wakandan UI of Black Panther."
     },
     "scope": {
       "en": "Scope: This entry covers the visual/UI expression of Afrofuturism — cosmic, Africa-inspired, technologically optimistic surfaces — not the literary genre as a whole. It is distinct from Art Deco (1920s Parisian luxury geometry) and from generic space/sci-fi HUDs that carry no African pattern or diasporic symbolism.",
-      "ko": "：/UI ——、、——。（Art Deco，1920 ）/ HUD 。"
+      "ko": "Scope: This entry covers the visual/UI expression of Afrofuturism — cosmic, Africa-inspired, technologically optimistic surfaces — not the literary genre as a whole. It is distinct from Art Deco (1920s Parisian luxury geometry) and from generic space/sci-fi HUDs that carry no African pattern or diasporic symbolism."
     },
     "aliases": {
       "en": [
@@ -4616,7 +5128,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Mud-cloth, kente, and adinkra-like tessellations — triangles, chevrons, diamonds, and interlocking lines — repeat as borders, panels, or masks in 2–4px metallic strokes.",
-          "ko": "（mud cloth）、（kente）、（adinkra） tessellation——、、—— 2–3px 、。"
+          "ko": "Mud-cloth, kente, and adinkra-like tessellations — triangles, chevrons, diamonds, and interlocking lines — repeat as borders, panels, or masks in 2–4px metallic strokes."
         }
       },
       {
@@ -4629,7 +5141,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Gold #d4af37, bronze, copper, burnt orange #f26522, and royal purple #6b2d5c on a dark starfield #0d0418; color reads as both regal and cosmic.",
-          "ko": "#d4af37、、、 #f26522 #6b2d5c #0d0418 ；。"
+          "ko": "Gold #d4af37, bronze, copper, burnt orange #f26522, and royal purple #6b2d5c on a dark starfield #0d0418; color reads as both regal and cosmic."
         }
       },
       {
@@ -4642,7 +5154,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "A near-black cosmic ground dotted with stars, nebula washes, and faint constellation traces; space is the literal and metaphorical canvas.",
-          "ko": "、 faint ；。"
+          "ko": "A near-black cosmic ground dotted with stars, nebula washes, and faint constellation traces; space is the literal and metaphorical canvas."
         }
       },
       {
@@ -4681,7 +5193,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Headings in a heavy geometric sans or stencil face, uppercase, letter-spacing 0.12–0.25em; text sits like a banner or emblem.",
-          "ko": "stencil ，， 0.12–0.25em；。"
+          "ko": "Headings in a heavy geometric sans or stencil face, uppercase, letter-spacing 0.12–0.25em; text sits like a banner or emblem."
         }
       },
       {
@@ -4694,7 +5206,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Strokes and display text use vertical gold gradients (#f9e076 → #d4af37 → #9c7f22) with a hard highlight stop so they read as metal leaf.",
-          "ko": "（#f9e076 → #d4af37 → #9c7f22），，。"
+          "ko": "Strokes and display text use vertical gold gradients (#f9e076 → #d4af37 → #9c7f22) with a hard highlight stop so they read as metal leaf."
         }
       },
       {
@@ -4707,19 +5219,35 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Mirror symmetry, stepped ziggurats, and gilded all-caps hotel signage without tribal pattern or cosmic ground read as Art Deco, not Afrofuturism.",
-          "ko": "、，，（Art Deco），。"
+          "ko": "Mirror symmetry, stepped ziggurats, and gilded all-caps hotel signage without tribal pattern or cosmic ground read as Art Deco, not Afrofuturism."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "art-deco",
+        "name": "Art Deco",
+        "because": {
+          "en": "This is Afrofuturism because the geometry is drawn from African pattern languages — mud-cloth grids, kente chevrons, adinkra-like symbols — and the palette is warm cosmic metal (gold, burnt orange, royal purple) on a starfield. The ornament is telling a diasporic science-fiction story, not a 1920s luxury story.",
+          "ko": "This is Afrofuturism because the geometry is drawn from African pattern languages — mud-cloth grids, kente chevrons, adinkra-like symbols — and the palette is warm cosmic metal (gold, burnt orange, royal purple) on a starfield. The ornament is telling a diasporic science-fiction story, not a 1920s luxury story."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Art Deco if the tribal patterns were replaced by mirror-symmetric sunbursts, stepped ziggurats, and gilded all-caps hotel lettering on a lacquer-black ground with no African motifs or space canvas.",
+          "ko": "It would become Art Deco if the tribal patterns were replaced by mirror-symmetric sunbursts, stepped ziggurats, and gilded all-caps hotel lettering on a lacquer-black ground with no African motifs or space canvas."
+        }
+      }
+    ],
     "brief": {
       "en": "Build an Afrofuturist UI. Canvas: deep space #0d0418 with a sparse starfield — radial-gradient dots plus a faint gold nebula wash. Palette: metallic gold #d4af37 (highlights #f9e076, shade #9c7f22), burnt orange #f26522, royal purple #6b2d5c, ivory text #efe9dc. Pattern: African geometric motifs — mud-cloth, kente, adinkra-like marks — as 2–3px gold borders. Frame panels with angular, stepped, or zigzag clip-path edges, not plain rectangles. Typography: heavy geometric sans or stencil face, uppercase headings, letter-spacing 0.15–0.25em; display text in a vertical gold gradient (background-clip: text). Focal emblem: a radiating sun or eight-pointed star in gold line-art. Buttons and sliders share tribal borders and gold-foil highlights; progress fills orange-to-purple. Depth comes from metallic contrast and line, not soft shadows. Motion: slow sun rotation or star twinkle; pause under prefers-reduced-motion. Avoid Art Deco: mirror symmetry, ziggurats, lacquer black without space, gilded hotel lettering. Keep text on solid high-contrast areas; make focus rings visible.",
-      "ko": "（Afrofuturism）。： #0d0418，——radial-gradient faint 。： #d4af37（ #f9e076、 #9c7f22）、 #f26522、 #6b2d5c， #efe9dc。：——、、—— 2–3px 。、 clip-path ，。： stencil ，， 0.15–0.25em；（background-clip: text）。：。；。，。：； prefers-reduced-motion 。：、、、。；。"
+      "ko": "Build an Afrofuturist UI. Canvas: deep space #0d0418 with a sparse starfield — radial-gradient dots plus a faint gold nebula wash. Palette: metallic gold #d4af37 (highlights #f9e076, shade #9c7f22), burnt orange #f26522, royal purple #6b2d5c, ivory text #efe9dc. Pattern: African geometric motifs — mud-cloth, kente, adinkra-like marks — as 2–3px gold borders. Frame panels with angular, stepped, or zigzag clip-path edges, not plain rectangles. Typography: heavy geometric sans or stencil face, uppercase headings, letter-spacing 0.15–0.25em; display text in a vertical gold gradient (background-clip: text). Focal emblem: a radiating sun or eight-pointed star in gold line-art. Buttons and sliders share tribal borders and gold-foil highlights; progress fills orange-to-purple. Depth comes from metallic contrast and line, not soft shadows. Motion: slow sun rotation or star twinkle; pause under prefers-reduced-motion. Avoid Art Deco: mirror symmetry, ziggurats, lacquer black without space, gilded hotel lettering. Keep text on solid high-contrast areas; make focus rings visible."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Warm metallic colors on a dark starfield are not automatically readable: small purple #6b2d5c text and mid-gold gradient stops can fall below 4.5:1, so test every text size against #0d0418 and place labels on solid dark plates when they cross busy patterns or nebula regions.\n\nCosmic twinkling, rotating sun rays, and gold shimmer are decorative motion that can bother vestibular and photosensitive users; keep any flashing or pulsing below three flashes per second and honor prefers-reduced-motion by freezing rotation and shimmer entirely.\n\nAfrican patterns and symbols are cultural material, not neutral clipart; use them with respect, avoid mixing unrelated traditions or sacred marks as mere decoration, and mark purely ornamental iconography aria-hidden so screen readers do not treat it as meaningful content.",
+      "ko": "Warm metallic colors on a dark starfield are not automatically readable: small purple #6b2d5c text and mid-gold gradient stops can fall below 4.5:1, so test every text size against #0d0418 and place labels on solid dark plates when they cross busy patterns or nebula regions.\n\nCosmic twinkling, rotating sun rays, and gold shimmer are decorative motion that can bother vestibular and photosensitive users; keep any flashing or pulsing below three flashes per second and honor prefers-reduced-motion by freezing rotation and shimmer entirely.\n\nAfrican patterns and symbols are cultural material, not neutral clipart; use them with respect, avoid mixing unrelated traditions or sacred marks as mere decoration, and mark purely ornamental iconography aria-hidden so screen readers do not treat it as meaningful content."
+    },
     "origin": {
       "en": "The term was coined by cultural critic Mark Dery in his 1993 essay 'Black to the Future' — interviews with Samuel R. Delany, Greg Tate, and Tricia Rose that named a current already running through Sun Ra's cosmic jazz persona (developed from the early 1950s), George Clinton's Parliament-Funkadelic Mothership mythology (notably the 1975 Mothership Connection album and tour), and the fiction of Octavia Butler. Scholar Alondra Nelson then gave the field an institutional home by launching the AfroFuturism listserv in 1999. The look entered mainstream UI consciousness through album art, editorial design, and especially Ryan Coogler's Black Panther (2018), where production designer Hannah Beachler and costume designer Ruth E. Carter imagined Wakandan technology through African forms.",
-      "ko": "Mark Dery 1993 《Black to the Future》—— Samuel R. Delany、Greg Tate Tricia Rose ， Sun Ra 1950 、George Clinton Parliament-Funkadelic Mothership （ 1975 Mothership Connection ）， Octavia Butler 。 Alondra Nelson 1999 AfroFuturism ，。 UI 、， Ryan Coogler 《》（2018）—— Hannah Beachler Ruth E. Carter 。"
+      "ko": "The term was coined by cultural critic Mark Dery in his 1993 essay 'Black to the Future' — interviews with Samuel R. Delany, Greg Tate, and Tricia Rose that named a current already running through Sun Ra's cosmic jazz persona (developed from the early 1950s), George Clinton's Parliament-Funkadelic Mothership mythology (notably the 1975 Mothership Connection album and tour), and the fiction of Octavia Butler. Scholar Alondra Nelson then gave the field an institutional home by launching the AfroFuturism listserv in 1999. The look entered mainstream UI consciousness through album art, editorial design, and especially Ryan Coogler's Black Panther (2018), where production designer Hannah Beachler and costume designer Ruth E. Carter imagined Wakandan technology through African forms."
     },
     "meta": {}
   },
@@ -4731,11 +5259,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "De Stijl is the Dutch abstract movement that reduced painting and design to a strict grammar of horizontal and vertical black lines enclosing rectangles of red, yellow, and blue on a white ground. Every curve, diagonal, and representational reference is rejected; balance is achieved asymmetrically by shifting the weight of color blocks across an invisible orthogonal grid. The look is inseparable from Piet Mondrian's mature Neo-Plasticist canvases and from Theo van Doesburg's magazine and architectural projects of 1917–1931.",
-      "ko": "（De Stijl），：、、。、、；。 Piet Mondrian ， Theo van Doesburg 1917–1931 。"
+      "ko": "De Stijl is the Dutch abstract movement that reduced painting and design to a strict grammar of horizontal and vertical black lines enclosing rectangles of red, yellow, and blue on a white ground. Every curve, diagonal, and representational reference is rejected; balance is achieved asymmetrically by shifting the weight of color blocks across an invisible orthogonal grid. The look is inseparable from Piet Mondrian's mature Neo-Plasticist canvases and from Theo van Doesburg's magazine and architectural projects of 1917–1931."
     },
     "scope": {
       "en": "Scope: This entry covers the De Stijl look as it appears in graphic and UI design — the black-grid, primary-rectangle, no-curve vocabulary. It is not the whole of Dutch modernism; Constructivism shares the geometric spirit but adds diagonals and industrial imagery, while Bauhaus shares the primaries but freely uses circles, triangles, and all-lowercase type.",
-      "ko": "： UI ——、、。；，，，、。"
+      "ko": "Scope: This entry covers the De Stijl look as it appears in graphic and UI design — the black-grid, primary-rectangle, no-curve vocabulary. It is not the whole of Dutch modernism; Constructivism shares the geometric spirit but adds diagonals and industrial imagery, while Bauhaus shares the primaries but freely uses circles, triangles, and all-lowercase type."
     },
     "aliases": {
       "en": [
@@ -4766,7 +5294,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "The composition is held together by straight black lines running only at 0° and 90° — no diagonals, no curves. Lines are usually 2–4px thick and act as both structure and edge.",
-          "ko": "0° 90° ，、。 2–4px，。"
+          "ko": "The composition is held together by straight black lines running only at 0° and 90° — no diagonals, no curves. Lines are usually 2–4px thick and act as both structure and edge."
         }
       },
       {
@@ -4779,7 +5307,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Every colored or outlined shape is a rectangle. Circles, triangles, blobs, icons, and rounded corners are excluded — right angles are the only geometry.",
-          "ko": "。、、、、——。"
+          "ko": "Every colored or outlined shape is a rectangle. Circles, triangles, blobs, icons, and rounded corners are excluded — right angles are the only geometry."
         }
       },
       {
@@ -4792,7 +5320,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "The palette is locked to unmixed red, yellow, and blue on a white ground, bounded by black lines. No gradients, no tints, no greys, no expanded palette.",
-          "ko": "、、，、。、、、。"
+          "ko": "The palette is locked to unmixed red, yellow, and blue on a white ground, bounded by black lines. No gradients, no tints, no greys, no expanded palette."
         }
       },
       {
@@ -4818,7 +5346,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "All fills are opaque, flat, and texture-free. Shadows, glows, gradients, glass, and depth effects would break the Neo-Plasticist discipline.",
-          "ko": "、、。、、、。"
+          "ko": "All fills are opaque, flat, and texture-free. Shadows, glows, gradients, glass, and depth effects would break the Neo-Plasticist discipline."
         }
       },
       {
@@ -4831,7 +5359,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Grid lines keep a consistent thickness throughout the composition — typically 2–4px — so the rhythm of the rectangles reads as a single system.",
-          "ko": "—— 2–4px——。"
+          "ko": "Grid lines keep a consistent thickness throughout the composition — typically 2–4px — so the rhythm of the rectangles reads as a single system."
         }
       },
       {
@@ -4861,15 +5389,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "bauhaus",
+        "name": "Bauhaus",
+        "because": {
+          "en": "This is De Stijl because the vocabulary is strictly orthogonal: only horizontal and vertical black lines, only rectangles, no curves — Bauhaus would have introduced circles, triangles, and diagonals.",
+          "ko": "This is De Stijl because the vocabulary is strictly orthogonal: only horizontal and vertical black lines, only rectangles, no curves — Bauhaus would have introduced circles, triangles, and diagonals."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Bauhaus if the black grid opened up to circles, triangles, and diagonal bars, and the type switched to all-lowercase geometric lettering.",
+          "ko": "It would become Bauhaus if the black grid opened up to circles, triangles, and diagonal bars, and the type switched to all-lowercase geometric lettering."
+        }
+      }
+    ],
     "brief": {
       "en": "Build the surface as De Stijl (Neo-Plasticism). Canvas: white #ffffff, ink lines #0a0a0a. Palette is restricted to three flat primaries — red #e3000f, yellow #f9d71c, blue #0057a8 — plus paper white; no gradients, shadows, tints, or textures. Every shape is a rectangle; every line is horizontal or vertical at 2–4px thick; border-radius must be 0px everywhere. Compose with CSS Grid or absolute positioning, using the black lines as both gap filler and bounding edges. Asymmetric balance is essential: place one large primary block off-center and counter it with a cluster of smaller blocks or denser black divisions on the opposite side. Type should be a neutral sans-serif (Helvetica Neue, Arial, or similar), sentence case, kept small and unobtrusive; avoid display fonts, all-lowercase geometric lettering, or ornament. Buttons are solid rectangles of red, yellow, or blue with 2–4px black borders; hover swaps the fill to another primary or to white, never adds depth or rounding. Motion, if any, is a hard cut or a linear translate along the horizontal/vertical axis; no easing curves, no fades, no rotation. Do not drift into Bauhaus: the moment you add circles, triangles, diagonals, or all-lowercase geometric type, you have left De Stijl. Preserve text contrast (ink on paper and yellow, paper on red/blue), visible focus outlines as black 2px offsets, and honor prefers-reduced-motion by removing any movement.",
-      "ko": "（De Stijl / ）。： #ffffff， #0a0a0a。—— #e3000f、 #f9d71c、 #0057a8——；、、。；， 2–4px； border-radius 0px。 CSS Grid ，。：，。（Helvetica Neue、Arial ），，；、。//， 2–4px ；hover ，。，/；、、。：、、，。（/，/）， 2px outline， prefers-reduced-motion 。"
+      "ko": "Build the surface as De Stijl (Neo-Plasticism). Canvas: white #ffffff, ink lines #0a0a0a. Palette is restricted to three flat primaries — red #e3000f, yellow #f9d71c, blue #0057a8 — plus paper white; no gradients, shadows, tints, or textures. Every shape is a rectangle; every line is horizontal or vertical at 2–4px thick; border-radius must be 0px everywhere. Compose with CSS Grid or absolute positioning, using the black lines as both gap filler and bounding edges. Asymmetric balance is essential: place one large primary block off-center and counter it with a cluster of smaller blocks or denser black divisions on the opposite side. Type should be a neutral sans-serif (Helvetica Neue, Arial, or similar), sentence case, kept small and unobtrusive; avoid display fonts, all-lowercase geometric lettering, or ornament. Buttons are solid rectangles of red, yellow, or blue with 2–4px black borders; hover swaps the fill to another primary or to white, never adds depth or rounding. Motion, if any, is a hard cut or a linear translate along the horizontal/vertical axis; no easing curves, no fades, no rotation. Do not drift into Bauhaus: the moment you add circles, triangles, diagonals, or all-lowercase geometric type, you have left De Stijl. Preserve text contrast (ink on paper and yellow, paper on red/blue), visible focus outlines as black 2px offsets, and honor prefers-reduced-motion by removing any movement."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "The strict black/white ground gives strong contrast, but primary-on-primary adjacencies — especially red next to blue — can vibrate and fail for users with color-vision differences. Never use color alone to indicate state; pair active elements with a shape change, a black border shift, or an extra grid line.\n\nUniform thin grid lines can be hard to perceive or to target as interactive boundaries. Keep interactive elements (buttons, progress tracks, volume bars) large enough for touch — at least 44×44px — and give them a visible focus indicator that does not rely on the black grid alone.\n\nAsymmetric layouts raise cognitive load because the visual weight is deliberately off-balance. Keep labels and controls predictable in source order, avoid decorative rectangles that look actionable, and provide clear aria-labels on icon-only buttons.",
+      "ko": "The strict black/white ground gives strong contrast, but primary-on-primary adjacencies — especially red next to blue — can vibrate and fail for users with color-vision differences. Never use color alone to indicate state; pair active elements with a shape change, a black border shift, or an extra grid line.\n\nUniform thin grid lines can be hard to perceive or to target as interactive boundaries. Keep interactive elements (buttons, progress tracks, volume bars) large enough for touch — at least 44×44px — and give them a visible focus indicator that does not rely on the black grid alone.\n\nAsymmetric layouts raise cognitive load because the visual weight is deliberately off-balance. Keep labels and controls predictable in source order, avoid decorative rectangles that look actionable, and provide clear aria-labels on icon-only buttons."
+    },
     "origin": {
       "en": "De Stijl was founded in Amsterdam in 1917 by the painter and critic Theo van Doesburg, who launched the magazine De Stijl as the movement's mouthpiece; the painters Piet Mondrian and Bart van der Leck, the architect J.J.P. Oud, and the designer Vilmos Huszár were among its earliest contributors. Mondrian's mature 'Neo-Plasticist' canvases — red, yellow, and blue rectangles locked into white fields by black verticals and horizontals — became the style's public face, while Van Doesburg pushed the same grammar into architecture and typography. The magazine ceased publication in 1931, and the movement dissolved as its members diverged, but its reduction to pure form and primary color became one of the lasting reference points for modern graphic design.",
-      "ko": "1917 Theo van Doesburg ，《De Stijl》； Piet Mondrian、Bart van der Leck， J.J.P. Oud， Vilmos Huszár 。Mondrian 「」——、、——， Van Doesburg 。 1931 ，，。"
+      "ko": "De Stijl was founded in Amsterdam in 1917 by the painter and critic Theo van Doesburg, who launched the magazine De Stijl as the movement's mouthpiece; the painters Piet Mondrian and Bart van der Leck, the architect J.J.P. Oud, and the designer Vilmos Huszár were among its earliest contributors. Mondrian's mature 'Neo-Plasticist' canvases — red, yellow, and blue rectangles locked into white fields by black verticals and horizontals — became the style's public face, while Van Doesburg pushed the same grammar into architecture and typography. The magazine ceased publication in 1931, and the movement dissolved as its members diverged, but its reduction to pure form and primary color became one of the lasting reference points for modern graphic design."
     },
     "meta": {}
   },
@@ -4881,11 +5425,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Constructivism translates early Soviet avant-garde graphic language into UI: razor-sharp diagonals, red-and-black slabs, clipped industrial photography, and blocky sans-serif type locked into dynamic, poster-like layouts. It still reads as propaganda energy rather than decoration — every element looks arranged to shout a message across a noisy square. A modern app borrowing the look usually wants urgency, solidarity, or editorial punch.",
-      "ko": "UI：、、，。， —— 。 App ，、。"
+      "ko": "Constructivism translates early Soviet avant-garde graphic language into UI: razor-sharp diagonals, red-and-black slabs, clipped industrial photography, and blocky sans-serif type locked into dynamic, poster-like layouts. It still reads as propaganda energy rather than decoration — every element looks arranged to shout a message across a noisy square. A modern app borrowing the look usually wants urgency, solidarity, or editorial punch."
     },
     "scope": {
       "en": "Scope: This entry covers the graphic style that migrated from Soviet posters and book design into digital UI. It is not the later Constructivist architecture of poured concrete, nor the abstract sculpture of Tatlin's Monument to the Third International; those are siblings, not signals.",
-      "ko": "： UI 。「」，；，。"
+      "ko": "Scope: This entry covers the graphic style that migrated from Soviet posters and book design into digital UI. It is not the later Constructivist architecture of poured concrete, nor the abstract sculpture of Tatlin's Monument to the Third International; those are siblings, not signals."
     },
     "aliases": {
       "en": [
@@ -4914,7 +5458,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "The layout is built from slashed rectangles, chevrons, and bars that run at 30–60°; horizontals and verticals feel like exceptions, not the rule.",
-          "ko": "30–60° 、；，。"
+          "ko": "The layout is built from slashed rectangles, chevrons, and bars that run at 30–60°; horizontals and verticals feel like exceptions, not the rule."
         }
       },
       {
@@ -4927,7 +5471,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "The palette is almost always a loud red (e.g. #D3191C), stark black (#0A0A0A), and a muted off-white or newsprint grey (#E8E4D9); color sits as flat planes, not gradients.",
-          "ko": "loud red（ #D3191C）、（#0A0A0A）（#E8E4D9 / #B8B2A2）；，。"
+          "ko": "The palette is almost always a loud red (e.g. #D3191C), stark black (#0A0A0A), and a muted off-white or newsprint grey (#E8E4D9); color sits as flat planes, not gradients."
         }
       },
       {
@@ -4953,7 +5497,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Gears, smokestacks, loudspeakers, fists, aeroplanes, and crowds appear as silhouettes or high-contrast halftones, signaling collective production and modernity.",
-          "ko": "、、、、、，。"
+          "ko": "Gears, smokestacks, loudspeakers, fists, aeroplanes, and crowds appear as silhouettes or high-contrast halftones, signaling collective production and modernity."
         }
       },
       {
@@ -4961,12 +5505,12 @@ export const STYLES: UIStyle[] = [
         "role": "defining",
         "name": {
           "en": "Bold grotesk type",
-          "ko": "grotesk"
+          "ko": "Bold grotesk type"
         },
         "facet": "typography",
         "description": {
           "en": "Letterforms are heavy, condensed sans-serifs — equivalents of Helvetica/Impact/Arial Black — set in all caps with tight leading and often tilted or stacked.",
-          "ko": "、 —— Helvetica / Impact / Arial Black —— 、，。"
+          "ko": "Letterforms are heavy, condensed sans-serifs — equivalents of Helvetica/Impact/Arial Black — set in all caps with tight leading and often tilted or stacked."
         }
       },
       {
@@ -4979,7 +5523,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Headings, buttons, and image panels lean at the same diagonal angle (typically skewX(-8°) to skewX(-15°)), so the whole card feels like it is moving forward.",
-          "ko": "、（ skewX(-8°) skewX(-15°)），。"
+          "ko": "Headings, buttons, and image panels lean at the same diagonal angle (typically skewX(-8°) to skewX(-15°)), so the whole card feels like it is moving forward."
         }
       },
       {
@@ -4992,7 +5536,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Text and shapes butt against edges and overlap; generous padding and centered symmetry are avoided because the page is treated as a single propaganda sheet.",
-          "ko": "； generous padding ，。"
+          "ko": "Text and shapes butt against edges and overlap; generous padding and centered symmetry are avoided because the page is treated as a single propaganda sheet."
         }
       },
       {
@@ -5005,19 +5549,35 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Calm, centered cards with equal white space and right-angle grids immediately kill the style — that territory belongs to De Stijl and Swiss minimalism.",
-          "ko": "、 —— De Stijl 。"
+          "ko": "Calm, centered cards with equal white space and right-angle grids immediately kill the style — that territory belongs to De Stijl and Swiss minimalism."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "de-stijl",
+        "name": "De Stijl",
+        "because": {
+          "en": "This is Constructivism because the layout is kinetic — diagonals, skewed typography, photomontage, and a red-black-industrial palette drive the composition.",
+          "ko": "This is Constructivism because the layout is kinetic — diagonals, skewed typography, photomontage, and a red-black-industrial palette drive the composition."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become De Stijl if every diagonal were straightened into a right angle, the photographs were removed, and the palette swapped to red-yellow-blue on white static grids.",
+          "ko": "It would become De Stijl if every diagonal were straightened into a right angle, the photographs were removed, and the palette swapped to red-yellow-blue on white static grids."
+        }
+      }
+    ],
     "brief": {
       "en": "Create this surface in the spirit of Soviet Constructivism. Defining signals: a red-and-black slab palette — use #D3191C for the loud accent, #0A0A0A for black, and #E8E4D9 or #B8B2A2 for the off-white / newsprint ground. Build the layout from diagonals: slashed rectangles, chevrons, and bars at 30–60°; headings, buttons, and image panels should share a single skew angle (transform: skewX(-8deg) to skewX(-12deg)) so the whole composition leans forward. Use heavy, condensed grotesk type — 'Helvetica Neue', 'Arial Black', Impact, or system heavy sans — in all caps with tight leading and 0.03–0.06em letter-spacing. Images must be clipped into sharp geometric panels and treated as high-contrast grayscale photomontage (filter: grayscale(100%) contrast(1.2)), overlaid by red bars or black shapes; choose industrial/mass icons such as gears, smokestacks, loudspeakers, or fists. Hard black borders (2–3px solid #0A0A0A) and flat color planes are required; zero gradients, zero rounded corners, zero soft shadows. Keep the specific iconography and exact angle flexible, but keep the diagonal energy and propaganda density. Do not drift into De Stijl — the decisive difference is motion: straighten the diagonals to right angles, replace photos with flat primary color blocks, and add white space, and you have left Constructivism. Preserve text contrast: black on red/off-white usually passes; red on black needs careful sizing. Honor prefers-reduced-motion by removing skew/translate transitions and keeping static diagonal geometry.",
-      "ko": "（Constructivism）。： —— #D3191C ，#0A0A0A ，#E8E4D9 #B8B2A2 / 。：、 30–60° ；、（transform: skewX(-8deg) skewX(-12deg)），。、 grotesk —— 'Helvetica Neue'、'Arial Black'、Impact —— 、，letter-spacing 0.03–0.06em。，（filter: grayscale(100%) contrast(1.2)），； / ，、、。（2–3px solid #0A0A0A）；、、。，。 De Stijl；「」：、，。： / ；。 prefers-reduced-motion： skew / translate ，。"
+      "ko": "Create this surface in the spirit of Soviet Constructivism. Defining signals: a red-and-black slab palette — use #D3191C for the loud accent, #0A0A0A for black, and #E8E4D9 or #B8B2A2 for the off-white / newsprint ground. Build the layout from diagonals: slashed rectangles, chevrons, and bars at 30–60°; headings, buttons, and image panels should share a single skew angle (transform: skewX(-8deg) to skewX(-12deg)) so the whole composition leans forward. Use heavy, condensed grotesk type — 'Helvetica Neue', 'Arial Black', Impact, or system heavy sans — in all caps with tight leading and 0.03–0.06em letter-spacing. Images must be clipped into sharp geometric panels and treated as high-contrast grayscale photomontage (filter: grayscale(100%) contrast(1.2)), overlaid by red bars or black shapes; choose industrial/mass icons such as gears, smokestacks, loudspeakers, or fists. Hard black borders (2–3px solid #0A0A0A) and flat color planes are required; zero gradients, zero rounded corners, zero soft shadows. Keep the specific iconography and exact angle flexible, but keep the diagonal energy and propaganda density. Do not drift into De Stijl — the decisive difference is motion: straighten the diagonals to right angles, replace photos with flat primary color blocks, and add white space, and you have left Constructivism. Preserve text contrast: black on red/off-white usually passes; red on black needs careful sizing. Honor prefers-reduced-motion by removing skew/translate transitions and keeping static diagonal geometry."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "The tilted type and dense overlapping panels raise real readability risks: skewed letterforms are harder to parse for dyslexic readers and screen-magnification users, so keep body text untilted and reserve skew for short headings and labels.\n\nRed-black graphics often fail non-text contrast for meaningful UI boundaries; add a secondary indicator — a thick black outline or a clear focus ring — and test icons/buttons against the off-white ground.\n\nHonor prefers-reduced-motion by disabling diagonal transitions and translate effects; the static layout should still communicate the style without animation.",
+      "ko": "The tilted type and dense overlapping panels raise real readability risks: skewed letterforms are harder to parse for dyslexic readers and screen-magnification users, so keep body text untilted and reserve skew for short headings and labels.\n\nRed-black graphics often fail non-text contrast for meaningful UI boundaries; add a secondary indicator — a thick black outline or a clear focus ring — and test icons/buttons against the off-white ground.\n\nHonor prefers-reduced-motion by disabling diagonal transitions and translate effects; the static layout should still communicate the style without animation."
+    },
     "origin": {
       "en": "Russian Constructivism crystallised around 1915, led by Vladimir Tatlin and Alexander Rodchenko, and gained momentum after the 1917 Revolution through propaganda posters, book design, and agitprop — figures such as El Lissitzky, Lyubov Popova, and Gustav Klutsis shaped its look of photomontage, bold sans-serif type, and dynamic diagonals. The movement was effectively suppressed in the early 1930s as Socialist Realism became state doctrine, but its graphic vocabulary remained a reference for poster and editorial design ever after.",
-      "ko": "1915 ， Vladimir Tatlin Alexander Rodchenko ， 1917 、 agitprop —— El Lissitzky、Lyubov Popova、Gustav Klutsis 、。1930 ，，，。"
+      "ko": "Russian Constructivism crystallised around 1915, led by Vladimir Tatlin and Alexander Rodchenko, and gained momentum after the 1917 Revolution through propaganda posters, book design, and agitprop — figures such as El Lissitzky, Lyubov Popova, and Gustav Klutsis shaped its look of photomontage, bold sans-serif type, and dynamic diagonals. The movement was effectively suppressed in the early 1930s as Socialist Realism became state doctrine, but its graphic vocabulary remained a reference for poster and editorial design ever after."
     },
     "meta": {}
   },
@@ -5029,11 +5589,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Pop Art lifts the look of mass media into UI: comic panels, advertising halftones, and celebrity faces are redrawn as flat, saturated shapes locked inside thick black ink outlines, with Ben-Day dots standing in for shadows and gradients. It treats consumer culture as both subject and punchline — a soup can, a comic strip, a Marilyn — rendered in the primary-plus-neon palette of 1960s printing. The style is instantly readable because it borrows from the most familiar visual language on the newsstand.",
-      "ko": "UI：、、，，。——、、—— 1960 。，。"
+      "ko": "Pop Art lifts the look of mass media into UI: comic panels, advertising halftones, and celebrity faces are redrawn as flat, saturated shapes locked inside thick black ink outlines, with Ben-Day dots standing in for shadows and gradients. It treats consumer culture as both subject and punchline — a soup can, a comic strip, a Marilyn — rendered in the primary-plus-neon palette of 1960s printing. The style is instantly readable because it borrows from the most familiar visual language on the newsstand."
     },
     "scope": {
       "en": "Scope: Covers the Pop Art visual language as adapted to UI and graphic design — Ben-Day dots, comic-panel grids, bold outlines, and mass-media imagery. It is not the 1980s postmodern pattern language of Memphis, nor the rough photocopied collage of zine culture; those are separate entries.",
-      "ko": "： UI ——、、。 80 ， zine ；。"
+      "ko": "Scope: Covers the Pop Art visual language as adapted to UI and graphic design — Ben-Day dots, comic-panel grids, bold outlines, and mass-media imagery. It is not the 1980s postmodern pattern language of Memphis, nor the rough photocopied collage of zine culture; those are separate entries."
     },
     "aliases": {
       "en": [
@@ -5064,7 +5624,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Shading and texture are built from evenly spaced small dots — mechanical halftone cells rather than gradients — usually #000000 or the local ink color on a #ffffff ground.",
-          "ko": "——，—— #000000 #ffffff 。"
+          "ko": "Shading and texture are built from evenly spaced small dots — mechanical halftone cells rather than gradients — usually #000000 or the local ink color on a #ffffff ground."
         }
       },
       {
@@ -5077,7 +5637,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Every shape, button, panel, and letterform carries a uniform 2.5–4px solid #000000 stroke, like a comic panel inked for cheap newsprint.",
-          "ko": "、、 2.5–4px #000000 ，。"
+          "ko": "Every shape, button, panel, and letterform carries a uniform 2.5–4px solid #000000 stroke, like a comic panel inked for cheap newsprint."
         }
       },
       {
@@ -5103,7 +5663,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Flat fills of #ff2a2a red, #ffd500 yellow, #0066ff blue, plus hot pink #ff1493 and cyan #00e5ff — opaque, unmixed, no gradients.",
-          "ko": "：#ff2a2a 、#ffd500 、#0066ff ， #ff1493 #00e5ff——、、。"
+          "ko": "Flat fills of #ff2a2a red, #ffd500 yellow, #0066ff blue, plus hot pink #ff1493 and cyan #00e5ff — opaque, unmixed, no gradients."
         }
       },
       {
@@ -5116,7 +5676,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Soup cans, celebrity portraits, comic characters, product labels, and advertising slogans — the imagery is borrowed from the supermarket and the newsstand.",
-          "ko": "、、、、——。"
+          "ko": "Soup cans, celebrity portraits, comic characters, product labels, and advertising slogans — the imagery is borrowed from the supermarket and the newsstand."
         }
       },
       {
@@ -5150,24 +5710,40 @@ export const STYLES: UIStyle[] = [
         "role": "avoid",
         "name": {
           "en": "80s squiggle geometry",
-          "ko": "80 squiggle"
+          "ko": "80s squiggle geometry"
         },
         "facet": "geometry",
         "description": {
           "en": "All-over Memphis squiggles, triangles, and dots-for-pattern remove the narrative, newsstand-specific imagery that makes Pop Art Pop Art.",
-          "ko": "squiggle、「」、。"
+          "ko": "All-over Memphis squiggles, triangles, and dots-for-pattern remove the narrative, newsstand-specific imagery that makes Pop Art Pop Art."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "memphis",
+        "name": "Memphis",
+        "because": {
+          "en": "This is Pop Art because the imagery is narrative and mass-media — comic panels, product labels, celebrity faces — shaded with Ben-Day dots and ringed by thick black outlines.",
+          "ko": "This is Pop Art because the imagery is narrative and mass-media — comic panels, product labels, celebrity faces — shaded with Ben-Day dots and ringed by thick black outlines."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Memphis if the comic panels and product faces were replaced by 1980s toy geometry — squiggles, triangles, dots-as-allover-pattern on a white ground — with no newsstand subject matter at all.",
+          "ko": "It would become Memphis if the comic panels and product faces were replaced by 1980s toy geometry — squiggles, triangles, dots-as-allover-pattern on a white ground — with no newsstand subject matter at all."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface as Pop Art. Canvas: a white #ffffff comic-page ground covered with a Ben-Day halftone dot layer — radial-gradient(#000 18%, transparent 20%) with background-size: 6px 6px. Layout: break the page into rectangular comic panels with 3px solid #000000 gutters and borders. Color palette: flat opaque fills only — #ff2a2a red, #ffd500 yellow, #0066ff blue, #ff1493 hot pink, #00e5ff cyan; no gradients, no blur, no transparency. Every interactive element gets a 3–4px solid #000000 outline and, where appropriate, a hard offset shadow like box-shadow: 5px 5px 0 #000. Type: heavy condensed display sans for headlines (Impact, Haettenschweiler, 'Arial Narrow', sans-serif; weight 800–900), with body text in a plain sans-serif. Imagery: borrow from mass media — product labels, celebrity portraits, comic panels, speech bubbles, starburst badges — and shade large shapes with the halftone dot pattern. Interactions: buttons press flat into their offset shadow (transform: translate(5px,5px) and box-shadow: none on active), and starbursts can rotate a few degrees on hover. Keep long text on solid color blocks, never directly on the halftone ground. Do not drift into Memphis; the decisive difference is that Pop Art is newsstand-narrative (comics, ads, celebrities) while Memphis is abstract 80s pattern geometry. Preserve 4.5:1 text contrast on every solid fill (black text on yellow passes; white text on cyan needs checking) and honor prefers-reduced-motion.",
-      "ko": "。： #ffffff ，——radial-gradient(#000 18%, transparent 20%)，background-size: 6px 6px。： 3px #000000 。：——#ff2a2a 、#ffd500 、#0066ff 、#ff1493 、#00e5ff ；、、。 3–4px #000000 ，， box-shadow: 5px 5px 0 #000。：（Impact、Haettenschweiler、'Arial Narrow'、sans-serif；weight 800–900），。：——、、、、——。：（active transform: translate(5px,5px) box-shadow: none）， hover 。，。；「」（、、）， 80 。 4.5:1（；）， prefers-reduced-motion。"
+      "ko": "Create the surface as Pop Art. Canvas: a white #ffffff comic-page ground covered with a Ben-Day halftone dot layer — radial-gradient(#000 18%, transparent 20%) with background-size: 6px 6px. Layout: break the page into rectangular comic panels with 3px solid #000000 gutters and borders. Color palette: flat opaque fills only — #ff2a2a red, #ffd500 yellow, #0066ff blue, #ff1493 hot pink, #00e5ff cyan; no gradients, no blur, no transparency. Every interactive element gets a 3–4px solid #000000 outline and, where appropriate, a hard offset shadow like box-shadow: 5px 5px 0 #000. Type: heavy condensed display sans for headlines (Impact, Haettenschweiler, 'Arial Narrow', sans-serif; weight 800–900), with body text in a plain sans-serif. Imagery: borrow from mass media — product labels, celebrity portraits, comic panels, speech bubbles, starburst badges — and shade large shapes with the halftone dot pattern. Interactions: buttons press flat into their offset shadow (transform: translate(5px,5px) and box-shadow: none on active), and starbursts can rotate a few degrees on hover. Keep long text on solid color blocks, never directly on the halftone ground. Do not drift into Memphis; the decisive difference is that Pop Art is newsstand-narrative (comics, ads, celebrities) while Memphis is abstract 80s pattern geometry. Preserve 4.5:1 text contrast on every solid fill (black text on yellow passes; white text on cyan needs checking) and honor prefers-reduced-motion."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "The Ben-Day dot ground is decorative: never place body text directly on it — set text on solid color blocks with measured 4.5:1 contrast. Small halftone dots can shimmer or moiré for sensitive viewers, so keep dot scale at or above 6px and reduce their density behind content.\n\nHeavy black outlines and saturated primaries can vibrate when paired edge-to-edge; avoid red-on-blue or cyan-on-pink text blocks, and never use color alone to signal an interactive state — pair it with an outline offset or icon change.\n\nComic display type removes word-shape cues and should stay short; keep body copy, labels, and any functional text in a plain sans-serif, with a visible focus indicator that is thicker than the decorative 3px border.",
+      "ko": "The Ben-Day dot ground is decorative: never place body text directly on it — set text on solid color blocks with measured 4.5:1 contrast. Small halftone dots can shimmer or moiré for sensitive viewers, so keep dot scale at or above 6px and reduce their density behind content.\n\nHeavy black outlines and saturated primaries can vibrate when paired edge-to-edge; avoid red-on-blue or cyan-on-pink text blocks, and never use color alone to signal an interactive state — pair it with an outline offset or icon change.\n\nComic display type removes word-shape cues and should stay short; keep body copy, labels, and any functional text in a plain sans-serif, with a visible focus indicator that is thicker than the decorative 3px border."
+    },
     "origin": {
       "en": "The term 'Pop Art' was coined by British critic Lawrence Alloway around 1955 for the Independent Group — artists such as Richard Hamilton and Eduardo Paolozzi who were collaging American advertising and comic strips in London in the early 1950s. The movement crossed to the United States in the early 1960s, where Andy Warhol's Campbell's Soup Cans (1962) and Marilyn silkscreens, Roy Lichtenstein's enlarged comic panels with hand-painted Ben-Day dots, and Claes Oldenburg's soft consumer sculptures defined its mass-media vocabulary. It peaked as a mainstream avant-garde force through the mid-1960s and has been repeatedly revived in graphic and UI design as shorthand for playful consumer-culture commentary.",
-      "ko": "「Pop Art」 Lawrence Alloway 1955 ， Independent Group Richard Hamilton、Eduardo Paolozzi —— 1950 。 1960 ，Andy Warhol 《》（1962）、Roy Lichtenstein ， Claes Oldenburg ，。 1960 ， UI ，。"
+      "ko": "The term 'Pop Art' was coined by British critic Lawrence Alloway around 1955 for the Independent Group — artists such as Richard Hamilton and Eduardo Paolozzi who were collaging American advertising and comic strips in London in the early 1950s. The movement crossed to the United States in the early 1960s, where Andy Warhol's Campbell's Soup Cans (1962) and Marilyn silkscreens, Roy Lichtenstein's enlarged comic panels with hand-painted Ben-Day dots, and Claes Oldenburg's soft consumer sculptures defined its mass-media vocabulary. It peaked as a mainstream avant-garde force through the mid-1960s and has been repeatedly revived in graphic and UI design as shorthand for playful consumer-culture commentary."
     },
     "meta": {}
   },
@@ -5179,11 +5755,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Surrealism treats the interface as a dream canvas: recognizable objects are placed in impossible relationships — clocks melt and drape over edges, eyes float in soft gradients, solids breathe with slow morphing motion. The palette is hushed and lunar rather than neon, the lighting is diffuse and uncanny, and the composition follows the logic of the subconscious rather than the grid. It borrows its name from the 1924 art movement, but as a UI style it is a contemporary mood: the screen as a lucid dream.",
-      "ko": "：——，，。，；，，。 1924 ， UI ：。"
+      "ko": "Surrealism treats the interface as a dream canvas: recognizable objects are placed in impossible relationships — clocks melt and drape over edges, eyes float in soft gradients, solids breathe with slow morphing motion. The palette is hushed and lunar rather than neon, the lighting is diffuse and uncanny, and the composition follows the logic of the subconscious rather than the grid. It borrows its name from the 1924 art movement, but as a UI style it is a contemporary mood: the screen as a lucid dream."
     },
     "scope": {
       "en": "Scope: This entry covers the visual language of dream logic, melting forms, floating symbolic objects, and soft uncanny gradients in interface design. It is not the same as the historical Surrealist art movement, nor is it vaporwave's 80s/90s consumer nostalgia, cyberpunk's neon dystopia, or the occult strand of maximalist digital collage.",
-      "ko": "：、、。， Vaporwave 80/90 、Cyberpunk ，。"
+      "ko": "Scope: This entry covers the visual language of dream logic, melting forms, floating symbolic objects, and soft uncanny gradients in interface design. It is not the same as the historical Surrealist art movement, nor is it vaporwave's 80s/90s consumer nostalgia, cyberpunk's neon dystopia, or the occult strand of maximalist digital collage."
     },
     "aliases": {
       "en": [
@@ -5214,7 +5790,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Edges drip, sag, and re-solidify like soft wax or Dalí's clocks; border-radius becomes an organic 40%/60%/70% blob, and rigid rectangles look out of place.",
-          "ko": "、；border-radius 40%/60%/70% ，。"
+          "ko": "Edges drip, sag, and re-solidify like soft wax or Dalí's clocks; border-radius becomes an organic 40%/60%/70% blob, and rigid rectangles look out of place."
         }
       },
       {
@@ -5227,7 +5803,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Eyes, clocks, clouds, keys, or body parts hover at different depths with no logical support, casting soft diffuse shadows rather than resting on surfaces.",
-          "ko": "、、、，，，。"
+          "ko": "Eyes, clocks, clouds, keys, or body parts hover at different depths with no logical support, casting soft diffuse shadows rather than resting on surfaces."
         }
       },
       {
@@ -5240,7 +5816,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Backgrounds wash from lavender #c8b6e2 through peach #f4c7b0 to pale blue #a8d5e5, desaturated and glowing, never the loud neon of vaporwave or cyberpunk.",
-          "ko": "#c8b6e2 #f4c7b0 #a8d5e5，， Vaporwave Cyberpunk loud 。"
+          "ko": "Backgrounds wash from lavender #c8b6e2 through peach #f4c7b0 to pale blue #a8d5e5, desaturated and glowing, never the loud neon of vaporwave or cyberpunk."
         }
       },
       {
@@ -5253,7 +5829,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "A clock drapes over a cloud, an eye peers from inside a button, a fish swims through the sky — the imagery is symbolic and deliberately irrational.",
-          "ko": "，，——、。"
+          "ko": "A clock drapes over a cloud, an eye peers from inside a button, a fish swims through the sky — the imagery is symbolic and deliberately irrational."
         }
       },
       {
@@ -5266,7 +5842,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Eyes, keys, doors, mirrors, moons, and disembodied hands recur as motifs; they read as dream symbols rather than functional icons.",
-          "ko": "、、、、、；，。"
+          "ko": "Eyes, keys, doors, mirrors, moons, and disembodied hands recur as motifs; they read as dream symbols rather than functional icons."
         }
       },
       {
@@ -5292,7 +5868,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "Animations breathe, drift, and melt over 6–12 seconds with easing that feels viscous; nothing snaps or clicks like a machine.",
-          "ko": "6–12 、、，；。"
+          "ko": "Animations breathe, drift, and melt over 6–12 seconds with easing that feels viscous; nothing snaps or clicks like a machine."
         }
       },
       {
@@ -5300,24 +5876,40 @@ export const STYLES: UIStyle[] = [
         "role": "avoid",
         "name": {
           "en": "VHS glitch and 80s consumer debris",
-          "ko": "VHS 80"
+          "ko": "VHS glitch and 80s consumer debris"
         },
         "facet": "surface",
         "description": {
           "en": "Scanlines, chromatic aberration, katakana, Windows chrome, and mall-palm sunsets are the vocabulary of vaporwave; they break the fine-art dream spell here.",
-          "ko": "、、、Windows 、 Vaporwave ；。"
+          "ko": "Scanlines, chromatic aberration, katakana, Windows chrome, and mall-palm sunsets are the vocabulary of vaporwave; they break the fine-art dream spell here."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "vaporwave",
+        "name": "Vaporwave",
+        "because": {
+          "en": "This is Surrealism because the space follows fine-art dream logic: melting clocks, floating eyes, soft diffused gradients, and impossible object combinations on a muted lunar palette. There is no Greek bust, no Windows 95 chrome, no VHS scanline, no katakana, and no 80s mall nostalgia.",
+          "ko": "This is Surrealism because the space follows fine-art dream logic: melting clocks, floating eyes, soft diffused gradients, and impossible object combinations on a muted lunar palette. There is no Greek bust, no Windows 95 chrome, no VHS scanline, no katakana, and no 80s mall nostalgia."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become vaporwave if the palette shifted to pink-to-cyan #ff71ce/#01cdfe sunsets, the objects were replaced by marble busts and palm trees, and VHS scanlines and chromatic aberration were layered over the whole scene.",
+          "ko": "It would become vaporwave if the palette shifted to pink-to-cyan #ff71ce/#01cdfe sunsets, the objects were replaced by marble busts and palm trees, and VHS scanlines and chromatic aberration were layered over the whole scene."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the interface in the spirit of Surrealism. Canvas: a soft lunar gradient background running lavender #c8b6e2 through peach #f4c7b0 to pale blue #a8d5e5, optionally with a faint parchment texture. Defining signals: geometry melts — use organic border-radius like 40% 60% 70% 30% / 40% 50% 60% 50% for cards and buttons so edges feel like warm wax; objects float at impossible depths with soft diffuse shadows (box-shadow: 0 18px 40px rgba(45,36,56,.25)) rather than resting on shelves; imagery is dream-collage — clocks draping over edges, disembodied eyes, clouds, keys, moons — rendered as flat symbolic shapes or inline SVG. Color: keep it desaturated and glowing — add misty creams #f5f0e6, muted gold #d4af37, and deep shadow #2d2438; avoid neon pink/cyan and chrome. Typography: choose an elegant high-contrast serif (or a refined sans with generous letter-spacing) for titles; body text stays small and unobtrusive so the dream imagery dominates. Motion: slow liquid morphing and floating — 6–12s ease-in-out loops, viscous transitions, nothing mechanical; use @keyframes for gentle up/down drift and subtle scale breathing. Interactions: buttons should feel like pressing soft wax — small scale(.96) with a shadow collapse rather than a hard click. Do not drift into vaporwave: the decisive difference is the absence of 80s/90s consumer nostalgia, Greek busts, katakana, Windows chrome, VHS scanlines, and neon grids. Preserve readability by placing text on solid misty panels (#f5f0e6 at 92% opacity) over the gradient, keep text at 4.5:1 against those panels, and honor prefers-reduced-motion by disabling drift and morph loops.",
-      "ko": "（Surrealism）。：， #c8b6e2 #f4c7b0 #a8d5e5， faint 。：—— border-radius， 40% 60% 70% 30% / 40% 50% 60% 50%，；，（box-shadow: 0 18px 40px rgba(45,36,56,.25)）；——、、、、—— SVG 。： Cream #f5f0e6、 #d4af37 #2d2438；。：（）；、，。：——6–12s ease-in-out ，，； @keyframes subtle 。：—— scale(.96) ，。 Vaporwave： 80/90 、、、Windows 、VHS 。： Cream （#f5f0e6 92% ）， 4.5:1， prefers-reduced-motion，。"
+      "ko": "Create the interface in the spirit of Surrealism. Canvas: a soft lunar gradient background running lavender #c8b6e2 through peach #f4c7b0 to pale blue #a8d5e5, optionally with a faint parchment texture. Defining signals: geometry melts — use organic border-radius like 40% 60% 70% 30% / 40% 50% 60% 50% for cards and buttons so edges feel like warm wax; objects float at impossible depths with soft diffuse shadows (box-shadow: 0 18px 40px rgba(45,36,56,.25)) rather than resting on shelves; imagery is dream-collage — clocks draping over edges, disembodied eyes, clouds, keys, moons — rendered as flat symbolic shapes or inline SVG. Color: keep it desaturated and glowing — add misty creams #f5f0e6, muted gold #d4af37, and deep shadow #2d2438; avoid neon pink/cyan and chrome. Typography: choose an elegant high-contrast serif (or a refined sans with generous letter-spacing) for titles; body text stays small and unobtrusive so the dream imagery dominates. Motion: slow liquid morphing and floating — 6–12s ease-in-out loops, viscous transitions, nothing mechanical; use @keyframes for gentle up/down drift and subtle scale breathing. Interactions: buttons should feel like pressing soft wax — small scale(.96) with a shadow collapse rather than a hard click. Do not drift into vaporwave: the decisive difference is the absence of 80s/90s consumer nostalgia, Greek busts, katakana, Windows chrome, VHS scanlines, and neon grids. Preserve readability by placing text on solid misty panels (#f5f0e6 at 92% opacity) over the gradient, keep text at 4.5:1 against those panels, and honor prefers-reduced-motion by disabling drift and morph loops."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "The soft gradient background and symbolic imagery are central to the mood but hostile to text legibility: place all body text and controls on solid or near-solid misty panels (#f5f0e6 at 92% opacity or higher) and verify 4.5:1 against them, not against the gradient.\n\nSlow drift and morph animations are load-bearing for the dreamlike atmosphere, but they can trigger vestibular issues; respect prefers-reduced-motion by removing continuous floating, scaling, and morphing, and keep any remaining motion subtle and non-repeating.\n\nSymbolic eyes, keys, and floating objects are decorative in this UI vocabulary; ensure functional controls have clear labels, focus indicators distinct from the dream imagery, and never rely on surreal juxtapositions alone to convey state or action.",
+      "ko": "The soft gradient background and symbolic imagery are central to the mood but hostile to text legibility: place all body text and controls on solid or near-solid misty panels (#f5f0e6 at 92% opacity or higher) and verify 4.5:1 against them, not against the gradient.\n\nSlow drift and morph animations are load-bearing for the dreamlike atmosphere, but they can trigger vestibular issues; respect prefers-reduced-motion by removing continuous floating, scaling, and morphing, and keep any remaining motion subtle and non-repeating.\n\nSymbolic eyes, keys, and floating objects are decorative in this UI vocabulary; ensure functional controls have clear labels, focus indicators distinct from the dream imagery, and never rely on surreal juxtapositions alone to convey state or action."
+    },
     "origin": {
       "en": "Surrealism began as an art movement in 1924 when poet André Breton published the Surrealist Manifesto in Paris, channeling Sigmund Freud's ideas about the unconscious and dreams; Salvador Dalí's 1931 painting The Persistence of Memory, with its melting clocks, and René Magritte's visual paradoxes became its most recognizable images. As a UI aesthetic it is a 21st-century digital mood rather than a formal school — contemporary portfolios and editorial sites borrow the dream-logic collage, soft gradients, and floating symbolic objects to evoke introspection and the uncanny.",
-      "ko": "1924 ， André Breton 《》， Sigmund Freud ；Salvador Dalí 1931 《》（） René Magritte 。 UI ， 21 ——、。"
+      "ko": "Surrealism began as an art movement in 1924 when poet André Breton published the Surrealist Manifesto in Paris, channeling Sigmund Freud's ideas about the unconscious and dreams; Salvador Dalí's 1931 painting The Persistence of Memory, with its melting clocks, and René Magritte's visual paradoxes became its most recognizable images. As a UI aesthetic it is a 21st-century digital mood rather than a formal school — contemporary portfolios and editorial sites borrow the dream-logic collage, soft gradients, and floating symbolic objects to evoke introspection and the uncanny."
     },
     "meta": {}
   },
@@ -5329,11 +5921,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Art Nouveau is the late-19th-century 'new art' that replaced historical revivalism with living, asymmetrical lines drawn from plants, flowers, and whiplash tendrils. Its interfaces and graphics favor earthy jewel tones, oxidized gold, hand-drawn vines, and ornate serif lettering that seems to grow out of the page rather than sit on it. It flourished from roughly 1890 to 1910 and was eclipsed by the machine geometry of Art Deco.",
-      "ko": "19 「」，、、，。、、，。 1890 1910 ，（Art Deco）。"
+      "ko": "Art Nouveau is the late-19th-century 'new art' that replaced historical revivalism with living, asymmetrical lines drawn from plants, flowers, and whiplash tendrils. Its interfaces and graphics favor earthy jewel tones, oxidized gold, hand-drawn vines, and ornate serif lettering that seems to grow out of the page rather than sit on it. It flourished from roughly 1890 to 1910 and was eclipsed by the machine geometry of Art Deco."
     },
     "scope": {
       "en": "Scope: This entry covers the Art Nouveau visual language as it appears in UI, illustration, and typography. The overlapping Arts & Crafts movement and Japonism share some DNA but are treated separately; Art Deco is the closest neighbor and the main source of confusion.",
-      "ko": "： UI、。（Arts & Crafts）（Japonism），；，。"
+      "ko": "Scope: This entry covers the Art Nouveau visual language as it appears in UI, illustration, and typography. The overlapping Arts & Crafts movement and Japonism share some DNA but are treated separately; Art Deco is the closest neighbor and the main source of confusion."
     },
     "aliases": {
       "en": [
@@ -5362,7 +5954,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Long, unbroken S- and C-curves that snap back on themselves like stems in the wind; borders and rules follow a single flowing gesture rather than straight edges.",
-          "ko": "S C ，；，。"
+          "ko": "Long, unbroken S- and C-curves that snap back on themselves like stems in the wind; borders and rules follow a single flowing gesture rather than straight edges."
         }
       },
       {
@@ -5375,7 +5967,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Vines, lilies, insects, feathers, and hair rendered as flat linear decoration; the motif is a recognizable plant or creature, not an abstract geometric icon.",
-          "ko": "、、、；，。"
+          "ko": "Vines, lilies, insects, feathers, and hair rendered as flat linear decoration; the motif is a recognizable plant or creature, not an abstract geometric icon."
         }
       },
       {
@@ -5388,7 +5980,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Muted olive, sage, terracotta, oxidized gold, wine red, and dusty teal; color feels mineral or botanical, never chrome or neon.",
-          "ko": "、、、、；，。"
+          "ko": "Muted olive, sage, terracotta, oxidized gold, wine red, and dusty teal; color feels mineral or botanical, never chrome or neon."
         }
       },
       {
@@ -5401,7 +5993,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Letterforms with curling terminals, high stroke contrast, and decorative inline strokes; headings read like hand-cut signage rather than machine type.",
-          "ko": "、 inline ；，。"
+          "ko": "Letterforms with curling terminals, high stroke contrast, and decorative inline strokes; headings read like hand-cut signage rather than machine type."
         }
       },
       {
@@ -5427,7 +6019,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Depth comes from overlapping flat motifs and gold-line relief, not from gradients, drop shadows, or 3D modeling.",
-          "ko": "，、 3D 。"
+          "ko": "Depth comes from overlapping flat motifs and gold-line relief, not from gradients, drop shadows, or 3D modeling."
         }
       },
       {
@@ -5457,15 +6049,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "art-deco",
+        "name": "Art Deco",
+        "because": {
+          "en": "This is Art Nouveau because the rhythm is organic and asymmetrical — vines, stems, and hairlines curve continuously, and the decoration is derived from living forms rather than engineered geometry.",
+          "ko": "This is Art Nouveau because the rhythm is organic and asymmetrical — vines, stems, and hairlines curve continuously, and the decoration is derived from living forms rather than engineered geometry."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Art Deco if the curves were replaced by stepped zigzags, sunbursts, and mirror symmetry, the palette switched to lacquered black and chrome, and the lettering squared into block geometry.",
+          "ko": "It would become Art Deco if the curves were replaced by stepped zigzags, sunbursts, and mirror symmetry, the palette switched to lacquered black and chrome, and the lettering squared into block geometry."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using Art Nouveau. Defining signals: continuous whiplash curves for every border and rule; flat organic ornament — vines, lilies, insects, feathers — as the primary decoration; an earthy jewel palette (sage #9fa86b, terracotta #c26a4d, wine red #7a2d3b, oxidized gold #bfa15f, cream ground #f7f3e8); ornate serif display type with curling terminals and inline strokes. Keep the specific plant motif and exact palette flexible. Use inline SVG paths for vine borders and corner flourishes, stroke-width 1.5–2px for hairline tendrils and 4–6px for cast-iron contours. Set type in a high-contrast serif with decorative capitals (font-family: Georgia, 'Times New Roman', serif; letter-spacing: 0.02em; text-transform: capitalize for headings). Build depth by overlapping flat shapes and gold lines, never with gradients or drop shadows. Buttons and cards should have asymmetrical frames that curl at the corners like stems. Do not drift into Art Deco; the decisive difference is that every line here is a living curve — replace curves with zigzags, sunbursts, or mirror symmetry and the style collapses. Preserve 4.5:1 text contrast on the cream ground (wine red and deep olive pass; pale gold does not), visible focus indicators outside the decorative frame, and reduced-motion support for any animated tendrils.",
-      "ko": "（Art Nouveau）。：； —— 、、、 —— ；（sage #9fa86b、terracotta #c26a4d、wine red #7a2d3b、oxidized gold #bfa15f、 #f7f3e8）；， inline 。。 SVG path ， stroke-width 1.5–2px， 4–6px。（font-family: Georgia, 'Times New Roman', serif; letter-spacing: 0.02em; text-transform: capitalize）。，。，。； —— 、，。 4.5:1（；），， reduced-motion。"
+      "ko": "Create the surface using Art Nouveau. Defining signals: continuous whiplash curves for every border and rule; flat organic ornament — vines, lilies, insects, feathers — as the primary decoration; an earthy jewel palette (sage #9fa86b, terracotta #c26a4d, wine red #7a2d3b, oxidized gold #bfa15f, cream ground #f7f3e8); ornate serif display type with curling terminals and inline strokes. Keep the specific plant motif and exact palette flexible. Use inline SVG paths for vine borders and corner flourishes, stroke-width 1.5–2px for hairline tendrils and 4–6px for cast-iron contours. Set type in a high-contrast serif with decorative capitals (font-family: Georgia, 'Times New Roman', serif; letter-spacing: 0.02em; text-transform: capitalize for headings). Build depth by overlapping flat shapes and gold lines, never with gradients or drop shadows. Buttons and cards should have asymmetrical frames that curl at the corners like stems. Do not drift into Art Deco; the decisive difference is that every line here is a living curve — replace curves with zigzags, sunbursts, or mirror symmetry and the style collapses. Preserve 4.5:1 text contrast on the cream ground (wine red and deep olive pass; pale gold does not), visible focus indicators outside the decorative frame, and reduced-motion support for any animated tendrils."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Ornate serif lettering and dense vine borders can mangle readability: keep body text in a clean high-contrast serif at 16px minimum, and reserve the most decorative letterforms for large headings only.\n\nDecorative borders often attract the eye away from interactive controls; place focus indicators as a clear, high-contrast outline offset outside the ornate frame rather than competing with the gold linework.\n\nAvoid rapid animated whiplash curves and flashing metallic highlights under prefers-reduced-motion; static vines are already unmistakably Art Nouveau.",
+      "ko": "Ornate serif lettering and dense vine borders can mangle readability: keep body text in a clean high-contrast serif at 16px minimum, and reserve the most decorative letterforms for large headings only.\n\nDecorative borders often attract the eye away from interactive controls; place focus indicators as a clear, high-contrast outline offset outside the ornate frame rather than competing with the gold linework.\n\nAvoid rapid animated whiplash curves and flashing metallic highlights under prefers-reduced-motion; static vines are already unmistakably Art Nouveau."
+    },
     "origin": {
       "en": "Art Nouveau flourished roughly 1890–1910, taking its name from Siegfried Bing's Paris gallery Maison de l'Art Nouveau (opened 1895). Belgian architect Victor Horta's Hôtel Tassel in Brussels (1893) and French architect Hector Guimard's Paris Métro entrances (c. 1900) are canonical built works; Czech illustrator Alphonse Mucha's posters and French designer Louis Majorelle's furniture defined its graphic and decorative vocabulary. It faded as Art Deco and modernism rose in the 1910s.",
-      "ko": "1890–1910 ， Siegfried Bing Maison de l'Art Nouveau（1895 ）。 Victor Horta （Hôtel Tassel，1893 ） Hector Guimard （ 1900 ）； Alphonse Mucha Louis Majorelle 。 1910 ，。"
+      "ko": "Art Nouveau flourished roughly 1890–1910, taking its name from Siegfried Bing's Paris gallery Maison de l'Art Nouveau (opened 1895). Belgian architect Victor Horta's Hôtel Tassel in Brussels (1893) and French architect Hector Guimard's Paris Métro entrances (c. 1900) are canonical built works; Czech illustrator Alphonse Mucha's posters and French designer Louis Majorelle's furniture defined its graphic and decorative vocabulary. It faded as Art Deco and modernism rose in the 1910s."
     },
     "meta": {}
   },
@@ -5477,11 +6085,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Holographic UI looks like light hitting rainbow foil: a metallic silver base explodes into shifting cyan, magenta, violet, and gold, with pastel pink and lavender shimmers sliding across the surface. It borrows from holographic foil printing and oil-slick diffraction, not glass or depth — the effect is flat, reflective, and synthetic. The style became the face of late-2010s unicorn branding, beauty-tech packaging, and year-in-review campaigns that wanted to feel futuristic and celebratory.",
-      "ko": "UI ：、、、， shimmer 。，——、、。 2010 、：。"
+      "ko": "Holographic UI looks like light hitting rainbow foil: a metallic silver base explodes into shifting cyan, magenta, violet, and gold, with pastel pink and lavender shimmers sliding across the surface. It borrows from holographic foil printing and oil-slick diffraction, not glass or depth — the effect is flat, reflective, and synthetic. The style became the face of late-2010s unicorn branding, beauty-tech packaging, and year-in-review campaigns that wanted to feel futuristic and celebratory."
     },
     "scope": {
       "en": "Scope: This entry covers the digital visual style inspired by holographic foil and oil-slick iridescence. It is distinct from glassmorphism (which needs transparency and blur) and from the metallic-chrome Y2K look (which favors machined gradients and gel plastic rather than rainbow diffraction).",
-      "ko": "：。（） Y2K （，）。"
+      "ko": "Scope: This entry covers the digital visual style inspired by holographic foil and oil-slick iridescence. It is distinct from glassmorphism (which needs transparency and blur) and from the metallic-chrome Y2K look (which favors machined gradients and gel plastic rather than rainbow diffraction)."
     },
     "aliases": {
       "en": [
@@ -5512,7 +6120,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "The surface cycles through saturated spectral hues — cyan #00f2ea, magenta #ff006e, violet #b967ff, gold #ffd700 — usually via conic or multi-stop linear gradients that mimic light diffraction.",
-          "ko": "—— #00f2ea、 #ff006e、 #b967ff、 #ffd700—— conic-gradient 。"
+          "ko": "The surface cycles through saturated spectral hues — cyan #00f2ea, magenta #ff006e, violet #b967ff, gold #ffd700 — usually via conic or multi-stop linear gradients that mimic light diffraction."
         }
       },
       {
@@ -5525,7 +6133,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "A bright neutral mirror-like substrate sits beneath the rainbow, rendered with sharp white #ffffff specular highlights and cool grey #c4cfdc mid-tones.",
-          "ko": "， #ffffff #c4cfdc 。"
+          "ko": "A bright neutral mirror-like substrate sits beneath the rainbow, rendered with sharp white #ffffff specular highlights and cool grey #c4cfdc mid-tones."
         }
       },
       {
@@ -5533,12 +6141,12 @@ export const STYLES: UIStyle[] = [
         "role": "defining",
         "name": {
           "en": "Pastel pink-cyan shimmer",
-          "ko": "shimmer"
+          "ko": "Pastel pink-cyan shimmer"
         },
         "facet": "color",
         "description": {
           "en": "Soft pastel overlights — pink #ffb3d9, lavender #c084fc, aqua #67e8f9 — float across the foil like secondary reflections, usually at 40–70% opacity.",
-          "ko": "—— #ffb3d9、 #c084fc、 #67e8f9——， 40–70%。"
+          "ko": "Soft pastel overlights — pink #ffb3d9, lavender #c084fc, aqua #67e8f9 — float across the foil like secondary reflections, usually at 40–70% opacity."
         }
       },
       {
@@ -5551,7 +6159,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Borders and dividers are 1px metallic lines with a hard highlight on one side and a darker grey #8a93a3 on the other, mimicking a pressed foil edge.",
-          "ko": "1px ，， #8a93a3，。"
+          "ko": "Borders and dividers are 1px metallic lines with a hard highlight on one side and a darker grey #8a93a3 on the other, mimicking a pressed foil edge."
         }
       },
       {
@@ -5564,7 +6172,7 @@ export const STYLES: UIStyle[] = [
         "facet": "motion",
         "description": {
           "en": "A subtle animated gradient or white glare sweeps across the surface every 3–6 seconds, reinforcing the reflective foil illusion.",
-          "ko": "3–6 ，。"
+          "ko": "A subtle animated gradient or white glare sweeps across the surface every 3–6 seconds, reinforcing the reflective foil illusion."
         }
       },
       {
@@ -5577,7 +6185,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "The style is usually staged on near-black #0a0a0f or deep charcoal so the metallic rainbow reads at full saturation; light backgrounds flatten it.",
-          "ko": "#0a0a0f ，；。"
+          "ko": "The style is usually staged on near-black #0a0a0f or deep charcoal so the metallic rainbow reads at full saturation; light backgrounds flatten it."
         }
       },
       {
@@ -5594,15 +6202,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "glassmorphism",
+        "name": "Glassmorphism",
+        "because": {
+          "en": "This is Holographic because the surface behaves like reflective foil — rainbow iridescence, metallic sheen, and color-shifting highlights — rather than relying on transparency and blur for depth.",
+          "ko": "This is Holographic because the surface behaves like reflective foil — rainbow iridescence, metallic sheen, and color-shifting highlights — rather than relying on transparency and blur for depth."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become glassmorphism if the rainbow foil were replaced by translucent white panels floating over a decorative wallpaper with backdrop-filter blur as the main material.",
+          "ko": "It would become glassmorphism if the rainbow foil were replaced by translucent white panels floating over a decorative wallpaper with backdrop-filter blur as the main material."
+        }
+      }
+    ],
     "brief": {
       "en": "Build the surface as a sheet of holographic foil on a near-black canvas (#0a0a0f). Start with a metallic silver base: linear-gradient(135deg, #ffffff 0%, #c4cfdc 30%, #8a93a3 50%, #e6eaf0 70%, #ffffff 100%). Layer the oil-slick rainbow over it using conic-gradient(from 180deg, #00f2ea, #b967ff, #ff006e, #ffd700, #67e8f9, #00f2ea) or a 280px-wide multi-stop linear gradient at 115deg. Add pastel shimmer overlays: radial-gradient(120% 80% at 20% 30%, rgba(255,179,217,.55), transparent 50%) plus a cyan counterpart at 80% 70%. Use hairline chrome borders: 1px solid rgba(255,255,255,.55) with an inset 1px rgba(255,255,255,.25) highlight. Keep typography modern — SF Pro, Inter, or system sans at 500–600 weight, white (#ffffff) or near-white (#f2f4f8) text. Animate the sheen with a 4s ease-in-out infinite gradient-position shift. Buttons and cards should feel like stamped foil, not glass: zero backdrop-filter blur, no translucent panels, no soft drop shadows. The decisive guardrail: remove the rainbow iridescence and metallic base and the style collapses — it is not glassmorphism.",
-      "ko": "（#0a0a0f）。：linear-gradient(135deg, #ffffff 0%, #c4cfdc 30%, #8a93a3 50%, #e6eaf0 70%, #ffffff 100%)。：conic-gradient(from 180deg, #00f2ea, #b967ff, #ff006e, #ffd700, #67e8f9, #00f2ea)， 280px 、115deg 。 shimmer ：radial-gradient(120% 80% at 20% 30%, rgba(255,179,217,.55), transparent 50%)， 80% 70%。 1px solid rgba(255,255,255,.55)， inset 1px rgba(255,255,255,.25) 。——SF Pro、Inter ， 500–600， #ffffff #f2f4f8。 4s ease-in-out infinite gradient-position 。，： backdrop-filter 、、。 guardrail：，——。"
+      "ko": "Build the surface as a sheet of holographic foil on a near-black canvas (#0a0a0f). Start with a metallic silver base: linear-gradient(135deg, #ffffff 0%, #c4cfdc 30%, #8a93a3 50%, #e6eaf0 70%, #ffffff 100%). Layer the oil-slick rainbow over it using conic-gradient(from 180deg, #00f2ea, #b967ff, #ff006e, #ffd700, #67e8f9, #00f2ea) or a 280px-wide multi-stop linear gradient at 115deg. Add pastel shimmer overlays: radial-gradient(120% 80% at 20% 30%, rgba(255,179,217,.55), transparent 50%) plus a cyan counterpart at 80% 70%. Use hairline chrome borders: 1px solid rgba(255,255,255,.55) with an inset 1px rgba(255,255,255,.25) highlight. Keep typography modern — SF Pro, Inter, or system sans at 500–600 weight, white (#ffffff) or near-white (#f2f4f8) text. Animate the sheen with a 4s ease-in-out infinite gradient-position shift. Buttons and cards should feel like stamped foil, not glass: zero backdrop-filter blur, no translucent panels, no soft drop shadows. The decisive guardrail: remove the rainbow iridescence and metallic base and the style collapses — it is not glassmorphism."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Rainbow-on-silver text often fails contrast: the lightest foil regions can wash white text to below 4.5:1, so either keep text over the dark canvas or place it on a solid scrim behind the foil.\n\nThe slow shimmer animation is decorative but can trigger vestibular issues or distract attention; honor prefers-reduced-motion by freezing the gradient sweep.\n\nHolographic surfaces are inherently chromatic and busy; do not rely on color alone to convey state — pair hue changes with icons, labels, or outline changes so the UI remains usable for color-vision-deficient users.",
+      "ko": "Rainbow-on-silver text often fails contrast: the lightest foil regions can wash white text to below 4.5:1, so either keep text over the dark canvas or place it on a solid scrim behind the foil.\n\nThe slow shimmer animation is decorative but can trigger vestibular issues or distract attention; honor prefers-reduced-motion by freezing the gradient sweep.\n\nHolographic surfaces are inherently chromatic and busy; do not rely on color alone to convey state — pair hue changes with icons, labels, or outline changes so the UI remains usable for color-vision-deficient users."
+    },
     "origin": {
       "en": "Holographic foil as a physical finishing technique dates back to the 1980s, when micro-embossed diffraction patterns on metallic film began appearing on credit cards, concert tickets, and luxury packaging. The digital UI translation surfaced in the late 2010s, popularized by unicorn/startup branding, beauty-tech packaging, and year-in-review campaigns like Spotify Wrapped, which used rainbow-foil typography and iridescent cards to signal celebration and futurism.",
-      "ko": "1980 ，、。 UI 2010 ，/、 Spotify Wrapped ——。"
+      "ko": "Holographic foil as a physical finishing technique dates back to the 1980s, when micro-embossed diffraction patterns on metallic film began appearing on credit cards, concert tickets, and luxury packaging. The digital UI translation surfaced in the late 2010s, popularized by unicorn/startup branding, beauty-tech packaging, and year-in-review campaigns like Spotify Wrapped, which used rainbow-foil typography and iridescent cards to signal celebration and futurism."
     },
     "meta": {}
   },
@@ -5614,11 +6238,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Isometric 3D renders interface scenes as axonometric block worlds: three axes spaced 120° apart on the picture plane, parallel lines that never converge, and geometric solids built from cubes and extruded planes. It gives depth without perspective distortion, so a dashboard, city, or device cluster reads like a clean architectural model. The look surged in web illustration around 2017–2019 as 'isometric flat design' and remains a go-to language for explaining complex systems at a glance.",
-      "ko": "3D ： 120°，，。，、。 2017–2019 「」（isometric flat design），。"
+      "ko": "Isometric 3D renders interface scenes as axonometric block worlds: three axes spaced 120° apart on the picture plane, parallel lines that never converge, and geometric solids built from cubes and extruded planes. It gives depth without perspective distortion, so a dashboard, city, or device cluster reads like a clean architectural model. The look surged in web illustration around 2017–2019 as 'isometric flat design' and remains a go-to language for explaining complex systems at a glance."
     },
     "scope": {
       "en": "Scope: This entry covers the isometric visual treatment in UI and illustration — block scenes, axonometric angles, and clean geometric depth. It is not true perspective 3D, photorealistic rendering, or the soft rounded inflation of claymorphism.",
-      "ko": "： UI ——、、。 3D、，。"
+      "ko": "Scope: This entry covers the isometric visual treatment in UI and illustration — block scenes, axonometric angles, and clean geometric depth. It is not true perspective 3D, photorealistic rendering, or the soft rounded inflation of claymorphism."
     },
     "aliases": {
       "en": [
@@ -5649,7 +6273,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "The three visible axes sit at 120° to one another on the picture plane, commonly drawn as 30° left and right from horizontal; parallel edges stay parallel forever.",
-          "ko": "120°， 30°；。"
+          "ko": "The three visible axes sit at 120° to one another on the picture plane, commonly drawn as 30° left and right from horizontal; parallel edges stay parallel forever."
         }
       },
       {
@@ -5670,7 +6294,7 @@ export const STYLES: UIStyle[] = [
         "role": "defining",
         "name": {
           "en": "Cube and block primitives",
-          "ko": "primitives"
+          "ko": "Cube and block primitives"
         },
         "facet": "geometry",
         "description": {
@@ -5688,7 +6312,7 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Objects float above the ground on soft, diffuse drop shadows (e.g. box-shadow: 16px 24px 40px rgba(0,0,0,.18)) that anchor them in space without simulating a specific light source.",
-          "ko": "drop shadow （ box-shadow: 16px 24px 40px rgba(0,0,0,.18)），，。"
+          "ko": "Objects float above the ground on soft, diffuse drop shadows (e.g. box-shadow: 16px 24px 40px rgba(0,0,0,.18)) that anchor them in space without simulating a specific light source."
         }
       },
       {
@@ -5714,7 +6338,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Multiple block objects cluster into readable mini-worlds — a city, a workspace, a device farm — where position and stacking imply hierarchy.",
-          "ko": "——、、——。"
+          "ko": "Multiple block objects cluster into readable mini-worlds — a city, a workspace, a device farm — where position and stacking imply hierarchy."
         }
       },
       {
@@ -5727,7 +6351,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "In UI the style usually appears in hero graphics, empty states, and onboarding; interactive controls themselves are rare, so the player reads as a placed model rather than a skeuomorphic device.",
-          "ko": "UI 、；，，。"
+          "ko": "In UI the style usually appears in hero graphics, empty states, and onboarding; interactive controls themselves are rare, so the player reads as a placed model rather than a skeuomorphic device."
         }
       },
       {
@@ -5744,15 +6368,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "claymorphism",
+        "name": "Claymorphism",
+        "because": {
+          "en": "This is Isometric 3D because the depth comes from angular axonometric geometry — clean cubes, 30° axes, and outer cast shadows — rather than from rounded, inflated, clay-like volume.",
+          "ko": "This is Isometric 3D because the depth comes from angular axonometric geometry — clean cubes, 30° axes, and outer cast shadows — rather than from rounded, inflated, clay-like volume."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become claymorphism if the sharp geometric blocks were replaced with soft, rounded, independently colored blobs built from two inner shadows plus one soft outer shadow.",
+          "ko": "It would become claymorphism if the sharp geometric blocks were replaced with soft, rounded, independently colored blobs built from two inner shadows plus one soft outer shadow."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using Isometric 3D. Defining signals: axonometric projection with 30° left/right axes (rotateX(54.7356deg) rotateZ(45deg) in CSS or drawn as 120° axis spacing), zero perspective convergence; forms built from clean cubes and extruded rectangles with crisp edges. Palette: sky top faces #7dd3fc, left faces #38bdf8, right faces #0ea5e9, ground #f0f9ff, warm accents #f59e0b / #f472b6; type in a clean geometric sans (Inter, Spline Sans, or system-ui) at 12–14px with #0f172a. Depth: each block casts a soft diffuse outer shadow — box-shadow: 16px 24px 40px rgba(0,0,0,.18) — placed so objects read as floating above the ground; no inner shadows, no bevels, no perspective foreshortening. Layout: assemble a modular mini-scene (a tiny room, city block, or device cluster) where block position implies hierarchy; keep surfaces flat-shaded with one color per face or a single-axis gradient. Do not drift into claymorphism: the decisive difference is sharp geometry with outer cast shadows, not rounded inflated blobs with inner shadows. Preserve 4.5:1 text contrast on every colored face, visible focus states on any interactive block, and honor prefers-reduced-motion by disabling any isometric float/bob animation.",
-      "ko": "3D（Isometric 3D）。：， 30° （CSS rotateX(54.7356deg) rotateZ(45deg)， 120° ），；，。： #7dd3fc、 #38bdf8、 #0ea5e9、 #f0f9ff、 #f59e0b / #f472b6；（Inter、Spline Sans system-ui），12–14px，#0f172a。：——box-shadow: 16px 24px 40px rgba(0,0,0,.18)——；、、。：（、），；，。： + ， + 。 4.5:1，， prefers-reduced-motion，。"
+      "ko": "Create the surface using Isometric 3D. Defining signals: axonometric projection with 30° left/right axes (rotateX(54.7356deg) rotateZ(45deg) in CSS or drawn as 120° axis spacing), zero perspective convergence; forms built from clean cubes and extruded rectangles with crisp edges. Palette: sky top faces #7dd3fc, left faces #38bdf8, right faces #0ea5e9, ground #f0f9ff, warm accents #f59e0b / #f472b6; type in a clean geometric sans (Inter, Spline Sans, or system-ui) at 12–14px with #0f172a. Depth: each block casts a soft diffuse outer shadow — box-shadow: 16px 24px 40px rgba(0,0,0,.18) — placed so objects read as floating above the ground; no inner shadows, no bevels, no perspective foreshortening. Layout: assemble a modular mini-scene (a tiny room, city block, or device cluster) where block position implies hierarchy; keep surfaces flat-shaded with one color per face or a single-axis gradient. Do not drift into claymorphism: the decisive difference is sharp geometry with outer cast shadows, not rounded inflated blobs with inner shadows. Preserve 4.5:1 text contrast on every colored face, visible focus states on any interactive block, and honor prefers-reduced-motion by disabling any isometric float/bob animation."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Isometric scenes are read as diagrams, but text placed on angled faces can fail contrast and orientation tests. Keep functional text on the top (horizontal) face or on a flat overlay, and verify 4.5:1 against each face color.\n\nThe style relies on depth cues from shadow and position; in forced-colors mode or high-contrast themes those cues vanish — add borders or labels so the hierarchy does not collapse.\n\nMotion should be decorative only: any bobbing, parallax, or camera drift must respect prefers-reduced-motion and never be required to understand the interface state.",
+      "ko": "Isometric scenes are read as diagrams, but text placed on angled faces can fail contrast and orientation tests. Keep functional text on the top (horizontal) face or on a flat overlay, and verify 4.5:1 against each face color.\n\nThe style relies on depth cues from shadow and position; in forced-colors mode or high-contrast themes those cues vanish — add borders or labels so the hierarchy does not collapse.\n\nMotion should be decorative only: any bobbing, parallax, or camera drift must respect prefers-reduced-motion and never be required to understand the interface state."
+    },
     "origin": {
       "en": "Isometric projection was formalized as a technical-drawing method in 1822 by the British engineer William Farish, and it became the standard for mechanical and architectural illustration because it preserves true proportions without perspective distortion. Video-game designers adopted it independently to show environment and action at once, from SimCity (1989) and Age of Empires (1997) to mobile titles like Monument Valley (2014). In UI and web design the 'isometric flat' illustration wave rose around 2017–2019 as landing pages and onboarding flows used block worlds to make complex products feel tangible.",
-      "ko": "William Farish 1822 ，、。，，《》（1989）、《》（1997）《》（2014）。 UI ，「」 2017–2019 ，。"
+      "ko": "Isometric projection was formalized as a technical-drawing method in 1822 by the British engineer William Farish, and it became the standard for mechanical and architectural illustration because it preserves true proportions without perspective distortion. Video-game designers adopted it independently to show environment and action at once, from SimCity (1989) and Age of Empires (1997) to mobile titles like Monument Valley (2014). In UI and web design the 'isometric flat' illustration wave rose around 2017–2019 as landing pages and onboarding flows used block worlds to make complex products feel tangible."
     },
     "meta": {}
   },
@@ -5764,11 +6404,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Line Art renders an interface as a contour drawing: every control, container, and icon is built from a single-weight outline with no solid fill, like a technical illustration or monoline icon set blown up to UI scale. The line itself is the visual subject — not a border around a colored block, not decoration on top of a flat layout. It reads as precise, light, and almost schematic, as though the product were still a clean ink drawing on tracing paper.",
-      "ko": "：、，， UI 。 —— ，。、、，。"
+      "ko": "Line Art renders an interface as a contour drawing: every control, container, and icon is built from a single-weight outline with no solid fill, like a technical illustration or monoline icon set blown up to UI scale. The line itself is the visual subject — not a border around a colored block, not decoration on top of a flat layout. It reads as precise, light, and almost schematic, as though the product were still a clean ink drawing on tracing paper."
     },
     "scope": {
       "en": "Scope: This entry covers line-art UI as a finished visual style — uniform-stroke outlines, monoline icons, and wireframe-like surfaces where the contour is the form. It does not cover low-fidelity wireframes (which are placeholders, not a final look) nor line illustrations used only as decoration; here the entire interface must read as a single contour drawing.",
-      "ko": "： UI —— 、、，。（，），；，。"
+      "ko": "Scope: This entry covers line-art UI as a finished visual style — uniform-stroke outlines, monoline icons, and wireframe-like surfaces where the contour is the form. It does not cover low-fidelity wireframes (which are placeholders, not a final look) nor line illustrations used only as decoration; here the entire interface must read as a single contour drawing."
     },
     "aliases": {
       "en": [
@@ -5797,7 +6437,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "All structure is drawn with one consistent stroke weight — typically 1.5–2px — whether it is a card edge, button rim, icon, or divider.",
-          "ko": "—— 1.5–2px —— 、、。"
+          "ko": "All structure is drawn with one consistent stroke weight — typically 1.5–2px — whether it is a card edge, button rim, icon, or divider."
         }
       },
       {
@@ -5823,7 +6463,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "A near-black line color such as #1a1a1a or #222223 on an off-white ground such as #fafafa or #ffffff; optional single accent is still a line, not a fill.",
-          "ko": "， #1a1a1a #222223， #fafafa #ffffff ；，，。"
+          "ko": "A near-black line color such as #1a1a1a or #222223 on an off-white ground such as #fafafa or #ffffff; optional single accent is still a line, not a fill."
         }
       },
       {
@@ -5836,7 +6476,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Clean vector paths, consistent corner radii (0–4px), exact alignment, and equal gaps — the feeling of a draftsperson's ink drawing rather than a sketch.",
-          "ko": "、（0–4px）、、 —— ，。"
+          "ko": "Clean vector paths, consistent corner radii (0–4px), exact alignment, and equal gaps — the feeling of a draftsperson's ink drawing rather than a sketch."
         }
       },
       {
@@ -5862,7 +6502,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "A plain geometric sans in regular weight, small sizes (12–14px), with no filled badges or heavy labels competing with the contour network.",
-          "ko": "，， 12–14px，。"
+          "ko": "A plain geometric sans in regular weight, small sizes (12–14px), with no filled badges or heavy labels competing with the contour network."
         }
       },
       {
@@ -5879,15 +6519,31 @@ export const STYLES: UIStyle[] = [
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "minimalism",
+        "name": "Minimalism",
+        "because": {
+          "en": "This is Line Art because the visual subject is the drawn contour itself — every element is a single-weight outline with empty interior, like a technical illustration.",
+          "ko": "This is Line Art because the visual subject is the drawn contour itself — every element is a single-weight outline with empty interior, like a technical illustration."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Minimalism if the outlines were replaced by solid color blocks, generous whitespace, and flat fills — the form would come from absence and color, not from drawn lines.",
+          "ko": "It would become Minimalism if the outlines were replaced by solid color blocks, generous whitespace, and flat fills — the form would come from absence and color, not from drawn lines."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the interface as Line Art. Defining signals: every element is rendered as a single-weight contour line, typically 1.5px solid #1a1a1a on a #fafafa or #ffffff ground, with no solid fills; buttons, cards, and icons are hollow shapes whose boundaries are the form. Use a clean geometric sans such as Inter or SF Pro at 12–14px regular weight; keep labels sparse so the line network stays the visual subject. Interactive states should change the line (dashed focus outline 1.5px dashed #1a1a1a, pressed state scale 0.96 or a short dash animation) rather than adding background fills. Progress bars and sliders are simple horizontal lines with a circular thumb drawn in the same stroke; use SVG stroke-only icons (stroke-width: 1.5, fill: none, stroke-linecap round). Corner radii stay subtle at 0–4px; shadows are absent. Do not drift into Minimalism — the decisive difference is that Line Art builds the interface from drawn outlines, while Minimalism builds it from colored blocks and whitespace. Preserve a minimum 3:1 contrast for the lines themselves and 4.5:1 for any text, keep touch targets at least 44×44px even when the visible outline is smaller, and provide non-color state cues such as dashed outlines or scale changes.",
-      "ko": "（Line Art / Monoline）。：， 1.5px solid #1a1a1a #fafafa #ffffff ，；、，。， Inter SF Pro，12–14px ；，。（ 1.5px dashed #1a1a1a ， scale(0.96) ），。thumb； SVG （stroke-width: 1.5, fill: none, stroke-linecap round）。 0–4px；。；，。 3:1 ， 4.5:1， 44×44px，、。"
+      "ko": "Create the interface as Line Art. Defining signals: every element is rendered as a single-weight contour line, typically 1.5px solid #1a1a1a on a #fafafa or #ffffff ground, with no solid fills; buttons, cards, and icons are hollow shapes whose boundaries are the form. Use a clean geometric sans such as Inter or SF Pro at 12–14px regular weight; keep labels sparse so the line network stays the visual subject. Interactive states should change the line (dashed focus outline 1.5px dashed #1a1a1a, pressed state scale 0.96 or a short dash animation) rather than adding background fills. Progress bars and sliders are simple horizontal lines with a circular thumb drawn in the same stroke; use SVG stroke-only icons (stroke-width: 1.5, fill: none, stroke-linecap round). Corner radii stay subtle at 0–4px; shadows are absent. Do not drift into Minimalism — the decisive difference is that Line Art builds the interface from drawn outlines, while Minimalism builds it from colored blocks and whitespace. Preserve a minimum 3:1 contrast for the lines themselves and 4.5:1 for any text, keep touch targets at least 44×44px even when the visible outline is smaller, and provide non-color state cues such as dashed outlines or scale changes."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Thin contour lines can disappear for users with low vision or on low-contrast screens; keep the stroke at least 1.5px and measure it against the ground at the smallest supported viewport.\n\nLine-only controls can look inert because there is no filled button shape to suggest clickability; reinforce affordance with hover/focus state changes (dashed outline, scale, or arrow cursor) and ensure keyboard focus is highly visible.\n\nSmall outlined icons and tiny labels are hard to parse at a glance; pair the line network with adequate spacing and avoid relying on line color alone to communicate state — use dashed, dotted, or thickened strokes instead.",
+      "ko": "Thin contour lines can disappear for users with low vision or on low-contrast screens; keep the stroke at least 1.5px and measure it against the ground at the smallest supported viewport.\n\nLine-only controls can look inert because there is no filled button shape to suggest clickability; reinforce affordance with hover/focus state changes (dashed outline, scale, or arrow cursor) and ensure keyboard focus is highly visible.\n\nSmall outlined icons and tiny labels are hard to parse at a glance; pair the line network with adequate spacing and avoid relying on line color alone to communicate state — use dashed, dotted, or thickened strokes instead."
+    },
     "origin": {
       "en": "Line art is an ancient graphic technique — technical illustration, engraving, and engineering drafting all rely on contour alone — but its modern UI form grew from two visible revivals: the Noun Project's monoline icon library, which popularized single-weight pictograms around 2010, and iOS 7's ultra-thin outline icon set in 2013, which proved an entire interface could read as a family of strokes. Since the mid-2010s the look has appeared in landing pages, dashboards, and illustration-led product identities as a deliberate antidote to heavy flat fills.",
-      "ko": "—— 、、 —— UI ：Noun Project 2010 ， 2013 iOS 7 。2010 ，，、。"
+      "ko": "Line art is an ancient graphic technique — technical illustration, engraving, and engineering drafting all rely on contour alone — but its modern UI form grew from two visible revivals: the Noun Project's monoline icon library, which popularized single-weight pictograms around 2010, and iOS 7's ultra-thin outline icon set in 2013, which proved an entire interface could read as a family of strokes. Since the mid-2010s the look has appeared in landing pages, dashboards, and illustration-led product identities as a deliberate antidote to heavy flat fills."
     },
     "meta": {}
   },
@@ -5899,11 +6555,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Hand-drawn UI keeps the evidence of a human hand on the screen: lines wobble a pixel or two off a perfect vector, color blocks look marker-filled with uneven edges, and typography leans toward handwriting or a sans softened by slight rotation. It signals low-fi honesty, playfulness, or a deliberate escape from polished SaaS sameness. The look lives in sketchy wireframes, indie app onboarding, and landing pages that want to feel like a notebook rather than a dashboard.",
-      "ko": "UI 「」： 1–2px，，，、。、， polished SaaS 。 sketchy 、 App ，。"
+      "ko": "Hand-drawn UI keeps the evidence of a human hand on the screen: lines wobble a pixel or two off a perfect vector, color blocks look marker-filled with uneven edges, and typography leans toward handwriting or a sans softened by slight rotation. It signals low-fi honesty, playfulness, or a deliberate escape from polished SaaS sameness. The look lives in sketchy wireframes, indie app onboarding, and landing pages that want to feel like a notebook rather than a dashboard."
     },
     "scope": {
       "en": "Scope: This entry covers the intentional hand-drawn / doodle visual treatment of finished UI surfaces. It is not about early-stage paper sketches or bad drawing; it is a rendered style that imitates markers, pencils, and rough ink. Sketchy wireframes (e.g. Balsamiq's default output) are a close sibling but are usually production artifacts for communication rather than shipped interface skin.",
-      "ko": "： UI / 。，；、。Sketchy （ Balsamiq ），，。"
+      "ko": "Scope: This entry covers the intentional hand-drawn / doodle visual treatment of finished UI surfaces. It is not about early-stage paper sketches or bad drawing; it is a rendered style that imitates markers, pencils, and rough ink. Sketchy wireframes (e.g. Balsamiq's default output) are a close sibling but are usually production artifacts for communication rather than shipped interface skin."
     },
     "aliases": {
       "en": [
@@ -5934,7 +6590,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Borders and dividers visibly waver 1–3px away from a straight vector path; corners are rounded but slightly lopsided, and line endpoints often miss by a hair.",
-          "ko": "1–3px；，。"
+          "ko": "Borders and dividers visibly waver 1–3px away from a straight vector path; corners are rounded but slightly lopsided, and line endpoints often miss by a hair."
         }
       },
       {
@@ -5973,7 +6629,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Text uses a handwriting or soft marker-style typeface, or a sans manually skewed and jittered so letters sit on a near-but-not-quite straight baseline.",
-          "ko": "，、，「」。"
+          "ko": "Text uses a handwriting or soft marker-style typeface, or a sans manually skewed and jittered so letters sit on a near-but-not-quite straight baseline."
         }
       },
       {
@@ -5986,7 +6642,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Elements sit a few pixels off a strict grid; small boxes tilt ±1–2deg, creating the casual feel of items taped to a sketchbook page.",
-          "ko": "； ±1–2deg，。"
+          "ko": "Elements sit a few pixels off a strict grid; small boxes tilt ±1–2deg, creating the casual feel of items taped to a sketchbook page."
         }
       },
       {
@@ -5999,7 +6655,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Classically a paper-white or cream ground plus 2–4 marker colors such as #F15A4A red, #FBB03B yellow, #39B54A green, and #29ABE2 blue; black ink at #2B2B2B.",
-          "ko": "2–4 ： #F15A4A、 #FBB03B、 #39B54A、 #29ABE2； #2B2B2B。"
+          "ko": "Classically a paper-white or cream ground plus 2–4 marker colors such as #F15A4A red, #FBB03B yellow, #39B54A green, and #29ABE2 blue; black ink at #2B2B2B."
         }
       },
       {
@@ -6025,19 +6681,35 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Crisp 1px anti-aliased lines, perfect Bézier curves, and exact alignment remove the human trace — that is the doorway to flat design or Line Art.",
-          "ko": "1px 、 Bézier —— Line Art 。"
+          "ko": "Crisp 1px anti-aliased lines, perfect Bézier curves, and exact alignment remove the human trace — that is the doorway to flat design or Line Art."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "line-art",
+        "name": "Line Art",
+        "because": {
+          "en": "This is hand-drawn because the strokes visibly wobble, fills are organic and uneven, and the whole surface carries human imperfection — any line-like elements are rough, weighted, and often broken.",
+          "ko": "This is hand-drawn because the strokes visibly wobble, fills are organic and uneven, and the whole surface carries human imperfection — any line-like elements are rough, weighted, and often broken."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Line Art if every stroke were cleaned into a precise single-weight contour with no fill, no texture, and no wobble.",
+          "ko": "It would become Line Art if every stroke were cleaned into a precise single-weight contour with no fill, no texture, and no wobble."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface using a Hand-drawn / Doodle style. Defining signals: wobbly strokes that visibly waver 1–3px off a perfect path; marker or pencil texture with paper grain and subtle opacity variation; organic color blocks that overshoot their outlines like real marker fills; loose handwriting-flavored typography. Use a warm off-white paper ground such as #f7f4ed with marker accents #F15A4A, #FBB03B, #39B54A, #29ABE2, and black ink #2B2B2B. Borders should be 2–3px solid #2B2B2B with intentionally uneven radii (e.g. border-radius: 10px 12px 9px 13px). Add texture through an SVG feTurbulence displacement filter on strokes or a subtle noise overlay. Buttons and cards can tilt ±0.8–1.5deg and carry a soft offset shadow: box-shadow: 2px 3px 0 rgba(0,0,0,.08). Use a handwriting typeface such as Caveat or Patrick Hand for headings, but keep body text in a clean sans (system-ui) at 15–16px to preserve readability. Do not drift into Line Art; the decisive difference is that hand-drawn keeps fills, texture, and wobble, while Line Art is a precise contour with no fill. Preserve 4.5:1 text contrast even over textured fills, visible focus states independent of the doodle border, and reduced-motion support.",
-      "ko": "（Hand-drawn / Doodle）。：、 1–3px；，；；、。 #f7f4ed， #F15A4A、#FBB03B、#39B54A、#29ABE2， #2B2B2B。 2–3px #2B2B2B，（ border-radius: 10px 12px 9px 13px）。 SVG feTurbulence 。 ±0.8–1.5deg，：box-shadow: 2px 3px 0 rgba(0,0,0,.08)。 Caveat Patrick Hand， 15–16px （system-ui）。 Line Art；、， Line Art 。 4.5:1，， reduced-motion。"
+      "ko": "Create the surface using a Hand-drawn / Doodle style. Defining signals: wobbly strokes that visibly waver 1–3px off a perfect path; marker or pencil texture with paper grain and subtle opacity variation; organic color blocks that overshoot their outlines like real marker fills; loose handwriting-flavored typography. Use a warm off-white paper ground such as #f7f4ed with marker accents #F15A4A, #FBB03B, #39B54A, #29ABE2, and black ink #2B2B2B. Borders should be 2–3px solid #2B2B2B with intentionally uneven radii (e.g. border-radius: 10px 12px 9px 13px). Add texture through an SVG feTurbulence displacement filter on strokes or a subtle noise overlay. Buttons and cards can tilt ±0.8–1.5deg and carry a soft offset shadow: box-shadow: 2px 3px 0 rgba(0,0,0,.08). Use a handwriting typeface such as Caveat or Patrick Hand for headings, but keep body text in a clean sans (system-ui) at 15–16px to preserve readability. Do not drift into Line Art; the decisive difference is that hand-drawn keeps fills, texture, and wobble, while Line Art is a precise contour with no fill. Preserve 4.5:1 text contrast even over textured fills, visible focus states independent of the doodle border, and reduced-motion support."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Handwriting fonts and wobbly strokes reduce legibility for some readers; reserve the loose type for headings and short labels, and keep body copy in a clean sans at 15–16px.\n\nTextured fills and marker colors can drop contrast unexpectedly; verify 4.5:1 against the lightest and darkest regions of each textured block, and never rely on roughness alone to indicate state — pair it with color, icon, or label changes.\n\nImperfect alignment must not break logical reading order or touch targets; keep buttons large enough (at least 44×44px) and maintain a visible, non-decorative focus indicator.",
+      "ko": "Handwriting fonts and wobbly strokes reduce legibility for some readers; reserve the loose type for headings and short labels, and keep body copy in a clean sans at 15–16px.\n\nTextured fills and marker colors can drop contrast unexpectedly; verify 4.5:1 against the lightest and darkest regions of each textured block, and never rely on roughness alone to indicate state — pair it with color, icon, or label changes.\n\nImperfect alignment must not break logical reading order or touch targets; keep buttons large enough (at least 44×44px) and maintain a visible, non-decorative focus indicator."
+    },
     "origin": {
       "en": "The aesthetic is rooted in design-process artifacts: Balsamiq Mockups, launched by Giacomo 'Peldi' Giacobazzi in 2008, popularized the sketchy wireframe look as a deliberate low-fidelity communication tool. In the 2010s the sensibility migrated into production UI in playful indie apps and landing pages, and tools like Excalidraw (late 2010s onward) made hand-drawn diagrams a mainstream open-source convention. As a named visual style for shipped interfaces it remains more of a recurring trend than a single coined movement.",
-      "ko": "：Giacomo 'Peldi' Giacobazzi 2008 Balsamiq Mockups sketchy 。2010 ， App ；Excalidraw （2010 ）。，，。"
+      "ko": "The aesthetic is rooted in design-process artifacts: Balsamiq Mockups, launched by Giacomo 'Peldi' Giacobazzi in 2008, popularized the sketchy wireframe look as a deliberate low-fidelity communication tool. In the 2010s the sensibility migrated into production UI in playful indie apps and landing pages, and tools like Excalidraw (late 2010s onward) made hand-drawn diagrams a mainstream open-source convention. As a named visual style for shipped interfaces it remains more of a recurring trend than a single coined movement."
     },
     "meta": {}
   },
@@ -6049,11 +6721,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "Fantasy RPG UI draws its look from the inventory screens, spellbooks, and status panels of tabletop-to-computer role-playing games: parchment, weathered stone, tooled leather, and dark patinated metal form the surfaces; runic or blackletter-inflected type announces headings; red health and blue mana bars wrap the action in resource drama. The style treats the screen as a physical artifact from a medieval-fantasy world, not as a flat display. It crystallized in early CRPGs and was polished into a convention by the MMO era, then surfaced again in every indie dungeon crawler and gacha RPG.",
-      "ko": "RPG RPG 、：、、；；。，。 RPG ， MMO ， RPG 。"
+      "ko": "Fantasy RPG UI draws its look from the inventory screens, spellbooks, and status panels of tabletop-to-computer role-playing games: parchment, weathered stone, tooled leather, and dark patinated metal form the surfaces; runic or blackletter-inflected type announces headings; red health and blue mana bars wrap the action in resource drama. The style treats the screen as a physical artifact from a medieval-fantasy world, not as a flat display. It crystallized in early CRPGs and was polished into a convention by the MMO era, then surfaced again in every indie dungeon crawler and gacha RPG."
     },
     "scope": {
       "en": "Scope: This entry covers the high-fidelity, medieval-fantasy interface skin used in role-playing games — the materials, typography, and HUD grammar — not the Pixel Art branch that builds the same motifs from visible square pixels, nor the broader fantasy illustration style outside UI.",
-      "ko": "：、 —— 、 HUD —— ， UI 。"
+      "ko": "Scope: This entry covers the high-fidelity, medieval-fantasy interface skin used in role-playing games — the materials, typography, and HUD grammar — not the Pixel Art branch that builds the same motifs from visible square pixels, nor the broader fantasy illustration style outside UI."
     },
     "aliases": {
       "en": [
@@ -6084,7 +6756,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Backgrounds and panels mimic aged parchment (#e8dcc3), rough stone (#6b655c), or dark tooled leather (#4a3b2a) with subtle grain, stains, and stitched seams — the UI is treated as a physical prop.",
-          "ko": "（#e8dcc3）、（#6b655c）（#4a3b2a），、 —— UI 。"
+          "ko": "Backgrounds and panels mimic aged parchment (#e8dcc3), rough stone (#6b655c), or dark tooled leather (#4a3b2a) with subtle grain, stains, and stitched seams — the UI is treated as a physical prop."
         }
       },
       {
@@ -6097,7 +6769,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Edges are wrapped in bevelled brass, iron, or dark bronze frames with decorative corner studs, filigree, or rivets; borders use 3–6px raised gradients to read as cast metal rather than flat lines.",
-          "ko": "、，、； 3–6px ，。"
+          "ko": "Edges are wrapped in bevelled brass, iron, or dark bronze frames with decorative corner studs, filigree, or rivets; borders use 3–6px raised gradients to read as cast metal rather than flat lines."
         }
       },
       {
@@ -6123,7 +6795,7 @@ export const STYLES: UIStyle[] = [
         "facet": "imagery",
         "description": {
           "en": "Red health (#c9302c) and blue mana (#2b6ca3) bars sit inside metallic tracks, often with glossy liquid fills, segmented notches, and small icon badges — the HUD borrows the language of character sheets.",
-          "ko": "（#c9302c）（#2b6ca3），、 —— HUD 。"
+          "ko": "Red health (#c9302c) and blue mana (#2b6ca3) bars sit inside metallic tracks, often with glossy liquid fills, segmented notches, and small icon badges — the HUD borrows the language of character sheets."
         }
       },
       {
@@ -6162,19 +6834,35 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "Clean flat fills, zero borders, and system sans-serif type strip away the prop-like materiality and read as modern app design, not fantasy.",
-          "ko": "、， App ，。"
+          "ko": "Clean flat fills, zero borders, and system sans-serif type strip away the prop-like materiality and read as modern app design, not fantasy."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "pixel-art",
+        "name": "Pixel Art",
+        "because": {
+          "en": "This is Fantasy RPG UI because the interface is rendered as high-fidelity illustration — textured parchment, brushed metal, leather grain, and smooth rendered type — rather than as a deliberately limited set of square pixels.",
+          "ko": "This is Fantasy RPG UI because the interface is rendered as high-fidelity illustration — textured parchment, brushed metal, leather grain, and smooth rendered type — rather than as a deliberately limited set of square pixels."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Pixel Art if every texture were reduced to visible 8×8 or 16×16 square cells, the palette shrank to a few indexed colors, and edges became stair-stepped without anti-aliasing.",
+          "ko": "It would become Pixel Art if every texture were reduced to visible 8×8 or 16×16 square cells, the palette shrank to a few indexed colors, and edges became stair-stepped without anti-aliasing."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the interface as a Fantasy RPG UI. Defining signals: surfaces look like physical medieval props — aged parchment #e8dcc3 with subtle grain, rough stone #6b655c, or dark tooled leather #4a3b2a; edges are wrapped in ornate metal borders using beveled brass/iron gradients (#9c8c6c to #5d4f3a) with 3–6px thickness, corner studs, and inner highlights. Headings use runic/blackletter display type (Cinzel Decorative, Ringbearer, or UnifrakturMaguntia) at 22–30px with sharp serifs; keep body labels in a readable serif or condensed sans at 13–15px. HUD resource bars are the signature: red health #c9302c and blue mana #2b6ca3 fills inside metallic tracks (#3d3328 to #7a6a56), with glossy top highlights, segmented notches every 20–30px, and small icon badges. Add medieval ornaments — corner flourishes, wax seals, Celtic knot dividers — but keep them secondary. Lighting: soft drop-shadow 0 12px 28px rgba(0,0,0,.45), inner bevel inset 0 1px 0 rgba(255,255,255,.2), directional top-left highlights. Avoid flat minimal panels, system sans-serif type, and clean flat fills; they destroy the prop-like materiality. Ensure text contrast ≥4.5:1 over parchment and leather, pause pulsing bar animations under prefers-reduced-motion, and keep interactive focus rings visible.",
-      "ko": "RPG （Fantasy RPG UI）。： —— #e8dcc3 、 #6b655c， #4a3b2a；，/（#9c8c6c #5d4f3a）， 3–6px，。/（Cinzel Decorative、Ringbearer UnifrakturMaguntia），22–30px，； 13–15px 。HUD ： #c9302c #2b6ca3 （#3d3328 #7a6a56），， 20–30px ，。 —— 、、 —— 。： box-shadow: 0 12px 28px rgba(0,0,0,.45)， inset 0 1px 0 rgba(255,255,255,.2)，。、；。 ≥4.5:1，prefers-reduced-motion ，。"
+      "ko": "Create the interface as a Fantasy RPG UI. Defining signals: surfaces look like physical medieval props — aged parchment #e8dcc3 with subtle grain, rough stone #6b655c, or dark tooled leather #4a3b2a; edges are wrapped in ornate metal borders using beveled brass/iron gradients (#9c8c6c to #5d4f3a) with 3–6px thickness, corner studs, and inner highlights. Headings use runic/blackletter display type (Cinzel Decorative, Ringbearer, or UnifrakturMaguntia) at 22–30px with sharp serifs; keep body labels in a readable serif or condensed sans at 13–15px. HUD resource bars are the signature: red health #c9302c and blue mana #2b6ca3 fills inside metallic tracks (#3d3328 to #7a6a56), with glossy top highlights, segmented notches every 20–30px, and small icon badges. Add medieval ornaments — corner flourishes, wax seals, Celtic knot dividers — but keep them secondary. Lighting: soft drop-shadow 0 12px 28px rgba(0,0,0,.45), inner bevel inset 0 1px 0 rgba(255,255,255,.2), directional top-left highlights. Avoid flat minimal panels, system sans-serif type, and clean flat fills; they destroy the prop-like materiality. Ensure text contrast ≥4.5:1 over parchment and leather, pause pulsing bar animations under prefers-reduced-motion, and keep interactive focus rings visible."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "Ornate runic and blackletter typefaces are decorative: use them only for headings at 18px or larger, and set body labels, stats, and timers in a highly readable serif or sans so the interface remains scannable.\n\nParchment and leather textures can reduce contrast and make thin type hard to read; keep text over solid parchment #e8dcc3 at least #3a2e22, or place text on a semi-opaque dark scrim behind runic headers.\n\nGlowing HP/MP bars, pulsing highlights, and page-turn animations should pause under prefers-reduced-motion, and color alone must never encode status — add icons or labels to red/blue bars.",
+      "ko": "Ornate runic and blackletter typefaces are decorative: use them only for headings at 18px or larger, and set body labels, stats, and timers in a highly readable serif or sans so the interface remains scannable.\n\nParchment and leather textures can reduce contrast and make thin type hard to read; keep text over solid parchment #e8dcc3 at least #3a2e22, or place text on a semi-opaque dark scrim behind runic headers.\n\nGlowing HP/MP bars, pulsing highlights, and page-turn animations should pause under prefers-reduced-motion, and color alone must never encode status — add icons or labels to red/blue bars."
+    },
     "origin": {
       "en": "The visual grammar descends from tabletop role-playing games, above all Gary Gygax and Dave Arneson’s Dungeons & Dragons (1974, TSR), whose character sheets, spell cards, and DM screens established parchment, metal, and leather as the default fantasy props. Computer RPGs such as Richard Garriott’s Ultima (1981, Origin Systems) translated those props onto early screens, and Blizzard Entertainment’s Diablo (1996, developed by Blizzard North) and World of Warcraft (2004) polished the high-fidelity metal-and-parchment interface into a mass-market convention that indie dungeon crawlers and mobile gacha RPGs still imitate today.",
-      "ko": "， Gary Gygax Dave Arneson 《》（Dungeons & Dragons，1974 ，TSR），、 DM 、。Richard Garriott 《》（Ultima，1981 ，Origin Systems） RPG ；Blizzard Entertainment 《》（Diablo，1996 ， Blizzard North ）《》（World of Warcraft，2004 ）， RPG 。"
+      "ko": "The visual grammar descends from tabletop role-playing games, above all Gary Gygax and Dave Arneson’s Dungeons & Dragons (1974, TSR), whose character sheets, spell cards, and DM screens established parchment, metal, and leather as the default fantasy props. Computer RPGs such as Richard Garriott’s Ultima (1981, Origin Systems) translated those props onto early screens, and Blizzard Entertainment’s Diablo (1996, developed by Blizzard North) and World of Warcraft (2004) polished the high-fidelity metal-and-parchment interface into a mass-market convention that indie dungeon crawlers and mobile gacha RPGs still imitate today."
     },
     "meta": {}
   },
@@ -6186,11 +6874,11 @@ export const STYLES: UIStyle[] = [
     },
     "tagline": {
       "en": "LCARS is the 24th-century Starfleet computer interface: a black canvas covered in large, flat, rounded color blocks — orange, peach, amber, lavender, and red — that act as both labels and touch targets. Section headers bend in curved \"elbow\" or boomerang shapes, text is almost always uppercase sans-serif, and the whole thing reads as an illuminated console rather than a windowed desktop. It was created for Star Trek: The Next Generation in 1987 and remains the visual shorthand for friendly, accessible sci-fi ship controls.",
-      "ko": "LCARS 24 ：——、、、——。「」，，，。 1987 《：》，、。"
+      "ko": "LCARS is the 24th-century Starfleet computer interface: a black canvas covered in large, flat, rounded color blocks — orange, peach, amber, lavender, and red — that act as both labels and touch targets. Section headers bend in curved \"elbow\" or boomerang shapes, text is almost always uppercase sans-serif, and the whole thing reads as an illuminated console rather than a windowed desktop. It was created for Star Trek: The Next Generation in 1987 and remains the visual shorthand for friendly, accessible sci-fi ship controls."
     },
     "scope": {
       "en": "Scope: This entry covers the on-screen graphic language of LCARS as a visual style, not the fictional operating system or its in-universe rules. Touch-panel hardware and voice interfaces are part of the Star Trek prop world but are not the atlas signals here.",
-      "ko": "： LCARS ，。《》，。"
+      "ko": "Scope: This entry covers the on-screen graphic language of LCARS as a visual style, not the fictional operating system or its in-universe rules. Touch-panel hardware and voice interfaces are part of the Star Trek prop world but are not the atlas signals here."
     },
     "aliases": {
       "en": [
@@ -6219,7 +6907,7 @@ export const STYLES: UIStyle[] = [
         "facet": "surface",
         "description": {
           "en": "The entire interface sits on a near-black ground (#0b0b0b to #000000) so the colored blocks read as illuminated touch-panel surfaces rather than cards on a page.",
-          "ko": "（#0b0b0b #000000），，。"
+          "ko": "The entire interface sits on a near-black ground (#0b0b0b to #000000) so the colored blocks read as illuminated touch-panel surfaces rather than cards on a page."
         }
       },
       {
@@ -6232,7 +6920,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "UI elements are pill-like or lozenge-shaped rectangles with 12–20px corner radii on the short ends; small caps act as buttons, large caps act as section headers.",
-          "ko": "UI ， 12–20px；，。"
+          "ko": "UI elements are pill-like or lozenge-shaped rectangles with 12–20px corner radii on the short ends; small caps act as buttons, large caps act as section headers."
         }
       },
       {
@@ -6245,7 +6933,7 @@ export const STYLES: UIStyle[] = [
         "facet": "geometry",
         "description": {
           "en": "Section dividers and titles sit inside curved, boomerang, or L-shaped caps that bend around a panel corner, often with one rounded end and one straight or clipped edge.",
-          "ko": "、 L ，、，。"
+          "ko": "Section dividers and titles sit inside curved, boomerang, or L-shaped caps that bend around a panel corner, often with one rounded end and one straight or clipped edge."
         }
       },
       {
@@ -6258,7 +6946,7 @@ export const STYLES: UIStyle[] = [
         "facet": "color",
         "description": {
           "en": "Dominant blocks use saturated orange (#FF9900), peach (#FFCC99), amber (#FF9966), and lavender (#9999CC); red (#CC6666) and blue (#6699CC) appear as accents, all against black.",
-          "ko": "（#FF9900）、（#FFCC99）、（#FF9966）（#9999CC）；（#CC6666）（#6699CC），。"
+          "ko": "Dominant blocks use saturated orange (#FF9900), peach (#FFCC99), amber (#FF9966), and lavender (#9999CC); red (#CC6666) and blue (#6699CC) appear as accents, all against black."
         }
       },
       {
@@ -6271,7 +6959,7 @@ export const STYLES: UIStyle[] = [
         "facet": "typography",
         "description": {
           "en": "Text is set in a tight, medium-weight sans-serif, almost always uppercase, with generous tracking (0.06–0.12em) so labels read as instrument annotations.",
-          "ko": "、，， 0.06–0.12em，。"
+          "ko": "Text is set in a tight, medium-weight sans-serif, almost always uppercase, with generous tracking (0.06–0.12em) so labels read as instrument annotations."
         }
       },
       {
@@ -6284,7 +6972,7 @@ export const STYLES: UIStyle[] = [
         "facet": "layout",
         "description": {
           "en": "Controls are flat color swatches with no gradient, shadow, or bevel; the shape and color alone indicate the interactive area, as if pressing a lit touch panel.",
-          "ko": "flat ，、；，。"
+          "ko": "Controls are flat color swatches with no gradient, shadow, or bevel; the shape and color alone indicate the interactive area, as if pressing a lit touch panel."
         }
       },
       {
@@ -6297,19 +6985,35 @@ export const STYLES: UIStyle[] = [
         "facet": "depth",
         "description": {
           "en": "Monochrome green glow, CRT scanlines, terminal fixed-width typography, or faux 3D bevels belong to terminal-hacker and skeuomorphism; LCARS keeps the surface flat, warm, and blocky.",
-          "ko": "、CRT 、 3D Terminal Hacker ；LCARS 、、。"
+          "ko": "Monochrome green glow, CRT scanlines, terminal fixed-width typography, or faux 3D bevels belong to terminal-hacker and skeuomorphism; LCARS keeps the surface flat, warm, and blocky."
         }
       }
     ],
-    "confusedWith": [],
+    "confusedWith": [
+      {
+        "slug": "terminal-hacker",
+        "name": "Terminal Hacker",
+        "because": {
+          "en": "This is LCARS because the black ground serves a warm, blocky, touch-panel language — colored rounded lozenges, curved elbow headers, and uppercase labels that invite tapping rather than typing.",
+          "ko": "This is LCARS because the black ground serves a warm, blocky, touch-panel language — colored rounded lozenges, curved elbow headers, and uppercase labels that invite tapping rather than typing."
+        },
+        "wouldBecomeIf": {
+          "en": "It would become Terminal Hacker if the color blocks were replaced by a monochrome phosphor-green command-line grid, a blinking cursor, scanlines, and fixed-width glyphs.",
+          "ko": "It would become Terminal Hacker if the color blocks were replaced by a monochrome phosphor-green command-line grid, a blinking cursor, scanlines, and fixed-width glyphs."
+        }
+      }
+    ],
     "brief": {
       "en": "Create the surface in the spirit of LCARS. Start with a near-black canvas (#0b0b0b) as the only background. Build every interactive element as a flat, rounded lozenge: 12–20px border-radius on the short ends, no shadows, no gradients. Use the canonical palette — #FF9900 orange for primary actions and headers, #FFCC99 peach and #FF9966 amber for secondary blocks, #9999CC lavender for tertiary regions, #CC6666 red and #6699CC blue as small accents. Add curved \"elbow\" or boomerang headers by combining straight bars with pseudo-element caps (border-radius: 999px on one side). Set all labels in uppercase sans-serif with 0.06–0.12em letter-spacing and a medium weight; body text should stay minimal. Space blocks with generous black gaps (8–16px) so the colored shapes float on the canvas. Do not add scanlines, phosphor glow, terminal cursors, 3D bevels, or glass blur — those push the design toward Terminal Hacker or Aqua. For interactivity, states can invert text/background color or add a thin inner border; do not animate width/height on the lozenges. Maintain 4.5:1 contrast between the dark canvas and text, and ensure uppercase labels do not become unreadable at small sizes.",
-      "ko": "LCARS 。（#0b0b0b）。： 12–20px，。——#FF9900 ，#FFCC99 #FF9966 ，#9999CC ，#CC6666 #6699CC 。「」（ border-radius: 999px）。， 0.06–0.12em，；。 8–16px ，。、、、3D —— Terminal Hacker Aqua。，。 4.5:1 ，。"
+      "ko": "Create the surface in the spirit of LCARS. Start with a near-black canvas (#0b0b0b) as the only background. Build every interactive element as a flat, rounded lozenge: 12–20px border-radius on the short ends, no shadows, no gradients. Use the canonical palette — #FF9900 orange for primary actions and headers, #FFCC99 peach and #FF9966 amber for secondary blocks, #9999CC lavender for tertiary regions, #CC6666 red and #6699CC blue as small accents. Add curved \"elbow\" or boomerang headers by combining straight bars with pseudo-element caps (border-radius: 999px on one side). Set all labels in uppercase sans-serif with 0.06–0.12em letter-spacing and a medium weight; body text should stay minimal. Space blocks with generous black gaps (8–16px) so the colored shapes float on the canvas. Do not add scanlines, phosphor glow, terminal cursors, 3D bevels, or glass blur — those push the design toward Terminal Hacker or Aqua. For interactivity, states can invert text/background color or add a thin inner border; do not animate width/height on the lozenges. Maintain 4.5:1 contrast between the dark canvas and text, and ensure uppercase labels do not become unreadable at small sizes."
     },
-    "a11yAndMisuse": null,
+    "a11yAndMisuse": {
+      "en": "The black ground plus warm colored blocks can fail contrast if text sits directly on the lighter peach (#FFCC99) or lavender (#9999CC) fills; use near-black ink (#0b0b0b) on those blocks and keep white text off the yellow-orange swatches.\n\nAll-caps, tightly tracked labels reduce legibility for readers with dyslexia or low vision; reserve uppercase for short labels, keep sentence case for body copy, and use generous line-height.\n\nThe style's flatness means there are no default focus shadows — add a visible focus ring (e.g. a 2px #CC6666 outline with 2px offset) so keyboard users can see which lozenge is active.",
+      "ko": "The black ground plus warm colored blocks can fail contrast if text sits directly on the lighter peach (#FFCC99) or lavender (#9999CC) fills; use near-black ink (#0b0b0b) on those blocks and keep white text off the yellow-orange swatches.\n\nAll-caps, tightly tracked labels reduce legibility for readers with dyslexia or low vision; reserve uppercase for short labels, keep sentence case for body copy, and use generous line-height.\n\nThe style's flatness means there are no default focus shadows — add a visible focus ring (e.g. a 2px #CC6666 outline with 2px offset) so keyboard users can see which lozenge is active."
+    },
     "origin": {
       "en": "LCARS — Library Computer Access/Retrieval System — was designed by graphic designer Michael Okuda for Star Trek: The Next Generation, which premiered in 1987. Roddenberry wanted the Enterprise-D bridge to look more advanced than the original series, so Okuda devised the black-screen, colored-block touch-panel language for the ship's consoles. The look carried through Deep Space Nine and Voyager and became the defining visual shorthand for 24th-century Starfleet interfaces.",
-      "ko": "LCARS——/（Library Computer Access/Retrieval System）—— Michael Okuda 1987 《：》。Roddenberry -D ， Okuda ，。《》《》， 24 。"
+      "ko": "LCARS — Library Computer Access/Retrieval System — was designed by graphic designer Michael Okuda for Star Trek: The Next Generation, which premiered in 1987. Roddenberry wanted the Enterprise-D bridge to look more advanced than the original series, so Okuda devised the black-screen, colored-block touch-panel language for the ship's consoles. The look carried through Deep Space Nine and Voyager and became the defining visual shorthand for 24th-century Starfleet interfaces."
     },
     "meta": {}
   }
