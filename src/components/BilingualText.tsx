@@ -8,6 +8,7 @@ interface BilingualTextProps {
   className?: string;
   enClassName?: string;
   koClassName?: string;
+  style?: React.CSSProperties;
 }
 
 export const BilingualText: React.FC<BilingualTextProps> = ({
@@ -16,6 +17,7 @@ export const BilingualText: React.FC<BilingualTextProps> = ({
   className = '',
   enClassName = '',
   koClassName = '',
+  style,
 }) => {
   const { langMode } = useLanguage();
 
@@ -25,17 +27,17 @@ export const BilingualText: React.FC<BilingualTextProps> = ({
   const koText = text.ko || '';
 
   if (langMode === 'en') {
-    return <Tag className={`lang-en ${className} ${enClassName}`}>{enText}</Tag>;
+    return <Tag className={`lang-en ${className} ${enClassName}`} style={style}>{enText}</Tag>;
   }
 
   if (langMode === 'ko') {
-    return <Tag className={`lang-ko ${className} ${koClassName}`}>{koText || enText}</Tag>;
+    return <Tag className={`lang-ko ${className} ${koClassName}`} style={style}>{koText || enText}</Tag>;
   }
 
   return (
     <>
-      {enText && <Tag className={`lang-en ${className} ${enClassName}`}>{enText}</Tag>}
-      {koText && <Tag className={`lang-ko ${className} ${koClassName}`}>{koText}</Tag>}
+      {enText && <Tag className={`lang-en ${className} ${enClassName}`} style={style}>{enText}</Tag>}
+      {koText && <Tag className={`lang-ko ${className} ${koClassName}`} style={style}>{koText}</Tag>}
     </>
   );
 };

@@ -14,6 +14,19 @@ export const HomeView: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'web' | 'macos'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
+  // 단축키 '/' 포커스 처리
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        const searchInput = document.getElementById('search') as HTMLInputElement;
+        if (searchInput) searchInput.focus();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const getCopyKo = (key: string, param?: number) => {
     let str = getLocalizedString(UI_COPY[key] as any, 'ko');
     if (param !== undefined) str = str.replace('{n}', String(param));
