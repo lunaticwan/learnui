@@ -209,7 +209,7 @@
   ],
   "prompt": "Build a masonry layout (Pinterest-style): native CSS first — @supports (grid-template-rows: masonry) { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: masonry; } — with a CSS multi-column fallback (columns: 3; every card break-inside: avoid). Note the fallback orders items down each column, not across rows; if strict left-to-right order matters, use react-masonry-css instead. Reserve image aspect ratios so cards don't jump while loading.",
   "debugPrompt": "Debug my masonry layout (CSS columns fallback / grid-template-rows: masonry). Rule out: cards splitting across columns because break-inside: avoid is missing; item order reading down the first column when the design expects row-major; equal-height rows appearing because the browser lacks native masonry and there's no @supports fallback; the wall reshuffling as images load because width/height aren't reserved; margins on cards fighting the column-gap. The symptom:",
-  "description": "“The Pinterest grid where every card keeps its own height” is a masonry layout — each new item joins the shortest column, so cards pack like bricks with no row lines and a staggered bottom edge. Chinese UIs call it 瀑布流 (waterfall flow). CSS columns approximates it everywhere today; native masonry (Grid Lanes) shipped in Safari 26.",
+  "description": "“The Pinterest grid where every card keeps its own height” is a masonry layout — each new item joins the shortest column, so cards pack like bricks with no row lines and a staggered bottom edge. Also known as waterfall flow. CSS columns approximates it everywhere today; native masonry (Grid Lanes) shipped in Safari 26.",
   "parts": [
    {
     "id": "packed-column",

@@ -354,10 +354,10 @@ def convert_style(s):
         "meta": s.get("meta", {})
     }
 
-with open("tmp_entries.json", "r", encoding="utf-8") as f:
+with open("data/entries.json", "r", encoding="utf-8") as f:
     raw_entries = json.load(f)
 
-with open("tmp_styles.json", "r", encoding="utf-8") as f:
+with open("data/styles.json", "r", encoding="utf-8") as f:
     raw_styles = json.load(f)
 
 clean_entries = [convert_entry(e) for e in raw_entries]

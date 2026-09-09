@@ -9,18 +9,8 @@ export const Footer: React.FC = () => {
     <footer className="site-footer">
       <div className="wrap footer-in">
         <p>
-          <span className="fw-500">Learn UI Name</span> ·{' '}
+          <span className="fw-500">iM뱅크 Learn UI</span> ·{' '}
           <span>{getCopyKo('tagline')}</span>
-        </p>
-
-        <p className="foot-links">
-          <a href="https://github.com/joeseesun/learnui" rel="noopener" target="_blank">
-            GitHub
-          </a>
-          <span className="sep">·</span>
-          <span>
-            Original inspiration from <a href="https://namethatui.com/" rel="noopener" target="_blank">namethatui.com</a>
-          </span>
         </p>
 
         <p className="foot-src">
