@@ -5,14 +5,12 @@ import Fuse from 'fuse.js';
 import { ENTRIES } from '../data/entries';
 import { STYLES } from '../data/styles';
 import { UI_COPY } from '../data/uiCopy';
-import { useLanguage } from '../context/LanguageContext';
 import { getLocalizedString } from '../types/ui';
 
 interface SearchItem {
   id: string;
   type: 'component' | 'style';
   title: string;
-  titleZh: string;
   titleKo?: string;
   subtitle: string;
   url: string;
@@ -26,7 +24,6 @@ interface CommandPaletteProps {
 
 export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChange }) => {
   const navigate = useNavigate();
-  const { langMode } = useLanguage();
   const [query, setQuery] = useState('');
 
   useEffect(() => {
@@ -45,26 +42,21 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
 
     ENTRIES.forEach((e) => {
       const titleEn = e.name?.en || e.slug;
-      const titleZh = e.name?.zh || '';
       const titleKo = e.name?.ko || '';
-      const subtitle = e.tagline?.en || '';
+      const subtitle = e.tagline?.ko || e.tagline?.en || '';
       items.push({
         id: `entry-${e.slug}`,
         type: 'component',
         title: titleEn,
-        titleZh,
         titleKo,
         subtitle,
         url: `/${e.platform}/${e.slug}`,
         keywords: [
           titleEn,
-          titleZh,
           titleKo,
           ...(e.aka?.en || []),
-          ...(e.aka?.zh || []),
           ...(e.aka?.ko || []),
           ...(e.fuzzy?.en || []),
-          ...(e.fuzzy?.zh || []),
           ...(e.fuzzy?.ko || []),
         ],
       });
@@ -72,23 +64,19 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
 
     STYLES.forEach((s) => {
       const titleEn = s.name?.en || s.slug;
-      const titleZh = s.name?.zh || '';
       const titleKo = s.name?.ko || '';
-      const subtitle = s.tagline?.en || '';
+      const subtitle = s.tagline?.ko || s.tagline?.en || '';
       items.push({
         id: `style-${s.slug}`,
         type: 'style',
         title: titleEn,
-        titleZh,
         titleKo,
         subtitle,
         url: `/styles/${s.slug}`,
         keywords: [
           titleEn,
-          titleZh,
           titleKo,
           ...(s.aliases?.en || []),
-          ...(s.aliases?.zh || []),
           ...(s.aliases?.ko || []),
         ],
       });
@@ -99,7 +87,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
 
   const fuse = useMemo(() => {
     return new Fuse(searchItems, {
-      keys: ['title', 'titleZh', 'titleKo', 'subtitle', 'keywords'],
+      keys: ['title', 'titleKo', 'subtitle', 'keywords'],
       threshold: 0.35,
     });
   }, [searchItems]);
@@ -110,12 +98,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
   }, [query, searchItems, fuse]);
 
   if (!open) return null;
-
-  const emptyText = langMode === 'ko'
-    ? '검색 결과가 없습니다.'
-    : langMode === 'zh'
-    ? '未找到相关结果。'
-    : 'No results found.';
 
   return (
     <div
@@ -157,7 +139,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
             <Command.Input
               value={query}
               onValueChange={setQuery}
-              placeholder={getLocalizedString(UI_COPY['searchPlaceholder'] as any, langMode === 'bilingual' ? 'en' : langMode) || 'Search...'}
+              placeholder={getLocalizedString(UI_COPY['searchPlaceholder'] as any, 'ko') || '검색...'}
               autoFocus
               style={{
                 width: '100%',
@@ -187,7 +169,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
                 fontSize: '14px',
               }}
             >
-              {emptyText}
+              검색 결과가 없습니다.
             </Command.Empty>
 
             {filteredItems.map((item) => (
@@ -211,11 +193,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
                 <div>
                   <div style={{ fontWeight: 500, fontSize: '14px', color: '#0a0a0a' }}>
                     {item.title}{' '}
-                    {langMode === 'ko' && item.titleKo ? (
+                    {item.titleKo && (
                       <span style={{ color: '#737373', fontWeight: 400, marginLeft: '6px' }}>{item.titleKo}</span>
-                    ) : item.titleZh ? (
-                      <span style={{ color: '#737373', fontWeight: 400, marginLeft: '6px' }}>{item.titleZh}</span>
-                    ) : null}
+                    )}
                   </div>
                   {item.subtitle && (
                     <div style={{ fontSize: '12px', color: '#737373', marginTop: '2px' }}>

@@ -2,513 +2,409 @@ import { TranslateTableItem } from "../types/ui";
 
 export const TRANSLATE_TABLE: TranslateTableItem[] = [
   {
-    "thing": {
-      "en": "Alert",
-      "zh": "提醒"
-    },
-    "appkit": "NSAlert",
-    "swiftui": ".alert(…) or AlertScene"
+    nameEn: "Alert / Dialog",
+    nameKo: "알림창 / 대화상자",
+    ios: "Alert (.alert / UIAlertController)",
+    android: "AlertDialog (AlertDialog)",
+    slug: "alert"
   },
   {
-    "thing": {
-      "en": "Alternating row backgrounds",
-      "zh": "交替行背景色"
-    },
-    "appkit": "NSTableView.usesAlternatingRowBackgroundColors",
-    "swiftui": ".alternatingRowBackgrounds(_:)"
+    nameEn: "Alternating Row Backgrounds",
+    nameKo: "교차 행 배경색",
+    ios: "List (.alternatingRowBackgrounds)",
+    android: "LazyColumn (Custom modifier)",
+    slug: "table"
   },
   {
-    "thing": {
-      "en": "App menu bar",
-      "zh": "应用菜单栏"
-    },
-    "appkit": "NSApplication.mainMenu",
-    "swiftui": ".commands { … }"
+    nameEn: "App Menu Bar",
+    nameKo: "앱 메뉴 바",
+    ios: "MenuBarExtra (.commands)",
+    android: "TopAppBar / Menu",
+    slug: "menu-bar"
   },
   {
-    "thing": {
-      "en": "Button",
-      "zh": "按钮"
-    },
-    "appkit": "NSButton",
-    "swiftui": "Button"
+    nameEn: "Button",
+    nameKo: "버튼",
+    ios: "Button (UIButton)",
+    android: "Button (MaterialButton)",
+    slug: "button"
   },
   {
-    "thing": {
-      "en": "Checkbox",
-      "zh": "复选框"
-    },
-    "appkit": "NSButton with switch type",
-    "swiftui": "Toggle + .toggleStyle(.checkbox)"
+    nameEn: "Checkbox",
+    nameKo: "체크박스",
+    ios: "Toggle (.toggleStyle(.checkbox))",
+    android: "Checkbox (Checkbox)",
+    slug: "switch-checkbox-radio"
   },
   {
-    "thing": {
-      "en": "Color well / color picker",
-      "zh": "颜色井 / 取色器"
-    },
-    "appkit": "NSColorWell + NSColorPanel",
-    "swiftui": "ColorPicker"
+    nameEn: "Color Picker / Color Well",
+    nameKo: "색상 선택기",
+    ios: "ColorPicker (NSColorWell)",
+    android: "ColorPicker (Material Color Picker)",
+    slug: "color-well"
   },
   {
-    "thing": {
-      "en": "Command group",
-      "zh": "命令组"
-    },
-    "appkit": "inserted NSMenuItems",
-    "swiftui": "CommandGroup"
+    nameEn: "Confirmation Dialog / Action Sheet",
+    nameKo: "확인 대화상자 / 액션 시트",
+    ios: "ConfirmationDialog (.confirmationDialog)",
+    android: "ModalBottomSheet / AlertDialog",
+    slug: "dialog-drawer-sheet"
   },
   {
-    "thing": {
-      "en": "Confirmation dialog",
-      "zh": "确认对话框"
-    },
-    "appkit": "NSAlert",
-    "swiftui": ".confirmationDialog(…)"
+    nameEn: "Context Menu",
+    nameKo: "컨텍스트 메뉴 (우클릭 / 롱프레스)",
+    ios: "ContextMenu (.contextMenu)",
+    android: "DropdownMenu / Contextual Action Bar",
+    slug: "context-menu"
   },
   {
-    "thing": {
-      "en": "Context menu",
-      "zh": "上下文菜单（右键菜单）"
-    },
-    "appkit": "NSView.menu / NSMenu",
-    "swiftui": ".contextMenu { … }"
+    nameEn: "Date Picker",
+    nameKo: "날짜 선택기",
+    ios: "DatePicker (UIDatePicker)",
+    android: "DatePicker (DatePickerDialog)",
+    slug: "date-picker"
   },
   {
-    "thing": {
-      "en": "Date picker",
-      "zh": "日期选择器"
-    },
-    "appkit": "NSDatePicker",
-    "swiftui": "DatePicker"
+    nameEn: "Disclosure Group / Accordion",
+    nameKo: "아코디언 / 접기-펼치기",
+    ios: "DisclosureGroup (DisclosureGroup)",
+    android: "ExpandableCard / ListItem",
+    slug: "accordion"
   },
   {
-    "thing": {
-      "en": "Dialog icon",
-      "zh": "对话框图标"
-    },
-    "appkit": "NSAlert.icon",
-    "swiftui": ".dialogIcon(_:)"
+    nameEn: "Inspector",
+    nameKo: "인스펙터 (속성 창)",
+    ios: "Inspector (.inspector)",
+    android: "NavigationDrawer / SidePanel",
+    slug: "inspector"
   },
   {
-    "thing": {
-      "en": "Disclosure control",
-      "zh": "披露控件"
-    },
-    "appkit": "NSButton.BezelStyle.disclosure / NSOutlineView",
-    "swiftui": "DisclosureGroup"
+    nameEn: "Navigation Stack / Router",
+    nameKo: "내비게이션 스택 (화면 전환)",
+    ios: "NavigationStack (UINavigationController)",
+    android: "NavHost / FragmentManager",
+    slug: "navigation"
   },
   {
-    "thing": {
-      "en": "Inspector",
-      "zh": "检查器"
-    },
-    "appkit": "NSSplitViewItem.Behavior.inspector / NSInspectorBar / NSPanel",
-    "swiftui": ".inspector(…)",
-    "note": {
-      "en": "AppKit uses several context-dependent counterparts"
-    }
+    nameEn: "Don't Show Again Checkbox",
+    nameKo: "다시 보지 않기 체크박스",
+    ios: "DialogSuppressionToggle",
+    android: "Checkbox in AlertDialog",
+    slug: "checkbox"
   },
   {
-    "thing": {
-      "en": "Navigation stack (approximate)",
-      "zh": "导航栈（近似对应）"
-    },
-    "appkit": "NSPageController",
-    "swiftui": "NavigationStack",
-    "note": {
-      "en": "No direct AppKit equivalent"
-    }
+    nameEn: "Gauge / Level Indicator",
+    nameKo: "게이지 / 레벨 표시기",
+    ios: "Gauge (Gauge)",
+    android: "LinearProgressIndicator / CircularProgressIndicator",
+    slug: "level-indicator"
   },
   {
-    "thing": {
-      "en": "“Don’t show again” checkbox",
-      "zh": "“不再显示”复选框"
-    },
-    "appkit": "NSAlert.showsSuppressionButton",
-    "swiftui": ".dialogSuppressionToggle(…)"
+    nameEn: "Help Button / Link",
+    nameKo: "도움말 버튼 / 링크",
+    ios: "HelpLink (.help)",
+    android: "IconButton / Tooltip",
+    slug: "help"
   },
   {
-    "thing": {
-      "en": "Gauge / level indicator",
-      "zh": "仪表 / 电平指示器"
-    },
-    "appkit": "NSLevelIndicator",
-    "swiftui": "Gauge"
+    nameEn: "List",
+    nameKo: "리스트 / 목록",
+    ios: "List (UITableView)",
+    android: "LazyColumn (RecyclerView)",
+    slug: "list"
   },
   {
-    "thing": {
-      "en": "Help button/link",
-      "zh": "帮助按钮 / 帮助链接"
-    },
-    "appkit": "NSHelpManager + NSButton",
-    "swiftui": "HelpLink"
+    nameEn: "Menu",
+    nameKo: "메뉴",
+    ios: "Menu (UIMenu)",
+    android: "DropdownMenu (Menu)",
+    slug: "menu"
   },
   {
-    "thing": {
-      "en": "Hierarchical table row",
-      "zh": "层级表格行"
-    },
-    "appkit": "NSOutlineView row",
-    "swiftui": "DisclosureTableRow"
+    nameEn: "Menu Bar Extra / Status Item",
+    nameKo: "메뉴 바 익스트라 (상태 아이콘)",
+    ios: "MenuBarExtra (NSStatusItem)",
+    android: "Foreground Service Notification",
+    slug: "menu-bar-extra"
   },
   {
-    "thing": {
-      "en": "List",
-      "zh": "列表"
-    },
-    "appkit": "NSTableView",
-    "swiftui": "List"
+    nameEn: "Keyboard Shortcut",
+    nameKo: "키보드 단축키",
+    ios: "KeyboardShortcut (.keyboardShortcut)",
+    android: "KeyInputModifier",
+    slug: "shortcut"
   },
   {
-    "thing": {
-      "en": "Menu",
-      "zh": "菜单"
-    },
-    "appkit": "NSMenu",
-    "swiftui": "Menu"
+    nameEn: "Menu Separator / Divider",
+    nameKo: "메뉴 구분선",
+    ios: "Divider (Divider)",
+    android: "HorizontalDivider (Divider)",
+    slug: "divider"
   },
   {
-    "thing": {
-      "en": "Menu bar extra / status item",
-      "zh": "菜单栏附加项 / 状态项"
-    },
-    "appkit": "NSStatusItem",
-    "swiftui": "MenuBarExtra"
+    nameEn: "Multi-window Scene",
+    nameKo: "다중 윈도우 씬",
+    ios: "WindowGroup (WindowGroup)",
+    android: "Multi-Window Activity",
+    slug: "window"
   },
   {
-    "thing": {
-      "en": "Menu indicator arrow",
-      "zh": "菜单指示箭头"
-    },
-    "appkit": "NSPopUpButtonCell.arrowPosition",
-    "swiftui": ".menuIndicator(_:)"
+    nameEn: "Navigation Split View / Sidebar",
+    nameKo: "내비게이션 분할 뷰 / 사이드바",
+    ios: "NavigationSplitView (UISplitViewController)",
+    android: "NavigationRail / ModalNavigationDrawer",
+    slug: "split-view"
   },
   {
-    "thing": {
-      "en": "Menu item keyboard equivalent",
-      "zh": "菜单项快捷键"
-    },
-    "appkit": "NSMenuItem.keyEquivalent",
-    "swiftui": ".keyboardShortcut(_:)"
+    nameEn: "File Open / Import Panel",
+    nameKo: "파일 열기 / 가져오기 패널",
+    ios: "FileImporter (.fileImporter)",
+    android: "ActivityResultContracts.GetContent",
+    slug: "save-panel"
   },
   {
-    "thing": {
-      "en": "Menu separator",
-      "zh": "菜单分隔线"
-    },
-    "appkit": "NSMenuItem.separator()",
-    "swiftui": "Divider inside a menu"
+    nameEn: "Outline / Source List",
+    nameKo: "아웃라인 / 소스 리스트",
+    ios: "OutlineGroup / List",
+    android: "LazyColumn with indentation",
+    slug: "outline-view"
   },
   {
-    "thing": {
-      "en": "Menu-style status item",
-      "zh": "菜单样式的状态项"
-    },
-    "appkit": "NSStatusItem + NSMenu",
-    "swiftui": "MenuBarExtra + .menuBarExtraStyle(.menu)"
+    nameEn: "Palette Picker",
+    nameKo: "팔레트 선택기",
+    ios: "Picker (.pickerStyle(.palette))",
+    android: "SingleChoiceSegmentedButtonRow",
+    slug: "segmented-control"
   },
   {
-    "thing": {
-      "en": "Multi-window scene",
-      "zh": "多窗口场景"
-    },
-    "appkit": "NSWindowController instances",
-    "swiftui": "WindowGroup"
+    nameEn: "Paste Button",
+    nameKo: "붙여넣기 버튼",
+    ios: "PasteButton (PasteButton)",
+    android: "Button (ClipboardManager)",
+    slug: "button"
   },
   {
-    "thing": {
-      "en": "Navigation split view",
-      "zh": "导航分栏视图"
-    },
-    "appkit": "NSSplitViewController",
-    "swiftui": "NavigationSplitView"
+    nameEn: "Pop-up Button / Dropdown",
+    nameKo: "팝업 버튼 / 드롭다운 선택기",
+    ios: "Picker (.pickerStyle(.menu))",
+    android: "ExposedDropdownMenuBox",
+    slug: "popup-pulldown-combo"
   },
   {
-    "thing": {
-      "en": "Open/import panel",
-      "zh": "打开 / 导入面板"
-    },
-    "appkit": "NSOpenPanel",
-    "swiftui": ".fileImporter(…)"
+    nameEn: "Popover",
+    nameKo: "팝오버 (말풍선 패널)",
+    ios: "Popover (.popover / UIPopoverPresentationController)",
+    android: "Popup / PopupWindow",
+    slug: "popover"
   },
   {
-    "thing": {
-      "en": "Outline / source list",
-      "zh": "大纲 / 源列表"
-    },
-    "appkit": "NSOutlineView",
-    "swiftui": "OutlineGroup or hierarchical List"
+    nameEn: "Progress Indicator / Spinner",
+    nameKo: "진행 표시줄 / 로딩 스피너",
+    ios: "ProgressView (UIActivityIndicatorView)",
+    android: "CircularProgressIndicator / LinearProgressIndicator",
+    slug: "progress-indicators"
   },
   {
-    "thing": {
-      "en": "Palette picker",
-      "zh": "调色板选择器"
-    },
-    "appkit": "NSMatrix or NSSegmentedControl",
-    "swiftui": "Picker + .pickerStyle(.palette)"
+    nameEn: "Pull-down Button",
+    nameKo: "풀다운 버튼",
+    ios: "Menu (.menuStyle(.button))",
+    android: "DropdownMenu / OverflowMenu",
+    slug: "popup-pulldown-combo"
   },
   {
-    "thing": {
-      "en": "Paste button",
-      "zh": "粘贴按钮"
-    },
-    "appkit": "NSButton + NSPasteboard",
-    "swiftui": "PasteButton"
+    nameEn: "Radio Group",
+    nameKo: "라디오 버튼 그룹",
+    ios: "Picker (.pickerStyle(.radioGroup))",
+    android: "RadioButton / RadioGroup",
+    slug: "switch-checkbox-radio"
   },
   {
-    "thing": {
-      "en": "Pop-up button",
-      "zh": "弹出式按钮"
-    },
-    "appkit": "NSPopUpButton with pullsDown = false",
-    "swiftui": "Picker + .pickerStyle(.menu)"
+    nameEn: "Rename Action",
+    nameKo: "이름 변경 버튼 / 액션",
+    ios: "RenameButton (RenameButton)",
+    android: "OutlinedTextField in Dialog",
+    slug: "button"
   },
   {
-    "thing": {
-      "en": "Popover",
-      "zh": "气泡弹层（Popover）"
-    },
-    "appkit": "NSPopover",
-    "swiftui": ".popover(…)"
+    nameEn: "Resizable Split View",
+    nameKo: "크기 조절 스플릿 뷰",
+    ios: "HSplitView / VSplitView",
+    android: "Custom Resizable Split Layout",
+    slug: "split-view"
   },
   {
-    "thing": {
-      "en": "Progress bar / spinner",
-      "zh": "进度条 / 加载指示器（spinner）"
-    },
-    "appkit": "NSProgressIndicator",
-    "swiftui": "ProgressView"
+    nameEn: "File Save / Export Panel",
+    nameKo: "파일 저장 / 내보내기 패널",
+    ios: "FileExporter (.fileExporter)",
+    android: "ActivityResultContracts.CreateDocument",
+    slug: "save-panel"
   },
   {
-    "thing": {
-      "en": "Pull-down button",
-      "zh": "下拉式按钮"
-    },
-    "appkit": "NSPopUpButton with pullsDown = true",
-    "swiftui": "Menu + .menuStyle(.button)"
+    nameEn: "Search Field / Search Bar",
+    nameKo: "검색 필드 / 검색 바",
+    ios: "Searchable (.searchable / UISearchController)",
+    android: "SearchBar / DockedSearchBar",
+    slug: "search-field"
   },
   {
-    "thing": {
-      "en": "Radio group",
-      "zh": "单选按钮组"
-    },
-    "appkit": "grouped radio-type NSButtons",
-    "swiftui": "Picker + .pickerStyle(.radioGroup)"
+    nameEn: "Segmented Control",
+    nameKo: "세그먼트 컨트롤",
+    ios: "Picker (.pickerStyle(.segmented))",
+    android: "SegmentedButton / SingleChoiceSegmentedButtonRow",
+    slug: "segmented-control"
   },
   {
-    "thing": {
-      "en": "Rename button",
-      "zh": "重命名按钮"
-    },
-    "appkit": "NSButton / responder-chain rename action",
-    "swiftui": "RenameButton"
+    nameEn: "Settings Window",
+    nameKo: "설정 창",
+    ios: "Settings (Settings Scene)",
+    android: "PreferenceScreen / SettingsActivity",
+    slug: "window"
   },
   {
-    "thing": {
-      "en": "Resizable split view",
-      "zh": "可调整大小的分栏视图"
-    },
-    "appkit": "NSSplitView",
-    "swiftui": "HSplitView / VSplitView"
+    nameEn: "Share Button / Share Link",
+    nameKo: "공유 버튼 / 공유 링크",
+    ios: "ShareLink (UIActivityViewController)",
+    android: "Intent.ACTION_SEND (ShareSheet)",
+    slug: "button"
   },
   {
-    "thing": {
-      "en": "Save/export panel",
-      "zh": "存储 / 导出面板"
-    },
-    "appkit": "NSSavePanel",
-    "swiftui": ".fileExporter(…)"
+    nameEn: "Sheet Modal",
+    nameKo: "시트 모달 패널",
+    ios: "Sheet (.sheet)",
+    android: "ModalBottomSheet",
+    slug: "sheet"
   },
   {
-    "thing": {
-      "en": "Search field",
-      "zh": "搜索框"
-    },
-    "appkit": "NSSearchField",
-    "swiftui": ".searchable(…)"
+    nameEn: "Sidebar Toggle",
+    nameKo: "사이드바 토글 버튼",
+    ios: "SidebarCommands / ToolbarItem",
+    android: "IconButton (DrawerState)",
+    slug: "sidebar"
   },
   {
-    "thing": {
-      "en": "Segmented control",
-      "zh": "分段控件"
-    },
-    "appkit": "NSSegmentedControl",
-    "swiftui": "Picker + .pickerStyle(.segmented)"
+    nameEn: "Slider",
+    nameKo: "슬라이더",
+    ios: "Slider (UISlider)",
+    android: "Slider (Slider)",
+    slug: "slider"
   },
   {
-    "thing": {
-      "en": "Settings window",
-      "zh": "设置窗口"
-    },
-    "appkit": "preferences NSWindowController",
-    "swiftui": "Settings"
+    nameEn: "Stepper",
+    nameKo: "스텝퍼 (증감기)",
+    ios: "Stepper (UIStepper)",
+    android: "NumberPicker / OutlinedIconButton Stepper",
+    slug: "stepper"
   },
   {
-    "thing": {
-      "en": "Share button / share picker",
-      "zh": "共享按钮 / 共享选择器"
-    },
-    "appkit": "NSSharingServicePicker",
-    "swiftui": "ShareLink"
+    nameEn: "Switch / Toggle",
+    nameKo: "스위치 / 토글",
+    ios: "Toggle (.toggleStyle(.switch) / UISwitch)",
+    android: "Switch (Switch)",
+    slug: "switch-checkbox-radio"
   },
   {
-    "thing": {
-      "en": "Sheet",
-      "zh": "窗口附着面板（Sheet）"
-    },
-    "appkit": "NSWindow.beginSheet",
-    "swiftui": ".sheet(…)"
+    nameEn: "Tabs / Tab Bar",
+    nameKo: "탭 / 탭 바",
+    ios: "TabView (UITabBarController)",
+    android: "TabRow / PrimaryTabRow",
+    slug: "tabs"
   },
   {
-    "thing": {
-      "en": "Sidebar toggle",
-      "zh": "边栏切换"
-    },
-    "appkit": "NSSplitViewController.toggleSidebar(_:)",
-    "swiftui": "SidebarCommands / system toolbar item"
+    nameEn: "Table / Data Table",
+    nameKo: "테이블 / 데이터 표",
+    ios: "Table (UITableView)",
+    android: "DataTable / LazyColumn",
+    slug: "table"
   },
   {
-    "thing": {
-      "en": "Single window",
-      "zh": "单窗口"
-    },
-    "appkit": "NSWindow",
-    "swiftui": "Window"
+    nameEn: "Toast / Snackbar",
+    nameKo: "토스트 / 스낵바",
+    ios: "Banner Overlay / Custom Alert",
+    android: "Snackbar / Toast",
+    slug: "toast"
   },
   {
-    "thing": {
-      "en": "Slider",
-      "zh": "滑块"
-    },
-    "appkit": "NSSlider",
-    "swiftui": "Slider"
+    nameEn: "Toolbar",
+    nameKo: "툴바 (상단 도구 모음)",
+    ios: "Toolbar (.toolbar)",
+    android: "TopAppBar / BottomAppBar",
+    slug: "toolbar"
   },
   {
-    "thing": {
-      "en": "Stepper",
-      "zh": "步进器"
-    },
-    "appkit": "NSStepper",
-    "swiftui": "Stepper"
+    nameEn: "Tooltip",
+    nameKo: "툴팁 (도움말 팝업)",
+    ios: "HelpLink (.help)",
+    android: "PlainTooltip / RichTooltip",
+    slug: "popover-dropdown-tooltip"
   },
   {
-    "thing": {
-      "en": "Switch",
-      "zh": "开关"
-    },
-    "appkit": "NSSwitch",
-    "swiftui": "Toggle + .toggleStyle(.switch)"
+    nameEn: "Web Link / Hyperlink",
+    nameKo: "웹 링크 / 하이퍼링크",
+    ios: "Link (Link)",
+    android: "ClickableText / AnnotatedString Link",
+    slug: "button"
   },
   {
-    "thing": {
-      "en": "Tab view",
-      "zh": "标签页视图"
-    },
-    "appkit": "NSTabViewController / NSTabView",
-    "swiftui": "TabView + Tab"
+    nameEn: "Breadcrumbs",
+    nameKo: "브레드크럼 (경로 표시)",
+    ios: "NavigationPath Bar",
+    android: "Custom Breadcrumb Row",
+    slug: "breadcrumbs"
   },
   {
-    "thing": {
-      "en": "Table",
-      "zh": "表格"
-    },
-    "appkit": "NSTableView",
-    "swiftui": "Table"
+    nameEn: "Badge / Chip / Pill",
+    nameKo: "배지 / 칩 / 필",
+    ios: "Badge (.badge)",
+    android: "Badge / FilterChip / InputChip",
+    slug: "badge-chip-pill"
   },
   {
-    "thing": {
-      "en": "Table column",
-      "zh": "表格列"
-    },
-    "appkit": "NSTableColumn",
-    "swiftui": "TableColumn"
+    nameEn: "Floating Action Button (FAB)",
+    nameKo: "플로팅 액션 버튼 (FAB)",
+    ios: "Overlay Button / ToolbarItem",
+    android: "FloatingActionButton (FAB)",
+    slug: "button"
   },
   {
-    "thing": {
-      "en": "Table header strip",
-      "zh": "表格表头栏"
-    },
-    "appkit": "NSTableHeaderView",
-    "swiftui": ".tableColumnHeaders(_:)"
+    nameEn: "Combobox / Autocomplete",
+    nameKo: "콤보박스 / 자동완성",
+    ios: "Menu / Picker",
+    android: "ExposedDropdownMenuBox",
+    slug: "combobox"
   },
   {
-    "thing": {
-      "en": "Table row",
-      "zh": "表格行"
-    },
-    "appkit": "NSTableRowView",
-    "swiftui": "TableRow"
+    nameEn: "Command Palette",
+    nameKo: "커맨드 팔레트",
+    ios: "CommandPalette / Searchable",
+    android: "SearchBar Modal",
+    slug: "command-palette"
   },
   {
-    "thing": {
-      "en": "Toolbar",
-      "zh": "工具栏"
-    },
-    "appkit": "NSToolbar",
-    "swiftui": ".toolbar { … }"
+    nameEn: "Empty State",
+    nameKo: "빈 상태 화면",
+    ios: "ContentUnavailableView",
+    android: "Custom Empty State View",
+    slug: "empty-state"
   },
   {
-    "thing": {
-      "en": "Toolbar customization palette",
-      "zh": "工具栏自定义面板"
-    },
-    "appkit": "NSToolbar customization",
-    "swiftui": ".toolbar(id:content:)"
+    nameEn: "Hover Card",
+    nameKo: "호버 카드",
+    ios: "Popover (.popover)",
+    android: "Popup",
+    slug: "hover-card"
   },
   {
-    "thing": {
-      "en": "Toolbar item",
-      "zh": "工具栏项"
-    },
-    "appkit": "NSToolbarItem",
-    "swiftui": "ToolbarItem"
+    nameEn: "Skeleton Loader",
+    nameKo: "스켈레톤 로더",
+    ios: "Redacted (.redacted(reason: .placeholder))",
+    android: "Skeleton Shimmer Effect",
+    slug: "skeleton-spinner"
   },
   {
-    "thing": {
-      "en": "Toolbar item group",
-      "zh": "工具栏项组"
-    },
-    "appkit": "NSToolbarItemGroup",
-    "swiftui": "ToolbarItemGroup"
-  },
-  {
-    "thing": {
-      "en": "Toolbar overflow menu",
-      "zh": "工具栏溢出菜单"
-    },
-    "appkit": "NSToolbar overflow menu",
-    "swiftui": ".toolbarOverflowMenu { … }"
-  },
-  {
-    "thing": {
-      "en": "Top-level command menu",
-      "zh": "顶层命令菜单"
-    },
-    "appkit": "top-level NSMenuItem + NSMenu",
-    "swiftui": "CommandMenu"
-  },
-  {
-    "thing": {
-      "en": "Utility window / tool palette",
-      "zh": "工具窗口 / 工具面板"
-    },
-    "appkit": "NSPanel",
-    "swiftui": "UtilityWindow"
-  },
-  {
-    "thing": {
-      "en": "Web link",
-      "zh": "网页链接"
-    },
-    "appkit": "link-style NSTextField + NSWorkspace",
-    "swiftui": "Link"
-  },
-  {
-    "thing": {
-      "en": "Window-style status item",
-      "zh": "窗口样式的状态项"
-    },
-    "appkit": "NSStatusItem + NSPopover or panel",
-    "swiftui": "MenuBarExtra + .menuBarExtraStyle(.window)"
+    nameEn: "Toggle Group",
+    nameKo: "토글 버튼 그룹",
+    ios: "Picker (.pickerStyle(.segmented))",
+    android: "SingleChoiceSegmentedButtonRow",
+    slug: "toggle-group"
   }
 ];

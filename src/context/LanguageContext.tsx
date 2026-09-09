@@ -10,32 +10,27 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  langMode: 'bilingual',
+  langMode: 'ko',
   setLangMode: () => {},
-  targetLang: 'zh',
-  locale: 'en',
-  t: (loc) => getLocalizedString(loc, 'en'),
+  targetLang: 'ko',
+  locale: 'ko',
+  t: (loc) => getLocalizedString(loc, 'ko'),
 });
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [langMode, setLangModeState] = useState<LangMode>(() => {
     try {
       const stored = localStorage.getItem('ntui-lang-mode') as LangMode;
-      if (stored && ['bilingual', 'en', 'zh', 'ko'].includes(stored)) {
+      if (stored && ['ko', 'en', 'bilingual'].includes(stored)) {
         return stored;
-      }
-      const langs = navigator.languages || [navigator.language || ''];
-      for (const l of langs) {
-        if (/^zh/i.test(l)) return 'zh';
-        if (/^ko/i.test(l)) return 'ko';
       }
     } catch (e) {
       // ignore
     }
-    return 'bilingual';
+    return 'ko';
   });
 
-  const [targetLang, setTargetLang] = useState<Locale>('zh');
+  const [targetLang] = useState<Locale>('ko');
 
   useEffect(() => {
     try {
@@ -44,22 +39,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       // ignore
     }
     document.documentElement.setAttribute('data-lang-mode', langMode);
-    if (langMode === 'zh') setTargetLang('zh');
-    if (langMode === 'ko') setTargetLang('ko');
   }, [langMode]);
 
   const setLangMode = (mode: LangMode) => {
     setLangModeState(mode);
   };
 
-  const locale: Locale = langMode === 'zh' ? 'zh' : langMode === 'ko' ? 'ko' : 'en';
+  const locale: Locale = langMode === 'en' ? 'en' : 'ko';
 
   const t = (loc?: LocalizedString): string => {
     if (!loc) return '';
-    if (langMode === 'en') return loc.en || '';
-    if (langMode === 'zh') return loc.zh || loc.en || '';
-    if (langMode === 'ko') return loc.ko || loc.en || '';
-    return loc.en || '';
+    if (langMode === 'en') return loc.en || loc.ko || '';
+    return loc.ko || loc.en || '';
   };
 
   return (

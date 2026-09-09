@@ -3,8 +3,6 @@ import { UI_COPY } from '../data/uiCopy';
 import { getLocalizedString } from '../types/ui';
 
 export const Footer: React.FC = () => {
-  const getCopy = (key: string) => getLocalizedString(UI_COPY[key] as any, 'en');
-  const getCopyZh = (key: string) => getLocalizedString(UI_COPY[key] as any, 'zh');
   const getCopyKo = (key: string) => getLocalizedString(UI_COPY[key] as any, 'ko');
 
   return (
@@ -12,89 +10,21 @@ export const Footer: React.FC = () => {
       <div className="wrap footer-in">
         <p>
           <span className="fw-500">Learn UI Name</span> ·{' '}
-          <span className="lang-en">{getCopy('tagline')}</span>{' '}
-          <span className="lang-zh">{getCopyZh('tagline')}</span>
-          <span className="lang-ko">{getCopyKo('tagline')}</span>
-        </p>
-
-        <div className="footer-support">
-          <p className="support-title">
-            <span className="lang-en">{getCopy('supportTitle')}</span>
-            <span className="lang-zh">{getCopyZh('supportTitle')}</span>
-            <span className="lang-ko">{getCopyKo('supportTitle')}</span>
-          </p>
-          <div className="support-row">
-            <figure className="support-qr">
-              <img src="/assets/img/qrcode-wechat.jpg" alt="WeChat QR" width="88" height="88" loading="lazy" />
-              <figcaption>
-                <span className="lang-en">{getCopy('supportFollow')}</span>
-                <span className="lang-zh">{getCopyZh('supportFollow')}</span>
-                <span className="lang-ko">{getCopyKo('supportFollow')}</span>
-              </figcaption>
-            </figure>
-            <figure className="support-qr">
-              <img src="/assets/img/qrcode-reward.png" alt="Reward QR" width="88" height="88" loading="lazy" />
-              <figcaption>
-                <span className="lang-en">{getCopy('supportReward')}</span>
-                <span className="lang-zh">{getCopyZh('supportReward')}</span>
-                <span className="lang-ko">{getCopyKo('supportReward')}</span>
-              </figcaption>
-            </figure>
-            <p className="support-links">
-              <a href="https://x.com/vista8" rel="noopener">
-                <span className="lang-en">{getCopy('supportX')}</span>
-                <span className="lang-zh">{getCopyZh('supportX')}</span>
-                <span className="lang-ko">{getCopyKo('supportX')}</span>
-              </a>
-              <a href="https://github.com/joeseesun" rel="noopener">
-                GitHub @joeseesun
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <p className="foot-note">
-          <span className="lang-en">
-            {getCopy('footerNews')} <a href="/feed.xml">{getCopy('footerRss')}</a>
-          </span>
-          <span className="lang-zh">
-            {getCopyZh('footerNews')} <a href="/feed.xml">{getCopyZh('footerRss')}</a>
-          </span>
-          <span className="lang-ko">
-            {getCopyKo('footerNews')} <a href="/feed.xml">{getCopyKo('footerRss')}</a>
-          </span>
+          <span>{getCopyKo('tagline')}</span>
         </p>
 
         <p className="foot-links">
-          <a href="https://github.com/joeseesun/learnui" rel="noopener">
+          <a href="https://github.com/joeseesun/learnui" rel="noopener" target="_blank">
             GitHub
           </a>
           <span className="sep">·</span>
-          <a href="https://tuijian.qiaomu.ai/" rel="noopener">
-            乔木推荐
-          </a>
-          <span className="sep">·</span>
-          <span className="lang-en">
-            Powered by <a href="https://qiaomu.ai/" rel="noopener">向阳乔木</a>
-          </span>
-          <span className="lang-zh">
-            Powered by <a href="https://qiaomu.ai/" rel="noopener">向阳乔木</a>
-          </span>
-          <span className="lang-ko">
-            Powered by <a href="https://qiaomu.ai/" rel="noopener">向阳乔木</a>
+          <span>
+            Original inspiration from <a href="https://namethatui.com/" rel="noopener" target="_blank">namethatui.com</a>
           </span>
         </p>
 
         <p className="foot-src">
-          <span className="lang-en">
-            {getCopy('builtNote')} <a href="https://namethatui.com/" rel="noopener">namethatui.com</a>
-          </span>
-          <span className="lang-zh">
-            {getCopyZh('builtNote')} <a href="https://namethatui.com/" rel="noopener">namethatui.com</a>
-          </span>
-          <span className="lang-ko">
-            {getCopyKo('builtNote')} <a href="https://namethatui.com/" rel="noopener">namethatui.com</a>
-          </span>
+          <span>{getCopyKo('builtNote')}</span>
         </p>
       </div>
     </footer>
