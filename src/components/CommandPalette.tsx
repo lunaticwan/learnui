@@ -7,6 +7,52 @@ import { STYLES } from '../data/styles';
 import { UI_COPY } from '../data/uiCopy';
 import { getLocalizedString } from '../types/ui';
 
+/** 한글 유니코드 초성 배열 (ㄱ~ㅎ) */
+const CHOSUNG_LIST = [
+  'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ',
+  'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'
+];
+
+/**
+ * 한글 문자열에서 자음 초성만 추출하는 유틸리티.
+ * 한글 음절 유니코드 공식: (음절 코드 - 0xAC00) / 588 = 초성 인덱스
+ *
+ * @param text 입력 문자열
+ * @returns 초성 변환 문자열
+ */
+export function getChosung(text: string): string {
+  let result = '';
+  for (let i = 0; i < text.length; i++) {
+    const code = text.charCodeAt(i);
+    if (code >= 0xac00 && code <= 0xd7a3) {
+      const chosungIndex = Math.floor((code - 0xac00) / 588);
+      result += CHOSUNG_LIST[chosungIndex];
+    } else {
+      result += text[i];
+    }
+  }
+  return result;
+}
+
+/**
+ * 한국어 검색을 위한 문장부호 및 조사 정규화 유틸리티.
+ * 문장부호 및 주요 한국어 조사(은/는/이/가/을/를/에서/으로 등)를 제거하여 검색 키워드 매칭 정교화.
+ *
+ * @param text 원본 검색어 또는 대상 키워드
+ * @returns 정규화된 키워드 문자열
+ */
+export function normalizeKorean(text: string): string {
+  if (!text) return '';
+  const particleRegex = /(에서|으로|까지|부터|은|는|이|가|을|를|로|의|와|과|도|에|들|만)(?=\s|$)/g;
+  return text
+    .toLowerCase()
+    .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, ' ')
+    .replace(particleRegex, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** 커맨드 팔레트 검색 인덱스 항목 인터페이스 */
 interface SearchItem {
   id: string;
   type: 'component' | 'style' | 'page';
@@ -15,6 +61,7 @@ interface SearchItem {
   subtitle: string;
   url: string;
   keywords: string[];
+  chosungKeywords: string[];
 }
 
 interface CommandPaletteProps {
@@ -22,10 +69,15 @@ interface CommandPaletteProps {
   onOpenChange: (open: boolean) => void;
 }
 
+/**
+ * 커맨드 팔레트 (⌘K / Ctrl+K) 중앙 모달 검색 컴포넌트.
+ * 초성 검색, 한국어 조사 제거 정규화, Fuse.js 퍼지 매칭의 3단계 하이브리드 자연어 검색 제공.
+ */
 export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChange }) => {
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
 
+  // 단축키 (⌘K, Ctrl+K) 이벤트 리스너 등록
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
@@ -37,10 +89,11 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [open, onOpenChange]);
 
+  // 검색 대상 인덱스 데이터 구축 (모든 페이지, 엔트리, 스타일 메타데이터 통합)
   const searchItems: SearchItem[] = useMemo(() => {
     const items: SearchItem[] = [];
 
-    // 주요 정적 페이지 추가
+    // 1. 주요 정적 페이지 (번역표 등)
     items.push({
       id: 'page-translate',
       type: 'page',
@@ -49,8 +102,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
       subtitle: getLocalizedString(UI_COPY['translateLede'] as any, 'ko') || 'AppKit · SwiftUI · iOS · Android UI 용어 대조',
       url: '/translate',
       keywords: ['translate', '번역', '대조표', '용어', 'swiftui', 'appkit', 'ios', 'android'],
+      chosungKeywords: [getChosung('번역'), getChosung('대조표'), getChosung('용어')],
     });
 
+    // 2. UI 컴포넌트 엔트리 (ENTRIES)
     ENTRIES.forEach((e) => {
       const titleEn = e.name?.en || e.slug;
       const titleKo = e.name?.ko || '';
@@ -62,6 +117,21 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         p.name?.en, p.name?.ko, p.description?.en, p.description?.ko, p.prompt?.en, p.prompt?.ko
       ]).filter(Boolean);
 
+      const allKw = [
+        titleEn,
+        titleKo,
+        e.platform,
+        subtitle,
+        descKo,
+        promptKo,
+        ...apiSymbols,
+        ...(e.aka?.en || []),
+        ...(e.aka?.ko || []),
+        ...(e.fuzzy?.en || []),
+        ...(e.fuzzy?.ko || []),
+        ...partsKeywords,
+      ];
+
       items.push({
         id: `entry-${e.slug}`,
         type: 'component',
@@ -69,23 +139,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         titleKo,
         subtitle,
         url: `/${e.platform}/${e.slug}`,
-        keywords: [
-          titleEn,
-          titleKo,
-          e.platform,
-          subtitle,
-          descKo,
-          promptKo,
-          ...apiSymbols,
-          ...(e.aka?.en || []),
-          ...(e.aka?.ko || []),
-          ...(e.fuzzy?.en || []),
-          ...(e.fuzzy?.ko || []),
-          ...partsKeywords,
-        ],
+        keywords: allKw,
+        chosungKeywords: allKw.map((k) => getChosung(k)),
       });
     });
 
+    // 3. UI 디자인 스타일 (STYLES)
     STYLES.forEach((s) => {
       const titleEn = s.name?.en || s.slug;
       const titleKo = s.name?.ko || '';
@@ -97,6 +156,18 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         sig.name?.en, sig.name?.ko, sig.description?.en, sig.description?.ko
       ]).filter(Boolean);
 
+      const allKw = [
+        titleEn,
+        titleKo,
+        subtitle,
+        briefKo,
+        scopeKo,
+        a11yKo,
+        ...(s.aliases?.en || []),
+        ...(s.aliases?.ko || []),
+        ...signalsKeywords,
+      ];
+
       items.push({
         id: `style-${s.slug}`,
         type: 'style',
@@ -104,23 +175,15 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         titleKo,
         subtitle,
         url: `/styles/${s.slug}`,
-        keywords: [
-          titleEn,
-          titleKo,
-          subtitle,
-          briefKo,
-          scopeKo,
-          a11yKo,
-          ...(s.aliases?.en || []),
-          ...(s.aliases?.ko || []),
-          ...signalsKeywords,
-        ],
+        keywords: allKw,
+        chosungKeywords: allKw.map((k) => getChosung(k)),
       });
     });
 
     return items;
   }, []);
 
+  // Fuse.js 퍼지 검색 인스턴스
   const fuse = useMemo(() => {
     return new Fuse(searchItems, {
       keys: [
@@ -136,30 +199,35 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
     });
   }, [searchItems]);
 
+  // 입력 쿼리에 따른 결과 필터링 (3단계 하이브리드 검색)
   const filteredItems = useMemo(() => {
     const trimmed = query.trim();
     if (!trimmed) return searchItems.slice(0, 20);
 
-    const normQuery = trimmed.toLowerCase().replace(/\s+/g, '');
-    const fuseResults = fuse.search(trimmed).map((res) => res.item);
+    const normQuery = normalizeKorean(trimmed).replace(/\s+/g, '');
+    const chosungQuery = getChosung(trimmed).replace(/\s+/g, '');
 
-    // 띄어쓰기 무시 정확도 향상을 위한 키워드 검사 결합
+    // 1단계: 정규화 매칭 (조사/특수문자 제거)
     const directMatches = searchItems.filter((item) => {
       const matchTarget = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')}`.toLowerCase().replace(/\s+/g, '');
-      return matchTarget.includes(normQuery);
+      const normTarget = normalizeKorean(matchTarget).replace(/\s+/g, '');
+      return normTarget.includes(normQuery) || matchTarget.includes(trimmed.toLowerCase());
     });
 
+    // 2단계: 한글 초성 매칭
+    const chosungMatches = searchItems.filter((item) => {
+      const chosungTarget = item.chosungKeywords.join(' ').replace(/\s+/g, '');
+      return chosungTarget.includes(chosungQuery);
+    });
+
+    // 3단계: Fuse.js 퍼지 매칭
+    const fuseResults = fuse.search(trimmed).map((res) => res.item);
+
+    // 결과 합체 및 중복 제거
     const combinedSet = new Set<string>();
     const results: SearchItem[] = [];
 
-    directMatches.forEach((item) => {
-      if (!combinedSet.has(item.id)) {
-        combinedSet.add(item.id);
-        results.push(item);
-      }
-    });
-
-    fuseResults.forEach((item) => {
+    [...directMatches, ...chosungMatches, ...fuseResults].forEach((item) => {
       if (!combinedSet.has(item.id)) {
         combinedSet.add(item.id);
         results.push(item);
