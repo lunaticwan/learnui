@@ -5,7 +5,7 @@ export const STYLES: UIStyle[] = [
     "slug": "skeuomorphism",
     "name": {
       "en": "Skeuomorphism",
-      "ko": "스큐어모피즘 (Skeuomorphism)"
+      "ko": "스큐어모피즘"
     },
     "tagline": {
       "en": "Skeuomorphism carries real-world materials and objects into digital UI: controls are rendered as if physically made of something — glossy plastic, brushed metal, leather, paper — with the lighting, texture, and affordances of the real thing. A skeuomorphic app teaches itself: a page that looks tearable invites turning, a raised glossy button invites pressing. It peaked in early iOS and Mac OS X, and was largely displaced by flat design around 2013.",
@@ -158,7 +158,7 @@ export const STYLES: UIStyle[] = [
     "slug": "neumorphism",
     "name": {
       "en": "Neumorphism",
-      "ko": "뉴모피즘 (Neumorphism)"
+      "ko": "뉴모피즘"
     },
     "tagline": {
       "en": "Neumorphism renders every control as if extruded from, or pressed into, the page itself: background and controls share one matte color, and shape comes entirely from a pair of soft shadows — light from the top-left, dark toward the bottom-right. Nothing has a border and nothing floats; the whole interface reads as one continuous molded surface. It photographs beautifully and tests poorly: the same softness that makes it distinctive erases the contrast real controls need.",
@@ -311,7 +311,7 @@ export const STYLES: UIStyle[] = [
     "slug": "glassmorphism",
     "name": {
       "en": "Glassmorphism",
-      "ko": "글래스모피즘 (Glassmorphism)"
+      "ko": "글래스모피즘"
     },
     "tagline": {
       "en": "Glassmorphism builds interfaces from translucent, frosted panels: the background — usually something vivid — blurs through each surface, a thin light border catches the 'edge' of the glass, and layers stack with soft shadows to sell the depth. The style lives or dies by its backdrop: over a plain background the glass reads as plain grey; over a colorful gradient it glows.",
@@ -464,7 +464,7 @@ export const STYLES: UIStyle[] = [
     "slug": "liquid-glass",
     "name": {
       "en": "Liquid Glass",
-      "ko": "리퀴드 글래스 (Liquid Glass)"
+      "ko": "리퀴드 글래스"
     },
     "tagline": {
       "en": "Liquid Glass is Apple's adaptive material for controls and navigation: toolbars, tab bars, buttons, and sliders render as lens-like glass that floats in its own layer above app content, refracting what scrolls beneath and re-tinting itself for legibility in light and dark contexts. It is functional, not decorative — Apple applies it to the control layer and keeps content itself opaque. Capsule shapes and concentric corner radii are part of the geometry.",
@@ -617,7 +617,7 @@ export const STYLES: UIStyle[] = [
     "slug": "web-brutalism",
     "name": {
       "en": "Web Brutalism",
-      "ko": "웹 브루탈리즘 (Web Brutalism)"
+      "ko": "웹 브루탈리즘"
     },
     "tagline": {
       "en": "Web Brutalism treats the browser's own materials as the finished surface: default or system fonts, unstyled-looking links, visible document structure, plain borders and horizontal rules, and density over polish. Nothing pretends to be anything else — no gradients imitating glass, no shadows imitating depth. At its best it's honest and fast (Craigslist, Hacker News, early-web personal sites); at its worst the label gets stretched over anything unpolished.",
@@ -757,7 +757,7 @@ export const STYLES: UIStyle[] = [
     "slug": "neobrutalism",
     "name": {
       "en": "Neobrutalism",
-      "ko": "네오브루탈리즘 (Neobrutalism)"
+      "ko": "네오브루탈리즘"
     },
     "tagline": {
       "en": "Neobrutalism is a designed graphic language: flat, saturated color blocks outlined in thick black strokes, with hard offset shadows — solid black rectangles displaced a few pixels, no blur — and chunky display type. Elements read like stickers or risograph prints; pressing a button often physically 'pushes' it into its shadow. Despite the name it is the opposite of raw: every border and shadow is a deliberate illustration choice.",
@@ -923,7 +923,7 @@ export const STYLES: UIStyle[] = [
     "slug": "y2k",
     "name": {
       "en": "Y2K Digital Aesthetic",
-      "ko": "Y2K 디지털 에스테틱 (Y2K)"
+      "ko": "Y2K 디지털 에스테틱"
     },
     "tagline": {
       "en": "The Y2K digital aesthetic is millennium-turn techno-optimism rendered literally: liquid chrome and brushed metal, glossy gel and plastic surfaces, iridescent blue-silver palettes, orbs and blobs, wide techno type, and rendered 3D everything. It's the look of a future imagined through new consumer tech — translucent iMacs, early CGI, rave flyers, and 'cyber' branding — shiny, synthetic, and unembarrassed.",
@@ -1076,7 +1076,7 @@ export const STYLES: UIStyle[] = [
     "slug": "frutiger-aero",
     "name": {
       "en": "Frutiger Aero",
-      "ko": "프루티거 에어로 (Frutiger Aero)"
+      "ko": "프루티거 에어로"
     },
     "tagline": {
       "en": "Frutiger Aero is the glossy, nature-infused optimism of roughly 2004–2013: bright blue skies and water, green grass, bubbles, fish, and light rays fused with translucent glass panels, aqua buttons, and clean humanist type. Technology presents itself as fresh, ecological, and frictionless — the future as a sunny day. It's the era of Windows Vista/7 wallpapers, glossy media players, and Web 2.0 product sites.",
@@ -1229,7 +1229,7 @@ export const STYLES: UIStyle[] = [
     "slug": "flat-design",
     "name": {
       "en": "Flat Design",
-      "ko": "플랫 디자인 (Flat Design)"
+      "ko": "플랫 디자인"
     },
     "tagline": {
       "en": "Flat Design renders the interface as pure 2D: surfaces are solid color fills, icons are simple geometric glyphs, and nothing pretends to be lit, embossed, or made of a material. Hierarchy comes from color, size, and typography instead of shadows and bevels. It became the dominant look around 2012–2013 (Windows 8's Metro, then iOS 7) as the direct rejection of skeuomorphism's gloss and texture.",
@@ -1384,7 +1384,7 @@ export const STYLES: UIStyle[] = [
     "slug": "minimalism",
     "name": {
       "en": "Minimalism",
-      "ko": "미니멀리즘 (Minimalism)"
+      "ko": "미니멀리즘"
     },
     "tagline": {
       "en": "Minimalism governs what is ON the screen, not how it's drawn: strip the interface to the fewest elements that still do the job, then let generous negative space and one or two dramatic typographic moments carry the composition. NN/g's study of 112 minimalist sites found the recurring traits — flat-ish surfaces, limited or monochrome palettes, restricted element counts, negative space, and large type as the hero.",
@@ -1526,7 +1526,7 @@ export const STYLES: UIStyle[] = [
     "slug": "claymorphism",
     "name": {
       "en": "Claymorphism",
-      "ko": "클레이모피즘 (Claymorphism)"
+      "ko": "클레이모피즘"
     },
     "tagline": {
       "en": "Claymorphism makes UI elements look molded from soft modeling clay: fat rounded corners, a light pastel fill, and the signature construction — two inner shadows (a bright one catching the top edge, a darker one shading the bottom) plus one soft outer drop shadow that floats the object above the page. Each element is independently colored and clearly separate from the background, usually paired with chunky 3D 'clay' illustrations.",
@@ -1668,7 +1668,7 @@ export const STYLES: UIStyle[] = [
     "slug": "vernacular-web",
     "name": {
       "en": "Vernacular Web",
-      "ko": "버내큘러 웹 (Vernacular Web)"
+      "ko": "버내큘러 웹"
     },
     "tagline": {
       "en": "The Vernacular Web is the folk architecture of the early web: personal homepages built by amateurs from collected materials — tiled star backgrounds, animated sparkle and flame GIFs, rainbow divider rules, 'welcome to my home page' banners, visitor counters, guestbook links, under-construction signs, and webring badges. It is decorative, personal, and sincere: every ornament was chosen because its owner loved it, not because a system prescribed it.",
@@ -1823,7 +1823,7 @@ export const STYLES: UIStyle[] = [
     "slug": "aqua",
     "name": {
       "en": "Aqua",
-      "ko": "아쿠아 (Aqua)"
+      "ko": "아쿠아"
     },
     "tagline": {
       "en": "Aqua is the design language Mac OS X launched with in 2000: controls rendered as translucent candy gel — deep specular highlights over luminous water-blue — on pinstriped surfaces, with gumdrop red/yellow/green window controls, soft drop shadows layering the windows, and fluid animation everywhere (the default button literally pulsed, and windows poured into the Dock through the genie effect). Apple pitched it as an interface with the fluidity and depth of water.",
@@ -1978,7 +1978,7 @@ export const STYLES: UIStyle[] = [
     "slug": "windows-aero",
     "name": {
       "en": "Windows Aero",
-      "ko": "윈도우 에어로 (Windows Aero)"
+      "ko": "윈도우 에어로"
     },
     "tagline": {
       "en": "Windows Aero is Microsoft's Vista and Windows 7 desktop language: window FRAMES rendered as transparent blurred glass with specular light sweeps, so the desktop glows through every title bar; luminous color gradients; caption buttons that light up under the cursor (the red close glow); shimmering green progress bars; and smooth window motion like Flip 3D and the minimize animation. Microsoft's launch messaging named the glass, the reflections, and the animation as the product.",
@@ -2133,7 +2133,7 @@ export const STYLES: UIStyle[] = [
     "slug": "swiss-style",
     "name": {
       "en": "Swiss Style (International Typographic Style)",
-      "ko": "스위스 스타일 (Swiss Style)"
+      "ko": "스위스 스타일"
     },
     "tagline": {
       "en": "Swiss Style treats graphic design as engineering: content locked to a mathematical grid, set in one neutral grotesk (Helvetica, Akzidenz-Grotesk), aligned flush left, ragged right, printed black on white with a single flat accent — classically Swiss red. Photography is objective documentation, never illustration; decoration is abolished. Crystallized in 1950s Switzerland, it became the default voice of corporate identity and wayfinding, and its grid logic still underpins most 'clean' interfaces.",
@@ -2301,7 +2301,7 @@ export const STYLES: UIStyle[] = [
     "slug": "bauhaus",
     "name": {
       "en": "Bauhaus",
-      "ko": "바우하우스 (Bauhaus)"
+      "ko": "바우하우스"
     },
     "tagline": {
       "en": "Bauhaus is the visual language of the 1919–1933 German school that set out to unify art, craft, and industrial production: compositions are built from the primary shapes — circle, triangle, square — filled with unmixed primaries red, yellow, and blue against black and white, while headlines drop capital letters for Herbert Bayer's all-lowercase geometric alphabet. A century later it is still the default shorthand for geometric modernism in posters, logos, and landing pages.",
@@ -2467,7 +2467,7 @@ export const STYLES: UIStyle[] = [
     "slug": "memphis",
     "name": {
       "en": "Memphis",
-      "ko": "멤피스 (Memphis)"
+      "ko": "멤피스"
     },
     "tagline": {
       "en": "Memphis is the postmodern design language launched by the Memphis Group in Milan in 1981: calculated 'bad taste' — hot pink, lemon yellow, teal and purple slammed together on white grounds, black-outlined toy geometry, and an allover confetti of squiggles, zigzags, dots and triangles. Born as radical furniture in printed plastic laminate, it was mocked and worshipped alike, dissolved in 1987, and resurrected as the default visual shorthand for 'the eighties' in graphic and UI design.",
@@ -2635,7 +2635,7 @@ export const STYLES: UIStyle[] = [
     "slug": "vaporwave",
     "name": {
       "en": "Vaporwave",
-      "ko": "베이퍼웨이브 (Vaporwave)"
+      "ko": "베이퍼웨이브"
     },
     "tagline": {
       "en": "Vaporwave is the visual dialect of the early-2010s internet music microgenre of the same name: a collage of 1980s–90s consumer debris — pastel pink-to-cyan gradient skies, Greek marble busts, Japanese katakana, Windows 95 window chrome, palm-tree sunsets over grid floors — degraded with VHS scanlines, chromatic aberration, and glitch. It treats corporate-utopian imagery as found footage: dreamy, ironic, and worn. A nostalgia remix, not a period original.",
@@ -2803,7 +2803,7 @@ export const STYLES: UIStyle[] = [
     "slug": "art-deco",
     "name": {
       "en": "Art Deco",
-      "ko": "아르데코 (Art Deco)"
+      "ko": "아르데코"
     },
     "tagline": {
       "en": "Art Deco is the geometry of luxury: mirror symmetry, sunburst and fan motifs, stepped ziggurat silhouettes, and gold linework on lacquer black with jewel accents. Named after the 1925 Paris Exposition des arts décoratifs, it gave the Chrysler Building its crown and Gatsby its glow. Where Bauhaus stripped geometry to function, Deco piled it on — gilded all-caps lettering and ornament dense enough to feel machined. It faded with wartime austerity and revives whenever design wants opulence.",
@@ -2971,7 +2971,7 @@ export const STYLES: UIStyle[] = [
     "slug": "cyberpunk",
     "name": {
       "en": "Cyberpunk",
-      "ko": "사이버펑크 (Cyberpunk)"
+      "ko": "사이버펑크"
     },
     "tagline": {
       "en": "Cyberpunk is the visual language of 'high tech, low life': near-black interfaces lit by neon magenta, cyan, and electric yellow, like signage over a rain-soaked street. Luminous hairline borders, bloom halos, scanlines, and glitch tears turn panels into hacked terminals, while monospace type and HUD brackets supply the instrumentation. Born in 1980s science fiction and pushed into UI by films and games like Cyberpunk 2077, it treats darkness as the canvas — every accent must earn its glow.",
@@ -3139,7 +3139,7 @@ export const STYLES: UIStyle[] = [
     "slug": "pixel-art",
     "name": {
       "en": "Pixel Art",
-      "ko": "픽셀 아트 (Pixel Art)"
+      "ko": "픽셀 아트"
     },
     "tagline": {
       "en": "Pixel Art is a graphic language born from hardware limits: on the 8- and 16-bit consoles and arcade boards of the 1980s–90s, artists drew with visible square pixels and tiny indexed palettes, placing every sprite, glyph, and health bar pixel by pixel. What began as a constraint is now a deliberate retro aesthetic — crisp stair-stepped edges with no anti-aliasing, limited color ramps, dithered shading, chunky bitmap type, and frame-by-frame animation chosen for charm, not necessity.",
@@ -3307,7 +3307,7 @@ export const STYLES: UIStyle[] = [
     "slug": "corporate-memphis",
     "name": {
       "en": "Corporate Memphis",
-      "ko": "코퍼레이트 멤피스 (Corporate Memphis)"
+      "ko": "코퍼레이트 멤피스"
     },
     "tagline": {
       "en": "Corporate Memphis is the flat vector illustration style of late-2010s tech marketing: faceless people with tiny heads and disproportionately long, rubbery limbs, skin in blues, purples, and greens instead of real tones, bent into over-acted poses against blobs, dots, and arcs. Named after Alegria, the illustration system Facebook introduced around 2017, it became the default look of SaaS landing pages and empty states within years — then a byword for corporate sameness ('blanding').",
@@ -3462,7 +3462,7 @@ export const STYLES: UIStyle[] = [
     "slug": "material-design",
     "name": {
       "en": "Material Design",
-      "ko": "머티리얼 디자인 (Material Design)"
+      "ko": "머티리얼 디자인"
     },
     "tagline": {
       "en": "Material Design is Google's physics-based design language: UIs are digital paper layered along a z-axis, each surface resting at a measured elevation that casts a soft shadow, the main action hovering as a circular FAB, every touch answered with an ink ripple. Bold brand color, white cards, and Roboto type align to an 8dp grid, and motion expresses hierarchy. Shipped with Android 5.0 in 2014, it became Android's default look — the systematic rebuttal to flat design's shadowless austerity.",
@@ -3630,7 +3630,7 @@ export const STYLES: UIStyle[] = [
     "slug": "terminal-hacker",
     "name": {
       "en": "Terminal Hacker",
-      "ko": "터미널 해커 (Terminal / Hacker)"
+      "ko": "터미널 해커"
     },
     "tagline": {
       "en": "Terminal Hacker turns the screen into a vintage character terminal: a pure black CRT glowing in a single phosphor ink — matrix green or amber — with monospace glyphs, a soft halo around every character, scanlines and flicker laid over everything, and a blinking block cursor typing content out like a machine. Born from 1970s–80s hardware limits, canonized by hacker cinema and The Matrix, it is now pure retro-futurist costume: the interface pretends to be forty-year-old equipment.",
@@ -3798,7 +3798,7 @@ export const STYLES: UIStyle[] = [
     "slug": "frutiger-metro",
     "name": {
       "en": "Frutiger Metro (Vectordelia)",
-      "ko": "프루티거 메트로 (Frutiger Metro)"
+      "ko": "프루티거 메트로"
     },
     "tagline": {
       "en": "Frutiger Metro, also known as Vectordelia, is the late-millennium vector-maximalist graphic style that flourished roughly 2005–2013 alongside Frutiger Aero but moved in the opposite direction: instead of skies and water, it built cities out of pure vector — subway lines, bright saturated gradients, abstract floral flourishes and swirls, humanist sans type, glossy vector shapes, and multicolored silhouette figures. It is the visual language of iPod commercials, Xbox 360 dashboards, Windows 7 stock imagery, and city-themed event graphics: optimistic, urban, geometrically neat, and deliberately non-photorealistic.",
@@ -3966,7 +3966,7 @@ export const STYLES: UIStyle[] = [
     "slug": "anti-design",
     "name": {
       "en": "Anti-design / Dada Web",
-      "ko": "안티 디자인 (Anti-design)"
+      "ko": "안티 디자인"
     },
     "tagline": {
       "en": "Anti-design / Dada Web treats visual conflict as the whole aesthetic: clashing typefaces, overlapping elements, broken grids, high-saturation colors that fight each other, and system defaults pushed to absurdity. It is deliberately ugly, but ugly by design — a collage-like rebellion against clean UX, grid systems, and brand-safe palettes. It flourishes in experimental portfolios, zine sites, art-school projects, and any screen that wants to look like it escaped from a Dadaist cut-up magazine rather than a design system.",
@@ -4134,7 +4134,7 @@ export const STYLES: UIStyle[] = [
     "slug": "acid-graphics",
     "name": {
       "en": "Acid Graphics",
-      "ko": "애시드 그래픽 (Acid Graphics)"
+      "ko": "애시드 그래픽"
     },
     "tagline": {
       "en": "Acid Graphics is the dark, psychedelic cousin of millennium chrome: black backgrounds set off by toxic neon gradients, metallic 3D lettering that looks extruded from liquid mercury, and wireframe grids that melt, twist, and mirror themselves into distortion. It grew out of 1990s acid-house and rave flyers, then was revived in the 2010s as a club-culture visual language for electronic music, streetwear, and underground editorial — less 'future that shipped' than a future seen through a funhouse lens.",
@@ -4302,7 +4302,7 @@ export const STYLES: UIStyle[] = [
     "slug": "risograph",
     "name": {
       "en": "Risograph",
-      "ko": "리소그래프 (Risograph)"
+      "ko": "리소그래프"
     },
     "tagline": {
       "en": "Risograph is the look of a Japanese stencil duplicator pushed into graphic art: layered spot colors — hot pink, cyan, sunflower yellow — printed slightly out of register, leaving halos and color moiré; a visible grain from soy-based inks; and edges that look cut from a stencil rather than rendered by a laser. It migrated from churches and schools in the 1980s into zines, posters, and indie publishing, where its accidents became the signature.",
@@ -4470,7 +4470,7 @@ export const STYLES: UIStyle[] = [
     "slug": "zine-collage",
     "name": {
       "en": "Zine / Collage",
-      "ko": "진 콜라주 (Zine Collage)"
+      "ko": "진 콜라주"
     },
     "tagline": {
       "en": "Zine / Collage treats the interface as a photocopied, hand-cut magazine spread: pieces of paper are torn or trimmed, layered at odd angles, and taped into place with masking tape; text alternates between handwriting, typewriter, and clipped headlines, all sitting on a grainy, high-contrast, DIY surface. It is not polished — the scissor slip, the tape wrinkle, and the over-copied halftone are the whole point. The look migrated from punk fanzines and Riot Grrrl photocopies into web portfolios and editorial sites looking for warmth outside the SaaS grid.",
@@ -4651,7 +4651,7 @@ export const STYLES: UIStyle[] = [
     "slug": "steampunk",
     "name": {
       "en": "Steampunk",
-      "ko": "스팀펑크 (Steampunk)"
+      "ko": "스팀펑크"
     },
     "tagline": {
       "en": "Steampunk dresses the interface in the brass, leather and rivets of a Victorian machine room that never was: warm sepia grounds, burnished copper and bronze, gear-edged frames, engraved serif lettering, pressure-gauge meters and visible mechanical fasteners. It is retro-futurism from the age of steam — the screen pretending to be a 19th-century astrolabe, pocket watch or steamship console rather than a digital surface.",
@@ -4819,7 +4819,7 @@ export const STYLES: UIStyle[] = [
     "slug": "dieselpunk",
     "name": {
       "en": "Dieselpunk",
-      "ko": "디젤펑크 (Dieselpunk)"
+      "ko": "디젤펑크"
     },
     "tagline": {
       "en": "Dieselpunk is the visual language of 1920s–1940s industrial war machines rendered as UI: riveted gunmetal panels, aviation gauges, oxidized copper and olive drab, oil stains, and stenciled lettering. Where steampunk dreams of brass gentlemen and clockwork wonder, dieselpunk wakes up in a sooty hangar full of propellers, diesel exhaust, and Art Deco machinery. It is darker, heavier, and more militaristic — the aesthetic of function pushed to the edge of romance.",
@@ -4987,7 +4987,7 @@ export const STYLES: UIStyle[] = [
     "slug": "biopunk",
     "name": {
       "en": "Biopunk",
-      "ko": "바이오펑크 (Biopunk)"
+      "ko": "바이오펑크"
     },
     "tagline": {
       "en": "Biopunk drags cyberpunk out of the chrome-and-neon city and into the wet lab: interfaces look grown rather than machined — viscous gels, semi-translucent membranes, throbbing vascular progress bars, and sterile medical readouts tinted in sickly greens, bruised pinks, and cold laboratory whites. It is the visual language of gene editing, biohacked implants, and cultures bubbling in petri dishes. Where cyberpunk asks 'what if the network owns you', biopunk asks 'what if your own cells do'.",
@@ -5155,7 +5155,7 @@ export const STYLES: UIStyle[] = [
     "slug": "afrofuturism",
     "name": {
       "en": "Afrofuturism",
-      "ko": "아프로퓨처리즘 (Afrofuturism)"
+      "ko": "아프로퓨처리즘"
     },
     "tagline": {
       "en": "Afrofuturism projects African and diasporic culture into science fiction and the cosmos: interfaces that read like a star chart, a royal banner, and a launch console at once. Deep space black is edged with gold, burnt orange, and royal purple; African geometric patterns frame sunbursts and constellations instead of neoclassical ornament. It has traveled from Sun Ra's cosmic jazz to the Wakandan UI of Black Panther.",
@@ -5321,7 +5321,7 @@ export const STYLES: UIStyle[] = [
     "slug": "de-stijl",
     "name": {
       "en": "De Stijl",
-      "ko": "데 스틸 (De Stijl)"
+      "ko": "데 스틸"
     },
     "tagline": {
       "en": "De Stijl is the Dutch abstract movement that reduced painting and design to a strict grammar of horizontal and vertical black lines enclosing rectangles of red, yellow, and blue on a white ground. Every curve, diagonal, and representational reference is rejected; balance is achieved asymmetrically by shifting the weight of color blocks across an invisible orthogonal grid. The look is inseparable from Piet Mondrian's mature Neo-Plasticist canvases and from Theo van Doesburg's magazine and architectural projects of 1917–1931.",
@@ -5489,7 +5489,7 @@ export const STYLES: UIStyle[] = [
     "slug": "constructivism",
     "name": {
       "en": "Constructivism",
-      "ko": "구성주의 (Constructivism)"
+      "ko": "구성주의"
     },
     "tagline": {
       "en": "Constructivism translates early Soviet avant-garde graphic language into UI: razor-sharp diagonals, red-and-black slabs, clipped industrial photography, and blocky sans-serif type locked into dynamic, poster-like layouts. It still reads as propaganda energy rather than decoration — every element looks arranged to shout a message across a noisy square. A modern app borrowing the look usually wants urgency, solidarity, or editorial punch.",
@@ -5655,7 +5655,7 @@ export const STYLES: UIStyle[] = [
     "slug": "pop-art",
     "name": {
       "en": "Pop Art",
-      "ko": "팝 아트 (Pop Art)"
+      "ko": "팝 아트"
     },
     "tagline": {
       "en": "Pop Art lifts the look of mass media into UI: comic panels, advertising halftones, and celebrity faces are redrawn as flat, saturated shapes locked inside thick black ink outlines, with Ben-Day dots standing in for shadows and gradients. It treats consumer culture as both subject and punchline — a soup can, a comic strip, a Marilyn — rendered in the primary-plus-neon palette of 1960s printing. The style is instantly readable because it borrows from the most familiar visual language on the newsstand.",
@@ -5823,7 +5823,7 @@ export const STYLES: UIStyle[] = [
     "slug": "surrealism",
     "name": {
       "en": "Surrealism",
-      "ko": "초현실주의 (Surrealism)"
+      "ko": "초현실주의"
     },
     "tagline": {
       "en": "Surrealism treats the interface as a dream canvas: recognizable objects are placed in impossible relationships — clocks melt and drape over edges, eyes float in soft gradients, solids breathe with slow morphing motion. The palette is hushed and lunar rather than neon, the lighting is diffuse and uncanny, and the composition follows the logic of the subconscious rather than the grid. It borrows its name from the 1924 art movement, but as a UI style it is a contemporary mood: the screen as a lucid dream.",
@@ -5991,7 +5991,7 @@ export const STYLES: UIStyle[] = [
     "slug": "art-nouveau",
     "name": {
       "en": "Art Nouveau",
-      "ko": "아르누보 (Art Nouveau)"
+      "ko": "아르누보"
     },
     "tagline": {
       "en": "Art Nouveau is the late-19th-century 'new art' that replaced historical revivalism with living, asymmetrical lines drawn from plants, flowers, and whiplash tendrils. Its interfaces and graphics favor earthy jewel tones, oxidized gold, hand-drawn vines, and ornate serif lettering that seems to grow out of the page rather than sit on it. It flourished from roughly 1890 to 1910 and was eclipsed by the machine geometry of Art Deco.",
@@ -6157,7 +6157,7 @@ export const STYLES: UIStyle[] = [
     "slug": "holographic",
     "name": {
       "en": "Holographic",
-      "ko": "홀로그래픽 (Holographic)"
+      "ko": "홀로그래픽"
     },
     "tagline": {
       "en": "Holographic UI looks like light hitting rainbow foil: a metallic silver base explodes into shifting cyan, magenta, violet, and gold, with pastel pink and lavender shimmers sliding across the surface. It borrows from holographic foil printing and oil-slick diffraction, not glass or depth — the effect is flat, reflective, and synthetic. The style became the face of late-2010s unicorn branding, beauty-tech packaging, and year-in-review campaigns that wanted to feel futuristic and celebratory.",
@@ -6312,7 +6312,7 @@ export const STYLES: UIStyle[] = [
     "slug": "isometric-3d",
     "name": {
       "en": "Isometric 3D",
-      "ko": "아이소메트릭 3D (Isometric 3D)"
+      "ko": "아이소메트릭 3D"
     },
     "tagline": {
       "en": "Isometric 3D renders interface scenes as axonometric block worlds: three axes spaced 120° apart on the picture plane, parallel lines that never converge, and geometric solids built from cubes and extruded planes. It gives depth without perspective distortion, so a dashboard, city, or device cluster reads like a clean architectural model. The look surged in web illustration around 2017–2019 as 'isometric flat design' and remains a go-to language for explaining complex systems at a glance.",
@@ -6480,7 +6480,7 @@ export const STYLES: UIStyle[] = [
     "slug": "line-art",
     "name": {
       "en": "Line Art",
-      "ko": "라인 아트 (Line Art)"
+      "ko": "라인 아트"
     },
     "tagline": {
       "en": "Line Art renders an interface as a contour drawing: every control, container, and icon is built from a single-weight outline with no solid fill, like a technical illustration or monoline icon set blown up to UI scale. The line itself is the visual subject — not a border around a colored block, not decoration on top of a flat layout. It reads as precise, light, and almost schematic, as though the product were still a clean ink drawing on tracing paper.",
@@ -6633,7 +6633,7 @@ export const STYLES: UIStyle[] = [
     "slug": "hand-drawn",
     "name": {
       "en": "Hand-drawn / Doodle",
-      "ko": "핸드드로잉 (Hand-drawn)"
+      "ko": "핸드드로잉"
     },
     "tagline": {
       "en": "Hand-drawn UI keeps the evidence of a human hand on the screen: lines wobble a pixel or two off a perfect vector, color blocks look marker-filled with uneven edges, and typography leans toward handwriting or a sans softened by slight rotation. It signals low-fi honesty, playfulness, or a deliberate escape from polished SaaS sameness. The look lives in sketchy wireframes, indie app onboarding, and landing pages that want to feel like a notebook rather than a dashboard.",
@@ -6801,7 +6801,7 @@ export const STYLES: UIStyle[] = [
     "slug": "fantasy-rpg",
     "name": {
       "en": "Fantasy RPG UI",
-      "ko": "판타지 RPG UI (Fantasy RPG UI)"
+      "ko": "판타지 RPG UI"
     },
     "tagline": {
       "en": "Fantasy RPG UI draws its look from the inventory screens, spellbooks, and status panels of tabletop-to-computer role-playing games: parchment, weathered stone, tooled leather, and dark patinated metal form the surfaces; runic or blackletter-inflected type announces headings; red health and blue mana bars wrap the action in resource drama. The style treats the screen as a physical artifact from a medieval-fantasy world, not as a flat display. It crystallized in early CRPGs and was polished into a convention by the MMO era, then surfaced again in every indie dungeon crawler and gacha RPG.",
