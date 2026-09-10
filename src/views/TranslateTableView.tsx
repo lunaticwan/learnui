@@ -58,7 +58,7 @@ export const TranslateTableView: React.FC = () => {
             />
             <kbd className="search-kbd">/</kbd>
           </div>
-          <p className="count-note" style={{ marginTop: '8px', fontSize: '12.5px', color: 'var(--gray-500)' }}>
+          <p className="count-note" style={{ marginTop: '8px', fontSize: '13px', color: 'var(--gray-500)' }}>
             <span>총 {TRANSLATE_TABLE.length}개 중 {filteredRows.length}개 항목 표시</span>
           </p>
         </div>

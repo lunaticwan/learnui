@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'sonner';
 import { LanguageProvider } from './context/LanguageContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -17,6 +18,7 @@ export const App: React.FC = () => {
   return (
     <LanguageProvider>
       <BrowserRouter>
+        <Toaster position="bottom-right" richColors closeButton />
         <Header onOpenCmdPalette={() => setCmdPaletteOpen(true)} />
         <CommandPalette open={cmdPaletteOpen} onOpenChange={setCmdPaletteOpen} />
 
