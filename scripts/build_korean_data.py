@@ -245,7 +245,8 @@ def convert_style(s):
         "signals": signals_list,
         "confusedWith": confused_list,
         "brief": get_localized_obj(s, "brief"),
-        "a11yAndMisuse": get_localized_obj(s, "a11yAndMisuse"),
+        "accessibility": get_localized_obj(s, "accessibility"),
+        "a11yAndMisuse": get_localized_obj(s, "accessibility"),
         "origin": get_localized_obj(s, "origin"),
         "meta": s.get("meta", {})
     }
