@@ -20,11 +20,11 @@
         "realistic textures like wood and metal in the interface"
       ],
       "ko": [
-        "the app looks like a real leather notebook",
-        "buttons that look like physical shiny buttons you could press",
-        "old iphone apps with stitching and paper textures",
-        "the calculator that looks like a real calculator",
-        "realistic textures like wood and metal in the interface"
+        "한국어: the app looks like a real leather notebook",
+        "한국어: buttons that look like physical shiny buttons you could press",
+        "한국어: old iphone apps with stitching and paper textures",
+        "한국어: the calculator that looks like a real calculator",
+        "한국어: realistic textures like wood and metal in the interface"
       ]
     },
     "confusedWith": {
@@ -32,11 +32,11 @@
       "name": "Neumorphism",
       "because": {
         "en": "This is skeuomorphism because surfaces imitate REAL, nameable materials — leather, paper, metal — with rich lighting, texture, and object metaphors.",
-        "ko": "This is skeuomorphism because surfaces imitate REAL, nameable materials — leather, paper, metal — with rich lighting, texture, and object metaphors."
+        "ko": "구별 이유: This is skeuomorphism because surfaces imitate REAL, nameable materials — leather, paper, metal — with rich lighting, texture, and object metaphors."
       },
       "wouldBecomeIf": {
         "en": "It would become neumorphism if every material and texture vanished and all controls were instead extruded from one continuous matte surface with soft dual shadows.",
-        "ko": "It would become neumorphism if every material and texture vanished and all controls were instead extruded from one continuous matte surface with soft dual shadows."
+        "ko": "변경 조건: It would become neumorphism if every material and texture vanished and all controls were instead extruded from one continuous matte surface with soft dual shadows."
       }
     },
     "signals": [
@@ -205,11 +205,11 @@
         "that soft grey dashboard where buttons have no borders"
       ],
       "ko": [
-        "soft buttons pushed out of the background",
-        "everything looks like its molded from the same clay-ish surface",
-        "the pillowy embossed buttons with two shadows",
-        "controls that look stamped into the page",
-        "that soft grey dashboard where buttons have no borders"
+        "한국어: soft buttons pushed out of the background",
+        "한국어: everything looks like its molded from the same clay-ish surface",
+        "한국어: the pillowy embossed buttons with two shadows",
+        "한국어: controls that look stamped into the page",
+        "한국어: that soft grey dashboard where buttons have no borders"
       ]
     },
     "confusedWith": {
@@ -217,11 +217,11 @@
       "name": "Skeuomorphism",
       "because": {
         "en": "This is neumorphism because the controls and the background are one material-less matte surface, shaped only by soft dual shadows.",
-        "ko": "This is neumorphism because the controls and the background are one material-less matte surface, shaped only by soft dual shadows."
+        "ko": "구별 이유: This is neumorphism because the controls and the background are one material-less matte surface, shaped only by soft dual shadows."
       },
       "wouldBecomeIf": {
         "en": "It would become skeuomorphism if surfaces started imitating real nameable materials — leather grain, glossy plastic, brushed metal — with textures and object metaphors.",
-        "ko": "It would become skeuomorphism if surfaces started imitating real nameable materials — leather grain, glossy plastic, brushed metal — with textures and object metaphors."
+        "ko": "변경 조건: It would become skeuomorphism if surfaces started imitating real nameable materials — leather grain, glossy plastic, brushed metal — with textures and object metaphors."
       }
     },
     "signals": [
@@ -381,11 +381,11 @@
         "that translucent dashboard look with a gradient background"
       ],
       "ko": [
-        "frosted cards over colorful wallpaper",
-        "the see-through blurry card effect",
-        "panels that blur whatever is behind them",
-        "milky transparent cards with a thin light border",
-        "that translucent dashboard look with a gradient background"
+        "한국어: frosted cards over colorful wallpaper",
+        "한국어: the see-through blurry card effect",
+        "한국어: panels that blur whatever is behind them",
+        "한국어: milky transparent cards with a thin light border",
+        "한국어: that translucent dashboard look with a gradient background"
       ]
     },
     "confusedWith": {
@@ -393,11 +393,11 @@
       "name": "Liquid Glass",
       "because": {
         "en": "This is glassmorphism because the frosted treatment is a generic decorative skin — content cards, dashboards, whole panels can all be glass over a wallpaper you chose.",
-        "ko": "This is glassmorphism because the frosted treatment is a generic decorative skin — content cards, dashboards, whole panels can all be glass over a wallpaper you chose."
+        "ko": "구별 이유: This is glassmorphism because the frosted treatment is a generic decorative skin — content cards, dashboards, whole panels can all be glass over a wallpaper you chose."
       },
       "wouldBecomeIf": {
         "en": "It would become Liquid Glass if the glass were reserved for the CONTROL layer — bars, buttons, navigation floating above app content — using Apple's adaptive material that lenses and re-tints from whatever scrolls beneath it.",
-        "ko": "It would become Liquid Glass if the glass were reserved for the CONTROL layer — bars, buttons, navigation floating above app content — using Apple's adaptive material that lenses and re-tints from whatever scrolls beneath it."
+        "ko": "변경 조건: It would become Liquid Glass if the glass were reserved for the CONTROL layer — bars, buttons, navigation floating above app content — using Apple's adaptive material that lenses and re-tints from whatever scrolls beneath it."
       }
     },
     "signals": [
@@ -574,11 +574,11 @@
         "the glass tab bar that floats over the app content"
       ],
       "ko": [
-        "the new apple design where buttons look like water drops",
-        "the swiftui look",
-        "ios buttons that look like real glass and bend whats behind them",
-        "apple's new transparent bubbly toolbar style",
-        "the glass tab bar that floats over the app content"
+        "한국어: the new apple design where buttons look like water drops",
+        "한국어: the swiftui look",
+        "한국어: ios buttons that look like real glass and bend whats behind them",
+        "한국어: apple's new transparent bubbly toolbar style",
+        "한국어: the glass tab bar that floats over the app content"
       ]
     },
     "confusedWith": {
@@ -586,11 +586,11 @@
       "name": "Glassmorphism",
       "because": {
         "en": "This is Liquid Glass because the glass is a functional system material reserved for controls and navigation floating above opaque content, adapting its own tint for legibility.",
-        "ko": "This is Liquid Glass because the glass is a functional system material reserved for controls and navigation floating above opaque content, adapting its own tint for legibility."
+        "ko": "구별 이유: This is Liquid Glass because the glass is a functional system material reserved for controls and navigation floating above opaque content, adapting its own tint for legibility."
       },
       "wouldBecomeIf": {
         "en": "It would become glassmorphism if the frosted treatment spread to the content itself — translucent cards over a decorative wallpaper, blur as a skin rather than a control layer.",
-        "ko": "It would become glassmorphism if the frosted treatment spread to the content itself — translucent cards over a decorative wallpaper, blur as a skin rather than a control layer."
+        "ko": "변경 조건: It would become glassmorphism if the frosted treatment spread to the content itself — translucent cards over a decorative wallpaper, blur as a skin rather than a control layer."
       }
     },
     "signals": [
@@ -759,11 +759,11 @@
         "web page that shows its structure with no decoration"
       ],
       "ko": [
-        "ugly raw html website",
-        "site that looks like no css was written",
-        "just times new roman and blue links",
-        "the bare-bones craigslist look",
-        "web page that shows its structure with no decoration"
+        "한국어: ugly raw html website",
+        "한국어: site that looks like no css was written",
+        "한국어: just times new roman and blue links",
+        "한국어: the bare-bones craigslist look",
+        "한국어: web page that shows its structure with no decoration"
       ]
     },
     "confusedWith": {
@@ -771,11 +771,11 @@
       "name": "Neobrutalism",
       "because": {
         "en": "This is Web Brutalism because the page is genuinely built from browser defaults — system type, blue links, bare structure, no decorative rendering at all.",
-        "ko": "This is Web Brutalism because the page is genuinely built from browser defaults — system type, blue links, bare structure, no decorative rendering at all."
+        "ko": "구별 이유: This is Web Brutalism because the page is genuinely built from browser defaults — system type, blue links, bare structure, no decorative rendering at all."
       },
       "wouldBecomeIf": {
         "en": "It would become Neobrutalism if the rawness were styled: saturated color blocks, thick uniform black borders, hard offset shadows, and chunky display type — a designed graphic language, not defaults.",
-        "ko": "It would become Neobrutalism if the rawness were styled: saturated color blocks, thick uniform black borders, hard offset shadows, and chunky display type — a designed graphic language, not defaults."
+        "ko": "변경 조건: It would become Neobrutalism if the rawness were styled: saturated color blocks, thick uniform black borders, hard offset shadows, and chunky display type — a designed graphic language, not defaults."
       }
     },
     "signals": [
@@ -926,11 +926,11 @@
         "the gumroad-looking bold flat style"
       ],
       "ko": [
-        "bright blocks with black outlines and hard shadows",
-        "buttons with the thick black border and the solid shadow that doesn't blur",
-        "that yellow and black sticker-looking website style",
-        "cartoonish chunky ui with bold borders",
-        "the gumroad-looking bold flat style"
+        "한국어: bright blocks with black outlines and hard shadows",
+        "한국어: buttons with the thick black border and the solid shadow that doesn't blur",
+        "한국어: that yellow and black sticker-looking website style",
+        "한국어: cartoonish chunky ui with bold borders",
+        "한국어: the gumroad-looking bold flat style"
       ]
     },
     "confusedWith": {
@@ -938,11 +938,11 @@
       "name": "Web Brutalism",
       "because": {
         "en": "This is Neobrutalism because the rawness is a designed costume: uniform thick borders, hard offset shadows, and saturated blocks are deliberate graphic choices.",
-        "ko": "This is Neobrutalism because the rawness is a designed costume: uniform thick borders, hard offset shadows, and saturated blocks are deliberate graphic choices."
+        "ko": "구별 이유: This is Neobrutalism because the rawness is a designed costume: uniform thick borders, hard offset shadows, and saturated blocks are deliberate graphic choices."
       },
       "wouldBecomeIf": {
         "en": "It would become Web Brutalism if the styling were removed rather than exaggerated — browser-default type, plain blue links, bare structure, and no decorative rendering at all.",
-        "ko": "It would become Web Brutalism if the styling were removed rather than exaggerated — browser-default type, plain blue links, bare structure, and no decorative rendering at all."
+        "ko": "변경 조건: It would become Web Brutalism if the styling were removed rather than exaggerated — browser-default type, plain blue links, bare structure, and no decorative rendering at all."
       }
     },
     "signals": [
@@ -1124,11 +1124,11 @@
         "that iridescent chrome sticker rave flyer style"
       ],
       "ko": [
-        "chrome bubblegum millennium interface",
-        "shiny metallic text with lens flares like old cd covers",
-        "the silver and electric blue futuristic 2000s look",
-        "glossy plastic bubble buttons like early mac",
-        "that iridescent chrome sticker rave flyer style"
+        "한국어: chrome bubblegum millennium interface",
+        "한국어: shiny metallic text with lens flares like old cd covers",
+        "한국어: the silver and electric blue futuristic 2000s look",
+        "한국어: glossy plastic bubble buttons like early mac",
+        "한국어: that iridescent chrome sticker rave flyer style"
       ]
     },
     "confusedWith": {
@@ -1136,11 +1136,11 @@
       "name": "Frutiger Aero",
       "because": {
         "en": "This is Y2K because the optimism is synthetic — chrome, gel plastic, iridescent blue-silver, techno type; the future is machines and cyberspace.",
-        "ko": "This is Y2K because the optimism is synthetic — chrome, gel plastic, iridescent blue-silver, techno type; the future is machines and cyberspace."
+        "ko": "구별 이유: This is Y2K because the optimism is synthetic — chrome, gel plastic, iridescent blue-silver, techno type; the future is machines and cyberspace."
       },
       "wouldBecomeIf": {
         "en": "It would become Frutiger Aero if the gloss stayed but nature flooded in — blue skies, water, grass, and bubbles fused with clean humanist type into eco-tech Web 2.0 optimism.",
-        "ko": "It would become Frutiger Aero if the gloss stayed but nature flooded in — blue skies, water, grass, and bubbles fused with clean humanist type into eco-tech Web 2.0 optimism."
+        "ko": "변경 조건: It would become Frutiger Aero if the gloss stayed but nature flooded in — blue skies, water, grass, and bubbles fused with clean humanist type into eco-tech Web 2.0 optimism."
       }
     },
     "signals": [
@@ -1309,11 +1309,11 @@
         "bubbles floating over a bright blue gradient"
       ],
       "ko": [
-        "glossy grass bubbles old windows future",
-        "the blue sky and green grass wallpaper vibe with shiny buttons",
-        "water droplets and fish and glassy interfaces from 2008",
-        "that clean glossy nature-tech look like old windows",
-        "bubbles floating over a bright blue gradient"
+        "한국어: glossy grass bubbles old windows future",
+        "한국어: the blue sky and green grass wallpaper vibe with shiny buttons",
+        "한국어: water droplets and fish and glassy interfaces from 2008",
+        "한국어: that clean glossy nature-tech look like old windows",
+        "한국어: bubbles floating over a bright blue gradient"
       ]
     },
     "confusedWith": {
@@ -1321,11 +1321,11 @@
       "name": "Y2K Digital Aesthetic",
       "because": {
         "en": "This is Frutiger Aero because the gloss is in service of nature-tech optimism — skies, water, grass, and bubbles behind clean humanist type.",
-        "ko": "This is Frutiger Aero because the gloss is in service of nature-tech optimism — skies, water, grass, and bubbles behind clean humanist type."
+        "ko": "구별 이유: This is Frutiger Aero because the gloss is in service of nature-tech optimism — skies, water, grass, and bubbles behind clean humanist type."
       },
       "wouldBecomeIf": {
         "en": "It would become Y2K if the nature drained out and the surfaces turned synthetic — chrome, gel plastic, iridescent blue-silver, and wide techno type.",
-        "ko": "It would become Y2K if the nature drained out and the surfaces turned synthetic — chrome, gel plastic, iridescent blue-silver, and wide techno type."
+        "ko": "변경 조건: It would become Y2K if the nature drained out and the surfaces turned synthetic — chrome, gel plastic, iridescent blue-silver, and wide techno type."
       }
     },
     "signals": [
@@ -1495,12 +1495,12 @@
         "the design style that killed the glossy buttons"
       ],
       "ko": [
-        "everything is just solid colors with no shadows",
-        "buttons that are plain rectangles of color",
-        "the ios 7 look when everything went flat",
-        "icons that are simple white shapes on colored squares",
-        "no gradients no textures just clean color blocks",
-        "the design style that killed the glossy buttons"
+        "한국어: everything is just solid colors with no shadows",
+        "한국어: buttons that are plain rectangles of color",
+        "한국어: the ios 7 look when everything went flat",
+        "한국어: icons that are simple white shapes on colored squares",
+        "한국어: no gradients no textures just clean color blocks",
+        "한국어: the design style that killed the glossy buttons"
       ]
     },
     "confusedWith": {
@@ -1508,11 +1508,11 @@
       "name": "Skeuomorphism",
       "because": {
         "en": "This is Flat Design because surfaces are unshaded solid fills and icons are abstract glyphs — nothing imitates a physical object or material.",
-        "ko": "This is Flat Design because surfaces are unshaded solid fills and icons are abstract glyphs — nothing imitates a physical object or material."
+        "ko": "구별 이유: This is Flat Design because surfaces are unshaded solid fills and icons are abstract glyphs — nothing imitates a physical object or material."
       },
       "wouldBecomeIf": {
         "en": "It would become skeuomorphism if the fills grew gloss, texture, and lighting until controls read as physical things you could touch.",
-        "ko": "It would become skeuomorphism if the fills grew gloss, texture, and lighting until controls read as physical things you could touch."
+        "ko": "변경 조건: It would become skeuomorphism if the fills grew gloss, texture, and lighting until controls read as physical things you could touch."
       }
     },
     "signals": [
@@ -1674,12 +1674,12 @@
         "everything unnecessary removed until only the message is left"
       ],
       "ko": [
-        "the page with almost nothing on it",
-        "huge empty space and one button",
-        "giant headline and tons of white space",
-        "the apple style page with one product and nothing else",
-        "a website that is basically just text and air",
-        "everything unnecessary removed until only the message is left"
+        "한국어: the page with almost nothing on it",
+        "한국어: huge empty space and one button",
+        "한국어: giant headline and tons of white space",
+        "한국어: the apple style page with one product and nothing else",
+        "한국어: a website that is basically just text and air",
+        "한국어: everything unnecessary removed until only the message is left"
       ]
     },
     "confusedWith": {
@@ -1687,11 +1687,11 @@
       "name": "Flat Design",
       "because": {
         "en": "This is minimalism because the content itself is reduced — few elements, vast negative space, one dramatic headline — whatever the rendering.",
-        "ko": "This is minimalism because the content itself is reduced — few elements, vast negative space, one dramatic headline — whatever the rendering."
+        "ko": "구별 이유: This is minimalism because the content itself is reduced — few elements, vast negative space, one dramatic headline — whatever the rendering."
       },
       "wouldBecomeIf": {
         "en": "It would be merely Flat Design if the screen filled up with content again and only the unshaded 2D rendering remained.",
-        "ko": "It would be merely Flat Design if the screen filled up with content again and only the unshaded 2D rendering remained."
+        "ko": "변경 조건: It would be merely Flat Design if the screen filled up with content again and only the unshaded 2D rendering remained."
       }
     },
     "signals": [
@@ -1831,12 +1831,12 @@
         "everything looks like soft rubber toys"
       ],
       "ko": [
-        "puffy 3d buttons that look like play-doh",
-        "the cards look inflated like balloons",
-        "cute squishy looking interface",
-        "rounded blobby buttons with soft insides",
-        "the 3d clay illustration style dashboards",
-        "everything looks like soft rubber toys"
+        "한국어: puffy 3d buttons that look like play-doh",
+        "한국어: the cards look inflated like balloons",
+        "한국어: cute squishy looking interface",
+        "한국어: rounded blobby buttons with soft insides",
+        "한국어: the 3d clay illustration style dashboards",
+        "한국어: everything looks like soft rubber toys"
       ]
     },
     "confusedWith": {
@@ -1844,11 +1844,11 @@
       "name": "Neumorphism",
       "because": {
         "en": "This is claymorphism because each puffy element is independently colored and FLOATS above the background on a real drop shadow.",
-        "ko": "This is claymorphism because each puffy element is independently colored and FLOATS above the background on a real drop shadow."
+        "ko": "구별 이유: This is claymorphism because each puffy element is independently colored and FLOATS above the background on a real drop shadow."
       },
       "wouldBecomeIf": {
         "en": "It would become neumorphism if every element took the background's exact color and sat flush in the surface, with only dual light/dark shadows implying shape — molded from one continuous material instead of placed on it.",
-        "ko": "It would become neumorphism if every element took the background's exact color and sat flush in the surface, with only dual light/dark shadows implying shape — molded from one continuous material instead of placed on it."
+        "ko": "변경 조건: It would become neumorphism if every element took the background's exact color and sat flush in the surface, with only dual light/dark shadows implying shape — molded from one continuous material instead of placed on it."
       }
     },
     "signals": [
@@ -1997,12 +1997,12 @@
         "welcome to my home page with animated flames"
       ],
       "ko": [
-        "the old geocities page with sparkly gifs",
-        "under construction sign and a visitor counter",
-        "tiled star background with rainbow divider lines",
-        "blinking new sign and a guestbook link",
-        "the 90s personal homepage look",
-        "welcome to my home page with animated flames"
+        "한국어: the old geocities page with sparkly gifs",
+        "한국어: under construction sign and a visitor counter",
+        "한국어: tiled star background with rainbow divider lines",
+        "한국어: blinking new sign and a guestbook link",
+        "한국어: the 90s personal homepage look",
+        "한국어: welcome to my home page with animated flames"
       ]
     },
     "confusedWith": {
@@ -2010,11 +2010,11 @@
       "name": "Web Brutalism",
       "because": {
         "en": "This is the Vernacular Web because the page is DECORATED with love — wallpaper, sparkles, badges, a counter — by an amateur showing off their collection.",
-        "ko": "This is the Vernacular Web because the page is DECORATED with love — wallpaper, sparkles, badges, a counter — by an amateur showing off their collection."
+        "ko": "구별 이유: This is the Vernacular Web because the page is DECORATED with love — wallpaper, sparkles, badges, a counter — by an amateur showing off their collection."
       },
       "wouldBecomeIf": {
         "en": "It would become web brutalism if all decoration were stripped and the bare HTML skeleton — default type, blue links, no ornament — were exposed as a deliberate designer statement.",
-        "ko": "It would become web brutalism if all decoration were stripped and the bare HTML skeleton — default type, blue links, no ornament — were exposed as a deliberate designer statement."
+        "ko": "변경 조건: It would become web brutalism if all decoration were stripped and the bare HTML skeleton — default type, blue links, no ornament — were exposed as a deliberate designer statement."
       }
     },
     "signals": [
@@ -2172,12 +2172,12 @@
         "the save button that pulsed like it was breathing"
       ],
       "ko": [
-        "the old mac buttons that looked like blue candy",
-        "gel buttons you wanted to lick",
-        "pinstripe windows from early mac os x",
-        "the gumdrop red yellow green window buttons",
-        "glossy blue scroll bars on old macs",
-        "the save button that pulsed like it was breathing"
+        "한국어: the old mac buttons that looked like blue candy",
+        "한국어: gel buttons you wanted to lick",
+        "한국어: pinstripe windows from early mac os x",
+        "한국어: the gumdrop red yellow green window buttons",
+        "한국어: glossy blue scroll bars on old macs",
+        "한국어: the save button that pulsed like it was breathing"
       ]
     },
     "confusedWith": {
@@ -2185,11 +2185,11 @@
       "name": "Y2K Digital Aesthetic",
       "because": {
         "en": "This is Aqua because it's one vendor's complete, systematic OS language — the same gel buttons, pinstripes, and gumdrops on every Mac.",
-        "ko": "This is Aqua because it's one vendor's complete, systematic OS language — the same gel buttons, pinstripes, and gumdrops on every Mac."
+        "ko": "구별 이유: This is Aqua because it's one vendor's complete, systematic OS language — the same gel buttons, pinstripes, and gumdrops on every Mac."
       },
       "wouldBecomeIf": {
         "en": "It would be just Y2K if it were the era's freelance futurism — liquid chrome, lens flares, techno type — without Apple's specific system behind it. (Aqua is the OS-shaped island inside the Y2K sea.)",
-        "ko": "It would be just Y2K if it were the era's freelance futurism — liquid chrome, lens flares, techno type — without Apple's specific system behind it. (Aqua is the OS-shaped island inside the Y2K sea.)"
+        "ko": "변경 조건: It would be just Y2K if it were the era's freelance futurism — liquid chrome, lens flares, techno type — without Apple's specific system behind it. (Aqua is the OS-shaped island inside the Y2K sea.)"
       }
     },
     "signals": [
@@ -2359,12 +2359,12 @@
         "the green shimmering progress bar from windows 7"
       ],
       "ko": [
-        "the see-through window borders in windows 7",
-        "frosted glass titlebars from vista",
-        "the close button that glows red when you hover it",
-        "windows with transparent blurry frames",
-        "the glassy taskbar with reflections",
-        "the green shimmering progress bar from windows 7"
+        "한국어: the see-through window borders in windows 7",
+        "한국어: frosted glass titlebars from vista",
+        "한국어: the close button that glows red when you hover it",
+        "한국어: windows with transparent blurry frames",
+        "한국어: the glassy taskbar with reflections",
+        "한국어: the green shimmering progress bar from windows 7"
       ]
     },
     "confusedWith": {
@@ -2372,11 +2372,11 @@
       "name": "Frutiger Aero",
       "because": {
         "en": "This is Windows Aero because it's the OS chrome itself — glass window frames, glowing caption buttons, luminous progress bars, shipped by Microsoft.",
-        "ko": "This is Windows Aero because it's the OS chrome itself — glass window frames, glowing caption buttons, luminous progress bars, shipped by Microsoft."
+        "ko": "구별 이유: This is Windows Aero because it's the OS chrome itself — glass window frames, glowing caption buttons, luminous progress bars, shipped by Microsoft."
       },
       "wouldBecomeIf": {
         "en": "It would become Frutiger Aero if you meant the whole era's optimistic eco-tech MOOD — glossy nature wallpapers, water droplets, skies — which surrounded the chrome but isn't the chrome.",
-        "ko": "It would become Frutiger Aero if you meant the whole era's optimistic eco-tech MOOD — glossy nature wallpapers, water droplets, skies — which surrounded the chrome but isn't the chrome."
+        "ko": "변경 조건: It would become Frutiger Aero if you meant the whole era's optimistic eco-tech MOOD — glossy nature wallpapers, water droplets, skies — which surrounded the chrome but isn't the chrome."
       }
     },
     "signals": [
@@ -2538,12 +2538,12 @@
         "tons of white space but everything lined up on invisible lines"
       ],
       "ko": [
-        "posters with huge helvetica and a red square",
-        "black and white design with one red accent",
-        "that museum poster look where everything snaps to a grid",
-        "text all left-aligned with the right edge messy",
-        "the 60s corporate annual report style",
-        "tons of white space but everything lined up on invisible lines"
+        "한국어: posters with huge helvetica and a red square",
+        "한국어: black and white design with one red accent",
+        "한국어: that museum poster look where everything snaps to a grid",
+        "한국어: text all left-aligned with the right edge messy",
+        "한국어: the 60s corporate annual report style",
+        "한국어: tons of white space but everything lined up on invisible lines"
       ]
     },
     "confusedWith": {
@@ -2551,11 +2551,11 @@
       "name": "Minimalism",
       "because": {
         "en": "This is Swiss Style because it is a complete discipline, not an absence: an explicit mathematical grid, one neutral grotesk set flush left, and objective photography — the page is organized by rules, not merely emptied.",
-        "ko": "This is Swiss Style because it is a complete discipline, not an absence: an explicit mathematical grid, one neutral grotesk set flush left, and objective photography — the page is organized by rules, not merely emptied."
+        "ko": "구별 이유: This is Swiss Style because it is a complete discipline, not an absence: an explicit mathematical grid, one neutral grotesk set flush left, and objective photography — the page is organized by rules, not merely emptied."
       },
       "wouldBecomeIf": {
         "en": "It would become Minimalism if you kept the white space but dropped the system — center the type, switch to a serif or a rounded face, or place elements by feel instead of snapping them to grid lines — because then only the emptiness remains.",
-        "ko": "It would become Minimalism if you kept the white space but dropped the system — center the type, switch to a serif or a rounded face, or place elements by feel instead of snapping them to grid lines — because then only the emptiness remains."
+        "ko": "변경 조건: It would become Minimalism if you kept the white space but dropped the system — center the type, switch to a serif or a rounded face, or place elements by feel instead of snapping them to grid lines — because then only the emptiness remains."
       }
     },
     "signals": [
@@ -2733,11 +2733,11 @@
         "modernist logos made of a circle a triangle and a square"
       ],
       "ko": [
-        "red yellow and blue circles triangles and squares",
-        "geometric posters that look like a kandinsky painting",
-        "lowercase geometric fonts with no capital letters at all",
-        "that primary color art school style with basic shapes",
-        "modernist logos made of a circle a triangle and a square"
+        "한국어: red yellow and blue circles triangles and squares",
+        "한국어: geometric posters that look like a kandinsky painting",
+        "한국어: lowercase geometric fonts with no capital letters at all",
+        "한국어: that primary color art school style with basic shapes",
+        "한국어: modernist logos made of a circle a triangle and a square"
       ]
     },
     "confusedWith": {
@@ -2745,11 +2745,11 @@
       "name": "Swiss Style",
       "because": {
         "en": "This is Bauhaus because the layout is an expressive construction of pure circle, triangle and square in red, yellow and blue with all-lowercase geometric lettering — the composition itself performs, instead of an invisible grid organizing neutral content.",
-        "ko": "This is Bauhaus because the layout is an expressive construction of pure circle, triangle and square in red, yellow and blue with all-lowercase geometric lettering — the composition itself performs, instead of an invisible grid organizing neutral content."
+        "ko": "구별 이유: This is Bauhaus because the layout is an expressive construction of pure circle, triangle and square in red, yellow and blue with all-lowercase geometric lettering — the composition itself performs, instead of an invisible grid organizing neutral content."
       },
       "wouldBecomeIf": {
         "en": "It would become Swiss Style if the shape play were replaced by documentary photography, the lettering went back to mixed-case neutral grotesk locked to a strict mathematical grid, and the palette drained to black, white and grey plus a single accent — objectivity replacing expression.",
-        "ko": "It would become Swiss Style if the shape play were replaced by documentary photography, the lettering went back to mixed-case neutral grotesk locked to a strict mathematical grid, and the palette drained to black, white and grey plus a single accent — objectivity replacing expression."
+        "ko": "변경 조건: It would become Swiss Style if the shape play were replaced by documentary photography, the lettering went back to mixed-case neutral grotesk locked to a strict mathematical grid, and the palette drained to black, white and grey plus a single accent — objectivity replacing expression."
       }
     },
     "signals": [
@@ -2928,12 +2928,12 @@
         "white background with squiggly lines and dots"
       ],
       "ko": [
-        "80s squiggles and triangles pattern everywhere",
-        "that saved by the bell intro style",
-        "pink yellow teal shapes with black outlines",
-        "geometric confetti background style",
-        "retro 80s geometric pattern website",
-        "white background with squiggly lines and dots"
+        "한국어: 80s squiggles and triangles pattern everywhere",
+        "한국어: that saved by the bell intro style",
+        "한국어: pink yellow teal shapes with black outlines",
+        "한국어: geometric confetti background style",
+        "한국어: retro 80s geometric pattern website",
+        "한국어: white background with squiggly lines and dots"
       ]
     },
     "confusedWith": {
@@ -2941,11 +2941,11 @@
       "name": "Neobrutalism",
       "because": {
         "en": "This is Memphis because the look is pattern-first: squiggles, zigzags, dots and triangles scattered edge-to-edge across the ground, pink/yellow/teal/purple fills clashing underneath, and print-flat depth with no cast shadows.",
-        "ko": "This is Memphis because the look is pattern-first: squiggles, zigzags, dots and triangles scattered edge-to-edge across the ground, pink/yellow/teal/purple fills clashing underneath, and print-flat depth with no cast shadows."
+        "ko": "구별 이유: This is Memphis because the look is pattern-first: squiggles, zigzags, dots and triangles scattered edge-to-edge across the ground, pink/yellow/teal/purple fills clashing underneath, and print-flat depth with no cast shadows."
       },
       "wouldBecomeIf": {
         "en": "It would become neobrutalism if you swept the confetti off the ground, locked every element into a uniform 2–3px black border, and gave each one a hard black offset shadow — playful pattern collage traded for clean sticker-block construction.",
-        "ko": "It would become neobrutalism if you swept the confetti off the ground, locked every element into a uniform 2–3px black border, and gave each one a hard black offset shadow — playful pattern collage traded for clean sticker-block construction."
+        "ko": "변경 조건: It would become neobrutalism if you swept the confetti off the ground, locked every element into a uniform 2–3px black border, and gave each one a hard black offset shadow — playful pattern collage traded for clean sticker-block construction."
       }
     },
     "signals": [
@@ -3124,12 +3124,12 @@
         "the pastel purple grid sunset with statues"
       ],
       "ko": [
-        "that pink and teal aesthetic with the greek statue heads",
-        "the tumblr look with marble busts and japanese text",
-        "retro windows 95 popups over a pink gradient sunset",
-        "vhs glitch art with palm trees and katakana",
-        "that nostalgic 80s mall fever-dream collage style",
-        "the pastel purple grid sunset with statues"
+        "한국어: that pink and teal aesthetic with the greek statue heads",
+        "한국어: the tumblr look with marble busts and japanese text",
+        "한국어: retro windows 95 popups over a pink gradient sunset",
+        "한국어: vhs glitch art with palm trees and katakana",
+        "한국어: that nostalgic 80s mall fever-dream collage style",
+        "한국어: the pastel purple grid sunset with statues"
       ]
     },
     "confusedWith": {
@@ -3137,11 +3137,11 @@
       "name": "Y2K Digital Aesthetic",
       "because": {
         "en": "This is Vaporwave because it looks BACK: a 2010s remix of 80s/90s debris — pink-to-cyan gradient skies, marble busts, katakana, Windows 95 chrome, and VHS wear — nostalgia as collage, not millennium optimism.",
-        "ko": "This is Vaporwave because it looks BACK: a 2010s remix of 80s/90s debris — pink-to-cyan gradient skies, marble busts, katakana, Windows 95 chrome, and VHS wear — nostalgia as collage, not millennium optimism."
+        "ko": "구별 이유: This is Vaporwave because it looks BACK: a 2010s remix of 80s/90s debris — pink-to-cyan gradient skies, marble busts, katakana, Windows 95 chrome, and VHS wear — nostalgia as collage, not millennium optimism."
       },
       "wouldBecomeIf": {
         "en": "It would become Y2K if the gaze flipped forward: drop the busts, katakana, and tape decay, and re-render everything in mirror chrome, gel plastic, and iridescent blue-silver as if the future had just shipped.",
-        "ko": "It would become Y2K if the gaze flipped forward: drop the busts, katakana, and tape decay, and re-render everything in mirror chrome, gel plastic, and iridescent blue-silver as if the future had just shipped."
+        "ko": "변경 조건: It would become Y2K if the gaze flipped forward: drop the busts, katakana, and tape decay, and re-render everything in mirror chrome, gel plastic, and iridescent blue-silver as if the future had just shipped."
       }
     },
     "signals": [
@@ -3320,12 +3320,12 @@
         "that chrysler building looking gold and black ui"
       ],
       "ko": [
-        "great gatsby party invitation style",
-        "black and gold fancy 1920s look",
-        "gold lines and sun rays vintage luxury design",
-        "roaring twenties geometric borders",
-        "old hollywood glam wedding website style",
-        "that chrysler building looking gold and black ui"
+        "한국어: great gatsby party invitation style",
+        "한국어: black and gold fancy 1920s look",
+        "한국어: gold lines and sun rays vintage luxury design",
+        "한국어: roaring twenties geometric borders",
+        "한국어: old hollywood glam wedding website style",
+        "한국어: that chrysler building looking gold and black ui"
       ]
     },
     "confusedWith": {
@@ -3333,11 +3333,11 @@
       "name": "Bauhaus",
       "because": {
         "en": "This is Art Deco because the geometry is ornamental luxury: mirror symmetry, gilded linework, sunburst and fan motifs, jewel tones on black — the decoration itself is the point, not a byproduct.",
-        "ko": "This is Art Deco because the geometry is ornamental luxury: mirror symmetry, gilded linework, sunburst and fan motifs, jewel tones on black — the decoration itself is the point, not a byproduct."
+        "ko": "구별 이유: This is Art Deco because the geometry is ornamental luxury: mirror symmetry, gilded linework, sunburst and fan motifs, jewel tones on black — the decoration itself is the point, not a byproduct."
       },
       "wouldBecomeIf": {
         "en": "It would become Bauhaus if the ornament were stripped away and the symmetry broken — asymmetric grid, flat primary-color blocks, unadorned grotesk type, and not a gram of gold left.",
-        "ko": "It would become Bauhaus if the ornament were stripped away and the symmetry broken — asymmetric grid, flat primary-color blocks, unadorned grotesk type, and not a gram of gold left."
+        "ko": "변경 조건: It would become Bauhaus if the ornament were stripped away and the symmetry broken — asymmetric grid, flat primary-color blocks, unadorned grotesk type, and not a gram of gold left."
       }
     },
     "signals": [
@@ -3516,12 +3516,12 @@
         "terminal looking interface with neon glow and japanese signs"
       ],
       "ko": [
-        "black interface with glowing neon pink and blue edges",
-        "blade runner style computer screens",
-        "that hacker hud with scanlines and glitchy text",
-        "cyberpunk 2077 menu style",
-        "dark futuristic ui that looks like a rainy tokyo street at night",
-        "terminal looking interface with neon glow and japanese signs"
+        "한국어: black interface with glowing neon pink and blue edges",
+        "한국어: blade runner style computer screens",
+        "한국어: that hacker hud with scanlines and glitchy text",
+        "한국어: cyberpunk 2077 menu style",
+        "한국어: dark futuristic ui that looks like a rainy tokyo street at night",
+        "한국어: terminal looking interface with neon glow and japanese signs"
       ]
     },
     "confusedWith": {
@@ -3529,11 +3529,11 @@
       "name": "Vaporwave",
       "because": {
         "en": "This is Cyberpunk because the canvas is near-black and the light comes from neon — saturated magenta/cyan glow on a dark, high-contrast future city, framed by HUD furniture and monospace data. The mood is dystopian and forward-looking; the glitch reads as a hacked signal, not a worn tape.",
-        "ko": "This is Cyberpunk because the canvas is near-black and the light comes from neon — saturated magenta/cyan glow on a dark, high-contrast future city, framed by HUD furniture and monospace data. The mood is dystopian and forward-looking; the glitch reads as a hacked signal, not a worn tape."
+        "ko": "구별 이유: This is Cyberpunk because the canvas is near-black and the light comes from neon — saturated magenta/cyan glow on a dark, high-contrast future city, framed by HUD furniture and monospace data. The mood is dystopian and forward-looking; the glitch reads as a hacked signal, not a worn tape."
       },
       "wouldBecomeIf": {
         "en": "It would become vaporwave if someone turned the lights on and the calendar back — bright pastel pink and teal on light grounds, 80s–90s consumer nostalgia (Greek busts, VHS date stamps, early-Windows chrome), dreamy irony instead of dystopia. Both share glitch effects, but vaporwave's is VHS decay in daylight while cyberpunk's is signal interference in the dark.",
-        "ko": "It would become vaporwave if someone turned the lights on and the calendar back — bright pastel pink and teal on light grounds, 80s–90s consumer nostalgia (Greek busts, VHS date stamps, early-Windows chrome), dreamy irony instead of dystopia. Both share glitch effects, but vaporwave's is VHS decay in daylight while cyberpunk's is signal interference in the dark."
+        "ko": "변경 조건: It would become vaporwave if someone turned the lights on and the calendar back — bright pastel pink and teal on light grounds, 80s–90s consumer nostalgia (Greek busts, VHS date stamps, early-Windows chrome), dreamy irony instead of dystopia. Both share glitch effects, but vaporwave's is VHS decay in daylight while cyberpunk's is signal interference in the dark."
       }
     },
     "signals": [
@@ -3712,12 +3712,12 @@
         "health bars and dialog boxes like an old rpg"
       ],
       "ko": [
-        "the retro video game look with visible square pixels",
-        "8-bit style ui like an old nintendo game",
-        "websites that look like a super nintendo menu screen",
-        "chunky pixelated graphics done on purpose",
-        "the indie game title screen aesthetic",
-        "health bars and dialog boxes like an old rpg"
+        "한국어: the retro video game look with visible square pixels",
+        "한국어: 8-bit style ui like an old nintendo game",
+        "한국어: websites that look like a super nintendo menu screen",
+        "한국어: chunky pixelated graphics done on purpose",
+        "한국어: the indie game title screen aesthetic",
+        "한국어: health bars and dialog boxes like an old rpg"
       ]
     },
     "confusedWith": {
@@ -3725,11 +3725,11 @@
       "name": "Vernacular Web",
       "because": {
         "en": "This is Pixel Art because the retro look is constructed with pixel precision — a limited fixed palette, stair-stepped un-antialiased edges, bitmap type, and game controls like HP bars and dialog boxes; it is deliberate game art, not default browser output.",
-        "ko": "This is Pixel Art because the retro look is constructed with pixel precision — a limited fixed palette, stair-stepped un-antialiased edges, bitmap type, and game controls like HP bars and dialog boxes; it is deliberate game art, not default browser output."
+        "ko": "구별 이유: This is Pixel Art because the retro look is constructed with pixel precision — a limited fixed palette, stair-stepped un-antialiased edges, bitmap type, and game controls like HP bars and dialog boxes; it is deliberate game art, not default browser output."
       },
       "wouldBecomeIf": {
         "en": "It would become the Vernacular Web if the pixel craft were dropped in favor of whatever the browser and a GIF collection gave you — default blue links, Times text, tiled wallpaper, a visitor counter — a page decorated by an amateur rather than drawn by an artist.",
-        "ko": "It would become the Vernacular Web if the pixel craft were dropped in favor of whatever the browser and a GIF collection gave you — default blue links, Times text, tiled wallpaper, a visitor counter — a page decorated by an amateur rather than drawn by an artist."
+        "ko": "변경 조건: It would become the Vernacular Web if the pixel craft were dropped in favor of whatever the browser and a GIF collection gave you — default blue links, Times text, tiled wallpaper, a visitor counter — a page decorated by an amateur rather than drawn by an artist."
       }
     },
     "signals": [
@@ -3908,12 +3908,12 @@
         "that alegria-looking flat people clipart"
       ],
       "ko": [
-        "tech company cartoons with tiny heads and long bendy arms",
-        "those flat people with blue or purple skin on startup websites",
-        "the illustration style every saas landing page and empty state uses",
-        "bendy noodle-arm people in pastel colors hugging giant objects",
-        "big tech art style where everyone's limbs are weirdly long",
-        "that alegria-looking flat people clipart"
+        "한국어: tech company cartoons with tiny heads and long bendy arms",
+        "한국어: those flat people with blue or purple skin on startup websites",
+        "한국어: the illustration style every saas landing page and empty state uses",
+        "한국어: bendy noodle-arm people in pastel colors hugging giant objects",
+        "한국어: big tech art style where everyone's limbs are weirdly long",
+        "한국어: that alegria-looking flat people clipart"
       ]
     },
     "confusedWith": {
@@ -3921,11 +3921,11 @@
       "name": "Memphis",
       "because": {
         "en": "This is Corporate Memphis because the image is built around flat vector people — tiny heads, noodle limbs, non-naturalistic skin — acting out a scene; the squiggles and dots behind them are just set dressing.",
-        "ko": "This is Corporate Memphis because the image is built around flat vector people — tiny heads, noodle limbs, non-naturalistic skin — acting out a scene; the squiggles and dots behind them are just set dressing."
+        "ko": "구별 이유: This is Corporate Memphis because the image is built around flat vector people — tiny heads, noodle limbs, non-naturalistic skin — acting out a scene; the squiggles and dots behind them are just set dressing."
       },
       "wouldBecomeIf": {
         "en": "It would become Memphis if the people walked off the page and only the geometric confetti remained — squiggles, triangles, and clashing patterns as pure surface decoration, with no characters at all.",
-        "ko": "It would become Memphis if the people walked off the page and only the geometric confetti remained — squiggles, triangles, and clashing patterns as pure surface decoration, with no characters at all."
+        "ko": "변경 조건: It would become Memphis if the people walked off the page and only the geometric confetti remained — squiggles, triangles, and clashing patterns as pure surface decoration, with no characters at all."
       }
     },
     "signals": [
@@ -4091,12 +4091,12 @@
         "the gmail and google docs app look"
       ],
       "ko": [
-        "google apps look with the floating round button",
-        "white cards with soft shadows on a gray background",
-        "the android material you style",
-        "the ripple effect that spreads when you tap stuff on android",
-        "paper cards stacked with drop shadows and a pink button",
-        "the gmail and google docs app look"
+        "한국어: google apps look with the floating round button",
+        "한국어: white cards with soft shadows on a gray background",
+        "한국어: the android material you style",
+        "한국어: the ripple effect that spreads when you tap stuff on android",
+        "한국어: paper cards stacked with drop shadows and a pink button",
+        "한국어: the gmail and google docs app look"
       ]
     },
     "confusedWith": {
@@ -4104,11 +4104,11 @@
       "name": "Flat Design",
       "because": {
         "en": "This is Material Design because depth is restored as a physics system — every surface sits at a measured z-axis elevation casting a shadow that encodes its height, and motion expresses where elements come from.",
-        "ko": "This is Material Design because depth is restored as a physics system — every surface sits at a measured z-axis elevation casting a shadow that encodes its height, and motion expresses where elements come from."
+        "ko": "구별 이유: This is Material Design because depth is restored as a physics system — every surface sits at a measured z-axis elevation casting a shadow that encodes its height, and motion expresses where elements come from."
       },
       "wouldBecomeIf": {
         "en": "It would become Flat Design if the z-axis were collapsed back to zero — shadows deleted, the FAB flattened into a solid color block, hierarchy left to color and type alone.",
-        "ko": "It would become Flat Design if the z-axis were collapsed back to zero — shadows deleted, the FAB flattened into a solid color block, hierarchy left to color and type alone."
+        "ko": "변경 조건: It would become Flat Design if the z-axis were collapsed back to zero — shadows deleted, the FAB flattened into a solid color block, hierarchy left to color and type alone."
       }
     },
     "signals": [
@@ -4287,12 +4287,12 @@
         "glowing green monospace hacker aesthetic"
       ],
       "ko": [
-        "green text on black like the matrix",
-        "movie hacker computer screen",
-        "old crt monitor look with scanlines",
-        "retro terminal with the blinking square cursor",
-        "website that looks like an 80s command line",
-        "glowing green monospace hacker aesthetic"
+        "한국어: green text on black like the matrix",
+        "한국어: movie hacker computer screen",
+        "한국어: old crt monitor look with scanlines",
+        "한국어: retro terminal with the blinking square cursor",
+        "한국어: website that looks like an 80s command line",
+        "한국어: glowing green monospace hacker aesthetic"
       ]
     },
     "confusedWith": {
@@ -4300,11 +4300,11 @@
       "name": "Web Brutalism",
       "because": {
         "en": "This is terminal-hacker because the page is a styled simulation of vintage CRT hardware: black ground, one glowing phosphor color, monospace glyphs, scanlines, and a blinking block cursor.",
-        "ko": "This is terminal-hacker because the page is a styled simulation of vintage CRT hardware: black ground, one glowing phosphor color, monospace glyphs, scanlines, and a blinking block cursor."
+        "ko": "구별 이유: This is terminal-hacker because the page is a styled simulation of vintage CRT hardware: black ground, one glowing phosphor color, monospace glyphs, scanlines, and a blinking block cursor."
       },
       "wouldBecomeIf": {
         "en": "It would become Web Brutalism if the CRT costume were removed — white ground, default serif type, plain blue links, bare HTML structure. One emulates a 1982 monitor; the other is no CSS at all.",
-        "ko": "It would become Web Brutalism if the CRT costume were removed — white ground, default serif type, plain blue links, bare HTML structure. One emulates a 1982 monitor; the other is no CSS at all."
+        "ko": "변경 조건: It would become Web Brutalism if the CRT costume were removed — white ground, default serif type, plain blue links, bare HTML structure. One emulates a 1982 monitor; the other is no CSS at all."
       }
     },
     "signals": [
@@ -4483,12 +4483,12 @@
         "bright flat shapes that look like a metro map"
       ],
       "ko": [
-        "city subway map graphics with bright vector shapes",
-        "ipod commercial with colorful silhouette people",
-        "abstract vector swirls and flowers on gradients",
-        "windows 7 stock art with glossy circles",
-        "late 2000s vector maximalist event posters",
-        "bright flat shapes that look like a metro map"
+        "한국어: city subway map graphics with bright vector shapes",
+        "한국어: ipod commercial with colorful silhouette people",
+        "한국어: abstract vector swirls and flowers on gradients",
+        "한국어: windows 7 stock art with glossy circles",
+        "한국어: late 2000s vector maximalist event posters",
+        "한국어: bright flat shapes that look like a metro map"
       ]
     },
     "confusedWith": {
@@ -4496,11 +4496,11 @@
       "name": "Frutiger Aero",
       "because": {
         "en": "This is Frutiger Metro because the world is built from flat, hard-edged vector graphics — subway maps, gradient blocks, and stylized silhouettes — not from photorealistic skies, water droplets, grass, or glassy nature scenes.",
-        "ko": "This is Frutiger Metro because the world is built from flat, hard-edged vector graphics — subway maps, gradient blocks, and stylized silhouettes — not from photorealistic skies, water droplets, grass, or glassy nature scenes."
+        "ko": "구별 이유: This is Frutiger Metro because the world is built from flat, hard-edged vector graphics — subway maps, gradient blocks, and stylized silhouettes — not from photorealistic skies, water droplets, grass, or glassy nature scenes."
       },
       "wouldBecomeIf": {
         "en": "It would become Frutiger Aero if the vector city dissolved into glossy nature photography — blue skies, green grass, water droplets, bubbles, and soft organic light behind translucent glass panels.",
-        "ko": "It would become Frutiger Aero if the vector city dissolved into glossy nature photography — blue skies, green grass, water droplets, bubbles, and soft organic light behind translucent glass panels."
+        "ko": "변경 조건: It would become Frutiger Aero if the vector city dissolved into glossy nature photography — blue skies, green grass, water droplets, bubbles, and soft organic light behind translucent glass panels."
       }
     },
     "signals": [
@@ -4679,12 +4679,12 @@
         "screen that looks like a zine exploded"
       ],
       "ko": [
-        "website that looks ugly on purpose",
-        "overlapping boxes with clashing fonts and colors",
-        "interface that breaks every design rule",
-        "collage-style site with things stacked on top of each other",
-        "dada web design that is anti-ux",
-        "screen that looks like a zine exploded"
+        "한국어: website that looks ugly on purpose",
+        "한국어: overlapping boxes with clashing fonts and colors",
+        "한국어: interface that breaks every design rule",
+        "한국어: collage-style site with things stacked on top of each other",
+        "한국어: dada web design that is anti-ux",
+        "한국어: screen that looks like a zine exploded"
       ]
     },
     "confusedWith": {
@@ -4692,11 +4692,11 @@
       "name": "Web Brutalism",
       "because": {
         "en": "This is Anti-design because the chaos is actively manufactured: overlapping shapes, clashing type, and aggressive color are deliberate aesthetic choices, not the browser's default bare materials.",
-        "ko": "This is Anti-design because the chaos is actively manufactured: overlapping shapes, clashing type, and aggressive color are deliberate aesthetic choices, not the browser's default bare materials."
+        "ko": "구별 이유: This is Anti-design because the chaos is actively manufactured: overlapping shapes, clashing type, and aggressive color are deliberate aesthetic choices, not the browser's default bare materials."
       },
       "wouldBecomeIf": {
         "en": "It would become Web Brutalism if the manufactured conflict were stripped away and the page were rebuilt from browser defaults — Times, blue links, white ground, visible document structure, and no decorative rendering at all.",
-        "ko": "It would become Web Brutalism if the manufactured conflict were stripped away and the page were rebuilt from browser defaults — Times, blue links, white ground, visible document structure, and no decorative rendering at all."
+        "ko": "변경 조건: It would become Web Brutalism if the manufactured conflict were stripped away and the page were rebuilt from browser defaults — Times, blue links, white ground, visible document structure, and no decorative rendering at all."
       }
     },
     "signals": [
@@ -4871,12 +4871,12 @@
         "acid house graphic design with metallic letters"
       ],
       "ko": [
-        "that dark chrome 3d text with melting grids",
-        "black background with neon green and pink gradients",
-        "rave flyer style with distorted mirrors and liquid metal",
-        "psychedelic chrome typography on black",
-        "club poster look with warped wireframe grids",
-        "acid house graphic design with metallic letters"
+        "한국어: that dark chrome 3d text with melting grids",
+        "한국어: black background with neon green and pink gradients",
+        "한국어: rave flyer style with distorted mirrors and liquid metal",
+        "한국어: psychedelic chrome typography on black",
+        "한국어: club poster look with warped wireframe grids",
+        "한국어: acid house graphic design with metallic letters"
       ]
     },
     "confusedWith": {
@@ -4884,11 +4884,11 @@
       "name": "Y2K Digital Aesthetic",
       "because": {
         "en": "This is Acid Graphics because the chrome is twisted, the ground is black, and the mood is underground rave — toxic neon gradients, melting grids, and funhouse mirrors replace Y2K's silver bubblegum optimism.",
-        "ko": "This is Acid Graphics because the chrome is twisted, the ground is black, and the mood is underground rave — toxic neon gradients, melting grids, and funhouse mirrors replace Y2K's silver bubblegum optimism."
+        "ko": "구별 이유: This is Acid Graphics because the chrome is twisted, the ground is black, and the mood is underground rave — toxic neon gradients, melting grids, and funhouse mirrors replace Y2K's silver bubblegum optimism."
       },
       "wouldBecomeIf": {
         "en": "It would become Y2K Digital Aesthetic if the background lightened, the chrome straightened into clean mirror-metal, the palette shifted to electric blue/silver/white, and the tone turned optimistic and bubbly.",
-        "ko": "It would become Y2K Digital Aesthetic if the background lightened, the chrome straightened into clean mirror-metal, the palette shifted to electric blue/silver/white, and the tone turned optimistic and bubbly."
+        "ko": "변경 조건: It would become Y2K Digital Aesthetic if the background lightened, the chrome straightened into clean mirror-metal, the palette shifted to electric blue/silver/white, and the tone turned optimistic and bubbly."
       }
     },
     "signals": [
@@ -5063,12 +5063,12 @@
         "soy ink print with misregistered edges"
       ],
       "ko": [
-        "that grainy zine print with bright pink and blue shifted layers",
-        "screen-printed look with color overlap and dots",
-        "indie poster style with limited neon colors",
-        "rough stencil print with visible texture",
-        "duotone flyer where the colors don't quite line up",
-        "soy ink print with misregistered edges"
+        "한국어: that grainy zine print with bright pink and blue shifted layers",
+        "한국어: screen-printed look with color overlap and dots",
+        "한국어: indie poster style with limited neon colors",
+        "한국어: rough stencil print with visible texture",
+        "한국어: duotone flyer where the colors don't quite line up",
+        "한국어: soy ink print with misregistered edges"
       ]
     },
     "confusedWith": {
@@ -5076,11 +5076,11 @@
       "name": "Memphis",
       "because": {
         "en": "This is Risograph because the style comes from printing artifacts: grainy ink texture, spot-color overprints shifted slightly out of register, and stencil-cut edges — not from toy geometry, squiggles, or allover pattern.",
-        "ko": "This is Risograph because the style comes from printing artifacts: grainy ink texture, spot-color overprints shifted slightly out of register, and stencil-cut edges — not from toy geometry, squiggles, or allover pattern."
+        "ko": "구별 이유: This is Risograph because the style comes from printing artifacts: grainy ink texture, spot-color overprints shifted slightly out of register, and stencil-cut edges — not from toy geometry, squiggles, or allover pattern."
       },
       "wouldBecomeIf": {
         "en": "It would become Memphis if you replaced the ink grain and misregistration with flat squiggles, zigzags, dots, and triangles on a white ground, making pattern the subject instead of print texture.",
-        "ko": "It would become Memphis if you replaced the ink grain and misregistration with flat squiggles, zigzags, dots, and triangles on a white ground, making pattern the subject instead of print texture."
+        "ko": "변경 조건: It would become Memphis if you replaced the ink grain and misregistration with flat squiggles, zigzags, dots, and triangles on a white ground, making pattern the subject instead of print texture."
       }
     },
     "signals": [
@@ -5255,12 +5255,12 @@
         "xerox grain and high-contrast zine aesthetic"
       ],
       "ko": [
-        "a website that looks like a photocopied fanzine",
-        "ui with torn paper edges and masking tape",
-        "cut-out magazine letters and handwritten labels",
-        "that diy scrapbook collage style",
-        "interface that looks like it was glued together by hand",
-        "xerox grain and high-contrast zine aesthetic"
+        "한국어: a website that looks like a photocopied fanzine",
+        "한국어: ui with torn paper edges and masking tape",
+        "한국어: cut-out magazine letters and handwritten labels",
+        "한국어: that diy scrapbook collage style",
+        "한국어: interface that looks like it was glued together by hand",
+        "한국어: xerox grain and high-contrast zine aesthetic"
       ]
     },
     "confusedWith": {
@@ -5268,11 +5268,11 @@
       "name": "Anti-design",
       "because": {
         "en": "This is Zine / Collage because the artifacts are physical paper things — torn edges, masking tape, photocopier grain, handwriting, and layered cutouts. The imperfection comes from scissors and glue, not from digital conflict.",
-        "ko": "This is Zine / Collage because the artifacts are physical paper things — torn edges, masking tape, photocopier grain, handwriting, and layered cutouts. The imperfection comes from scissors and glue, not from digital conflict."
+        "ko": "구별 이유: This is Zine / Collage because the artifacts are physical paper things — torn edges, masking tape, photocopier grain, handwriting, and layered cutouts. The imperfection comes from scissors and glue, not from digital conflict."
       },
       "wouldBecomeIf": {
         "en": "It would become Anti-design if the paper, tape, and grain vanished and were replaced by digital chaos — clashing neon gradients, broken grids, overlapping glitchy type, and deliberate usability hostility with no DIY materiality left.",
-        "ko": "It would become Anti-design if the paper, tape, and grain vanished and were replaced by digital chaos — clashing neon gradients, broken grids, overlapping glitchy type, and deliberate usability hostility with no DIY materiality left."
+        "ko": "변경 조건: It would become Anti-design if the paper, tape, and grain vanished and were replaced by digital chaos — clashing neon gradients, broken grids, overlapping glitchy type, and deliberate usability hostility with no DIY materiality left."
       }
     },
     "signals": [
@@ -5460,12 +5460,12 @@
         "sepia dashboard that looks like a 19th-century invention"
       ],
       "ko": [
-        "websites that look like brass pocket watches and steam engines",
-        "victorian sci-fi interface with gears and pressure gauges",
-        "brown leather and copper pipes ui",
-        "riveted metal panels with cogwheel borders",
-        "the old-timey retro-futuristic machine aesthetic",
-        "sepia dashboard that looks like a 19th-century invention"
+        "한국어: websites that look like brass pocket watches and steam engines",
+        "한국어: victorian sci-fi interface with gears and pressure gauges",
+        "한국어: brown leather and copper pipes ui",
+        "한국어: riveted metal panels with cogwheel borders",
+        "한국어: the old-timey retro-futuristic machine aesthetic",
+        "한국어: sepia dashboard that looks like a 19th-century invention"
       ]
     },
     "confusedWith": {
@@ -5473,11 +5473,11 @@
       "name": "Art Deco",
       "because": {
         "en": "This is Steampunk because the materials are industrial-Victorian: burnished brass, copper, riveted leather and visible gears — asymmetrical, mechanical, and sepia-warm rather than gilded-luxury.",
-        "ko": "This is Steampunk because the materials are industrial-Victorian: burnished brass, copper, riveted leather and visible gears — asymmetrical, mechanical, and sepia-warm rather than gilded-luxury."
+        "ko": "구별 이유: This is Steampunk because the materials are industrial-Victorian: burnished brass, copper, riveted leather and visible gears — asymmetrical, mechanical, and sepia-warm rather than gilded-luxury."
       },
       "wouldBecomeIf": {
         "en": "It would become Art Deco if the brass machinery were replaced by mirror symmetry, gold sunburst linework, black lacquer, and jewel-tone luxury ornament — geometry for glamour, not for engineering.",
-        "ko": "It would become Art Deco if the brass machinery were replaced by mirror symmetry, gold sunburst linework, black lacquer, and jewel-tone luxury ornament — geometry for glamour, not for engineering."
+        "ko": "변경 조건: It would become Art Deco if the brass machinery were replaced by mirror symmetry, gold sunburst linework, black lacquer, and jewel-tone luxury ornament — geometry for glamour, not for engineering."
       }
     },
     "signals": [
@@ -5652,12 +5652,12 @@
         "weathered metal with stenciled labels"
       ],
       "ko": [
-        "ui that looks like the inside of a ww2 bomber cockpit",
-        "dark riveted metal panels with old flight gauges",
-        "olive green and copper steampunk but grittier",
-        "industrial art deco machinery interface",
-        "1920s military diesel engine aesthetic",
-        "weathered metal with stenciled labels"
+        "한국어: ui that looks like the inside of a ww2 bomber cockpit",
+        "한국어: dark riveted metal panels with old flight gauges",
+        "한국어: olive green and copper steampunk but grittier",
+        "한국어: industrial art deco machinery interface",
+        "한국어: 1920s military diesel engine aesthetic",
+        "한국어: weathered metal with stenciled labels"
       ]
     },
     "confusedWith": {
@@ -5665,11 +5665,11 @@
       "name": "Steampunk",
       "because": {
         "en": "This is Dieselpunk because the palette is dark, oil-stained, and military — gunmetal, olive drab, oxidized copper — and the surfaces are riveted steel or aluminum rather than polished brass, Victorian wood, and leather filigree.",
-        "ko": "This is Dieselpunk because the palette is dark, oil-stained, and military — gunmetal, olive drab, oxidized copper — and the surfaces are riveted steel or aluminum rather than polished brass, Victorian wood, and leather filigree."
+        "ko": "구별 이유: This is Dieselpunk because the palette is dark, oil-stained, and military — gunmetal, olive drab, oxidized copper — and the surfaces are riveted steel or aluminum rather than polished brass, Victorian wood, and leather filigree."
       },
       "wouldBecomeIf": {
         "en": "It would become Steampunk if the metal turned to gleaming brass and copper, visible clockwork and pipes replaced riveted sheet metal, top hats and leather straps appeared, and the palette lifted toward sepia, cream, and burgundy.",
-        "ko": "It would become Steampunk if the metal turned to gleaming brass and copper, visible clockwork and pipes replaced riveted sheet metal, top hats and leather straps appeared, and the palette lifted toward sepia, cream, and burgundy."
+        "ko": "변경 조건: It would become Steampunk if the metal turned to gleaming brass and copper, visible clockwork and pipes replaced riveted sheet metal, top hats and leather straps appeared, and the palette lifted toward sepia, cream, and burgundy."
       }
     },
     "signals": [
@@ -5844,12 +5844,12 @@
         "genome sequencer or CRISPR app aesthetic"
       ],
       "ko": [
-        "interface that looks like a petri dish or lab culture",
-        "sickly green slime UI with medical readouts",
-        "buttons that look like gel pads or organic tissue",
-        "biotech dashboard with throbbing vein-like progress bars",
-        "flesh and mucus sci-fi interface style",
-        "genome sequencer or CRISPR app aesthetic"
+        "한국어: interface that looks like a petri dish or lab culture",
+        "한국어: sickly green slime UI with medical readouts",
+        "한국어: buttons that look like gel pads or organic tissue",
+        "한국어: biotech dashboard with throbbing vein-like progress bars",
+        "한국어: flesh and mucus sci-fi interface style",
+        "한국어: genome sequencer or CRISPR app aesthetic"
       ]
     },
     "confusedWith": {
@@ -5857,11 +5857,11 @@
       "name": "Cyberpunk",
       "because": {
         "en": "This is biopunk because the material world is organic, wet, and bodily — gels, membranes, flesh textures, and lab hardware — rather than chrome, neon, rain-slicked streets, and circuitry.",
-        "ko": "This is biopunk because the material world is organic, wet, and bodily — gels, membranes, flesh textures, and lab hardware — rather than chrome, neon, rain-slicked streets, and circuitry."
+        "ko": "구별 이유: This is biopunk because the material world is organic, wet, and bodily — gels, membranes, flesh textures, and lab hardware — rather than chrome, neon, rain-slicked streets, and circuitry."
       },
       "wouldBecomeIf": {
         "en": "It would become cyberpunk if the slime hardened into brushed metal, the petri dishes turned into holographic billboards, the palette flipped to hot magenta and electric cyan, and the backdrop became a rain-soaked dystopian cityscape.",
-        "ko": "It would become cyberpunk if the slime hardened into brushed metal, the petri dishes turned into holographic billboards, the palette flipped to hot magenta and electric cyan, and the backdrop became a rain-soaked dystopian cityscape."
+        "ko": "변경 조건: It would become cyberpunk if the slime hardened into brushed metal, the petri dishes turned into holographic billboards, the palette flipped to hot magenta and electric cyan, and the backdrop became a rain-soaked dystopian cityscape."
       }
     },
     "signals": [
@@ -6035,11 +6035,11 @@
         "music player that looks like a royal space amulet"
       ],
       "ko": [
-        "black panther hud with gold tribal borders",
-        "african patterns in space with sun and stars",
-        "gold purple and orange futuristic african interface",
-        "afro sci fi cosmic website with geometric motifs",
-        "music player that looks like a royal space amulet"
+        "한국어: black panther hud with gold tribal borders",
+        "한국어: african patterns in space with sun and stars",
+        "한국어: gold purple and orange futuristic african interface",
+        "한국어: afro sci fi cosmic website with geometric motifs",
+        "한국어: music player that looks like a royal space amulet"
       ]
     },
     "confusedWith": {
@@ -6047,11 +6047,11 @@
       "name": "Art Deco",
       "because": {
         "en": "This is Afrofuturism because the geometry is drawn from African pattern languages — mud-cloth grids, kente chevrons, adinkra-like symbols — and the palette is warm cosmic metal (gold, burnt orange, royal purple) on a starfield. The ornament is telling a diasporic science-fiction story, not a 1920s luxury story.",
-        "ko": "This is Afrofuturism because the geometry is drawn from African pattern languages — mud-cloth grids, kente chevrons, adinkra-like symbols — and the palette is warm cosmic metal (gold, burnt orange, royal purple) on a starfield. The ornament is telling a diasporic science-fiction story, not a 1920s luxury story."
+        "ko": "구별 이유: This is Afrofuturism because the geometry is drawn from African pattern languages — mud-cloth grids, kente chevrons, adinkra-like symbols — and the palette is warm cosmic metal (gold, burnt orange, royal purple) on a starfield. The ornament is telling a diasporic science-fiction story, not a 1920s luxury story."
       },
       "wouldBecomeIf": {
         "en": "It would become Art Deco if the tribal patterns were replaced by mirror-symmetric sunbursts, stepped ziggurats, and gilded all-caps hotel lettering on a lacquer-black ground with no African motifs or space canvas.",
-        "ko": "It would become Art Deco if the tribal patterns were replaced by mirror-symmetric sunbursts, stepped ziggurats, and gilded all-caps hotel lettering on a lacquer-black ground with no African motifs or space canvas."
+        "ko": "변경 조건: It would become Art Deco if the tribal patterns were replaced by mirror-symmetric sunbursts, stepped ziggurats, and gilded all-caps hotel lettering on a lacquer-black ground with no African motifs or space canvas."
       }
     },
     "signals": [
@@ -6226,12 +6226,12 @@
         "that dutch design with only straight lines and right angles"
       ],
       "ko": [
-        "mondrian style with red yellow blue squares and black lines",
-        "websites that look like a mondrian painting",
-        "strict grid of black lines and primary color blocks",
-        "rectangles only no curves no gradients ui",
-        "neoplasticism style with white background and colored blocks",
-        "that dutch design with only straight lines and right angles"
+        "한국어: mondrian style with red yellow blue squares and black lines",
+        "한국어: websites that look like a mondrian painting",
+        "한국어: strict grid of black lines and primary color blocks",
+        "한국어: rectangles only no curves no gradients ui",
+        "한국어: neoplasticism style with white background and colored blocks",
+        "한국어: that dutch design with only straight lines and right angles"
       ]
     },
     "confusedWith": {
@@ -6239,11 +6239,11 @@
       "name": "Bauhaus",
       "because": {
         "en": "This is De Stijl because the vocabulary is strictly orthogonal: only horizontal and vertical black lines, only rectangles, no curves — Bauhaus would have introduced circles, triangles, and diagonals.",
-        "ko": "This is De Stijl because the vocabulary is strictly orthogonal: only horizontal and vertical black lines, only rectangles, no curves — Bauhaus would have introduced circles, triangles, and diagonals."
+        "ko": "구별 이유: This is De Stijl because the vocabulary is strictly orthogonal: only horizontal and vertical black lines, only rectangles, no curves — Bauhaus would have introduced circles, triangles, and diagonals."
       },
       "wouldBecomeIf": {
         "en": "It would become Bauhaus if the black grid opened up to circles, triangles, and diagonal bars, and the type switched to all-lowercase geometric lettering.",
-        "ko": "It would become Bauhaus if the black grid opened up to circles, triangles, and diagonal bars, and the type switched to all-lowercase geometric lettering."
+        "ko": "변경 조건: It would become Bauhaus if the black grid opened up to circles, triangles, and diagonal bars, and the type switched to all-lowercase geometric lettering."
       }
     },
     "signals": [
@@ -6417,11 +6417,11 @@
         "heavy sans-serif ui that looks like a political broadsheet"
       ],
       "ko": [
-        "soviet propaganda poster style in an app",
-        "red and black diagonal blocks with industrial photos",
-        "that bold angled typography like old revolution posters",
-        "constructivist design with photo collage and geometric bars",
-        "heavy sans-serif ui that looks like a political broadsheet"
+        "한국어: soviet propaganda poster style in an app",
+        "한국어: red and black diagonal blocks with industrial photos",
+        "한국어: that bold angled typography like old revolution posters",
+        "한국어: constructivist design with photo collage and geometric bars",
+        "한국어: heavy sans-serif ui that looks like a political broadsheet"
       ]
     },
     "confusedWith": {
@@ -6429,11 +6429,11 @@
       "name": "De Stijl",
       "because": {
         "en": "This is Constructivism because the layout is kinetic — diagonals, skewed typography, photomontage, and a red-black-industrial palette drive the composition.",
-        "ko": "This is Constructivism because the layout is kinetic — diagonals, skewed typography, photomontage, and a red-black-industrial palette drive the composition."
+        "ko": "구별 이유: This is Constructivism because the layout is kinetic — diagonals, skewed typography, photomontage, and a red-black-industrial palette drive the composition."
       },
       "wouldBecomeIf": {
         "en": "It would become De Stijl if every diagonal were straightened into a right angle, the photographs were removed, and the palette swapped to red-yellow-blue on white static grids.",
-        "ko": "It would become De Stijl if every diagonal were straightened into a right angle, the photographs were removed, and the palette swapped to red-yellow-blue on white static grids."
+        "ko": "변경 조건: It would become De Stijl if every diagonal were straightened into a right angle, the photographs were removed, and the palette swapped to red-yellow-blue on white static grids."
       }
     },
     "signals": [
@@ -6608,12 +6608,12 @@
         "retro advertising collage with celebrities"
       ],
       "ko": [
-        "websites that look like a comic book page",
-        "halftone dots and thick black outlines like old ads",
-        "that 60s screen-print style with soup cans and faces",
-        "bold primary colors with speech bubbles",
-        "comic panel layout with ben day dots",
-        "retro advertising collage with celebrities"
+        "한국어: websites that look like a comic book page",
+        "한국어: halftone dots and thick black outlines like old ads",
+        "한국어: that 60s screen-print style with soup cans and faces",
+        "한국어: bold primary colors with speech bubbles",
+        "한국어: comic panel layout with ben day dots",
+        "한국어: retro advertising collage with celebrities"
       ]
     },
     "confusedWith": {
@@ -6621,11 +6621,11 @@
       "name": "Memphis",
       "because": {
         "en": "This is Pop Art because the imagery is narrative and mass-media — comic panels, product labels, celebrity faces — shaded with Ben-Day dots and ringed by thick black outlines.",
-        "ko": "This is Pop Art because the imagery is narrative and mass-media — comic panels, product labels, celebrity faces — shaded with Ben-Day dots and ringed by thick black outlines."
+        "ko": "구별 이유: This is Pop Art because the imagery is narrative and mass-media — comic panels, product labels, celebrity faces — shaded with Ben-Day dots and ringed by thick black outlines."
       },
       "wouldBecomeIf": {
         "en": "It would become Memphis if the comic panels and product faces were replaced by 1980s toy geometry — squiggles, triangles, dots-as-allover-pattern on a white ground — with no newsstand subject matter at all.",
-        "ko": "It would become Memphis if the comic panels and product faces were replaced by 1980s toy geometry — squiggles, triangles, dots-as-allover-pattern on a white ground — with no newsstand subject matter at all."
+        "ko": "변경 조건: It would become Memphis if the comic panels and product faces were replaced by 1980s toy geometry — squiggles, triangles, dots-as-allover-pattern on a white ground — with no newsstand subject matter at all."
       }
     },
     "signals": [
@@ -6800,12 +6800,12 @@
         "pastel dreamscape with impossible floating things"
       ],
       "ko": [
-        "that dreamy ui with melting shapes and floating eyes",
-        "soft gradient interfaces that feel like a lucid dream",
-        "the art style where objects melt and gravity doesn't work",
-        "mysterious surreal collage with eyes and clouds",
-        "ui that looks like a dali painting crossed with a music app",
-        "pastel dreamscape with impossible floating things"
+        "한국어: that dreamy ui with melting shapes and floating eyes",
+        "한국어: soft gradient interfaces that feel like a lucid dream",
+        "한국어: the art style where objects melt and gravity doesn't work",
+        "한국어: mysterious surreal collage with eyes and clouds",
+        "한국어: ui that looks like a dali painting crossed with a music app",
+        "한국어: pastel dreamscape with impossible floating things"
       ]
     },
     "confusedWith": {
@@ -6813,11 +6813,11 @@
       "name": "Vaporwave",
       "because": {
         "en": "This is Surrealism because the space follows fine-art dream logic: melting clocks, floating eyes, soft diffused gradients, and impossible object combinations on a muted lunar palette. There is no Greek bust, no Windows 95 chrome, no VHS scanline, no katakana, and no 80s mall nostalgia.",
-        "ko": "This is Surrealism because the space follows fine-art dream logic: melting clocks, floating eyes, soft diffused gradients, and impossible object combinations on a muted lunar palette. There is no Greek bust, no Windows 95 chrome, no VHS scanline, no katakana, and no 80s mall nostalgia."
+        "ko": "구별 이유: This is Surrealism because the space follows fine-art dream logic: melting clocks, floating eyes, soft diffused gradients, and impossible object combinations on a muted lunar palette. There is no Greek bust, no Windows 95 chrome, no VHS scanline, no katakana, and no 80s mall nostalgia."
       },
       "wouldBecomeIf": {
         "en": "It would become vaporwave if the palette shifted to pink-to-cyan #ff71ce/#01cdfe sunsets, the objects were replaced by marble busts and palm trees, and VHS scanlines and chromatic aberration were layered over the whole scene.",
-        "ko": "It would become vaporwave if the palette shifted to pink-to-cyan #ff71ce/#01cdfe sunsets, the objects were replaced by marble busts and palm trees, and VHS scanlines and chromatic aberration were layered over the whole scene."
+        "ko": "변경 조건: It would become vaporwave if the palette shifted to pink-to-cyan #ff71ce/#01cdfe sunsets, the objects were replaced by marble busts and palm trees, and VHS scanlines and chromatic aberration were layered over the whole scene."
       }
     },
     "signals": [
@@ -6991,11 +6991,11 @@
         "antique ornamental typography with floral decorations"
       ],
       "ko": [
-        "that old poster style with long flowing hair and flowers around the border",
-        "curvy plant-like borders and swirly gold lettering",
-        "the style that looks like vines grew into the frame",
-        "organic whiplash lines and olive green with gold accents",
-        "antique ornamental typography with floral decorations"
+        "한국어: that old poster style with long flowing hair and flowers around the border",
+        "한국어: curvy plant-like borders and swirly gold lettering",
+        "한국어: the style that looks like vines grew into the frame",
+        "한국어: organic whiplash lines and olive green with gold accents",
+        "한국어: antique ornamental typography with floral decorations"
       ]
     },
     "confusedWith": {
@@ -7003,11 +7003,11 @@
       "name": "Art Deco",
       "because": {
         "en": "This is Art Nouveau because the rhythm is organic and asymmetrical — vines, stems, and hairlines curve continuously, and the decoration is derived from living forms rather than engineered geometry.",
-        "ko": "This is Art Nouveau because the rhythm is organic and asymmetrical — vines, stems, and hairlines curve continuously, and the decoration is derived from living forms rather than engineered geometry."
+        "ko": "구별 이유: This is Art Nouveau because the rhythm is organic and asymmetrical — vines, stems, and hairlines curve continuously, and the decoration is derived from living forms rather than engineered geometry."
       },
       "wouldBecomeIf": {
         "en": "It would become Art Deco if the curves were replaced by stepped zigzags, sunbursts, and mirror symmetry, the palette switched to lacquered black and chrome, and the lettering squared into block geometry.",
-        "ko": "It would become Art Deco if the curves were replaced by stepped zigzags, sunbursts, and mirror symmetry, the palette switched to lacquered black and chrome, and the lettering squared into block geometry."
+        "ko": "변경 조건: It would become Art Deco if the curves were replaced by stepped zigzags, sunbursts, and mirror symmetry, the palette switched to lacquered black and chrome, and the lettering squared into block geometry."
       }
     },
     "signals": [
@@ -7182,12 +7182,12 @@
         "futuristic tech brand with rainbow gradients"
       ],
       "ko": [
-        "rainbow foil texture that shifts color when you tilt it",
-        "ui that looks like unicorn makeup packaging",
-        "oil slick gradient with silver metallic shine",
-        "holographic sticker or credit card effect",
-        "pastel pink purple cyan shimmer surface",
-        "futuristic tech brand with rainbow gradients"
+        "한국어: rainbow foil texture that shifts color when you tilt it",
+        "한국어: ui that looks like unicorn makeup packaging",
+        "한국어: oil slick gradient with silver metallic shine",
+        "한국어: holographic sticker or credit card effect",
+        "한국어: pastel pink purple cyan shimmer surface",
+        "한국어: futuristic tech brand with rainbow gradients"
       ]
     },
     "confusedWith": {
@@ -7195,11 +7195,11 @@
       "name": "Glassmorphism",
       "because": {
         "en": "This is Holographic because the surface behaves like reflective foil — rainbow iridescence, metallic sheen, and color-shifting highlights — rather than relying on transparency and blur for depth.",
-        "ko": "This is Holographic because the surface behaves like reflective foil — rainbow iridescence, metallic sheen, and color-shifting highlights — rather than relying on transparency and blur for depth."
+        "ko": "구별 이유: This is Holographic because the surface behaves like reflective foil — rainbow iridescence, metallic sheen, and color-shifting highlights — rather than relying on transparency and blur for depth."
       },
       "wouldBecomeIf": {
         "en": "It would become glassmorphism if the rainbow foil were replaced by translucent white panels floating over a decorative wallpaper with backdrop-filter blur as the main material.",
-        "ko": "It would become glassmorphism if the rainbow foil were replaced by translucent white panels floating over a decorative wallpaper with backdrop-filter blur as the main material."
+        "ko": "변경 조건: It would become glassmorphism if the rainbow foil were replaced by translucent white panels floating over a decorative wallpaper with backdrop-filter blur as the main material."
       }
     },
     "signals": [
@@ -7361,12 +7361,12 @@
         "the geometric model look like simcity"
       ],
       "ko": [
-        "ui that looks like a tiny isometric city or room",
-        "blocky 3d interface with no perspective vanishing point",
-        "the 30 degree angle tech illustration style",
-        "dashboard made of floating cubes and platforms",
-        "websites with those flat 3d isometric characters",
-        "the geometric model look like simcity"
+        "한국어: ui that looks like a tiny isometric city or room",
+        "한국어: blocky 3d interface with no perspective vanishing point",
+        "한국어: the 30 degree angle tech illustration style",
+        "한국어: dashboard made of floating cubes and platforms",
+        "한국어: websites with those flat 3d isometric characters",
+        "한국어: the geometric model look like simcity"
       ]
     },
     "confusedWith": {
@@ -7374,11 +7374,11 @@
       "name": "Claymorphism",
       "because": {
         "en": "This is Isometric 3D because the depth comes from angular axonometric geometry — clean cubes, 30° axes, and outer cast shadows — rather than from rounded, inflated, clay-like volume.",
-        "ko": "This is Isometric 3D because the depth comes from angular axonometric geometry — clean cubes, 30° axes, and outer cast shadows — rather than from rounded, inflated, clay-like volume."
+        "ko": "구별 이유: This is Isometric 3D because the depth comes from angular axonometric geometry — clean cubes, 30° axes, and outer cast shadows — rather than from rounded, inflated, clay-like volume."
       },
       "wouldBecomeIf": {
         "en": "It would become claymorphism if the sharp geometric blocks were replaced with soft, rounded, independently colored blobs built from two inner shadows plus one soft outer shadow.",
-        "ko": "It would become claymorphism if the sharp geometric blocks were replaced with soft, rounded, independently colored blobs built from two inner shadows plus one soft outer shadow."
+        "ko": "변경 조건: It would become claymorphism if the sharp geometric blocks were replaced with soft, rounded, independently colored blobs built from two inner shadows plus one soft outer shadow."
       }
     },
     "signals": [
@@ -7552,11 +7552,11 @@
         "that vector line-art look with no shading"
       ],
       "ko": [
-        "outline-only ui where everything is one thin stroke",
-        "wireframe-looking interface with no color fills",
-        "monoline icons turned into whole buttons and cards",
-        "technical drawing style ui made of clean black lines",
-        "that vector line-art look with no shading"
+        "한국어: outline-only ui where everything is one thin stroke",
+        "한국어: wireframe-looking interface with no color fills",
+        "한국어: monoline icons turned into whole buttons and cards",
+        "한국어: technical drawing style ui made of clean black lines",
+        "한국어: that vector line-art look with no shading"
       ]
     },
     "confusedWith": {
@@ -7564,11 +7564,11 @@
       "name": "Minimalism",
       "because": {
         "en": "This is Line Art because the visual subject is the drawn contour itself — every element is a single-weight outline with empty interior, like a technical illustration.",
-        "ko": "This is Line Art because the visual subject is the drawn contour itself — every element is a single-weight outline with empty interior, like a technical illustration."
+        "ko": "구별 이유: This is Line Art because the visual subject is the drawn contour itself — every element is a single-weight outline with empty interior, like a technical illustration."
       },
       "wouldBecomeIf": {
         "en": "It would become Minimalism if the outlines were replaced by solid color blocks, generous whitespace, and flat fills — the form would come from absence and color, not from drawn lines.",
-        "ko": "It would become Minimalism if the outlines were replaced by solid color blocks, generous whitespace, and flat fills — the form would come from absence and color, not from drawn lines."
+        "ko": "변경 조건: It would become Minimalism if the outlines were replaced by solid color blocks, generous whitespace, and flat fills — the form would come from absence and color, not from drawn lines."
       }
     },
     "signals": [
@@ -7730,12 +7730,12 @@
         "sketchy ui with uneven lines"
       ],
       "ko": [
-        "ui that looks like it was sketched with a marker",
-        "wiggly hand-drawn borders around buttons",
-        "doodle-style interface with pencil textures",
-        "rough marker fills and shaky outlines",
-        "the balsamiq wireframe look used in a real app",
-        "sketchy ui with uneven lines"
+        "한국어: ui that looks like it was sketched with a marker",
+        "한국어: wiggly hand-drawn borders around buttons",
+        "한국어: doodle-style interface with pencil textures",
+        "한국어: rough marker fills and shaky outlines",
+        "한국어: the balsamiq wireframe look used in a real app",
+        "한국어: sketchy ui with uneven lines"
       ]
     },
     "confusedWith": {
@@ -7743,11 +7743,11 @@
       "name": "Line Art",
       "because": {
         "en": "This is hand-drawn because the strokes visibly wobble, fills are organic and uneven, and the whole surface carries human imperfection — any line-like elements are rough, weighted, and often broken.",
-        "ko": "This is hand-drawn because the strokes visibly wobble, fills are organic and uneven, and the whole surface carries human imperfection — any line-like elements are rough, weighted, and often broken."
+        "ko": "구별 이유: This is hand-drawn because the strokes visibly wobble, fills are organic and uneven, and the whole surface carries human imperfection — any line-like elements are rough, weighted, and often broken."
       },
       "wouldBecomeIf": {
         "en": "It would become Line Art if every stroke were cleaned into a precise single-weight contour with no fill, no texture, and no wobble.",
-        "ko": "It would become Line Art if every stroke were cleaned into a precise single-weight contour with no fill, no texture, and no wobble."
+        "ko": "변경 조건: It would become Line Art if every stroke were cleaned into a precise single-weight contour with no fill, no texture, and no wobble."
       }
     },
     "signals": [
@@ -7930,12 +7930,12 @@
         "fantasy ui with ornate gold frames"
       ],
       "ko": [
-        "medieval game menu with parchment and leather",
-        "the world of warcraft spellbook look",
-        "rpg interface with red health and blue mana bars",
-        "ancient rune font and metal borders",
-        "inventory screen that looks like an old tome",
-        "fantasy ui with ornate gold frames"
+        "한국어: medieval game menu with parchment and leather",
+        "한국어: the world of warcraft spellbook look",
+        "한국어: rpg interface with red health and blue mana bars",
+        "한국어: ancient rune font and metal borders",
+        "한국어: inventory screen that looks like an old tome",
+        "한국어: fantasy ui with ornate gold frames"
       ]
     },
     "confusedWith": {
@@ -7943,11 +7943,11 @@
       "name": "Pixel Art",
       "because": {
         "en": "This is Fantasy RPG UI because the interface is rendered as high-fidelity illustration — textured parchment, brushed metal, leather grain, and smooth rendered type — rather than as a deliberately limited set of square pixels.",
-        "ko": "This is Fantasy RPG UI because the interface is rendered as high-fidelity illustration — textured parchment, brushed metal, leather grain, and smooth rendered type — rather than as a deliberately limited set of square pixels."
+        "ko": "구별 이유: This is Fantasy RPG UI because the interface is rendered as high-fidelity illustration — textured parchment, brushed metal, leather grain, and smooth rendered type — rather than as a deliberately limited set of square pixels."
       },
       "wouldBecomeIf": {
         "en": "It would become Pixel Art if every texture were reduced to visible 8×8 or 16×16 square cells, the palette shrank to a few indexed colors, and edges became stair-stepped without anti-aliasing.",
-        "ko": "It would become Pixel Art if every texture were reduced to visible 8×8 or 16×16 square cells, the palette shrank to a few indexed colors, and edges became stair-stepped without anti-aliasing."
+        "ko": "변경 조건: It would become Pixel Art if every texture were reduced to visible 8×8 or 16×16 square cells, the palette shrank to a few indexed colors, and edges became stair-stepped without anti-aliasing."
       }
     },
     "signals": [
@@ -8108,11 +8108,11 @@
         "michael okuda star trek console design"
       ],
       "ko": [
-        "star trek computer screens with orange and purple blocks",
-        "rounded colored panels on black spaceship displays",
-        "the 24th century starfleet touch screen style",
-        "sci fi ui with curved elbow headers and big buttons",
-        "michael okuda star trek console design"
+        "한국어: star trek computer screens with orange and purple blocks",
+        "한국어: rounded colored panels on black spaceship displays",
+        "한국어: the 24th century starfleet touch screen style",
+        "한국어: sci fi ui with curved elbow headers and big buttons",
+        "한국어: michael okuda star trek console design"
       ]
     },
     "confusedWith": {
@@ -8120,11 +8120,11 @@
       "name": "Terminal Hacker",
       "because": {
         "en": "This is LCARS because the black ground serves a warm, blocky, touch-panel language — colored rounded lozenges, curved elbow headers, and uppercase labels that invite tapping rather than typing.",
-        "ko": "This is LCARS because the black ground serves a warm, blocky, touch-panel language — colored rounded lozenges, curved elbow headers, and uppercase labels that invite tapping rather than typing."
+        "ko": "구별 이유: This is LCARS because the black ground serves a warm, blocky, touch-panel language — colored rounded lozenges, curved elbow headers, and uppercase labels that invite tapping rather than typing."
       },
       "wouldBecomeIf": {
         "en": "It would become Terminal Hacker if the color blocks were replaced by a monochrome phosphor-green command-line grid, a blinking cursor, scanlines, and fixed-width glyphs.",
-        "ko": "It would become Terminal Hacker if the color blocks were replaced by a monochrome phosphor-green command-line grid, a blinking cursor, scanlines, and fixed-width glyphs."
+        "ko": "변경 조건: It would become Terminal Hacker if the color blocks were replaced by a monochrome phosphor-green command-line grid, a blinking cursor, scanlines, and fixed-width glyphs."
       }
     },
     "signals": [

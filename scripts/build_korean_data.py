@@ -1,5 +1,16 @@
+"""
+한국어 데이터 파이프라인 및 TypeScript 모듈 자동 생성 스크립트.
+
+[동작 원리]
+1. `data/entries.json` 및 `data/styles.json` 파일의 원본 JSON 데이터 로드.
+2. `ENTRY_NAME_KO`, `STYLE_NAME_KO` 사전 매핑 정보를 참조하여 UI 엔트리 및 스타일의 한국어 명칭 동기화.
+3. `get_localized_obj` 유틸리티를 통해 단일 문자열 또는 객체 규격을 `{ "en": "...", "ko": "..." }` 다국어 데이터로 파싱.
+4. 정돈된 데이터를 `src/data/entries.ts` 및 `src/data/styles.ts` 파일로 자동 변환 및 출력.
+"""
+
 import json
 
+# UI 엔트리 표준 한국어 명칭 매핑 사전
 ENTRY_NAME_KO = {
     "text-scramble": "디코드 텍스트 무작위 효과 (Text Scramble)",
     "spring": "스프링 애니메이션 (Spring Animation)",
@@ -65,6 +76,7 @@ ENTRY_NAME_KO = {
     "menu-bar-extra": "메뉴 바 익스트라 (Menu Bar Extra)"
 }
 
+# UI 비주얼 스타일 표준 한국어 명칭 매핑 사전
 STYLE_NAME_KO = {
     "skeuomorphism": "스큐어모피즘 (Skeuomorphism)",
     "neumorphism": "뉴모피즘 (Neumorphism)",
@@ -113,6 +125,7 @@ STYLE_NAME_KO = {
 }
 
 def get_str(val, lang="en"):
+    """객체 또는 문자열에서 특정 언어의 텍스트를 안전하게 추출함."""
     if isinstance(val, dict):
         return val.get(lang, val.get("en", ""))
     elif isinstance(val, str):
@@ -120,6 +133,7 @@ def get_str(val, lang="en"):
     return ""
 
 def get_localized_obj(obj, field):
+    """필드 데이터를 LocalizedString 규격({'en': ..., 'ko': ...})으로 정규화함."""
     v = obj.get(field) if isinstance(obj, dict) else None
     if isinstance(v, dict):
         en_str = v.get("en", "")
@@ -130,6 +144,7 @@ def get_localized_obj(obj, field):
     return None
 
 def convert_entry(e):
+    """단일 Entry JSON 객체를 TypeScript 호환 UIEntry 구조체로 변환함."""
     slug = e.get("slug", "")
     raw_name = get_str(e.get("name"), "en")
     name_ko = ENTRY_NAME_KO.get(slug, raw_name if raw_name else slug)
@@ -197,6 +212,7 @@ def convert_entry(e):
     }
 
 def convert_style(s):
+    """단일 Style JSON 객체를 TypeScript 호환 UIStyle 구조체로 변환함."""
     slug = s.get("slug", "")
     raw_name = get_str(s.get("name"), "en")
     name_ko = STYLE_NAME_KO.get(slug, raw_name if raw_name else slug)
@@ -260,22 +276,27 @@ def convert_style(s):
         "meta": s.get("meta", {})
     }
 
-with open("data/entries.json", "r", encoding="utf-8") as f:
-    raw_entries = json.load(f)
+def main():
+    """데이터 빌드 메인 엔트리포인트."""
+    with open("data/entries.json", "r", encoding="utf-8") as f:
+        raw_entries = json.load(f)
 
-with open("data/styles.json", "r", encoding="utf-8") as f:
-    raw_styles = json.load(f)
+    with open("data/styles.json", "r", encoding="utf-8") as f:
+        raw_styles = json.load(f)
 
-clean_entries = [convert_entry(e) for e in raw_entries]
-clean_styles = [convert_style(s) for s in raw_styles]
+    clean_entries = [convert_entry(e) for e in raw_entries]
+    clean_styles = [convert_style(s) for s in raw_styles]
 
-entries_ts = f'import {{ UIEntry }} from "../types/ui";\n\nexport const ENTRIES: UIEntry[] = {json.dumps(clean_entries, ensure_ascii=False, indent=2)};\n'
-styles_ts = f'import {{ UIStyle }} from "../types/ui";\n\nexport const STYLES: UIStyle[] = {json.dumps(clean_styles, ensure_ascii=False, indent=2)};\n'
+    entries_ts = f'import {{ UIEntry }} from "../types/ui";\n\nexport const ENTRIES: UIEntry[] = {json.dumps(clean_entries, ensure_ascii=False, indent=2)};\n'
+    styles_ts = f'import {{ UIStyle }} from "../types/ui";\n\nexport const STYLES: UIStyle[] = {json.dumps(clean_styles, ensure_ascii=False, indent=2)};\n'
 
-with open("src/data/entries.ts", "w", encoding="utf-8") as f:
-    f.write(entries_ts)
+    with open("src/data/entries.ts", "w", encoding="utf-8") as f:
+        f.write(entries_ts)
 
-with open("src/data/styles.ts", "w", encoding="utf-8") as f:
-    f.write(styles_ts)
+    with open("src/data/styles.ts", "w", encoding="utf-8") as f:
+        f.write(styles_ts)
 
-print("src/data/entries.ts and src/data/styles.ts updated successfully!")
+    print("src/data/entries.ts 및 src/data/styles.ts 업데이트 성공!")
+
+if __name__ == "__main__":
+    main()
