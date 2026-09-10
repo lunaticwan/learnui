@@ -7,6 +7,39 @@ import { STYLES } from '../data/styles';
 import { UI_COPY } from '../data/uiCopy';
 import { getLocalizedString } from '../types/ui';
 
+// 한글 초성 유틸리티 (Chosung extraction)
+const CHOSUNG_LIST = [
+  'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ',
+  'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'
+];
+
+export function getChosung(text: string): string {
+  let result = '';
+  for (let i = 0; i < text.length; i++) {
+    const code = text.charCodeAt(i);
+    if (code >= 0xac00 && code <= 0xd7a3) {
+      const chosungIndex = Math.floor((code - 0xac00) / 588);
+      result += CHOSUNG_LIST[chosungIndex];
+    } else {
+      result += text[i];
+    }
+  }
+  return result;
+}
+
+// 한국어 조사 및 문장부호 정규화 (Korean particle & punctuation normalization)
+export function normalizeKorean(text: string): string {
+  if (!text) return '';
+  // 조사 및 특수문자 제거
+  const cleaned = text
+    .toLowerCase()
+    .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, ' ')
+    .replace(/(은|는|이|가|을|를|에서|으로|로|의|와|과|도|에|들|만|까지|부터)\b/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return cleaned;
+}
+
 interface SearchItem {
   id: string;
   type: 'component' | 'style' | 'page';
@@ -15,6 +48,7 @@ interface SearchItem {
   subtitle: string;
   url: string;
   keywords: string[];
+  chosungKeywords: string[];
 }
 
 interface CommandPaletteProps {
@@ -49,6 +83,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
       subtitle: getLocalizedString(UI_COPY['translateLede'] as any, 'ko') || 'AppKit · SwiftUI · iOS · Android UI 용어 대조',
       url: '/translate',
       keywords: ['translate', '번역', '대조표', '용어', 'swiftui', 'appkit', 'ios', 'android'],
+      chosungKeywords: [getChosung('번역'), getChosung('대조표'), getChosung('용어')],
     });
 
     ENTRIES.forEach((e) => {
@@ -62,6 +97,21 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         p.name?.en, p.name?.ko, p.description?.en, p.description?.ko, p.prompt?.en, p.prompt?.ko
       ]).filter(Boolean);
 
+      const allKw = [
+        titleEn,
+        titleKo,
+        e.platform,
+        subtitle,
+        descKo,
+        promptKo,
+        ...apiSymbols,
+        ...(e.aka?.en || []),
+        ...(e.aka?.ko || []),
+        ...(e.fuzzy?.en || []),
+        ...(e.fuzzy?.ko || []),
+        ...partsKeywords,
+      ];
+
       items.push({
         id: `entry-${e.slug}`,
         type: 'component',
@@ -69,20 +119,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         titleKo,
         subtitle,
         url: `/${e.platform}/${e.slug}`,
-        keywords: [
-          titleEn,
-          titleKo,
-          e.platform,
-          subtitle,
-          descKo,
-          promptKo,
-          ...apiSymbols,
-          ...(e.aka?.en || []),
-          ...(e.aka?.ko || []),
-          ...(e.fuzzy?.en || []),
-          ...(e.fuzzy?.ko || []),
-          ...partsKeywords,
-        ],
+        keywords: allKw,
+        chosungKeywords: allKw.map((k) => getChosung(k)),
       });
     });
 
@@ -97,6 +135,18 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         sig.name?.en, sig.name?.ko, sig.description?.en, sig.description?.ko
       ]).filter(Boolean);
 
+      const allKw = [
+        titleEn,
+        titleKo,
+        subtitle,
+        briefKo,
+        scopeKo,
+        a11yKo,
+        ...(s.aliases?.en || []),
+        ...(s.aliases?.ko || []),
+        ...signalsKeywords,
+      ];
+
       items.push({
         id: `style-${s.slug}`,
         type: 'style',
@@ -104,17 +154,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         titleKo,
         subtitle,
         url: `/styles/${s.slug}`,
-        keywords: [
-          titleEn,
-          titleKo,
-          subtitle,
-          briefKo,
-          scopeKo,
-          a11yKo,
-          ...(s.aliases?.en || []),
-          ...(s.aliases?.ko || []),
-          ...signalsKeywords,
-        ],
+        keywords: allKw,
+        chosungKeywords: allKw.map((k) => getChosung(k)),
       });
     });
 
@@ -140,19 +181,36 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
     const trimmed = query.trim();
     if (!trimmed) return searchItems.slice(0, 20);
 
-    const normQuery = trimmed.toLowerCase().replace(/\s+/g, '');
-    const fuseResults = fuse.search(trimmed).map((res) => res.item);
+    const normQuery = normalizeKorean(trimmed).replace(/\s+/g, '');
+    const chosungQuery = getChosung(trimmed).replace(/\s+/g, '');
 
-    // 띄어쓰기 무시 정확도 향상을 위한 키워드 검사 결합
+    // 1단계: 직접 키워드/조사 제거 정규화 대조
     const directMatches = searchItems.filter((item) => {
       const matchTarget = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')}`.toLowerCase().replace(/\s+/g, '');
-      return matchTarget.includes(normQuery);
+      const normTarget = normalizeKorean(matchTarget).replace(/\s+/g, '');
+      return normTarget.includes(normQuery) || matchTarget.includes(trimmed.toLowerCase());
     });
+
+    // 2단계: 한국어 초성(Chosung) 검색 대조
+    const chosungMatches = searchItems.filter((item) => {
+      const chosungTarget = item.chosungKeywords.join(' ').replace(/\s+/g, '');
+      return chosungTarget.includes(chosungQuery);
+    });
+
+    // 3단계: Fuse.js 퍼지 검색
+    const fuseResults = fuse.search(trimmed).map((res) => res.item);
 
     const combinedSet = new Set<string>();
     const results: SearchItem[] = [];
 
     directMatches.forEach((item) => {
+      if (!combinedSet.has(item.id)) {
+        combinedSet.add(item.id);
+        results.push(item);
+      }
+    });
+
+    chosungMatches.forEach((item) => {
       if (!combinedSet.has(item.id)) {
         combinedSet.add(item.id);
         results.push(item);

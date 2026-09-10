@@ -1,5 +1,4 @@
 import json
-import re
 
 ENTRY_NAME_KO = {
     "text-scramble": "디코드 텍스트 무작위 효과 (Text Scramble)",
@@ -121,7 +120,7 @@ def get_str(val, lang="en"):
     return ""
 
 def get_localized_obj(obj, field):
-    v = obj.get(field)
+    v = obj.get(field) if isinstance(obj, dict) else None
     if isinstance(v, dict):
         en_str = v.get("en", "")
         ko_str = v.get("ko", en_str)
@@ -220,15 +219,25 @@ def convert_style(s):
             "description": get_localized_obj(sig, "description")
         })
 
-    confused_list = []
-    for c in s.get("confusedWith", []):
-        if isinstance(c, dict):
-            confused_list.append({
-                "slug": c.get("slug", ""),
-                "name": c.get("name", ""),
-                "because": get_localized_obj(c, "because"),
-                "wouldBecomeIf": get_localized_obj(c, "wouldBecomeIf")
-            })
+    raw_confused = s.get("confusedWith")
+    confused_obj = None
+    if isinstance(raw_confused, dict):
+        confused_obj = {
+            "slug": raw_confused.get("slug", ""),
+            "name": raw_confused.get("name", ""),
+            "because": get_localized_obj(raw_confused, "because"),
+            "wouldBecomeIf": get_localized_obj(raw_confused, "wouldBecomeIf")
+        }
+    elif isinstance(raw_confused, list):
+        confused_obj = []
+        for c in raw_confused:
+            if isinstance(c, dict):
+                confused_obj.append({
+                    "slug": c.get("slug", ""),
+                    "name": c.get("name", ""),
+                    "because": get_localized_obj(c, "because"),
+                    "wouldBecomeIf": get_localized_obj(c, "wouldBecomeIf")
+                })
 
     return {
         "slug": slug,
@@ -243,7 +252,7 @@ def convert_style(s):
             "ko": aliases_ko
         },
         "signals": signals_list,
-        "confusedWith": confused_list,
+        "confusedWith": confused_obj,
         "brief": get_localized_obj(s, "brief"),
         "accessibility": get_localized_obj(s, "accessibility"),
         "a11yAndMisuse": get_localized_obj(s, "accessibility"),
