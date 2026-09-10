@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { useCopyToClipboard } from 'usehooks-ts';
+import { toast } from 'sonner';
+import clsx from 'clsx';
 import { ENTRIES } from '../data/entries';
 import { UI_COPY } from '../data/uiCopy';
 import { SpecimenViewer } from '../components/SpecimenViewer';
@@ -12,6 +15,7 @@ const NEW_SLUGS = new Set([
 
 export const EntryDetailView: React.FC = () => {
   const { platform, slug } = useParams<{ platform: string; slug: string }>();
+  const [, copy] = useCopyToClipboard();
   const [copiedPrompt, setCopiedPrompt] = useState(false);
   const [copiedDebug, setCopiedDebug] = useState(false);
   const [copiedMd, setCopiedMd] = useState(false);
@@ -27,19 +31,24 @@ export const EntryDetailView: React.FC = () => {
   const platLabel = entry.platform === 'web' ? 'Web' : 'macOS';
   const isNew = NEW_SLUGS.has(entry.slug);
 
-  const handleCopy = (text: string, type: 'prompt' | 'debug' | 'md') => {
-    navigator.clipboard.writeText(text).then(() => {
-      if (type === 'prompt') {
-        setCopiedPrompt(true);
-        setTimeout(() => setCopiedPrompt(false), 2000);
-      } else if (type === 'debug') {
-        setCopiedDebug(true);
-        setTimeout(() => setCopiedDebug(false), 2000);
-      } else if (type === 'md') {
-        setCopiedMd(true);
-        setTimeout(() => setCopiedMd(false), 2000);
-      }
-    });
+  const handleCopy = (text: string, type: 'prompt' | 'debug' | 'md', label: string) => {
+    copy(text)
+      .then(() => {
+        toast.success(`${label} 항목이 클립보드에 복사되었습니다.`);
+        if (type === 'prompt') {
+          setCopiedPrompt(true);
+          setTimeout(() => setCopiedPrompt(false), 2000);
+        } else if (type === 'debug') {
+          setCopiedDebug(true);
+          setTimeout(() => setCopiedDebug(false), 2000);
+        } else if (type === 'md') {
+          setCopiedMd(true);
+          setTimeout(() => setCopiedMd(false), 2000);
+        }
+      })
+      .catch(() => {
+        toast.error('복사에 실패했습니다.');
+      });
   };
 
   const generateMarkdown = () => {
@@ -185,8 +194,8 @@ export const EntryDetailView: React.FC = () => {
           <div className="copy-block">
             <button
               type="button"
-              className={`btn btn-copy ${copiedPrompt ? 'done' : ''}`}
-              onClick={() => handleCopy(entry.prompt?.ko || entry.prompt?.en || '', 'prompt')}
+              className={clsx('btn', 'btn-copy', { done: copiedPrompt })}
+              onClick={() => handleCopy(entry.prompt?.ko || entry.prompt?.en || '', 'prompt', getCopyKo('promptSection'))}
             >
               <span>{copiedPrompt ? getCopyKo('copied') : getCopyKo('copy')}</span>
             </button>
@@ -208,8 +217,8 @@ export const EntryDetailView: React.FC = () => {
           <div className="copy-block">
             <button
               type="button"
-              className={`btn btn-copy ${copiedDebug ? 'done' : ''}`}
-              onClick={() => handleCopy(entry.debugPrompt?.ko || entry.debugPrompt?.en || '', 'debug')}
+              className={clsx('btn', 'btn-copy', { done: copiedDebug })}
+              onClick={() => handleCopy(entry.debugPrompt?.ko || entry.debugPrompt?.en || '', 'debug', getCopyKo('debugSection'))}
             >
               <span>{copiedDebug ? getCopyKo('copied') : getCopyKo('copy')}</span>
             </button>
@@ -275,8 +284,8 @@ export const EntryDetailView: React.FC = () => {
       <section className="sect">
         <button
           type="button"
-          className="btn btn-ghost"
-          onClick={() => handleCopy(generateMarkdown(), 'md')}
+          className={clsx('btn', 'btn-ghost', { done: copiedMd })}
+          onClick={() => handleCopy(generateMarkdown(), 'md', getCopyKo('copyPage'))}
         >
           ⧉ <span>{copiedMd ? getCopyKo('copied') : getCopyKo('copyPage')}</span>
         </button>

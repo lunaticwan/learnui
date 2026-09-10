@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { useCopyToClipboard } from 'usehooks-ts';
+import { toast } from 'sonner';
+import clsx from 'clsx';
 import { STYLES } from '../data/styles';
 import { ENTRIES } from '../data/entries';
 import { UI_COPY } from '../data/uiCopy';
@@ -9,6 +12,7 @@ import { getLocalizedString } from '../types/ui';
 
 export const StyleDetailView: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const [, copy] = useCopyToClipboard();
   const [copiedBrief, setCopiedBrief] = useState(false);
   const [copiedMd, setCopiedMd] = useState(false);
   const [copiedCodeIndex, setCopiedCodeIndex] = useState<number | null>(null);
@@ -22,22 +26,32 @@ export const StyleDetailView: React.FC = () => {
   const getCopyKo = (key: string) => getLocalizedString(UI_COPY[key] as any, 'ko');
 
   const handleCopyCode = (code: string, idx: number) => {
-    navigator.clipboard.writeText(code).then(() => {
-      setCopiedCodeIndex(idx);
-      setTimeout(() => setCopiedCodeIndex(null), 2000);
-    });
+    copy(code)
+      .then(() => {
+        toast.success('스타일 스니펫 코드가 복사되었습니다.');
+        setCopiedCodeIndex(idx);
+        setTimeout(() => setCopiedCodeIndex(null), 2000);
+      })
+      .catch(() => {
+        toast.error('코드 복사에 실패했습니다.');
+      });
   };
 
-  const handleCopyText = (text: string, type: 'brief' | 'md') => {
-    navigator.clipboard.writeText(text).then(() => {
-      if (type === 'brief') {
-        setCopiedBrief(true);
-        setTimeout(() => setCopiedBrief(false), 2000);
-      } else {
-        setCopiedMd(true);
-        setTimeout(() => setCopiedMd(false), 2000);
-      }
-    });
+  const handleCopyText = (text: string, type: 'brief' | 'md', label: string) => {
+    copy(text)
+      .then(() => {
+        toast.success(`${label} 항목이 클립보드에 복사되었습니다.`);
+        if (type === 'brief') {
+          setCopiedBrief(true);
+          setTimeout(() => setCopiedBrief(false), 2000);
+        } else {
+          setCopiedMd(true);
+          setTimeout(() => setCopiedMd(false), 2000);
+        }
+      })
+      .catch(() => {
+        toast.error('복사에 실패했습니다.');
+      });
   };
 
   const generateMarkdown = () => {
@@ -146,7 +160,7 @@ export const StyleDetailView: React.FC = () => {
                       <span className="card-name-sub">{sig.name?.ko}</span>
                     </span>
                     <span className="dna-facet">{sig.facet}</span>
-                    <span className={`dna-role dna-role-${sig.role}`}>
+                    <span className={clsx('dna-role', `dna-role-${sig.role}`)}>
                       <span>{getCopyKo(roleKey)}</span>
                     </span>
                   </div>
@@ -200,7 +214,7 @@ export const StyleDetailView: React.FC = () => {
             <div key={idx} className="code-block">
               <button
                 type="button"
-                className={`btn btn-copy ${copiedCodeIndex === idx ? 'done' : ''}`}
+                className={clsx('btn', 'btn-copy', { done: copiedCodeIndex === idx })}
                 onClick={() => handleCopyCode(c.code, idx)}
               >
                 <span>{copiedCodeIndex === idx ? getCopyKo('copied') : getCopyKo('copy')}</span>
@@ -220,8 +234,8 @@ export const StyleDetailView: React.FC = () => {
           <div className="copy-block">
             <button
               type="button"
-              className={`btn btn-copy ${copiedBrief ? 'done' : ''}`}
-              onClick={() => handleCopyText(style.brief?.ko || style.brief?.en || '', 'brief')}
+              className={clsx('btn', 'btn-copy', { done: copiedBrief })}
+              onClick={() => handleCopyText(style.brief?.ko || style.brief?.en || '', 'brief', getCopyKo('briefTitle'))}
             >
               <span>{copiedBrief ? getCopyKo('copied') : getCopyKo('copy')}</span>
             </button>
@@ -288,8 +302,8 @@ export const StyleDetailView: React.FC = () => {
       <section className="sect">
         <button
           type="button"
-          className="btn btn-ghost"
-          onClick={() => handleCopyText(generateMarkdown(), 'md')}
+          className={clsx('btn', 'btn-ghost', { done: copiedMd })}
+          onClick={() => handleCopyText(generateMarkdown(), 'md', getCopyKo('copyPage'))}
         >
           ⧉ <span>{copiedMd ? getCopyKo('copied') : getCopyKo('copyPage')}</span>
         </button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import { LocalizedString } from '../types/ui';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -27,17 +28,17 @@ export const BilingualText: React.FC<BilingualTextProps> = ({
   const koText = text.ko || '';
 
   if (langMode === 'en') {
-    return <Tag className={`lang-en ${className} ${enClassName}`} style={style}>{enText}</Tag>;
+    return <Tag className={clsx('lang-en', className, enClassName)} style={style}>{enText}</Tag>;
   }
 
   if (langMode === 'ko') {
-    return <Tag className={`lang-ko ${className} ${koClassName}`} style={style}>{koText || enText}</Tag>;
+    return <Tag className={clsx('lang-ko', className, koClassName)} style={style}>{koText || enText}</Tag>;
   }
 
   return (
     <>
-      {enText && <Tag className={`lang-en ${className} ${enClassName}`} style={style}>{enText}</Tag>}
-      {koText && <Tag className={`lang-ko ${className} ${koClassName}`} style={style}>{koText}</Tag>}
+      {enText && <Tag className={clsx('lang-en', className, enClassName)} style={style}>{enText}</Tag>}
+      {koText && <Tag className={clsx('lang-ko', className, koClassName)} style={style}>{koText}</Tag>}
     </>
   );
 };
