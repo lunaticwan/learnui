@@ -1,67 +1,86 @@
-# DESIGN.md — Learn UI Name (UI 비주얼 사전) 디자인 시스템
+# DESIGN.md — iM뱅크 Learn UI 디자인 시스템
 
-> 단일 진실 출처 (Single Source of Truth). 모든 페이지, 모든 demo, 모든 라운드의 수정은 본 문서를 기준으로 진행합니다.
+> 단일 진실 출처 (Single Source of Truth). 프로젝트의 모든 인터페이스, 표본(demo), 컴포넌트는 본 디자인 명세를 준수합니다.
 
-## 1. 비주얼 테마 및 무드
+---
 
-"Vercel 스타일의 흑백 엔지니어링 미학". 기본 순백색 바탕에 블랙 / 그레이스케일 / 화이트 3색으로 전체 인터페이스를 구성하며, 링크 블루 `#0070f3`는 유일한 기능 색상으로 절제되어 사용됩니다. UI 표본(demo)이 절대적인 주연이며, 사이트 chrome은 절제되고 정교하며 눈에 띄지 않아야 합니다.
+## 1. 비주얼 테마 및 브랜드 미학
 
-- 대치: AI 코딩 에이전트를 사용하는 디자이너 및 개발자를 위한 개발자 친화적 비주얼 사전 참고 사이트
-- 수치: 비주얼 모험도 3 / 애니메이션 강도 4 / 정보 밀도 7
-- 테마: Light-only (기본 화이트). Dark Mode 제공 안 함
+iM뱅크 Learn UI는 깨끗하고 정교한 기술 문서 및 디자인 시스템 감성을 지향하는 **모던 틸(Teal) & 슬레이트(Slate) 미학**을 채택합니다.
+순백색 배경에 절제된 그레이스케일 레이아웃과 iM 시그니처 틸 메인 컬러인 `#00A88F`를 조합하여, UI 표본(Specimen)이 직관적으로 부각되도록 구성합니다.
+
+- **목적**: 디자이너, 개발자 및 AI 코딩 에이전트(LLM)를 위한 직관적인 UI 비주얼 사전 및 인터페이스 아틀라스
+- **테마**: Light-only (기본 화이트). 다크 모드는 지원하지 않음.
+
+---
 
 ## 2. 컬러 팔레트 및 역할
 
-| 역할 | 값 | 용도 |
-|---|---|---|
-| `--bg` | `#FFFFFF` | 페이지 배경 (순백색) |
-| `--bg-2` | `#FAFAFA` | demo 무대, 복사 블록 배경 |
-| `--fill` | `#F5F5F5` | hover 필, 번호 블록 배경 |
-| `--line` | `#EAEAEA` | 헤어라인 테두리 |
-| `--line-strong` | `#D4D4D4` | hover / 강조 테두리 |
-| `--gray-400` | `#A3A3A3` | 표본 태그, 설명 텍스트, 플레이스홀더 |
-| `--gray-500` | `#737373` | 대조 텍스트 행, 3단계 텍스트 |
-| `--gray-600` | `#525252` | 보조 텍스트, 본문 단락 |
-| `--gray-700` | `#404040` | 강조 단락 |
-| `--fg` | `#0A0A0A` | 메인 텍스트, 제목, 활성 상태 |
-| `--blue` | `#0070F3` | 유일한 기능색: 콘텐츠 링크, new 태그, focus 링 |
-| `--blue-soft` | `rgba(0,112,243,.14)` | 검색 하이라이트 `<mark>` 배경 |
+| 역할 | 변수명 | HEX / RGBA 값 | 용도 |
+|---|---|---|---|
+| 페이지 배경 | `--bg` | `#FFFFFF` | 메인 배경 (순백색) |
+| 무대/셀 배경 | `--bg-2` | `#F8FAFC` | 표본 무대, 헤더 스티키 렌더링, 푸터 배경 |
+| 카드 배경 | `--bg-card` | `#FFFFFF` | 컴포넌트 및 스타일 카드 배경 |
+| 영역 채우기 | `--fill` | `#F1F5F9` | 버튼, 태그, 선택 영역 기본 배경 |
+| 호버 채우기 | `--fill-hover` | `#E2E8F0` | 요소 호버 시 배경 |
+| 기본 구분선 | `--line` | `#E2E8F0` | 일반 헤어라인 테두리 및 구분선 |
+| 강조 구분선 | `--line-strong` | `#CBD5E1` | 입력 폼, 호버 카드, 파티션 테두리 |
+| 보조 텍스트 1 | `--gray-400` | `#94A3B8` | 플레이스홀더, 비활성 텍스트 |
+| 보조 텍스트 2 | `--gray-500` | `#475569` | 서브 캡션, 메타 정보 |
+| 본문 텍스트 | `--gray-600` | `#334155` | 설명 단락, 카피 본문 |
+| 강조 본문 | `--gray-700` | `#1E293B` | 메타 라벨, 카피 강조 |
+| 메인 타이틀 | `--fg` | `#0F172A` | 제목, 주요 텍스트, 활성 탭 |
+| 브랜드 메인 | `--brand-primary` | `#00A88F` | iM Bank 시그니처 틸, 강조 링크, 활성 상태 |
+| 브랜드 다크 | `--brand-dark` | `#008773` | 브랜드 호버 상태, 주요 심볼 텍스트 |
+| 브랜드 라이트 | `--brand-light` | `#E6F7F4` | 하이라이트 배경, 선택된 태그 배경 |
+| 서브 포인트 | `--blue` | `#0284C7` | 스카이 블루 포인트 컬러 |
 
-기능 색상은 demo 표본 내부에서 재현하는 시스템(macOS 그레이, iOS 블루 등)에서만 사용되며, 사이트 자체 테마에는 관여하지 않습니다.
-그림자: 오직 팝오버 레이어에만 `0 8px 30px rgba(0,0,0,.12)` 적용. 카드에는 그림자 대신 헤어라인 테두리 사용.
+---
 
 ## 3. 타이포그래피 규칙
 
-- 라틴/숫자 디스플레이: **Geist** (셀프 호스팅 variable font, `assets/fonts/geist-vf.woff2`)
-- 코드/용어/표본 태그: **Geist Mono** (셀프 호스팅, `assets/fonts/geist-mono-vf.woff2`)
-- 한국어/한자: 시스템 폰트 스택 `-apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif`
-- 폰트 굵기(font-weight)는 400 / 500 / 600만 사용. 이탤릭체 금지.
-- H1 `letter-spacing: -0.045em` (clamp 40–64px); 상세 페이지 H1 `-0.03em` (clamp 28–40px)
-- 본문 15px/1.7; 보조 대조 행은 -1단계 글자 크기 + `--gray-500`
-- 숫자 및 API 기호는 항상 Geist Mono 사용
+- **UI & 본문 스택**: **Pretendard** (`var(--font-sans)`)
+  - `-apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif`
+- **코드/용어/표본 태그**: **Cascadia Code** (`var(--font-mono)`)
+  - `ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace`
+- **서브픽셀 렌더링 방지**:
+  - `src/assets/site.css` 내 `font-size` 및 `border` 두께는 서브픽셀 번짐 방지를 위해 **정수 pixel 단위**만 사용 (예: 11px, 12px, 14px, 16px 사용, 소수점 px 금지).
+- **글자 굵기**: 400 (Regular), 500 (Medium), 600 (SemiBold), 700 (Bold), 800 (ExtraBold) 사용. 이탤릭체 사용 안 함.
 
-## 4. 다국어 및 한영 대조 규칙
+---
 
-- 4가지 열람 모드: `对照` (기본 대조) / `EN` / `中文` / `한국어`, `<html data-lang-mode="...">` 제어, localStorage 저장
-- 대조 모드: 영문 표기 우선, 대조 언어가 뒤이어 표시됨
-- 용어 명칭(entry/style name)은 항상 원문 영문명을 유지하며, 번역명은 대조 행으로 표시
-- API 기호, prompt, brief 원문은 원어 그대로 보존
+## 4. 다국어 및 한영 대조 모드
 
-## 5. 컴포넌트 스타일
+- **언어 표시 모드**: `ko` (한국어 기본), `en` (영어 모드), `bilingual` (한영 대조 모드)
+- **상태 제어**: `<html data-lang-mode="...">` 속성 및 `localStorage['ntui-lang-mode']` 연동
+- **표기 원칙**:
+  - UI 엔트리 및 스타일의 영문 공식 명칭(`nameEn`, `slug`)은 변형 없이 보존하며, 한국어 명칭 및 설명과 함께 제공
+  - API 기호, 코드, 프롬프트 문구는 원어 및 기술 고유명사를 유지
 
-- **표본 카드 (홈/스타일 그리드)**: 상단 demo 무대 (`--bg-2` 배경 + `--line` 테두리 + radius 8px), 하단 용어명 + Geist Mono 11px 기호 행 + tagline.
-- **태그 (new / platform)**: Geist Mono 9–10px 대문자 tracking 0.1em; new = `--blue`, platform = `--gray-400`
-- **버튼**: radius 6px, 화이트 배경 + `--line` 테두리, hover 시 테두리 `--gray-400`; `:active scale(0.97)`
-- **세그먼트 컨트롤 (tabs / 언어 스위처)**: radius 6px + `--line` 테두리, 활성 세그먼트 = 블랙 배경 + 화이트 텍스트
-- **입력 폼**: 화이트 배경 + `--line` 테두리, focus 시 테두리 `--fg` + 3px `rgba(0,0,0,.06)` 링
+---
 
-## 6. 레이아웃 및 뷰포트
+## 5. 컴포넌트 디자인 규칙
 
-- 컨테이너 `max-width: 1080px` 중앙 정렬, 여백 24px (모바일 16px)
-- 홈 표본 그리드: `repeat(auto-fill, minmax(300px, 1fr))`, gap 28px 24px
-- 반응형 뷰포트: ≥1024px 3열, ≥760px 2열, <760px 1열
+- **상단 헤더 (`.site-header`)**:
+  - `position: sticky`, `height: 60px`
+  - `background: rgba(255, 255, 255, 0.88)`, `backdrop-filter: blur(16px)`
+- **표본 카드 (`.card`, `.style-card`)**:
+  - `border-radius: 16px` (`var(--radius-lg)`), `border: 1px solid var(--line)`
+  - 상단 무대 (`.stage-card`, 높이 210px~220px, `--bg-2` 배경) + 하단 메타 정보
+  - 호버 시 `transform: translateY(-4px)`, `box-shadow: var(--shadow-lg)`
+- **커맨드 팔레트 (`⌘K`)**:
+  - `cmdk` 및 `fuse.js` 기반 인메모리 검색 레이어
+  - 한국어 자음/모음 초성 추출 및 조사('은/는/이/가/을/를' 등) 제거 알고리즘 적용
+- **버튼 & 입력 폼**:
+  - 입력창 포커스 시 `--brand-primary` 테두리 및 `var(--ring)` 포커스 링 적용
+  - 버튼 클릭 시 `:active transform: translateY(0)` 또는 `scale(0.97)` 피드백
 
-## 7. Motion & PWA
+---
 
-- 사이트 chrome: hover 120–160ms, `:active scale(0.97)`; transform/opacity/border-color만 변경
-- PWA: `manifest.webmanifest` 및 `sw.js` 오프라인 캐싱 지원
+## 6. 반응형 브레이크포인트
+
+- **컨테이너**: `max-width: 1140px`, 중앙 정렬, 좌우 여백 24px (모바일 16px)
+- **그리드 레이아웃**:
+  - 데스크톱 (≥1024px): 3열 (`repeat(auto-fill, minmax(320px, 1fr))`)
+  - 태블릿 (≥760px): 2열
+  - 모바일 (<760px): 1열
