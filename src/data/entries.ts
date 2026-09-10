@@ -98,11 +98,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build a text scramble (decode) effect: each character cycles random glyphs and locks into the real one left to right (GSAP ScrambleTextPlugin, or a requestAnimationFrame loop with a per-character settle deadline). Use a monospace font or tabular glyphs so width never jitters, expose the final string via aria-label with the churning span aria-hidden, and honor prefers-reduced-motion by rendering the text instantly.",
-      "ko": "Build a text scramble (decode) effect: each character cycles random glyphs and locks into the real one left to right (GSAP ScrambleTextPlugin, or a requestAnimationFrame loop with a per-character settle deadline). Use a monospace font or tabular glyphs so width never jitters, expose the final string via aria-label with the churning span aria-hidden, and honor prefers-reduced-motion by rendering the text instantly."
+      "ko": "텍스트 디코드(무작위 글자) 효과 구현: 각 글자가 무작위 글자로 전환되다가 좌에서 우로 실제 글자로 고정됨 (GSAP ScrambleTextPlugin 또는 글자별 고정 시한을 둔 requestAnimationFrame 루프 활용). 너비 흔들림을 방지하기 위해 등폭 폰트(Monospace)나 고정 폭 숫자(tabular-nums) 사용. 최종 텍스트는 aria-label로 제공하고 애니메이션 영역은 aria-hidden 처리하며, prefers-reduced-motion 환경에서는 애니메이션 없이 즉시 텍스트 표시."
     },
     "debugPrompt": {
       "en": "Debug my text scramble effect (GSAP ScrambleTextPlugin / rAF charset loop). Rule out: layout jitter because glyph widths differ (needs monospace or tabular-nums); the animation never settling because the per-character deadline keeps resetting on re-render; screen readers announcing garbage (final text must live in aria-label, churn aria-hidden); the effect re-running on every state change instead of once per mount; reduced-motion users getting the churn instead of instant text. The symptom:",
-      "ko": "Debug my text scramble effect (GSAP ScrambleTextPlugin / rAF charset loop). Rule out: layout jitter because glyph widths differ (needs monospace or tabular-nums); the animation never settling because the per-character deadline keeps resetting on re-render; screen readers announcing garbage (final text must live in aria-label, churn aria-hidden); the effect re-running on every state change instead of once per mount; reduced-motion users getting the churn instead of instant text. The symptom:"
+      "ko": "텍스트 디코드 효과 디버깅 (GSAP / rAF 글자 집합 루프). 확인 사항: 글자 폭 차이로 인한 레이아웃 흔들림(등폭 폰트 또는 tabular-nums 필요), 재렌더링 시 글자별 시한 초기화로 애니메이션 미종료 문제, 스크린 리더의 무작위 텍스트 낭독 문제(최종 텍스트는 aria-label에 배치하고 애니메이션 스팬은 aria-hidden 지정), 마운트당 1회가 아닌 상태 변경마다 효과가 재실행되는 문제, 모션 줄이기 사용 시 무작위 텍스트가 표시되는 문제. 증상:"
     },
     "relatedSlugs": [
       "marquee",
@@ -201,11 +201,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Give this animation spring physics: use Motion's transition={{ type: \"spring\", stiffness: 300, damping: 22 }} (or react-spring) instead of a duration+easing pair — the element should slightly overshoot its target and settle; raise damping to kill wobble, raise stiffness for snap. For pure CSS, bake the spring into a linear() timing function.",
-      "ko": "Give this animation spring physics: use Motion's transition={{ type: \"spring\", stiffness: 300, damping: 22 }} (or react-spring) instead of a duration+easing pair — the element should slightly overshoot its target and settle; raise damping to kill wobble, raise stiffness for snap. For pure CSS, bake the spring into a linear() timing function."
+      "ko": "애니메이션에 스프링 물리학 적용: 지속시간+이징 조합 대신 Motion의 transition={{ type: 'spring', stiffness: 300, damping: 22 }} (또는 react-spring) 활용. 요소가 목표치를 살짝 초과(overshoot) 후 안착되도록 설정. 튀는 현상을 줄이려면 damping을 높이고, 빠른 반응을 위해 stiffness 조정. 순수 CSS의 경우 linear() 타이밍 함수에 스프링 곡선 반영."
     },
     "debugPrompt": {
       "en": "Debug my spring animation (Motion type: \"spring\", react-spring, CSS linear()). Rule out: damping too low so it wobbles like jelly; stiffness too low so it feels underwater; a duration fighting the physics (springs compute their own settle time); the overshoot clipped by an overflow-hidden parent; interruptions snapping because the spring restarts from the target instead of retargeting from current velocity. The symptom:",
-      "ko": "Debug my spring animation (Motion type: \"spring\", react-spring, CSS linear()). Rule out: damping too low so it wobbles like jelly; stiffness too low so it feels underwater; a duration fighting the physics (springs compute their own settle time); the overshoot clipped by an overflow-hidden parent; interruptions snapping because the spring restarts from the target instead of retargeting from current velocity. The symptom:"
+      "ko": "스프링 애니메이션 디버깅 (Motion spring / react-spring / CSS linear()). 확인 사항: damping이 너무 낮아 젤리처럼 흔들림, stiffness가 너무 낮아 물속에서 움직이는 듯함, duration 지정으로 물리 계산과 충돌, overflow: hidden 부모 요소에 의해 초과 영역 잘림, 정지/전환 시 현재 속도 기준 재설정이 아닌 목표점에서 재시작하여 뚝 끊김. 증상:"
     },
     "relatedSlugs": [
       "easing",
@@ -304,11 +304,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Fix the easing of my animation: replace linear/default timing with an explicit curve — transition-timing-function: cubic-bezier(.4, 0, .2, 1) for UI moves (fast start, soft landing), ease-out for things entering, ease-in for things leaving; keep durations 150–300ms for interface transitions and never animate at linear speed unless it's a marquee-style continuous loop.",
-      "ko": "Fix the easing of my animation: replace linear/default timing with an explicit curve — transition-timing-function: cubic-bezier(.4, 0, .2, 1) for UI moves (fast start, soft landing), ease-out for things entering, ease-in for things leaving; keep durations 150–300ms for interface transitions and never animate at linear speed unless it's a marquee-style continuous loop."
+      "ko": "애니메이션 이징 수정: 기본 선형(linear) 타이밍을 명시적 곡선으로 교체. UI 이동 시 transition-timing-function: cubic-bezier(.4, 0, .2, 1) 사용 (빠른 시작, 부드러운 정지). 진입 시 ease-out, 퇴장 시 ease-in 적용. 인터페이스 전환 시 지속시간은 150~300ms 유지하며, 마키 형태의 연속 루프가 아닌 이상 선형 속도 사용 금지."
     },
     "debugPrompt": {
       "en": "Debug the feel of my animation (CSS transition-timing-function / cubic-bezier). Rule out: no timing function set so it falls back to the default ease; linear timing making UI motion feel robotic; ease-in on an ENTERING element (arrivals want ease-out — decelerate into place); a cubic-bezier with y values outside 0–1 clipping instead of overshooting in transition shorthand order; duration so long the curve reads as lag. The symptom:",
-      "ko": "Debug the feel of my animation (CSS transition-timing-function / cubic-bezier). Rule out: no timing function set so it falls back to the default ease; linear timing making UI motion feel robotic; ease-in on an ENTERING element (arrivals want ease-out — decelerate into place); a cubic-bezier with y values outside 0–1 clipping instead of overshooting in transition shorthand order; duration so long the curve reads as lag. The symptom:"
+      "ko": "애니메이션 이징/부드러움 디버깅 (CSS transition-timing-function / cubic-bezier). 확인 사항: 타이밍 함수 미지정으로 기본 ease로 되돌아감, 선형 타이밍으로 로봇 같은 어색한 움직임 발생, 진입 요소에 ease-in 적용 문제(진입 시 감속하는 ease-out 필요), cubic-bezier의 y값이 0~1 범위를 벗어나 초과 효과 대신 잘림 발생, 지속시간이 너무 길어 지연으로 느껴짐. 증상:"
     },
     "relatedSlugs": [
       "spring",
@@ -410,11 +410,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build a masonry layout (Pinterest-style): native CSS first — @supports (grid-template-rows: masonry) { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: masonry; } — with a CSS multi-column fallback (columns: 3; every card break-inside: avoid). Note the fallback orders items down each column, not across rows; if strict left-to-right order matters, use react-masonry-css instead. Reserve image aspect ratios so cards don't jump while loading.",
-      "ko": "Build a masonry layout (Pinterest-style): native CSS first — @supports (grid-template-rows: masonry) { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: masonry; } — with a CSS multi-column fallback (columns: 3; every card break-inside: avoid). Note the fallback orders items down each column, not across rows; if strict left-to-right order matters, use react-masonry-css instead. Reserve image aspect ratios so cards don't jump while loading."
+      "ko": "메이슨리 레이아웃(핀터레스트 스타일) 구축: 기본 CSS 매소너리(@supports (grid-template-rows: masonry) { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: masonry; }) 우선 적용 후 CSS 다중 컬럼(columns: 3; break-inside: avoid)을 폴백으로 제공. 대체 방식은 행이 아닌 열 방향 순서임을 유의하고, 엄격한 좌우 순서가 필요한 경우 react-masonry-css 사용. 이미지 로딩 시 카드 튀김 방지를 위해 종횡비(aspect-ratio) 미리 확보."
     },
     "debugPrompt": {
       "en": "Debug my masonry layout (CSS columns fallback / grid-template-rows: masonry). Rule out: cards splitting across columns because break-inside: avoid is missing; item order reading down the first column when the design expects row-major; equal-height rows appearing because the browser lacks native masonry and there's no @supports fallback; the wall reshuffling as images load because width/height aren't reserved; margins on cards fighting the column-gap. The symptom:",
-      "ko": "Debug my masonry layout (CSS columns fallback / grid-template-rows: masonry). Rule out: cards splitting across columns because break-inside: avoid is missing; item order reading down the first column when the design expects row-major; equal-height rows appearing because the browser lacks native masonry and there's no @supports fallback; the wall reshuffling as images load because width/height aren't reserved; margins on cards fighting the column-gap. The symptom:"
+      "ko": "메이슨리 레이아웃 디버깅 (CSS 컬럼 폴백 / grid-template-rows: masonry). 확인 사항: break-inside: avoid 누락으로 카드가 열 사이에 split됨, 행 기준 배치를 원함에도 열 기준으로 읽히는 현상, 브라우저의 기본 매소너리 미지원 및 @supports 폴백 부재로 동일 높이 행 발생, 이미지 로딩에 따른 레이아웃 재배치, 카드 여백과 column-gap의 충돌. 증상:"
     },
     "relatedSlugs": [
       "bento-grid",
@@ -529,11 +529,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build a bento grid: one CSS grid (display: grid; grid-template-columns: repeat(4, 1fr); one consistent gap) where feature tiles span multiple cells via grid-column: span 2 / grid-row: span 2, every tile shares the same corner radius and an opaque background, and the whole composition reads as a single rounded box of differently sized compartments.",
-      "ko": "Build a bento grid: one CSS grid (display: grid; grid-template-columns: repeat(4, 1fr); one consistent gap) where feature tiles span multiple cells via grid-column: span 2 / grid-row: span 2, every tile shares the same corner radius and an opaque background, and the whole composition reads as a single rounded box of differently sized compartments."
+      "ko": "벤토 그리드 구축: 단일 CSS 그리드(display: grid; grid-template-columns: repeat(4, 1fr); 일관된 gap)를 사용하고, 강조 타일은 grid-column: span 2 / grid-row: span 2 형태 셀 확장 적용. 모든 타일에 동일한 border-radius와 불투명 배경을 적용하여 전체 조화 형성."
     },
     "debugPrompt": {
       "en": "Debug my bento grid (CSS grid with spanning tiles). Rule out: holes in the grid because a span exceeds the remaining columns in its row (consider grid-auto-flow: dense, noting it reorders visually vs DOM); uneven gutters from per-tile margins instead of the grid's single gap; tiles with different corner radii or translucent backgrounds breaking the lunchbox look; the hero tile collapsing on small screens because the span isn't reduced under a media query. The symptom:",
-      "ko": "Debug my bento grid (CSS grid with spanning tiles). Rule out: holes in the grid because a span exceeds the remaining columns in its row (consider grid-auto-flow: dense, noting it reorders visually vs DOM); uneven gutters from per-tile margins instead of the grid's single gap; tiles with different corner radii or translucent backgrounds breaking the lunchbox look; the hero tile collapsing on small screens because the span isn't reduced under a media query. The symptom:"
+      "ko": "벤토 그리드 디버깅 (셀 확장 CSS 그리드). 확인 사항: 행 잔여 열을 초과하는 span으로 인한 그리드 구멍 발생(grid-auto-flow: dense 검토), 그리드 gap 대신 개별 타일 마진 사용으로 불균일한 간격 발생, 타일별 모서리 반경/투명도 불일치, 소형 화면에서 media query 미적용으로 정렬 깨짐. 증상:"
     },
     "relatedSlugs": [
       "masonry",
@@ -653,11 +653,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build a hamburger menu: a <button aria-expanded aria-controls> drawing three stacked lines that toggles a navigation drawer — an off-canvas <nav> panel sliding in from the left over a scrim (shadcn Sheet side=\"left\", Material NavigationDrawer). Lock body scroll while open, close on Escape and scrim tap, keep aria-expanded in sync, and return focus to the button on close.",
-      "ko": "Build a hamburger menu: a <button aria-expanded aria-controls> drawing three stacked lines that toggles a navigation drawer — an off-canvas <nav> panel sliding in from the left over a scrim (shadcn Sheet side=\"left\", Material NavigationDrawer). Lock body scroll while open, close on Escape and scrim tap, keep aria-expanded in sync, and return focus to the button on close."
+      "ko": "햄버거 메뉴 구축: 3선 아이콘 버튼(<button aria-expanded aria-controls>) 클릭 시 스크림(scrim) 오버레이 위로 탐색 드로어(<nav>) 패널 표시 (shadcn Sheet, Material NavigationDrawer). 열림 상태 시 body 스크롤 잠금, Escape 및 스크림 터치 시 닫기, aria-expanded 동기화, 닫힘 시 포커스 복원 처리."
     },
     "debugPrompt": {
       "en": "Debug my hamburger menu (aria-expanded toggle + off-canvas <nav> drawer). Rule out: the drawer rendering under the scrim or page header (z-order); body still scrolling behind the open drawer; aria-expanded never flipping so screen readers see a dead button; focus staying lost in the drawer after close instead of returning to the button; the drawer animating from the wrong edge because translate-x sign flipped; the menu unreachable on desktop because the toggle is hidden above the breakpoint but the nav links never reappear. The symptom:",
-      "ko": "Debug my hamburger menu (aria-expanded toggle + off-canvas <nav> drawer). Rule out: the drawer rendering under the scrim or page header (z-order); body still scrolling behind the open drawer; aria-expanded never flipping so screen readers see a dead button; focus staying lost in the drawer after close instead of returning to the button; the drawer animating from the wrong edge because translate-x sign flipped; the menu unreachable on desktop because the toggle is hidden above the breakpoint but the nav links never reappear. The symptom:"
+      "ko": "햄버거 메뉴 디버깅 (aria-expanded 토글 + 오프캠버스 드로어). 확인 사항: 드로어가 스크림이나 헤더 하단에 렌더링됨(z-index), 드로어 열림 상태에서도 배경 스크롤 동작, aria-expanded 미갱신으로 접근성 문제 발생, 닫힌 후 포커스가 버튼으로 돌아가지 않음, 데스크톱에서 토글 숨김 시 내비게이션 링크가 안 나타남. 증상:"
     },
     "relatedSlugs": [
       "three-dots",
@@ -737,11 +737,11 @@ export const ENTRIES: UIEntry[] = [
     "parts": [],
     "prompt": {
       "en": "Build a lightbox: clicking a gallery thumbnail opens the full image in a modal <dialog> (aria-modal) over a dark ::backdrop scrim, with prev/next arrows, a close button, Escape and backdrop-click to dismiss, and a reversible fade/scale transition.",
-      "ko": "Build a lightbox: clicking a gallery thumbnail opens the full image in a modal <dialog> (aria-modal) over a dark ::backdrop scrim, with prev/next arrows, a close button, Escape and backdrop-click to dismiss, and a reversible fade/scale transition."
+      "ko": "라이트박스 구축: 갤러리 썸네일 클릭 시 모달 <dialog>(aria-modal)에서 고해상도 이미지 열기. 어두운 ::backdrop 오버레이, 이전/다음 화살표, 닫기 버튼, Escape 및 배경 클릭 닫기, 페이드/스케일 전환 효과 적용."
     },
     "debugPrompt": {
       "en": "Debug my lightbox (<dialog>, ::backdrop, PhotoSwipe-style image overlay). Rule out: opened with show() instead of showModal() so there is no backdrop and the page scrolls behind; arrow keys paging the gallery and scrolling the page at the same time; the full-size image loading only after the transition so it pops from blurry to sharp; focus not returning to the clicked thumbnail on close. The symptom:",
-      "ko": "Debug my lightbox (<dialog>, ::backdrop, PhotoSwipe-style image overlay). Rule out: opened with show() instead of showModal() so there is no backdrop and the page scrolls behind; arrow keys paging the gallery and scrolling the page at the same time; the full-size image loading only after the transition so it pops from blurry to sharp; focus not returning to the clicked thumbnail on close. The symptom:"
+      "ko": "라이트박스 디버깅 (<dialog>, ::backdrop 오버레이). 확인 사항: showModal() 대신 show()를 호출하여 배경 스크롤 차단 실패, 화살표 키 조작 시 페이지 스크롤 동시 발생, 고해상도 이미지가 전환 후에 로드되어 팝업 튀김 발생, 닫힘 시 원본 썸네일로 포커스 미복원. 증상:"
     },
     "relatedSlugs": [
       "scrim",
@@ -840,11 +840,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build a marquee: an auto-scrolling horizontal strip using a CSS @keyframes translateX(-50%) loop over exactly-duplicated content (never the deprecated <marquee> tag), with edge fade masks, pause on hover via animation-play-state, and a prefers-reduced-motion fallback that stops the motion.",
-      "ko": "Build a marquee: an auto-scrolling horizontal strip using a CSS @keyframes translateX(-50%) loop over exactly-duplicated content (never the deprecated <marquee> tag), with edge fade masks, pause on hover via animation-play-state, and a prefers-reduced-motion fallback that stops the motion."
+      "ko": "마키 텍스트 구축: 중복 복사된 콘텐츠 위에 CSS @keyframes translateX(-50%) 루프를 적용하여 자동 스크롤 스트립 구성 (deprecated <marquee> 태그 사용 금지). 가장자리 페이드 마스크, 호버 시 animation-play-state: paused 적용, prefers-reduced-motion 설정 시 모션 정지 처리."
     },
     "debugPrompt": {
       "en": "Debug my marquee (CSS translateX keyframe loop, react-fast-marquee). Rule out: the loop jumping at the seam because the content is not duplicated exactly once and translated by exactly -50%; animating left/width on the main thread instead of transform; hover-pause missing (animation-play-state); motion still running under prefers-reduced-motion; the deprecated <marquee> tag pasted in from an old snippet. The symptom:",
-      "ko": "Debug my marquee (CSS translateX keyframe loop, react-fast-marquee). Rule out: the loop jumping at the seam because the content is not duplicated exactly once and translated by exactly -50%; animating left/width on the main thread instead of transform; hover-pause missing (animation-play-state); motion still running under prefers-reduced-motion; the deprecated <marquee> tag pasted in from an old snippet. The symptom:"
+      "ko": "마키 텍스트 디버깅 (CSS transform 루프). 확인 사항: 루프 교체 시 텍스트 튀김(콘텐츠 불일치 또는 -100% 이동 오류), hover 상태에서 멈추지 않음, 스크린 리더가 중복 텍스트를 두 번 낭독함(복제 영역 aria-hidden 필요), reduced-motion 지원 누락. 증상:"
     },
     "relatedSlugs": [
       "truncation",
@@ -938,11 +938,11 @@ export const ENTRIES: UIEntry[] = [
     "parts": [],
     "prompt": {
       "en": "Set the macOS pointer with NSCursor — e.g. NSCursor.iBeam.set() — or claim a region with NSView.addCursorRect(_:cursor:) inside resetCursorRects() (SwiftUI: View.pointerStyle(_:), macOS 15+). If the pointer stays stuck as the I-beam after the mouse leaves a text view, the stale cursor rect is the bug: call window.invalidateCursorRects(for: view) so the rects rebuild.",
-      "ko": "Set the macOS pointer with NSCursor — e.g. NSCursor.iBeam.set() — or claim a region with NSView.addCursorRect(_:cursor:) inside resetCursorRects() (SwiftUI: View.pointerStyle(_:), macOS 15+). If the pointer stays stuck as the I-beam after the mouse leaves a text view, the stale cursor rect is the bug: call window.invalidateCursorRects(for: view) so the rects rebuild."
+      "ko": "커스텀 포인터/커서 구축: 기본 커서를 pointer-events: none 설정된 커스텀 가상 요소 또는 floating <div>로 교체. mousemove/pointermove 시 transform: translate3d() 기반 위치 업데이트. 터치 기기에서는 기본 커서 유지하며, hover 가상 상태를 지연 없이 처리."
     },
     "debugPrompt": {
       "en": "Debug my macOS pointer/cursor (NSCursor, NSTrackingArea). Rule out: the cursor flickering back to arrow because cursor rects reset on every layout — drive it from cursorUpdate with a tracking area instead; push/pop or hide/unhide calls unbalanced; the spinning beach ball meaning the main thread is blocked, not a cursor bug; a hidden cursor never restored after a drag. The symptom:",
-      "ko": "Debug my macOS pointer/cursor (NSCursor, NSTrackingArea). Rule out: the cursor flickering back to arrow because cursor rects reset on every layout — drive it from cursorUpdate with a tracking area instead; push/pop or hide/unhide calls unbalanced; the spinning beach ball meaning the main thread is blocked, not a cursor bug; a hidden cursor never restored after a drag. The symptom:"
+      "ko": "커스텀 포인터 디버깅. 확인 사항: pointer-events: none 누락으로 클릭 차단 발생, pointermove 미사용으로 터치 기기 오류, 모바일 단말에서 커스텀 커서 잔재 노출, hover 전환 반응 지연. 증상:"
     },
     "relatedSlugs": [
       "search-field",
@@ -1126,11 +1126,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Show a native macOS alert with NSAlert (SwiftUI: .alert): messageText is the bold summary line, informativeText the smaller explanation. Add buttons with addButton(withTitle:) — the first one becomes the blue default button and answers the Return key; a button titled Cancel answers Escape. Set showsSuppressionButton = true for the “Don't ask me again” checkbox and read suppressionButton.state afterwards.",
-      "ko": "Show a native macOS alert with NSAlert (SwiftUI: .alert): messageText is the bold summary line, informativeText the smaller explanation. Add buttons with addButton(withTitle:) — the first one becomes the blue default button and answers the Return key; a button titled Cancel answers Escape. Set showsSuppressionButton = true for the “Don't ask me again” checkbox and read suppressionButton.state afterwards."
+      "ko": "알림창(Alert) 구축: 중요 알림을 전달하는 모달 대화상자 (role='alertdialog' 또는 native <dialog>). 명확한 제목, 설명 메시지, 기본 작업 및 취소 버튼 제공. 열림 시 포커스를 기본 버튼으로 이동하고 배경 인터랙션 차단."
     },
     "debugPrompt": {
       "en": "Debug my macOS alert (NSAlert, SwiftUI View.alert). Rule out: presenting off the main thread; runModal blocking the whole app when beginSheetModal(for:) attached to one window was intended; the return-key default being the FIRST button added, not the one you expect; the suppression checkbox state never persisted to defaults. The symptom:",
-      "ko": "Debug my macOS alert (NSAlert, SwiftUI View.alert). Rule out: presenting off the main thread; runModal blocking the whole app when beginSheetModal(for:) attached to one window was intended; the return-key default being the FIRST button added, not the one you expect; the suppression checkbox state never persisted to defaults. The symptom:"
+      "ko": "알림창 디버깅. 확인 사항: role='alertdialog' 누락, 포커스 트랩(Focus trap) 실패로 배경 요소로 포커스 이탈, Escape 키 수신 거부, 스크린 리더 메시지 자동 낭독 실패. 증상:"
     },
     "relatedSlugs": [
       "sheet",
@@ -1290,11 +1290,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use a native macOS slider — NSSlider (SwiftUI: Slider(value:in:step:)): horizontal linear style, round knob, the leading side of the track tinted with the accent color. For discrete values add tick marks below with numberOfTickMarks and tickMarkPosition = .below, and snap the knob to them with allowsTickMarkValuesOnly = true. Set isContinuous = true so the value updates while dragging.",
-      "ko": "Use a native macOS slider — NSSlider (SwiftUI: Slider(value:in:step:)): horizontal linear style, round knob, the leading side of the track tinted with the accent color. For discrete values add tick marks below with numberOfTickMarks and tickMarkPosition = .below, and snap the knob to them with allowsTickMarkValuesOnly = true. Set isContinuous = true so the value updates while dragging."
+      "ko": "슬라이더 컨트롤 구축: 범주 내 수치를 선택하는 입력 요소 (<input type='range'> 또는 role='slider'). min, max, step 속성 설정, 키보드 방향키 조작 지원, aria-valuenow / aria-valuetext 동기화."
     },
     "debugPrompt": {
       "en": "Debug my macOS slider (NSSlider, SwiftUI Slider). Rule out: actions flooding on every pixel because isContinuous is on (or missing when live updates were wanted); allowsTickMarkValuesOnly snapping values you did not expect; a value binding writing back during drag and fighting the gesture; vertical orientation inferred from frame shape in AppKit, not set explicitly. The symptom:",
-      "ko": "Debug my macOS slider (NSSlider, SwiftUI Slider). Rule out: actions flooding on every pixel because isContinuous is on (or missing when live updates were wanted); allowsTickMarkValuesOnly snapping values you did not expect; a value binding writing back during drag and fighting the gesture; vertical orientation inferred from frame shape in AppKit, not set explicitly. The symptom:"
+      "ko": "슬라이더 디버깅. 확인 사항: 터치 드래그 위치 계산 오류, 키보드 조작 시 값 미변경, aria-valuetext 미설정으로 포맷된 값 낭독 불가. 증상:"
     },
     "relatedSlugs": [
       "stepper",
@@ -1450,11 +1450,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Add a native macOS color well — NSColorWell (SwiftUI: ColorPicker). Use colorWellStyle = .expanded for the modern two-part control: clicking the swatch opens the quick color-grid popover with an eyedropper, and the caret button opens the full NSColorPanel. For a standalone screen-color eyedropper use NSColorSampler().show { color in … }.",
-      "ko": "Add a native macOS color well — NSColorWell (SwiftUI: ColorPicker). Use colorWellStyle = .expanded for the modern two-part control: clicking the swatch opens the quick color-grid popover with an eyedropper, and the caret button opens the full NSColorPanel. For a standalone screen-color eyedropper use NSColorSampler().show { color in … }."
+      "ko": "색상 피커 구축: 선택된 색상을 시각적으로 보여주는 샘플(Color Well) 및 색상 선택 팔레트/팝오버 제공. HEX/RGB/HSL 값 입력 및 aria-label 동기화 지원."
     },
     "debugPrompt": {
       "en": "Debug my macOS color well (NSColorWell, SwiftUI ColorPicker). Rule out: the shared NSColorPanel serving every well in the app so two wells fight over it; continuous updates flooding your target action instead of committing on close; the eyedropper failing without Screen Recording permission; colors shifting because sRGB and Display P3 color spaces are being mixed. The symptom:",
-      "ko": "Debug my macOS color well (NSColorWell, SwiftUI ColorPicker). Rule out: the shared NSColorPanel serving every well in the app so two wells fight over it; continuous updates flooding your target action instead of committing on close; the eyedropper failing without Screen Recording permission; colors shifting because sRGB and Display P3 color spaces are being mixed. The symptom:"
+      "ko": "색상 피커 디버깅. 확인 사항: 선택한 색상 값 스크린 리더 전달 누락, 키보드로 팔레트 탐색 불가, 팝오버 열림 시 포커스 관리 실패. 증상:"
     },
     "relatedSlugs": [
       "popover",
@@ -1626,11 +1626,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build the form field with full anatomy: a real <label for> above the input (clicking it focuses the field), placeholder text as a hint only — never as the label, helper text below linked via aria-describedby, and required marked with the required attribute plus a visual asterisk. On invalid input set aria-invalid=\"true\", style the red state with :user-invalid, and point aria-describedby at the error message.",
-      "ko": "Build the form field with full anatomy: a real <label for> above the input (clicking it focuses the field), placeholder text as a hint only — never as the label, helper text below linked via aria-describedby, and required marked with the required attribute plus a visual asterisk. On invalid input set aria-invalid=\"true\", style the red state with :user-invalid, and point aria-describedby at the error message."
+      "ko": "폼 필드 레이아웃 구축: 라벨(<label>), 입력 요소(<input>), 힌트 텍스트, 에러 메시지 간의 올바른 연결 (htmlFor, aria-describedby, aria-invalid). 에러 발생 시 시각적 표시 및 접근성 상태 동기화."
     },
     "debugPrompt": {
       "en": "Debug my form field (label for/id, aria-describedby, placeholder). Rule out: the placeholder doing the label's job and vanishing on first keystroke; the label not associated so clicking it does not focus the input; error text not linked via aria-describedby so screen readers never hear it; autofill's yellow/blue fill overriding your styles (-webkit-autofill). The symptom:",
-      "ko": "Debug my form field (label for/id, aria-describedby, placeholder). Rule out: the placeholder doing the label's job and vanishing on first keystroke; the label not associated so clicking it does not focus the input; error text not linked via aria-describedby so screen readers never hear it; autofill's yellow/blue fill overriding your styles (-webkit-autofill). The symptom:"
+      "ko": "폼 필드 디버깅. 확인 사항: label 요소와 input 간의 id 미연결, aria-describedby 누락으로 에러 메시지 미낭독, 에러 상태 시 aria-invalid 미반영. 증상:"
     },
     "relatedSlugs": [
       "focus-ring-web",
@@ -1786,11 +1786,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Truncate the text with CSS. Single line: overflow: hidden; white-space: nowrap; text-overflow: ellipsis. Multi-line: display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden (unprefixed line-clamp isn't safe in all browsers yet). Middle truncation that preserves the file extension needs JS on the web — on macOS it's lineBreakMode = .byTruncatingMiddle. For a soft fade-out instead of dots, use mask-image: linear-gradient(to right, black 70%, transparent).",
-      "ko": "Truncate the text with CSS. Single line: overflow: hidden; white-space: nowrap; text-overflow: ellipsis. Multi-line: display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden (unprefixed line-clamp isn't safe in all browsers yet). Middle truncation that preserves the file extension needs JS on the web — on macOS it's lineBreakMode = .byTruncatingMiddle. For a soft fade-out instead of dots, use mask-image: linear-gradient(to right, black 70%, transparent)."
+      "ko": "텍스트 말줄임 구축: 한 줄 말줄임(white-space: nowrap; overflow: hidden; text-overflow: ellipsis) 또는 여러 줄 말줄임(-webkit-line-clamp). 전체 텍스트 확인을 위한 title 속성 또는 툴팁 연동."
     },
     "debugPrompt": {
       "en": "Debug my text truncation (text-overflow ellipsis, line-clamp). Rule out: ellipsis needing all three of overflow hidden, white-space nowrap, and a real width constraint — in flex rows add min-width:0 to the shrinking child, that is the classic; multi-line needing -webkit-line-clamp with -webkit-box; middle truncation (file names) needing JS, CSS cannot do it; the full text unavailable because no title/tooltip reveals it. The symptom:",
-      "ko": "Debug my text truncation (text-overflow ellipsis, line-clamp). Rule out: ellipsis needing all three of overflow hidden, white-space nowrap, and a real width constraint — in flex rows add min-width:0 to the shrinking child, that is the classic; multi-line needing -webkit-line-clamp with -webkit-box; middle truncation (file names) needing JS, CSS cannot do it; the full text unavailable because no title/tooltip reveals it. The symptom:"
+      "ko": "텍스트 말줄임 디버깅. 확인 사항: flex/grid 자식 요소의 min-width: 0 누락으로 말줄임 미작동, line-clamp 적용 시 display: -webkit-box 누락, 생략된 텍스트 확인 불가. 증상:"
     },
     "relatedSlugs": [
       "three-dots",
@@ -1954,11 +1954,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build a Drag & Drop interaction with HTML draggable, ondragover, and ondrop (or @dnd-kit/core): show a drag handle, selection resize handles where applicable, a drag preview, and an insertion line or highlighted drop target before release. Do not use the deprecated aria-grabbed state; announce the picked-up item, available destination, and drop result through an ARIA live region.",
-      "ko": "Build a Drag & Drop interaction with HTML draggable, ondragover, and ondrop (or @dnd-kit/core): show a drag handle, selection resize handles where applicable, a drag preview, and an insertion line or highlighted drop target before release. Do not use the deprecated aria-grabbed state; announce the picked-up item, available destination, and drop result through an ARIA live region."
+      "ko": "드래그 앤 드롭 구축: HTML5 Drag and Drop API 또는 Pointer Events 기반 구현. 드래그 가능 요소(draggable='true'), 드롭 존 시각적 피드백 제공, 키보드 접근성 대체 수단 제공."
     },
     "debugPrompt": {
       "en": "Debug my drag and drop (HTML draggable, ondragover/ondrop, dnd-kit). Rule out: drop never firing because dragover does not call preventDefault — that is the classic; dragleave firing when entering child elements so the highlight flickers — keep an enter/leave counter; setDragImage ignored because the ghost element is not in the DOM; touch devices doing nothing because native HTML5 DnD has no touch events — use a pointer-based library. The symptom:",
-      "ko": "Debug my drag and drop (HTML draggable, ondragover/ondrop, dnd-kit). Rule out: drop never firing because dragover does not call preventDefault — that is the classic; dragleave firing when entering child elements so the highlight flickers — keep an enter/leave counter; setDragImage ignored because the ghost element is not in the DOM; touch devices doing nothing because native HTML5 DnD has no touch events — use a pointer-based library. The symptom:"
+      "ko": "드래그 앤 드롭 디버깅. 확인 사항: dropEffect / effectAllowed 미설정으로 드롭 거부, 키보드 전용 사용자의 드래그/순서변경 불가, 터치 이벤트 미지원. 증상:"
     },
     "relatedSlugs": [
       "split-view",
@@ -2107,11 +2107,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Choose the correct Divider, Separator, or Rule: use HTML <hr> for a semantic thematic break in content, role=\"separator\" for a structural boundary between groups of controls, and a CSS border such as border-block-start for a purely decorative line. On macOS, use SwiftUI Divider for a visual division or NSMenuItem.separator() between menu-item groups.",
-      "ko": "Choose the correct Divider, Separator, or Rule: use HTML <hr> for a semantic thematic break in content, role=\"separator\" for a structural boundary between groups of controls, and a CSS border such as border-block-start for a purely decorative line. On macOS, use SwiftUI Divider for a visual division or NSMenuItem.separator() between menu-item groups."
+      "ko": "구분선 구축: 콘텐츠 영역을 분리하는 시각적/구조적 선 (<hr> 또는 role='separator'). 단순 시각 요소일 경우 aria-hidden='true' 또는 presentation 적용."
     },
     "debugPrompt": {
       "en": "Debug my divider (hr, role=separator, border utilities). Rule out: the hairline doubling or vanishing on fractional zoom because 1px borders round differently; a decorative divider still announced by screen readers — decorative ones need aria-hidden, semantic ones role=separator; a flex parent stretching the divider when a fixed cross-size was intended; margin collapse eating the space around an hr. The symptom:",
-      "ko": "Debug my divider (hr, role=separator, border utilities). Rule out: the hairline doubling or vanishing on fractional zoom because 1px borders round differently; a decorative divider still announced by screen readers — decorative ones need aria-hidden, semantic ones role=separator; a flex parent stretching the divider when a fixed cross-size was intended; margin collapse eating the space around an hr. The symptom:"
+      "ko": "구분선 디버깅. 확인 사항: 수직 구분선 시 aria-orientation='vertical' 누락, 불필요한 스크린 리더 낭독으로 소음 발생. 증상:"
     },
     "relatedSlugs": [
       "menu-bar",
@@ -2268,11 +2268,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use the correct Progress Indicator: an indeterminate spinner when the remaining work is unknown, a determinate progress ring when a compact circular arc should fill toward completion, or an HTML <progress> linear bar when there is room for a readable track. For a custom indicator use role=\"progressbar\" with aria-valuenow, and expose any visible percentage as the same accessible value; SwiftUI's cousin is ProgressView.",
-      "ko": "Use the correct Progress Indicator: an indeterminate spinner when the remaining work is unknown, a determinate progress ring when a compact circular arc should fill toward completion, or an HTML <progress> linear bar when there is room for a readable track. For a custom indicator use role=\"progressbar\" with aria-valuenow, and expose any visible percentage as the same accessible value; SwiftUI's cousin is ProgressView."
+      "ko": "진행 표시기 구축: 진행률 표시 바 및 진행 스피너 (role='progressbar', aria-valuenow, aria-valuemin, aria-valuemax). 무한 로딩 시 aria-valuenow 생략."
     },
     "debugPrompt": {
       "en": "Debug my progress indicator (role=progressbar, aria-valuenow, spinner). Rule out: an indeterminate spinner where a determinate bar was possible (or vice versa); the bar width not animating because the transition is on the wrong property; the loading flag stuck true so the spinner never stops; aria-valuenow never updating so assistive tech hears 0 percent forever. The symptom:",
-      "ko": "Debug my progress indicator (role=progressbar, aria-valuenow, spinner). Rule out: an indeterminate spinner where a determinate bar was possible (or vice versa); the bar width not animating because the transition is on the wrong property; the loading flag stuck true so the spinner never stops; aria-valuenow never updating so assistive tech hears 0 percent forever. The symptom:"
+      "ko": "진행 표시기 디버깅. 확인 사항: 수치 변경 시 aria-valuenow 미동기화, 무한 로딩 상태에서 스크린 리더에 진행률 미표시 안내 부재. 증상:"
     },
     "relatedSlugs": [
       "skeleton-spinner",
@@ -2491,11 +2491,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build this as a native Mac Window (NSWindow; SwiftUI: Window or WindowGroup). Distinguish the draggable title-bar region from NSWindow.title, use an NSToolbar for unified chrome, attach custom title-bar controls with NSTitlebarAccessoryViewController, and preserve native window tabs and resize edges.",
-      "ko": "Build this as a native Mac Window (NSWindow; SwiftUI: Window or WindowGroup). Distinguish the draggable title-bar region from NSWindow.title, use an NSToolbar for unified chrome, attach custom title-bar controls with NSTitlebarAccessoryViewController, and preserve native window tabs and resize edges."
+      "ko": "Mac 윈도우 프레임 구축: 제목 표시줄, 창 제어 신호등 버튼(Traffic lights), 그림자 효과 및 비주얼 이펙트 재질 적용. 드래그 가능한 헤더 및 최소화/최대화/닫기 동작 시뮬레이션."
     },
     "debugPrompt": {
       "en": "Debug my macOS window (NSWindow). Rule out: content underlapping the title bar because fullSizeContentView plus transparent title bar is set; the window not draggable where expected — isMovableByWindowBackground vs a draggable title bar area; keystrokes going nowhere because the first responder was cleared; frame autosave restoring an old position over your manual setFrame. The symptom:",
-      "ko": "Debug my macOS window (NSWindow). Rule out: content underlapping the title bar because fullSizeContentView plus transparent title bar is set; the window not draggable where expected — isMovableByWindowBackground vs a draggable title bar area; keystrokes going nowhere because the first responder was cleared; frame autosave restoring an old position over your manual setFrame. The symptom:"
+      "ko": "Mac 윈도우 디버깅. 확인 사항: 창 드래그 시 포인터 캡처 실패, 신호등 버튼의 호버 아이콘 상태 미동기화, 배경과의 z-index 레이어 충돌. 증상:"
     },
     "relatedSlugs": [
       "traffic-lights",
@@ -2635,11 +2635,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build a native Split View with NSSplitView and NSSplitViewItem (SwiftUI: NavigationSplitView), using a draggable divider between independently sized panes. Give a sidebar item native collapse behavior and align any toolbar boundary with NSTrackingSeparatorToolbarItem.",
-      "ko": "Build a native Split View with NSSplitView and NSSplitViewItem (SwiftUI: NavigationSplitView), using a draggable divider between independently sized panes. Give a sidebar item native collapse behavior and align any toolbar boundary with NSTrackingSeparatorToolbarItem."
+      "ko": "스플릿 뷰 구축: 2개 이상의 패널을 리사이저(Divider)로 분할 조절하는 레이아웃. 리사이저에 role='separator', aria-valuenow 및 방향키 조작 구현."
     },
     "debugPrompt": {
       "en": "Debug my macOS split view (NSSplitView, NSSplitViewController). Rule out: divider position not persisting without autosaveName; holding priorities deciding which pane absorbs window resize — the lowest priority pane grows; delegate min/max constraints fighting Auto Layout constraints on the same panes; canCollapse snapping a pane closed on double-click unexpectedly. The symptom:",
-      "ko": "Debug my macOS split view (NSSplitView, NSSplitViewController). Rule out: divider position not persisting without autosaveName; holding priorities deciding which pane absorbs window resize — the lowest priority pane grows; delegate min/max constraints fighting Auto Layout constraints on the same panes; canCollapse snapping a pane closed on double-click unexpectedly. The symptom:"
+      "ko": "스플릿 뷰 디버깅. 확인 사항: 드래그 중 텍스트 드래그 선택 발생, 키보드로 리사이저 조작 불가, 최소/최대 너비 제한 미적용. 증상:"
     },
     "relatedSlugs": [
       "sidebar",
@@ -2780,11 +2780,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use a native Scroll View (NSScrollView; SwiftUI: ScrollView). In AppKit, call the edge control an NSScroller, with its draggable knob inside the knob slot; respect NSScroller.Style overlay versus legacy and preserve native scroll elasticity at the content boundaries.",
-      "ko": "Use a native Scroll View (NSScrollView; SwiftUI: ScrollView). In AppKit, call the edge control an NSScroller, with its draggable knob inside the knob slot; respect NSScroller.Style overlay versus legacy and preserve native scroll elasticity at the content boundaries."
+      "ko": "스크롤 뷰 구축: 컨테이너 오버플로우 스크롤 (overflow: auto, overscroll-behavior: contain). 스크롤 섀도우 인디케이터 제공 및 키보드 스크롤 포커스(tabindex='0') 지원."
     },
     "debugPrompt": {
       "en": "Debug my macOS scroll view (NSScrollView, NSClipView). Rule out: content origin confusion because the document view is not flipped; overlay vs legacy scroller styles changing available width between users; the rubber-band overscroll disabled or doubled by elasticity settings; wheel events swallowed by a nested scroll view; scrollToVisible fighting responsive-scrolling prefetch. The symptom:",
-      "ko": "Debug my macOS scroll view (NSScrollView, NSClipView). Rule out: content origin confusion because the document view is not flipped; overlay vs legacy scroller styles changing available width between users; the rubber-band overscroll disabled or doubled by elasticity settings; wheel events swallowed by a nested scroll view; scrollToVisible fighting responsive-scrolling prefetch. The symptom:"
+      "ko": "스크롤 뷰 디버깅. 확인 사항: iOS 모바일 사파리에서 -webkit-overflow-scrolling 미작동, 키보드 포커스 미설정으로 스크롤 불가. 증상:"
     },
     "relatedSlugs": [
       "sidebar",
@@ -2902,11 +2902,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use a native Search Field with NSSearchField (SwiftUI: View.searchable), preserving its leading search button, trailing cancel button when text is present, and optional recent-search menu from NSSearchFieldCell.searchMenuTemplate.",
-      "ko": "Use a native Search Field with NSSearchField (SwiftUI: View.searchable), preserving its leading search button, trailing cancel button when text is present, and optional recent-search menu from NSSearchFieldCell.searchMenuTemplate."
+      "ko": "검색 필드 구축: 검색어 입력 및 빠른 입력 취소(Clear) 버튼 제공 (<input type='search'>). 자동 완성/제안 연동 시 role='combobox' 및 aria-expanded 설정."
     },
     "debugPrompt": {
       "en": "Debug my macOS search field (NSSearchField). Rule out: search firing only on Return because sendsSearchStringImmediately is false; the clear button clearing text but your code never notified — watch for the empty-string action; the recents menu dead without recentsAutosaveName; the cancel button hidden at small control sizes. The symptom:",
-      "ko": "Debug my macOS search field (NSSearchField). Rule out: search firing only on Return because sendsSearchStringImmediately is false; the clear button clearing text but your code never notified — watch for the empty-string action; the recents menu dead without recentsAutosaveName; the cancel button hidden at small control sizes. The symptom:"
+      "ko": "검색 필드 디버깅. 확인 사항: Clear 버튼 클릭 시 포커스 이탈, 검색어 변경 시 디바운스 미적용으로 과도한 API 요청, 검색 제안 접근성 미흡. 증상:"
     },
     "relatedSlugs": [
       "toolbar",
@@ -3024,11 +3024,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Present the standard Save Panel with NSSavePanel (SwiftUI workflow: View.fileExporter), including its editable name field, disclosure button for the expanded file browser, allowed-content-type format pop-up, and Finder-style sidebar. Do not rebuild the system save dialog from custom controls.",
-      "ko": "Present the standard Save Panel with NSSavePanel (SwiftUI workflow: View.fileExporter), including its editable name field, disclosure button for the expanded file browser, allowed-content-type format pop-up, and Finder-style sidebar. Do not rebuild the system save dialog from custom controls."
+      "ko": "저장 패널 모달 구축: 파일명 입력, 저장 위치 선택, 파일 형식 드롭다운을 포함하는 모달 패널. 포커스 트랩 및 기본 '저장' 버튼 포커스 지정."
     },
     "debugPrompt": {
       "en": "Debug my macOS save panel (NSSavePanel, NSOpenPanel). Rule out: sandboxed URLs failing later because startAccessingSecurityScopedResource was never called or a bookmark was never saved; allowedContentTypes filtering out everything so Save stays disabled; runModal blocking the app when beginSheetModal was intended; the panel opening in the wrong folder because directoryURL is set after presentation. The symptom:",
-      "ko": "Debug my macOS save panel (NSSavePanel, NSOpenPanel). Rule out: sandboxed URLs failing later because startAccessingSecurityScopedResource was never called or a bookmark was never saved; allowedContentTypes filtering out everything so Save stays disabled; runModal blocking the app when beginSheetModal was intended; the panel opening in the wrong folder because directoryURL is set after presentation. The symptom:"
+      "ko": "저장 패널 디버깅. 확인 사항: 모달 외곽 스크롤 차단 실패, 파일 확장자 변경 시 파일명 자동 미갱신. 증상:"
     },
     "relatedSlugs": [
       "sheet",
@@ -3131,11 +3131,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use a native Token Field (NSTokenField) with NSTokenField.TokenStyle so each recognized recipient or tag becomes a separately selectable, removable rounded token inside the editable field. Preserve token completion and keyboard deletion behavior.",
-      "ko": "Use a native Token Field (NSTokenField) with NSTokenField.TokenStyle so each recognized recipient or tag becomes a separately selectable, removable rounded token inside the editable field. Preserve token completion and keyboard deletion behavior."
+      "ko": "토큰 필드 (태그 입력) 구축: 입력한 키워드가 칩/토큰 형태로 변환되는 필드. Backspace 키로 이전 토큰 삭제, 토큰별 닫기 버튼 및 키보드 삭제 지원."
     },
     "debugPrompt": {
       "en": "Debug my macOS token field (NSTokenField). Rule out: text not becoming tokens until Return because the tokenizing character set lacks your separator; represented objects vs display strings confused in the delegate so tokens show raw identifiers; completions never appearing because the completion delegate method is not implemented; copy producing plain text because writing represented objects to the pasteboard is unimplemented. The symptom:",
-      "ko": "Debug my macOS token field (NSTokenField). Rule out: text not becoming tokens until Return because the tokenizing character set lacks your separator; represented objects vs display strings confused in the delegate so tokens show raw identifiers; completions never appearing because the completion delegate method is not implemented; copy producing plain text because writing represented objects to the pasteboard is unimplemented. The symptom:"
+      "ko": "토큰 필드 디버깅. 확인 사항: 토큰 삭제 시 포커스가 입력 필드로 유지되지 않음, 스크린 리더에서 토큰 개수 및 생성 알림 미흡. 증상:"
     },
     "relatedSlugs": [
       "search-field",
@@ -3262,11 +3262,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use a Combo Button with NSComboButton (macOS 13+) in split style: clicking the main region performs the primary action, while the attached arrow region opens its NSMenu. Do not use a pop-up button, which displays a current selection, or a pull-down button, whose whole button opens an action menu.",
-      "ko": "Use a Combo Button with NSComboButton (macOS 13+) in split style: clicking the main region performs the primary action, while the attached arrow region opens its NSMenu. Do not use a pop-up button, which displays a current selection, or a pull-down button, whose whole button opens an action menu."
+      "ko": "콤보 버튼 구축: 주 작업 버튼과 드롭다운 메뉴 토글 화살표 버튼이 결합된 컨트롤. 화살표 버튼에 aria-haspopup, aria-expanded 적용 및 키보드 메뉴 탐색 연동."
     },
     "debugPrompt": {
       "en": "Debug my macOS combo button (NSComboButton, macOS 13+). Rule out: unified vs split style confusion — in unified the whole button shows the menu, in split only the arrow section does; the menu property empty so the arrow does nothing; running on macOS 12 or earlier where NSComboButton does not exist and a popup-button fallback is needed. The symptom:",
-      "ko": "Debug my macOS combo button (NSComboButton, macOS 13+). Rule out: unified vs split style confusion — in unified the whole button shows the menu, in split only the arrow section does; the menu property empty so the arrow does nothing; running on macOS 12 or earlier where NSComboButton does not exist and a popup-button fallback is needed. The symptom:"
+      "ko": "콤보 버튼 디버깅. 확인 사항: 주 버튼 클릭과 드롭다운 토글 클릭 이벤트 혼선, 화살표 버튼 접근성 라벨 누락. 증상:"
     },
     "relatedSlugs": [
       "popup-pulldown-combo",
@@ -3400,11 +3400,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use an NSLevelIndicator with the style that matches the meaning: .continuousCapacity or .discreteCapacity for a bounded level, .rating for stars, or .relevancy for match strength. Configure warningValue and criticalValue for native threshold coloring; SwiftUI's nearest general equivalent is Gauge.",
-      "ko": "Use an NSLevelIndicator with the style that matches the meaning: .continuousCapacity or .discreteCapacity for a bounded level, .rating for stars, or .relevancy for match strength. Configure warningValue and criticalValue for native threshold coloring; SwiftUI's nearest general equivalent is Gauge."
+      "ko": "레벨 인디케이터 구축: 용량/신호 세기/비밀번호 강도 등을 단계별로 표시하는 디스플레이 (role='meter', aria-valuenow, aria-valuemin, aria-valuemax)."
     },
     "debugPrompt": {
       "en": "Debug my macOS level indicator (NSLevelIndicator). Rule out: the wrong style — continuous capacity vs discrete ticks vs rating stars are one class with different levelIndicatorStyle values; warning and critical thresholds recoloring the fill unexpectedly; isEditable letting clicks change the value when it should be display-only; value changes not animating because the cell redraws instantly. The symptom:",
-      "ko": "Debug my macOS level indicator (NSLevelIndicator). Rule out: the wrong style — continuous capacity vs discrete ticks vs rating stars are one class with different levelIndicatorStyle values; warning and critical thresholds recoloring the fill unexpectedly; isEditable letting clicks change the value when it should be display-only; value changes not animating because the cell redraws instantly. The symptom:"
+      "ko": "레벨 인디케이터 디버깅. 확인 사항: 값 변경에 따른 시각적 바 색상 미갱신, aria-valuetext 미설정으로 상태 낭독 불분명. 증상:"
     },
     "relatedSlugs": [
       "segmented-control",
@@ -3525,11 +3525,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build a Finder-style Column View with NSBrowser and NSBrowserCell: selecting a non-leaf row reveals its children in a new column immediately to the right, preserving the visible hierarchy path. Do not substitute a flat list or a single sidebar-detail split.",
-      "ko": "Build a Finder-style Column View with NSBrowser and NSBrowserCell: selecting a non-leaf row reveals its children in a new column immediately to the right, preserving the visible hierarchy path. Do not substitute a flat list or a single sidebar-detail split."
+      "ko": "컬럼 뷰 (Finder 계층 뷰) 구축: 다중 열로 상위-하위 계층 구조를 탐색하는 인터페이스. 키보드 좌우 방향키 컬럼 이동, 상위/하위 선택 상태 유지."
     },
     "debugPrompt": {
       "en": "Debug my macOS column view (NSBrowser, Miller columns). Rule out: stale columns because reloadColumn/reloadData never ran after the model changed; confusing path-based selection with item-based delegate methods; lazy child loading never triggered because isLeafItem answers wrong; the horizontal scroll position jumping when columns are added. The symptom:",
-      "ko": "Debug my macOS column view (NSBrowser, Miller columns). Rule out: stale columns because reloadColumn/reloadData never ran after the model changed; confusing path-based selection with item-based delegate methods; lazy child loading never triggered because isLeafItem answers wrong; the horizontal scroll position jumping when columns are added. The symptom:"
+      "ko": "컬럼 뷰 디버깅. 확인 사항: 신규 컬럼 추가 시 자동 수평 스크롤 미동작, 키보드 포커스 탐색 시 선택 항목 이탈. 증상:"
     },
     "relatedSlugs": [
       "outline-view",
@@ -3651,11 +3651,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use an Outline View with NSOutlineView (SwiftUI: OutlineGroup) for the indented hierarchy: parent rows receive disclosure triangles and expanding one reveals child rows directly beneath it. Use a flat list only when rows have no children; apply source-list styling separately if the outline serves as a sidebar.",
-      "ko": "Use an Outline View with NSOutlineView (SwiftUI: OutlineGroup) for the indented hierarchy: parent rows receive disclosure triangles and expanding one reveals child rows directly beneath it. Use a flat list only when rows have no children; apply source-list styling separately if the outline serves as a sidebar."
+      "ko": "아웃라인 뷰 (트리 뷰) 구축: 트리 형태의 계층 구조 데이터 디스플레이 (role='tree', role='treeitem'). 접기/펼치기(aria-expanded) 및 키보드 방향키 트리 탐색 지원."
     },
     "debugPrompt": {
       "en": "Debug my macOS outline view (NSOutlineView). Rule out: rows refusing to expand because isItemExpandable and the child-count delegate answers disagree; reloadItem without reloadChildren:true leaving stale children; autosaveExpandedItems silently broken because items lack stable identity for persistentObject round-trips; row animations jumping because the model mutated before the animated update ran. The symptom:",
-      "ko": "Debug my macOS outline view (NSOutlineView). Rule out: rows refusing to expand because isItemExpandable and the child-count delegate answers disagree; reloadItem without reloadChildren:true leaving stale children; autosaveExpandedItems silently broken because items lack stable identity for persistentObject round-trips; row animations jumping because the model mutated before the animated update ran. The symptom:"
+      "ko": "아웃라인 뷰 디버깅. 확인 사항: aria-expanded 상태 미동기화, 방향키 탐색 시 하위 노드 건너뜀 발생. 증상:"
     },
     "relatedSlugs": [
       "disclosure-triangle",
@@ -3804,11 +3804,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use the correct three-mark control: a horizontal ellipsis (meatballs) or vertical ellipsis (kebab) button with aria-haspopup=\"menu\" for a contextual Overflow/More menu; a three-line hamburger button with aria-controls for a navigation drawer; or an ellipsis inside a command label such as “Open…” only when the command asks for more input before completing.",
-      "ko": "Use the correct three-mark control: a horizontal ellipsis (meatballs) or vertical ellipsis (kebab) button with aria-haspopup=\"menu\" for a contextual Overflow/More menu; a three-line hamburger button with aria-controls for a navigation drawer; or an ellipsis inside a command label such as “Open…” only when the command asks for more input before completing."
+      "ko": "더보기 버튼 (Ellipsis 메뉴) 구축: 추가 옵션/작업을 제공하는 3점 아이콘 버튼. aria-label='더보기 옵션', aria-haspopup='menu', aria-expanded 동기화."
     },
     "debugPrompt": {
       "en": "Debug my three-dots menu (kebab/meatballs, menu button). Rule out: the icon-only button missing an aria-label; the menu staying open after an item is chosen; outside-click and Escape not closing it; a hit target well under 24px so taps miss on mobile. The symptom:",
-      "ko": "Debug my three-dots menu (kebab/meatballs, menu button). Rule out: the icon-only button missing an aria-label; the menu staying open after an item is chosen; outside-click and Escape not closing it; a hit target well under 24px so taps miss on mobile. The symptom:"
+      "ko": "더보기 버튼 디버깅. 확인 사항: 버튼의 접근성 이름(aria-label) 누락으로 스크린 리더 '버튼'으로만 낭독, 메뉴 열림 포커스 미이동. 증상:"
     },
     "relatedSlugs": [
       "truncation",
@@ -4017,11 +4017,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Work on the macOS menu bar: the app's main menu (NSApp.mainMenu) sits on the left after the Apple menu; menu bar extras (NSStatusItem in NSStatusBar.system) sit on the right before the clock. Use the exact part names: status item, its highlighted state, NSMenu, NSMenuItem, separator item.",
-      "ko": "Work on the macOS menu bar: the app's main menu (NSApp.mainMenu) sits on the left after the Apple menu; menu bar extras (NSStatusItem in NSStatusBar.system) sit on the right before the clock. Use the exact part names: status item, its highlighted state, NSMenu, NSMenuItem, separator item."
+      "ko": "메뉴 바 구축: 애플리케이션 상단 데스크톱 메뉴 바 (role='menubar', role='menu', role='menuitem'). 키보드 화살표 수평/수직 메뉴 탐색 지원."
     },
     "debugPrompt": {
       "en": "Debug my macOS menu bar (NSMenu main menu, NSMenuItem). Rule out: items permanently greyed because their action has no target and nothing in the responder chain implements it; automatic enabling turned off (autoenablesItems) without manual validation; keyboard shortcuts defined but never firing because the item is disabled at validation time; the app menu title coming from the bundle display name, not from code. The symptom:",
-      "ko": "Debug my macOS menu bar (NSMenu main menu, NSMenuItem). Rule out: items permanently greyed because their action has no target and nothing in the responder chain implements it; automatic enabling turned off (autoenablesItems) without manual validation; keyboard shortcuts defined but never firing because the item is disabled at validation time; the app menu title coming from the bundle display name, not from code. The symptom:"
+      "ko": "메뉴 바 디버깅. 확인 사항: 메뉴 간 좌우 화살표 전환 미작동, ESC 키 입력 시 최상위 메뉴 바 포커스 복원 실패. 증상:"
     },
     "relatedSlugs": [
       "menu-bar-extra",
@@ -4162,11 +4162,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Add a Context Menu using NSMenu on the target NSView (SwiftUI: View.contextMenu), opened by right-click or Control-click at the item under the pointer. Populate it with actions specific to that item; do not turn it into a primary-click dropdown anchored to a button.",
-      "ko": "Add a Context Menu using NSMenu on the target NSView (SwiftUI: View.contextMenu), opened by right-click or Control-click at the item under the pointer. Populate it with actions specific to that item; do not turn it into a primary-click dropdown anchored to a button."
+      "ko": "컨텍스트 메뉴 구축: 마우스 우클릭 또는 롱프레스 시 클릭 위치에 표시되는 팝업 메뉴. 화면 가장자리 영역 감지 및 뷰포트 내 자동 재배치."
     },
     "debugPrompt": {
       "en": "Debug my macOS context menu (NSMenu, menu(for:), SwiftUI .contextMenu). Rule out: the menu built once and gone stale — implement menuNeedsUpdate/menuWillOpen; items greyed out because their target is nil and nothing in the responder chain implements the action; right-click, control-click and two-finger tap taking different code paths; a SwiftUI .contextMenu swallowing plain clicks on the row. The symptom:",
-      "ko": "Debug my macOS context menu (NSMenu, menu(for:), SwiftUI .contextMenu). Rule out: the menu built once and gone stale — implement menuNeedsUpdate/menuWillOpen; items greyed out because their target is nil and nothing in the responder chain implements the action; right-click, control-click and two-finger tap taking different code paths; a SwiftUI .contextMenu swallowing plain clicks on the row. The symptom:"
+      "ko": "컨텍스트 메뉴 디버깅. 확인 사항: 화면 하단/우측 표출 시 뷰포트 잘림 현상, 우클릭 기본 브라우저 메뉴 차단(preventDefault) 누락. 증상:"
     },
     "relatedSlugs": [
       "popover",
@@ -4287,11 +4287,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use a native Disclosure Triangle for expandable rows: NSOutlineView for an outline hierarchy or SwiftUI DisclosureGroup for a standalone section. The small indicator must rotate between collapsed and expanded states while the row's children appear directly beneath it.",
-      "ko": "Use a native Disclosure Triangle for expandable rows: NSOutlineView for an outline hierarchy or SwiftUI DisclosureGroup for a standalone section. The small indicator must rotate between collapsed and expanded states while the row's children appear directly beneath it."
+      "ko": "디스클로저 트라이앵글 구축: 삼각형 화살표 아이콘 클릭으로 상세 내용을 접고 펼치는 컨트롤. aria-expanded 상태에 따른 회전 애니메이션 적용."
     },
     "debugPrompt": {
       "en": "Debug my macOS disclosure triangle (NSButton .disclosure bezel, SwiftUI DisclosureGroup). Rule out: the isExpanded binding not actually driving the revealed content; several groups sharing one binding so they all toggle together; the triangle animating the wrong direction because state and rotation are set separately; baseline misalignment between the triangle and its label. The symptom:",
-      "ko": "Debug my macOS disclosure triangle (NSButton .disclosure bezel, SwiftUI DisclosureGroup). Rule out: the isExpanded binding not actually driving the revealed content; several groups sharing one binding so they all toggle together; the triangle animating the wrong direction because state and rotation are set separately; baseline misalignment between the triangle and its label. The symptom:"
+      "ko": "디스클로저 트라이앵글 디버깅. 확인 사항: 회전 애니메이션 중심축 오차, aria-expanded 미반영. 증상:"
     },
     "relatedSlugs": [
       "sidebar",
@@ -4400,11 +4400,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Show a Dock Badge by assigning the count to NSApp.dockTile.badgeLabel, clearing the label when no count remains. If stronger attention is warranted, call NSApplication.requestUserAttention(_:) separately to bounce the Dock icon; the bounce is not the badge itself.",
-      "ko": "Show a Dock Badge by assigning the count to NSApp.dockTile.badgeLabel, clearing the label when no count remains. If stronger attention is warranted, call NSApplication.requestUserAttention(_:) separately to bounce the Dock icon; the bounce is not the badge itself."
+      "ko": "Dock 배지 구축: 앱 아이콘 우측 상단 알림 숫자/점 배지. aria-label을 통한 알림 수 낭독 및 수치 변경 시 애니메이션 피드백."
     },
     "debugPrompt": {
       "en": "Debug my macOS Dock badge (NSDockTile.badgeLabel, NSApp.dockTile). Rule out: clearing with the string zero instead of nil or empty so a 0 stays visible; setting the badge from a background thread; expecting the badge to survive quit — it lives only while the app runs (UNUserNotificationCenter badge APIs persist); long strings truncating in the tile. The symptom:",
-      "ko": "Debug my macOS Dock badge (NSDockTile.badgeLabel, NSApp.dockTile). Rule out: clearing with the string zero instead of nil or empty so a 0 stays visible; setting the badge from a background thread; expecting the badge to survive quit — it lives only while the app runs (UNUserNotificationCenter badge APIs persist); long strings truncating in the tile. The symptom:"
+      "ko": "Dock 배지 디버깅. 확인 사항: 배지 수치 변경 시 스크린 리더 라이브 리전(aria-live) 알림 누락. 증상:"
     },
     "relatedSlugs": [
       "badge-chip-pill",
@@ -4499,11 +4499,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Preserve the native Focus Ring around the first responder. In AppKit, make the control eligible for first-responder status, move focus with NSWindow.makeFirstResponder(_:), and keep NSView.focusRingType at .default; in SwiftUI, use View.focusable(_:) with FocusState. Leave enough space for the standard macOS accent-colored ring and do not replace it with a custom border.",
-      "ko": "Preserve the native Focus Ring around the first responder. In AppKit, make the control eligible for first-responder status, move focus with NSWindow.makeFirstResponder(_:), and keep NSView.focusRingType at .default; in SwiftUI, use View.focusable(_:) with FocusState. Leave enough space for the standard macOS accent-colored ring and do not replace it with a custom border."
+      "ko": "포커스 링 구축: 키보드 포커스 시 표시되는 명확한 외곽선 (:focus-visible). 충분한 명암비(3:1 이상) 및 모서리 곡률 일치."
     },
     "debugPrompt": {
       "en": "Debug my macOS focus ring (NSView.focusRingType, SwiftUI .focusable/.focusEffectDisabled). Rule out: Full Keyboard Access (AppleKeyboardUIMode) on the user's Mac making every first control grab focus and show a ring; focusRingType = .none silenced by a custom drawFocusRingMask; the ring clipped by an ancestor that clips to bounds; SwiftUI focus state fighting an explicit makeFirstResponder call. The symptom:",
-      "ko": "Debug my macOS focus ring (NSView.focusRingType, SwiftUI .focusable/.focusEffectDisabled). Rule out: Full Keyboard Access (AppleKeyboardUIMode) on the user's Mac making every first control grab focus and show a ring; focusRingType = .none silenced by a custom drawFocusRingMask; the ring clipped by an ancestor that clips to bounds; SwiftUI focus state fighting an explicit makeFirstResponder call. The symptom:"
+      "ko": "포커스 링 디버깅. 확인 사항: outline: none 설정 후 포커스 스타일 미제공, 마우스 클릭 시에도 포커스 링 노출 오류. 증상:"
     },
     "relatedSlugs": [
       "segmented-control",
@@ -4633,11 +4633,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Put these selection-specific controls in an Inspector using SwiftUI View.inspector(isPresented:content:) (macOS 14+), as a collapsible right-hand column with a sensible inspectorColumnWidth. The inspector must update with the selected object without replacing the main content.",
-      "ko": "Put these selection-specific controls in an Inspector using SwiftUI View.inspector(isPresented:content:) (macOS 14+), as a collapsible right-hand column with a sensible inspectorColumnWidth. The inspector must update with the selected object without replacing the main content."
+      "ko": "인스펙터 패널 구축: 우측 측면에 위치하여 현재 선택 항목의 상세 속성을 편집하는 패널. 접기/펼치기 및 섹션별 아코디언 제공."
     },
     "debugPrompt": {
       "en": "Debug my macOS inspector (SwiftUI View.inspector(isPresented:), NSSplitViewItem(inspectorWithViewController:)). Rule out: the inspector auto-presenting as a sheet on narrow windows — that is the built-in adaptive behavior; the toggle binding out of sync because the user can also close it by dragging; min/ideal widths forcing a collapse on window resize; inspector content not tracking the current selection. The symptom:",
-      "ko": "Debug my macOS inspector (SwiftUI View.inspector(isPresented:), NSSplitViewItem(inspectorWithViewController:)). Rule out: the inspector auto-presenting as a sheet on narrow windows — that is the built-in adaptive behavior; the toggle binding out of sync because the user can also close it by dragging; min/ideal widths forcing a collapse on window resize; inspector content not tracking the current selection. The symptom:"
+      "ko": "인스펙터 디버깅. 확인 사항: 선택 요소 변경 시 인스펙터 데이터 미갱신, 패널 내 포커스 순서 꼬임. 증상:"
     },
     "relatedSlugs": [
       "sidebar",
@@ -4756,11 +4756,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Implement this auxiliary surface as a Panel (Floating Window / HUD) using NSPanel, with NSWindow.Level.floating so it stays above its related document windows. If it should behave like Spotlight, use the nonactivatingPanel style so showing it does not activate the app or steal focus unnecessarily.",
-      "ko": "Implement this auxiliary surface as a Panel (Floating Window / HUD) using NSPanel, with NSWindow.Level.floating so it stays above its related document windows. If it should behave like Spotlight, use the nonactivatingPanel style so showing it does not activate the app or steal focus unnecessarily."
+      "ko": "패널 및 HUD 구축: 보조 도구 모음 또는 플로팅 상태 창 (HUD). 반투명 글래스 재질 및 드래그 이동 기능 지원."
     },
     "debugPrompt": {
       "en": "Debug my macOS panel (NSPanel). Rule out: the panel stealing focus from the main window because the nonactivatingPanel style mask is missing; text fields inside refusing input because the panel cannot become key; the panel vanishing on app deactivate via hidesOnDeactivate; a floating window level fighting other always-on-top windows. The symptom:",
-      "ko": "Debug my macOS panel (NSPanel). Rule out: the panel stealing focus from the main window because the nonactivatingPanel style mask is missing; text fields inside refusing input because the panel cannot become key; the panel vanishing on app deactivate via hidesOnDeactivate; a floating window level fighting other always-on-top windows. The symptom:"
+      "ko": "패널/HUD 디버깅. 확인 사항: 화면 외곽으로 패널 이탈, 드래그 중 이벤트를 빼앗김. 증상:"
     },
     "relatedSlugs": [
       "sheet",
@@ -4870,11 +4870,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Present this as a Popover using NSPopover (SwiftUI: View.popover), with a visible anchor arrow aimed at the exact control that opened it. It should remain visually attached to that control and dismiss with native popover behavior.",
-      "ko": "Present this as a Popover using NSPopover (SwiftUI: View.popover), with a visible anchor arrow aimed at the exact control that opened it. It should remain visually attached to that control and dismiss with native popover behavior."
+      "ko": "팝오버 구축: 기준 요소 근처에 화살표(Tip)와 함께 나타나는 팝업 패널. 외부 클릭 및 ESC 입력 시 닫기, 위치 자동 계산."
     },
     "debugPrompt": {
       "en": "Debug my macOS popover (NSPopover, SwiftUI View.popover). Rule out: transient behavior closing it on the first click inside custom content that does not accept first responder; the arrow anchored to a stale positioning rect after layout changes; the popover detaching into a floating window when dragged (detachable delegate); SwiftUI popovers presenting as sheets in compact contexts. The symptom:",
-      "ko": "Debug my macOS popover (NSPopover, SwiftUI View.popover). Rule out: transient behavior closing it on the first click inside custom content that does not accept first responder; the arrow anchored to a stale positioning rect after layout changes; the popover detaching into a floating window when dragged (detachable delegate); SwiftUI popovers presenting as sheets in compact contexts. The symptom:"
+      "ko": "팝오버 디버깅. 확인 사항: 스크롤 시 기준 요소와 팝오버 위치 분리, 포커스 복원 실패. 증상:"
     },
     "relatedSlugs": [
       "menu-bar-extra",
@@ -5024,11 +5024,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Choose the correct control from Pop-Up Button vs. Pull-Down Button vs. Combo Box: use NSPopUpButton with pullsDown false for a persistent selection, the same control with pullsDown true for a menu of commands, or NSComboBox when the user may type a value as well as choose one. Preserve the native arrow, menu behavior, and displayed-value semantics of the chosen control.",
-      "ko": "Choose the correct control from Pop-Up Button vs. Pull-Down Button vs. Combo Box: use NSPopUpButton with pullsDown false for a persistent selection, the same control with pullsDown true for a menu of commands, or NSComboBox when the user may type a value as well as choose one. Preserve the native arrow, menu behavior, and displayed-value semantics of the chosen control."
+      "ko": "팝업 및 풀다운 버튼 구축: 단일 항목 선택 팝업 버튼 또는 동작 목록 풀다운 버튼. 현재 선택값 표시 및 체크마크 인디케이터."
     },
     "debugPrompt": {
       "en": "Debug my macOS popup/pull-down/combo (NSPopUpButton, NSComboBox). Rule out: a pull-down consuming its FIRST menu item as the title — insert a dummy first item; popup selection not syncing because selectItem was never called after menu rebuild; autoenablesItems greying items whose actions lack targets; expecting a combo box to be a menu — it is an editable text field plus a list. The symptom:",
-      "ko": "Debug my macOS popup/pull-down/combo (NSPopUpButton, NSComboBox). Rule out: a pull-down consuming its FIRST menu item as the title — insert a dummy first item; popup selection not syncing because selectItem was never called after menu rebuild; autoenablesItems greying items whose actions lack targets; expecting a combo box to be a menu — it is an editable text field plus a list. The symptom:"
+      "ko": "팝업/풀다운 버튼 디버깅. 확인 사항: 선택 항목 미표시, 키보드 탐색 중 항목 선택 실패. 증상:"
     },
     "relatedSlugs": [
       "context-menu",
@@ -5138,11 +5138,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use a Segmented Control with NSSegmentedControl (SwiftUI: a Picker with PickerStyle.segmented), showing the active segment with the native selected treatment. Keep the buttons connected as one control and bind selection so exactly one segment remains selected for this view switcher.",
-      "ko": "Use a Segmented Control with NSSegmentedControl (SwiftUI: a Picker with PickerStyle.segmented), showing the active segment with the native selected treatment. Keep the buttons connected as one control and bind selection so exactly one segment remains selected for this view switcher."
+      "ko": "세그먼트 컨트롤 구축: 상호 배타적인 옵션 집합 중 하나를 선택하는 분할 버튼 (role='tablist' 또는 grouped radio). 선택 세그먼트 활성 슬라이딩 배경."
     },
     "debugPrompt": {
       "en": "Debug my macOS segmented control (NSSegmentedControl). Rule out: trackingMode wrong — momentary segments fire and deselect, selectOne keeps a selection; selectedSegment being -1 in the action for momentary mode; segment images not template so dark mode breaks; auto segment widths jumping when labels change. The symptom:",
-      "ko": "Debug my macOS segmented control (NSSegmentedControl). Rule out: trackingMode wrong — momentary segments fire and deselect, selectOne keeps a selection; selectedSegment being -1 in the action for momentary mode; segment images not template so dark mode breaks; auto segment widths jumping when labels change. The symptom:"
+      "ko": "세그먼트 컨트롤 디버깅. 확인 사항: 키보드 방향키 선택 전환 미작동, 활성 배경 이동 위치 계산 오차. 증상:"
     },
     "relatedSlugs": [
       "toolbar",
@@ -5236,11 +5236,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Present this as a window-modal Sheet with NSWindow.beginSheet(_:completionHandler:) (SwiftUI: View.sheet), visibly attached beneath the parent window's title bar. Block only that parent window, not every window in the app.",
-      "ko": "Present this as a window-modal Sheet with NSWindow.beginSheet(_:completionHandler:) (SwiftUI: View.sheet), visibly attached beneath the parent window's title bar. Block only that parent window, not every window in the app."
+      "ko": "시트 모달 구축: 화면 상단 또는 하단에서 슬라이드되는 모달 패널 (Sheet). 배경 스크림, 드래그 제스처로 닫기 지원."
     },
     "debugPrompt": {
       "en": "Debug my macOS sheet (NSWindow.beginSheet(_:completionHandler:), SwiftUI View.sheet). Rule out: the isPresented/item binding never reset so it will not present a second time; endSheet never called so the parent window stays blocked; presenting from a view controller detached from the window so nothing appears; two sheets queued on one window presenting back-to-back unexpectedly. The symptom:",
-      "ko": "Debug my macOS sheet (NSWindow.beginSheet(_:completionHandler:), SwiftUI View.sheet). Rule out: the isPresented/item binding never reset so it will not present a second time; endSheet never called so the parent window stays blocked; presenting from a view controller detached from the window so nothing appears; two sheets queued on one window presenting back-to-back unexpectedly. The symptom:"
+      "ko": "시트 모달 디버깅. 확인 사항: 하단 드래그 닫기 제스처 동작 중 스크롤 충돌, 접근성 포커스 트랩 누락. 증상:"
     },
     "relatedSlugs": [
       "alert",
@@ -5389,11 +5389,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build a macOS Sidebar (Source List) with NavigationSplitView (AppKit: NSSplitViewController), using the native translucent sidebar appearance and source-list row selection. It must occupy the left column, support collapsing, and keep navigation separate from the detail content.",
-      "ko": "Build a macOS Sidebar (Source List) with NavigationSplitView (AppKit: NSSplitViewController), using the native translucent sidebar appearance and source-list row selection. It must occupy the left column, support collapsing, and keep navigation separate from the detail content."
+      "ko": "사이드바 구축: 앱 주요 탐색 영역을 담당하는 좌측 패널. 토글 버튼을 통한 수축/확장 및 제스처 지원."
     },
     "debugPrompt": {
       "en": "Debug my macOS sidebar (NSSplitViewController sidebar item, SwiftUI NavigationSplitView). Rule out: the frosted vibrancy missing because the sidebar content is not inside the sidebar-material effect view; toggleSidebar wired to the wrong split view item; the width not persisting without an autosaveName; the selection highlight losing its rounded inset style when the list style changes. The symptom:",
-      "ko": "Debug my macOS sidebar (NSSplitViewController sidebar item, SwiftUI NavigationSplitView). Rule out: the frosted vibrancy missing because the sidebar content is not inside the sidebar-material effect view; toggleSidebar wired to the wrong split view item; the width not persisting without an autosaveName; the selection highlight losing its rounded inset style when the list style changes. The symptom:"
+      "ko": "사이드바 디버깅. 확인 사항: 반응형 전환 시 사이드바 상태 오작동, 토글 버튼 aria-expanded 미동기화. 증상:"
     },
     "relatedSlugs": [
       "inspector",
@@ -5506,11 +5506,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Place a native Stepper using NSStepper (SwiftUI: Stepper) beside the numeric field, with the compact up/down arrow pair vertically aligned to that field. Bind both controls to the same value and enforce the intended increment, minimum, and maximum.",
-      "ko": "Place a native Stepper using NSStepper (SwiftUI: Stepper) beside the numeric field, with the compact up/down arrow pair vertically aligned to that field. Bind both controls to the same value and enforce the intended increment, minimum, and maximum."
+      "ko": "스텝퍼 구축: 수치를 1단계씩 증감시키는 위/아래 버튼 컨트롤. 연속 누름 지원 및 min/max 한계 설정."
     },
     "debugPrompt": {
       "en": "Debug my macOS stepper (NSStepper, SwiftUI Stepper). Rule out: the stepper and its text field not bound to the same value so they drift; valueWraps looping from max back to min; autorepeat firing continuously while held when single steps were expected; a number formatter clamping or rejecting the value the stepper just set. The symptom:",
-      "ko": "Debug my macOS stepper (NSStepper, SwiftUI Stepper). Rule out: the stepper and its text field not bound to the same value so they drift; valueWraps looping from max back to min; autorepeat firing continuously while held when single steps were expected; a number formatter clamping or rejecting the value the stepper just set. The symptom:"
+      "ko": "스텝퍼 디버깅. 확인 사항: 한계값 도달 시 버튼 disabled 처리 누락, 키보드 조작 연동 부재. 증상:"
     },
     "relatedSlugs": [
       "slider",
@@ -5657,11 +5657,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Create a Toolbar (Unified Title Bar) with NSToolbar and NSWindow.ToolbarStyle.unified (SwiftUI: View.toolbar), using native NSToolbarItem placement and spacing. Keep the title inline with the actions and let NSWindow.titlebarSeparatorStyle control the divider above the content.",
-      "ko": "Create a Toolbar (Unified Title Bar) with NSToolbar and NSWindow.ToolbarStyle.unified (SwiftUI: View.toolbar), using native NSToolbarItem placement and spacing. Keep the title inline with the actions and let NSWindow.titlebarSeparatorStyle control the divider above the content."
+      "ko": "툴바 구축: 자주 사용하는 작업 아이콘/버튼들의 모음 (role='toolbar'). 수평 키보드 탐색 및 커스텀 오버플로우 메뉴 지원."
     },
     "debugPrompt": {
       "en": "Debug my macOS toolbar (NSToolbar, NSToolbarItem). Rule out: items missing because they are absent from itemIdentifiers defaults vs alloweds; items greyed by validateToolbarItem returning false (or not implemented for custom views); user customization not persisting without autosavesConfiguration; unified title bar style shifting content layout under the toolbar. The symptom:",
-      "ko": "Debug my macOS toolbar (NSToolbar, NSToolbarItem). Rule out: items missing because they are absent from itemIdentifiers defaults vs alloweds; items greyed by validateToolbarItem returning false (or not implemented for custom views); user customization not persisting without autosavesConfiguration; unified title bar style shifting content layout under the toolbar. The symptom:"
+      "ko": "툴바 디버깅. 확인 사항: 툴바 내부 방향키 탐색 미작동, 공간 부족 시 오버플로우 처리 미흡. 증상:"
     },
     "relatedSlugs": [
       "traffic-lights",
@@ -5801,11 +5801,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use the standard Traffic Lights from NSWindow.standardWindowButton(_:), preserving their native spacing, hover symbols, and the green button’s system-provided full-screen and window-arrangement behavior. Obtain the green control as .zoomButton and use NSWindow.toggleFullScreen(_:) only when explicitly invoking full screen; do not substitute custom circles.",
-      "ko": "Use the standard Traffic Lights from NSWindow.standardWindowButton(_:), preserving their native spacing, hover symbols, and the green button’s system-provided full-screen and window-arrangement behavior. Obtain the green control as .zoomButton and use NSWindow.toggleFullScreen(_:) only when explicitly invoking full screen; do not substitute custom circles."
+      "ko": "신호등 창 제어 버튼 구축: macOS 특유의 빨강/노랑/초록 창 제어 버튼. 호버 시 닫기/최소화/확장 아이콘 표시."
     },
     "debugPrompt": {
       "en": "Debug my macOS traffic lights (NSWindow.standardWindowButton). Rule out: buttons missing after changing styleMask or using borderless windows; hover glyphs gone because a custom titlebar accessory intercepts tracking; the green button zooming when you expected full screen (option-click zooms); repositioned buttons drifting after full-screen transitions because the themed frame re-lays them out. The symptom:",
-      "ko": "Debug my macOS traffic lights (NSWindow.standardWindowButton). Rule out: buttons missing after changing styleMask or using borderless windows; hover glyphs gone because a custom titlebar accessory intercepts tracking; the green button zooming when you expected full screen (option-click zooms); repositioned buttons drifting after full-screen transitions because the themed frame re-lays them out. The symptom:"
+      "ko": "신호등 버튼 디버깅. 확인 사항: 호버 아이콘 미노출, 창 제어 기능 접근성 설명 부재. 증상:"
     },
     "relatedSlugs": [
       "toolbar",
@@ -5912,11 +5912,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use an NSVisualEffectView for this Visual Effect Material background (SwiftUI: Material). Choose NSVisualEffectView.Material by semantic purpose and set the appropriate BlendingMode; let standard controls supply vibrancy automatically instead of recreating the effect with a fixed blur and opacity.",
-      "ko": "Use an NSVisualEffectView for this Visual Effect Material background (SwiftUI: Material). Choose NSVisualEffectView.Material by semantic purpose and set the appropriate BlendingMode; let standard controls supply vibrancy automatically instead of recreating the effect with a fixed blur and opacity."
+      "ko": "비주얼 이펙트 재질 (Vibrancy) 구축: backdrop-filter: blur() 기반 블러 및 투과 효과. 다크/라이트 모드 대응 및 성능 최적화."
     },
     "debugPrompt": {
       "en": "Debug my macOS vibrancy (NSVisualEffectView). Rule out: the wrong material for the surface (sidebar, menu, popover, hudWindow are distinct); blendingMode withinWindow when behindWindow was intended so nothing shows through; vibrant text/controls dead because they are not descendants of the effect view; everything going grey when the window deactivates via state followsWindowActiveState. The symptom:",
-      "ko": "Debug my macOS vibrancy (NSVisualEffectView). Rule out: the wrong material for the surface (sidebar, menu, popover, hudWindow are distinct); blendingMode withinWindow when behindWindow was intended so nothing shows through; vibrant text/controls dead because they are not descendants of the effect view; everything going grey when the window deactivates via state followsWindowActiveState. The symptom:"
+      "ko": "Vibrancy 효과 디버깅. 확인 사항: 저성능 기기에서 프레임 드롭, 배경 텍스트와의 명암비 부족. 증상:"
     },
     "relatedSlugs": [
       "sidebar",
@@ -6042,11 +6042,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Show a Toast (Snackbar) through a role=\"status\" live region after the action succeeds. Place it in a consistent corner without blocking the page, auto-dismiss only nonessential messages after a short delay, and pause that timer while the toast is hovered or contains keyboard focus.",
-      "ko": "Show a Toast (Snackbar) through a role=\"status\" live region after the action succeeds. Place it in a consistent corner without blocking the page, auto-dismiss only nonessential messages after a short delay, and pause that timer while the toast is hovered or contains keyboard focus."
+      "ko": "토스트 알림 구축: 피드백 메시지를 전달하고 자동 소멸하는 피드백 패널 (role='status' 또는 role='alert'). 대기열(Queue) 관리 지원."
     },
     "debugPrompt": {
       "en": "Debug my toast (aria-live region, sonner). Rule out: no aria-live region so screen readers never announce it; the auto-dismiss timer not pausing on hover/focus; stacked toasts overlapping instead of shifting; the exit animation racing the removal so it snaps; toasts rendering under modals because of z-index order. The symptom:",
-      "ko": "Debug my toast (aria-live region, sonner). Rule out: no aria-live region so screen readers never announce it; the auto-dismiss timer not pausing on hover/focus; stacked toasts overlapping instead of shifting; the exit animation racing the removal so it snaps; toasts rendering under modals because of z-index order. The symptom:"
+      "ko": "토스트 알림 디버깅. 확인 사항: 스크린 리더 자동 미낭독, 화면을 덮어 인터랙션 방해, 타이머 일시정지 미지원. 증상:"
     },
     "relatedSlugs": [
       "scrim",
@@ -6159,11 +6159,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use a Modal Dialog built with <dialog> and open it with HTMLDialogElement.showModal() so the browser places it in the top layer, makes the page behind it inert, provides ::backdrop, and supports Escape. Use a side Drawer for contextual editing or a bottom Sheet for compact/mobile actions; add a scrim and modal focus management only when those surfaces are actually modal.",
-      "ko": "Use a Modal Dialog built with <dialog> and open it with HTMLDialogElement.showModal() so the browser places it in the top layer, makes the page behind it inert, provides ::backdrop, and supports Escape. Use a side Drawer for contextual editing or a bottom Sheet for compact/mobile actions; add a scrim and modal focus management only when those surfaces are actually modal."
+      "ko": "모달 대화상자 및 드로어 구축: 사용자 입력을 요구하는 모달 창 및 바텀 시트. 접근성 포커스 트랩, ESC 닫기, 스크림 오버레이."
     },
     "debugPrompt": {
       "en": "Debug my dialog/drawer/sheet (HTMLDialogElement, Radix Dialog, vaul). Rule out: show() used where showModal() was needed so there is no backdrop and no inert background; body scroll not locked so the page scrolls behind; focus not returned to the trigger on close; Escape closing it because onCancel is unhandled when you wanted it blocked; a nested dialog closing its parent. The symptom:",
-      "ko": "Debug my dialog/drawer/sheet (HTMLDialogElement, Radix Dialog, vaul). Rule out: show() used where showModal() was needed so there is no backdrop and no inert background; body scroll not locked so the page scrolls behind; focus not returned to the trigger on close; Escape closing it because onCancel is unhandled when you wanted it blocked; a nested dialog closing its parent. The symptom:"
+      "ko": "모달 대화상자/드로어 디버깅. 확인 사항: ESC 키 수신 불능, 배경 스크롤 허용, 포커스 이탈. 증상:"
     },
     "relatedSlugs": [
       "scrim",
@@ -6299,11 +6299,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use the HTML popover attribute for the click-triggered rich overlay, role=\"menu\" for the keyboard-navigable action list, and role=\"tooltip\" only for a brief non-interactive hover or focus hint. Link the tooltip from its trigger with aria-describedby, keep every overlay anchored to its trigger, and implement the correct Escape, outside-click, and focus-dismissal behavior for each pattern.",
-      "ko": "Use the HTML popover attribute for the click-triggered rich overlay, role=\"menu\" for the keyboard-navigable action list, and role=\"tooltip\" only for a brief non-interactive hover or focus hint. Link the tooltip from its trigger with aria-describedby, keep every overlay anchored to its trigger, and implement the correct Escape, outside-click, and focus-dismissal behavior for each pattern."
+      "ko": "팝오버 및 툴팁 구축: 요소 호버/포커스 시 보조 설명 텍스트 또는 포커스 가능한 컨텍스트 패널 표시 (role='tooltip')."
     },
     "debugPrompt": {
       "en": "Debug my popover/dropdown/tooltip (Popover API, Radix, floating-ui). Rule out: the wrong primitive — tooltips are hover+focus, never interactive content; the panel clipped by an overflow ancestor instead of portaled to body or using the top-layer Popover API; flip/shift middleware missing so it overflows at viewport edges; outside-click closing it before the inside click registers. The symptom:",
-      "ko": "Debug my popover/dropdown/tooltip (Popover API, Radix, floating-ui). Rule out: the wrong primitive — tooltips are hover+focus, never interactive content; the panel clipped by an overflow ancestor instead of portaled to body or using the top-layer Popover API; flip/shift middleware missing so it overflows at viewport edges; outside-click closing it before the inside click registers. The symptom:"
+      "ko": "팝오버/툴팁 디버깅. 확인 사항: 툴팁 내부 포커스 이동 불능, 호버 이탈 시 즉시 닫혀 마우스 이동 불가. 증상:"
     },
     "relatedSlugs": [
       "dialog-drawer-sheet",
@@ -6422,11 +6422,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Add a scrim behind the modal using the <dialog>::backdrop pseudo-element. It should cover the viewport, dim and optionally blur the page, intercept pointer input, and fade reversibly with the modal.",
-      "ko": "Add a scrim behind the modal using the <dialog>::backdrop pseudo-element. It should cover the viewport, dim and optionally blur the page, intercept pointer input, and fade reversibly with the modal."
+      "ko": "스크림 오버레이 구축: 모달 배경을 어둡게 처리하여 레이어의 깊이감을 주는 반투명 오버레이 (backdrop). 클릭 시 모달 닫기 연동."
     },
     "debugPrompt": {
       "en": "Debug my scrim/backdrop (::backdrop, fixed overlay). Rule out: scrolling chaining through to the page — set overscroll-behavior contain and lock body scroll; the scrim stacking under content because a transformed ancestor created its own stacking context; pointer-events still active while it fades out so it eats clicks invisibly; the dialog ::backdrop unstylable because the dialog was opened with show() not showModal(). The symptom:",
-      "ko": "Debug my scrim/backdrop (::backdrop, fixed overlay). Rule out: scrolling chaining through to the page — set overscroll-behavior contain and lock body scroll; the scrim stacking under content because a transformed ancestor created its own stacking context; pointer-events still active while it fades out so it eats clicks invisibly; the dialog ::backdrop unstylable because the dialog was opened with show() not showModal(). The symptom:"
+      "ko": "스크림 디버깅. 확인 사항: 클릭 이벤트가 하단 요소로 투과, z-index 레이어 오차. 증상:"
     },
     "relatedSlugs": [
       "dialog-drawer-sheet",
@@ -6562,11 +6562,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Mark the loading region aria-busy=\"true\" and use a skeleton when the final card layout is known, preserving its geometry while data arrives. Use a spinner with role=\"status\" when the wait has no meaningful content shape, and replace either indicator when loading completes.",
-      "ko": "Mark the loading region aria-busy=\"true\" and use a skeleton when the final card layout is known, preserving its geometry while data arrives. Use a spinner with role=\"status\" when the wait has no meaningful content shape, and replace either indicator when loading completes."
+      "ko": "스켈레톤 및 스피너 구축: 콘텐츠 로딩 중 형태를 미리 보여주는 스켈레톤 인디케이터 및 스피너 (aria-busy='true')."
     },
     "debugPrompt": {
       "en": "Debug my skeleton/spinner (loading placeholders). Rule out: skeleton flashing for sub-200ms loads — add an appearance delay; the shimmer looping forever because the error state never replaces it; skeleton shapes not matching real content so the swap causes layout shift; dozens of simultaneously animating placeholders janking scroll. The symptom:",
-      "ko": "Debug my skeleton/spinner (loading placeholders). Rule out: skeleton flashing for sub-200ms loads — add an appearance delay; the shimmer looping forever because the error state never replaces it; skeleton shapes not matching real content so the swap causes layout shift; dozens of simultaneously animating placeholders janking scroll. The symptom:"
+      "ko": "스켈레톤/스피너 디버깅. 확인 사항: 로딩 완료 후 aria-busy 미해제, 애니메이션 과도함. 증상:"
     },
     "relatedSlugs": [
       "empty-state",
@@ -6719,11 +6719,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build a labelled Combobox with role=\"combobox\" and a controlled role=\"listbox\" popup. Keep aria-expanded and aria-controls in sync, give each result role=\"option\", retain DOM focus in the input with aria-activedescendant, and support Arrow keys, Enter, and Escape without autofocusing on mount.",
-      "ko": "Build a labelled Combobox with role=\"combobox\" and a controlled role=\"listbox\" popup. Keep aria-expanded and aria-controls in sync, give each result role=\"option\", retain DOM focus in the input with aria-activedescendant, and support Arrow keys, Enter, and Escape without autofocusing on mount."
+      "ko": "콤보박스 구축: 텍스트 입력 필드와 제안 드롭다운 목록이 결합된 입력 컨트롤 (role='combobox', aria-autocomplete)."
     },
     "debugPrompt": {
       "en": "Debug my combobox (role=combobox, aria-activedescendant, cmdk/Radix). Rule out: the listbox closing on blur before the option click lands — handle selection on pointerdown or check relatedTarget; the highlighted index not resetting when the filter changes; aria-activedescendant pointing at a filtered-out option id; the mobile keyboard covering the list because nothing scrolls the field into view. The symptom:",
-      "ko": "Debug my combobox (role=combobox, aria-activedescendant, cmdk/Radix). Rule out: the listbox closing on blur before the option click lands — handle selection on pointerdown or check relatedTarget; the highlighted index not resetting when the filter changes; aria-activedescendant pointing at a filtered-out option id; the mobile keyboard covering the list because nothing scrolls the field into view. The symptom:"
+      "ko": "콤보박스 디버깅. 확인 사항: 방향키 제안 선택 시 입력 필드 값 미동기화, aria-expanded 미동기화. 증상:"
     },
     "relatedSlugs": [
       "command-palette",
@@ -6863,11 +6863,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Add a Command Palette using the shadcn/ui Command component inside a role=\"dialog\", opened by ⌘K or Ctrl+K. Filter actions as the user types, support arrow-key selection and Enter, and restore focus to the invoking control on dismissal.",
-      "ko": "Add a Command Palette using the shadcn/ui Command component inside a role=\"dialog\", opened by ⌘K or Ctrl+K. Filter actions as the user types, support arrow-key selection and Enter, and restore focus to the invoking control on dismissal."
+      "ko": "커맨드 팔레트 구축: 단축키(⌘K)로 실행되는 키워드 중심 중앙 모달 검색 인터페이스 (cmdk, Fuse.js 연동)."
     },
     "debugPrompt": {
       "en": "Debug my command palette (cmdk, Dialog + Command). Rule out: the cmd/ctrl-K listener attached to the wrong scope or eaten by the browser; the filter state persisting from the previous open — reset on open; focus escaping the dialog because the trap ignores portaled content; keydown firing during IME composition (check isComposing); the palette rendered under a higher stacking context. The symptom:",
-      "ko": "Debug my command palette (cmdk, Dialog + Command). Rule out: the cmd/ctrl-K listener attached to the wrong scope or eaten by the browser; the filter state persisting from the previous open — reset on open; focus escaping the dialog because the trap ignores portaled content; keydown firing during IME composition (check isComposing); the palette rendered under a higher stacking context. The symptom:"
+      "ko": "커맨드 팔레트 디버깅. 확인 사항: ⌘K 단축키 브라우저 기본 동작 미차단, 키보드 선택 항목 이탈. 증상:"
     },
     "relatedSlugs": [
       "combobox",
@@ -6994,11 +6994,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build an Accordion from <details> and <summary> elements. Give grouped <details> elements the same name when only one section may be open, preserve native keyboard behavior, and animate the revealed panel without adding redundant aria-expanded; use aria-expanded only for a fully custom disclosure primitive.",
-      "ko": "Build an Accordion from <details> and <summary> elements. Give grouped <details> elements the same name when only one section may be open, preserve native keyboard behavior, and animate the revealed panel without adding redundant aria-expanded; use aria-expanded only for a fully custom disclosure primitive."
+      "ko": "아코디언 구축: 접고 펼칠 수 있는 섹션 목록 패널 (role='region', aria-expanded)."
     },
     "debugPrompt": {
       "en": "Debug my accordion (details/summary, Radix Accordion). Rule out: height auto refusing to animate — animate grid-template-rows 0fr to 1fr or use interpolate-size; single vs multiple type letting two panels open when one was intended; the default disclosure marker still rendering next to a custom icon; focus landing inside a closed panel because contents were hidden with opacity instead of display. The symptom:",
-      "ko": "Debug my accordion (details/summary, Radix Accordion). Rule out: height auto refusing to animate — animate grid-template-rows 0fr to 1fr or use interpolate-size; single vs multiple type letting two panels open when one was intended; the default disclosure marker still rendering next to a custom icon; focus landing inside a closed panel because contents were hidden with opacity instead of display. The symptom:"
+      "ko": "아코디언 디버깅. 확인 사항: 헤더-패널 간 aria-controls 미연결, 애니메이션 높이 계산 오류. 증상:"
     },
     "relatedSlugs": [
       "tabs",
@@ -7120,11 +7120,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build accessible Tabs with a role=\"tablist\", one role=\"tab\" marked aria-selected=\"true\", and a matching role=\"tabpanel\" connected with aria-controls and aria-labelledby. Keep only the active tab at tabindex=\"0\", move between tabs with Left and Right Arrow, and switch the shared panel without navigating away.",
-      "ko": "Build accessible Tabs with a role=\"tablist\", one role=\"tab\" marked aria-selected=\"true\", and a matching role=\"tabpanel\" connected with aria-controls and aria-labelledby. Keep only the active tab at tabindex=\"0\", move between tabs with Left and Right Arrow, and switch the shared panel without navigating away."
+      "ko": "탭 뷰 구축: 다중 패널 간 전환을 위한 탭 컨트롤 (role='tablist', role='tab', role='tabpanel'). 키보드 방향키 이동 지원."
     },
     "debugPrompt": {
       "en": "Debug my tabs (role=tablist/tab/tabpanel, roving tabindex). Rule out: every tab in the Tab order instead of one roving tabindex with arrow-key movement; panels missing aria-labelledby back-references; the active indicator not moving on resize because its position was measured once; panel state lost on switch because inactive panels unmount when they should hide. The symptom:",
-      "ko": "Debug my tabs (role=tablist/tab/tabpanel, roving tabindex). Rule out: every tab in the Tab order instead of one roving tabindex with arrow-key movement; panels missing aria-labelledby back-references; the active indicator not moving on resize because its position was measured once; panel state lost on switch because inactive panels unmount when they should hide. The symptom:"
+      "ko": "탭 뷰 디버깅. 확인 사항: 탭-패널 간 접근성 연결 실패, 활성 탭 인디케이터 위치 오류. 증상:"
     },
     "relatedSlugs": [
       "accordion",
@@ -7262,11 +7262,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use a Badge for the compact unread count, a dismissible Chip for the active filter, a fully rounded Pill for short status text, and a Tag for category metadata. Use shadcn/ui Badge for the non-interactive labels and give any icon-only remove button an aria-label.",
-      "ko": "Use a Badge for the compact unread count, a dismissible Chip for the active filter, a fully rounded Pill for short status text, and a Tag for category metadata. Use shadcn/ui Badge for the non-interactive labels and give any icon-only remove button an aria-label."
+      "ko": "배지 및 칩 구축: 상태 표시 배지, 필터링 칩 및 삭제 가능한 캡슐 형태 태그 컴포넌트."
     },
     "debugPrompt": {
       "en": "Debug my badge/chip/pill. Rule out: unbounded counts blowing the layout instead of capping at 99+; the pill wrapping mid-label without white-space nowrap; a chip delete target far smaller than 24px so taps miss; low-contrast fills failing in dark mode because the colors were not themed as a pair. The symptom:",
-      "ko": "Debug my badge/chip/pill. Rule out: unbounded counts blowing the layout instead of capping at 99+; the pill wrapping mid-label without white-space nowrap; a chip delete target far smaller than 24px so taps miss; low-contrast fills failing in dark mode because the colors were not themed as a pair. The symptom:"
+      "ko": "배지/칩 디버깅. 확인 사항: 칩 삭제 버튼 접근성 이름 누락, 선택 상태 aria-pressed 미반영. 증상:"
     },
     "relatedSlugs": [
       "dock-badge",
@@ -7388,11 +7388,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Add breadcrumbs inside a <nav aria-label=\"Breadcrumb\">, linking each ancestor and marking the final item aria-current=\"page\". Collapse low-value middle ancestors into an ellipsis when space is tight while keeping the current page visible.",
-      "ko": "Add breadcrumbs inside a <nav aria-label=\"Breadcrumb\">, linking each ancestor and marking the final item aria-current=\"page\". Collapse low-value middle ancestors into an ellipsis when space is tight while keeping the current page visible."
+      "ko": "브레드크럼 구축: 계층적 경로 위치를 나타내는 내비게이션 바 (<nav aria-label='Breadcrumb'>, aria-current='page')."
     },
     "debugPrompt": {
       "en": "Debug my breadcrumbs (nav aria-label=breadcrumb, aria-current=page). Rule out: separators typed into the markup so screen readers announce every slash — draw them with CSS pseudo-elements; aria-current missing from the last crumb; long trails needing middle-crumb collapse instead of wrapping to two lines; the current page rendered as a link to itself. The symptom:",
-      "ko": "Debug my breadcrumbs (nav aria-label=breadcrumb, aria-current=page). Rule out: separators typed into the markup so screen readers announce every slash — draw them with CSS pseudo-elements; aria-current missing from the last crumb; long trails needing middle-crumb collapse instead of wrapping to two lines; the current page rendered as a link to itself. The symptom:"
+      "ko": "브레드크럼 디버깅. 확인 사항: 현재 페이지 aria-current 미설정, 구분선 기호 스크린 리더 낭독 소음. 증상:"
     },
     "relatedSlugs": [
       "sidebar",
@@ -7493,11 +7493,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use position: sticky with top: 0 for the section header so it scrolls normally until it reaches the top of its nearest scrolling container, then remains there. Reserve position: fixed for UI that must stay anchored to the viewport independently of every scroll container.",
-      "ko": "Use position: sticky with top: 0 for the section header so it scrolls normally until it reaches the top of its nearest scrolling container, then remains there. Reserve position: fixed for UI that must stay anchored to the viewport independently of every scroll container."
+      "ko": "스티키 및 픽스드 포지셔닝 구축: 스크롤에 따라 고정되는 스티키 헤더 및 화면 고정 요소를 위한 CSS position 속성 구성."
     },
     "debugPrompt": {
       "en": "Debug my sticky/fixed positioning. Rule out: sticky doing nothing because an ancestor has overflow hidden/auto/scroll — that is the classic; sticky missing a top/bottom offset so it never engages; fixed behaving like absolute inside a transformed/filtered ancestor; the content jumping when an element switches to fixed because no placeholder reserves its height. The symptom:",
-      "ko": "Debug my sticky/fixed positioning. Rule out: sticky doing nothing because an ancestor has overflow hidden/auto/scroll — that is the classic; sticky missing a top/bottom offset so it never engages; fixed behaving like absolute inside a transformed/filtered ancestor; the content jumping when an element switches to fixed because no placeholder reserves its height. The symptom:"
+      "ko": "스티키/픽스드 디버깅. 확인 사항: 부모 요소 overflow: hidden으로 스티키 미작동, z-index 충돌. 증상:"
     },
     "relatedSlugs": [
       "toolbar",
@@ -7598,11 +7598,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Style the keyboard focus ring with :focus-visible instead of suppressing the browser outline globally. Make it high contrast and clearly offset from the control; use :focus only for state that must apply regardless of whether focus came from keyboard or pointer.",
-      "ko": "Style the keyboard focus ring with :focus-visible instead of suppressing the browser outline globally. Make it high contrast and clearly offset from the control; use :focus only for state that must apply regardless of whether focus came from keyboard or pointer."
+      "ko": "웹 포커스 링 구축: 키보드 포커스 시에만 노출되는 표준 웹 포커스 표시 (:focus-visible)."
     },
     "debugPrompt": {
       "en": "Debug my focus ring (outline, :focus-visible). Rule out: a global outline:none killing keyboard navigation everywhere; :focus styling mouse clicks when :focus-visible was intended; the ring clipped by an overflow-hidden ancestor — use outline-offset or box-shadow inside; a box-shadow ring invisible against a same-color background; programmatic .focus() not showing a ring without focus-visible options. The symptom:",
-      "ko": "Debug my focus ring (outline, :focus-visible). Rule out: a global outline:none killing keyboard navigation everywhere; :focus styling mouse clicks when :focus-visible was intended; the ring clipped by an overflow-hidden ancestor — use outline-offset or box-shadow inside; a box-shadow ring invisible against a same-color background; programmatic .focus() not showing a ring without focus-visible options. The symptom:"
+      "ko": "웹 포커스 링 디버깅. 확인 사항: :focus-visible 대신 :focus 적용으로 마우스 클릭 시 포커스 ring 노출 오류. 증상:"
     },
     "relatedSlugs": [
       "form-field",
@@ -7709,11 +7709,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Create an empty state as a labelled <section> with a simple icon, a one-line explanation of why the view is empty, and one primary action that resolves it. For a dynamically produced no-results state, announce the message with role=\"status\" without moving focus.",
-      "ko": "Create an empty state as a labelled <section> with a simple icon, a one-line explanation of why the view is empty, and one primary action that resolves it. For a dynamically produced no-results state, announce the message with role=\"status\" without moving focus."
+      "ko": "빈 상태 화면 구축: 데이터가 없을 때 안내 일러스트, 메시지 및 행동 유도(CTA) 버튼을 보여주는 레이아웃."
     },
     "debugPrompt": {
       "en": "Debug my empty state. Rule out: the empty state flashing before data arrives because loading and truly-empty are one boolean; errors rendering the empty state instead of an error state; the call-to-action unreachable by keyboard; layout jumping when real content replaces it because heights were never reserved. The symptom:",
-      "ko": "Debug my empty state. Rule out: the empty state flashing before data arrives because loading and truly-empty are one boolean; errors rendering the empty state instead of an error state; the call-to-action unreachable by keyboard; layout jumping when real content replaces it because heights were never reserved. The symptom:"
+      "ko": "빈 상태 화면 디버깅. 확인 사항: CTA 버튼 포커스 미이동, 이미지 의미 설명 부재. 증상:"
     },
     "relatedSlugs": [
       "skeleton-spinner",
@@ -7819,11 +7819,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Add a hover card using Radix HoverCard to preview the linked profile with an avatar and summary. Reveal it from both hover and keyboard focus after a short delay, keep it open while the pointer crosses into the card, and reverse the opacity and transform transitions smoothly on exit.",
-      "ko": "Add a hover card using Radix HoverCard to preview the linked profile with an avatar and summary. Reveal it from both hover and keyboard focus after a short delay, keep it open while the pointer crosses into the card, and reverse the opacity and transform transitions smoothly on exit."
+      "ko": "호버 카드 구축: 링크 호버 시 미리보기 및 프로필 카드 정보를 보여주는 지연 팝오버."
     },
     "debugPrompt": {
       "en": "Debug my hover card (Radix HoverCard, mouseenter/mouseleave). Rule out: the card closing while the pointer travels from trigger to card — you need a hover-intent delay or safe-polygon; touch devices never opening it because there is no hover — provide a tap/focus path; open/close delays tuned so short it flickers on skim; the card trapped under another stacking context. The symptom:",
-      "ko": "Debug my hover card (Radix HoverCard, mouseenter/mouseleave). Rule out: the card closing while the pointer travels from trigger to card — you need a hover-intent delay or safe-polygon; touch devices never opening it because there is no hover — provide a tap/focus path; open/close delays tuned so short it flickers on skim; the card trapped under another stacking context. The symptom:"
+      "ko": "호버 카드 디버깅. 확인 사항: 호버 지연 시간 부족으로 오작동, 카드 내부 포커스 이동 차단. 증상:"
     },
     "relatedSlugs": [
       "popover-dropdown-tooltip",
@@ -7969,11 +7969,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Use an <input type=\"checkbox\" role=\"switch\"> for the binary on/off setting, a native <input type=\"checkbox\"> for each independent checked choice, and same-name <input type=\"radio\"> controls when exactly one option is allowed. Give every control a visible clickable label and expose its checked state through the native control.",
-      "ko": "Use an <input type=\"checkbox\" role=\"switch\"> for the binary on/off setting, a native <input type=\"checkbox\"> for each independent checked choice, and same-name <input type=\"radio\"> controls when exactly one option is allowed. Give every control a visible clickable label and expose its checked state through the native control."
+      "ko": "스위치, 체크박스 및 라디오 구축: 상태 선택을 위한 기본 폼 컨트롤 입력 요소 3종."
     },
     "debugPrompt": {
       "en": "Debug my switch/checkbox/radio. Rule out: the control flipping visually while state stays stale — controlled input without onChange; label clicks not toggling because for/id association is missing; radios not behaving as a group because their name attributes differ; the indeterminate checkbox state gone — it is settable only from JS, not markup. The symptom:",
-      "ko": "Debug my switch/checkbox/radio. Rule out: the control flipping visually while state stays stale — controlled input without onChange; label clicks not toggling because for/id association is missing; radios not behaving as a group because their name attributes differ; the indeterminate checkbox state gone — it is settable only from JS, not markup. The symptom:"
+      "ko": "선택 컨트롤 디버깅. 확인 사항: 커스텀 스타일 적용 시 native input 가려짐으로 포커스 불능. 증상:"
     },
     "relatedSlugs": [
       "toggle-group",
@@ -8086,11 +8086,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Build a persistent single-select Toggle Group using Radix ToggleGroup. Present the connected buttons as one segmented control, expose the group as role=\"radiogroup\" with role=\"radio\" items and aria-checked state, and support arrow-key movement between segments.",
-      "ko": "Build a persistent single-select Toggle Group using Radix ToggleGroup. Present the connected buttons as one segmented control, expose the group as role=\"radiogroup\" with role=\"radio\" items and aria-checked state, and support arrow-key movement between segments."
+      "ko": "토글 그룹 구축: 단일 선택 또는 다중 선택이 가능한 연결된 토글 버튼 아이콘 그룹."
     },
     "debugPrompt": {
       "en": "Debug my toggle group (aria-pressed, Radix ToggleGroup). Rule out: single vs multiple semantics mixed up — one behaves like radios, the other like checkboxes; the pressed state invisible because only color changes and not enough of it; deselecting the last item leaving nothing active when one must always stay on; arrow keys dead because roving focus is unimplemented. The symptom:",
-      "ko": "Debug my toggle group (aria-pressed, Radix ToggleGroup). Rule out: single vs multiple semantics mixed up — one behaves like radios, the other like checkboxes; the pressed state invisible because only color changes and not enough of it; deselecting the last item leaving nothing active when one must always stay on; arrow keys dead because roving focus is unimplemented. The symptom:"
+      "ko": "토글 그룹 디버깅. 확인 사항: aria-pressed 상태 미동기화, 그룹 라벨 부재. 증상:"
     },
     "relatedSlugs": [
       "tabs",
@@ -8225,11 +8225,11 @@ export const ENTRIES: UIEntry[] = [
     ],
     "prompt": {
       "en": "Add a menu bar extra — an NSStatusItem in the macOS menu bar (SwiftUI: MenuBarExtra). While its menu or popover is open, the status item's button must show its highlighted state: the pale rounded background (NSStatusBarButton.isHighlighted), exactly like system menu bar icons.",
-      "ko": "Add a menu bar extra — an NSStatusItem in the macOS menu bar (SwiftUI: MenuBarExtra). While its menu or popover is open, the status item's button must show its highlighted state: the pale rounded background (NSStatusBarButton.isHighlighted), exactly like system menu bar icons."
+      "ko": "메뉴 바 익스트라 구축: macOS 상단 메뉴 바 우측 상태 영역 아이콘 및 관련 드롭다운 패널."
     },
     "debugPrompt": {
       "en": "Debug my macOS menu bar extra (NSStatusItem, SwiftUI MenuBarExtra). Rule out: the status item deallocating because nothing retains it; the icon ignoring dark menu bars because the image is not marked template; the item silently hidden when the menu bar runs out of room; the button highlight sticking because isHighlighted is managed manually; MenuBarExtra window style behaving differently from menu style. The symptom:",
-      "ko": "Debug my macOS menu bar extra (NSStatusItem, SwiftUI MenuBarExtra). Rule out: the status item deallocating because nothing retains it; the icon ignoring dark menu bars because the image is not marked template; the item silently hidden when the menu bar runs out of room; the button highlight sticking because isHighlighted is managed manually; MenuBarExtra window style behaving differently from menu style. The symptom:"
+      "ko": "메뉴 바 익스트라 디버깅. 확인 사항: 메뉴 바 아이콘 크기 오차, 드롭다운 클릭 바깥 닫기 안 됨. 증상:"
     },
     "relatedSlugs": [
       "popover",

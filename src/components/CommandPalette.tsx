@@ -55,9 +55,11 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
       const titleEn = e.name?.en || e.slug;
       const titleKo = e.name?.ko || '';
       const subtitle = e.tagline?.ko || e.tagline?.en || '';
+      const descKo = e.description?.ko || e.description?.en || '';
+      const promptKo = e.prompt?.ko || e.prompt?.en || '';
       const apiSymbols = (e.api || []).map((a: any) => a.symbol || '');
       const partsKeywords = (e.parts || []).flatMap((p: any) => [
-        p.name?.en, p.name?.ko, p.prompt?.en, p.prompt?.ko
+        p.name?.en, p.name?.ko, p.description?.en, p.description?.ko, p.prompt?.en, p.prompt?.ko
       ]).filter(Boolean);
 
       items.push({
@@ -71,6 +73,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
           titleEn,
           titleKo,
           e.platform,
+          subtitle,
+          descKo,
+          promptKo,
           ...apiSymbols,
           ...(e.aka?.en || []),
           ...(e.aka?.ko || []),
@@ -85,8 +90,11 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
       const titleEn = s.name?.en || s.slug;
       const titleKo = s.name?.ko || '';
       const subtitle = s.tagline?.ko || s.tagline?.en || '';
+      const briefKo = s.brief?.ko || s.brief?.en || '';
+      const scopeKo = s.scope?.ko || s.scope?.en || '';
+      const a11yKo = s.accessibility?.ko || s.accessibility?.en || '';
       const signalsKeywords = (s.signals || []).flatMap((sig: any) => [
-        sig.name?.en, sig.name?.ko
+        sig.name?.en, sig.name?.ko, sig.description?.en, sig.description?.ko
       ]).filter(Boolean);
 
       items.push({
@@ -99,6 +107,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         keywords: [
           titleEn,
           titleKo,
+          subtitle,
+          briefKo,
+          scopeKo,
+          a11yKo,
           ...(s.aliases?.en || []),
           ...(s.aliases?.ko || []),
           ...signalsKeywords,
@@ -112,12 +124,13 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
   const fuse = useMemo(() => {
     return new Fuse(searchItems, {
       keys: [
-        { name: 'titleKo', weight: 0.35 },
+        { name: 'titleKo', weight: 0.4 },
         { name: 'keywords', weight: 0.35 },
-        { name: 'title', weight: 0.2 },
+        { name: 'title', weight: 0.15 },
         { name: 'subtitle', weight: 0.1 }
       ],
-      threshold: 0.35,
+      threshold: 0.4,
+      distance: 100,
       ignoreLocation: true,
       minMatchCharLength: 1,
     });
@@ -126,7 +139,34 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
   const filteredItems = useMemo(() => {
     const trimmed = query.trim();
     if (!trimmed) return searchItems.slice(0, 20);
-    return fuse.search(trimmed).map((res) => res.item);
+
+    const normQuery = trimmed.toLowerCase().replace(/\s+/g, '');
+    const fuseResults = fuse.search(trimmed).map((res) => res.item);
+
+    // 띄어쓰기 무시 정확도 향상을 위한 키워드 검사 결합
+    const directMatches = searchItems.filter((item) => {
+      const matchTarget = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')}`.toLowerCase().replace(/\s+/g, '');
+      return matchTarget.includes(normQuery);
+    });
+
+    const combinedSet = new Set<string>();
+    const results: SearchItem[] = [];
+
+    directMatches.forEach((item) => {
+      if (!combinedSet.has(item.id)) {
+        combinedSet.add(item.id);
+        results.push(item);
+      }
+    });
+
+    fuseResults.forEach((item) => {
+      if (!combinedSet.has(item.id)) {
+        combinedSet.add(item.id);
+        results.push(item);
+      }
+    });
+
+    return results;
   }, [query, searchItems, fuse]);
 
   if (!open) return null;
