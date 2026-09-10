@@ -10,11 +10,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Random characters churn and settle into the real text",
-      "ko": "무작위 문자가 교체되다가 올바른 텍스트로 정착합니다."
+      "ko": "무작위 문자가 지속적으로 교체되다가 올바른 텍스트로 정착하는 효과"
     },
     "description": {
       "en": "“The letters shuffle until they spell the word” is a text scramble, also called the decode or Matrix effect — every character churns through random glyphs, then locks into place, usually left to right. The classic tool is GSAP's ScrambleTextPlugin (free since 3.13); hand-rolled versions are a requestAnimationFrame loop with a settle deadline per character.",
-      "ko": "“The letters shuffle until they spell the word” is a text scramble, also called the decode or Matrix effect — every character churns through random glyphs, then locks into place, usually left to right. The classic tool is GSAP's ScrambleTextPlugin (free since 3.13); hand-rolled versions are a requestAnimationFrame loop with a settle deadline per character."
+      "ko": "“글자가 올바른 단어로 조합될 때까지 무작위로 셔플되는 효과”는 디코드 또는 매트릭스 이펙트라 불리는 텍스트 스크램블입니다. 각 문자가 무작위 글꼴을 거쳐 주로 왼쪽에서 오른쪽 순으로 정착합니다. 표준 구현 방식은 GSAP의 ScrambleTextPlugin 플러그인을 활용하거나 requestAnimationFrame 루프 기반의 타이머 인터벌을 사용합니다."
     },
     "aka": {
       "en": [
@@ -58,7 +58,7 @@ export const ENTRIES: UIEntry[] = [
         "symbol": "requestAnimationFrame + charset swap",
         "note": {
           "en": "the hand-rolled version: per-character reveal deadline, random glyphs until then",
-          "ko": "직접 구현 방식: 문자별 전환 시간과 무작위 글꼴 교체."
+          "ko": "the hand-rolled version: per-character reveal deadline, random glyphs until then"
         }
       },
       {
@@ -118,11 +118,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Physics-based motion that overshoots the target and settles",
-      "ko": "Physics-based motion that overshoots the target and settles"
+      "ko": "목표 지점을 지나쳤다가 자연스럽게 잔잔해지는 물리 기반 애니메이션"
     },
     "description": {
       "en": "“It bounces a little past where it lands” is a spring animation — motion driven by physics (stiffness, damping, mass) instead of a duration and curve. The signature is the overshoot: the element passes its target and settles back. Springs also retarget mid-flight gracefully, which is why gesture-driven UIs use them.",
-      "ko": "“It bounces a little past where it lands” is a spring animation — motion driven by physics (stiffness, damping, mass) instead of a duration and curve. The signature is the overshoot: the element passes its target and settles back. Springs also retarget mid-flight gracefully, which is why gesture-driven UIs use them."
+      "ko": "“목표 지점보다 살짝 더 튕겼다가 정지하는 모션”은 물리 기반(강도, 감쇠, 질량)으로 작동하는 스프링 애니메이션입니다. 목표값을 초과했다가 돌아오는 오버슈트가 핵심 특징이며, 제스처 기반 UI에서 중간 경로 재설정을 부드럽게 처리할 때 필수적입니다."
     },
     "aka": {
       "en": [
@@ -132,8 +132,8 @@ export const ENTRIES: UIEntry[] = [
       ],
       "ko": [
         "스프링 물리학",
-        "bouncy animation",
-        "spring transition"
+        "오버슈트 모션",
+        "바운스 애니메이션"
       ]
     },
     "fuzzy": {
@@ -145,11 +145,9 @@ export const ENTRIES: UIEntry[] = [
         "animation with stiffness and damping instead of duration"
       ],
       "ko": [
-        "the bouncy animation that goes past and comes back",
-        "it overshoots a little and settles",
-        "the jelly bounce when a panel opens",
-        "ios style bouncy movement",
-        "animation with stiffness and damping instead of duration"
+        "목표를 살짝 지나쳤다가 잔잔하게 정지하는 애니메이션",
+        "탄성 있는 UI 모션",
+        "물리 법칙이 적용된 부드러운 움직임"
       ]
     },
     "api": [
@@ -223,11 +221,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The speed curve of an animation — why motion feels smooth or robotic",
-      "ko": "The speed curve of an animation — why motion feels smooth or robotic"
+      "ko": "애니메이션의 속도 변화 곡선 — 부드럽거나 딱딱한 움직임을 결정하는 요소"
     },
     "description": {
       "en": "“The animation feels robotic” is almost always easing — the timing function, the curve that maps time to progress. Linear moves at constant speed; ease-out starts fast and lands softly; ease-in-out is the S-curve UI motion defaults to. The four numbers in cubic-bezier() are just the two control points of that graph.",
-      "ko": "“The animation feels robotic” is almost always easing — the timing function, the curve that maps time to progress. Linear moves at constant speed; ease-out starts fast and lands softly; ease-in-out is the S-curve UI motion defaults to. The four numbers in cubic-bezier() are just the two control points of that graph."
+      "ko": "“애니메이션이 기계적이고 딱딱하게 느껴지는 원인”은 대부분 이징(Timing Function) 설정 때문입니다. 시간에 따른 진행률 곡선에서 Linear는 일정 속도, ease-out은 빠르게 시작하여 부드럽게 감속, ease-in-out은 S자 곡선을 그립니다. cubic-bezier()의 4개 인자는 이 베지에 곡선의 제어점 좌표입니다."
     },
     "aka": {
       "en": [
@@ -236,9 +234,9 @@ export const ENTRIES: UIEntry[] = [
         "bezier curve"
       ],
       "ko": [
-        "timing function",
-        "easing curve",
-        "bezier curve"
+        "타이밍 기능",
+        "속도 곡선",
+        "베지에 곡선"
       ]
     },
     "fuzzy": {
@@ -250,11 +248,9 @@ export const ENTRIES: UIEntry[] = [
         "the s shaped graph in the animation settings"
       ],
       "ko": [
-        "the animation feels robotic and linear",
-        "how the movement speeds up and slows down",
-        "the curve that controls the animation speed",
-        "make it start fast and end slow",
-        "the s shaped graph in the animation settings"
+        "부드럽게 멈추는 속도 곡선",
+        "이징 함수 설정",
+        "cubic-bezier 곡선"
       ]
     },
     "api": [
@@ -328,11 +324,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Cards of different heights packed into columns with no row gaps",
-      "ko": "Cards of different heights packed into columns with no row gaps"
+      "ko": "높이가 다른 카드가 행의 간격 없이 컬럼별로 촘촘히 배치되는 격자 레이아웃"
     },
     "description": {
       "en": "“The Pinterest grid where every card keeps its own height” is a masonry layout — each new item joins the shortest column, so cards pack like bricks with no row lines and a staggered bottom edge. Also known as waterfall flow. CSS columns approximates it everywhere today; native masonry (Grid Lanes) shipped in Safari 26.",
-      "ko": "“The Pinterest grid where every card keeps its own height” is a masonry layout — each new item joins the shortest column, so cards pack like bricks with no row lines and a staggered bottom edge. Also known as waterfall flow. CSS columns approximates it everywhere today; native masonry (Grid Lanes) shipped in Safari 26."
+      "ko": "“핀터레스트처럼 각 카드의 높이가 다르게 유지되는 그리드”가 메이슨리(벽돌 쌓기) 레이아웃입니다. 새로운 아이템이 가장 짧은 열에 자동 배치되어 행 간격 없이 촘촘하게 채워집니다. 수직 폭포수(Waterfall) 흐름이라고도 부릅니다."
     },
     "aka": {
       "en": [
@@ -341,9 +337,9 @@ export const ENTRIES: UIEntry[] = [
         "brick layout"
       ],
       "ko": [
-        "waterfall layout",
-        "pinterest grid",
-        "brick layout"
+        "벽돌 그리드",
+        "폭포수 레이아웃",
+        "핀터레스트 스타일 그리드"
       ]
     },
     "fuzzy": {
@@ -355,11 +351,9 @@ export const ENTRIES: UIEntry[] = [
         "cards that fill in under each other instead of in rows"
       ],
       "ko": [
-        "the pinterest style grid where every card is a different height",
-        "photos stacked like bricks with no gaps",
-        "columns where the cards don't line up in rows",
-        "the photo wall where images keep their own height",
-        "cards that fill in under each other instead of in rows"
+        "카드 높이가 서로 다른 격자 레이아웃",
+        "핀터레스트 방식 카드 배치",
+        "높이에 맞게 자동으로 채워지는 그리드"
       ]
     },
     "api": [
@@ -436,11 +430,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "One grid, mixed tile sizes — a layout packed like a bento box",
-      "ko": "One grid, mixed tile sizes — a layout packed like a bento box"
+      "ko": "일본식 도시락 용기 형태에서 영감을 얻어 다양한 크기의 타일을 모듈형으로 배치한 그리드"
     },
     "description": {
       "en": "“Several boxes in a grid — bento” is a bento grid: one CSS grid where tiles span different numbers of cells, so a hero tile sits among small ones like compartments in a Japanese lunchbox. Apple's marketing pages made the style famous. The tell versus a plain card grid is the spanning: at least one tile takes 2×2 or 2×1 cells while everything stays aligned to the same tracks and gap.",
-      "ko": "“Several boxes in a grid — bento” is a bento grid: one CSS grid where tiles span different numbers of cells, so a hero tile sits among small ones like compartments in a Japanese lunchbox. Apple's marketing pages made the style famous. The tell versus a plain card grid is the spanning: at least one tile takes 2×2 or 2×1 cells while everything stays aligned to the same tracks and gap."
+      "ko": "“하나의 그리드 안에 여러 크기의 박스가 조화롭게 구성된 레이아웃”을 벤토 그리드라 부릅니다. CSS Grid를 기반으로 하이라이트 타일(2x2, 2x1 등)과 일반 타일이 균형 있게 어우러집니다. 애플의 제품 소개 페이지에서 대중화되었습니다."
     },
     "aka": {
       "en": [
@@ -449,9 +443,9 @@ export const ENTRIES: UIEntry[] = [
         "dashboard grid"
       ],
       "ko": [
-        "bento box layout",
-        "feature grid",
-        "dashboard grid"
+        "벤토 박스 레이아웃",
+        "모듈형 그리드",
+        "애플 스타일 카드 그리드"
       ]
     },
     "fuzzy": {
@@ -463,11 +457,9 @@ export const ENTRIES: UIEntry[] = [
         "dashboard made of different sized tiles"
       ],
       "ko": [
-        "several boxes in a grid bento",
-        "boxes of different sizes in a grid",
-        "the grid with one big box and smaller boxes around it",
-        "the apple style feature grid with rounded cards",
-        "dashboard made of different sized tiles"
+        "도시락 모양 타일 그리드",
+        "크기가 다양한 카드가 섞인 레이아웃",
+        "애플 랜딩페이지 스타일 카드 격자"
       ]
     },
     "api": [
@@ -557,11 +549,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The three-line button and the navigation panel it slides open",
-      "ko": "The three-line button and the navigation panel it slides open"
+      "ko": "네비게이션 드로어를 열고 닫는 3선 형태의 토글 버튼"
     },
     "description": {
       "en": "“The three horizontal lines used to open a menu” are a hamburger button, and the panel it slides open is a navigation drawer. The button is just the trigger — three stacked lines, usually top-left on phones; the drawer is an off-canvas <nav> that slides over the page above a scrim. The icon's siblings (dots, ellipsis) live under The Three Dots; this page is the icon-plus-drawer navigation pattern itself.",
-      "ko": "“The three horizontal lines used to open a menu” are a hamburger button, and the panel it slides open is a navigation drawer. The button is just the trigger — three stacked lines, usually top-left on phones; the drawer is an off-canvas <nav> that slides over the page above a scrim. The icon's siblings (dots, ellipsis) live under The Three Dots; this page is the icon-plus-drawer navigation pattern itself."
+      "ko": "“메뉴를 열 때 누르는 줄 3개짜리 버튼”이 햄버거 메뉴입니다. 모바일 화면 및 좁은 뷰포트에서 상단 내비게이션 항목들을 감추고 공간을 효율적으로 활용하기 위해 사용됩니다."
     },
     "aka": {
       "en": [
@@ -571,10 +563,9 @@ export const ENTRIES: UIEntry[] = [
         "off-canvas menu"
       ],
       "ko": [
-        "navigation drawer",
-        "hamburger button",
-        "side menu",
-        "off-canvas menu"
+        "3선 메뉴 버튼",
+        "드로어 토글",
+        "햄버거 아이콘"
       ]
     },
     "fuzzy": {
@@ -587,12 +578,9 @@ export const ENTRIES: UIEntry[] = [
         "the side panel with all the page links"
       ],
       "ko": [
-        "the three horizontal lines used to open a menu",
-        "three line side menu that expands to the full size of the screen",
-        "the burger menu on mobile sites",
-        "the menu that slides in from the side when you tap the lines",
-        "the stacked lines button at the top corner",
-        "the side panel with all the page links"
+        "줄 3개 있는 메뉴 버튼",
+        "모서리에 있는 수평선 3개 버튼",
+        "모바일 전체 메뉴 열기 버튼"
       ]
     },
     "api": [
@@ -686,11 +674,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The click-to-enlarge image overlay that dims the page behind it",
-      "ko": "The click-to-enlarge image overlay that dims the page behind it"
+      "ko": "이미지나 미디어를 확대하여 상세히 감상할 수 있는 딤처리 모달 오버레이"
     },
     "description": {
       "en": "“Click the picture and it opens big with everything dark behind it” is a lightbox: a modal image viewer layered over the page. The dark layer behind it is the scrim, the enlarged image sits center stage, and arrows page through the gallery. Modern lightboxes are built on the native <dialog> element and its ::backdrop.",
-      "ko": "“Click the picture and it opens big with everything dark behind it” is a lightbox: a modal image viewer layered over the page. The dark layer behind it is the scrim, the enlarged image sits center stage, and arrows page through the gallery. Modern lightboxes are built on the native <dialog> element and its ::backdrop."
+      "ko": "“이미지를 클릭하면 배경이 어두워지며 크게 뜨는 창”을 라이트박스라고 합니다. 페이지의 주맥락을 유지하면서 특정 이미지나 갤러리를 독립적으로 집중하여 볼 수 있게 해줍니다."
     },
     "aka": {
       "en": [
@@ -699,9 +687,9 @@ export const ENTRIES: UIEntry[] = [
         "gallery overlay"
       ],
       "ko": [
-        "image viewer overlay",
-        "photo modal",
-        "gallery overlay"
+        "이미지 모달",
+        "갤러리 팝업",
+        "미디어 뷰어"
       ]
     },
     "fuzzy": {
@@ -714,12 +702,8 @@ export const ENTRIES: UIEntry[] = [
         "a pattern for enlarging pictures"
       ],
       "ko": [
-        "when you click a photo and it opens big with a dark background",
-        "the enlarged image popup in a gallery",
-        "click the thumbnail and it zooms over the page",
-        "the image viewer with arrows for the next photo",
-        "the big photo over a black background",
-        "a pattern for enlarging pictures"
+        "사진 클릭하면 어두워지면서 크게 보이는 기능",
+        "갤러리 큰 이미지 모달창"
       ]
     },
     "api": [
@@ -774,11 +758,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Content that auto-scrolls sideways in an endless loop",
-      "ko": "Content that auto-scrolls sideways in an endless loop"
+      "ko": "좌우 또는 우좌 방향으로 지속적으로 흐르는 수평 텍스트 스트립"
     },
     "description": {
       "en": "“The logos that slide across by themselves” is a marquee — content auto-scrolling in an endless horizontal loop, named after the deprecated <marquee> tag. Today it is a CSS transform loop over duplicated content, dissolved at both ends by an edge fade. Windows separately calls the indeterminate progress bar style “marquee”, which is a different thing.",
-      "ko": "“The logos that slide across by themselves” is a marquee — content auto-scrolling in an endless horizontal loop, named after the deprecated <marquee> tag. Today it is a CSS transform loop over duplicated content, dissolved at both ends by an edge fade. Windows separately calls the indeterminate progress bar style “marquee”, which is a different thing."
+      "ko": "“파트너사 로고나 공지사항이 옆으로 계속 지나가는 효과”가 마키(Marquee)입니다. 멈추지 않는 연속 애니메이션을 통해 많은 양의 정보를 제한된 띠 영역 안에서 보여줄 때 유용합니다."
     },
     "aka": {
       "en": [
@@ -787,9 +771,9 @@ export const ENTRIES: UIEntry[] = [
         "auto-scrolling strip"
       ],
       "ko": [
-        "ticker",
-        "logo carousel",
-        "auto-scrolling strip"
+        "흐르는 텍스트",
+        "로고 롤링 띠",
+        "무한 스크롤 배너"
       ]
     },
     "fuzzy": {
@@ -801,11 +785,8 @@ export const ENTRIES: UIEntry[] = [
         "the auto sliding brand logos"
       ],
       "ko": [
-        "the logos that scroll sideways by themselves",
-        "the news ticker text",
-        "the endless scrolling logo strip",
-        "text that moves across the screen on its own",
-        "the auto sliding brand logos"
+        "글자나 로고가 계속 옆으로 지나가는 배너",
+        "전광판처럼 움직이는 텍스트"
       ]
     },
     "api": [
@@ -881,11 +862,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Every shape the mouse pointer takes — and the real name of each one",
-      "ko": "Every shape the mouse pointer takes — and the real name of each one"
+      "ko": "작업 상태 및 상호작용 가능성을 알려주는 마우스 포인터 커서 변형"
     },
     "description": {
       "en": "Every shape the Mac pointer takes has a real name. “The text cursor with little bits at the top and bottom” is the I-beam; the hand over a link is the pointing hand; the no-entry sign while dragging is operation not allowed. AppKit sets them through NSCursor, and views claim screen regions with cursor rects — when a pointer gets stuck in the wrong shape, a stale cursor rect is usually the culprit. (The rainbow “beach ball” is not an NSCursor: the system shows it when an app stops responding.)",
-      "ko": "Every shape the Mac pointer takes has a real name. “The text cursor with little bits at the top and bottom” is the I-beam; the hand over a link is the pointing hand; the no-entry sign while dragging is operation not allowed. AppKit sets them through NSCursor, and views claim screen regions with cursor rects — when a pointer gets stuck in the wrong shape, a stale cursor rect is usually the culprit. (The rainbow “beach ball” is not an NSCursor: the system shows it when an app stops responding.)"
+      "ko": "마우스 커서의 모양(화살표, 손가락, 텍스트 커서, 크기 조절 화살표 등)은 현재 사용자가 수행할 수 있는 상호작용 종류를 직관적으로 전달하는 핵심 위젯입니다."
     },
     "aka": {
       "en": [
@@ -894,9 +875,9 @@ export const ENTRIES: UIEntry[] = [
         "mouse cursor"
       ],
       "ko": [
-        "cursor",
-        "mouse pointer",
-        "mouse cursor"
+        "마우스 커서",
+        "포인터 커서",
+        "커서 스타일"
       ]
     },
     "fuzzy": {
@@ -910,13 +891,9 @@ export const ENTRIES: UIEntry[] = [
         "magnifying glass cursor with a plus in it"
       ],
       "ko": [
-        "the text cursor with little bits at the top and bottom",
-        "mouse stuck in text editing mode",
-        "the arrow turns into a hand over links",
-        "double sided arrow when resizing a window",
-        "cursor with a plus badge when dragging to copy",
-        "the mouse becomes a no entry sign",
-        "magnifying glass cursor with a plus in it"
+        "마우스 손가락 모양 커서",
+        "텍스트 입력 커서",
+        "마우스 화살표 변화"
       ]
     },
     "api": [
@@ -983,11 +960,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The small centered window with a badged icon, a bold line, and Cancel/OK buttons",
-      "ko": "The small centered window with a badged icon, a bold line, and Cancel/OK buttons"
+      "ko": "중요한 경고 메시지나 확인 절차를 전달하는 모달 대화상자"
     },
     "description": {
       "en": "“The little warning window with the app icon and two buttons” is an alert — NSAlert. It shows your app icon (badged with a yellow caution triangle for warnings), a bold message line, smaller informative text, and buttons where the first added is the blue default. Run it app-modal with runModal(), or attach it to a single window with beginSheetModal(for:) — then it slides out of that window's title bar like a sheet. The “Don't ask me again” checkbox is its built-in suppression button.",
-      "ko": "“The little warning window with the app icon and two buttons” is an alert — NSAlert. It shows your app icon (badged with a yellow caution triangle for warnings), a bold message line, smaller informative text, and buttons where the first added is the blue default. Run it app-modal with runModal(), or attach it to a single window with beginSheetModal(for:) — then it slides out of that window's title bar like a sheet. The “Don't ask me again” checkbox is its built-in suppression button."
+      "ko": "“앱 아이콘과 함께 경고 문구가 뜨는 작은 창”을 알림창(Alert)이라고 합니다. 사용자의 즉각적인 확인이나 선택이 필수적인 치명적 상황에 주로 사용됩니다."
     },
     "aka": {
       "en": [
@@ -998,11 +975,9 @@ export const ENTRIES: UIEntry[] = [
         "system prompt"
       ],
       "ko": [
-        "alert dialog",
-        "warning dialog",
-        "confirmation dialog",
-        "message box",
-        "system prompt"
+        "알림 팝업",
+        "경고창",
+        "대화상자"
       ]
     },
     "fuzzy": {
@@ -1015,12 +990,8 @@ export const ENTRIES: UIEntry[] = [
         "confirmation popup before deleting something"
       ],
       "ko": [
-        "the popup with the app icon and a yellow warning triangle",
-        "small window in the middle asking are you sure with two buttons",
-        "the box with a don't ask me again checkbox",
-        "warning message with a bold line and smaller gray text under it",
-        "the blue button that presses itself when you hit enter",
-        "confirmation popup before deleting something"
+        "경고 문구와 확인 버튼이 나오는 모달",
+        "시스템 알림 팝업"
       ]
     },
     "api": [
@@ -1177,11 +1148,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The round knob you drag along a track to pick a value from a range",
-      "ko": "The round knob you drag along a track to pick a value from a range"
+      "ko": "트랙을 따라 노브를 드래그하여 연속된 범위의 값을 선택하는 컨트롤"
     },
     "description": {
       "en": "“The dot you drag along a line” is a slider — NSSlider. The circle is the knob, the groove is the track, and the leading portion up to the knob is tinted with the accent color. A continuous slider picks any value in the range; give it tick marks (the little lines below) and allowsTickMarkValuesOnly, and the knob snaps between fixed stops — the Key Repeat slider in System Settings is the classic tick-marked one.",
-      "ko": "“The dot you drag along a line” is a slider — NSSlider. The circle is the knob, the groove is the track, and the leading portion up to the knob is tinted with the accent color. A continuous slider picks any value in the range; give it tick marks (the little lines below) and allowsTickMarkValuesOnly, and the knob snaps between fixed stops — the Key Repeat slider in System Settings is the classic tick-marked one."
+      "ko": "“선 위에서 동그라미를 끌어서 수치를 조절하는 바”가 슬라이더입니다. 음량, 밝기, 금액 범위 지정 등 연속적인 수치 범위 입력에 적합합니다."
     },
     "aka": {
       "en": [
@@ -1191,10 +1162,9 @@ export const ENTRIES: UIEntry[] = [
         "range control"
       ],
       "ko": [
-        "slider control",
-        "seek bar",
-        "track bar",
-        "range control"
+        "범위 슬라이더",
+        "노브 컨트롤",
+        "시그모이드 슬라이더"
       ]
     },
     "fuzzy": {
@@ -1207,12 +1177,8 @@ export const ENTRIES: UIEntry[] = [
         "drag thing for picking a number between min and max"
       ],
       "ko": [
-        "the dot you drag left and right to change a value",
-        "volume style control with a round knob on a line",
-        "the bar with a circle you slide",
-        "the little lines under the slider it snaps to",
-        "the blue filled part of the slider line",
-        "drag thing for picking a number between min and max"
+        "선 따라 움직이는 동그라미 조절바",
+        "음량 및 밝기 조절 슬라이더"
       ]
     },
     "api": [
@@ -1345,11 +1311,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The little swatch button that shows the current color and opens the picker",
-      "ko": "The little swatch button that shows the current color and opens the picker"
+      "ko": "현재 선택된 색상을 샘플로 보여주고 클릭 시 팔레트를 열어주는 색상 선택 피커"
     },
     "description": {
       "en": "“The little square showing the current color” is a color well — NSColorWell. Since macOS 13 it has three styles: minimal (just the swatch), default, and expanded — the modern one with a caret button attached. Clicking the expanded well opens a quick popover with a grid of swatches and an eyedropper; the caret opens the full color panel. The eyedropper that samples any pixel on screen is its own one-call API: NSColorSampler.",
-      "ko": "“The little square showing the current color” is a color well — NSColorWell. Since macOS 13 it has three styles: minimal (just the swatch), default, and expanded — the modern one with a caret button attached. Clicking the expanded well opens a quick popover with a grid of swatches and an eyedropper; the caret opens the full color panel. The eyedropper that samples any pixel on screen is its own one-call API: NSColorSampler."
+      "ko": "“현재 색상을 작은 사각형으로 보여주고 누르면 컬러 팔레트가 나오는 버튼”이 색상 피커(Color Well)입니다. 디자인 툴이나 서식 설정에서 색상 선택 표준 요소로 활용됩니다."
     },
     "aka": {
       "en": [
@@ -1359,10 +1325,9 @@ export const ENTRIES: UIEntry[] = [
         "color selector"
       ],
       "ko": [
-        "color picker button",
-        "color swatch control",
-        "color chooser",
-        "color selector"
+        "색상 샘플 버튼",
+        "컬러 피커",
+        "색상 선택기"
       ]
     },
     "fuzzy": {
@@ -1375,12 +1340,8 @@ export const ENTRIES: UIEntry[] = [
         "control for choosing a color in settings"
       ],
       "ko": [
-        "the small rectangle showing the current color",
-        "color swatch you click to open the color picker",
-        "the eyedropper for picking a color from the screen",
-        "little colored square with an arrow next to it",
-        "the grid of color squares that pops up",
-        "control for choosing a color in settings"
+        "색상 네모 상자 누르면 색 선택창 나오는 버튼",
+        "컬러 피커 상자"
       ]
     },
     "api": [
@@ -1510,11 +1471,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Every part of a labeled input — label, placeholder, helper text, and the red error line",
-      "ko": "Every part of a labeled input — label, placeholder, helper text, and the red error line"
+      "ko": "라벨, 입력 상자, 힌트문구, 에러 안내로 이루어진 데이터 입력 필드 구성 요소"
     },
     "description": {
       "en": "“The gray text inside the box that disappears when you type” is the placeholder — one of five parts of a form field that each have a real name. The word above the box is the label (<label for>), the little red star is the required indicator, the small gray line underneath is helper text, and the red line that replaces it is the validation message. Wiring them up (for/id, aria-describedby, aria-invalid) is what makes the field usable by screen readers, not just sighted users.",
-      "ko": "“The gray text inside the box that disappears when you type” is the placeholder — one of five parts of a form field that each have a real name. The word above the box is the label (<label for>), the little red star is the required indicator, the small gray line underneath is helper text, and the red line that replaces it is the validation message. Wiring them up (for/id, aria-describedby, aria-invalid) is what makes the field usable by screen readers, not just sighted users."
+      "ko": "“입력창 내부의 흐릿한 안내글자나 붉은색 에러 메시지”를 포함하는 통합 양식 입력 필드입니다. 유효성 검사 및 가이드를 통해 사용자 입력을 보조합니다."
     },
     "aka": {
       "en": [
@@ -1524,10 +1485,9 @@ export const ENTRIES: UIEntry[] = [
         "form control"
       ],
       "ko": [
-        "text field",
-        "input field",
-        "form input",
-        "form control"
+        "입력 폼 필드",
+        "텍스트 입력 필드",
+        "폼 텍스트 상자"
       ]
     },
     "fuzzy": {
@@ -1540,12 +1500,8 @@ export const ENTRIES: UIEntry[] = [
         "hint text in the empty input"
       ],
       "ko": [
-        "the gray text inside the box that disappears when you type",
-        "the little red star next to the label",
-        "the small gray text under the input",
-        "the red error message under the field",
-        "the word above the text box",
-        "hint text in the empty input"
+        "라벨과 플레이스홀더가 있는 입력 상자",
+        "에러 메시지가 뜨는 입력 필드"
       ]
     },
     "api": [
@@ -1691,11 +1647,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Text cut short with … — at the end of the line, after N lines, or in the middle",
-      "ko": "Text cut short with … — at the end of the line, after N lines, or in the middle"
+      "ko": "제한된 공간을 벗어나는 텍스트를 줄임표(…)로 처리하는 기술"
     },
     "description": {
       "en": "“The text that gets cut off with three dots” is truncation, and the dots are an ellipsis (…, one character — not three periods). End-of-line truncation is text-overflow: ellipsis; cutting after N lines is a line clamp; dots in the middle of a long filename are middle truncation — native on macOS, JS on the web. Don't confuse it with the ⋯ overflow menu button: same dots, completely different job.",
-      "ko": "“The text that gets cut off with three dots” is truncation, and the dots are an ellipsis (…, one character — not three periods). End-of-line truncation is text-overflow: ellipsis; cutting after N lines is a line clamp; dots in the middle of a long filename are middle truncation — native on macOS, JS on the web. Don't confuse it with the ⋯ overflow menu button: same dots, completely different job."
+      "ko": "“텍스트가 넘칠 때 끝부분이 점 세 개로 잘리는 현상”을 말줄임(Truncation) 처리라고 합니다. 한 줄 끝, 지정된 줄 수 이후(line-clamp), 또는 중간 생략 방식으로 적용됩니다."
     },
     "aka": {
       "en": [
@@ -1707,10 +1663,8 @@ export const ENTRIES: UIEntry[] = [
       ],
       "ko": [
         "말줄임표",
-        "text overflow",
         "라인 클램프",
-        "clamped text",
-        "truncated text"
+        "텍스트 자르기"
       ]
     },
     "fuzzy": {
@@ -1723,12 +1677,9 @@ export const ENTRIES: UIEntry[] = [
         "title too long for the box"
       ],
       "ko": [
-        "the text gets cut off with three dots",
-        "show only two lines then dot dot dot",
-        "long file name with dots in the middle",
-        "cut the title after one line instead of wrapping",
-        "text fades out at the edge instead of dots",
-        "title too long for the box"
+        "글자 자르고 점 세개 만드는 효과",
+        "말줄임표 처리",
+        "line-clamp 효과"
       ]
     },
     "api": [
@@ -1856,11 +1807,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The grips, handles, previews, and landing cues around a drag interaction",
-      "ko": "The grips, handles, previews, and landing cues around a drag interaction"
+      "ko": "요소를 직접 클릭하여 원하는 위치나 영역으로 끌어다 놓는 상호작용"
     },
     "description": {
       "en": "Drag and drop lets someone move or place an object directly. A grip says where to grab, a drag preview follows the pointer, and an insertion line or highlighted target previews the destination before release. Selection resize handles are related controls around a selected object: they resize it rather than move it.",
-      "ko": "Drag and drop lets someone move or place an object directly. A grip says where to grab, a drag preview follows the pointer, and an insertion line or highlighted target previews the destination before release. Selection resize handles are related controls around a selected object: they resize it rather than move it."
+      "ko": "드래그 앤 드롭을 이용하면 파일, 카드, 리스트 항목 등을 직관적으로 이동하거나 순서를 변경할 수 있습니다. 드래그 고스트 및 드롭 영역 시각 가이드가 중요합니다."
     },
     "aka": {
       "en": [
@@ -1870,10 +1821,9 @@ export const ENTRIES: UIEntry[] = [
         "sortable drag"
       ],
       "ko": [
-        "drag and drop",
-        "drag-and-drop interaction",
-        "direct manipulation",
-        "sortable drag"
+        "드래그 앤 드롭",
+        "끌어서 놓기",
+        "순서 변경 드래그"
       ]
     },
     "fuzzy": {
@@ -1886,12 +1836,8 @@ export const ENTRIES: UIEntry[] = [
         "the ghost copy that follows the pointer"
       ],
       "ko": [
-        "those kind of a 3x3 or 2x2",
-        "those squares, you know, that are on the corners",
-        "line indicators for where it will drop",
-        "the neighboring terminal is highlighted as a whole",
-        "half of that terminal is highlighted",
-        "the ghost copy that follows the pointer"
+        "마우스로 집어서 옮기는 기능",
+        "드래그해서 위치 바꾸기"
       ]
     },
     "api": [
@@ -2030,11 +1976,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The same thin line can mark a topic break, separate controls, or be decoration",
-      "ko": "The same thin line can mark a topic break, separate controls, or be decoration"
+      "ko": "콘텐츠와 레이아웃 구역을 시각적으로 구분해주는 수평/수직 분리선"
     },
     "description": {
       "en": "A horizontal rule marks a change of topic in content, so HTML gives it the semantic <hr> element. A separator divides groups of controls or regions and can use role=\"separator\" when no native semantic element fits. If the line is only visual styling, it is a CSS border and should not be announced as an element. SwiftUI Divider and AppKit separator menu items are the familiar macOS cousins.",
-      "ko": "A horizontal rule marks a change of topic in content, so HTML gives it the semantic <hr> element. A separator divides groups of controls or regions and can use role=\"separator\" when no native semantic element fits. If the line is only visual styling, it is a CSS border and should not be announced as an element. SwiftUI Divider and AppKit separator menu items are the familiar macOS cousins."
+      "ko": "구분선(Divider)은 서로 다른 주제나 그룹에 속한 요소들 사이에 얇은 단색선이나 여백을 두어 화면 구조의 읽기 쉬움을 높여줍니다."
     },
     "aka": {
       "en": [
@@ -2044,10 +1990,9 @@ export const ENTRIES: UIEntry[] = [
         "visual divider"
       ],
       "ko": [
-        "separator",
-        "rule",
-        "horizontal rule",
-        "visual divider"
+        "구분선",
+        "구분 구획선",
+        "경계선"
       ]
     },
     "fuzzy": {
@@ -2060,12 +2005,8 @@ export const ENTRIES: UIEntry[] = [
         "horizontal line thing"
       ],
       "ko": [
-        "between those line breaks",
-        "above that line break",
-        "a vertical line break between those sections",
-        "the line break divider between the actual kind of title and the download button",
-        "maybe add a vertical line divider",
-        "horizontal line thing"
+        "영역 나누는 회색 선",
+        "메뉴 사이 구분선"
       ]
     },
     "api": [
@@ -2188,11 +2129,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A spinner means wait; a ring or bar can show how much work is complete",
-      "ko": "A spinner means wait; a ring or bar can show how much work is complete"
+      "ko": "작업의 진행 상태나 대기 시간을 보여주는 원형 스피너 및 진행 표시줄"
     },
     "description": {
       "en": "A spinner loops without showing how much work remains. A determinate progress ring fills an arc around a circle, while a linear progress bar fills across a track; both represent a known value. A percentage label can make that value exact, but it must agree with the indicator's accessible progress value.",
-      "ko": "A spinner loops without showing how much work remains. A determinate progress ring fills an arc around a circle, while a linear progress bar fills across a track; both represent a known value. A percentage label can make that value exact, but it must agree with the indicator's accessible progress value."
+      "ko": "진행률을 정량적으로 보여주는 바(Progress Bar)와 정해지지 않은 대기 시간을 나타내는 스피너(Progress Ring)를 통해 사용자에게 시스템 상태를 피드백합니다."
     },
     "aka": {
       "en": [
@@ -2202,10 +2143,9 @@ export const ENTRIES: UIEntry[] = [
         "linear progress indicator"
       ],
       "ko": [
-        "circular progress indicator",
-        "loading spinner",
-        "determinate progress indicator",
-        "linear progress indicator"
+        "진행 바",
+        "로딩 스피너",
+        "프로그레스 링"
       ]
     },
     "fuzzy": {
@@ -2218,12 +2158,8 @@ export const ENTRIES: UIEntry[] = [
         "the bar that shows how far along it is"
       ],
       "ko": [
-        "that circle for the countdown, that circle that gets filled up",
-        "the actual circular progress bar",
-        "the menu bar like ring getting filled up",
-        "the ring that fills up",
-        "the spinning circle while it loads",
-        "the bar that shows how far along it is"
+        "빙글빙글 도는 로딩 표시",
+        "퍼센트 차오르는 진행 바"
       ]
     },
     "api": [
@@ -2352,11 +2288,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The movable Mac app frame, from its title bar and toolbar to its resize edges",
-      "ko": "The movable Mac app frame, from its title bar and toolbar to its resize edges"
+      "ko": "앱 콘텐츠가 담기는 타이틀바, 제어 버튼, 그림자 테두리가 있는 창"
     },
     "description": {
       "en": "A Mac window is the movable, usually resizable frame that holds one app surface. Its top chrome can combine a draggable title bar, title, toolbar, accessories, and document tabs, while the red, yellow, and green traffic lights remain their own standard controls. Window tabs belong to the frame and group separate windows; an in-content tab view only switches content inside one window.",
-      "ko": "A Mac window is the movable, usually resizable frame that holds one app surface. Its top chrome can combine a draggable title bar, title, toolbar, accessories, and document tabs, while the red, yellow, and green traffic lights remain their own standard controls. Window tabs belong to the frame and group separate windows; an in-content tab view only switches content inside one window."
+      "ko": "데스크톱 OS 환경에서 개별 앱의 UI가 담기는 이동/크기조절 가능한 독립된 창 프레임 구조입니다."
     },
     "aka": {
       "en": [
@@ -2366,10 +2302,9 @@ export const ENTRIES: UIEntry[] = [
         "window frame"
       ],
       "ko": [
-        "app window",
-        "document window",
-        "NSWindow",
-        "window frame"
+        "앱 윈도우",
+        "창 프레임",
+        "데스크톱 윈도우"
       ]
     },
     "fuzzy": {
@@ -2382,12 +2317,8 @@ export const ENTRIES: UIEntry[] = [
         "the tiny corner grip for resizing the window"
       ],
       "ko": [
-        "the whole mac app box on screen",
-        "the top of the window where you can drag it",
-        "the little control inside the title bar",
-        "a button next to the traffic lights",
-        "the tabs built into the mac window frame",
-        "the tiny corner grip for resizing the window"
+        "맥 스타일 윈도우 창",
+        "타이틀바가 있는 응용프로그램 창"
       ]
     },
     "api": [
@@ -2582,11 +2513,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Resizable panes separated by a draggable divider inside a Mac window",
-      "ko": "Resizable panes separated by a draggable divider inside a Mac window"
+      "ko": "하나의 창을 가림대(Divider)로 분할하여 복수의 패널을 인접 배치하는 레이아웃"
     },
     "description": {
       "en": "A split view divides one window region into two or more panes that can resize independently. The line between them is a split-view divider or splitter when it can be dragged, not merely a decorative separator. A sidebar is one specialized pane and can collapse while the remaining pane expands.",
-      "ko": "A split view divides one window region into two or more panes that can resize independently. The line between them is a split-view divider or splitter when it can be dragged, not merely a decorative separator. A sidebar is one specialized pane and can collapse while the remaining pane expands."
+      "ko": "스플릿 뷰는 창을 수직 또는 수평으로 나누어 마스터-디테일 구조나 코딩 IDE의 편집기/터미널 영역처럼 멀티 패널 구성을 제공합니다."
     },
     "aka": {
       "en": [
@@ -2596,10 +2527,9 @@ export const ENTRIES: UIEntry[] = [
         "navigation split view"
       ],
       "ko": [
-        "split pane",
-        "splitter view",
-        "multi-pane layout",
-        "navigation split view"
+        "분할 뷰",
+        "스플릿 패널",
+        "멀티 패널 뷰"
       ]
     },
     "fuzzy": {
@@ -2611,11 +2541,8 @@ export const ENTRIES: UIEntry[] = [
         "the toolbar line that follows the sidebar divider"
       ],
       "ko": [
-        "the window divided into two resizable panels",
-        "the line between the two panes that I drag",
-        "the divider that resizes the sidebar",
-        "the left panel that collapses into the edge",
-        "the toolbar line that follows the sidebar divider"
+        "화면 반으로 나누는 리사이즈 구분선",
+        "왼쪽 목록 오른쪽 상세 split 패널"
       ]
     },
     "api": [
@@ -2730,11 +2657,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A viewport whose AppKit scrollbar is called a scroller",
-      "ko": "A viewport whose AppKit scrollbar is called a scroller"
+      "ko": "화면 크기보다 큰 콘텐츠를 스크롤바와 제스처로 자유롭게 탐색하는 뷰포트"
     },
     "description": {
       "en": "A scroll view is a viewport onto content larger than the visible region. AppKit calls the bar at its edge a scroller: its draggable thumb is the knob and the track behind it is the knob slot. Modern overlay scrollers float above content and fade away, while legacy scrollers reserve permanent layout space.",
-      "ko": "A scroll view is a viewport onto content larger than the visible region. AppKit calls the bar at its edge a scroller: its draggable thumb is the knob and the track behind it is the knob slot. Modern overlay scrollers float above content and fade away, while legacy scrollers reserve permanent layout space."
+      "ko": "스크롤 뷰는 제한된 스크린 구역 내에 넘치는 콘텐츠를 담고, 사용자가 수평/수직 스크롤하여 탐색할 수 있도록 컨테이너 환경을 제공합니다."
     },
     "aka": {
       "en": [
@@ -2744,10 +2671,9 @@ export const ENTRIES: UIEntry[] = [
         "NSScroller"
       ],
       "ko": [
-        "scrolling view",
-        "scroll container",
-        "scrollbar",
-        "NSScroller"
+        "스크롤 컨테이너",
+        "뷰포트 패널",
+        "스크롤 영역"
       ]
     },
     "fuzzy": {
@@ -2760,12 +2686,8 @@ export const ENTRIES: UIEntry[] = [
         "the rubber band bounce at the end of a list"
       ],
       "ko": [
-        "the area you can scroll inside",
-        "the scrollbar on the side of a mac window",
-        "the little thumb you drag to scroll",
-        "the track behind the scrollbar thumb",
-        "the scrollbar that fades away until you scroll",
-        "the rubber band bounce at the end of a list"
+        "스크롤바 생기는 컨테이너",
+        "화면 넘칠 때 스크롤되는 영역"
       ]
     },
     "api": [
@@ -2879,11 +2801,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A Mac text field with built-in search, clearing, and recent-query controls",
-      "ko": "A Mac text field with built-in search, clearing, and recent-query controls"
+      "ko": "돋보기 아이콘과 입력 삭제(X) 버튼이 내장된 전용 검색 입력 필드"
     },
     "description": {
       "en": "A search field is a text input specialized for filtering or finding content. On macOS it normally includes a magnifying-glass search button, a cancel button that appears for a nonempty query, and optionally a menu of recent searches. SwiftUI's searchable modifier places the platform search field in an appropriate location such as the toolbar.",
-      "ko": "A search field is a text input specialized for filtering or finding content. On macOS it normally includes a magnifying-glass search button, a cancel button that appears for a nonempty query, and optionally a menu of recent searches. SwiftUI's searchable modifier places the platform search field in an appropriate location such as the toolbar."
+      "ko": "검색어 입력을 돕기 위해 좌측 돋보기 아이콘, 우측 빠른 지우기 버튼 및 실시간 자동완성 팝오버 연동 기능을 갖춘 특화된 입력 상자입니다."
     },
     "aka": {
       "en": [
@@ -2893,10 +2815,9 @@ export const ENTRIES: UIEntry[] = [
         "searchable field"
       ],
       "ko": [
-        "search box",
-        "search bar",
-        "NSSearchField",
-        "searchable field"
+        "검색창",
+        "검색 입력 필드",
+        "서치 바"
       ]
     },
     "fuzzy": {
@@ -2908,11 +2829,8 @@ export const ENTRIES: UIEntry[] = [
         "the dropdown of recent searches"
       ],
       "ko": [
-        "the rounded box with a magnifying glass",
-        "the search input in the mac toolbar",
-        "the little x that clears the search",
-        "the magnifier button inside the text field",
-        "the dropdown of recent searches"
+        "돋보기 있는 검색 입력 상자",
+        "글자 지우기 버튼 있는 검색창"
       ]
     },
     "api": [
@@ -3005,11 +2923,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The standard Mac dialog for naming a file and choosing where to save it",
-      "ko": "The standard Mac dialog for naming a file and choosing where to save it"
+      "ko": "파일 저장 위치 및 파일명을 지정하는 시스템 대화상자"
     },
     "description": {
       "en": "A save panel is the system dialog for choosing a filename, location, and sometimes file format. Its compact form can expand into a Finder-like browser with a sidebar and directory contents. NSSavePanel supplies the native behavior, validation, sandbox integration, and sheet presentation.",
-      "ko": "A save panel is the system dialog for choosing a filename, location, and sometimes file format. Its compact form can expand into a Finder-like browser with a sidebar and directory contents. NSSavePanel supplies the native behavior, validation, sandbox integration, and sheet presentation."
+      "ko": "저장 패널은 사용자가 작성 중인 문서나 미디어 파일을 파일 시스템에 저장할 경로, 파일명, 포맷을 지정하는 시스템 표준 모달 패널입니다."
     },
     "aka": {
       "en": [
@@ -3019,10 +2937,9 @@ export const ENTRIES: UIEntry[] = [
         "NSSavePanel"
       ],
       "ko": [
-        "save dialog",
-        "save-as panel",
-        "file save picker",
-        "NSSavePanel"
+        "파일 저장창",
+        "저장 대화상자",
+        "Save 패널"
       ]
     },
     "fuzzy": {
@@ -3034,11 +2951,8 @@ export const ENTRIES: UIEntry[] = [
         "the finder sidebar inside the save window"
       ],
       "ko": [
-        "the mac save as window",
-        "the dialog where you name a file before saving",
-        "the little arrow that expands the save dialog",
-        "the file format dropdown in save as",
-        "the finder sidebar inside the save window"
+        "파일 이름 적고 저장하는 시스템 팝업창",
+        "저장 경로 선택 모달"
       ]
     },
     "api": [
@@ -3132,11 +3046,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A text input that turns recognized values into removable rounded tokens",
-      "ko": "A text input that turns recognized values into removable rounded tokens"
+      "ko": "입력된 텍스트를 독립된 토큰(태그) 형태의 캡슐 칩으로 변환하는 입력 상자"
     },
     "description": {
       "en": "A token field converts recognized pieces of typed text into discrete rounded tokens, like recipients in a mail compose window. Each token represents one value and can be selected, edited, or removed without treating the whole field as plain text. AppKit provides token styling, completions, represented objects, and tokenizing separators through NSTokenField.",
-      "ko": "A token field converts recognized pieces of typed text into discrete rounded tokens, like recipients in a mail compose window. Each token represents one value and can be selected, edited, or removed without treating the whole field as plain text. AppKit provides token styling, completions, represented objects, and tokenizing separators through NSTokenField."
+      "ko": "토큰 필드는 사용자 이메일 수신자 입력이나 태그 작성 시 입력된 텍스트를 인식하여 개별 수정 및 삭제가 가능한 캡슐 형태의 태그 칩(Token)으로 자동으로 전환해주는 텍스트 상자입니다."
     },
     "aka": {
       "en": [
@@ -3146,10 +3060,9 @@ export const ENTRIES: UIEntry[] = [
         "pill input"
       ],
       "ko": [
-        "token input",
-        "recipient field",
-        "tag input",
-        "pill input"
+        "태그 입력 필드",
+        "토큰 입력창",
+        "캡슐 태그 바"
       ]
     },
     "fuzzy": {
@@ -3161,11 +3074,8 @@ export const ENTRIES: UIEntry[] = [
         "the field where each recipient becomes its own bubble"
       ],
       "ko": [
-        "the text field with removable pills inside it",
-        "the email address bubbles in the To field",
-        "input that turns words into little tags",
-        "rounded chips you can delete from a field",
-        "the field where each recipient becomes its own bubble"
+        "이메일 받는사람 주소처럼 칩으로 바뀌는 입력창",
+        "태그 입력하면 칩으로 묶이는 상자"
       ]
     },
     "api": [
@@ -3242,11 +3152,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A primary action joined to a separate arrow that opens related actions",
-      "ko": "A primary action joined to a separate arrow that opens related actions"
+      "ko": "기본 실행 버튼과 클릭 시 추가 옵션 메뉴를 여는 드롭다운 화살표가 결합된 컨트롤"
     },
     "description": {
       "en": "A combo button combines two adjacent targets: a main button that immediately performs the default action and a small arrow button that opens related alternatives. A pop-up button instead shows the current selected value, while a pull-down button opens a menu from the whole control and has no separate primary-action region. NSComboButton is available on macOS 13 and later.",
-      "ko": "A combo button combines two adjacent targets: a main button that immediately performs the default action and a small arrow button that opens related alternatives. A pop-up button instead shows the current selected value, while a pull-down button opens a menu from the whole control and has no separate primary-action region. NSComboButton is available on macOS 13 and later."
+      "ko": "콤보 버튼은 자주 쓰이는 대표 동작을 즉시 실행하는 메인 버튼과, 연관된 추가 작업 목록을 열어주는 분리된 세브로 화살표 메뉴 버튼을 결합한 주버튼 형태입니다."
     },
     "aka": {
       "en": [
@@ -3256,10 +3166,9 @@ export const ENTRIES: UIEntry[] = [
         "NSComboButton"
       ],
       "ko": [
-        "split button",
-        "menu-arrow button",
-        "action-and-menu button",
-        "NSComboButton"
+        "분할 버튼",
+        "드롭다운 콤보 버튼",
+        "스플릿 버튼"
       ]
     },
     "fuzzy": {
@@ -3271,11 +3180,8 @@ export const ENTRIES: UIEntry[] = [
         "button where the label acts and the arrow opens choices"
       ],
       "ko": [
-        "the button with a separate little arrow attached",
-        "one button that clicks and also has a dropdown",
-        "the split action button with a menu on the right",
-        "primary button joined to a tiny chevron button",
-        "button where the label acts and the arrow opens choices"
+        "버튼 오른쪽 화살표 누르면 추가 옵션 나오는 버튼",
+        "주 동작과 드롭다운이 합쳐진 버튼"
       ]
     },
     "api": [
@@ -3377,11 +3283,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A Mac gauge rendered as a capacity bar, rating stars, or relevance meter",
-      "ko": "A Mac gauge rendered as a capacity bar, rating stars, or relevance meter"
+      "ko": "신호 세기, 용량, 정량 수치를 시각적 막대 단계로 표현하는 표시기"
     },
     "description": {
       "en": "A level indicator shows a value inside a known range rather than the progress of an ongoing task. Its native styles cover continuous or segmented capacity bars, symbol-based ratings such as stars, and compact relevance meters. Warning and critical thresholds can change the capacity indicator's color as the value crosses them.",
-      "ko": "A level indicator shows a value inside a known range rather than the progress of an ongoing task. Its native styles cover continuous or segmented capacity bars, symbol-based ratings such as stars, and compact relevance meters. Warning and critical thresholds can change the capacity indicator's color as the value crosses them."
+      "ko": "레벨 인디케이터는 배터리 잔량, Wi-Fi 신호 강도, 비밀번호 안전도, 디스크 용량 등 연속적이거나 단계적인 수치 레벨을 게이지 바 형태의 시각적 그래픽으로 보여줍니다."
     },
     "aka": {
       "en": [
@@ -3391,10 +3297,9 @@ export const ENTRIES: UIEntry[] = [
         "relevancy indicator"
       ],
       "ko": [
-        "level meter",
-        "capacity indicator",
-        "rating indicator",
-        "relevancy indicator"
+        "수치 게이지",
+        "단계 인디케이터",
+        "레벨 게이지"
       ]
     },
     "fuzzy": {
@@ -3406,11 +3311,8 @@ export const ENTRIES: UIEntry[] = [
         "mac gauge with tick marks and colored ranges"
       ],
       "ko": [
-        "the row of stars for a rating",
-        "the segmented bar showing disk capacity",
-        "the little meter showing how strong a match is",
-        "the bar that changes color at warning and critical levels",
-        "mac gauge with tick marks and colored ranges"
+        "와이파이나 배터리 칸으로 보여주는 게이지",
+        "비밀번호 강도 게이지"
       ]
     },
     "api": [
@@ -3519,11 +3421,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Finder-style columns that reveal each successive level of a hierarchy",
-      "ko": "Finder-style columns that reveal each successive level of a hierarchy"
+      "ko": "계층적 폴더 구조를 연속된 수직 열(Column)로 탐색하는 파일 브라우저"
     },
     "description": {
       "en": "A column view is a hierarchical browser where every selected branch opens its children in the next column to the right. Finder's Column view is the familiar example: several ancestry levels remain visible at once, so the path is spatial rather than only textual. AppKit's native control is NSBrowser; NavigationSplitView is only an approximate SwiftUI composition.",
-      "ko": "A column view is a hierarchical browser where every selected branch opens its children in the next column to the right. Finder's Column view is the familiar example: several ancestry levels remain visible at once, so the path is spatial rather than only textual. AppKit's native control is NSBrowser; NavigationSplitView is only an approximate SwiftUI composition."
+      "ko": "컬럼 뷰는 macOS Finder처럼 폴더 선택 시 우측에 다음 계층 컬럼이 생성되어, 상위에서 하위로 들어가는 깊은 파일 디렉토리 구조를 한눈에 탐색할 수 있는 멀티 열 브라우저입니다."
     },
     "aka": {
       "en": [
@@ -3533,10 +3435,9 @@ export const ENTRIES: UIEntry[] = [
         "hierarchical browser"
       ],
       "ko": [
-        "browser view",
-        "Finder column view",
-        "Miller columns",
-        "hierarchical browser"
+        "열 뷰",
+        "파인더 스타일 컬럼",
+        "수직 열 파일 브라우저"
       ]
     },
     "fuzzy": {
@@ -3548,11 +3449,8 @@ export const ENTRIES: UIEntry[] = [
         "the hierarchy browser with arrows at the end of rows"
       ],
       "ko": [
-        "the finder columns thing",
-        "folders opening in columns to the right",
-        "the file browser where every level gets a new column",
-        "side by side columns showing a folder path",
-        "the hierarchy browser with arrows at the end of rows"
+        "맥 파인더처럼 하위 폴더가 옆에 열로 열리는 뷰",
+        "열 방향 폴더 탐색기"
       ]
     },
     "api": [
@@ -3649,11 +3547,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "An indented tree of rows that expand to reveal nested children",
-      "ko": "An indented tree of rows that expand to reveal nested children"
+      "ko": "트리 구조로 폴더 및 계층 항목을 접고 펼칠 수 있는 목록 컨트롤"
     },
     "description": {
       "en": "An outline view is a tree-shaped list: rows can contain children, indentation shows depth, and disclosure triangles expand or collapse branches. A plain list has no hierarchy. A source list is a sidebar appearance and navigation convention that can be implemented with an outline view, but the terms are not interchangeable.",
-      "ko": "An outline view is a tree-shaped list: rows can contain children, indentation shows depth, and disclosure triangles expand or collapse branches. A plain list has no hierarchy. A source list is a sidebar appearance and navigation convention that can be implemented with an outline view, but the terms are not interchangeable."
+      "ko": "아웃라인 뷰는 파일 시스템 트리나 프로젝트 레이어처럼 하위 요소들을 디스클로저 트라이앵글로 접거나 펼쳐서 정리하는 상하 계층형 리스트입니다."
     },
     "aka": {
       "en": [
@@ -3663,10 +3561,9 @@ export const ENTRIES: UIEntry[] = [
         "expandable table"
       ],
       "ko": [
-        "tree view",
-        "hierarchical list",
-        "outline list",
-        "expandable table"
+        "트리 뷰",
+        "계층 리스트",
+        "아웃라인 목록"
       ]
     },
     "fuzzy": {
@@ -3678,11 +3575,8 @@ export const ENTRIES: UIEntry[] = [
         "expandable rows indented under their parent"
       ],
       "ko": [
-        "the indented list with little expand arrows",
-        "tree of folders where rows have children",
-        "a list with nested rows you can open and close",
-        "the sidebar-looking list with hierarchy levels",
-        "expandable rows indented under their parent"
+        "화살표 눌러서 폴더 펼치는 트리 목록",
+        "계층형 뷰어"
       ]
     },
     "api": [
@@ -3779,11 +3673,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Horizontal dots, vertical dots, three lines, and an ellipsis mean different things",
-      "ko": "Horizontal dots, vertical dots, three lines, and an ellipsis mean different things"
+      "ko": "추가 메뉴나 숨겨진 작업을 호출하는 더보기(…) 아이콘 버튼"
     },
     "description": {
       "en": "Three horizontal dots are commonly called meatballs and three vertical dots a kebab; both usually open an overflow or More menu of secondary actions. Three horizontal lines are a hamburger button and normally open navigation, often in a drawer. An ellipsis inside a label such as “Open…” is punctuation, not an overflow icon: it signals that the command needs more input before it can finish.",
-      "ko": "Three horizontal dots are commonly called meatballs and three vertical dots a kebab; both usually open an overflow or More menu of secondary actions. Three horizontal lines are a hamburger button and normally open navigation, often in a drawer. An ellipsis inside a label such as “Open…” is punctuation, not an overflow icon: it signals that the command needs more input before it can finish."
+      "ko": "세 개의 점이 가로(Meatball) 또는 세로(Kebab) 형태로 배열된 더보기 버튼입니다. 레이아웃 주 구역의 공간을 절약하면서 관련 보조 메뉴 모음을 축약하여 보여줍니다."
     },
     "aka": {
       "en": [
@@ -3795,12 +3689,10 @@ export const ENTRIES: UIEntry[] = [
         "ellipsis button"
       ],
       "ko": [
-        "케밥 메뉴 (세로 점 3개)",
-        "밋볼 메뉴 (가로 점 3개)",
-        "hamburger menu",
-        "overflow menu",
-        "more menu",
-        "ellipsis button"
+        "더보기 버튼",
+        "미트볼 메뉴",
+        "케밥 메뉴",
+        "Ellipsis 버튼"
       ]
     },
     "fuzzy": {
@@ -3814,13 +3706,9 @@ export const ENTRIES: UIEntry[] = [
         "the more options icon"
       ],
       "ko": [
-        "the three dots menu",
-        "the horizontal meatballs button",
-        "the vertical kebab dots",
-        "the three lines menu icon",
-        "the three dots after Open",
-        "why does this button end in dots",
-        "the more options icon"
+        "점 세 개 누르면 나오는 메뉴",
+        "가로 점 세 개",
+        "세로 점 세 개 더보기"
       ]
     },
     "api": [
@@ -3940,11 +3828,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The strip along the top of the Mac screen — every part, labeled",
-      "ko": "The strip along the top of the Mac screen — every part, labeled"
+      "ko": "화면 상단에 고정되어 모든 앱 명령 및 시스템 상태에 접근하는 글로벌 띠 메뉴"
     },
     "description": {
       "en": "The menu bar is the translucent strip across the top of the Mac screen. On the left are the system-owned Apple menu followed by the frontmost app’s main menu; the right side holds menu bar extras, followed by system status items and the clock. Every piece below has its own real name; hover a number to see exactly which part it names.",
-      "ko": "The menu bar is the translucent strip across the top of the Mac screen. On the left are the system-owned Apple menu followed by the frontmost app’s main menu; the right side holds menu bar extras, followed by system status items and the clock. Every piece below has its own real name; hover a number to see exactly which part it names."
+      "ko": "메뉴 바는 데스크톱 OS 환경 상단 전체에 가로로 가로지르는 메뉴 라인입니다. 현재 실행 중인 앱의 풀다운 메뉴와 오른쪽 제어 센터/상태 아이콘들이 배치됩니다."
     },
     "aka": {
       "en": [
@@ -3953,9 +3841,9 @@ export const ENTRIES: UIEntry[] = [
         "top bar"
       ],
       "ko": [
-        "menubar",
-        "system menu bar",
-        "top bar"
+        "상단 메뉴 바",
+        "글로벌 메뉴",
+        "메뉴 라인"
       ]
     },
     "fuzzy": {
@@ -3967,11 +3855,8 @@ export const ENTRIES: UIEntry[] = [
         "the thing that shows File Edit View at the top"
       ],
       "ko": [
-        "the bar at the top of the mac screen",
-        "the strip with the apple logo and the clock",
-        "top bar on mac with app menus",
-        "where the wifi and battery icons live",
-        "the thing that shows File Edit View at the top"
+        "맥 화면 맨 위에 있는 메뉴 줄",
+        "상단 메뉴 바"
       ]
     },
     "api": [
@@ -4153,11 +4038,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The menu opened at the pointer by right-clicking or Control-clicking an item",
-      "ko": "The menu opened at the pointer by right-clicking or Control-clicking an item"
+      "ko": "우클릭 또는 누르고 있기 제스처로 해당 요소 관련 작업을 띄우는 팝업 메뉴"
     },
     "description": {
       "en": "A context menu exposes actions relevant to the object under the pointer and opens from a secondary click or Control-click. It appears near that click and is made from standard menu items, separators, keyboard equivalents, and submenus. A dropdown menu has a visible control that opens it with a primary click, while a context menu is invoked directly from the content.",
-      "ko": "A context menu exposes actions relevant to the object under the pointer and opens from a secondary click or Control-click. It appears near that click and is made from standard menu items, separators, keyboard equivalents, and submenus. A dropdown menu has a visible control that opens it with a primary click, while a context menu is invoked directly from the content."
+      "ko": "컨텍스트 메뉴(우클릭 메뉴)는 사용자가 선택한 특정 파일, 텍스트, 카드 요소에서 직접 수행 가능한 동작(복사, 삭제, 공유 등)만을 엄선하여 보여주는 문맥 맞춤형 메뉴입니다."
     },
     "aka": {
       "en": [
@@ -4166,9 +4051,9 @@ export const ENTRIES: UIEntry[] = [
         "shortcut menu"
       ],
       "ko": [
-        "contextual menu",
-        "right-click menu",
-        "shortcut menu"
+        "우클릭 메뉴",
+        "문맥 메뉴",
+        "컨텍스트 팝업"
       ]
     },
     "fuzzy": {
@@ -4180,11 +4065,8 @@ export const ENTRIES: UIEntry[] = [
         "menu that opens from a secondary click"
       ],
       "ko": [
-        "the menu that appears when you right click",
-        "control click options for the thing under the pointer",
-        "small action menu beside the selected item",
-        "copy rename delete menu under the mouse",
-        "menu that opens from a secondary click"
+        "마우스 우클릭하면 나오는 메뉴",
+        "선택한 아이템 단축 메뉴"
       ]
     },
     "api": [
@@ -4302,11 +4184,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The small rotating control that reveals or hides nested content",
-      "ko": "The small rotating control that reveals or hides nested content"
+      "ko": "하위 콘텐츠나 접힌 영역을 펼치고 닫는 삼각 화살표 표시기"
     },
     "description": {
       "en": "A disclosure triangle is the compact indicator beside an outline row or section label that reveals nested content. It points sideways while collapsed and rotates downward when expanded. NSOutlineView supplies disclosure controls for hierarchical rows, while DisclosureGroup provides the same expand-and-collapse pattern in SwiftUI.",
-      "ko": "A disclosure triangle is the compact indicator beside an outline row or section label that reveals nested content. It points sideways while collapsed and rotates downward when expanded. NSOutlineView supplies disclosure controls for hierarchical rows, while DisclosureGroup provides the same expand-and-collapse pattern in SwiftUI."
+      "ko": "디스클로저 트라이앵글은 90도 회전 애니메이션을 통해 아래쪽(펼침)이나 오른쪽(접힘)을 가리키며 숨겨진 하위 콘텐츠나 옵션을 토글하는 컴팩트한 화살표 컨트롤입니다."
     },
     "aka": {
       "en": [
@@ -4315,9 +4197,9 @@ export const ENTRIES: UIEntry[] = [
         "expand-collapse triangle"
       ],
       "ko": [
-        "disclosure control",
-        "outline disclosure button",
-        "expand-collapse triangle"
+        "접기/펼치기 화살표",
+        "트리 화살표",
+        "디스클로저 삼각형"
       ]
     },
     "fuzzy": {
@@ -4329,11 +4211,8 @@ export const ENTRIES: UIEntry[] = [
         "triangle next to a heading that shows more content"
       ],
       "ko": [
-        "the tiny triangle that opens a folder row",
-        "little arrow that rotates when a section expands",
-        "chevron beside a row with children",
-        "small expand collapse arrow in an outline",
-        "triangle next to a heading that shows more content"
+        "삼각형 누르면 밑에 메뉴 펼쳐지는 화살표",
+        "트리 화살표 아이콘"
       ]
     },
     "api": [
@@ -4429,11 +4308,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The red count or status label overlaid on an app's Dock icon",
-      "ko": "The red count or status label overlaid on an app's Dock icon"
+      "ko": "앱 아이콘 상단 모서리에 미확인 알림 개수를 표시하는 붉은색 숫자의 배지"
     },
     "description": {
       "en": "A Dock badge is the small red label overlaid on an application's Dock icon, usually showing an unread or pending count. The label belongs to the app's NSDockTile and can also contain short status text. Requesting user attention makes the Dock icon bounce and is a separate, more interruptive signal that should be used sparingly.",
-      "ko": "A Dock badge is the small red label overlaid on an application's Dock icon, usually showing an unread or pending count. The label belongs to the app's NSDockTile and can also contain short status text. Requesting user attention makes the Dock icon bounce and is a separate, more interruptive signal that should be used sparingly."
+      "ko": "Dock 배지는 앱 아이콘의 우측 상단에 중첩되는 작고 붉은색 둥근 라벨로, 읽지 않은 메시지나 알림 건수를 한눈에 전달합니다."
     },
     "aka": {
       "en": [
@@ -4442,9 +4321,9 @@ export const ENTRIES: UIEntry[] = [
         "notification badge"
       ],
       "ko": [
-        "Dock tile badge",
-        "app icon badge",
-        "notification badge"
+        "알림 숫지 배지",
+        "독 배지",
+        "카운터 배지"
       ]
     },
     "fuzzy": {
@@ -4456,11 +4335,8 @@ export const ENTRIES: UIEntry[] = [
         "the red dot or number on a dock icon"
       ],
       "ko": [
-        "the red number bubble on a dock icon",
-        "unread count on the app icon in the dock",
-        "little red label in the corner of a mac app icon",
-        "number badge showing pending notifications",
-        "the red dot or number on a dock icon"
+        "앱 아이콘 위에 빨간 동그라미 숫표시",
+        "읽지 않은 메시지 수 표시"
       ]
     },
     "api": [
@@ -4545,11 +4421,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The accent-colored glow that identifies the control receiving keyboard input",
-      "ko": "The accent-colored glow that identifies the control receiving keyboard input"
+      "ko": "키보드 탭(Tab) 포커스가 도달한 요소를 명확히 강조해주는 수직/외곽 윤곽선 하이라이트"
     },
     "description": {
       "en": "A focus ring is the accent-colored glow, commonly blue, around the control that currently receives keyboard interaction. Text fields normally accept focus, while Full Keyboard Access allows Tab to move focus through additional controls such as buttons and pop-up buttons. AppKit draws the ring for the first responder according to its focusRingType, and custom layouts must leave enough space for that ring to remain visible.",
-      "ko": "A focus ring is the accent-colored glow, commonly blue, around the control that currently receives keyboard interaction. Text fields normally accept focus, while Full Keyboard Access allows Tab to move focus through additional controls such as buttons and pop-up buttons. AppKit draws the ring for the first responder according to its focusRingType, and custom layouts must leave enough space for that ring to remain visible."
+      "ko": "포커스 링은 키보드 접근성 네비게이션 시 현재 입력 집중된 컨트롤 주위에 형성되는 강조 컬러의 외곽 빛나는 링 테두리입니다."
     },
     "aka": {
       "en": [
@@ -4558,9 +4434,9 @@ export const ENTRIES: UIEntry[] = [
         "first responder ring"
       ],
       "ko": [
-        "keyboard focus indicator",
-        "focus halo",
-        "first responder ring"
+        "포커스 테두리",
+        "키보드 포커스 링",
+        "접근성 윤곽선"
       ]
     },
     "fuzzy": {
@@ -4572,11 +4448,8 @@ export const ENTRIES: UIEntry[] = [
         "ring around buttons when full keyboard access is on"
       ],
       "ko": [
-        "the blue glow around the selected control",
-        "outline that appears when you tab to a button",
-        "blue border around the field that has keyboard focus",
-        "highlight showing where keyboard input will go",
-        "ring around buttons when full keyboard access is on"
+        "탭키 누르면 파랗게 빛나는 입력창 테두리",
+        "키보드 포커스 표시"
       ]
     },
     "api": [
@@ -4648,11 +4521,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The right-hand panel for viewing and editing details of the current selection",
-      "ko": "The right-hand panel for viewing and editing details of the current selection"
+      "ko": "선택한 객체의 상세 속성, 세부 서식 및 메타데이터를 수정하는 사이드 패널"
     },
     "description": {
       "en": "An inspector is a trailing panel that displays properties and controls for the item currently selected in the main content. Apps such as Keynote and Xcode organize formatting, identity, and configuration controls in inspectors so the document remains visible while details change. On macOS 14 and later SwiftUI provides a dedicated inspector modifier; classic AppKit layouts commonly build one as the trailing item of a split view.",
-      "ko": "An inspector is a trailing panel that displays properties and controls for the item currently selected in the main content. Apps such as Keynote and Xcode organize formatting, identity, and configuration controls in inspectors so the document remains visible while details change. On macOS 14 and later SwiftUI provides a dedicated inspector modifier; classic AppKit layouts commonly build one as the trailing item of a split view."
+      "ko": "인스펙터 패널은 디자인 툴이나 에디터 우측에 고정되어, 메인 작업 공간에서 선택한 개체(글자, 도형, 파일)의 세부 속성을 즉시 확인하고 편집할 수 있는 도구창입니다."
     },
     "aka": {
       "en": [
@@ -4662,10 +4535,9 @@ export const ENTRIES: UIEntry[] = [
         "utility area"
       ],
       "ko": [
-        "inspector panel",
-        "details sidebar",
-        "properties inspector",
-        "utility area"
+        "속성창",
+        "인스펙터 패널",
+        "세부 속성 패널"
       ]
     },
     "fuzzy": {
@@ -4677,11 +4549,8 @@ export const ENTRIES: UIEntry[] = [
         "collapsible settings column on the right"
       ],
       "ko": [
-        "the properties panel on the right side",
-        "right sidebar that changes with the selected item",
-        "keynote style format panel",
-        "xcode panel showing details for what is selected",
-        "collapsible settings column on the right"
+        "오른쪽에 객체 속성 수정하는 패널",
+        "선택 요소 상세창"
       ]
     },
     "api": [
@@ -4786,11 +4655,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "An auxiliary macOS window that floats above related document windows",
-      "ko": "An auxiliary macOS window that floats above related document windows"
+      "ko": "팔레트, 공구함, HUD 형태의 보조 작업 도구 창"
     },
     "description": {
       "en": "A panel is an auxiliary window for tools, controls, or transient information rather than a primary document. It can float above normal windows, hide when its app becomes inactive, or use a HUD appearance. A non-activating panel can accept appropriate interaction without bringing the entire app forward, which suits command launchers and Spotlight-like surfaces.",
-      "ko": "A panel is an auxiliary window for tools, controls, or transient information rather than a primary document. It can float above normal windows, hide when its app becomes inactive, or use a HUD appearance. A non-activating panel can accept appropriate interaction without bringing the entire app forward, which suits command launchers and Spotlight-like surfaces."
+      "ko": "패널 및 HUD는 메인 문서 창 위에 가볍게 부유하며 유틸리티 도구나 설정값 조절기를 제공하는 보조 위젯 프레임입니다."
     },
     "aka": {
       "en": [
@@ -4800,10 +4669,9 @@ export const ENTRIES: UIEntry[] = [
         "heads-up display"
       ],
       "ko": [
-        "floating panel",
-        "utility panel",
-        "HUD window",
-        "heads-up display"
+        "보조 창",
+        "HUD 패널",
+        "팔레트 창"
       ]
     },
     "fuzzy": {
@@ -4815,11 +4683,8 @@ export const ENTRIES: UIEntry[] = [
         "tool window that follows the active document"
       ],
       "ko": [
-        "small utility window that stays above the main window",
-        "floating controls palette on mac",
-        "dark translucent heads up display window",
-        "spotlight style window that does not activate the app",
-        "tool window that follows the active document"
+        "도구 모음 띄워진 플로팅 창",
+        "HUD 팝업 패널"
       ]
     },
     "api": [
@@ -4913,11 +4778,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A floating bubble whose arrow points back to the control that opened it",
-      "ko": "A floating bubble whose arrow points back to the control that opened it"
+      "ko": "기준 요소를 가리키는 화살표 말풍선 형태의 일시적 팝업 패널"
     },
     "description": {
       "en": "A popover is a lightweight floating bubble for controls or information related to one specific source view. Its arrow identifies the control that opened it, and AppKit chooses an edge that keeps the bubble onscreen. Depending on its behavior, it can close when the user interacts elsewhere or remain open until dismissed explicitly.",
-      "ko": "A popover is a lightweight floating bubble for controls or information related to one specific source view. Its arrow identifies the control that opened it, and AppKit chooses an edge that keeps the bubble onscreen. Depending on its behavior, it can close when the user interacts elsewhere or remain open until dismissed explicitly."
+      "ko": "팝오버는 클릭된 버튼이나 아이콘에 붙어 화살표 촉(Anchor)으로 연관성을 나타내며, Rich UI 및 복잡한 서식 옵션을 담을 수 있는 일시적 부유 패널입니다."
     },
     "aka": {
       "en": [
@@ -4926,9 +4791,9 @@ export const ENTRIES: UIEntry[] = [
         "callout"
       ],
       "ko": [
-        "anchored popover",
-        "popover bubble",
-        "callout"
+        "팝오버 말풍선",
+        "화살표 팝업",
+        "팝오버 패널"
       ]
     },
     "fuzzy": {
@@ -4940,11 +4805,8 @@ export const ENTRIES: UIEntry[] = [
         "floating settings bubble that closes when you click away"
       ],
       "ko": [
-        "the little floating bubble with an arrow",
-        "box that points back to the button that opened it",
-        "small window attached to a toolbar button",
-        "speech bubble panel anchored to a control",
-        "floating settings bubble that closes when you click away"
+        "버튼 누르면 화살표 말풍선으로 뜨는 레이어",
+        "팝오버 창"
       ]
     },
     "api": [
@@ -5030,11 +4892,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Three similar-looking macOS controls for choosing a value or invoking a menu action",
-      "ko": "Three similar-looking macOS controls for choosing a value or invoking a menu action"
+      "ko": "단일 항목을 선택하는 팝업 버튼과 동작 실행 모음인 풀다운 버튼"
     },
     "description": {
       "en": "A pop-up button represents a selection: its closed label shows the current choice, and opening it presents the available values. A pull-down button uses NSPopUpButton with pullsDown set to true and presents commands from a fixed button label rather than communicating a persistent selection. A combo box is a text field plus a drop-down list, so the user can type a value instead of being limited to the listed choices.",
-      "ko": "A pop-up button represents a selection: its closed label shows the current choice, and opening it presents the available values. A pull-down button uses NSPopUpButton with pullsDown set to true and presents commands from a fixed button label rather than communicating a persistent selection. A combo box is a text field plus a drop-down list, so the user can type a value instead of being limited to the listed choices."
+      "ko": "팝업 버튼은 선택된 값이 버튼 타이틀로 계속 표시되는 단일 선택 메뉴이며, 풀다운 버튼은 고정된 작업 목록을 아래로 내리는 메뉴 실행 컨트롤입니다."
     },
     "aka": {
       "en": [
@@ -5044,10 +4906,9 @@ export const ENTRIES: UIEntry[] = [
         "menu picker"
       ],
       "ko": [
-        "pop-up menu button",
-        "pull-down menu button",
-        "combo box",
-        "menu picker"
+        "팝업 버튼",
+        "풀다운 메뉴",
+        "드롭다운 선택기"
       ]
     },
     "fuzzy": {
@@ -5060,12 +4921,8 @@ export const ENTRIES: UIEntry[] = [
         "field where you can type or pick an existing value"
       ],
       "ko": [
-        "the dropdown that shows the currently selected option",
-        "button with a little arrow that opens a menu of actions",
-        "text field with a dropdown list attached",
-        "mac menu button versus an editable dropdown",
-        "selector that looks like a button and opens choices",
-        "field where you can type or pick an existing value"
+        "누르면 아래로 목록 길게 내려오는 메뉴",
+        "옵션 선택 버튼"
       ]
     },
     "api": [
@@ -5189,11 +5046,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A row of connected choices with the current segment visibly selected",
-      "ko": "A row of connected choices with the current segment visibly selected"
+      "ko": "서로 연관된 소수의 선택지를 수평으로 잇는 탭 형태의 세그먼트 버튼 모음"
     },
     "description": {
       "en": "A segmented control groups a small set of related choices into one horizontal row of connected buttons. The selected segment receives a pressed or filled appearance, making the current mode immediately visible. NSSegmentedControl can also be configured for multiple or momentary tracking, but a segmented Picker normally represents one persistent selection.",
-      "ko": "A segmented control groups a small set of related choices into one horizontal row of connected buttons. The selected segment receives a pressed or filled appearance, making the current mode immediately visible. NSSegmentedControl can also be configured for multiple or momentary tracking, but a segmented Picker normally represents one persistent selection."
+      "ko": "세그먼트 컨트롤은 2~5개 내외의 상호 배타적인 뷰 모드나 옵션 단계를 하나의 일체형 수평 캡슐 형태로 그룹화한 스위치 버튼입니다."
     },
     "aka": {
       "en": [
@@ -5202,9 +5059,9 @@ export const ENTRIES: UIEntry[] = [
         "button group"
       ],
       "ko": [
-        "segment control",
-        "segmented picker",
-        "button group"
+        "세그먼트 버튼",
+        "분할 토글",
+        "수평 세그먼트 스위치"
       ]
     },
     "fuzzy": {
@@ -5216,11 +5073,8 @@ export const ENTRIES: UIEntry[] = [
         "horizontal selector with one pressed section"
       ],
       "ko": [
-        "the connected row of buttons where one stays selected",
-        "pill split into several clickable choices",
-        "small tabs that switch between views",
-        "group of joined icon buttons in a toolbar",
-        "horizontal selector with one pressed section"
+        "네모나 캡슐이 하나로 이어진 토글 버튼 그룹",
+        "뷰 전환 탭 버튼"
       ]
     },
     "api": [
@@ -5306,11 +5160,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A modal panel attached to one macOS window rather than the whole app",
-      "ko": "A modal panel attached to one macOS window rather than the whole app"
+      "ko": "부모 윈도우 창 상단에 밀착되어 모달 작업을 수행하도록 내려오는 대화상자 패널"
     },
     "description": {
       "en": "A sheet is a modal panel attached to a particular window, traditionally descending from its title bar. It prevents interaction with that parent window while other app windows can remain usable. An app-modal dialog instead blocks the application as a whole and is not visually attached to one document window.",
-      "ko": "A sheet is a modal panel attached to a particular window, traditionally descending from its title bar. It prevents interaction with that parent window while other app windows can remain usable. An app-modal dialog instead blocks the application as a whole and is not visually attached to one document window."
+      "ko": "시트(Sheet) 패널은 메인 창 모서리에 결합되어 밑으로 부드럽게 slide-down되며 뜨는 대화상자입니다. 작업 대상을 명확히 특정하며 모달 상태를 유지합니다."
     },
     "aka": {
       "en": [
@@ -5319,9 +5173,9 @@ export const ENTRIES: UIEntry[] = [
         "attached sheet"
       ],
       "ko": [
-        "window-modal dialog",
-        "document-modal dialog",
-        "attached sheet"
+        "시트 패널",
+        "윈도우 부착 모달",
+        "슬라이드 시트"
       ]
     },
     "fuzzy": {
@@ -5333,11 +5187,8 @@ export const ENTRIES: UIEntry[] = [
         "popup that blocks one window but not the whole app"
       ],
       "ko": [
-        "dialog that slides down from the window title bar",
-        "modal attached to just one mac window",
-        "panel hanging from the top of the document window",
-        "save dialog attached to its parent window",
-        "popup that blocks one window but not the whole app"
+        "창 위쪽에서 스르륵 내려오는 모달 패널",
+        "맥 스타일 시트 창"
       ]
     },
     "api": [
@@ -5408,11 +5259,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The translucent navigation column along the left edge of a macOS window",
-      "ko": "The translucent navigation column along the left edge of a macOS window"
+      "ko": "앱 탐색 메뉴, 계층 폴더, 서랍 구조가 위치하는 좌측 수직 탐색 컬럼"
     },
     "description": {
       "en": "A sidebar is the leftmost navigation column used by apps such as Finder and Mail to organize destinations into sections. AppKit calls its list appearance a source list, while modern SwiftUI normally builds the structure with NavigationSplitView and sidebar list style. It can collapse independently of the main content and often uses a translucent material behind its rows.",
-      "ko": "A sidebar is the leftmost navigation column used by apps such as Finder and Mail to organize destinations into sections. AppKit calls its list appearance a source list, while modern SwiftUI normally builds the structure with NavigationSplitView and sidebar list style. It can collapse independently of the main content and often uses a translucent material behind its rows."
+      "ko": "사이드바는 애플리케이션의 최좌측 수직 영역에 위치하여 카테고리, 폴더, 메인 탐색 뷰 목록을 지속적으로 제공하는 내비게이션 기둥입니다."
     },
     "aka": {
       "en": [
@@ -5421,9 +5272,9 @@ export const ENTRIES: UIEntry[] = [
         "split view sidebar"
       ],
       "ko": [
-        "source list",
-        "navigation sidebar",
-        "split view sidebar"
+        "사이드 내비게이션",
+        "좌측 메뉴 바",
+        "사이드 패널"
       ]
     },
     "fuzzy": {
@@ -5436,12 +5287,8 @@ export const ENTRIES: UIEntry[] = [
         "mac navigation rail with a frosted background"
       ],
       "ko": [
-        "the translucent list down the left side of a mac app",
-        "finder style navigation column",
-        "left panel with sections and selected rows",
-        "sidebar that collapses next to the main content",
-        "list of folders or pages on the left",
-        "mac navigation rail with a frosted background"
+        "화면 왼쪽에 고정된 카테고리 메뉴",
+        "사이드바 탐색창"
       ]
     },
     "api": [
@@ -5564,11 +5411,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The compact up-and-down arrow pair used to increment or decrement a value",
-      "ko": "The compact up-and-down arrow pair used to increment or decrement a value"
+      "ko": "숫자 수치를 1단위씩 미세하게 증가 또는 감소시키는 쌍둥이 화살표 버튼"
     },
     "description": {
       "en": "A stepper is a pair of small stacked arrow buttons for changing a value by a fixed increment. It commonly sits beside a numeric text field so users can either type an exact value or adjust it one step at a time. Its enabled states should reflect the configured minimum and maximum, and holding an arrow can repeat the change.",
-      "ko": "A stepper is a pair of small stacked arrow buttons for changing a value by a fixed increment. It commonly sits beside a numeric text field so users can either type an exact value or adjust it one step at a time. Its enabled states should reflect the configured minimum and maximum, and holding an arrow can repeat the change."
+      "ko": "스텝퍼는 위/아래 또는 +/- 모양의 작은 인접 버튼 한 쌍으로 구성되어, 수량이나 수치를 정밀하게 점진적으로 조절하는 입력 컨트롤입니다."
     },
     "aka": {
       "en": [
@@ -5578,10 +5425,9 @@ export const ENTRIES: UIEntry[] = [
         "incrementer"
       ],
       "ko": [
-        "stepper control",
-        "stepper arrows",
-        "numeric stepper",
-        "incrementer"
+        "증감 버튼",
+        "수량 조절기",
+        "스텝퍼"
       ]
     },
     "fuzzy": {
@@ -5593,11 +5439,8 @@ export const ENTRIES: UIEntry[] = [
         "spinner arrows for adjusting a value one step at a time"
       ],
       "ko": [
-        "the tiny up and down arrows beside a number field",
-        "little control that increases or decreases a value",
-        "stacked arrow buttons next to a numeric input",
-        "small plus minus style control for changing a number",
-        "spinner arrows for adjusting a value one step at a time"
+        "위아래 화살표 눌러 숫자 올리고 내리는 버튼",
+        "수량 + - 버튼"
       ]
     },
     "api": [
@@ -5685,11 +5528,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A row of window actions integrated with the modern macOS title bar",
-      "ko": "A row of window actions integrated with the modern macOS title bar"
+      "ko": "창 상단이나 하단에 위치하여 주요 조작 아이콘 버튼들을 모아놓은 도구 모음 줄"
     },
     "description": {
       "en": "A toolbar holds the primary actions for a window and can share a single top row with the window title in the unified style. Its native toolbar items participate in macOS spacing, validation, customization, and overflow behavior. A title bar separator can appear between this chrome and the window's content, depending on the window style and scroll position.",
-      "ko": "A toolbar holds the primary actions for a window and can share a single top row with the window title in the unified style. Its native toolbar items participate in macOS spacing, validation, customization, and overflow behavior. A title bar separator can appear between this chrome and the window's content, depending on the window style and scroll position."
+      "ko": "툴바는 사용자가 현재 화면 및 문서에서 가장 자주 사용하는 핵심 명령 아이콘 및 세그먼트 컨트롤을 한눈에 조작할 수 있도록 모아놓은 띠 형태의 막대입니다."
     },
     "aka": {
       "en": [
@@ -5698,9 +5541,9 @@ export const ENTRIES: UIEntry[] = [
         "title bar toolbar"
       ],
       "ko": [
-        "window toolbar",
-        "unified toolbar",
-        "title bar toolbar"
+        "도구 모음",
+        "작업 막대",
+        "툴바 패널"
       ]
     },
     "fuzzy": {
@@ -5712,11 +5555,8 @@ export const ENTRIES: UIEntry[] = [
         "line separating the toolbar from the window content"
       ],
       "ko": [
-        "the row of buttons across the top of a mac window",
-        "title bar with search and action icons in it",
-        "mac window header where the toolbar and title share one row",
-        "top strip with customizable window actions",
-        "line separating the toolbar from the window content"
+        "상단 도구 아이콘 모음",
+        "작업 아이콘 막대"
       ]
     },
     "api": [
@@ -5839,11 +5679,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The red, yellow, and green controls at the top-left of a macOS window",
-      "ko": "The red, yellow, and green controls at the top-left of a macOS window"
+      "ko": "Mac 윈도우 창 좌측 상단의 닫기(빨강), 최소화(노랑), 전체화면(초록) 제어 버튼 삼총사"
     },
     "description": {
       "en": "Traffic lights are the red close, yellow minimize, and green window controls at the top-left of a macOS window. Their symbols appear when the pointer hovers over the group. The green control normally enters full screen and also exposes system window-arrangement choices; macOS still identifies it through NSWindow.ButtonType.zoomButton.",
-      "ko": "Traffic lights are the red close, yellow minimize, and green window controls at the top-left of a macOS window. Their symbols appear when the pointer hovers over the group. The green control normally enters full screen and also exposes system window-arrangement choices; macOS still identifies it through NSWindow.ButtonType.zoomButton."
+      "ko": "신호등(Traffic Lights) 버튼은 macOS 윈도우의 대표적 아이덴티티 요소로, 창의 종료, 숨기기, 확대/전체화면 전환 기능을 정해진 컬러 순서로 제공합니다."
     },
     "aka": {
       "en": [
@@ -5852,9 +5692,9 @@ export const ENTRIES: UIEntry[] = [
         "close minimize zoom buttons"
       ],
       "ko": [
-        "window controls",
-        "title bar buttons",
-        "close minimize zoom buttons"
+        "신호등 버튼",
+        "창 제어 버튼",
+        "Mac 3색 창 버튼"
       ]
     },
     "fuzzy": {
@@ -5866,11 +5706,8 @@ export const ENTRIES: UIEntry[] = [
         "green window button that makes the window bigger"
       ],
       "ko": [
-        "the three colored dots in the corner of a mac window",
-        "red yellow and green buttons at the top left",
-        "little x minus and arrows that appear when you hover",
-        "mac window close minimize and full screen buttons",
-        "green window button that makes the window bigger"
+        "맥 창 왼쪽 위 빨간 노란 초록 버튼",
+        "창 닫기 최소화 확장 버튼"
       ]
     },
     "api": [
@@ -5985,11 +5822,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The adaptive translucent background used behind macOS sidebars, menus, and panels",
-      "ko": "The adaptive translucent background used behind macOS sidebars, menus, and panels"
+      "ko": "배경 레이어의 색상을 적응형으로 반투명 블러 처리하여 깊이감을 만드는 미세 재질 효과"
     },
     "description": {
       "en": "A visual effect material supplies the adaptive translucent background seen behind macOS sidebars, menus, and panels. NSVisualEffectView chooses the background effect through its Material and BlendingMode. Vibrancy is the related foreground treatment that increases contrast against that material; standard AppKit controls enable it where appropriate.",
-      "ko": "A visual effect material supplies the adaptive translucent background seen behind macOS sidebars, menus, and panels. NSVisualEffectView chooses the background effect through its Material and BlendingMode. Vibrancy is the related foreground treatment that increases contrast against that material; standard AppKit controls enable it where appropriate."
+      "ko": "비주얼 이펙트 재질(Vibrancy)은 뒤쪽 콘텐츠나 배경화면을 부드럽게 흐리게(Blur) 투과시키면서 라이트/다크 모드에 맞춰 최적의 대비와 깊이감을 연출하는 시스템 재질입니다."
     },
     "aka": {
       "en": [
@@ -5999,10 +5836,9 @@ export const ENTRIES: UIEntry[] = [
         "blur material"
       ],
       "ko": [
-        "visual effect material",
-        "frosted glass",
-        "translucent material",
-        "blur material"
+        "반투명 블러 효과",
+        "아크릴 재질",
+        "바이브런시"
       ]
     },
     "fuzzy": {
@@ -6014,11 +5850,8 @@ export const ENTRIES: UIEntry[] = [
         "glassy background behind the window controls"
       ],
       "ko": [
-        "the frosted glass background behind a mac sidebar",
-        "translucent blurred panel that shows colors through it",
-        "see through material behind menus and huds",
-        "mac blur effect that adapts to the wallpaper",
-        "glassy background behind the window controls"
+        "배경이 비치는 유리 같은 효과",
+        "블러 처리된 반투명 창 배경"
       ]
     },
     "api": [
@@ -6101,11 +5934,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A brief, non-blocking message that appears after an action",
-      "ko": "A brief, non-blocking message that appears after an action"
+      "ko": "화면 하단이나 상단에 짧게 나타났다가 자동으로 사라지는 정형화된 알림 피커"
     },
     "description": {
       "en": "A toast is a compact, non-modal status message that appears in a screen corner after an action and dismisses automatically. It confirms transient outcomes such as saving or copying without interrupting the workflow. Unlike a notification banner, it does not occupy a persistent place in the page layout or demand acknowledgement.",
-      "ko": "A toast is a compact, non-modal status message that appears in a screen corner after an action and dismisses automatically. It confirms transient outcomes such as saving or copying without interrupting the workflow. Unlike a notification banner, it does not occupy a persistent place in the page layout or demand acknowledgement."
+      "ko": "토스트(Toast) 및 스낵바는 사용자의 작업(저장 완료, 복사됨 등) 직후 모달 방해 없이 부드럽게 나타났다 몇 초 후 자동으로 소멸하는 경량 알림 메시지입니다."
     },
     "aka": {
       "en": [
@@ -6114,9 +5947,9 @@ export const ENTRIES: UIEntry[] = [
         "in-app notification"
       ],
       "ko": [
-        "snackbar",
-        "status toast",
-        "in-app notification"
+        "토스트 알림",
+        "스낵바",
+        "자동 소멸 메시지"
       ]
     },
     "fuzzy": {
@@ -6128,11 +5961,8 @@ export const ENTRIES: UIEntry[] = [
         "small alert at the bottom of the screen"
       ],
       "ko": [
-        "the little message that pops up in the corner",
-        "confirmation that disappears by itself",
-        "saved successfully popup",
-        "temporary message after clicking a button",
-        "small alert at the bottom of the screen"
+        "밑에서 잠시 떴다 사라지는 안내 문구",
+        "복사 완료 토스트"
       ]
     },
     "api": [
@@ -6234,11 +6064,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Three overlay patterns distinguished by placement, scope, and task depth",
-      "ko": "Three overlay patterns distinguished by placement, scope, and task depth"
+      "ko": "화면 중앙 모달 대화상자 및 측면/하단에서 슬라이드하여 올라오는 드로어 패널"
     },
     "description": {
       "en": "A modal dialog is centered, blocks the underlying interface, and suits a short decision or focused task. A drawer slides from a side edge and preserves more visual context for browsing or editing. A sheet is edge-attached too, most often rising from the bottom for compact actions or mobile layouts; all three need explicit dismissal and managed focus when modal.",
-      "ko": "A modal dialog is centered, blocks the underlying interface, and suits a short decision or focused task. A drawer slides from a side edge and preserves more visual context for browsing or editing. A sheet is edge-attached too, most often rising from the bottom for compact actions or mobile layouts; all three need explicit dismissal and managed focus when modal."
+      "ko": "중요한 선택을 요구하는 중앙 모달 대화상자(Dialog)와 화면 가장자리에서 슬라이딩하여 주 흐름을 보조하는 드로어/바텀시트 모달 컨트롤입니다."
     },
     "aka": {
       "en": [
@@ -6248,10 +6078,9 @@ export const ENTRIES: UIEntry[] = [
         "bottom sheet"
       ],
       "ko": [
-        "modal",
-        "side panel",
-        "slide-over",
-        "bottom sheet"
+        "모달 대화상자",
+        "드로어 패널",
+        "바텀 시트"
       ]
     },
     "fuzzy": {
@@ -6263,11 +6092,8 @@ export const ENTRIES: UIEntry[] = [
         "the floating box with a dark background behind it"
       ],
       "ko": [
-        "the popup in the middle that blocks the page",
-        "the panel that slides in from the side",
-        "the tray that comes up from the bottom",
-        "an overlay for editing without leaving the page",
-        "the floating box with a dark background behind it"
+        "아래에서 슬라이드로 올라오는 패널",
+        "화면 중앙 팝업 모달"
       ]
     },
     "api": [
@@ -6357,11 +6183,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Three anchored overlays with different triggers, content, and dismissal rules",
-      "ko": "Three anchored overlays with different triggers, content, and dismissal rules"
+      "ko": "호버 시 안내를 주는 툴팁과 클릭 시 상세 옵션을 보여주는 팝오버/드롭다운"
     },
     "description": {
       "en": "A popover opens on click and can contain rich text, controls, or forms; it stays until explicitly or externally dismissed. A dropdown menu also opens on click, but presents a keyboard-navigable list of actions and normally closes after selection. A tooltip is a brief, non-interactive label that appears on hover or keyboard focus and disappears when that trigger is left or blurred.",
-      "ko": "A popover opens on click and can contain rich text, controls, or forms; it stays until explicitly or externally dismissed. A dropdown menu also opens on click, but presents a keyboard-navigable list of actions and normally closes after selection. A tooltip is a brief, non-interactive label that appears on hover or keyboard focus and disappears when that trigger is left or blurred."
+      "ko": "마우스 호버 시 보조 텍스트를 제공하는 툴팁, 클릭 시 목록을 여는 드롭다운 및 부유형 말풍선 팝오버를 아우르는 부유 레이어 트리오입니다."
     },
     "aka": {
       "en": [
@@ -6371,10 +6197,9 @@ export const ENTRIES: UIEntry[] = [
         "toggletip"
       ],
       "ko": [
-        "popup",
-        "menu",
-        "hover hint",
-        "toggletip"
+        "툴팁",
+        "드롭다운",
+        "말풍선 팝오버"
       ]
     },
     "fuzzy": {
@@ -6386,11 +6211,8 @@ export const ENTRIES: UIEntry[] = [
         "the tiny explanation next to an icon"
       ],
       "ko": [
-        "the little box attached to a button",
-        "the list that opens under a menu button",
-        "the label that appears when you hover",
-        "a popup with controls inside it",
-        "the tiny explanation next to an icon"
+        "마우스 올리면 나오는 힌트 창",
+        "클릭 시 떨어지는 메뉴 목록"
       ]
     },
     "api": [
@@ -6499,11 +6321,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The translucent layer that separates a modal surface from the page",
-      "ko": "The translucent layer that separates a modal surface from the page"
+      "ko": "모달이나 팝업 뒤쪽에 깔려 주 화면의 시선을 차단하고 모달을 강조하는 어두운 오버레이"
     },
     "description": {
       "en": "A scrim is the translucent full-area layer between an open modal surface and the content behind it. It lowers background contrast, prevents accidental interaction, and makes the active layer obvious. Native HTML dialogs expose this layer as the ::backdrop pseudo-element.",
-      "ko": "A scrim is the translucent full-area layer between an open modal surface and the content behind it. It lowers background contrast, prevents accidental interaction, and makes the active layer obvious. Native HTML dialogs expose this layer as the ::backdrop pseudo-element."
+      "ko": "스크림(Scrim)은 레이어 팝업이나 모달이 활성화되었을 때 뒤쪽 배경 전체를 반투명 어둡게(Dimming) 처리하여 가독성을 극대화하고 외부 클릭 닫기 이벤트를 수신하는 레이어입니다."
     },
     "aka": {
       "en": [
@@ -6512,9 +6334,9 @@ export const ENTRIES: UIEntry[] = [
         "modal overlay"
       ],
       "ko": [
-        "backdrop",
-        "overlay",
-        "modal overlay"
+        "딤 오버레이",
+        "배경 딤처리",
+        "스크림 레이어"
       ]
     },
     "fuzzy": {
@@ -6527,12 +6349,8 @@ export const ENTRIES: UIEntry[] = [
         "the greyed out background behind a popup"
       ],
       "ko": [
-        "the dark see-through layer behind a popup",
-        "the page dimming when a modal opens",
-        "the grey overlay behind a dialog",
-        "the layer that blocks clicks behind the panel",
-        "the faded background under a popup",
-        "the greyed out background behind a popup"
+        "팝업 떴을 때 뒤에 어두워지는 배경",
+        "모달 딤 레이어"
       ]
     },
     "api": [
@@ -6627,11 +6445,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Two loading indicators for predictable layouts and indeterminate waits",
-      "ko": "Two loading indicators for predictable layouts and indeterminate waits"
+      "ko": "데이터 로딩 중 레이아웃 구조를 미리 보여주는 스켈레톤과 회전형 스피너"
     },
     "description": {
       "en": "A skeleton previews the geometry of content that has not arrived, reducing layout shift and making a predictable page feel faster. A spinner communicates an indeterminate wait when the eventual shape is unknown or the operation is detached from a specific layout. Neither should remain after the result or error state is available.",
-      "ko": "A skeleton previews the geometry of content that has not arrived, reducing layout shift and making a predictable page feel faster. A spinner communicates an indeterminate wait when the eventual shape is unknown or the operation is detached from a specific layout. Neither should remain after the result or error state is available."
+      "ko": "콘텐츠 수신 전 레이아웃 뼈대를 회색 펄스 애니메이션으로 보여주는 스켈레톤 UI 및 대기 상태를 나타내는 로딩 스피너 컨트롤입니다."
     },
     "aka": {
       "en": [
@@ -6641,10 +6459,9 @@ export const ENTRIES: UIEntry[] = [
         "throbber"
       ],
       "ko": [
-        "skeleton screen",
-        "placeholder loader",
-        "loading spinner",
-        "throbber"
+        "스켈레톤 UI",
+        "로딩 스피너",
+        "뼈대 레이아웃"
       ]
     },
     "fuzzy": {
@@ -6656,11 +6473,8 @@ export const ENTRIES: UIEntry[] = [
         "loading animation in an empty area"
       ],
       "ko": [
-        "the grey shapes while content loads",
-        "the pulsing placeholder version of a card",
-        "the spinning circle while waiting",
-        "fake text lines shown before data arrives",
-        "loading animation in an empty area"
+        "로딩 중 회색 회색 뼈대 나오는 효과",
+        "로딩 중 회전하는 스피너"
       ]
     },
     "api": [
@@ -6770,11 +6584,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A text input paired with a filtered list of selectable suggestions",
-      "ko": "A text input paired with a filtered list of selectable suggestions"
+      "ko": "직접 텍스트 입력과 드롭다운 리스트 옵션 선택이 모두 가능한 복합 입력 컨트롤"
     },
     "description": {
       "en": "A combobox combines an editable text field with a popup list of matching values. Typing narrows the choices while arrow keys move the active option and Enter commits it. Unlike a plain select, it supports searching or free-form input depending on the product rules.",
-      "ko": "A combobox combines an editable text field with a popup list of matching values. Typing narrows the choices while arrow keys move the active option and Enter commits it. Unlike a plain select, it supports searching or free-form input depending on the product rules."
+      "ko": "콤보박스는 자유로운 키보드 입력과 드롭다운 추천 선택목록을 결합하여, 자동완성 검색 및 직접 생성을 동시에 지원하는 입력 요소입니다."
     },
     "aka": {
       "en": [
@@ -6784,10 +6598,9 @@ export const ENTRIES: UIEntry[] = [
         "editable dropdown"
       ],
       "ko": [
-        "autocomplete",
-        "typeahead",
-        "search select",
-        "editable dropdown"
+        "콤보박스",
+        "드롭다운 입력창",
+        "자동완성 피커"
       ]
     },
     "fuzzy": {
@@ -6799,11 +6612,8 @@ export const ENTRIES: UIEntry[] = [
         "the address field that autocompletes"
       ],
       "ko": [
-        "the input that suggests options as you type",
-        "a searchable dropdown field",
-        "the text box with matching results underneath",
-        "a select where you can type to filter",
-        "the address field that autocompletes"
+        "직접 칠 수도 있고 목록에서 고를 수도 있는 입력창",
+        "자동완성 콤보박스"
       ]
     },
     "api": [
@@ -6930,11 +6740,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A keyboard-first searchable launcher for actions and navigation",
-      "ko": "A keyboard-first searchable launcher for actions and navigation"
+      "ko": "단축키(⌘K)로 열어 모든 기능과 페이지를 키보드로 즉시 검색 및 실행하는 커맨드 창"
     },
     "description": {
       "en": "A command palette is a keyboard-first overlay that searches actions, pages, and objects from one place. It commonly opens with ⌘K or Ctrl+K, highlights one result at a time, and executes the selected command with Enter. It is broader than a combobox because it launches heterogeneous commands rather than choosing one field value.",
-      "ko": "A command palette is a keyboard-first overlay that searches actions, pages, and objects from one place. It commonly opens with ⌘K or Ctrl+K, highlights one result at a time, and executes the selected command with Enter. It is broader than a combobox because it launches heterogeneous commands rather than choosing one field value."
+      "ko": "커맨드 팔레트(Command Palette)는 키보드 중심의 중앙 오버레이 검색 창으로, 앱 내 모든 메뉴, 설정, 바로가기 명령을 실시간 검색하여 실행할 수 있는 생산성 도구입니다."
     },
     "aka": {
       "en": [
@@ -6944,10 +6754,9 @@ export const ENTRIES: UIEntry[] = [
         "command bar"
       ],
       "ko": [
-        "command menu",
-        "quick actions",
-        "launcher",
-        "command bar"
+        "커맨드 팔레트",
+        "⌘K 검색창",
+        "스포트라이트 검색"
       ]
     },
     "fuzzy": {
@@ -6960,12 +6769,8 @@ export const ENTRIES: UIEntry[] = [
         "the cmd k popup"
       ],
       "ko": [
-        "the command k menu",
-        "the searchable list of app actions",
-        "the quick launcher in the middle of the screen",
-        "the keyboard popup for jumping anywhere",
-        "the vscode style command search",
-        "the cmd k popup"
+        "단축키 누르면 뜨는 전체 명령 검색창",
+        "커맨드 K 팝업창"
       ]
     },
     "api": [
@@ -7080,11 +6885,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Stacked sections whose headings expand and collapse their content",
-      "ko": "Stacked sections whose headings expand and collapse their content"
+      "ko": "헤더를 클릭하면 해당 하위 섹션 내용이 수직으로 펼쳐지고 닫히는 수직 접이식 패널"
     },
     "description": {
       "en": "An accordion is a vertical stack of headings that disclose or hide associated content. Opening a section expands it in place and moves the sections below, with either one or several panels allowed open depending on the pattern. Native details and summary elements provide the basic disclosure semantics.",
-      "ko": "An accordion is a vertical stack of headings that disclose or hide associated content. Opening a section expands it in place and moves the sections below, with either one or several panels allowed open depending on the pattern. Native details and summary elements provide the basic disclosure semantics."
+      "ko": "아코디언은 FAQ나 긴 문서 메뉴에서 공간을 효율적으로 절약하기 위해 각 카테고리 제목을 클릭할 때 해당 내용만 아래로 펼쳐주는 접이식 레이아웃입니다."
     },
     "aka": {
       "en": [
@@ -7094,10 +6899,9 @@ export const ENTRIES: UIEntry[] = [
         "expander"
       ],
       "ko": [
-        "disclosure",
-        "expandable sections",
-        "collapse",
-        "expander"
+        "아코디언 메뉴",
+        "접이식 리스트",
+        "토글 패널"
       ]
     },
     "fuzzy": {
@@ -7109,11 +6913,8 @@ export const ENTRIES: UIEntry[] = [
         "the section that pushes content down when opened"
       ],
       "ko": [
-        "the list where rows open to show more",
-        "expand and collapse sections",
-        "the faq with clickable questions",
-        "stacked panels with little chevrons",
-        "the section that pushes content down when opened"
+        "질문 누르면 밑에 답변 펼쳐지는 아코디언",
+        "클릭하면 아래로 열리는 리스트"
       ]
     },
     "api": [
@@ -7214,11 +7015,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A single row of labels that switches one shared content region",
-      "ko": "A single row of labels that switches one shared content region"
+      "ko": "동일 구역에서 여러 뷰 항목을 상단 탭 버튼으로 전환하며 보여주는 레이아웃"
     },
     "description": {
       "en": "Tabs organize peer views into one shared region, with exactly one tab and panel active at a time. The selected label is visually persistent, often with an underline, and keyboard users move across the tab list with arrow keys. Use them for closely related views, not for a sequential workflow.",
-      "ko": "Tabs organize peer views into one shared region, with exactly one tab and panel active at a time. The selected label is visually persistent, often with an underline, and keyboard users move across the tab list with arrow keys. Use them for closely related views, not for a sequential workflow."
+      "ko": "탭(Tabs) 요소는 동등한 계층의 복수 화면 영역을 한정된 공간 안에서 수평 버튼 집합으로 상호 교체하며 탐색할 수 있는 비주얼 컨테이너입니다."
     },
     "aka": {
       "en": [
@@ -7227,9 +7028,9 @@ export const ENTRIES: UIEntry[] = [
         "tab bar"
       ],
       "ko": [
-        "tabbed interface",
-        "tab list",
-        "tab bar"
+        "탭 메뉴",
+        "탭 뷰어",
+        "탭 컨트롤"
       ]
     },
     "fuzzy": {
@@ -7241,11 +7042,8 @@ export const ENTRIES: UIEntry[] = [
         "browser tab style navigation inside a page"
       ],
       "ko": [
-        "the row of labels that switches the panel below",
-        "sections with an underline under the active one",
-        "clickable headings for changing views",
-        "the horizontal switcher above content",
-        "browser tab style navigation inside a page"
+        "상단 탭 눌러서 화면 바꾸기",
+        "탭 전환 메뉴"
       ]
     },
     "api": [
@@ -7343,11 +7141,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Compact labels distinguished by meaning, shape, and interactivity",
-      "ko": "Compact labels distinguished by meaning, shape, and interactivity"
+      "ko": "카운트, 카테고리 상태, 태그 속성을 나타내는 작고 둥근 타원 형태의 레이블"
     },
     "description": {
       "en": "A badge is a tiny count or status marker attached to another object. A chip is a compact interactive token that can be selected, edited, or removed; a pill describes the capsule shape rather than a strict behavior. A tag is usually non-interactive category metadata, so choose the term from its job rather than from rounded corners alone.",
-      "ko": "A badge is a tiny count or status marker attached to another object. A chip is a compact interactive token that can be selected, edited, or removed; a pill describes the capsule shape rather than a strict behavior. A tag is usually non-interactive category metadata, so choose the term from its job rather than from rounded corners alone."
+      "ko": "작은 숫자를 나타내는 배지(Badge), 필터링 토글이 가능한 칩(Chip), 태그 스타일의 알약 모양 피어(Pill) 컨트롤 모음입니다."
     },
     "aka": {
       "en": [
@@ -7356,9 +7154,9 @@ export const ENTRIES: UIEntry[] = [
         "capsule"
       ],
       "ko": [
-        "token",
-        "lozenge",
-        "capsule"
+        "배지",
+        "칩 버튼",
+        "필 라벨"
       ]
     },
     "fuzzy": {
@@ -7371,12 +7169,9 @@ export const ENTRIES: UIEntry[] = [
         "the little red dot on an icon"
       ],
       "ko": [
-        "the little number bubble on an icon",
-        "the rounded label with an x",
-        "the capsule shaped status label",
-        "the small category label on a card",
-        "the removable filter bubble",
-        "the little red dot on an icon"
+        "알약 모양 태그",
+        "둥근 칩 라벨",
+        "숫자 알림 배지"
       ]
     },
     "api": [
@@ -7488,11 +7283,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A hierarchy trail from the current page back to its ancestors",
-      "ko": "A hierarchy trail from the current page back to its ancestors"
+      "ko": "현재 페이지가 전체 사이트 계층의 어느 위치에 있는지 보여주는 경로 탐색 텍스트 바"
     },
     "description": {
       "en": "Breadcrumbs show the current page's position in a hierarchy and offer direct links back to its ancestors. The final item is the current location rather than a link, and separators are decorative. Deep paths may collapse middle levels into an ellipsis without hiding the root or current page.",
-      "ko": "Breadcrumbs show the current page's position in a hierarchy and offer direct links back to its ancestors. The final item is the current location rather than a link, and separators are decorative. Deep paths may collapse middle levels into an ellipsis without hiding the root or current page."
+      "ko": "브레드크럼(Breadcrumbs / 빵부스러기 경로)은 상위 카테고리부터 현재 위치까지의 이동 경로(예: 홈 > 제품 > 카테고리)를 계층적 링크 라인으로 제공합니다."
     },
     "aka": {
       "en": [
@@ -7501,9 +7296,9 @@ export const ENTRIES: UIEntry[] = [
         "hierarchy trail"
       ],
       "ko": [
-        "breadcrumb trail",
-        "path navigation",
-        "hierarchy trail"
+        "경로 표시줄",
+        "브레드크럼",
+        "위치 안내 경로"
       ]
     },
     "fuzzy": {
@@ -7515,11 +7310,8 @@ export const ENTRIES: UIEntry[] = [
         "the row with chevrons between page names"
       ],
       "ko": [
-        "the home slash section slash current page links",
-        "the trail above a page title",
-        "links showing where you are in the site",
-        "the folder path style navigation",
-        "the row with chevrons between page names"
+        "홈 > 카테고리 > 현재페이지 같은 경로 표시",
+        "빵부스러기 내비게이션"
       ]
     },
     "api": [
@@ -7617,11 +7409,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Two ways to keep an element visible with different containing blocks",
-      "ko": "Two ways to keep an element visible with different containing blocks"
+      "ko": "스크롤을 내려도 뷰포트 상단이나 특정 위치에 고정되어 유지되는 스티키 요율"
     },
     "description": {
       "en": "A sticky element participates in normal layout until scrolling reaches its inset, then stays pinned within its containing scroll area. A fixed element is removed from normal flow and anchored to the viewport or a transformed containing block from the start. Sticky is usually right for table and section headers; fixed is typical for persistent viewport controls.",
-      "ko": "A sticky element participates in normal layout until scrolling reaches its inset, then stays pinned within its containing scroll area. A fixed element is removed from normal flow and anchored to the viewport or a transformed containing block from the start. Sticky is usually right for table and section headers; fixed is typical for persistent viewport controls."
+      "ko": "스크롤 흐름에 따라 움직이다가 특정 임계점 도달 시 화면 고정(Sticky)되거나 상시 지정 위치에 고정(Fixed)되는 레이아웃 포지셔닝입니다."
     },
     "aka": {
       "en": [
@@ -7630,9 +7422,9 @@ export const ENTRIES: UIEntry[] = [
         "pinned element"
       ],
       "ko": [
-        "sticky header",
-        "fixed header",
-        "pinned element"
+        "스티키 헤더",
+        "고정 레이아웃",
+        "픽스드 바"
       ]
     },
     "fuzzy": {
@@ -7644,11 +7436,8 @@ export const ENTRIES: UIEntry[] = [
         "the floating button fixed in the corner"
       ],
       "ko": [
-        "the header that stays while the panel scrolls",
-        "the bar pinned to the top of the screen",
-        "the element that starts scrolling then gets stuck",
-        "keep this visible while scrolling",
-        "the floating button fixed in the corner"
+        "스크롤 내려도 상단에 붙어있는 메뉴",
+        "스티키 포지션"
       ]
     },
     "api": [
@@ -7725,11 +7514,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The keyboard-aware outline that identifies the active control",
-      "ko": "The keyboard-aware outline that identifies the active control"
+      "ko": "웹 접근성 표준에 따라 키보드 탭 탐색 시 도달한 요소에 표시되는 :focus-visible 아웃라인"
     },
     "description": {
       "en": "A focus ring identifies the element that will receive the next keyboard action. The :focus pseudo-class matches any focused element, while :focus-visible lets the browser show the strong indicator when the input modality or control needs it, most notably during keyboard navigation. Never remove the default outline without supplying an equally visible replacement.",
-      "ko": "A focus ring identifies the element that will receive the next keyboard action. The :focus pseudo-class matches any focused element, while :focus-visible lets the browser show the strong indicator when the input modality or control needs it, most notably during keyboard navigation. Never remove the default outline without supplying an equally visible replacement."
+      "ko": "웹 포커스 링은 마우스 클릭 시에는 감추어지고 키보드 탭(Tab) 조작 시에만 활성화되어 명확한 입력 포커스 위치를 보여주는 접근성 필수 윤곽선입니다."
     },
     "aka": {
       "en": [
@@ -7738,9 +7527,9 @@ export const ENTRIES: UIEntry[] = [
         "focus halo"
       ],
       "ko": [
-        "focus indicator",
-        "keyboard focus outline",
-        "focus halo"
+        "웹 포커스 링",
+        ":focus-visible",
+        "키보드 외곽선"
       ]
     },
     "fuzzy": {
@@ -7752,11 +7541,8 @@ export const ENTRIES: UIEntry[] = [
         "the ring that should not appear on every mouse click"
       ],
       "ko": [
-        "the outline around a button after pressing tab",
-        "the blue ring on the selected control",
-        "keyboard navigation highlight",
-        "the border showing which button has focus",
-        "the ring that should not appear on every mouse click"
+        "탭키로 이동할 때 생기는 아웃라인",
+        "웹 포커스 하이라이트"
       ]
     },
     "api": [
@@ -7835,11 +7621,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Purposeful guidance shown when a view has no content yet",
-      "ko": "Purposeful guidance shown when a view has no content yet"
+      "ko": "검색 결과가 없거나 데이터가 비어있을 때 안내 일러스트와 행동 유도 버튼을 보여주는 화면"
     },
     "description": {
       "en": "An empty state replaces a content view when there are no items to show, whether on first use, after filtering, or after everything is removed. It explains the situation without blame and offers the most useful next action. It is a designed product state, not merely whitespace or an error message.",
-      "ko": "An empty state replaces a content view when there are no items to show, whether on first use, after filtering, or after everything is removed. It explains the situation without blame and offers the most useful next action. It is a designed product state, not merely whitespace or an error message."
+      "ko": "빈 상태 화면(Empty State)은 데이터가 없거나 알림이 비어있는 상황에서 사용자가 당황하지 않도록 친절한 일러스트, 상황 설명, 다음 액션 버튼을 제시하는 안내 뷰입니다."
     },
     "aka": {
       "en": [
@@ -7849,10 +7635,9 @@ export const ENTRIES: UIEntry[] = [
         "no-results state"
       ],
       "ko": [
-        "blank state",
-        "zero state",
-        "first-use state",
-        "no-results state"
+        "빈 상태 화면",
+        "결과 없음 뷰",
+        "Empty State"
       ]
     },
     "fuzzy": {
@@ -7864,11 +7649,8 @@ export const ENTRIES: UIEntry[] = [
         "what to show instead of an empty white box"
       ],
       "ko": [
-        "the screen shown when there is nothing here",
-        "the panel before the user creates their first item",
-        "the no results message with a button",
-        "the blank list explanation",
-        "what to show instead of an empty white box"
+        "데이터 없을 때 나오는 안내 화면",
+        "검색 결과 없음 뷰"
       ]
     },
     "api": [
@@ -7948,11 +7730,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A rich, non-modal preview revealed from a hovered or focused reference",
-      "ko": "A rich, non-modal preview revealed from a hovered or focused reference"
+      "ko": "마우스 커서를 링크나 프로필 위에 올리면 팝업되어 세부 정보를 미리 보여주는 카드"
     },
     "description": {
       "en": "A hover card is a rich preview associated with a person, place, or linked object. It reveals more information than a tooltip and may include passive metadata or a small number of actions, while leaving the underlying page usable. Its open and close delays must allow the pointer to move from the trigger into the card without flicker.",
-      "ko": "A hover card is a rich preview associated with a person, place, or linked object. It reveals more information than a tooltip and may include passive metadata or a small number of actions, while leaving the underlying page usable. Its open and close delays must allow the pointer to move from the trigger into the card without flicker."
+      "ko": "호버 카드는 사용자명이나 링크 위에 커서를 잠시 멈췄을 때 약식 프로필, 미디어 미리보기, 팔로우 버튼 등을 오버레이로 제공하는 미니 프레임입니다."
     },
     "aka": {
       "en": [
@@ -7961,9 +7743,9 @@ export const ENTRIES: UIEntry[] = [
         "preview card"
       ],
       "ko": [
-        "hover preview",
-        "profile preview",
-        "preview card"
+        "호버 카드",
+        "미리보기 팝업",
+        "프로필 호버 뷰"
       ]
     },
     "fuzzy": {
@@ -7975,11 +7757,8 @@ export const ENTRIES: UIEntry[] = [
         "the preview before opening a profile"
       ],
       "ko": [
-        "the profile preview when you hover a username",
-        "the rich popup that appears over a link",
-        "the little user card shown on hover",
-        "a tooltip with an avatar and details",
-        "the preview before opening a profile"
+        "아이디에 마우스 대면 뜨는 프로필 창",
+        "미리보기 호버 카드"
       ]
     },
     "api": [
@@ -8062,11 +7841,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "Controls for an on/off setting, independent choices, or one choice from a group",
-      "ko": "Controls for an on/off setting, independent choices, or one choice from a group"
+      "ko": "ON/OFF 토글 스위치, 다중 선택 체크박스, 단일 선택 라디오 버튼 삼총사"
     },
     "description": {
       "en": "A switch controls a binary setting and communicates that the change takes effect immediately, like turning notifications on. A checkbox represents an independent form value and may wait for Save or Submit; several checkboxes can be selected. Radio buttons form a named group in which choosing one option clears the others.",
-      "ko": "A switch controls a binary setting and communicates that the change takes effect immediately, like turning notifications on. A checkbox represents an independent form value and may wait for Save or Submit; several checkboxes can be selected. Radio buttons form a named group in which choosing one option clears the others."
+      "ko": "설정 변경 시 사용되는 스위치(Switch), 복수 항목 선택에 쓰는 체크박스(Checkbox), 그룹 중 단 하나만 고르는 라디오 버튼(Radio) 모음입니다."
     },
     "aka": {
       "en": [
@@ -8076,10 +7855,9 @@ export const ENTRIES: UIEntry[] = [
         "option button"
       ],
       "ko": [
-        "toggle switch",
-        "check box",
-        "radio button",
-        "option button"
+        "스위치",
+        "체크박스",
+        "라디오 버튼"
       ]
     },
     "fuzzy": {
@@ -8091,11 +7869,9 @@ export const ENTRIES: UIEntry[] = [
         "choose several versus choose exactly one"
       ],
       "ko": [
-        "the on off sliding control",
-        "the square box with a checkmark",
-        "the circles where only one can be picked",
-        "a setting that changes immediately",
-        "choose several versus choose exactly one"
+        "온오프 스위치 버튼",
+        "체크 표시 박스",
+        "하나만 선택되는 동그라미 버튼"
       ]
     },
     "api": [
@@ -8215,11 +7991,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "A connected row of compact options with one persistent selection",
-      "ko": "A connected row of compact options with one persistent selection"
+      "ko": "서로 연관된 단일/다중 옵션 토글 버튼들을 하나로 정렬 결합한 버튼 그룹"
     },
     "description": {
       "en": "A toggle group is a compact row of related buttons that behave as one selection control. In single-select form it is often called a segmented control and works well for switching a view or mode immediately. Unlike tabs, it changes a setting or presentation rather than labeling separate content panels.",
-      "ko": "A toggle group is a compact row of related buttons that behave as one selection control. In single-select form it is often called a segmented control and works well for switching a view or mode immediately. Unlike tabs, it changes a setting or presentation rather than labeling separate content panels."
+      "ko": "토글 그룹은 텍스트 정렬(좌, 우, 중앙)이나 서식(볼드, 이탤릭)처럼 관련 선택 옵션들을 하나의 컴팩트한 수평 라인으로 모아놓은 토글 집합 컨트롤입니다."
     },
     "aka": {
       "en": [
@@ -8229,10 +8005,9 @@ export const ENTRIES: UIEntry[] = [
         "segmented button"
       ],
       "ko": [
-        "segmented control",
-        "button group",
-        "view switcher",
-        "segmented button"
+        "토글 그룹",
+        "옵션 버튼 그룹",
+        "서식 토글 바"
       ]
     },
     "fuzzy": {
@@ -8244,11 +8019,8 @@ export const ENTRIES: UIEntry[] = [
         "the ios style segmented buttons on the web"
       ],
       "ko": [
-        "the connected row of buttons where one stays selected",
-        "the compact view switcher with segments",
-        "the group of pill buttons for list or grid",
-        "three choices inside one rounded control",
-        "the ios style segmented buttons on the web"
+        "정렬 옵션처럼 묶여있는 토글 버튼들",
+        "그룹 토글 버튼"
       ]
     },
     "api": [
@@ -8336,11 +8108,11 @@ export const ENTRIES: UIEntry[] = [
     },
     "tagline": {
       "en": "The icon that lives on the right side of the macOS menu bar",
-      "ko": "The icon that lives on the right side of the macOS menu bar"
+      "ko": "Mac 메뉴 바 우측 상단 영역에 표시되는 아이콘 형태의 백그라운드 앱 및 제어 아이콘"
     },
     "description": {
       "en": "A menu bar extra is the small icon on the right side of the macOS menu bar, next to the clock — Wi-Fi, battery, and third-party apps all live here. In AppKit it is an NSStatusItem; SwiftUI calls the whole construct a MenuBarExtra. When you click one, its button enters the highlighted state — a pale rounded background that stays visible for as long as its menu or popover is open, then fades when the menu closes.",
-      "ko": "A menu bar extra is the small icon on the right side of the macOS menu bar, next to the clock — Wi-Fi, battery, and third-party apps all live here. In AppKit it is an NSStatusItem; SwiftUI calls the whole construct a MenuBarExtra. When you click one, its button enters the highlighted state — a pale rounded background that stays visible for as long as its menu or popover is open, then fades when the menu closes."
+      "ko": "메뉴 바 익스트라(Menu Bar Extra)는 시계, Wi-Fi, 배터리, 및 서드파티 백그라운드 앱이 화면 상단 오른쪽에 아이콘으로 상주하며 Quick 상태 조작을 제공하는 위젯입니다."
     },
     "aka": {
       "en": [
@@ -8351,11 +8123,9 @@ export const ENTRIES: UIEntry[] = [
         "tray icon (Windows term)"
       ],
       "ko": [
-        "status item",
-        "menu bar icon",
-        "menu bar app",
-        "status bar item",
-        "tray icon (Windows term)"
+        "상단 메뉴바 아이콘",
+        "상태 표시줄 아이콘",
+        "메뉴 바 익스트라"
       ]
     },
     "fuzzy": {
@@ -8368,12 +8138,8 @@ export const ENTRIES: UIEntry[] = [
         "app icon at the top of the screen with a dropdown"
       ],
       "ko": [
-        "the icon in the top right of the mac menu bar",
-        "pale background behind the menu bar icon when you click it",
-        "highlighted state when the menu bar icon's menu is open",
-        "little icon next to the clock on mac",
-        "system tray icon on mac",
-        "app icon at the top of the screen with a dropdown"
+        "맥 화면 오른쪽 위에 있는 와이파이나 시계 아이콘",
+        "메뉴바 위젯 아이콘"
       ]
     },
     "api": [

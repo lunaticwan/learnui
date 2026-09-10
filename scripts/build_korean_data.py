@@ -113,68 +113,6 @@ STYLE_NAME_KO = {
     "lcars": "LCARS (스타트렉 컴퓨터 시스템)"
 }
 
-# 한국어 구어체/자연어 묘사 매핑 강화
-FUZZY_AKA_TRANSLATION_MAP = {
-    "decode effect": "디코드 효과",
-    "matrix text effect": "매트릭스 텍스트 효과",
-    "shuffle text": "셔플 텍스트",
-    "the text that shuffles random letters until it spells the word": "글자가 무작위로 교체되다가 단어로 확정되는 텍스트",
-    "the matrix style decoding text": "매트릭스 스타일의 디코딩 텍스트",
-    "letters cycling before they land on the real ones": "진짜 문자로 정착하기 전에 글자가 계속 회전하는 효과",
-    "the hacker text effect": "해커 스타일 텍스트 효과",
-    "glitchy letters that resolve into a title": "글리치 문자가 제목으로 변하는 효과",
-    "physics bounce": "물리 기반 바운스",
-    "spring physics": "스프링 물리학",
-    "overshoot animation": "오버슈트 애니메이션",
-    "the animation that overshoots and settles": "목표를 살짝 지나쳤다가 잔잔하게 정지하는 애니메이션",
-    "bouncy ui motion": "탄성 있는 UI 모션",
-    "smooth natural animation": "부드럽고 자연스러운 애니메이션",
-    "the menu button with three lines": "줄 3개 있는 메뉴 버튼",
-    "the three horizontal bars in the corner": "모서리에 있는 수평선 3개 버튼",
-    "hamburger icon": "햄버거 아이콘",
-    "three dots": "점 세 개",
-    "more options button": "더보기 버튼",
-    "meatball menu": "밋볼 메뉴 (가로 점 3개)",
-    "kebab menu": "케밥 메뉴 (세로 점 3개)",
-    "dots menu": "점 3개 메뉴",
-    "text truncation": "텍스트 줄임표 처리",
-    "ellipsis": "말줄임표",
-    "cut off text with three dots": "말줄임표로 잘린 텍스트",
-    "line clamp": "라인 클램프",
-}
-
-def translate_text_to_ko(text_en, text_zh=""):
-    if not text_en and not text_zh:
-        return ""
-
-    base = text_en if text_en else text_zh
-    t = base
-
-    if t in FUZZY_AKA_TRANSLATION_MAP:
-        return FUZZY_AKA_TRANSLATION_MAP[t]
-
-    dict_map = {
-        "Random characters churn and settle into the real text": "무작위 문자가 교체되다가 올바른 텍스트로 정착합니다.",
-        "Based on physics: overshoots the target and gently settles": "물리 기반 운동: 목표 지점을 지나쳤다가 잔잔히 정지합니다.",
-        "Speed curve of an animation — determines if motion feels smooth or mechanical": "애니메이션 속도 곡선 — 부드럽거나 딱딱한 움직임을 결정합니다.",
-        "Multi-column masonry grid layout with variable height cards": "높이가 다른 카드가 격자 형태로 배치되는 메이슨리 레이아웃.",
-        "Modular grid layout inspired by Japanese bento boxes": "일본식 도시락 용기에서 영감을 받은 모듈형 그리드 레이아웃.",
-        "Three-bar toggle button for opening navigation drawer": "내비게이션 드로어를 여는 3선 토글 버튼.",
-        "Overlay modal window for viewing media in full detail": "미디어를 상세히 감상할 수 있는 오버레이 모달 창.",
-        "Continuously scrolling horizontal text strip": "수평으로 계속 흐르는 텍스트 스트립.",
-        "The canonical implementation — free since GSAP 3.13": "GSAP 3.13부터 무료로 제공되는 표준 구현 방식.",
-        "the hand-rolled version: per-character reveal deadline, random glyphs until then": "직접 구현 방식: 문자별 전환 시간과 무작위 글꼴 교체.",
-        "Apple platform counterpart": "Apple 플랫폼 대응 API.",
-        "CSS linear() easing curve": "CSS linear() 이징 곡선.",
-        "web standard": "웹 표준",
-        "macOS standard": "macOS 표준",
-    }
-
-    if t in dict_map:
-        return dict_map[t]
-
-    return t if t else text_zh
-
 def get_str(val, lang="en"):
     if isinstance(val, dict):
         return val.get(lang, val.get("en", ""))
@@ -182,75 +120,58 @@ def get_str(val, lang="en"):
         return val
     return ""
 
+def get_localized_obj(obj, field):
+    v = obj.get(field)
+    if isinstance(v, dict):
+        en_str = v.get("en", "")
+        ko_str = v.get("ko", en_str)
+        return {"en": en_str, "ko": ko_str}
+    elif isinstance(v, str):
+        return {"en": v, "ko": v}
+    return None
+
 def convert_entry(e):
     slug = e.get("slug", "")
     raw_name = get_str(e.get("name"), "en")
     name_ko = ENTRY_NAME_KO.get(slug, raw_name if raw_name else slug)
 
-    raw_aka = e.get("aka", [])
-    if isinstance(raw_aka, dict):
-        aka_en = raw_aka.get("en", [])
-        aka_ko = raw_aka.get("ko", [translate_text_to_ko(item, item) for item in aka_en])
-    else:
-        aka_en = raw_aka if isinstance(raw_aka, list) else []
-        aka_ko = [translate_text_to_ko(item, item) for item in aka_en]
+    tagline = get_localized_obj(e, "tagline")
+    description = get_localized_obj(e, "description")
 
-    raw_fuzzy = e.get("fuzzy", [])
-    if isinstance(raw_fuzzy, dict):
-        fuzzy_en = raw_fuzzy.get("en", [])
-        fuzzy_ko = raw_fuzzy.get("ko", [translate_text_to_ko(item, item) for item in fuzzy_en])
+    aka_dict = e.get("aka", {})
+    if isinstance(aka_dict, dict):
+        aka_en = aka_dict.get("en", [])
+        aka_ko = aka_dict.get("ko", aka_en)
     else:
-        fuzzy_en = raw_fuzzy if isinstance(raw_fuzzy, list) else []
-        fuzzy_ko = [translate_text_to_ko(item, item) for item in fuzzy_en]
+        aka_en = aka_dict if isinstance(aka_dict, list) else []
+        aka_ko = aka_en
+
+    fuzzy_dict = e.get("fuzzy", {})
+    if isinstance(fuzzy_dict, dict):
+        fuzzy_en = fuzzy_dict.get("en", [])
+        fuzzy_ko = fuzzy_dict.get("ko", fuzzy_en)
+    else:
+        fuzzy_en = fuzzy_dict if isinstance(fuzzy_dict, list) else []
+        fuzzy_ko = fuzzy_en
 
     api_list = []
     for a in e.get("api", []):
-        note_en = get_str(a.get("note"), "en")
-        note_zh = get_str(a.get("note"), "zh")
+        note_obj = get_localized_obj(a, "note")
         api_list.append({
             "framework": a.get("framework", ""),
             "symbol": a.get("symbol", ""),
-            "note": {
-                "en": note_en,
-                "ko": translate_text_to_ko(note_en, note_zh)
-            } if note_en or note_zh else None
+            "note": note_obj
         })
 
     parts_list = []
     for p in e.get("parts", []):
-        p_name_en = get_str(p.get("name"), "en")
-        p_name_zh = get_str(p.get("name"), "zh")
-        p_desc_en = get_str(p.get("description"), "en")
-        p_desc_zh = get_str(p.get("description"), "zh")
-        p_prompt_en = get_str(p.get("prompt"), "en")
-        p_prompt_zh = get_str(p.get("prompt"), "zh")
-
         parts_list.append({
             "id": p.get("id", ""),
-            "name": {
-                "en": p_name_en,
-                "ko": translate_text_to_ko(p_name_en, p_name_zh)
-            },
+            "name": get_localized_obj(p, "name"),
             "api": p.get("api", ""),
-            "description": {
-                "en": p_desc_en,
-                "ko": translate_text_to_ko(p_desc_en, p_desc_zh)
-            },
-            "prompt": {
-                "en": p_prompt_en,
-                "ko": translate_text_to_ko(p_prompt_en, p_prompt_zh)
-            } if p_prompt_en or p_prompt_zh else None
+            "description": get_localized_obj(p, "description"),
+            "prompt": get_localized_obj(p, "prompt")
         })
-
-    pr_en = get_str(e.get("prompt"), "en")
-    pr_zh = get_str(e.get("prompt"), "zh")
-    db_en = get_str(e.get("debugPrompt"), "en")
-    db_zh = get_str(e.get("debugPrompt"), "zh")
-
-    tagline_en = get_str(e.get("tagline"), "en")
-    tagline_zh = get_str(e.get("tagline"), "zh")
-    desc_en = get_str(e.get("description"), "en")
-    desc_zh = get_str(e.get("description"), "zh")
 
     return {
         "slug": slug,
@@ -259,14 +180,8 @@ def convert_entry(e):
             "en": raw_name,
             "ko": name_ko
         },
-        "tagline": {
-            "en": tagline_en,
-            "ko": translate_text_to_ko(tagline_en, tagline_zh)
-        },
-        "description": {
-            "en": desc_en,
-            "ko": translate_text_to_ko(desc_en, desc_zh)
-        },
+        "tagline": tagline,
+        "description": description,
         "aka": {
             "en": aka_en,
             "ko": aka_ko
@@ -277,14 +192,8 @@ def convert_entry(e):
         },
         "api": api_list,
         "parts": parts_list,
-        "prompt": {
-            "en": pr_en,
-            "ko": translate_text_to_ko(pr_en, pr_zh)
-        } if pr_en or pr_zh else None,
-        "debugPrompt": {
-            "en": db_en,
-            "ko": translate_text_to_ko(db_en, db_zh)
-        } if db_en or db_zh else None,
+        "prompt": get_localized_obj(e, "prompt"),
+        "debugPrompt": get_localized_obj(e, "debugPrompt"),
         "relatedSlugs": e.get("relatedSlugs", e.get("related", []))
     }
 
@@ -293,69 +202,33 @@ def convert_style(s):
     raw_name = get_str(s.get("name"), "en")
     name_ko = STYLE_NAME_KO.get(slug, raw_name if raw_name else slug)
 
-    tagline_en = get_str(s.get("tagline"), "en")
-    tagline_zh = get_str(s.get("tagline"), "zh")
-    scope_en = get_str(s.get("scope"), "en")
-    scope_zh = get_str(s.get("scope"), "zh")
-
-    raw_aliases = s.get("aliases", [])
-    if isinstance(raw_aliases, dict):
-        aliases_en = raw_aliases.get("en", [])
-        aliases_ko = raw_aliases.get("ko", [translate_text_to_ko(a, a) for a in aliases_en])
+    aliases_dict = s.get("aliases", {})
+    if isinstance(aliases_dict, dict):
+        aliases_en = aliases_dict.get("en", [])
+        aliases_ko = aliases_dict.get("ko", aliases_en)
     else:
-        aliases_en = raw_aliases if isinstance(raw_aliases, list) else []
-        aliases_ko = [translate_text_to_ko(a, a) for a in aliases_en]
+        aliases_en = aliases_dict if isinstance(aliases_dict, list) else []
+        aliases_ko = aliases_en
 
     signals_list = []
     for sig in s.get("signals", []):
-        s_name_en = get_str(sig.get("name"), "en")
-        s_name_zh = get_str(sig.get("name"), "zh")
-        s_desc_en = get_str(sig.get("description"), "en")
-        s_desc_zh = get_str(sig.get("description"), "zh")
         signals_list.append({
             "id": sig.get("id", ""),
             "role": sig.get("role", "defining"),
-            "name": {
-                "en": s_name_en,
-                "ko": translate_text_to_ko(s_name_en, s_name_zh)
-            },
+            "name": get_localized_obj(sig, "name"),
             "facet": sig.get("facet", "surface"),
-            "description": {
-                "en": s_desc_en,
-                "ko": translate_text_to_ko(s_desc_en, s_desc_zh)
-            }
+            "description": get_localized_obj(sig, "description")
         })
 
-    confused_raw = s.get("confusedWith", [])
-    if isinstance(confused_raw, dict):
-        confused_raw = [confused_raw]
-
     confused_list = []
-    for c in confused_raw:
+    for c in s.get("confusedWith", []):
         if isinstance(c, dict):
-            because_en = get_str(c.get("because"), "en")
-            because_zh = get_str(c.get("because"), "zh")
-            how_en = get_str(c.get("wouldBecomeIf"), "en")
-            how_zh = get_str(c.get("wouldBecomeIf"), "zh")
             confused_list.append({
                 "slug": c.get("slug", ""),
                 "name": c.get("name", ""),
-                "because": {
-                    "en": because_en,
-                    "ko": translate_text_to_ko(because_en, because_zh)
-                },
-                "wouldBecomeIf": {
-                    "en": how_en,
-                    "ko": translate_text_to_ko(how_en, how_zh)
-                }
+                "because": get_localized_obj(c, "because"),
+                "wouldBecomeIf": get_localized_obj(c, "wouldBecomeIf")
             })
-
-    brief_en = get_str(s.get("brief"), "en")
-    brief_zh = get_str(s.get("brief"), "zh")
-    a11y_en = get_str(s.get("a11yAndMisuse"), "en") if s.get("a11yAndMisuse") else get_str(s.get("accessibility"), "en")
-    a11y_zh = get_str(s.get("a11yAndMisuse"), "zh") if s.get("a11yAndMisuse") else get_str(s.get("accessibility"), "zh")
-    origin_en = get_str(s.get("origin"), "en")
-    origin_zh = get_str(s.get("origin"), "zh")
 
     return {
         "slug": slug,
@@ -363,32 +236,17 @@ def convert_style(s):
             "en": raw_name,
             "ko": name_ko
         },
-        "tagline": {
-            "en": tagline_en,
-            "ko": translate_text_to_ko(tagline_en, tagline_zh)
-        },
-        "scope": {
-            "en": scope_en,
-            "ko": translate_text_to_ko(scope_en, scope_zh)
-        } if scope_en or scope_zh else None,
+        "tagline": get_localized_obj(s, "tagline"),
+        "scope": get_localized_obj(s, "scope"),
         "aliases": {
             "en": aliases_en,
             "ko": aliases_ko
         },
         "signals": signals_list,
         "confusedWith": confused_list,
-        "brief": {
-            "en": brief_en,
-            "ko": translate_text_to_ko(brief_en, brief_zh)
-        } if brief_en or brief_zh else None,
-        "a11yAndMisuse": {
-            "en": a11y_en,
-            "ko": translate_text_to_ko(a11y_en, a11y_zh)
-        } if a11y_en or a11y_zh else None,
-        "origin": {
-            "en": origin_en,
-            "ko": translate_text_to_ko(origin_en, origin_zh)
-        } if origin_en or origin_zh else None,
+        "brief": get_localized_obj(s, "brief"),
+        "a11yAndMisuse": get_localized_obj(s, "a11yAndMisuse"),
+        "origin": get_localized_obj(s, "origin"),
         "meta": s.get("meta", {})
     }
 
