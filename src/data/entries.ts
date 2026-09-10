@@ -6,7 +6,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Text Scramble (Decode Effect)",
-      "ko": "디코드 텍스트 무작위 효과 (Text Scramble)"
+      "ko": "디코드 텍스트 무작위 효과"
     },
     "tagline": {
       "en": "Random characters churn and settle into the real text",
@@ -114,7 +114,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Spring Animation",
-      "ko": "스프링 애니메이션 (Spring Animation)"
+      "ko": "스프링 애니메이션"
     },
     "tagline": {
       "en": "Physics-based motion that overshoots the target and settles",
@@ -217,7 +217,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Easing (Timing Function)",
-      "ko": "이징 효과 (Easing / Timing Function)"
+      "ko": "이징 효과"
     },
     "tagline": {
       "en": "The speed curve of an animation — why motion feels smooth or robotic",
@@ -320,7 +320,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Masonry Layout (Pinterest Grid)",
-      "ko": "메이슨리 레이아웃 (Masonry Grid)"
+      "ko": "메이슨리 레이아웃"
     },
     "tagline": {
       "en": "Cards of different heights packed into columns with no row gaps",
@@ -426,7 +426,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Bento Grid",
-      "ko": "벤토 그리드 (Bento Grid)"
+      "ko": "벤토 그리드"
     },
     "tagline": {
       "en": "One grid, mixed tile sizes — a layout packed like a bento box",
@@ -545,7 +545,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Hamburger Menu (Nav Drawer)",
-      "ko": "햄버거 메뉴 (Hamburger Menu)"
+      "ko": "햄버거 메뉴"
     },
     "tagline": {
       "en": "The three-line button and the navigation panel it slides open",
@@ -670,7 +670,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Lightbox",
-      "ko": "라이트박스 (Lightbox)"
+      "ko": "라이트박스"
     },
     "tagline": {
       "en": "The click-to-enlarge image overlay that dims the page behind it",
@@ -754,7 +754,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Marquee",
-      "ko": "마키 텍스트 (Marquee)"
+      "ko": "마키 텍스트"
     },
     "tagline": {
       "en": "Content that auto-scrolls sideways in an endless loop",
@@ -858,7 +858,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Pointer (Cursor)",
-      "ko": "포인터 및 커서 (Pointer / Cursor)"
+      "ko": "포인터 및 커서"
     },
     "tagline": {
       "en": "Every shape the mouse pointer takes — and the real name of each one",
@@ -956,7 +956,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Alert",
-      "ko": "알림창 (Alert)"
+      "ko": "알림창"
     },
     "tagline": {
       "en": "The small centered window with a badged icon, a bold line, and Cancel/OK buttons",
@@ -1144,7 +1144,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Slider",
-      "ko": "슬라이더 (Slider)"
+      "ko": "슬라이더"
     },
     "tagline": {
       "en": "The round knob you drag along a track to pick a value from a range",
@@ -1307,7 +1307,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Color Well",
-      "ko": "색상 피커 (Color Well)"
+      "ko": "색상 피커"
     },
     "tagline": {
       "en": "The little swatch button that shows the current color and opens the picker",
@@ -1467,7 +1467,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Form Field",
-      "ko": "폼 필드 (Form Field)"
+      "ko": "폼 필드"
     },
     "tagline": {
       "en": "Every part of a labeled input — label, placeholder, helper text, and the red error line",
@@ -1643,7 +1643,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Truncation (Ellipsis & Line Clamp)",
-      "ko": "텍스트 말줄임 (Truncation / Line Clamp)"
+      "ko": "텍스트 말줄임"
     },
     "tagline": {
       "en": "Text cut short with … — at the end of the line, after N lines, or in the middle",
@@ -1803,7 +1803,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Drag & Drop",
-      "ko": "드래그 앤 드롭 (Drag & Drop)"
+      "ko": "드래그 앤 드롭"
     },
     "tagline": {
       "en": "The grips, handles, previews, and landing cues around a drag interaction",
@@ -1972,7 +1972,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Divider vs. Separator vs. Rule",
-      "ko": "구분선 (Divider / Separator)"
+      "ko": "구분선"
     },
     "tagline": {
       "en": "The same thin line can mark a topic break, separate controls, or be decoration",
@@ -2125,7 +2125,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Progress Ring vs. Spinner vs. Progress Bar",
-      "ko": "진행 표시기 (Progress Ring & Bar)"
+      "ko": "진행 표시기"
     },
     "tagline": {
       "en": "A spinner means wait; a ring or bar can show how much work is complete",
@@ -2189,80 +2189,80 @@ export const ENTRIES: UIEntry[] = [
         "id": "spinner",
         "name": {
           "en": "Indeterminate spinner",
-          "ko": "Indeterminate spinner"
+          "ko": "무한 로딩 스피너"
         },
         "api": "role=\"progressbar\"",
         "description": {
           "en": "The spinning circle that keeps looping is an indeterminate spinner: it says work is happening, not how much is left.",
-          "ko": "The spinning circle that keeps looping is an indeterminate spinner: it says work is happening, not how much is left."
+          "ko": "계속 회전하는 원형 스피너는 작업이 진행 중임을 나타내며, 남은 시간을 알 수 없을 때 사용합니다."
         },
         "prompt": {
           "en": "an indeterminate spinner with role=\"progressbar\" and no aria-valuenow: a looping circular stroke used only when the remaining duration or completion amount is unknown",
-          "ko": "an indeterminate spinner with role=\"progressbar\" and no aria-valuenow: a looping circular stroke used only when the remaining duration or completion amount is unknown"
+          "ko": "role=\"progressbar\" 및 aria-valuenow 없이 무한 회전하는 스피너: 남은 시간이나 작업량을 알 수 없을 때 사용"
         }
       },
       {
         "id": "progress-ring",
         "name": {
           "en": "Determinate progress ring",
-          "ko": "Determinate progress ring"
+          "ko": "정량적 프로그레스 링"
         },
         "api": "aria-valuenow",
         "description": {
           "en": "“The ring that fills up” is a determinate progress ring: its circular arc represents a known completion value.",
-          "ko": "“The ring that fills up” is a determinate progress ring: its circular arc represents a known completion value."
+          "ko": "차오르는 링 형태의 진행 표시기는 정해진 작업 완성도를 원형 호 형태로 시각화합니다."
         },
         "prompt": {
           "en": "a determinate progress ring with role=\"progressbar\" and aria-valuenow: a circular arc that visibly fills from empty to complete around a stable track",
-          "ko": "a determinate progress ring with role=\"progressbar\" and aria-valuenow: a circular arc that visibly fills from empty to complete around a stable track"
+          "ko": "role=\"progressbar\" 및 aria-valuenow를 갖춘 정량적 프로그레스 링: 트랙을 따라 원형 호가 차오르는 형태"
         }
       },
       {
         "id": "progress-bar",
         "name": {
           "en": "Linear progress bar",
-          "ko": "Linear progress bar"
+          "ko": "선형 진행 표시줄"
         },
         "api": "<progress>",
         "description": {
           "en": "The bar that fills from one side to the other is a linear progress bar; use <progress> when its value is known.",
-          "ko": "The bar that fills from one side to the other is a linear progress bar; use <progress> when its value is known."
+          "ko": "한쪽에서 다른 쪽으로 차오르는 막대는 선형 진행 표시줄이며, 진행률 수치를 알 때 사용합니다."
         },
         "prompt": {
           "en": "a determinate linear progress bar using HTML <progress>: the filled value advances across a fixed horizontal track from minimum to completion",
-          "ko": "a determinate linear progress bar using HTML <progress>: the filled value advances across a fixed horizontal track from minimum to completion"
+          "ko": "HTML <progress>를 사용한 선형 진행 표시줄: 고정된 가로 트랙을 따라 진행률이 수평으로 진행"
         }
       },
       {
         "id": "progress-track",
         "name": {
           "en": "Progress track",
-          "ko": "Progress track"
+          "ko": "진행 트랙"
         },
         "api": "<progress>",
         "description": {
           "en": "The unfilled rail behind a progress ring or bar is the track; it shows the indicator's full range.",
-          "ko": "The unfilled rail behind a progress ring or bar is the track; it shows the indicator's full range."
+          "ko": "프로그레스 링이나 바 뒤에 위치한 채워지지 않은 배경 레일로, 전체 진행 범위를 나타냅니다."
         },
         "prompt": {
           "en": "the progress track behind the <progress> value: the full, low-contrast rail that remains visible around the unfilled portion of the indicator",
-          "ko": "the progress track behind the <progress> value: the full, low-contrast rail that remains visible around the unfilled portion of the indicator"
+          "ko": "<progress> 값 뒤의 진행 트랙: 채워지지 않은 영역에 표시되는 저대비 배경 레일"
         }
       },
       {
         "id": "percentage-label",
         "name": {
           "en": "Percentage label",
-          "ko": "Percentage label"
+          "ko": "퍼센트 수치 레이블"
         },
         "api": "aria-valuenow",
         "description": {
           "en": "The number beside or inside the indicator is the percentage label, a readable statement of the current progress value.",
-          "ko": "The number beside or inside the indicator is the percentage label, a readable statement of the current progress value."
+          "ko": "진행 표시기 옆이나 내부의 숫자는 현재 진행률 수치를 정확히 보여주는 레이블입니다."
         },
         "prompt": {
           "en": "a percentage label for the progress indicator, such as 72%, kept in sync with role=\"progressbar\" and its aria-valuenow value",
-          "ko": "a percentage label for the progress indicator, such as 72%, kept in sync with role=\"progressbar\" and its aria-valuenow value"
+          "ko": "role=\"progressbar\" 및 aria-valuenow 수치와 동기화되는 진행률 퍼센트 레이블"
         }
       }
     ],
@@ -2284,7 +2284,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Mac Window",
-      "ko": "Mac 윈도우 (Mac Window)"
+      "ko": "Mac 윈도우"
     },
     "tagline": {
       "en": "The movable Mac app frame, from its title bar and toolbar to its resize edges",
@@ -2509,7 +2509,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Split View",
-      "ko": "스플릿 뷰 (Split View)"
+      "ko": "스플릿 뷰"
     },
     "tagline": {
       "en": "Resizable panes separated by a draggable divider inside a Mac window",
@@ -2653,7 +2653,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Scroll View (Scroller)",
-      "ko": "스크롤 뷰 (Scroll View)"
+      "ko": "스크롤 뷰"
     },
     "tagline": {
       "en": "A viewport whose AppKit scrollbar is called a scroller",
@@ -2797,7 +2797,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Search Field",
-      "ko": "검색 필드 (Search Field)"
+      "ko": "검색 필드"
     },
     "tagline": {
       "en": "A Mac text field with built-in search, clearing, and recent-query controls",
@@ -2919,7 +2919,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Save Panel",
-      "ko": "저장 패널 (Save Panel)"
+      "ko": "저장 패널"
     },
     "tagline": {
       "en": "The standard Mac dialog for naming a file and choosing where to save it",
@@ -3042,7 +3042,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Token Field",
-      "ko": "토큰 필드 (Token Field)"
+      "ko": "토큰 필드"
     },
     "tagline": {
       "en": "A text input that turns recognized values into removable rounded tokens",
@@ -3148,7 +3148,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Combo Button",
-      "ko": "콤보 버튼 (Combo Button)"
+      "ko": "콤보 버튼"
     },
     "tagline": {
       "en": "A primary action joined to a separate arrow that opens related actions",
@@ -3279,7 +3279,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Level Indicator",
-      "ko": "레벨 인디케이터 (Level Indicator)"
+      "ko": "레벨 인디케이터"
     },
     "tagline": {
       "en": "A Mac gauge rendered as a capacity bar, rating stars, or relevance meter",
@@ -3417,7 +3417,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Column View (Browser)",
-      "ko": "컬럼 뷰 (Column View)"
+      "ko": "컬럼 뷰"
     },
     "tagline": {
       "en": "Finder-style columns that reveal each successive level of a hierarchy",
@@ -3543,7 +3543,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Outline View",
-      "ko": "아웃라인 뷰 (Outline View)"
+      "ko": "아웃라인 뷰"
     },
     "tagline": {
       "en": "An indented tree of rows that expand to reveal nested children",
@@ -3669,7 +3669,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "The Three Dots (Overflow Menu)",
-      "ko": "더보기 버튼 (Three Dots / Ellipsis)"
+      "ko": "더보기 버튼"
     },
     "tagline": {
       "en": "Horizontal dots, vertical dots, three lines, and an ellipsis mean different things",
@@ -3824,7 +3824,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Menu Bar",
-      "ko": "메뉴 바 (Menu Bar)"
+      "ko": "메뉴 바"
     },
     "tagline": {
       "en": "The strip along the top of the Mac screen — every part, labeled",
@@ -4034,7 +4034,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Context Menu",
-      "ko": "컨텍스트 메뉴 (Context Menu)"
+      "ko": "컨텍스트 메뉴"
     },
     "tagline": {
       "en": "The menu opened at the pointer by right-clicking or Control-clicking an item",
@@ -4180,7 +4180,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Disclosure Triangle",
-      "ko": "디스클로저 트라이앵글 (Disclosure Triangle)"
+      "ko": "디스클로저 트라이앵글"
     },
     "tagline": {
       "en": "The small rotating control that reveals or hides nested content",
@@ -4304,7 +4304,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Dock Badge",
-      "ko": "Dock 배지 (Dock Badge)"
+      "ko": "Dock 배지"
     },
     "tagline": {
       "en": "The red count or status label overlaid on an app's Dock icon",
@@ -4417,7 +4417,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Focus Ring",
-      "ko": "포커스 링 (Focus Ring)"
+      "ko": "포커스 링"
     },
     "tagline": {
       "en": "The accent-colored glow that identifies the control receiving keyboard input",
@@ -4517,7 +4517,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Inspector",
-      "ko": "인스펙터 (Inspector)"
+      "ko": "인스펙터"
     },
     "tagline": {
       "en": "The right-hand panel for viewing and editing details of the current selection",
@@ -4651,7 +4651,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Panel (Floating Window / HUD)",
-      "ko": "패널 및 HUD (Panel)"
+      "ko": "패널 및 HUD"
     },
     "tagline": {
       "en": "An auxiliary macOS window that floats above related document windows",
@@ -4774,7 +4774,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Popover",
-      "ko": "팝오버 (Popover)"
+      "ko": "팝오버"
     },
     "tagline": {
       "en": "A floating bubble whose arrow points back to the control that opened it",
@@ -4888,7 +4888,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Pop-Up Button vs. Pull-Down Button vs. Combo Box",
-      "ko": "팝업 및 풀다운 버튼 (Pop-Up & Pull-Down)"
+      "ko": "팝업 및 풀다운 버튼"
     },
     "tagline": {
       "en": "Three similar-looking macOS controls for choosing a value or invoking a menu action",
@@ -5042,7 +5042,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Segmented Control",
-      "ko": "세그먼트 컨트롤 (Segmented Control)"
+      "ko": "세그먼트 컨트롤"
     },
     "tagline": {
       "en": "A row of connected choices with the current segment visibly selected",
@@ -5156,7 +5156,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Sheet",
-      "ko": "시트 패널 (Sheet)"
+      "ko": "시트 패널"
     },
     "tagline": {
       "en": "A modal panel attached to one macOS window rather than the whole app",
@@ -5255,7 +5255,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Sidebar (Source List)",
-      "ko": "사이드바 (Sidebar)"
+      "ko": "사이드바"
     },
     "tagline": {
       "en": "The translucent navigation column along the left edge of a macOS window",
@@ -5407,7 +5407,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Stepper",
-      "ko": "스텝퍼 (Stepper)"
+      "ko": "스텝퍼"
     },
     "tagline": {
       "en": "The compact up-and-down arrow pair used to increment or decrement a value",
@@ -5524,7 +5524,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Toolbar (Unified Title Bar)",
-      "ko": "툴바 (Toolbar)"
+      "ko": "툴바"
     },
     "tagline": {
       "en": "A row of window actions integrated with the modern macOS title bar",
@@ -5675,7 +5675,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Traffic Lights (Window Controls)",
-      "ko": "신호등 창 제어 버튼 (Traffic Lights)"
+      "ko": "신호등 창 제어 버튼"
     },
     "tagline": {
       "en": "The red, yellow, and green controls at the top-left of a macOS window",
@@ -5818,7 +5818,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Visual Effect Material (Vibrancy)",
-      "ko": "비주얼 이펙트 재질 (Vibrancy)"
+      "ko": "비주얼 이펙트 재질"
     },
     "tagline": {
       "en": "The adaptive translucent background used behind macOS sidebars, menus, and panels",
@@ -5930,7 +5930,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Toast (Snackbar)",
-      "ko": "토스트 알림 (Toast / Snackbar)"
+      "ko": "토스트 알림"
     },
     "tagline": {
       "en": "A brief, non-blocking message that appears after an action",
@@ -6060,7 +6060,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Modal Dialog vs. Drawer vs. Sheet",
-      "ko": "모달 대화상자 및 드로어 (Modal Dialog & Drawer)"
+      "ko": "모달 대화상자 및 드로어"
     },
     "tagline": {
       "en": "Three overlay patterns distinguished by placement, scope, and task depth",
@@ -6179,7 +6179,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Popover vs. Dropdown Menu vs. Tooltip",
-      "ko": "팝오버 및 툴팁 (Popover & Tooltip)"
+      "ko": "팝오버 및 툴팁"
     },
     "tagline": {
       "en": "Three anchored overlays with different triggers, content, and dismissal rules",
@@ -6317,7 +6317,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Scrim (Backdrop / Overlay)",
-      "ko": "스크림 오버레이 (Scrim)"
+      "ko": "스크림 오버레이"
     },
     "tagline": {
       "en": "The translucent layer that separates a modal surface from the page",
@@ -6441,7 +6441,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Skeleton vs. Spinner",
-      "ko": "스켈레톤 및 스피너 (Skeleton & Spinner)"
+      "ko": "스켈레톤 및 스피너"
     },
     "tagline": {
       "en": "Two loading indicators for predictable layouts and indeterminate waits",
@@ -6580,7 +6580,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Combobox (Autocomplete / Typeahead)",
-      "ko": "콤보박스 (Combobox)"
+      "ko": "콤보박스"
     },
     "tagline": {
       "en": "A text input paired with a filtered list of selectable suggestions",
@@ -6736,7 +6736,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Command Palette",
-      "ko": "커맨드 팔레트 (Command Palette)"
+      "ko": "커맨드 팔레트"
     },
     "tagline": {
       "en": "A keyboard-first searchable launcher for actions and navigation",
@@ -6881,7 +6881,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Accordion (Disclosure)",
-      "ko": "아코디언 (Accordion)"
+      "ko": "아코디언"
     },
     "tagline": {
       "en": "Stacked sections whose headings expand and collapse their content",
@@ -7011,7 +7011,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Tabs",
-      "ko": "탭 뷰 (Tabs)"
+      "ko": "탭 뷰"
     },
     "tagline": {
       "en": "A single row of labels that switches one shared content region",
@@ -7279,7 +7279,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Breadcrumbs",
-      "ko": "브레드크럼 (Breadcrumbs)"
+      "ko": "브레드크럼"
     },
     "tagline": {
       "en": "A hierarchy trail from the current page back to its ancestors",
@@ -7405,7 +7405,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Sticky vs. Fixed Positioning",
-      "ko": "스티키 및 픽스드 포지셔닝 (Sticky & Fixed)"
+      "ko": "스티키 및 픽스드 포지셔닝"
     },
     "tagline": {
       "en": "Two ways to keep an element visible with different containing blocks",
@@ -7510,7 +7510,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Focus Ring (:focus-visible)",
-      "ko": "웹 포커스 링 (:focus-visible)"
+      "ko": "웹 포커스 링"
     },
     "tagline": {
       "en": "The keyboard-aware outline that identifies the active control",
@@ -7617,7 +7617,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Empty State",
-      "ko": "빈 상태 화면 (Empty State)"
+      "ko": "빈 상태 화면"
     },
     "tagline": {
       "en": "Purposeful guidance shown when a view has no content yet",
@@ -7726,7 +7726,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Hover Card",
-      "ko": "호버 카드 (Hover Card)"
+      "ko": "호버 카드"
     },
     "tagline": {
       "en": "A rich, non-modal preview revealed from a hovered or focused reference",
@@ -7987,7 +7987,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "web",
     "name": {
       "en": "Toggle Group (Segmented Control)",
-      "ko": "토글 그룹 (Toggle Group)"
+      "ko": "토글 그룹"
     },
     "tagline": {
       "en": "A connected row of compact options with one persistent selection",
@@ -8104,7 +8104,7 @@ export const ENTRIES: UIEntry[] = [
     "platform": "macos",
     "name": {
       "en": "Menu Bar Extra (Status Item)",
-      "ko": "메뉴 바 익스트라 (Menu Bar Extra)"
+      "ko": "메뉴 바 익스트라"
     },
     "tagline": {
       "en": "The icon that lives on the right side of the macOS menu bar",

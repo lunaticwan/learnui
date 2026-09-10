@@ -2158,80 +2158,80 @@
         "id": "spinner",
         "name": {
           "en": "Indeterminate spinner",
-          "ko": "Indeterminate spinner"
+          "ko": "무한 로딩 스피너"
         },
         "api": "role=\"progressbar\"",
         "description": {
           "en": "The spinning circle that keeps looping is an indeterminate spinner: it says work is happening, not how much is left.",
-          "ko": "The spinning circle that keeps looping is an indeterminate spinner: it says work is happening, not how much is left."
+          "ko": "계속 회전하는 원형 스피너는 작업이 진행 중임을 나타내며, 남은 시간을 알 수 없을 때 사용합니다."
         },
         "prompt": {
           "en": "an indeterminate spinner with role=\"progressbar\" and no aria-valuenow: a looping circular stroke used only when the remaining duration or completion amount is unknown",
-          "ko": "an indeterminate spinner with role=\"progressbar\" and no aria-valuenow: a looping circular stroke used only when the remaining duration or completion amount is unknown"
+          "ko": "role=\"progressbar\" 및 aria-valuenow 없이 무한 회전하는 스피너: 남은 시간이나 작업량을 알 수 없을 때 사용"
         }
       },
       {
         "id": "progress-ring",
         "name": {
           "en": "Determinate progress ring",
-          "ko": "Determinate progress ring"
+          "ko": "정량적 프로그레스 링"
         },
         "api": "aria-valuenow",
         "description": {
           "en": "“The ring that fills up” is a determinate progress ring: its circular arc represents a known completion value.",
-          "ko": "“The ring that fills up” is a determinate progress ring: its circular arc represents a known completion value."
+          "ko": "차오르는 링 형태의 진행 표시기는 정해진 작업 완성도를 원형 호 형태로 시각화합니다."
         },
         "prompt": {
           "en": "a determinate progress ring with role=\"progressbar\" and aria-valuenow: a circular arc that visibly fills from empty to complete around a stable track",
-          "ko": "a determinate progress ring with role=\"progressbar\" and aria-valuenow: a circular arc that visibly fills from empty to complete around a stable track"
+          "ko": "role=\"progressbar\" 및 aria-valuenow를 갖춘 정량적 프로그레스 링: 트랙을 따라 원형 호가 차오르는 형태"
         }
       },
       {
         "id": "progress-bar",
         "name": {
           "en": "Linear progress bar",
-          "ko": "Linear progress bar"
+          "ko": "선형 진행 표시줄"
         },
         "api": "<progress>",
         "description": {
           "en": "The bar that fills from one side to the other is a linear progress bar; use <progress> when its value is known.",
-          "ko": "The bar that fills from one side to the other is a linear progress bar; use <progress> when its value is known."
+          "ko": "한쪽에서 다른 쪽으로 차오르는 막대는 선형 진행 표시줄이며, 진행률 수치를 알 때 사용합니다."
         },
         "prompt": {
           "en": "a determinate linear progress bar using HTML <progress>: the filled value advances across a fixed horizontal track from minimum to completion",
-          "ko": "a determinate linear progress bar using HTML <progress>: the filled value advances across a fixed horizontal track from minimum to completion"
+          "ko": "HTML <progress>를 사용한 선형 진행 표시줄: 고정된 가로 트랙을 따라 진행률이 수평으로 진행"
         }
       },
       {
         "id": "progress-track",
         "name": {
           "en": "Progress track",
-          "ko": "Progress track"
+          "ko": "진행 트랙"
         },
         "api": "<progress>",
         "description": {
           "en": "The unfilled rail behind a progress ring or bar is the track; it shows the indicator's full range.",
-          "ko": "The unfilled rail behind a progress ring or bar is the track; it shows the indicator's full range."
+          "ko": "프로그레스 링이나 바 뒤에 위치한 채워지지 않은 배경 레일로, 전체 진행 범위를 나타냅니다."
         },
         "prompt": {
           "en": "the progress track behind the <progress> value: the full, low-contrast rail that remains visible around the unfilled portion of the indicator",
-          "ko": "the progress track behind the <progress> value: the full, low-contrast rail that remains visible around the unfilled portion of the indicator"
+          "ko": "<progress> 값 뒤의 진행 트랙: 채워지지 않은 영역에 표시되는 저대비 배경 레일"
         }
       },
       {
         "id": "percentage-label",
         "name": {
           "en": "Percentage label",
-          "ko": "Percentage label"
+          "ko": "퍼센트 수치 레이블"
         },
         "api": "aria-valuenow",
         "description": {
           "en": "The number beside or inside the indicator is the percentage label, a readable statement of the current progress value.",
-          "ko": "The number beside or inside the indicator is the percentage label, a readable statement of the current progress value."
+          "ko": "진행 표시기 옆이나 내부의 숫자는 현재 진행률 수치를 정확히 보여주는 레이블입니다."
         },
         "prompt": {
           "en": "a percentage label for the progress indicator, such as 72%, kept in sync with role=\"progressbar\" and its aria-valuenow value",
-          "ko": "a percentage label for the progress indicator, such as 72%, kept in sync with role=\"progressbar\" and its aria-valuenow value"
+          "ko": "role=\"progressbar\" 및 aria-valuenow 수치와 동기화되는 진행률 퍼센트 레이블"
         }
       }
     ],

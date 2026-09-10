@@ -1,9 +1,6 @@
 
-> learnui@1.0.0 dev
-> vite
-
-
   VITE v6.4.3  ready in 242 ms
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
+9:29:28 AM [vite] (client) hmr update /src/assets/site.css
