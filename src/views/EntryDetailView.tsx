@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { useCopyToClipboard } from 'usehooks-ts';
 import { toast } from 'sonner';
 import clsx from 'clsx';
@@ -15,6 +15,7 @@ const NEW_SLUGS = new Set([
 
 export const EntryDetailView: React.FC = () => {
   const { platform, slug } = useParams<{ platform: string; slug: string }>();
+  const navigate = useNavigate();
   const [, copy] = useCopyToClipboard();
   const [copiedPrompt, setCopiedPrompt] = useState(false);
   const [copiedDebug, setCopiedDebug] = useState(false);
@@ -27,6 +28,15 @@ export const EntryDetailView: React.FC = () => {
   }
 
   const getCopyKo = (key: string) => getLocalizedString(UI_COPY[key] as any, 'ko');
+
+  const handleBack = () => {
+    console.log('[Action] Clicked back button in EntryDetailView');
+    if (window.history.length > 2) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
+  };
 
   const platLabel = entry.platform === 'web' ? 'Web' : 'macOS';
   const isNew = NEW_SLUGS.has(entry.slug);
@@ -111,15 +121,25 @@ export const EntryDetailView: React.FC = () => {
 
   return (
     <main className="wrap entry">
-      <nav className="crumbs">
-        <Link to="/">{getCopyKo('indexCrumb')}</Link>
-        <span className="crumb-sep">/</span>
-        <Link to={`/?platform=${entry.platform}#dictionary`}>{platLabel}</Link>
-        <span className="crumb-sep">/</span>
-        <span className="crumb-cur">
-          <span>{entry.name?.en} ({entry.name?.ko})</span>
-        </span>
-      </nav>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', paddingTop: '28px' }}>
+        <nav className="crumbs" style={{ padding: 0 }}>
+          <Link to="/">{getCopyKo('indexCrumb')}</Link>
+          <span className="crumb-sep">/</span>
+          <Link to={`/?platform=${entry.platform}#dictionary`}>{platLabel}</Link>
+          <span className="crumb-sep">/</span>
+          <span className="crumb-cur">
+            <span>{entry.name?.en} ({entry.name?.ko})</span>
+          </span>
+        </nav>
+        <button
+          type="button"
+          className="btn btn-ghost"
+          style={{ height: '36px', padding: '0 12px', fontSize: '13px' }}
+          onClick={handleBack}
+        >
+          ← <span>목록으로 돌아가기</span>
+        </button>
+      </div>
 
       <header className="entry-head">
         <h1 className="entry-title">
@@ -281,13 +301,20 @@ export const EntryDetailView: React.FC = () => {
         </section>
       )}
 
-      <section className="sect">
+      <section className="sect" style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center' }}>
         <button
           type="button"
           className={clsx('btn', 'btn-ghost', { done: copiedMd })}
           onClick={() => handleCopy(generateMarkdown(), 'md', getCopyKo('copyPage'))}
         >
           ⧉ <span>{copiedMd ? getCopyKo('copied') : getCopyKo('copyPage')}</span>
+        </button>
+        <button
+          type="button"
+          className="btn btn-ghost"
+          onClick={handleBack}
+        >
+          ← <span>목록으로 돌아가기</span>
         </button>
       </section>
     </main>
