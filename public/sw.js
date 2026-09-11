@@ -4,15 +4,13 @@ var SHELL = "learnui-shell-" + VERSION;
 var PAGES = "learnui-pages-" + VERSION;
 
 var PRECACHE = [
-  "/",
-  "/manifest.webmanifest",
-  "/assets/site.css",
-  "/assets/fonts/geist-vf.woff2",
-  "/assets/fonts/geist-mono-vf.woff2",
-  "/assets/icons/favicon.svg",
-  "/assets/icons/icon-192.png",
-  "/assets/icons/icon-512.png",
-  "/assets/icons/apple-touch-icon.png"
+  "./",
+  "./manifest.webmanifest",
+  "./assets/site.css",
+  "./assets/icons/favicon.svg",
+  "./assets/icons/icon-192.png",
+  "./assets/icons/icon-512.png",
+  "./assets/icons/apple-touch-icon.png"
 ];
 
 self.addEventListener("install", function (ev) {
@@ -44,7 +42,7 @@ self.addEventListener("fetch", function (ev) {
   if (url.origin !== location.origin) return;
 
   // Static assets: cache-first, then network (and fill cache).
-  if (url.pathname.indexOf("/assets/") === 0 || url.pathname === "/manifest.webmanifest") {
+  if (url.pathname.includes("/assets/") || url.pathname.endsWith("/manifest.webmanifest")) {
     ev.respondWith(
       caches.match(req).then(function (hit) {
         return hit || fetch(req).then(function (res) {
@@ -70,7 +68,7 @@ self.addEventListener("fetch", function (ev) {
         return res;
       }).catch(function () {
         return caches.match(req).then(function (hit) {
-          return hit || caches.match("/");
+          return hit || caches.match("./");
         });
       })
     );
