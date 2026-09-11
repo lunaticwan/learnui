@@ -46,14 +46,14 @@ export const TRANSLATE_TABLE: TranslateTableItem[] = [
   {
     nameEn: "Confirmation Dialog / Action Sheet",
     nameKo: "확인 대화상자 / 액션 시트",
-    ios: "ConfirmationDialog (.confirmationDialog)",
+    ios: "ConfirmationDialog (.confirmationDialog / UIActionSheet)",
     android: "ModalBottomSheet / AlertDialog",
     slug: "dialog-drawer-sheet"
   },
   {
     nameEn: "Context Menu",
     nameKo: "컨텍스트 메뉴 (우클릭 / 롱프레스)",
-    ios: "ContextMenu (.contextMenu)",
+    ios: "ContextMenu (.contextMenu / UIContextMenuConfiguration)",
     android: "DropdownMenu / Contextual Action Bar",
     slug: "context-menu"
   },
@@ -88,7 +88,7 @@ export const TRANSLATE_TABLE: TranslateTableItem[] = [
   {
     nameEn: "Don't Show Again Checkbox",
     nameKo: "다시 보지 않기 체크박스",
-    ios: "DialogSuppressionToggle",
+    ios: "DialogSuppressionToggle (.dialogSuppressionToggle)",
     android: "Checkbox in AlertDialog",
     slug: "checkbox"
   },
@@ -158,7 +158,7 @@ export const TRANSLATE_TABLE: TranslateTableItem[] = [
   {
     nameEn: "File Open / Import Panel",
     nameKo: "파일 열기 / 가져오기 패널",
-    ios: "FileImporter (.fileImporter)",
+    ios: "FileImporter (.fileImporter / UIDocumentPickerViewController)",
     android: "ActivityResultContracts.GetContent",
     slug: "save-panel"
   },
@@ -235,7 +235,7 @@ export const TRANSLATE_TABLE: TranslateTableItem[] = [
   {
     nameEn: "File Save / Export Panel",
     nameKo: "파일 저장 / 내보내기 패널",
-    ios: "FileExporter (.fileExporter)",
+    ios: "FileExporter (.fileExporter / UIDocumentPickerViewController)",
     android: "ActivityResultContracts.CreateDocument",
     slug: "save-panel"
   },
@@ -249,7 +249,7 @@ export const TRANSLATE_TABLE: TranslateTableItem[] = [
   {
     nameEn: "Segmented Control",
     nameKo: "세그먼트 컨트롤",
-    ios: "Picker (.pickerStyle(.segmented))",
+    ios: "Picker (.pickerStyle(.segmented) / UISegmentedControl)",
     android: "SegmentedButton / SingleChoiceSegmentedButtonRow",
     slug: "segmented-control"
   },
@@ -270,7 +270,7 @@ export const TRANSLATE_TABLE: TranslateTableItem[] = [
   {
     nameEn: "Sheet Modal",
     nameKo: "시트 모달 패널",
-    ios: "Sheet (.sheet)",
+    ios: "Sheet (.sheet / UISheetPresentationController)",
     android: "ModalBottomSheet",
     slug: "sheet"
   },
@@ -319,14 +319,14 @@ export const TRANSLATE_TABLE: TranslateTableItem[] = [
   {
     nameEn: "Toast / Snackbar",
     nameKo: "토스트 / 스낵바",
-    ios: "Banner Overlay / Custom Alert",
+    ios: "Banner Overlay / Custom View",
     android: "Snackbar / Toast",
     slug: "toast"
   },
   {
     nameEn: "Toolbar",
     nameKo: "툴바 (상단 도구 모음)",
-    ios: "Toolbar (.toolbar)",
+    ios: "Toolbar (.toolbar / UIToolbar)",
     android: "TopAppBar / BottomAppBar",
     slug: "toolbar"
   },
@@ -355,14 +355,14 @@ export const TRANSLATE_TABLE: TranslateTableItem[] = [
     nameEn: "Badge / Chip / Pill",
     nameKo: "배지 / 칩 / 필",
     ios: "Badge (.badge)",
-    android: "Badge / FilterChip / InputChip",
+    android: "Badge / FilterChip / InputChip / AssistChip",
     slug: "badge-chip-pill"
   },
   {
     nameEn: "Floating Action Button (FAB)",
     nameKo: "플로팅 액션 버튼 (FAB)",
     ios: "Overlay Button / ToolbarItem",
-    android: "FloatingActionButton (FAB)",
+    android: "FloatingActionButton (FAB / ExtendedFAB)",
     slug: "button"
   },
   {
@@ -390,21 +390,21 @@ export const TRANSLATE_TABLE: TranslateTableItem[] = [
     nameEn: "Hover Card",
     nameKo: "호버 카드",
     ios: "Popover (.popover)",
-    android: "Popup",
+    android: "Popup / TooltipBox",
     slug: "hover-card"
   },
   {
     nameEn: "Skeleton Loader",
     nameKo: "스켈레톤 로더",
     ios: "Redacted (.redacted(reason: .placeholder))",
-    android: "Skeleton Shimmer Effect",
+    android: "Skeleton Shimmer Effect / Placeholder",
     slug: "skeleton-spinner"
   },
   {
     nameEn: "Toggle Group",
     nameKo: "토글 버튼 그룹",
     ios: "Picker (.pickerStyle(.segmented))",
-    android: "SingleChoiceSegmentedButtonRow",
+    android: "SingleChoiceSegmentedButtonRow / MultiChoiceSegmentedButtonRow",
     slug: "toggle-group"
   }
 ];

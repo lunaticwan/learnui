@@ -63,18 +63,17 @@ export const HomeView: React.FC = () => {
 
   return (
     <main className="wrap">
+      <nav className="crumbs">
+        <Link to="/" onClick={() => console.log('[HomeView] Clicked indexCrumb link -> /')}>{getCopyKo('indexCrumb')}</Link>
+        <span className="crumb-sep">/</span>
+        <span className="crumb-cur">{getCopyKo('dictionaryCrumb')}</span>
+      </nav>
+
       <section className="hero">
         <h1 className="hero-title">
           <span>{getCopyKo('heroTitle')}</span>
         </h1>
         <BilingualText text={UI_COPY['heroSub'] as any} tag="p" className="hero-sub" />
-
-        <p className="vibe-promo">
-          <span className="tag tag-new">{getCopyKo('newBadge')}</span>
-          <Link to="/styles">
-            {getCopyKo('vibePromo')} →
-          </Link>
-        </p>
 
         <div className="controls">
           <div className="search-box">
