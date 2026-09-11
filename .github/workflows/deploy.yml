@@ -20,6 +20,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_NODE20_SILENCE_WARNING: 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
