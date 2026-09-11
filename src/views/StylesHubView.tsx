@@ -40,7 +40,7 @@ export const StylesHubView: React.FC = () => {
   return (
     <main className="wrap">
       <nav className="crumbs">
-        <Link to="/">{getCopyKo('indexCrumb')}</Link>
+        <Link to="/" onClick={() => console.log('[StylesHubView] Clicked indexCrumb link -> /')}>{getCopyKo('indexCrumb')}</Link>
         <span className="crumb-sep">/</span>
         <span className="crumb-cur">{getCopyKo('stylesCrumb')}</span>
       </nav>
@@ -61,7 +61,10 @@ export const StylesHubView: React.FC = () => {
               type="search"
               autoComplete="off"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                console.log(`[Input] Style search query: "${e.target.value}"`);
+                setSearchQuery(e.target.value);
+              }}
               placeholder={getCopyKo('searchStylesPlaceholder')}
               aria-label="Search styles"
             />
@@ -78,7 +81,12 @@ export const StylesHubView: React.FC = () => {
         {filteredStyles.map((s) => {
           const isNew = STYLE_NEW_SLUGS.has(s.slug);
           return (
-            <Link key={s.slug} className="style-card" to={`/styles/${s.slug}`}>
+            <Link
+              key={s.slug}
+              className="style-card"
+              to={`/styles/${s.slug}`}
+              onClick={() => console.log(`[StylesHubView] Style card clicked -> /styles/${s.slug}`)}
+            >
               <SpecimenViewer slug={`style-${s.slug}`} />
               <div className="card-meta">
                 <h3 className="card-name">

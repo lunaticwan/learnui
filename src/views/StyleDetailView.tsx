@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { useCopyToClipboard } from 'usehooks-ts';
 import { toast } from 'sonner';
 import clsx from 'clsx';
@@ -12,6 +12,7 @@ import { getLocalizedString } from '../types/ui';
 
 export const StyleDetailView: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const [, copy] = useCopyToClipboard();
   const [copiedBrief, setCopiedBrief] = useState(false);
   const [copiedMd, setCopiedMd] = useState(false);
@@ -24,6 +25,15 @@ export const StyleDetailView: React.FC = () => {
   }
 
   const getCopyKo = (key: string) => getLocalizedString(UI_COPY[key] as any, 'ko');
+
+  const handleBack = () => {
+    console.log('[Action] Clicked back button in StyleDetailView');
+    if (window.history.length > 2) {
+      navigate(-1);
+    } else {
+      navigate('/styles');
+    }
+  };
 
   const handleCopyCode = (code: string, idx: number) => {
     copy(code)
@@ -102,15 +112,25 @@ export const StyleDetailView: React.FC = () => {
 
   return (
     <main className="wrap entry">
-      <nav className="crumbs">
-        <Link to="/">{getCopyKo('indexCrumb')}</Link>
-        <span className="crumb-sep">/</span>
-        <Link to="/styles">{getCopyKo('stylesCrumb')}</Link>
-        <span className="crumb-sep">/</span>
-        <span className="crumb-cur">
-          <span>{style.name?.en} ({style.name?.ko})</span>
-        </span>
-      </nav>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', paddingTop: '28px' }}>
+        <nav className="crumbs" style={{ padding: 0 }}>
+          <Link to="/">{getCopyKo('indexCrumb')}</Link>
+          <span className="crumb-sep">/</span>
+          <Link to="/styles">{getCopyKo('stylesCrumb')}</Link>
+          <span className="crumb-sep">/</span>
+          <span className="crumb-cur">
+            <span>{style.name?.en} ({style.name?.ko})</span>
+          </span>
+        </nav>
+        <button
+          type="button"
+          className="btn btn-ghost"
+          style={{ height: '36px', padding: '0 12px', fontSize: '13px' }}
+          onClick={handleBack}
+        >
+          ← <span>목록으로 돌아가기</span>
+        </button>
+      </div>
 
       <header className="entry-head">
         <h1 className="entry-title">
@@ -299,13 +319,20 @@ export const StyleDetailView: React.FC = () => {
         </section>
       )}
 
-      <section className="sect">
+      <section className="sect" style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center' }}>
         <button
           type="button"
           className={clsx('btn', 'btn-ghost', { done: copiedMd })}
           onClick={() => handleCopyText(generateMarkdown(), 'md', getCopyKo('copyPage'))}
         >
           ⧉ <span>{copiedMd ? getCopyKo('copied') : getCopyKo('copyPage')}</span>
+        </button>
+        <button
+          type="button"
+          className="btn btn-ghost"
+          onClick={handleBack}
+        >
+          ← <span>목록으로 돌아가기</span>
         </button>
       </section>
     </main>

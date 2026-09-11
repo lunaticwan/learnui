@@ -5,6 +5,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { CommandPalette } from './components/CommandPalette';
+import { ScrollToTop } from './components/ScrollToTop';
 import { HomeView } from './views/HomeView';
 import { EntryDetailView } from './views/EntryDetailView';
 import { StylesHubView } from './views/StylesHubView';
@@ -18,6 +19,7 @@ export const App: React.FC = () => {
   return (
     <LanguageProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Toaster position="bottom-right" richColors closeButton />
         <Header onOpenCmdPalette={() => setCmdPaletteOpen(true)} />
         <CommandPalette open={cmdPaletteOpen} onOpenChange={setCmdPaletteOpen} />

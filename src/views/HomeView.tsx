@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ENTRIES } from '../data/entries';
 import { UI_COPY } from '../data/uiCopy';
 import { SpecimenViewer } from '../components/SpecimenViewer';
@@ -11,6 +11,7 @@ const NEW_SLUGS = new Set([
 ]);
 
 export const HomeView: React.FC = () => {
+  const navigate = useNavigate();
   const [filter, setFilter] = useState<'all' | 'web' | 'macos'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -56,7 +57,8 @@ export const HomeView: React.FC = () => {
   const handleSurprise = () => {
     const randomIndex = Math.floor(Math.random() * ENTRIES.length);
     const entry = ENTRIES[randomIndex];
-    window.location.href = `/${entry.platform}/${entry.slug}`;
+    console.log(`[Action] Surprise random entry clicked -> /${entry.platform}/${entry.slug}`);
+    navigate(`/${entry.platform}/${entry.slug}`);
   };
 
   return (
@@ -100,21 +102,30 @@ export const HomeView: React.FC = () => {
             <button
               type="button"
               className={`tab ${filter === 'all' ? 'active' : ''}`}
-              onClick={() => setFilter('all')}
+              onClick={() => {
+                console.log('[HomeView] Tab selected: all');
+                setFilter('all');
+              }}
             >
               <span>{getCopyKo('tabAll')}</span>
             </button>
             <button
               type="button"
               className={`tab ${filter === 'web' ? 'active' : ''}`}
-              onClick={() => setFilter('web')}
+              onClick={() => {
+                console.log('[HomeView] Tab selected: web');
+                setFilter('web');
+              }}
             >
               <span>{getCopyKo('tabWeb')}</span>
             </button>
             <button
               type="button"
               className={`tab ${filter === 'macos' ? 'active' : ''}`}
-              onClick={() => setFilter('macos')}
+              onClick={() => {
+                console.log('[HomeView] Tab selected: macos');
+                setFilter('macos');
+              }}
             >
               <span>{getCopyKo('tabMacos')}</span>
             </button>
@@ -132,7 +143,14 @@ export const HomeView: React.FC = () => {
           const symbol = e.api?.[0]?.symbol || '';
 
           return (
-            <Link key={e.slug} className="card" data-platform={e.platform} data-slug={e.slug} to={`/${e.platform}/${e.slug}`}>
+            <Link
+              key={e.slug}
+              className="card"
+              data-platform={e.platform}
+              data-slug={e.slug}
+              to={`/${e.platform}/${e.slug}`}
+              onClick={() => console.log(`[HomeView] Entry card clicked -> /${e.platform}/${e.slug}`)}
+            >
               <SpecimenViewer slug={e.slug} />
               <div className="card-meta">
                 <h3 className="card-name">
