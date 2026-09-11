@@ -23,18 +23,36 @@ export const StylesHubView: React.FC = () => {
   };
 
   const filteredStyles = useMemo(() => {
-    return STYLES.filter((s) => {
-      if (!searchQuery.trim()) return true;
-      const q = searchQuery.toLowerCase();
-      const matchNameEn = (s.name?.en || '').toLowerCase().includes(q);
-      const matchNameKo = (s.name?.ko || '').toLowerCase().includes(q);
-      const matchTaglineEn = (s.tagline?.en || '').toLowerCase().includes(q);
-      const matchTaglineKo = (s.tagline?.ko || '').toLowerCase().includes(q);
-      const matchAliases = (s.aliases?.en || []).some((a: string) => a.toLowerCase().includes(q)) ||
-                           (s.aliases?.ko || []).some((a: string) => a.toLowerCase().includes(q));
+    const trimmed = searchQuery.trim().toLowerCase();
+    if (!trimmed) return STYLES;
 
-      return matchNameEn || matchNameKo || matchTaglineEn || matchTaglineKo || matchAliases;
-    });
+    const tokens = trimmed.split(/\s+/).filter(Boolean);
+    const scoredStyles: { style: typeof STYLES[0]; matchCount: number }[] = [];
+
+    for (const s of STYLES) {
+      const nameEn = (s.name?.en || '').toLowerCase();
+      const nameKo = (s.name?.ko || '').toLowerCase();
+      const taglineEn = (s.tagline?.en || '').toLowerCase();
+      const taglineKo = (s.tagline?.ko || '').toLowerCase();
+      const aliasesEn = (s.aliases?.en || []).join(' ').toLowerCase();
+      const aliasesKo = (s.aliases?.ko || []).join(' ').toLowerCase();
+
+      const combinedText = `${nameEn} ${nameKo} ${taglineEn} ${taglineKo} ${aliasesEn} ${aliasesKo}`;
+
+      let matchCount = 0;
+      for (const token of tokens) {
+        if (combinedText.includes(token)) {
+          matchCount++;
+        }
+      }
+
+      if (matchCount > 0) {
+        scoredStyles.push({ style: s, matchCount });
+      }
+    }
+
+    scoredStyles.sort((a, b) => b.matchCount - a.matchCount);
+    return scoredStyles.map((s) => s.style);
   }, [searchQuery]);
 
   return (
