@@ -20,12 +20,18 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "decode effect",
         "matrix text effect",
-        "shuffle text"
+        "shuffle text",
+        "matrix effect",
+        "text decode animation",
+        "glyph shuffle"
       ],
       "ko": [
         "디코드 효과",
         "매트릭스 텍스트 효과",
-        "셔플 텍스트"
+        "셔플 텍스트",
+        "텍스트 글리치 효과",
+        "문자 셔플",
+        "랜덤 글자 전환"
       ]
     },
     "fuzzy": {
@@ -34,14 +40,19 @@ export const ENTRIES: UIEntry[] = [
         "the matrix style decoding text",
         "letters cycling before they land on the real ones",
         "the hacker text effect",
-        "glitchy letters that resolve into a title"
+        "glitchy letters that resolve into a title",
+        "text that changes random characters before revealing",
+        "hacker movie decoding text"
       ],
       "ko": [
         "글자가 무작위로 교체되다가 단어로 확정되는 텍스트",
         "매트릭스 스타일의 디코딩 텍스트",
         "진짜 문자로 정착하기 전에 글자가 계속 회전하는 효과",
         "해커 스타일 텍스트 효과",
-        "글리치 문자가 제목으로 변하는 효과"
+        "글리치 문자가 제목으로 변하는 효과",
+        "글자가 마구 바뀌다가 문장으로 완성되는 효과",
+        "해커 영화 텍스트 효과",
+        "무작위 문자가 돌아가며 단어가 되는 애니메이션"
       ]
     },
     "api": [
@@ -128,12 +139,18 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "spring physics",
         "bouncy animation",
-        "spring transition"
+        "spring transition",
+        "overshoot motion",
+        "bouncy physics",
+        "elastic animation"
       ],
       "ko": [
         "스프링 물리학",
         "오버슈트 모션",
-        "바운스 애니메이션"
+        "바운스 애니메이션",
+        "바운스 이펙트",
+        "탄성 애니메이션",
+        "스프링 모션"
       ]
     },
     "fuzzy": {
@@ -142,12 +159,17 @@ export const ENTRIES: UIEntry[] = [
         "it overshoots a little and settles",
         "the jelly bounce when a panel opens",
         "ios style bouncy movement",
-        "animation with stiffness and damping instead of duration"
+        "animation with stiffness and damping instead of duration",
+        "bouncy jelly movement",
+        "physically realistic bouncy UI transition"
       ],
       "ko": [
         "목표를 살짝 지나쳤다가 잔잔하게 정지하는 애니메이션",
         "탄성 있는 UI 모션",
-        "물리 법칙이 적용된 부드러운 움직임"
+        "물리 법칙이 적용된 부드러운 움직임",
+        "목표 지점을 통과했다가 돌아오는 모션",
+        "젤리처럼 튕기는 애니메이션",
+        "물리 법칙이 적용된 자연스러운 튀기기"
       ]
     },
     "api": [
@@ -231,12 +253,17 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "timing function",
         "easing curve",
-        "bezier curve"
+        "bezier curve",
+        "cubic bezier curve",
+        "animation curve",
+        "transition curve"
       ],
       "ko": [
         "타이밍 기능",
         "속도 곡선",
-        "베지에 곡선"
+        "베지에 곡선",
+        "이징 곡선",
+        "가속도 곡선"
       ]
     },
     "fuzzy": {
@@ -245,12 +272,17 @@ export const ENTRIES: UIEntry[] = [
         "how the movement speeds up and slows down",
         "the curve that controls the animation speed",
         "make it start fast and end slow",
-        "the s shaped graph in the animation settings"
+        "the s shaped graph in the animation settings",
+        "smooth start soft landing animation speed",
+        "robotic movement fix"
       ],
       "ko": [
         "부드럽게 멈추는 속도 곡선",
         "이징 함수 설정",
-        "cubic-bezier 곡선"
+        "cubic-bezier 곡선",
+        "빠르게 시작해서 부드럽게 멈추는 속도",
+        "어색하고 딱딱한 움직임 완화",
+        "애니메이션 시작과 끝 속도 조절"
       ]
     },
     "api": [
@@ -334,12 +366,18 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "waterfall layout",
         "pinterest grid",
-        "brick layout"
+        "brick layout",
+        "staggered grid",
+        "brick wall layout",
+        "pin grid"
       ],
       "ko": [
         "벽돌 그리드",
         "폭포수 레이아웃",
-        "핀터레스트 스타일 그리드"
+        "핀터레스트 스타일 그리드",
+        "핀터레스트 레이아웃",
+        "폭포수 그리드",
+        "지그재그 카드 그리드"
       ]
     },
     "fuzzy": {
@@ -348,12 +386,17 @@ export const ENTRIES: UIEntry[] = [
         "photos stacked like bricks with no gaps",
         "columns where the cards don't line up in rows",
         "the photo wall where images keep their own height",
-        "cards that fill in under each other instead of in rows"
+        "cards that fill in under each other instead of in rows",
+        "no row gap photo gallery grid",
+        "pinterest style photo feed"
       ],
       "ko": [
         "카드 높이가 서로 다른 격자 레이아웃",
         "핀터레스트 방식 카드 배치",
-        "높이에 맞게 자동으로 채워지는 그리드"
+        "높이에 맞게 자동으로 채워지는 그리드",
+        "높이가 제각각인 사진들이 차곡차곡 채워지는 레이아웃",
+        "행 간격 없이 높이에 맞춰 채워지는 갤러리",
+        "핀터레스트처럼 카드 높이가 다 다른 그리드"
       ]
     },
     "api": [
@@ -440,12 +483,18 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "bento box layout",
         "feature grid",
-        "dashboard grid"
+        "dashboard grid",
+        "apple feature grid",
+        "modular card grid",
+        "bento tiles"
       ],
       "ko": [
         "벤토 박스 레이아웃",
         "모듈형 그리드",
-        "애플 스타일 카드 그리드"
+        "애플 스타일 카드 그리드",
+        "애플 카탈로그 그리드",
+        "벤토 박스 격자",
+        "모듈형 카드 레이아웃"
       ]
     },
     "fuzzy": {
@@ -454,12 +503,17 @@ export const ENTRIES: UIEntry[] = [
         "boxes of different sizes in a grid",
         "the grid with one big box and smaller boxes around it",
         "the apple style feature grid with rounded cards",
-        "dashboard made of different sized tiles"
+        "dashboard made of different sized tiles",
+        "apple website feature showcase tiles",
+        "grid with spanning cards"
       ],
       "ko": [
         "도시락 모양 타일 그리드",
         "크기가 다양한 카드가 섞인 레이아웃",
-        "애플 랜딩페이지 스타일 카드 격자"
+        "애플 랜딩페이지 스타일 카드 격자",
+        "애플 제품 소개 페이지처럼 크기가 다른 카드 격자",
+        "큰 박스 옆에 작은 박스들이 배치된 레이아웃",
+        "격자 안에 다양한 크기의 타일이 구성된 그리드"
       ]
     },
     "api": [
@@ -560,12 +614,18 @@ export const ENTRIES: UIEntry[] = [
         "navigation drawer",
         "hamburger button",
         "side menu",
-        "off-canvas menu"
+        "off-canvas menu",
+        "nav drawer button",
+        "3-line menu",
+        "side menu button"
       ],
       "ko": [
         "3선 메뉴 버튼",
         "드로어 토글",
-        "햄버거 아이콘"
+        "햄버거 아이콘",
+        "햄버거 버튼",
+        "삼선 메뉴",
+        "네비게이션 드로어 버튼"
       ]
     },
     "fuzzy": {
@@ -575,12 +635,17 @@ export const ENTRIES: UIEntry[] = [
         "the burger menu on mobile sites",
         "the menu that slides in from the side when you tap the lines",
         "the stacked lines button at the top corner",
-        "the side panel with all the page links"
+        "the side panel with all the page links",
+        "the 3 stacked lines button in the corner",
+        "mobile site top corner lines menu"
       ],
       "ko": [
         "줄 3개 있는 메뉴 버튼",
         "모서리에 있는 수평선 3개 버튼",
-        "모바일 전체 메뉴 열기 버튼"
+        "모바일 전체 메뉴 열기 버튼",
+        "모바일 웹 상단 줄 3개 메뉴",
+        "누르면 옆에서 슬라이드로 열리는 메뉴",
+        "삼선 아이콘 버튼"
       ]
     },
     "api": [
@@ -684,12 +749,18 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "image viewer overlay",
         "photo modal",
-        "gallery overlay"
+        "gallery overlay",
+        "full image overlay",
+        "photo viewer modal",
+        "gallery zoom"
       ],
       "ko": [
         "이미지 모달",
         "갤러리 팝업",
-        "미디어 뷰어"
+        "미디어 뷰어",
+        "이미지 확대 팝업",
+        "사진 뷰어 모달",
+        "갤러리 라이트박스"
       ]
     },
     "fuzzy": {
@@ -699,11 +770,16 @@ export const ENTRIES: UIEntry[] = [
         "click the thumbnail and it zooms over the page",
         "the image viewer with arrows for the next photo",
         "the big photo over a black background",
-        "a pattern for enlarging pictures"
+        "a pattern for enlarging pictures",
+        "clicking a picture opens a dark enlarged view",
+        "gallery popup with prev next arrows"
       ],
       "ko": [
         "사진 클릭하면 어두워지면서 크게 보이는 기능",
-        "갤러리 큰 이미지 모달창"
+        "갤러리 큰 이미지 모달창",
+        "사진을 누르면 배경이 어두워지면서 크게 떠오르는 창",
+        "갤러리 슬라이드 화살표가 있는 큰 사진 팝업",
+        "썸네일 클릭 시 확대되는 모달"
       ]
     },
     "api": [
@@ -768,12 +844,18 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "ticker",
         "logo carousel",
-        "auto-scrolling strip"
+        "auto-scrolling strip",
+        "running text ticker",
+        "infinite logo carousel",
+        "auto scrolling banner"
       ],
       "ko": [
         "흐르는 텍스트",
         "로고 롤링 띠",
-        "무한 스크롤 배너"
+        "무한 스크롤 배너",
+        "흐르는 전광판",
+        "무한 스크롤 로고 띠",
+        "자동 롤링 배너"
       ]
     },
     "fuzzy": {
@@ -782,11 +864,16 @@ export const ENTRIES: UIEntry[] = [
         "the news ticker text",
         "the endless scrolling logo strip",
         "text that moves across the screen on its own",
-        "the auto sliding brand logos"
+        "the auto sliding brand logos",
+        "logos continuously moving sideways",
+        "endless horizontal news ticker"
       ],
       "ko": [
         "글자나 로고가 계속 옆으로 지나가는 배너",
-        "전광판처럼 움직이는 텍스트"
+        "전광판처럼 움직이는 텍스트",
+        "글자나 로고가 옆으로 계속 흘러가는 배너",
+        "전광판처럼 계속 지나가는 텍스트 띠",
+        "멈추지 않고 좌우로 스크롤되는 로고 모음"
       ]
     },
     "api": [
@@ -872,12 +959,18 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "cursor",
         "mouse pointer",
-        "mouse cursor"
+        "mouse cursor",
+        "mouse cursor shapes",
+        "i-beam cursor",
+        "resize cursor"
       ],
       "ko": [
         "마우스 커서",
         "포인터 커서",
-        "커서 스타일"
+        "커서 스타일",
+        "마우스 화살표",
+        "텍스트 입력 커서",
+        "크기 조절 커서"
       ]
     },
     "fuzzy": {
@@ -888,12 +981,17 @@ export const ENTRIES: UIEntry[] = [
         "double sided arrow when resizing a window",
         "cursor with a plus badge when dragging to copy",
         "the mouse becomes a no entry sign",
-        "magnifying glass cursor with a plus in it"
+        "magnifying glass cursor with a plus in it",
+        "hand icon over clickable links",
+        "text editing beam cursor"
       ],
       "ko": [
         "마우스 손가락 모양 커서",
         "텍스트 입력 커서",
-        "마우스 화살표 변화"
+        "마우스 화살표 변화",
+        "마우스가 링크 위에 올라갔을 때 손가락 모양",
+        "텍스트 드래그할 때 나오는 I자 커서",
+        "창 크기 조절할 때 나오는 양방향 화살표"
       ]
     },
     "api": [
@@ -972,12 +1070,18 @@ export const ENTRIES: UIEntry[] = [
         "warning dialog",
         "confirmation dialog",
         "message box",
-        "system prompt"
+        "system prompt",
+        "alert modal",
+        "confirmation box",
+        "system popup"
       ],
       "ko": [
         "알림 팝업",
         "경고창",
-        "대화상자"
+        "대화상자",
+        "경고 대화상자",
+        "확인 팝업창",
+        "시스템 경고창"
       ]
     },
     "fuzzy": {
@@ -987,11 +1091,16 @@ export const ENTRIES: UIEntry[] = [
         "the box with a don't ask me again checkbox",
         "warning message with a bold line and smaller gray text under it",
         "the blue button that presses itself when you hit enter",
-        "confirmation popup before deleting something"
+        "confirmation popup before deleting something",
+        "small warning box asking are you sure",
+        "pop up with ok cancel and dont ask again"
       ],
       "ko": [
         "경고 문구와 확인 버튼이 나오는 모달",
-        "시스템 알림 팝업"
+        "시스템 알림 팝업",
+        "정말 삭제하시겠습니까 물어보는 확인 팝업창",
+        "확인 취소 버튼과 다시 보지 않기 체크박스가 있는 창",
+        "경고 문구와 아이콘이 뜨는 대화상자"
       ]
     },
     "api": [
@@ -1159,12 +1268,17 @@ export const ENTRIES: UIEntry[] = [
         "slider control",
         "seek bar",
         "track bar",
-        "range control"
+        "range control",
+        "range slider",
+        "knob track control"
       ],
       "ko": [
         "범위 슬라이더",
         "노브 컨트롤",
-        "시그모이드 슬라이더"
+        "시그모이드 슬라이더",
+        "슬라이더 조절바",
+        "음량 범위 슬라이더",
+        "트랙 노브"
       ]
     },
     "fuzzy": {
@@ -1174,11 +1288,16 @@ export const ENTRIES: UIEntry[] = [
         "the bar with a circle you slide",
         "the little lines under the slider it snaps to",
         "the blue filled part of the slider line",
-        "drag thing for picking a number between min and max"
+        "drag thing for picking a number between min and max",
+        "dragging a circle along a line to change volume",
+        "min max range control bar"
       ],
       "ko": [
         "선 따라 움직이는 동그라미 조절바",
-        "음량 및 밝기 조절 슬라이더"
+        "음량 및 밝기 조절 슬라이더",
+        "선 위에서 동그라미를 끌어서 볼륨 조절하는 바",
+        "눈금이 표시된 수치 조절 슬라이더",
+        "범위 입력용 드래그 바"
       ]
     },
     "api": [
@@ -1322,12 +1441,18 @@ export const ENTRIES: UIEntry[] = [
         "color picker button",
         "color swatch control",
         "color chooser",
-        "color selector"
+        "color selector",
+        "swatch control",
+        "eyedropper button",
+        "color sample button"
       ],
       "ko": [
         "색상 샘플 버튼",
         "컬러 피커",
-        "색상 선택기"
+        "색상 선택기",
+        "컬러 피커 상자",
+        "색상 선택 버튼",
+        "스포이트 색상 추출기"
       ]
     },
     "fuzzy": {
@@ -1337,11 +1462,16 @@ export const ENTRIES: UIEntry[] = [
         "the eyedropper for picking a color from the screen",
         "little colored square with an arrow next to it",
         "the grid of color squares that pops up",
-        "control for choosing a color in settings"
+        "control for choosing a color in settings",
+        "square showing current color click to change",
+        "palette window popup with eyedropper"
       ],
       "ko": [
         "색상 네모 상자 누르면 색 선택창 나오는 버튼",
-        "컬러 피커 상자"
+        "컬러 피커 상자",
+        "현재 색상이 보이는 작고 네모난 버튼 누르면 팔레트",
+        "화면 색상 뽑아내는 스포이트 버튼",
+        "색상 변경 팝업창"
       ]
     },
     "api": [
@@ -1482,12 +1612,17 @@ export const ENTRIES: UIEntry[] = [
         "text field",
         "input field",
         "form input",
-        "form control"
+        "form control",
+        "input field group",
+        "text field with label",
+        "input validation box"
       ],
       "ko": [
         "입력 폼 필드",
         "텍스트 입력 필드",
-        "폼 텍스트 상자"
+        "폼 텍스트 상자",
+        "입력 폼 상자",
+        "에러 메세지 필드"
       ]
     },
     "fuzzy": {
@@ -1497,11 +1632,16 @@ export const ENTRIES: UIEntry[] = [
         "the small gray text under the input",
         "the red error message under the field",
         "the word above the text box",
-        "hint text in the empty input"
+        "hint text in the empty input",
+        "input box with label text hint and red error message",
+        "required field with red asterisk"
       ],
       "ko": [
         "라벨과 플레이스홀더가 있는 입력 상자",
-        "에러 메시지가 뜨는 입력 필드"
+        "에러 메시지가 뜨는 입력 필드",
+        "라벨과 힌트 문구, 빨간색 에러 메시지가 있는 입력창",
+        "필수 입력 표시 별표가 있는 폼",
+        "입력 상자 안의 헛갈리지 않는 힌트 글자"
       ]
     },
     "api": [
@@ -1659,12 +1799,16 @@ export const ENTRIES: UIEntry[] = [
         "text overflow",
         "line clamp",
         "clamped text",
-        "truncated text"
+        "truncated text",
+        "text ellipsis",
+        "middle truncation"
       ],
       "ko": [
         "말줄임표",
         "라인 클램프",
-        "텍스트 자르기"
+        "텍스트 자르기",
+        "말줄임표 처리",
+        "텍스트 생략"
       ]
     },
     "fuzzy": {
@@ -1674,12 +1818,17 @@ export const ENTRIES: UIEntry[] = [
         "long file name with dots in the middle",
         "cut the title after one line instead of wrapping",
         "text fades out at the edge instead of dots",
-        "title too long for the box"
+        "title too long for the box",
+        "three dots when text overflows line",
+        "file name shortened in middle with dots"
       ],
       "ko": [
         "글자 자르고 점 세개 만드는 효과",
         "말줄임표 처리",
-        "line-clamp 효과"
+        "line-clamp 효과",
+        "긴 제목이 넘칠 때 점 3개(...)로 자르기",
+        "두 줄만 보여주고 끝에 말줄임표 붙이기",
+        "파일 이름 중간을 줄임표로 처리하기"
       ]
     },
     "api": [
@@ -1818,12 +1967,16 @@ export const ENTRIES: UIEntry[] = [
         "drag and drop",
         "drag-and-drop interaction",
         "direct manipulation",
-        "sortable drag"
+        "sortable drag",
+        "dnd interaction",
+        "reorder items"
       ],
       "ko": [
         "드래그 앤 드롭",
         "끌어서 놓기",
-        "순서 변경 드래그"
+        "순서 변경 드래그",
+        "끌어서 이동하기",
+        "순서 바꾸기 드래그"
       ]
     },
     "fuzzy": {
@@ -1833,11 +1986,16 @@ export const ENTRIES: UIEntry[] = [
         "line indicators for where it will drop",
         "the neighboring terminal is highlighted as a whole",
         "half of that terminal is highlighted",
-        "the ghost copy that follows the pointer"
+        "the ghost copy that follows the pointer",
+        "dragging an item to change list order",
+        "ghost image following cursor during drag"
       ],
       "ko": [
         "마우스로 집어서 옮기는 기능",
-        "드래그해서 위치 바꾸기"
+        "드래그해서 위치 바꾸기",
+        "마우스로 끌어서 순서를 바꾸는 기능",
+        "드래그할 때 따라다니는 투명한 유령 이미지",
+        "드롭할 위치를 보여주는 가이드 라인"
       ]
     },
     "api": [
@@ -1987,12 +2145,16 @@ export const ENTRIES: UIEntry[] = [
         "separator",
         "rule",
         "horizontal rule",
-        "visual divider"
+        "visual divider",
+        "section separator",
+        "vertical divider line"
       ],
       "ko": [
         "구분선",
         "구분 구획선",
-        "경계선"
+        "경계선",
+        "영역 분리선",
+        "메뉴 구분줄"
       ]
     },
     "fuzzy": {
@@ -2002,11 +2164,16 @@ export const ENTRIES: UIEntry[] = [
         "a vertical line break between those sections",
         "the line break divider between the actual kind of title and the download button",
         "maybe add a vertical line divider",
-        "horizontal line thing"
+        "horizontal line thing",
+        "thin gray line separating sections",
+        "vertical line between toolbar buttons"
       ],
       "ko": [
         "영역 나누는 회색 선",
-        "메뉴 사이 구분선"
+        "메뉴 사이 구분선",
+        "콘텐츠나 버튼 사이에 들어가는 얇은 회색 선",
+        "메뉴 항목 사이를 나눠주는 세로선",
+        "영역 구분을 위한 구분선"
       ]
     },
     "api": [
@@ -2140,12 +2307,15 @@ export const ENTRIES: UIEntry[] = [
         "circular progress indicator",
         "loading spinner",
         "determinate progress indicator",
-        "linear progress indicator"
+        "linear progress indicator",
+        "progress bar",
+        "progress ring"
       ],
       "ko": [
         "진행 바",
         "로딩 스피너",
-        "프로그레스 링"
+        "프로그레스 링",
+        "진행 표시줄"
       ]
     },
     "fuzzy": {
@@ -2155,11 +2325,16 @@ export const ENTRIES: UIEntry[] = [
         "the menu bar like ring getting filled up",
         "the ring that fills up",
         "the spinning circle while it loads",
-        "the bar that shows how far along it is"
+        "the bar that shows how far along it is",
+        "spinning circle while loading page",
+        "percentage bar filling up"
       ],
       "ko": [
         "빙글빙글 도는 로딩 표시",
-        "퍼센트 차오르는 진행 바"
+        "퍼센트 차오르는 진행 바",
+        "페이지 로딩 중 빙글빙글 도는 동그라미",
+        "진행률 퍼센트가 차오르는 바",
+        "원형으로 채워지는 프로그레스 링"
       ]
     },
     "api": [
@@ -2299,12 +2474,17 @@ export const ENTRIES: UIEntry[] = [
         "app window",
         "document window",
         "NSWindow",
-        "window frame"
+        "window frame",
+        "app window frame",
+        "mac OS window"
       ],
       "ko": [
         "앱 윈도우",
         "창 프레임",
-        "데스크톱 윈도우"
+        "데스크톱 윈도우",
+        "Mac 윈도우 창",
+        "타이틀바 프레임",
+        "데스크톱 앱 창"
       ]
     },
     "fuzzy": {
@@ -2314,11 +2494,16 @@ export const ENTRIES: UIEntry[] = [
         "the little control inside the title bar",
         "a button next to the traffic lights",
         "the tabs built into the mac window frame",
-        "the tiny corner grip for resizing the window"
+        "the tiny corner grip for resizing the window",
+        "mac app title bar with red yellow green buttons",
+        "movable resizable window frame"
       ],
       "ko": [
         "맥 스타일 윈도우 창",
-        "타이틀바가 있는 응용프로그램 창"
+        "타이틀바가 있는 응용프로그램 창",
+        "상단에 신호등 버튼과 타이틀바가 있는 맥 앱 창",
+        "드래그해서 옮길 수 있는 프레임",
+        "크기 조절 가능한 윈도우 상자"
       ]
     },
     "api": [
@@ -2524,12 +2709,17 @@ export const ENTRIES: UIEntry[] = [
         "split pane",
         "splitter view",
         "multi-pane layout",
-        "navigation split view"
+        "navigation split view",
+        "resizable split panes",
+        "splitter layout"
       ],
       "ko": [
         "분할 뷰",
         "스플릿 패널",
-        "멀티 패널 뷰"
+        "멀티 패널 뷰",
+        "분할 패널 뷰",
+        "크기 조절 스플릿 뷰",
+        "좌우 분할창"
       ]
     },
     "fuzzy": {
@@ -2538,11 +2728,16 @@ export const ENTRIES: UIEntry[] = [
         "the line between the two panes that I drag",
         "the divider that resizes the sidebar",
         "the left panel that collapses into the edge",
-        "the toolbar line that follows the sidebar divider"
+        "the toolbar line that follows the sidebar divider",
+        "dragging divider line between two panes",
+        "left sidebar right main content split"
       ],
       "ko": [
         "화면 반으로 나누는 리사이즈 구분선",
-        "왼쪽 목록 오른쪽 상세 split 패널"
+        "왼쪽 목록 오른쪽 상세 split 패널",
+        "가운데 회색 선을 끌어서 화면 비율을 나누는 뷰",
+        "왼쪽 목록과 오른쪽 상세가 나눠진 스플릿 패널",
+        "좌우 창 크기를 조정하는 마우스 드래그 구분선"
       ]
     },
     "api": [
@@ -2668,12 +2863,15 @@ export const ENTRIES: UIEntry[] = [
         "scrolling view",
         "scroll container",
         "scrollbar",
-        "NSScroller"
+        "NSScroller",
+        "scrolling viewport",
+        "scrollbar track"
       ],
       "ko": [
         "스크롤 컨테이너",
         "뷰포트 패널",
-        "스크롤 영역"
+        "스크롤 영역",
+        "뷰포트 스크롤"
       ]
     },
     "fuzzy": {
@@ -2683,11 +2881,16 @@ export const ENTRIES: UIEntry[] = [
         "the little thumb you drag to scroll",
         "the track behind the scrollbar thumb",
         "the scrollbar that fades away until you scroll",
-        "the rubber band bounce at the end of a list"
+        "the rubber band bounce at the end of a list",
+        "scrollbar fading on the side when scrolling",
+        "rubber band bounce at list end"
       ],
       "ko": [
         "스크롤바 생기는 컨테이너",
-        "화면 넘칠 때 스크롤되는 영역"
+        "화면 넘칠 때 스크롤되는 영역",
+        "내용이 넘칠 때 옆에 나타나는 스크롤바",
+        "목록 끝에서 튕기는 맥 특유의 스크롤 효과",
+        "마우스 휠로 내려보는 스크롤 구역"
       ]
     },
     "api": [
@@ -2812,12 +3015,16 @@ export const ENTRIES: UIEntry[] = [
         "search box",
         "search bar",
         "NSSearchField",
-        "searchable field"
+        "searchable field",
+        "search input field",
+        "magnifying glass input"
       ],
       "ko": [
         "검색창",
         "검색 입력 필드",
-        "서치 바"
+        "서치 바",
+        "검색 필드",
+        "돋보기 검색 바"
       ]
     },
     "fuzzy": {
@@ -2826,11 +3033,16 @@ export const ENTRIES: UIEntry[] = [
         "the search input in the mac toolbar",
         "the little x that clears the search",
         "the magnifier button inside the text field",
-        "the dropdown of recent searches"
+        "the dropdown of recent searches",
+        "search box with magnifying glass and clear button",
+        "input field for filtering results"
       ],
       "ko": [
         "돋보기 있는 검색 입력 상자",
-        "글자 지우기 버튼 있는 검색창"
+        "글자 지우기 버튼 있는 검색창",
+        "돋보기 아이콘과 지우기(X) 버튼이 있는 검색창",
+        "결과를 필터링하는 검색 입력 상자",
+        "검색어 입력 필드"
       ]
     },
     "api": [
@@ -2934,12 +3146,18 @@ export const ENTRIES: UIEntry[] = [
         "save dialog",
         "save-as panel",
         "file save picker",
-        "NSSavePanel"
+        "NSSavePanel",
+        "file open dialog",
+        "export panel",
+        "file picker modal"
       ],
       "ko": [
         "파일 저장창",
         "저장 대화상자",
-        "Save 패널"
+        "Save 패널",
+        "파일 저장 패널",
+        "파일 열기 창",
+        "내보내기 대화상자"
       ]
     },
     "fuzzy": {
@@ -2948,11 +3166,16 @@ export const ENTRIES: UIEntry[] = [
         "the dialog where you name a file before saving",
         "the little arrow that expands the save dialog",
         "the file format dropdown in save as",
-        "the finder sidebar inside the save window"
+        "the finder sidebar inside the save window",
+        "file browser window to save or open document",
+        "mac system file chooser panel"
       ],
       "ko": [
         "파일 이름 적고 저장하는 시스템 팝업창",
-        "저장 경로 선택 모달"
+        "저장 경로 선택 모달",
+        "파일을 저장하거나 열 때 뜨는 시스템 파일 탐색창",
+        "저장할 위치와 파일명을 선택하는 팝업",
+        "내보내기 파일 선택 패널"
       ]
     },
     "api": [
@@ -3057,12 +3280,17 @@ export const ENTRIES: UIEntry[] = [
         "token input",
         "recipient field",
         "tag input",
-        "pill input"
+        "pill input",
+        "tag input field",
+        "chip input box",
+        "recipient token field"
       ],
       "ko": [
         "태그 입력 필드",
         "토큰 입력창",
-        "캡슐 태그 바"
+        "캡슐 태그 바",
+        "토큰 입력 상자",
+        "수신자 칩 입력창"
       ]
     },
     "fuzzy": {
@@ -3071,11 +3299,16 @@ export const ENTRIES: UIEntry[] = [
         "the email address bubbles in the To field",
         "input that turns words into little tags",
         "rounded chips you can delete from a field",
-        "the field where each recipient becomes its own bubble"
+        "the field where each recipient becomes its own bubble",
+        "email to field with blue name pills",
+        "typing tags that turn into removable chips"
       ],
       "ko": [
         "이메일 받는사람 주소처럼 칩으로 바뀌는 입력창",
-        "태그 입력하면 칩으로 묶이는 상자"
+        "태그 입력하면 칩으로 묶이는 상자",
+        "이메일 받는 사람 입력창처럼 이름을 치면 칩으로 변하는 필드",
+        "태그 입력 시 알약 모양 버튼으로 생성되는 상자",
+        "x 누르면 지워지는 토큰 입력창"
       ]
     },
     "api": [
@@ -3163,12 +3396,17 @@ export const ENTRIES: UIEntry[] = [
         "split button",
         "menu-arrow button",
         "action-and-menu button",
-        "NSComboButton"
+        "NSComboButton",
+        "dropdown action button",
+        "menu button combo"
       ],
       "ko": [
         "분할 버튼",
         "드롭다운 콤보 버튼",
-        "스플릿 버튼"
+        "스플릿 버튼",
+        "콤보 버튼",
+        "분할 드롭다운 버튼",
+        "보조 메뉴 버튼"
       ]
     },
     "fuzzy": {
@@ -3177,11 +3415,16 @@ export const ENTRIES: UIEntry[] = [
         "one button that clicks and also has a dropdown",
         "the split action button with a menu on the right",
         "primary button joined to a tiny chevron button",
-        "button where the label acts and the arrow opens choices"
+        "button where the label acts and the arrow opens choices",
+        "button with main action and small arrow for dropdown",
+        "split button where left clicks right opens menu"
       ],
       "ko": [
         "버튼 오른쪽 화살표 누르면 추가 옵션 나오는 버튼",
-        "주 동작과 드롭다운이 합쳐진 버튼"
+        "주 동작과 드롭다운이 합쳐진 버튼",
+        "왼쪽은 기본 실행이고 오른쪽 화살표는 추가 메뉴가 나오는 분할 버튼",
+        "드롭다운 화살표가 붙어 있는 실행 버튼",
+        "주요 작업 버튼 옆의 보조 메뉴 화살표"
       ]
     },
     "api": [
@@ -3294,12 +3537,18 @@ export const ENTRIES: UIEntry[] = [
         "level meter",
         "capacity indicator",
         "rating indicator",
-        "relevancy indicator"
+        "relevancy indicator",
+        "rating gauge",
+        "capacity level bar",
+        "signal strength dots"
       ],
       "ko": [
         "수치 게이지",
         "단계 인디케이터",
-        "레벨 게이지"
+        "레벨 게이지",
+        "레벨 표시기",
+        "배터리 용량 바",
+        "신호 세기 인디케이터"
       ]
     },
     "fuzzy": {
@@ -3308,11 +3557,16 @@ export const ENTRIES: UIEntry[] = [
         "the segmented bar showing disk capacity",
         "the little meter showing how strong a match is",
         "the bar that changes color at warning and critical levels",
-        "mac gauge with tick marks and colored ranges"
+        "mac gauge with tick marks and colored ranges",
+        "battery or signal strength green yellow red blocks",
+        "capacity meter with discrete ticks"
       ],
       "ko": [
         "와이파이나 배터리 칸으로 보여주는 게이지",
-        "비밀번호 강도 게이지"
+        "비밀번호 강도 게이지",
+        "배터리나 신호 세기처럼 칸으로 채워지는 레벨 표시기",
+        "용량이나 등급을 나타내는 계폐 인디케이터",
+        "단계별로 불이 들어오는 레벨 바"
       ]
     },
     "api": [
@@ -3432,12 +3686,18 @@ export const ENTRIES: UIEntry[] = [
         "browser view",
         "Finder column view",
         "Miller columns",
-        "hierarchical browser"
+        "hierarchical browser",
+        "miller columns",
+        "finder column layout",
+        "hierarchical column view"
       ],
       "ko": [
         "열 뷰",
         "파인더 스타일 컬럼",
-        "수직 열 파일 브라우저"
+        "수직 열 파일 브라우저",
+        "컬럼 뷰",
+        "밀러 컬럼스",
+        "파인더 폴더 열 구조"
       ]
     },
     "fuzzy": {
@@ -3446,11 +3706,16 @@ export const ENTRIES: UIEntry[] = [
         "folders opening in columns to the right",
         "the file browser where every level gets a new column",
         "side by side columns showing a folder path",
-        "the hierarchy browser with arrows at the end of rows"
+        "the hierarchy browser with arrows at the end of rows",
+        "mac finder style side by side folder columns",
+        "column browser for deep file hierarchy"
       ],
       "ko": [
         "맥 파인더처럼 하위 폴더가 옆에 열로 열리는 뷰",
-        "열 방향 폴더 탐색기"
+        "열 방향 폴더 탐색기",
+        "맥 파인더처럼 폴더를 누르면 오른쪽에 다음 열이 열리는 뷰",
+        "단계별 폴더 구조를 수평 열로 나열하는 파일 탐색기",
+        "밀러 컬럼 방식 탐색창"
       ]
     },
     "api": [
@@ -3558,12 +3823,16 @@ export const ENTRIES: UIEntry[] = [
         "tree view",
         "hierarchical list",
         "outline list",
-        "expandable table"
+        "expandable table",
+        "nested outline list",
+        "hierarchical tree"
       ],
       "ko": [
         "트리 뷰",
         "계층 리스트",
-        "아웃라인 목록"
+        "아웃라인 목록",
+        "아웃라인 뷰",
+        "계층 구조 리스트"
       ]
     },
     "fuzzy": {
@@ -3572,11 +3841,16 @@ export const ENTRIES: UIEntry[] = [
         "tree of folders where rows have children",
         "a list with nested rows you can open and close",
         "the sidebar-looking list with hierarchy levels",
-        "expandable rows indented under their parent"
+        "expandable rows indented under their parent",
+        "expandable folder tree with triangles",
+        "nested list items with indentations"
       ],
       "ko": [
         "화살표 눌러서 폴더 펼치는 트리 목록",
-        "계층형 뷰어"
+        "계층형 뷰어",
+        "삼각형 화살표를 누르면 하위 항목이 들어있는 트리 뷰",
+        "계층적으로 들여쓰기된 탐색 리스트",
+        "폴더 및 레이어 구조를 보여주는 아웃라인 목록"
       ]
     },
     "api": [
@@ -3686,13 +3960,15 @@ export const ENTRIES: UIEntry[] = [
         "hamburger menu",
         "overflow menu",
         "more menu",
-        "ellipsis button"
+        "ellipsis button",
+        "more options menu"
       ],
       "ko": [
         "더보기 버튼",
         "미트볼 메뉴",
         "케밥 메뉴",
-        "Ellipsis 버튼"
+        "Ellipsis 버튼",
+        "점 3개 메뉴"
       ]
     },
     "fuzzy": {
@@ -3703,12 +3979,17 @@ export const ENTRIES: UIEntry[] = [
         "the three lines menu icon",
         "the three dots after Open",
         "why does this button end in dots",
-        "the more options icon"
+        "the more options icon",
+        "three vertical or horizontal dots button for more actions",
+        "dot dot dot menu icon"
       ],
       "ko": [
         "점 세 개 누르면 나오는 메뉴",
         "가로 점 세 개",
-        "세로 점 세 개 더보기"
+        "세로 점 세 개 더보기",
+        "점 3개 세로 또는 가로로 찍혀있는 더보기 버튼",
+        "누르면 추가 메뉴가 떨어지는 삼점 아이콘",
+        "점 세개 메뉴 버튼"
       ]
     },
     "api": [
@@ -3838,12 +4119,17 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "menubar",
         "system menu bar",
-        "top bar"
+        "top bar",
+        "top menu bar",
+        "main menu system",
+        "global menu bar"
       ],
       "ko": [
         "상단 메뉴 바",
         "글로벌 메뉴",
-        "메뉴 라인"
+        "메뉴 라인",
+        "앱 메뉴 바",
+        "시스템 메뉴 바"
       ]
     },
     "fuzzy": {
@@ -3852,11 +4138,16 @@ export const ENTRIES: UIEntry[] = [
         "the strip with the apple logo and the clock",
         "top bar on mac with app menus",
         "where the wifi and battery icons live",
-        "the thing that shows File Edit View at the top"
+        "the thing that shows File Edit View at the top",
+        "file edit view window help menu at top of mac screen",
+        "mac system main menu bar"
       ],
       "ko": [
         "맥 화면 맨 위에 있는 메뉴 줄",
-        "상단 메뉴 바"
+        "상단 메뉴 바",
+        "화면 맨 위 상단에 있는 파일 편집 보기 메뉴 바",
+        "상단 네비게이션 드롭다운 메뉴 띠",
+        "앱 전체 명령 메뉴 바"
       ]
     },
     "api": [
@@ -4048,12 +4339,17 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "contextual menu",
         "right-click menu",
-        "shortcut menu"
+        "shortcut menu",
+        "right click menu",
+        "popup menu",
+        "secondary click menu"
       ],
       "ko": [
         "우클릭 메뉴",
         "문맥 메뉴",
-        "컨텍스트 팝업"
+        "컨텍스트 팝업",
+        "컨텍스트 메뉴",
+        "마우스 오른쪽 버튼 메뉴"
       ]
     },
     "fuzzy": {
@@ -4062,11 +4358,16 @@ export const ENTRIES: UIEntry[] = [
         "control click options for the thing under the pointer",
         "small action menu beside the selected item",
         "copy rename delete menu under the mouse",
-        "menu that opens from a secondary click"
+        "menu that opens from a secondary click",
+        "menu that appears where you right click",
+        "long press menu on touch devices"
       ],
       "ko": [
         "마우스 우클릭하면 나오는 메뉴",
-        "선택한 아이템 단축 메뉴"
+        "선택한 아이템 단축 메뉴",
+        "마우스 우클릭을 했을 때 커서 위치에 뜨는 메뉴",
+        "모바일에서 롱프레스 터치 시 뜨는 팝업 메뉴",
+        "오른쪽 버튼 클릭 메뉴"
       ]
     },
     "api": [
@@ -4194,12 +4495,17 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "disclosure control",
         "outline disclosure button",
-        "expand-collapse triangle"
+        "expand-collapse triangle",
+        "disclosure chevron",
+        "expand collapse triangle",
+        "fold arrow"
       ],
       "ko": [
         "접기/펼치기 화살표",
         "트리 화살표",
-        "디스클로저 삼각형"
+        "디스클로저 삼각형",
+        "디스클로저 트라이앵글",
+        "접기 펼치기 화살표"
       ]
     },
     "fuzzy": {
@@ -4208,11 +4514,16 @@ export const ENTRIES: UIEntry[] = [
         "little arrow that rotates when a section expands",
         "chevron beside a row with children",
         "small expand collapse arrow in an outline",
-        "triangle next to a heading that shows more content"
+        "triangle next to a heading that shows more content",
+        "little triangle that rotates down when clicked",
+        "arrow button that expands a section"
       ],
       "ko": [
         "삼각형 누르면 밑에 메뉴 펼쳐지는 화살표",
-        "트리 화살표 아이콘"
+        "트리 화살표 아이콘",
+        "누르면 아래로 90도 회전하면서 펼쳐지는 작은 삼각형",
+        "하위 항목을 숨기거나 보여주는 화살표 버튼",
+        "폴더 열기/닫기 삼각형"
       ]
     },
     "api": [
@@ -4318,12 +4629,18 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "Dock tile badge",
         "app icon badge",
-        "notification badge"
+        "notification badge",
+        "app badge icon",
+        "unread counter badge",
+        "dock notification dot"
       ],
       "ko": [
         "알림 숫지 배지",
         "독 배지",
-        "카운터 배지"
+        "카운터 배지",
+        "Dock 배지",
+        "앱 배지 숫자",
+        "알림 빨간 점"
       ]
     },
     "fuzzy": {
@@ -4332,11 +4649,16 @@ export const ENTRIES: UIEntry[] = [
         "unread count on the app icon in the dock",
         "little red label in the corner of a mac app icon",
         "number badge showing pending notifications",
-        "the red dot or number on a dock icon"
+        "the red dot or number on a dock icon",
+        "red circle with white number on app icon in dock",
+        "unread email count badge on app icon"
       ],
       "ko": [
         "앱 아이콘 위에 빨간 동그라미 숫표시",
-        "읽지 않은 메시지 수 표시"
+        "읽지 않은 메시지 수 표시",
+        "독(Dock) 앱 아이콘 우측 상단의 빨간색 안 읽은 알림 숫자",
+        "앱 아이콘에 붙은 숫자 배지",
+        "알림 카운트 빨간 동그라미"
       ]
     },
     "api": [
@@ -4431,12 +4753,17 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "keyboard focus indicator",
         "focus halo",
-        "first responder ring"
+        "first responder ring",
+        "mac focus ring",
+        "keyboard active ring"
       ],
       "ko": [
         "포커스 테두리",
         "키보드 포커스 링",
-        "접근성 윤곽선"
+        "접근성 윤곽선",
+        "포커스 링",
+        "키보드 포커스 외곽선",
+        "블루 포커스 링"
       ]
     },
     "fuzzy": {
@@ -4445,11 +4772,16 @@ export const ENTRIES: UIEntry[] = [
         "outline that appears when you tab to a button",
         "blue border around the field that has keyboard focus",
         "highlight showing where keyboard input will go",
-        "ring around buttons when full keyboard access is on"
+        "ring around buttons when full keyboard access is on",
+        "blue glow around button when tabbing with keyboard",
+        "mac style focus outline around text field"
       ],
       "ko": [
         "탭키 누르면 파랗게 빛나는 입력창 테두리",
-        "키보드 포커스 표시"
+        "키보드 포커스 표시",
+        "키보드 Tab 키로 이동할 때 버튼 주위에 생기는 파란색 포커스 링",
+        "현재 포커스된 입력을 알려주는 외곽 후광",
+        "키보드 활성 윤곽선"
       ]
     },
     "api": [
@@ -4532,12 +4864,17 @@ export const ENTRIES: UIEntry[] = [
         "inspector panel",
         "details sidebar",
         "properties inspector",
-        "utility area"
+        "utility area",
+        "property inspector",
+        "sidebar inspector"
       ],
       "ko": [
         "속성창",
         "인스펙터 패널",
-        "세부 속성 패널"
+        "세부 속성 패널",
+        "인스펙터 창",
+        "속성 패널",
+        "우측 인스펙터"
       ]
     },
     "fuzzy": {
@@ -4546,11 +4883,16 @@ export const ENTRIES: UIEntry[] = [
         "right sidebar that changes with the selected item",
         "keynote style format panel",
         "xcode panel showing details for what is selected",
-        "collapsible settings column on the right"
+        "collapsible settings column on the right",
+        "right side panel showing properties of selected object",
+        "figma style right inspector sidebar"
       ],
       "ko": [
         "오른쪽에 객체 속성 수정하는 패널",
-        "선택 요소 상세창"
+        "선택 요소 상세창",
+        "선택한 요소의 상세 속성값(크기, 색상, 위치)을 보여주는 우측 패널",
+        "피그마 스타일의 오른쪽 속성창",
+        "인스펙터 사이드바"
       ]
     },
     "api": [
@@ -4666,12 +5008,17 @@ export const ENTRIES: UIEntry[] = [
         "floating panel",
         "utility panel",
         "HUD window",
-        "heads-up display"
+        "heads-up display",
+        "utility window",
+        "hud window"
       ],
       "ko": [
         "보조 창",
         "HUD 패널",
-        "팔레트 창"
+        "팔레트 창",
+        "패널 및 HUD",
+        "유틸리티 창",
+        "플로팅 툴 패널"
       ]
     },
     "fuzzy": {
@@ -4680,11 +5027,16 @@ export const ENTRIES: UIEntry[] = [
         "floating controls palette on mac",
         "dark translucent heads up display window",
         "spotlight style window that does not activate the app",
-        "tool window that follows the active document"
+        "tool window that follows the active document",
+        "floating palette window over main app",
+        "dark transparent hud overlay panel"
       ],
       "ko": [
         "도구 모음 띄워진 플로팅 창",
-        "HUD 팝업 패널"
+        "HUD 팝업 패널",
+        "메인 창 위에 둥둥 떠 있는 도구 모음 창",
+        "어두운 반투명 HUD 유틸리티 패널",
+        "작업 툴 플로팅 패널"
       ]
     },
     "api": [
@@ -4788,12 +5140,18 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "anchored popover",
         "popover bubble",
-        "callout"
+        "callout",
+        "popover panel",
+        "anchored popup",
+        "bubble callout"
       ],
       "ko": [
         "팝오버 말풍선",
         "화살표 팝업",
-        "팝오버 패널"
+        "팝오버 패널",
+        "팝오버",
+        "말풍선 팝업",
+        "앵커 팝오버"
       ]
     },
     "fuzzy": {
@@ -4802,11 +5160,16 @@ export const ENTRIES: UIEntry[] = [
         "box that points back to the button that opened it",
         "small window attached to a toolbar button",
         "speech bubble panel anchored to a control",
-        "floating settings bubble that closes when you click away"
+        "floating settings bubble that closes when you click away",
+        "floating card with arrow pointing to its trigger button",
+        "popup anchored to an icon or button"
       ],
       "ko": [
         "버튼 누르면 화살표 말풍선으로 뜨는 레이어",
-        "팝오버 창"
+        "팝오버 창",
+        "버튼이나 아이콘에 화살표로 연결되어 뜨는 말풍선 패널",
+        "클릭한 위치 근처에 부유하는 카드 팝업",
+        "앵커형 팝오버"
       ]
     },
     "api": [
@@ -4903,12 +5266,16 @@ export const ENTRIES: UIEntry[] = [
         "pop-up menu button",
         "pull-down menu button",
         "combo box",
-        "menu picker"
+        "menu picker",
+        "pop up button",
+        "pull down button",
+        "dropdown selector"
       ],
       "ko": [
         "팝업 버튼",
         "풀다운 메뉴",
-        "드롭다운 선택기"
+        "드롭다운 선택기",
+        "풀다운 버튼"
       ]
     },
     "fuzzy": {
@@ -4918,11 +5285,16 @@ export const ENTRIES: UIEntry[] = [
         "text field with a dropdown list attached",
         "mac menu button versus an editable dropdown",
         "selector that looks like a button and opens choices",
-        "field where you can type or pick an existing value"
+        "field where you can type or pick an existing value",
+        "button with checkmark choice or action list popup",
+        "dropdown menu attached to a button with arrows"
       ],
       "ko": [
         "누르면 아래로 목록 길게 내려오는 메뉴",
-        "옵션 선택 버튼"
+        "옵션 선택 버튼",
+        "누르면 옵션 목록이 아래로 펼쳐지는 드롭다운 선택 버튼",
+        "현재 선택된 항목이 체크되어 있는 팝업 버튼",
+        "옵션 선택기"
       ]
     },
     "api": [
@@ -5056,12 +5428,17 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "segment control",
         "segmented picker",
-        "button group"
+        "button group",
+        "pill toggle bar",
+        "tabbed segment bar"
       ],
       "ko": [
         "세그먼트 버튼",
         "분할 토글",
-        "수평 세그먼트 스위치"
+        "수평 세그먼트 스위치",
+        "세그먼트 컨트롤",
+        "분할 토글 바",
+        "캡슐 모드 선택기"
       ]
     },
     "fuzzy": {
@@ -5070,11 +5447,16 @@ export const ENTRIES: UIEntry[] = [
         "pill split into several clickable choices",
         "small tabs that switch between views",
         "group of joined icon buttons in a toolbar",
-        "horizontal selector with one pressed section"
+        "horizontal selector with one pressed section",
+        "connected capsule buttons for switching views",
+        "ios style segmented mode picker"
       ],
       "ko": [
         "네모나 캡슐이 하나로 이어진 토글 버튼 그룹",
-        "뷰 전환 탭 버튼"
+        "뷰 전환 탭 버튼",
+        "알약 모양으로 연결된 버튼 중 하나를 선택하는 세그먼트 바",
+        "뷰 모드 전환용 캡슐 토글 버튼",
+        "세그먼트 선택기"
       ]
     },
     "api": [
@@ -5170,12 +5552,15 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "window-modal dialog",
         "document-modal dialog",
-        "attached sheet"
+        "attached sheet",
+        "window modal sheet",
+        "document modal"
       ],
       "ko": [
         "시트 패널",
         "윈도우 부착 모달",
-        "슬라이드 시트"
+        "슬라이드 시트",
+        "창 부착 모달"
       ]
     },
     "fuzzy": {
@@ -5184,11 +5569,16 @@ export const ENTRIES: UIEntry[] = [
         "modal attached to just one mac window",
         "panel hanging from the top of the document window",
         "save dialog attached to its parent window",
-        "popup that blocks one window but not the whole app"
+        "popup that blocks one window but not the whole app",
+        "modal dialog sliding down from window title bar",
+        "sheet blocking parent window only"
       ],
       "ko": [
         "창 위쪽에서 스르륵 내려오는 모달 패널",
-        "맥 스타일 시트 창"
+        "맥 스타일 시트 창",
+        "창 타이틀바 밑에서 스르륵 내려오는 모달 창",
+        "해당 윈도우만 잠그고 내려오는 시트 패널",
+        "맥 스타일 슬라이드 모달"
       ]
     },
     "api": [
@@ -5269,12 +5659,16 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "source list",
         "navigation sidebar",
-        "split view sidebar"
+        "split view sidebar",
+        "left nav column"
       ],
       "ko": [
         "사이드 내비게이션",
         "좌측 메뉴 바",
-        "사이드 패널"
+        "사이드 패널",
+        "사이드바",
+        "좌측 탐색 바",
+        "소스 리스트"
       ]
     },
     "fuzzy": {
@@ -5284,11 +5678,16 @@ export const ENTRIES: UIEntry[] = [
         "left panel with sections and selected rows",
         "sidebar that collapses next to the main content",
         "list of folders or pages on the left",
-        "mac navigation rail with a frosted background"
+        "mac navigation rail with a frosted background",
+        "translucent left column with category list",
+        "finder or mail style navigation sidebar"
       ],
       "ko": [
         "화면 왼쪽에 고정된 카테고리 메뉴",
-        "사이드바 탐색창"
+        "사이드바 탐색창",
+        "화면 왼쪽에 고정된 반투명 탐색 메뉴 컬럼",
+        "파인더나 메일 앱의 좌측 카테고리 목록",
+        "접고 펼칠 수 있는 사이드바"
       ]
     },
     "api": [
@@ -5422,12 +5821,17 @@ export const ENTRIES: UIEntry[] = [
         "stepper control",
         "stepper arrows",
         "numeric stepper",
-        "incrementer"
+        "incrementer",
+        "stepper buttons",
+        "increment decrement arrows",
+        "number stepper"
       ],
       "ko": [
         "증감 버튼",
         "수량 조절기",
-        "스텝퍼"
+        "스텝퍼",
+        "증감 화살표 버튼",
+        "수량 스텝퍼"
       ]
     },
     "fuzzy": {
@@ -5436,11 +5840,16 @@ export const ENTRIES: UIEntry[] = [
         "little control that increases or decreases a value",
         "stacked arrow buttons next to a numeric input",
         "small plus minus style control for changing a number",
-        "spinner arrows for adjusting a value one step at a time"
+        "spinner arrows for adjusting a value one step at a time",
+        "tiny up down arrows next to a number field",
+        "plus minus stepper control for quantity"
       ],
       "ko": [
         "위아래 화살표 눌러 숫자 올리고 내리는 버튼",
-        "수량 + - 버튼"
+        "수량 + - 버튼",
+        "숫자 옆에 붙어있는 작고 귀여운 위아래 증감 화살표",
+        "수량을 1씩 늘리거나 줄이는 스텝퍼",
+        "증감 버튼"
       ]
     },
     "api": [
@@ -5538,12 +5947,17 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "window toolbar",
         "unified toolbar",
-        "title bar toolbar"
+        "title bar toolbar",
+        "unified titlebar toolbar",
+        "action bar"
       ],
       "ko": [
         "도구 모음",
         "작업 막대",
-        "툴바 패널"
+        "툴바 패널",
+        "툴바",
+        "상단 도구 모음",
+        "통합 타이틀바 툴바"
       ]
     },
     "fuzzy": {
@@ -5552,11 +5966,16 @@ export const ENTRIES: UIEntry[] = [
         "title bar with search and action icons in it",
         "mac window header where the toolbar and title share one row",
         "top strip with customizable window actions",
-        "line separating the toolbar from the window content"
+        "line separating the toolbar from the window content",
+        "row of tool buttons at top of window",
+        "search and action icons in window header"
       ],
       "ko": [
         "상단 도구 아이콘 모음",
-        "작업 아이콘 막대"
+        "작업 아이콘 막대",
+        "창 상단에 아이콘 버튼들이 나열된 도구 모음 줄",
+        "검색창과 도구 아이콘이 통합된 윈도우 헤더",
+        "작업 아이콘 툴바"
       ]
     },
     "api": [
@@ -5689,12 +6108,15 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "window controls",
         "title bar buttons",
-        "close minimize zoom buttons"
+        "close minimize zoom buttons",
+        "three colored dots"
       ],
       "ko": [
         "신호등 버튼",
         "창 제어 버튼",
-        "Mac 3색 창 버튼"
+        "Mac 3색 창 버튼",
+        "Mac 창 제어 버튼",
+        "빨간 노란 초록 버튼"
       ]
     },
     "fuzzy": {
@@ -5703,11 +6125,16 @@ export const ENTRIES: UIEntry[] = [
         "red yellow and green buttons at the top left",
         "little x minus and arrows that appear when you hover",
         "mac window close minimize and full screen buttons",
-        "green window button that makes the window bigger"
+        "green window button that makes the window bigger",
+        "red yellow green dots at top left of mac window",
+        "mac window close minimize full screen buttons"
       ],
       "ko": [
         "맥 창 왼쪽 위 빨간 노란 초록 버튼",
-        "창 닫기 최소화 확장 버튼"
+        "창 닫기 최소화 확장 버튼",
+        "맥 창 왼쪽 위 빨간색 노란색 초록색 신호등 버튼",
+        "창 닫기 최소화 전체화면 버튼",
+        "맥 OS 3색 창 제어 버튼"
       ]
     },
     "api": [
@@ -5833,12 +6260,16 @@ export const ENTRIES: UIEntry[] = [
         "visual effect material",
         "frosted glass",
         "translucent material",
-        "blur material"
+        "blur material",
+        "frosted glass effect",
+        "mac blur material"
       ],
       "ko": [
         "반투명 블러 효과",
         "아크릴 재질",
-        "바이브런시"
+        "바이브런시",
+        "비주얼 이펙트 재질",
+        "반투명 블러 재질"
       ]
     },
     "fuzzy": {
@@ -5847,11 +6278,16 @@ export const ENTRIES: UIEntry[] = [
         "translucent blurred panel that shows colors through it",
         "see through material behind menus and huds",
         "mac blur effect that adapts to the wallpaper",
-        "glassy background behind the window controls"
+        "glassy background behind the window controls",
+        "blurred background behind mac sidebar and menus",
+        "translucent material showing wallpaper through"
       ],
       "ko": [
         "배경이 비치는 유리 같은 효과",
-        "블러 처리된 반투명 창 배경"
+        "블러 처리된 반투명 창 배경",
+        "맥 OS 사이드바나 메뉴 뒤로 배경이 어렴풋이 비치는 블러 효과",
+        "유리창처럼 뒤가 투과되는 비주얼 재질",
+        "바이브런시 이펙트"
       ]
     },
     "api": [
@@ -5944,7 +6380,9 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "snackbar",
         "status toast",
-        "in-app notification"
+        "in-app notification",
+        "notification toast",
+        "snackbar alert"
       ],
       "ko": [
         "토스트 알림",
@@ -5958,11 +6396,16 @@ export const ENTRIES: UIEntry[] = [
         "confirmation that disappears by itself",
         "saved successfully popup",
         "temporary message after clicking a button",
-        "small alert at the bottom of the screen"
+        "small alert at the bottom of the screen",
+        "small message popping up at bottom and disappearing",
+        "copied to clipboard confirmation toast"
       ],
       "ko": [
         "밑에서 잠시 떴다 사라지는 안내 문구",
-        "복사 완료 토스트"
+        "복사 완료 토스트",
+        "작업 후 모서리나 하단에 잠시 떴다 자동으로 사라지는 알림",
+        "복사 완료 / 저장 완료 토스트 팝업",
+        "스낵바 알림"
       ]
     },
     "api": [
@@ -6075,12 +6518,16 @@ export const ENTRIES: UIEntry[] = [
         "modal",
         "side panel",
         "slide-over",
-        "bottom sheet"
+        "bottom sheet",
+        "modal dialog",
+        "side drawer",
+        "bottom sheet modal"
       ],
       "ko": [
         "모달 대화상자",
         "드로어 패널",
-        "바텀 시트"
+        "바텀 시트",
+        "바텀 시트 모달"
       ]
     },
     "fuzzy": {
@@ -6089,11 +6536,16 @@ export const ENTRIES: UIEntry[] = [
         "the panel that slides in from the side",
         "the tray that comes up from the bottom",
         "an overlay for editing without leaving the page",
-        "the floating box with a dark background behind it"
+        "the floating box with a dark background behind it",
+        "centered popup modal vs side drawer vs bottom sheet",
+        "overlay dialog blocking the screen"
       ],
       "ko": [
         "아래에서 슬라이드로 올라오는 패널",
-        "화면 중앙 팝업 모달"
+        "화면 중앙 팝업 모달",
+        "화면 중앙 팝업 모달, 측면 드로어, 하단 바텀 시트",
+        "화면을 가리고 입력을 요구하는 대화상자",
+        "옆이나 아래에서 슬라이드되어 나오는 오버레이"
       ]
     },
     "api": [
@@ -6194,12 +6646,16 @@ export const ENTRIES: UIEntry[] = [
         "popup",
         "menu",
         "hover hint",
-        "toggletip"
+        "toggletip",
+        "tooltip hint",
+        "dropdown menu",
+        "rich popover"
       ],
       "ko": [
         "툴팁",
         "드롭다운",
-        "말풍선 팝오버"
+        "말풍선 팝오버",
+        "드롭다운 메뉴"
       ]
     },
     "fuzzy": {
@@ -6208,11 +6664,16 @@ export const ENTRIES: UIEntry[] = [
         "the list that opens under a menu button",
         "the label that appears when you hover",
         "a popup with controls inside it",
-        "the tiny explanation next to an icon"
+        "the tiny explanation next to an icon",
+        "hover hint vs click dropdown vs rich popover card",
+        "text appearing on mouse hover"
       ],
       "ko": [
         "마우스 올리면 나오는 힌트 창",
-        "클릭 시 떨어지는 메뉴 목록"
+        "클릭 시 떨어지는 메뉴 목록",
+        "마우스 올리면 나오는 툴팁, 누르면 열리는 드롭다운, 말풍선 팝오버",
+        "호버 시 나타나는 보조 설명 텍스트",
+        "클릭 시 떨어지는 선택 메뉴"
       ]
     },
     "api": [
@@ -6331,12 +6792,16 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "backdrop",
         "overlay",
-        "modal overlay"
+        "modal overlay",
+        "modal backdrop",
+        "dimming overlay",
+        "darkened background"
       ],
       "ko": [
         "딤 오버레이",
         "배경 딤처리",
-        "스크림 레이어"
+        "스크림 레이어",
+        "스크림 오버레이"
       ]
     },
     "fuzzy": {
@@ -6346,11 +6811,16 @@ export const ENTRIES: UIEntry[] = [
         "the grey overlay behind a dialog",
         "the layer that blocks clicks behind the panel",
         "the faded background under a popup",
-        "the greyed out background behind a popup"
+        "the greyed out background behind a popup",
+        "dark translucent layer behind modal popup",
+        "page dimming when dialog opens"
       ],
       "ko": [
         "팝업 떴을 때 뒤에 어두워지는 배경",
-        "모달 딤 레이어"
+        "모달 딤 레이어",
+        "팝업이나 모달이 열릴 때 뒤쪽 배경을 어둡게 가려주는 딤 레이어",
+        "배경 투과 차단 및 어둡게 처리하는 스크림",
+        "클릭 시 닫히는 모달 배경"
       ]
     },
     "api": [
@@ -6456,12 +6926,16 @@ export const ENTRIES: UIEntry[] = [
         "skeleton screen",
         "placeholder loader",
         "loading spinner",
-        "throbber"
+        "throbber",
+        "loading placeholder",
+        "shimmer loader"
       ],
       "ko": [
         "스켈레톤 UI",
         "로딩 스피너",
-        "뼈대 레이아웃"
+        "뼈대 레이아웃",
+        "로딩 뼈대",
+        "스켈레톤 로더"
       ]
     },
     "fuzzy": {
@@ -6470,11 +6944,16 @@ export const ENTRIES: UIEntry[] = [
         "the pulsing placeholder version of a card",
         "the spinning circle while waiting",
         "fake text lines shown before data arrives",
-        "loading animation in an empty area"
+        "loading animation in an empty area",
+        "grey pulsing layout boxes while content loads",
+        "fake card placeholders before data arrives"
       ],
       "ko": [
         "로딩 중 회색 회색 뼈대 나오는 효과",
-        "로딩 중 회전하는 스피너"
+        "로딩 중 회전하는 스피너",
+        "데이터 로딩 중 회색 박스가 깜빡이며 뼈대를 보여주는 화면",
+        "카드나 글자 위치를 미리 보여주는 로딩Placeholder",
+        "스켈레톤 펄스 애니메이션"
       ]
     },
     "api": [
@@ -6595,12 +7074,17 @@ export const ENTRIES: UIEntry[] = [
         "autocomplete",
         "typeahead",
         "search select",
-        "editable dropdown"
+        "editable dropdown",
+        "autocomplete input",
+        "search select field",
+        "typeahead dropdown"
       ],
       "ko": [
         "콤보박스",
         "드롭다운 입력창",
-        "자동완성 피커"
+        "자동완성 피커",
+        "자동완성 입력창",
+        "검색형 드롭다운"
       ]
     },
     "fuzzy": {
@@ -6609,11 +7093,16 @@ export const ENTRIES: UIEntry[] = [
         "a searchable dropdown field",
         "the text box with matching results underneath",
         "a select where you can type to filter",
-        "the address field that autocompletes"
+        "the address field that autocompletes",
+        "input field suggesting items as you type",
+        "searchable select box with options dropdown"
       ],
       "ko": [
         "직접 칠 수도 있고 목록에서 고를 수도 있는 입력창",
-        "자동완성 콤보박스"
+        "자동완성 콤보박스",
+        "글자를 치면 관련 추천 항목이 아래로 떨어지는 자동완성 입력창",
+        "직접 입력과 목록 선택이 모두 가능한 콤보박스",
+        "검색 필터링 드롭다운"
       ]
     },
     "api": [
@@ -6751,12 +7240,15 @@ export const ENTRIES: UIEntry[] = [
         "command menu",
         "quick actions",
         "launcher",
-        "command bar"
+        "command bar",
+        "cmd k launcher",
+        "quick action search"
       ],
       "ko": [
         "커맨드 팔레트",
         "⌘K 검색창",
-        "스포트라이트 검색"
+        "스포트라이트 검색",
+        "스포트라이트 검색창"
       ]
     },
     "fuzzy": {
@@ -6766,11 +7258,16 @@ export const ENTRIES: UIEntry[] = [
         "the quick launcher in the middle of the screen",
         "the keyboard popup for jumping anywhere",
         "the vscode style command search",
-        "the cmd k popup"
+        "the cmd k popup",
+        "cmd K popup for searching all app actions and navigation",
+        "quick launcher overlay in center of screen"
       ],
       "ko": [
         "단축키 누르면 뜨는 전체 명령 검색창",
-        "커맨드 K 팝업창"
+        "커맨드 K 팝업창",
+        "단축키 ⌘K나 Ctrl+K를 누르면 화면 중앙에 뜨는 전체 기능 검색창",
+        "키보드로 모든 명령을 실행하는 커맨드 팔레트",
+        "스포트라이트 스타일 검색창"
       ]
     },
     "api": [
@@ -6896,12 +7393,16 @@ export const ENTRIES: UIEntry[] = [
         "disclosure",
         "expandable sections",
         "collapse",
-        "expander"
+        "expander",
+        "disclosure panel",
+        "expandable section list",
+        "faq collapse"
       ],
       "ko": [
         "아코디언 메뉴",
         "접이식 리스트",
-        "토글 패널"
+        "토글 패널",
+        "토글 펼치기 패널"
       ]
     },
     "fuzzy": {
@@ -6910,11 +7411,16 @@ export const ENTRIES: UIEntry[] = [
         "expand and collapse sections",
         "the faq with clickable questions",
         "stacked panels with little chevrons",
-        "the section that pushes content down when opened"
+        "the section that pushes content down when opened",
+        "clickable FAQ list where questions expand answers",
+        "stacked panels opening and pushing content down"
       ],
       "ko": [
         "질문 누르면 밑에 답변 펼쳐지는 아코디언",
-        "클릭하면 아래로 열리는 리스트"
+        "클릭하면 아래로 열리는 리스트",
+        "질문을 누르면 아래로 답변이 수직으로 펼쳐지는 FAQ 아코디언",
+        "클릭 시 접히고 펼쳐지는 토글 리스트",
+        "접이식 메뉴"
       ]
     },
     "api": [
@@ -7025,12 +7531,16 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "tabbed interface",
         "tab list",
-        "tab bar"
+        "tab bar",
+        "tab bar switcher",
+        "tablist panel"
       ],
       "ko": [
         "탭 메뉴",
         "탭 뷰어",
-        "탭 컨트롤"
+        "탭 컨트롤",
+        "탭 전환 뷰",
+        "상단 탭 바"
       ]
     },
     "fuzzy": {
@@ -7039,11 +7549,16 @@ export const ENTRIES: UIEntry[] = [
         "sections with an underline under the active one",
         "clickable headings for changing views",
         "the horizontal switcher above content",
-        "browser tab style navigation inside a page"
+        "browser tab style navigation inside a page",
+        "row of horizontal tabs switching one shared content area",
+        "underline moving between tab labels"
       ],
       "ko": [
         "상단 탭 눌러서 화면 바꾸기",
-        "탭 전환 메뉴"
+        "탭 전환 메뉴",
+        "상단 탭을 눌러서 같은 구역의 내용만 교체하는 탭 뷰",
+        "선택된 탭 아래에 이동하는 언더라인 바",
+        "탭 전환 인터페이스"
       ]
     },
     "api": [
@@ -7151,12 +7666,17 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "token",
         "lozenge",
-        "capsule"
+        "capsule",
+        "number badge",
+        "filter chip",
+        "pill label"
       ],
       "ko": [
         "배지",
         "칩 버튼",
-        "필 라벨"
+        "필 라벨",
+        "필터 칩",
+        "알약 알림 캡슐"
       ]
     },
     "fuzzy": {
@@ -7166,12 +7686,17 @@ export const ENTRIES: UIEntry[] = [
         "the capsule shaped status label",
         "the small category label on a card",
         "the removable filter bubble",
-        "the little red dot on an icon"
+        "the little red dot on an icon",
+        "red number bubble on icon, filter pill with x, status capsule",
+        "removable tag button"
       ],
       "ko": [
         "알약 모양 태그",
         "둥근 칩 라벨",
-        "숫자 알림 배지"
+        "숫자 알림 배지",
+        "아이콘 우측 상단 숫자 배지, 삭제 가능한 X버튼 필터 칩, 알약 모양 태그",
+        "상태 표시 캡슐 라벨",
+        "칩 태그"
       ]
     },
     "api": [
@@ -7293,12 +7818,14 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "breadcrumb trail",
         "path navigation",
-        "hierarchy trail"
+        "hierarchy trail",
+        "breadcrumb bar"
       ],
       "ko": [
         "경로 표시줄",
         "브레드크럼",
-        "위치 안내 경로"
+        "위치 안내 경로",
+        "위치 탐색 경로"
       ]
     },
     "fuzzy": {
@@ -7307,11 +7834,16 @@ export const ENTRIES: UIEntry[] = [
         "the trail above a page title",
         "links showing where you are in the site",
         "the folder path style navigation",
-        "the row with chevrons between page names"
+        "the row with chevrons between page names",
+        "home slash category slash current page path at top",
+        "trail showing site location with chevrons"
       ],
       "ko": [
         "홈 > 카테고리 > 현재페이지 같은 경로 표시",
-        "빵부스러기 내비게이션"
+        "빵부스러기 내비게이션",
+        "홈 > 카테고리 > 현재페이지 형태의 계층 경로 표시줄",
+        "페이지 상단에 위치한 사이트 이동 경로 링크",
+        "브레드크럼 경로"
       ]
     },
     "api": [
@@ -7419,12 +7951,15 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "sticky header",
         "fixed header",
-        "pinned element"
+        "pinned element",
+        "fixed positioning",
+        "pinned scroll bar"
       ],
       "ko": [
         "스티키 헤더",
         "고정 레이아웃",
-        "픽스드 바"
+        "픽스드 바",
+        "상단 스티키 바"
       ]
     },
     "fuzzy": {
@@ -7433,11 +7968,16 @@ export const ENTRIES: UIEntry[] = [
         "the bar pinned to the top of the screen",
         "the element that starts scrolling then gets stuck",
         "keep this visible while scrolling",
-        "the floating button fixed in the corner"
+        "the floating button fixed in the corner",
+        "header scrolling normally then sticking at top",
+        "element fixed to viewport corner"
       ],
       "ko": [
         "스크롤 내려도 상단에 붙어있는 메뉴",
-        "스티키 포지션"
+        "스티키 포지션",
+        "스크롤을 내리면 화면 상단에 찰싹 붙어서 따라오는 스티키 헤더",
+        "화면 특정 위치에 고정된 픽스드 요소",
+        "스티키 포지셔닝"
       ]
     },
     "api": [
@@ -7524,12 +8064,17 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "focus indicator",
         "keyboard focus outline",
-        "focus halo"
+        "focus halo",
+        "focus visible outline",
+        "accessibility focus ring",
+        "keyboard focus highlight"
       ],
       "ko": [
         "웹 포커스 링",
         ":focus-visible",
-        "키보드 외곽선"
+        "키보드 외곽선",
+        "키보드 포커스 외곽선",
+        ":focus-visible 하이라이트"
       ]
     },
     "fuzzy": {
@@ -7538,11 +8083,16 @@ export const ENTRIES: UIEntry[] = [
         "the blue ring on the selected control",
         "keyboard navigation highlight",
         "the border showing which button has focus",
-        "the ring that should not appear on every mouse click"
+        "the ring that should not appear on every mouse click",
+        "outline visible only when tabbing with keyboard",
+        "accessibility focus indicator for web buttons"
       ],
       "ko": [
         "탭키로 이동할 때 생기는 아웃라인",
-        "웹 포커스 하이라이트"
+        "웹 포커스 하이라이트",
+        "마우스 클릭 시에는 안 보이고 키보드 Tab 이동 시에만 나타나는 포커스 링",
+        "웹 접근성 키보드 아웃라인",
+        "포커스 하이라이트"
       ]
     },
     "api": [
@@ -7632,12 +8182,16 @@ export const ENTRIES: UIEntry[] = [
         "blank state",
         "zero state",
         "first-use state",
-        "no-results state"
+        "no-results state",
+        "blank state view",
+        "no results screen"
       ],
       "ko": [
         "빈 상태 화면",
         "결과 없음 뷰",
-        "Empty State"
+        "Empty State",
+        "검색 결과 없음 뷰",
+        "데이터 없음 패널"
       ]
     },
     "fuzzy": {
@@ -7646,11 +8200,16 @@ export const ENTRIES: UIEntry[] = [
         "the panel before the user creates their first item",
         "the no results message with a button",
         "the blank list explanation",
-        "what to show instead of an empty white box"
+        "what to show instead of an empty white box",
+        "screen shown when there is no data or search result is empty",
+        "illustration with message and call to action button for empty list"
       ],
       "ko": [
         "데이터 없을 때 나오는 안내 화면",
-        "검색 결과 없음 뷰"
+        "검색 결과 없음 뷰",
+        "검색 결과가 없거나 목록이 비어있을 때 뜨는 친절한 안내 화면",
+        "안내 일러스트와 행동 유도 버튼이 있는 빈 상태 뷰",
+        "결과 없음 표시"
       ]
     },
     "api": [
@@ -7740,12 +8299,15 @@ export const ENTRIES: UIEntry[] = [
       "en": [
         "hover preview",
         "profile preview",
-        "preview card"
+        "preview card",
+        "hover preview card",
+        "profile hover popup"
       ],
       "ko": [
         "호버 카드",
         "미리보기 팝업",
-        "프로필 호버 뷰"
+        "프로필 호버 뷰",
+        "미리보기 카드"
       ]
     },
     "fuzzy": {
@@ -7754,11 +8316,16 @@ export const ENTRIES: UIEntry[] = [
         "the rich popup that appears over a link",
         "the little user card shown on hover",
         "a tooltip with an avatar and details",
-        "the preview before opening a profile"
+        "the preview before opening a profile",
+        "rich preview popup appearing when hovering user name or link",
+        "profile summary card on mouse hover"
       ],
       "ko": [
         "아이디에 마우스 대면 뜨는 프로필 창",
-        "미리보기 호버 카드"
+        "미리보기 호버 카드",
+        "사용자 이름이나 링크 위에 마우스를 올리면 뜨는 미니 프로필 미리보기 카드",
+        "호버 시 나타나는 상세 정보 카드",
+        "미리보기 팝업"
       ]
     },
     "api": [
@@ -7866,12 +8433,17 @@ export const ENTRIES: UIEntry[] = [
         "the square box with a checkmark",
         "the circles where only one can be picked",
         "a setting that changes immediately",
-        "choose several versus choose exactly one"
+        "choose several versus choose exactly one",
+        "on off toggle switch vs multi select checkbox vs single select radio",
+        "sliding switch for settings"
       ],
       "ko": [
         "온오프 스위치 버튼",
         "체크 표시 박스",
-        "하나만 선택되는 동그라미 버튼"
+        "하나만 선택되는 동그라미 버튼",
+        "ON/OFF 토글 스위치, 다중 선택 체크박스, 하나만 선택하는 라디오 버튼",
+        "설정 온오프 스위치",
+        "체크 상자와 라디오 동그라미"
       ]
     },
     "api": [
@@ -8002,7 +8574,10 @@ export const ENTRIES: UIEntry[] = [
         "segmented control",
         "button group",
         "view switcher",
-        "segmented button"
+        "segmented button",
+        "segmented toggle group",
+        "button group picker",
+        "option group toggle"
       ],
       "ko": [
         "토글 그룹",
@@ -8016,11 +8591,16 @@ export const ENTRIES: UIEntry[] = [
         "the compact view switcher with segments",
         "the group of pill buttons for list or grid",
         "three choices inside one rounded control",
-        "the ios style segmented buttons on the web"
+        "the ios style segmented buttons on the web",
+        "connected row of toggle buttons like bold italic underline",
+        "segmented control for text alignment"
       ],
       "ko": [
         "정렬 옵션처럼 묶여있는 토글 버튼들",
-        "그룹 토글 버튼"
+        "그룹 토글 버튼",
+        "텍스트 정렬이나 서식처럼 하나로 연결된 토글 버튼 그룹",
+        "선택된 버튼이 유지되는 그룹 옵션 바",
+        "토글 버튼 모음"
       ]
     },
     "api": [
@@ -8120,12 +8700,16 @@ export const ENTRIES: UIEntry[] = [
         "menu bar icon",
         "menu bar app",
         "status bar item",
-        "tray icon (Windows term)"
+        "tray icon (Windows term)",
+        "menu bar icon app",
+        "system tray icon (mac)"
       ],
       "ko": [
         "상단 메뉴바 아이콘",
         "상태 표시줄 아이콘",
-        "메뉴 바 익스트라"
+        "메뉴 바 익스트라",
+        "상단 상태 아이콘",
+        "상태 표시줄 앱"
       ]
     },
     "fuzzy": {
@@ -8135,11 +8719,16 @@ export const ENTRIES: UIEntry[] = [
         "highlighted state when the menu bar icon's menu is open",
         "little icon next to the clock on mac",
         "system tray icon on mac",
-        "app icon at the top of the screen with a dropdown"
+        "app icon at the top of the screen with a dropdown",
+        "icon in top right mac menu bar next to clock",
+        "menu bar app showing dropdown when clicked"
       ],
       "ko": [
         "맥 화면 오른쪽 위에 있는 와이파이나 시계 아이콘",
-        "메뉴바 위젯 아이콘"
+        "메뉴바 위젯 아이콘",
+        "맥 화면 우측 상단 시계 옆에 상주하는 와이파이나 앱 상태 아이콘",
+        "누르면 아래로 미니 메뉴가 뜨는 상단 메뉴바 아이콘",
+        "상태 표시줄 위젯 아이콘"
       ]
     },
     "api": [

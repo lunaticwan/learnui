@@ -14,15 +14,27 @@ export const TranslateTableView: React.FC = () => {
   };
 
   const filteredRows = useMemo(() => {
-    if (!searchQuery.trim()) return TRANSLATE_TABLE;
-    const q = searchQuery.toLowerCase();
-    return TRANSLATE_TABLE.filter(
-      (row) =>
-        row.nameEn.toLowerCase().includes(q) ||
-        row.nameKo.toLowerCase().includes(q) ||
-        row.ios.toLowerCase().includes(q) ||
-        row.android.toLowerCase().includes(q)
-    );
+    const trimmed = searchQuery.trim().toLowerCase();
+    if (!trimmed) return TRANSLATE_TABLE;
+
+    const tokens = trimmed.split(/\s+/).filter(Boolean);
+    const scoredRows: { row: typeof TRANSLATE_TABLE[0]; matchCount: number }[] = [];
+
+    for (const row of TRANSLATE_TABLE) {
+      const combinedText = `${row.nameEn} ${row.nameKo} ${row.ios} ${row.android}`.toLowerCase();
+      let matchCount = 0;
+      for (const token of tokens) {
+        if (combinedText.includes(token)) {
+          matchCount++;
+        }
+      }
+      if (matchCount > 0) {
+        scoredRows.push({ row, matchCount });
+      }
+    }
+
+    scoredRows.sort((a, b) => b.matchCount - a.matchCount);
+    return scoredRows.map((s) => s.row);
   }, [searchQuery]);
 
   return (

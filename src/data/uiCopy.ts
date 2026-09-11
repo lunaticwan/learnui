@@ -97,6 +97,10 @@ export const UI_COPY: UICopy = {
     "en": "Index",
     "ko": "홈"
   },
+  "dictionaryCrumb": {
+    "en": "Dictionary",
+    "ko": "사전"
+  },
   "promptFragment": {
     "en": "Prompt fragment",
     "ko": "프롬프트 조각"

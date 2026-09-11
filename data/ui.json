@@ -58,6 +58,8 @@
  "copyPageZh": "复制本页 Markdown",
  "indexCrumb": "Index",
  "indexCrumbZh": "首页",
+ "dictionaryCrumb": "Dictionary",
+ "dictionaryCrumbZh": "词典",
  "guideCrumb": "Guide",
  "guideCrumbZh": "指南",
  "promptFragment": "Prompt fragment",

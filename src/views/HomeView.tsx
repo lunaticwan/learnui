@@ -35,23 +35,43 @@ export const HomeView: React.FC = () => {
   };
 
   const filteredEntries = useMemo(() => {
-    return ENTRIES.filter((e) => {
-      if (filter !== 'all' && e.platform !== filter) return false;
-      if (!searchQuery.trim()) return true;
+    const trimmed = searchQuery.trim().toLowerCase();
+    if (!trimmed) {
+      return ENTRIES.filter((e) => filter === 'all' || e.platform === filter);
+    }
 
-      const q = searchQuery.toLowerCase();
-      const matchNameEn = (e.name?.en || '').toLowerCase().includes(q);
-      const matchNameKo = (e.name?.ko || '').toLowerCase().includes(q);
-      const matchTaglineEn = (e.tagline?.en || '').toLowerCase().includes(q);
-      const matchTaglineKo = (e.tagline?.ko || '').toLowerCase().includes(q);
-      const matchSymbol = (e.api || []).some((a: any) => (a.symbol || '').toLowerCase().includes(q));
-      const matchAka = (e.aka?.en || []).some((a: string) => a.toLowerCase().includes(q)) ||
-                       (e.aka?.ko || []).some((a: string) => a.toLowerCase().includes(q));
-      const matchFuzzy = (e.fuzzy?.en || []).some((f: string) => f.toLowerCase().includes(q)) ||
-                        (e.fuzzy?.ko || []).some((f: string) => f.toLowerCase().includes(q));
+    const tokens = trimmed.split(/\s+/).filter(Boolean);
+    const scoredEntries: { entry: typeof ENTRIES[0]; matchCount: number }[] = [];
 
-      return matchNameEn || matchNameKo || matchTaglineEn || matchTaglineKo || matchSymbol || matchAka || matchFuzzy;
-    });
+    for (const e of ENTRIES) {
+      if (filter !== 'all' && e.platform !== filter) continue;
+
+      const nameEn = (e.name?.en || '').toLowerCase();
+      const nameKo = (e.name?.ko || '').toLowerCase();
+      const taglineEn = (e.tagline?.en || '').toLowerCase();
+      const taglineKo = (e.tagline?.ko || '').toLowerCase();
+      const symbols = (e.api || []).map((a: any) => (a.symbol || '').toLowerCase()).join(' ');
+      const akaEn = (e.aka?.en || []).join(' ').toLowerCase();
+      const akaKo = (e.aka?.ko || []).join(' ').toLowerCase();
+      const fuzzyEn = (e.fuzzy?.en || []).join(' ').toLowerCase();
+      const fuzzyKo = (e.fuzzy?.ko || []).join(' ').toLowerCase();
+
+      const combinedText = `${nameEn} ${nameKo} ${taglineEn} ${taglineKo} ${symbols} ${akaEn} ${akaKo} ${fuzzyEn} ${fuzzyKo}`;
+
+      let matchCount = 0;
+      for (const token of tokens) {
+        if (combinedText.includes(token)) {
+          matchCount++;
+        }
+      }
+
+      if (matchCount > 0) {
+        scoredEntries.push({ entry: e, matchCount });
+      }
+    }
+
+    scoredEntries.sort((a, b) => b.matchCount - a.matchCount);
+    return scoredEntries.map((s) => s.entry);
   }, [filter, searchQuery]);
 
   const handleSurprise = () => {
@@ -63,18 +83,17 @@ export const HomeView: React.FC = () => {
 
   return (
     <main className="wrap">
+      <nav className="crumbs">
+        <Link to="/" onClick={() => console.log('[HomeView] Clicked indexCrumb link -> /')}>{getCopyKo('indexCrumb')}</Link>
+        <span className="crumb-sep">/</span>
+        <span className="crumb-cur">{getCopyKo('dictionaryCrumb')}</span>
+      </nav>
+
       <section className="hero">
         <h1 className="hero-title">
           <span>{getCopyKo('heroTitle')}</span>
         </h1>
         <BilingualText text={UI_COPY['heroSub'] as any} tag="p" className="hero-sub" />
-
-        <p className="vibe-promo">
-          <span className="tag tag-new">{getCopyKo('newBadge')}</span>
-          <Link to="/styles">
-            {getCopyKo('vibePromo')} →
-          </Link>
-        </p>
 
         <div className="controls">
           <div className="search-box">

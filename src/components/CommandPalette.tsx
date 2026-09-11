@@ -199,40 +199,76 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
     });
   }, [searchItems]);
 
-  // 입력 쿼리에 따른 결과 필터링 (3단계 하이브리드 검색)
+  // 입력 쿼리에 따른 결과 필터링 (3단계 하이브리드 및 다중 단어 토큰 검색)
   const filteredItems = useMemo(() => {
     const trimmed = query.trim();
     if (!trimmed) return searchItems.slice(0, 20);
 
+    const tokens = trimmed.split(/\s+/).filter(Boolean);
     const normQuery = normalizeKorean(trimmed).replace(/\s+/g, '');
     const chosungQuery = getChosung(trimmed).replace(/\s+/g, '');
 
-    // 1단계: 정규화 매칭 (조사/특수문자 제거)
+    // 1단계: 전체 쿼리 기반 3단계 하이브리드 매칭
     const directMatches = searchItems.filter((item) => {
       const matchTarget = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')}`.toLowerCase().replace(/\s+/g, '');
       const normTarget = normalizeKorean(matchTarget).replace(/\s+/g, '');
       return normTarget.includes(normQuery) || matchTarget.includes(trimmed.toLowerCase());
     });
 
-    // 2단계: 한글 초성 매칭
     const chosungMatches = searchItems.filter((item) => {
       const chosungTarget = item.chosungKeywords.join(' ').replace(/\s+/g, '');
       return chosungTarget.includes(chosungQuery);
     });
 
-    // 3단계: Fuse.js 퍼지 매칭
     const fuseResults = fuse.search(trimmed).map((res) => res.item);
+
+    // 2단계: 다중 단어 토큰 기반 각 토큰 매칭 및 가중치 계산
+    const tokenMatchedItems = searchItems.filter((item) => {
+      const target = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')} ${item.chosungKeywords.join(' ')}`.toLowerCase();
+      const normTarget = normalizeKorean(target);
+      return tokens.some((token) => {
+        const normToken = normalizeKorean(token);
+        const chosungToken = getChosung(token);
+        return (
+          target.includes(token.toLowerCase()) ||
+          (normToken && normTarget.includes(normToken)) ||
+          item.chosungKeywords.some((ck) => ck.includes(chosungToken))
+        );
+      });
+    });
+
+    // 매칭 토큰 개수에 따른 가중치 점수 계산유틸
+    const getItemScore = (item: SearchItem) => {
+      const target = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')} ${item.chosungKeywords.join(' ')}`.toLowerCase();
+      const normTarget = normalizeKorean(target);
+      let count = 0;
+      for (const token of tokens) {
+        const normToken = normalizeKorean(token);
+        const chosungToken = getChosung(token);
+        if (
+          target.includes(token.toLowerCase()) ||
+          (normToken && normTarget.includes(normToken)) ||
+          item.chosungKeywords.some((ck) => ck.includes(chosungToken))
+        ) {
+          count++;
+        }
+      }
+      return count;
+    };
 
     // 결과 합체 및 중복 제거
     const combinedSet = new Set<string>();
     const results: SearchItem[] = [];
 
-    [...directMatches, ...chosungMatches, ...fuseResults].forEach((item) => {
+    [...directMatches, ...chosungMatches, ...fuseResults, ...tokenMatchedItems].forEach((item) => {
       if (!combinedSet.has(item.id)) {
         combinedSet.add(item.id);
         results.push(item);
       }
     });
+
+    // 매칭 토큰 수 기준 상위 정렬
+    results.sort((a, b) => getItemScore(b) - getItemScore(a));
 
     return results;
   }, [query, searchItems, fuse]);

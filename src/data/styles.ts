@@ -21,14 +21,20 @@ export const STYLES: UIStyle[] = [
         "buttons that look like physical shiny buttons you could press",
         "old iphone apps with stitching and paper textures",
         "the calculator that looks like a real calculator",
-        "realistic textures like wood and metal in the interface"
+        "realistic textures like wood and metal in the interface",
+        "leather paper gold metallic realistic texture UI",
+        "skeuomorphic realism",
+        "tactile interface design"
       ],
       "ko": [
         "진짜 가죽 수첩처럼 보이는 앱 UI",
         "실제 누를 수 있는 입체 광택 버튼",
         "스티칭 바느질선과 종이 질감이 있는 클래식 iPhone 앱",
         "실제 계산기 모양을 본뜬 계산기 화면",
-        "인터페이스 내 나무 및 금속의 사실적 질감"
+        "인터페이스 내 나무 및 금속의 사실적 질감",
+        "실물 재질 묘사 디자인",
+        "아날로그 촉감 비주얼",
+        "현실 오브제 모사 UI"
       ]
     },
     "signals": [
@@ -174,14 +180,20 @@ export const STYLES: UIStyle[] = [
         "everything looks like its molded from the same clay-ish surface",
         "the pillowy embossed buttons with two shadows",
         "controls that look stamped into the page",
-        "that soft grey dashboard where buttons have no borders"
+        "that soft grey dashboard where buttons have no borders",
+        "soft shadow UI",
+        "extruded soft plastic interface",
+        "soft embossing design"
       ],
       "ko": [
         "배경에서 들어올려진 부드러운 버튼",
         "동일한 점토 질감으로 함께 성형된 듯한 UI",
         "이중 그림자가 적용된 푹신한 양각 버튼",
         "화면에 도장처럼 찍혀 들어간 오목 컨트롤",
-        "테두리 없이 그림자로만 구분되는 회색 다스보드"
+        "테두리 없이 그림자로만 구분되는 회색 다스보드",
+        "소프트 UI",
+        "부드러운 이중 그림자 버튼",
+        "단일 무광 성형 디자인"
       ]
     },
     "signals": [
@@ -327,14 +339,20 @@ export const STYLES: UIStyle[] = [
         "the see-through blurry card effect",
         "panels that blur whatever is behind them",
         "milky transparent cards with a thin light border",
-        "that translucent dashboard look with a gradient background"
+        "that translucent dashboard look with a gradient background",
+        "frosted glass panel",
+        "translucent blurry cards",
+        "aurora glass design"
       ],
       "ko": [
         "화려한 배경 위의 프로스티드 글래스 카드",
         "투과되어 부드럽게 흐려지는 블러 카드 효과",
         "뒤쪽 요소가 반투명하게 투과되는 패널",
         "얇고 밝은 테두리를 가진 우유빛 반투명 카드",
-        "그래디언트 배경 위 반투명 대시보드 뷰"
+        "그래디언트 배경 위 반투명 대시보드 뷰",
+        "프로스티드 글래스",
+        "반투명 유리 패널",
+        "배경 투과 블러 카드"
       ]
     },
     "signals": [
@@ -480,14 +498,20 @@ export const STYLES: UIStyle[] = [
         "the swiftui look",
         "ios buttons that look like real glass and bend whats behind them",
         "apple's new transparent bubbly toolbar style",
-        "the glass tab bar that floats over the app content"
+        "the glass tab bar that floats over the app content",
+        "apple fluid glass controls",
+        "visionOS glass material",
+        "refractive lens UI"
       ],
       "ko": [
         "물방울처럼 반사되는 차세대 애플 버튼 디자인",
         "SwiftUI 최신 디자인 가이드 스타일",
         "배경 요소를 유기적으로 굴절시키는 iOS 유리 버튼",
         "애플의 입체 투명 툴바 및 캡슐 내비게이션",
-        "콘텐츠 위에 부유하는 글래스 탭 바"
+        "콘텐츠 위에 부유하는 글래스 탭 바",
+        "애플 리퀴드 글래스",
+        "WWDC25 유기적 유리 재질",
+        "적응형 렌즈 툴바"
       ]
     },
     "signals": [
@@ -633,14 +657,20 @@ export const STYLES: UIStyle[] = [
         "site that looks like no css was written",
         "just times new roman and blue links",
         "the bare-bones craigslist look",
-        "web page that shows its structure with no decoration"
+        "web page that shows its structure with no decoration",
+        "pure unstyled html",
+        "raw default browser aesthetics",
+        "craigslist style"
       ],
       "ko": [
         "날것 그대로의 순수 HTML 웹사이트",
         "CSS 스타일이 전혀 안 적용된 듯한 사이트",
         "Times New Roman 폰트와 파란색 밑줄 링크",
         "크레이그리스트(Craigslist) 느낌의 원형 인터페이스",
-        "장식 없이 문서 구조만 노출하는 웹페이지"
+        "장식 없이 문서 구조만 노출하는 웹페이지",
+        "순수 HTML 날것 웹",
+        "브라우저 기본 서체 스타일",
+        "장식 없는 원형 UI"
       ]
     },
     "signals": [
@@ -773,14 +803,20 @@ export const STYLES: UIStyle[] = [
         "buttons with the thick black border and the solid shadow that doesn't blur",
         "that yellow and black sticker-looking website style",
         "cartoonish chunky ui with bold borders",
-        "the gumroad-looking bold flat style"
+        "the gumroad-looking bold flat style",
+        "thick black border saturated blocks",
+        "hard offset shadow UI",
+        "gumroad style"
       ],
       "ko": [
         "두꺼운 검은 테두리와 강렬한 선명 컬러 블록",
         "블러 없는 단색 그림자와 두꺼운 버튼 테두리",
         "노란색과 검은색 스티커 감성의 웹 디자인",
         "만화 같은 굵은 윤곽선의 입체 UI",
-        "Gumroad 스타일의 볼드한 플랫 그래픽"
+        "Gumroad 스타일의 볼드한 플랫 그래픽",
+        "두꺼운 윤곽선과 오프셋 그림자",
+        "원색 컬러 블록 디자인",
+        "검은 테두리 강렬한 UI"
       ]
     },
     "signals": [
@@ -939,14 +975,20 @@ export const STYLES: UIStyle[] = [
         "shiny metallic text with lens flares like old cd covers",
         "the silver and electric blue futuristic 2000s look",
         "glossy plastic bubble buttons like early mac",
-        "that iridescent chrome sticker rave flyer style"
+        "that iridescent chrome sticker rave flyer style",
+        "2000s cyber aesthetics",
+        "chrome gel plastic futuristic",
+        "millennium tech look"
       ],
       "ko": [
         "크롬과 버블껌 감성의 2000년대 미학 UI",
         "렌즈 플레어와 은빛 광택 레트로 CD 커버 스타일",
         "실버와 일렉트릭 블루의 미래지향적 밀레니엄 룩",
         "초기 Mac 스타일의 광택 젤 플라스틱 버블 버튼",
-        "홀로그래픽 크롬 스티커 및 레이브 플라이어 스타일"
+        "홀로그래픽 크롬 스티커 및 레이브 플라이어 스타일",
+        "2000년대 밀레니엄 테크",
+        "크롬 메탈 젤리 버튼",
+        "사이버 미래주의 미학"
       ]
     },
     "signals": [
@@ -1092,14 +1134,20 @@ export const STYLES: UIStyle[] = [
         "the blue sky and green grass wallpaper vibe with shiny buttons",
         "water droplets and fish and glassy interfaces from 2008",
         "that clean glossy nature-tech look like old windows",
-        "bubbles floating over a bright blue gradient"
+        "bubbles floating over a bright blue gradient",
+        "windows 7 vista sky grass",
+        "nature tech glossy optimism",
+        "blue sky water drops"
       ],
       "ko": [
         "투명 이슬방울과 초원 배경의 윈도우 에어로 감성",
         "파란 하늘과 녹색 초원 배경 위 유광 버튼",
         "2000년대 후반 스타일의 물방울, 물고기, 유리 UI",
         "깨끗하고 유광 느낌의 자연-테크 융합 스타일",
-        "청량한 파란 그래디언트 위 부유하는 비눗방울"
+        "청량한 파란 그래디언트 위 부유하는 비눗방울",
+        "윈도우 에어로 초원과 물방울",
+        "청량한 파란 하늘과 아쿠아 글래스",
+        "2000년대 후반 유기적 테크"
       ]
     },
     "signals": [
@@ -1246,7 +1294,10 @@ export const STYLES: UIStyle[] = [
         "the ios 7 look when everything went flat",
         "icons that are simple white shapes on colored squares",
         "no gradients no textures just clean color blocks",
-        "the design style that killed the glossy buttons"
+        "the design style that killed the glossy buttons",
+        "ios 7 2d flat style",
+        "solid color blocks no shadows",
+        "minimalist flat UI"
       ],
       "ko": [
         "그림자 없이 단색으로만 이루어진 깔끔한 UI",
@@ -1254,7 +1305,10 @@ export const STYLES: UIStyle[] = [
         "모든 입체 효과가 제거된 iOS 7 스타일 플랫 룩",
         "컬러 사각형 위 단순한 흰색 아이콘",
         "그래디언트와 질감 없이 깔끔한 컬러 블록만 있는 디자인",
-        "광택 버튼 시대를 끝낸 플랫 디자인"
+        "광택 버튼 시대를 끝낸 플랫 디자인",
+        "2D 평면 플랫 디자인",
+        "그림자 없는 단색 면",
+        "iOS 7 간결한 컬러 패널"
       ]
     },
     "signals": [
@@ -1401,7 +1455,10 @@ export const STYLES: UIStyle[] = [
         "giant headline and tons of white space",
         "the apple style page with one product and nothing else",
         "a website that is basically just text and air",
-        "everything unnecessary removed until only the message is left"
+        "everything unnecessary removed until only the message is left",
+        "huge white space dramatic type",
+        "less is more clean design",
+        "minimal content UI"
       ],
       "ko": [
         "화면에 요소가 거의 없는 극단적 간결 사이트",
@@ -1409,7 +1466,10 @@ export const STYLES: UIStyle[] = [
         "거대한 헤드라인과 풍부한 화이트 스페이스",
         "단 하나의 제품만 강조하는 애플 스타일 페이지",
         "텍스트와 여백으로만 구성된 깔끔한 웹사이트",
-        "메시지만 남고 불필요한 모든 것이 제거된 UI"
+        "메시지만 남고 불필요한 모든 것이 제거된 UI",
+        "여백의 미 극대화",
+        "거대한 타이포그래피와 최소 요소",
+        "단순함의 미학"
       ]
     },
     "signals": [
@@ -1543,7 +1603,10 @@ export const STYLES: UIStyle[] = [
         "cute squishy looking interface",
         "rounded blobby buttons with soft insides",
         "the 3d clay illustration style dashboards",
-        "everything looks like soft rubber toys"
+        "everything looks like soft rubber toys",
+        "puffy 3d clay toys",
+        "soft inflated play doh cards",
+        "cute squishy 3d UI"
       ],
       "ko": [
         "점토 반죽처럼 푹신하고 통통한 3D 버튼",
@@ -1551,7 +1614,10 @@ export const STYLES: UIStyle[] = [
         "아기자기하고 말랑말랑해 보이는 인터페이스",
         "부드러운 내부 음영을 가진 둥근 아메바 버튼",
         "3D 점토 캐릭터 일러스트 스타일의 대시보드",
-        "말랑한 고무 장난감 같은 UI 요소들"
+        "말랑한 고무 장난감 같은 UI 요소들",
+        "말랑말랑한 3D 점토 버튼",
+        "통통하게 부푼 파스텔 카드",
+        "3D 클레이 장난감 디자인"
       ]
     },
     "signals": [
@@ -1685,7 +1751,10 @@ export const STYLES: UIStyle[] = [
         "tiled star background with rainbow divider lines",
         "blinking new sign and a guestbook link",
         "the 90s personal homepage look",
-        "welcome to my home page with animated flames"
+        "welcome to my home page with animated flames",
+        "90s geocities home page",
+        "animated gifs visitor counter",
+        "retro nostalgic web"
       ],
       "ko": [
         "반짝이는 GIF가 있는 추억의 지오시티(GeoCities) 페이지",
@@ -1693,7 +1762,10 @@ export const STYLES: UIStyle[] = [
         "바둑판배열 별 배경과 무지개 구분선",
         "깜빡이는 NEW 아이콘과 방명록 링크",
         "90년대 아날로그 개인 홈페이지 감성",
-        "불꽃 애니메이션과 함께하는 환영 메시지"
+        "불꽃 애니메이션과 함께하는 환영 메시지",
+        "90년대 개인 홈페이지 감성",
+        "지오시티 반짝이 GIF와 방명록",
+        "아날로그 레트로 웹"
       ]
     },
     "signals": [
@@ -1840,7 +1912,10 @@ export const STYLES: UIStyle[] = [
         "pinstripe windows from early mac os x",
         "the gumdrop red yellow green window buttons",
         "glossy blue scroll bars on old macs",
-        "the save button that pulsed like it was breathing"
+        "the save button that pulsed like it was breathing",
+        "classic mac os x candy buttons",
+        "pinstripe window aqua gel",
+        "apple gumdrop controls"
       ],
       "ko": [
         "파란 사탕 모양의 클래식 Mac OS X 버튼",
@@ -1848,7 +1923,10 @@ export const STYLES: UIStyle[] = [
         "초기 Mac OS X 윈도우의 핀스트라이프 줄무늬",
         "빨강, 노랑, 초록 신호등 창 제어 버튼",
         "구형 Mac의 광택 블루 스크롤 바",
-        "숨쉬듯 맥동하는 저장 버튼"
+        "숨쉬듯 맥동하는 저장 버튼",
+        "초기 Mac OS X 사탕 버튼",
+        "아쿠아 젤리 신호등 창",
+        "핀스트라이프 줄무늬 UI"
       ]
     },
     "signals": [
@@ -1995,14 +2073,20 @@ export const STYLES: UIStyle[] = [
         "the close button that glows red when you hover it",
         "windows with transparent blurry frames",
         "the glassy taskbar with reflections",
-        "the green shimmering progress bar from windows 7"
+        "the green shimmering progress bar from windows 7",
+        "windows vista translucent glass",
+        "aero glass window borders",
+        "frutiger vista style"
       ],
       "ko": [
         "윈도우 비스타 및 7 특유의 유광 유리 창 프레임",
         "반투명 캡션 바와 3D 에어로 플립 창 전환",
         "물방울과 오로라 배경의 에어로 글래스 인터페이스",
         "대각선 광택 하이라이트가 있는 비스타 버튼",
-        "초기 2000년대 윈도우 유광 디자인"
+        "초기 2000년대 윈도우 유광 디자인",
+        "윈도우 비스타 에어로 글래스",
+        "투명한 유리 창 테두리",
+        "윈도우 7 에어로 미학"
       ]
     },
     "signals": [
@@ -2149,14 +2233,20 @@ export const STYLES: UIStyle[] = [
         "that museum poster look where everything snaps to a grid",
         "text all left-aligned with the right edge messy",
         "the 60s corporate annual report style",
-        "tons of white space but everything lined up on invisible lines"
+        "tons of white space but everything lined up on invisible lines",
+        "international typographic style",
+        "grid based typography design",
+        "helvetica swiss poster"
       ],
       "ko": [
         "그리드 시스템 기반의 스위스 국제 타이포그래피 양식",
         "헬베티카(Helvetica) 서체 중심의 가독성 UI",
         "비대칭 그리드 구조와 우측 여백 레이아웃",
         "여백의 미와 타이포그래피 정렬 중심의 디자인",
-        "객관적 정보 전달을 위한 미니멀 그리드"
+        "객관적 정보 전달을 위한 미니멀 그리드",
+        "스위스 타이포그래피 스타일",
+        "엄격한 그리드와 헬베티카",
+        "국제 타이포그래픽 양식"
       ]
     },
     "signals": [
@@ -2315,14 +2405,20 @@ export const STYLES: UIStyle[] = [
         "geometric posters that look like a kandinsky painting",
         "lowercase geometric fonts with no capital letters at all",
         "that primary color art school style with basic shapes",
-        "modernist logos made of a circle a triangle and a square"
+        "modernist logos made of a circle a triangle and a square",
+        "form follows function geometry",
+        "primary colors red yellow blue",
+        "bauhaus design school"
       ],
       "ko": [
         "기본 기하학 도형과 삼원색 중심의 바우하우스 양식",
         "빨강, 노랑, 파랑 컬러 블록과 대각선 그리드",
         "형태는 기능을 따른다(Form follows function) 콘셉트",
         "기하학 원, 삼각형, 사각형 구성의 UI",
-        "독일 모더니즘 예술 학교 스타일"
+        "독일 모더니즘 예술 학교 스타일",
+        "바우하우스 기하학 미학",
+        "기능이 형식을 결정한다",
+        "원색 삼원색과 대각선 구도"
       ]
     },
     "signals": [
@@ -2482,14 +2578,20 @@ export const STYLES: UIStyle[] = [
         "pink yellow teal shapes with black outlines",
         "geometric confetti background style",
         "retro 80s geometric pattern website",
-        "white background with squiggly lines and dots"
+        "white background with squiggly lines and dots",
+        "80s memphis group squiggles",
+        "pastel terrazzo pattern design",
+        "confetti geometry"
       ],
       "ko": [
         "80년대 멤피스 그룹 스타일의 포스트모던 디자인",
         "지그재그 물결선, 바테리 패턴, 파스텔 컬러",
         "레트로 팝 튜브, 기하학 Confetti, 흩뿌려진 도형",
         "테라조(Terrazzo) 질감과 기발한 포스트모던 UI",
-        "규칙을 깨는 유쾌한 80s 팝 에스테틱"
+        "규칙을 깨는 유쾌한 80s 팝 에스테틱",
+        "80년대 멤피스 그룹 패턴",
+        "지그재그 물결선과 테라조 컨페티",
+        "팝 기하학 레트로"
       ]
     },
     "signals": [
@@ -2649,14 +2751,20 @@ export const STYLES: UIStyle[] = [
         "retro windows 95 popups over a pink gradient sunset",
         "vhs glitch art with palm trees and katakana",
         "that nostalgic 80s mall fever-dream collage style",
-        "the pastel purple grid sunset with statues"
+        "the pastel purple grid sunset with statues",
+        "80s synthwave neon sunset",
+        "greek bust vhs glitch",
+        "cyberpunk pink cyan aesthetic"
       ],
       "ko": [
         "80-90년대 레트로 시티팝과 네온 핑크 베이퍼웨이브",
         "가타카나 텍스트, 석양 야자수, 로마 조각상",
         "Windows 95 창과 VHS 스캔라인 감성",
         "퍼플-시안 그래디언트와 레트로 신스웨이브",
-        "인터넷 노스탤지어와 가상 공간 미학"
+        "인터넷 노스탤지어와 가상 공간 미학",
+        "베이퍼웨이브 네온 석양",
+        "그리스 조각상과 VHS 글리치",
+        "80년대 레트로 사이버 감성"
       ]
     },
     "signals": [
@@ -2816,14 +2924,20 @@ export const STYLES: UIStyle[] = [
         "gold lines and sun rays vintage luxury design",
         "roaring twenties geometric borders",
         "old hollywood glam wedding website style",
-        "that chrysler building looking gold and black ui"
+        "that chrysler building looking gold and black ui",
+        "1920s gatsby luxury gold",
+        "stepped chevron geometric gold",
+        "luxurious metal symmetry"
       ],
       "ko": [
         "1920년대 위대한 개츠비 감성의 아르데코",
         "황금빛 부채꼴 선버스트와 대칭적 기하학 패턴",
         "블랙과 럭셔리 골드 라인 프레임",
         "제즈 시대 직지 수직 스트라이프 UI",
-        "클래식 럭셔리 셰브론 기하학 패턴"
+        "클래식 럭셔리 셰브론 기하학 패턴",
+        "1920년대 아르데코 기하학",
+        "위대한 개츠비 황금빛 화려함",
+        "계단식 셰브론 금빛 프레임"
       ]
     },
     "signals": [
@@ -2983,14 +3097,20 @@ export const STYLES: UIStyle[] = [
         "that hacker hud with scanlines and glitchy text",
         "cyberpunk 2077 menu style",
         "dark futuristic ui that looks like a rainy tokyo street at night",
-        "terminal looking interface with neon glow and japanese signs"
+        "terminal looking interface with neon glow and japanese signs",
+        "high tech low life neon",
+        "dystopian cyber UI HUD",
+        "futuristic hacker terminal"
       ],
       "ko": [
         "네온 옐로우와 시안 고대비 사이버펑크 UI",
         "HUD 타겟팅 기호, 바코드, 사선 챔퍼 모서리",
         "글리치 디스플레이와 네온 발광 테두리",
         "어두운 하이테크 미래주의 콘솔 화면",
-        "2077 스킬 트리와 사이버네틱 HUD"
+        "2077 스킬 트리와 사이버네틱 HUD",
+        "사이버펑크 네온 디스토피아",
+        "하이테크 로우라이프 HUD",
+        "미래지향적 해커 인터페이스"
       ]
     },
     "signals": [
@@ -3150,14 +3270,20 @@ export const STYLES: UIStyle[] = [
         "websites that look like a super nintendo menu screen",
         "chunky pixelated graphics done on purpose",
         "the indie game title screen aesthetic",
-        "health bars and dialog boxes like an old rpg"
+        "health bars and dialog boxes like an old rpg",
+        "8bit 16bit retro game graphics",
+        "pixelated arcade UI",
+        "pixel grid design"
       ],
       "ko": [
         "고전 8비트 및 16비트 레트로 게임 픽셀 아트",
         "계단 현상이 또렷한 레트로 스파라이트 UI",
         "도트 그래픽과 픽셀 폰트 대화창",
         "그림자 없이 깔끔한 픽셀 그리드 버튼",
-        "고전 아케이드 및 가멜라 감성의 UI"
+        "고전 아케이드 및 가멜라 감성의 UI",
+        "8비트 16비트 도트 그래픽",
+        "픽셀 아트 아케이드 UI",
+        "고전 게임 도트 인터페이스"
       ]
     },
     "signals": [
@@ -3317,14 +3443,20 @@ export const STYLES: UIStyle[] = [
         "the illustration style every saas landing page and empty state uses",
         "bendy noodle-arm people in pastel colors hugging giant objects",
         "big tech art style where everyone's limbs are weirdly long",
-        "that alegria-looking flat people clipart"
+        "that alegria-looking flat people clipart",
+        "alegria tech illustration",
+        "big limbs flat corporate art",
+        "startup flat people"
       ],
       "ko": [
         "빅테크 및 스타트업 일러스트 감성의 플랫 UI",
         "비정상적으로 긴 팔다리의 자유로운 캐릭터",
         "Alegria 스타일의 모던 빅테크 벡터 그래픽",
         "깔끔한 기하학 둥근 형태와 플랫 파스텔",
-        "글로벌 SaaS 서비스의 친근한 일러스트"
+        "글로벌 SaaS 서비스의 친근한 일러스트",
+        "빅테크 알레그리아 일러스트",
+        "팔다리가 긴 플랫 캐릭터",
+        "스타트업 그래픽 스타일"
       ]
     },
     "signals": [
@@ -3471,14 +3603,20 @@ export const STYLES: UIStyle[] = [
         "the android material you style",
         "the ripple effect that spreads when you tap stuff on android",
         "paper cards stacked with drop shadows and a pink button",
-        "the gmail and google docs app look"
+        "the gmail and google docs app look",
+        "google material design 3",
+        "paper elevation shadows",
+        "material youtube UI"
       ],
       "ko": [
         "구글 머티리얼 디자인 3(M3) 시스템 UI",
         "표면 고도(Elevation) 그림자와 리플(Ripple) 반응",
         "동적 컬러 스키마와 둥근 표면 카드",
         "Floating Action Button(FAB)과 바텀 시트",
-        "안드로이드 표준 시스템 인터페이스"
+        "안드로이드 표준 시스템 인터페이스",
+        "구글 머티리얼 디자인",
+        "종이 입체 엘레베이션 그림자",
+        "구글 가이드라인 UI"
       ]
     },
     "signals": [
@@ -3638,14 +3776,20 @@ export const STYLES: UIStyle[] = [
         "old crt monitor look with scanlines",
         "retro terminal with the blinking square cursor",
         "website that looks like an 80s command line",
-        "glowing green monospace hacker aesthetic"
+        "glowing green monospace hacker aesthetic",
+        "green phosphor crt terminal",
+        "matrix command line interface",
+        "cli hacker prompt"
       ],
       "ko": [
         "어두운 CRT 화면 위 녹색/주황색 프롬프트 터미널",
         "깜빡이는 블록 커서와 명령줄 인터페이스(CLI)",
         "해커 스크립트와 등폭 폰트(Monospace) 텍스트 스트림",
         "CRT 매트릭스 스캔라인 오버레이 화면",
-        "매트릭스 코드 및 개발자 콘솔 감성"
+        "매트릭스 코드 및 개발자 콘솔 감성",
+        "터미널 인광 녹색 CLI",
+        "매트릭스 해커 커맨드라인",
+        "흑백 CRT 모니터 감성"
       ]
     },
     "signals": [
@@ -3805,14 +3949,20 @@ export const STYLES: UIStyle[] = [
         "abstract vector swirls and flowers on gradients",
         "windows 7 stock art with glossy circles",
         "late 2000s vector maximalist event posters",
-        "bright flat shapes that look like a metro map"
+        "bright flat shapes that look like a metro map",
+        "windows phone metro tiles",
+        "flat colorful vector strips",
+        "vector ribbon design"
       ],
       "ko": [
         "윈도우 폰 7 및 윈도우 8 메트로(Metro) UI",
         "플랫 라이브 타일(Live Tiles)과 타이포그래피 중심 레이아웃",
         "화사한 원색 블록과 대담한 대문자 서체",
         "크롭된 대형 글자와 플랫 파노라마 스크롤",
-        "2010년대 초반 모바일 메트로 디자인"
+        "2010년대 초반 모바일 메트로 디자인",
+        "프루티거 메트로 타일",
+        "윈도우폰 메트로 UI",
+        "비구조적 벡터 시티 감성"
       ]
     },
     "signals": [
@@ -3972,14 +4122,20 @@ export const STYLES: UIStyle[] = [
         "interface that breaks every design rule",
         "collage-style site with things stacked on top of each other",
         "dada web design that is anti-ux",
-        "screen that looks like a zine exploded"
+        "screen that looks like a zine exploded",
+        "deliberately ugly rebellious UI",
+        "chaos experimental design",
+        "anti aesthetic web"
       ],
       "ko": [
         "전통적 UI 규칙을 깨뜨리는 안티디자인(Anti-Design)",
         "의도적인 레이아웃 불협화음과 충돌하는 서체",
         "가독성을 파괴하는 과감한 실험적 웹 디자인",
         "규칙 없는 무작위 요소 배치와 픽셀 노이즈",
-        "아방가르드 포스트모던 인터페이스"
+        "아방가르드 포스트모던 인터페이스",
+        "안티 디자인 반항적 실험 UI",
+        "의도된 혼돈과 파격적 레이아웃",
+        "규칙 파괴 웹"
       ]
     },
     "signals": [
@@ -4139,14 +4295,20 @@ export const STYLES: UIStyle[] = [
         "rave flyer style with distorted mirrors and liquid metal",
         "psychedelic chrome typography on black",
         "club poster look with warped wireframe grids",
-        "acid house graphic design with metallic letters"
+        "acid house graphic design with metallic letters",
+        "90s rave techno chrome text",
+        "psychedelic liquid metal font",
+        "acid rave flyer art"
       ],
       "ko": [
         "90년대 레이브 파티 플라이어 감성의 애시드 그래픽",
         "액상 크롬 3D 서체와 왜곡된 시안-마젠타 비주얼",
         "유기적 왜곡 레이아웃과 미래지향적 사이버 테크",
         "복잡한 크롬 3D 텍스트와 네온 바이올렛 패널",
-        "실험적 클럽 문화 및 레이브 그래픽"
+        "실험적 클럽 문화 및 레이브 그래픽",
+        "애시드 그래픽 사이케델릭",
+        "90년대 레이브 파티 크롬 서체",
+        "액상 메탈 흘러내림"
       ]
     },
     "signals": [
@@ -4306,14 +4468,20 @@ export const STYLES: UIStyle[] = [
         "indie poster style with limited neon colors",
         "rough stencil print with visible texture",
         "duotone flyer where the colors don't quite line up",
-        "soy ink print with misregistered edges"
+        "soy ink print with misregistered edges",
+        "risograph print grain misregistration",
+        "duotone soy ink texture",
+        "indie print design"
       ],
       "ko": [
         "리소그래프 인쇄 특유의 멀티 컬러 오버프린트",
         "콩기름 인쇄 질감과 미세한 정렬 오차(Misregistration)",
         "하프트랙망점 스펙트럼과 따뜻한 종이 노이즈",
         "독립 출판물 감성의 빈티지 리소 인쇄 UI",
-        "형광 형광 핑크와 아쿠아 인크의 인쇄 스탬프"
+        "형광 형광 핑크와 아쿠아 인크의 인쇄 스탬프",
+        "리소그래프 인쇄 질감",
+        "듀오톤 콩기름 잉크 번짐",
+        "아날로그 스탬프 모아레"
       ]
     },
     "signals": [
@@ -4473,14 +4641,20 @@ export const STYLES: UIStyle[] = [
         "cut-out magazine letters and handwritten labels",
         "that diy scrapbook collage style",
         "interface that looks like it was glued together by hand",
-        "xerox grain and high-contrast zine aesthetic"
+        "xerox grain and high-contrast zine aesthetic",
+        "diy punk zine cutout collage",
+        "photocopy texture torn paper",
+        "underground magazine"
       ],
       "ko": [
         "독립 진(Zine) 및 오려붙인 서브컬처 콜라주",
         "찢어진 종이 질감과 마스킹 테이프 레이어",
         "복사기 하이콘트라스트 흑백 노이즈",
         "잡지 스크랩 텍스트와 스탬프 폰트",
-        "DIY 아날로그 펑크 문화 잡지 감성"
+        "DIY 아날로그 펑크 문화 잡지 감성",
+        "진 콜라주 펑크 잡지",
+        "복사기 흑백 질감과 찢어진 종이",
+        "서브컬처 자작 잡지"
       ]
     },
     "signals": [
@@ -4653,14 +4827,20 @@ export const STYLES: UIStyle[] = [
         "brown leather and copper pipes ui",
         "riveted metal panels with cogwheel borders",
         "the old-timey retro-futuristic machine aesthetic",
-        "sepia dashboard that looks like a 19th-century invention"
+        "sepia dashboard that looks like a 19th-century invention",
+        "19th century steam engine brass gears",
+        "victorian industrial bronze clockwork",
+        "retro futuristic steam"
       ],
       "ko": [
         "19세기 산업혁명 황동 톱니바퀴 스팀펑크",
         "증기기관 게이지, 가죽 패널, 구리 파이프 UI",
         "빅토리아 시대 기계식 아날로그 나침반",
         "리벳과 황동 프레임의 레트로 메카닉",
-        "증기 압력계와 타자기 키보드 감성"
+        "증기 압력계와 타자기 키보드 감성",
+        "스팀펑크 증기기관 황동 톱니바퀴",
+        "빅토리아 시대 태엽 시계 장치",
+        "19세기 기술 미래주의"
       ]
     },
     "signals": [
@@ -4820,14 +5000,20 @@ export const STYLES: UIStyle[] = [
         "olive green and copper steampunk but grittier",
         "industrial art deco machinery interface",
         "1920s military diesel engine aesthetic",
-        "weathered metal with stenciled labels"
+        "weathered metal with stenciled labels",
+        "1940s ww2 heavy diesel machinery",
+        "art deco industrial steel chrome",
+        "mid century diesel power"
       ],
       "ko": [
         "1920-1940년대 디젤 엔진 산업 디젤펑크",
         "묵직한 강철 장갑판, 리벳 메탈, 아르데코 기계",
         "군용 국방색과 디젤 그을음 공장 UI",
         "아날로그 라디오 무전기 콘솔 화면",
-        "2차 세계대전 산업 군사 미학"
+        "2차 세계대전 산업 군사 미학",
+        "디젤펑크 1940년대 중공업 강철",
+        "2차 세계대전 디젤 엔진 디오라마",
+        "묵직한 아르데코 기계"
       ]
     },
     "signals": [
@@ -4987,14 +5173,20 @@ export const STYLES: UIStyle[] = [
         "buttons that look like gel pads or organic tissue",
         "biotech dashboard with throbbing vein-like progress bars",
         "flesh and mucus sci-fi interface style",
-        "genome sequencer or CRISPR app aesthetic"
+        "genome sequencer or CRISPR app aesthetic",
+        "organic biological genetic UI",
+        "bioluminescence alien HUD",
+        "dna biotechnology interface"
       ],
       "ko": [
         "유기체 및 바이오 테크놀로지 바이오펑크",
         "세포 맥동, 유기적 질감, 발광 진광 액체 UI",
         "유전자 서열 DNA 및 생물학 디스플레이",
         "점액질 반응과 살아 숨 쉬는 유기체 표면",
-        "유전공학 및 연구소 바이오 HUD"
+        "유전공학 및 연구소 바이오 HUD",
+        "바이오펑크 유기체 생체 UI",
+        "유전자 공학 에일리언 HUD",
+        "자연 발광 생물학 인터페이스"
       ]
     },
     "signals": [
@@ -5153,14 +5345,20 @@ export const STYLES: UIStyle[] = [
         "african patterns in space with sun and stars",
         "gold purple and orange futuristic african interface",
         "afro sci fi cosmic website with geometric motifs",
-        "music player that looks like a royal space amulet"
+        "music player that looks like a royal space amulet",
+        "african diaspora cosmic tech",
+        "wakanda gold geometric patterns",
+        "black panther sci fi"
       ],
       "ko": [
         "아프리카 전통 문양과 하이테크 미래주의 아프로퓨처리즘",
         "와칸다 감성의 블랙과 럭셔리 골드 패턴",
         "기하학 부족 문양과 네온 바이올렛 라인",
         "우주적 유기체 아프리칸 에스테틱",
-        "블랙 팬서 콘솔 및 아프리카 퓨처리즘"
+        "블랙 팬서 콘솔 및 아프리카 퓨처리즘",
+        "아프로퓨처리즘 아프리카 우주 테크",
+        "와칸다 기하학 금빛 패턴",
+        "블랙 팬서 미래 미학"
       ]
     },
     "signals": [
@@ -5320,14 +5518,20 @@ export const STYLES: UIStyle[] = [
         "strict grid of black lines and primary color blocks",
         "rectangles only no curves no gradients ui",
         "neoplasticism style with white background and colored blocks",
-        "that dutch design with only straight lines and right angles"
+        "that dutch design with only straight lines and right angles",
+        "mondrian primary color grid",
+        "neo plasticism red yellow blue",
+        "strict straight lines"
       ],
       "ko": [
         "피에트 몬드리안 스타일의 데 스틸(De Stijl) 양식",
         "두꺼운 검은 수평 수직 그리드선과 삼원색",
         "빨강, 노랑, 파랑 직사각형 컬러 블록",
         "극단적 비대칭 직교 그리드 UI",
-        "신조형주의(Neo-Plasticism) 기하학 레이아웃"
+        "신조형주의(Neo-Plasticism) 기하학 레이아웃",
+        "데 스틸 몬드리안 삼원색",
+        "신조형주의 직교 검은 선",
+        "빨강 노랑 파랑 정직각"
       ]
     },
     "signals": [
@@ -5486,14 +5690,20 @@ export const STYLES: UIStyle[] = [
         "red and black diagonal blocks with industrial photos",
         "that bold angled typography like old revolution posters",
         "constructivist design with photo collage and geometric bars",
-        "heavy sans-serif ui that looks like a political broadsheet"
+        "heavy sans-serif ui that looks like a political broadsheet",
+        "soviet avant garde poster diagonals",
+        "red black dynamic propaganda",
+        "constructivist photomontage"
       ],
       "ko": [
         "소련 선전 포스터 감성의 구성주의(Constructivism)",
         "대각선 레드-블랙 슬래시 패널과 포토몽타주",
         "강렬한 볼드 산세리프 대문자 타이포그래피",
         "산업 기계, 톱니, 스피커 그래픽 포스터",
-        "역동적 사선 레이아웃과 붉은색 고대비 UI"
+        "역동적 사선 레이아웃과 붉은색 고대비 UI",
+        "러시아 구성주의 선전 포스터",
+        "역동적 사선 구도와 레드 블랙",
+        "소련 아방가르드 포토몽타주"
       ]
     },
     "signals": [
@@ -5653,14 +5863,20 @@ export const STYLES: UIStyle[] = [
         "that 60s screen-print style with soup cans and faces",
         "bold primary colors with speech bubbles",
         "comic panel layout with ben day dots",
-        "retro advertising collage with celebrities"
+        "retro advertising collage with celebrities",
+        "ben day dots roy lichtenstein",
+        "warhol soup cans comic panel",
+        "60s pop culture art"
       ],
       "ko": [
         "60년대 로이 리히텐슈타인 감성의 팝 아트 UI",
         "벤데이 망점(Ben-Day dots)과 두꺼운 검은 윤곽선",
         "만화책 컷 프레임과 말풍선, 스타버스트 배지",
         "앤디 워홀 스타일의 앤디 워홀 팝 컬러",
-        "대중매체 광고 스크랩 및 신문 만화 감성"
+        "대중매체 광고 스크랩 및 신문 만화 감성",
+        "팝아트 벤데이 망점 도트",
+        "로이 리히텐슈타인 만화 컷",
+        "앤디 워홀 팝 컬러 스타일"
       ]
     },
     "signals": [
@@ -5820,14 +6036,20 @@ export const STYLES: UIStyle[] = [
         "the art style where objects melt and gravity doesn't work",
         "mysterious surreal collage with eyes and clouds",
         "ui that looks like a dali painting crossed with a music app",
-        "pastel dreamscape with impossible floating things"
+        "pastel dreamscape with impossible floating things",
+        "salvador dali melting clocks",
+        "floating eyes surreal dreamscape",
+        "lucid dream aesthetic"
       ],
       "ko": [
         "살바도르 달리 스타일의 몽환적 초현실주의 UI",
         "녹아내리는 시계와 부유하는 눈동자 오브제",
         "은은한 달빛 은은한 파스텔 그래디언트",
         "중력을 거스르는 꿈속 몽환적 가상 공간",
-        "루시드 드림 감성의 초현실적 콜라주"
+        "루시드 드림 감성의 초현실적 콜라주",
+        "살바도르 달리 초현실주의",
+        "녹아내리는 시계와 부유하는 눈동자",
+        "몽환적 꿈속 루시드 드림"
       ]
     },
     "signals": [
@@ -5986,14 +6208,20 @@ export const STYLES: UIStyle[] = [
         "curvy plant-like borders and swirly gold lettering",
         "the style that looks like vines grew into the frame",
         "organic whiplash lines and olive green with gold accents",
-        "antique ornamental typography with floral decorations"
+        "antique ornamental typography with floral decorations",
+        "alphonse mucha whiplash vines",
+        "organic plant curved gold frames",
+        "turn of century flora art"
       ],
       "ko": [
         "1900년대 알폰스 무샤 감성의 아르누보",
         "식물 덩굴선, 꽃 모티프, 유기적 곡선 테두리",
         "올리브 그린, 딥 와인, 앤티크 골드 팔레트",
         "우아한 당초문 곡선 프레임과 세리프 서체",
-        "자연 유기체 선율의 오가닉 디자인"
+        "자연 유기체 선율의 오가닉 디자인",
+        "알폰스 무샤 아르누보 덩굴선",
+        "식물 모티프 우기적 곡선 프레임",
+        "1900년대 신예술 아름다움"
       ]
     },
     "signals": [
@@ -6153,14 +6381,20 @@ export const STYLES: UIStyle[] = [
         "oil slick gradient with silver metallic shine",
         "holographic sticker or credit card effect",
         "pastel pink purple cyan shimmer surface",
-        "futuristic tech brand with rainbow gradients"
+        "futuristic tech brand with rainbow gradients",
+        "rainbow diffraction foil sheen",
+        "unicorn holographic shimmer",
+        "oil slick metallic shift"
       ],
       "ko": [
         "빛에 따라 무지개빛으로 변하는 홀로그래픽 포일",
         "은빛 메탈릭 바탕과 시안-마젠타 오일 슬릭",
         "유니콘 메이크업 및 영롱한 무지개 광택 패널",
         "프리즘 스티커 및 레트로 메탈릭 홀로그램",
-        "미래지향적 라인과 영롱한 은빛 패널"
+        "미래지향적 라인과 영롱한 은빛 패널",
+        "홀로그래픽 프리즘 무지개 포일",
+        "시안 마젠타 오일 슬릭 반사광",
+        "영롱한 실버 메탈릭"
       ]
     },
     "signals": [
@@ -6307,14 +6541,20 @@ export const STYLES: UIStyle[] = [
         "the 30 degree angle tech illustration style",
         "dashboard made of floating cubes and platforms",
         "websites with those flat 3d isometric characters",
-        "the geometric model look like simcity"
+        "the geometric model look like simcity",
+        "30 degree axonometric 3d model",
+        "orthographic block city diorama",
+        "simcity 3d layout"
       ],
       "ko": [
         "30도 등메트릭 직교 투영의 아이소메트릭 3D",
         "소조점 없이 펼쳐지는 3D 디오라마 공간",
         "아기자기한 3D 입체 블록과 부드러운 그림자",
         "심시티 느낌의 입체 건물 및 대시보드",
-        "모듈형 입체 블록과 3D 일러스트 UI"
+        "모듈형 입체 블록과 3D 일러스트 UI",
+        "30도 등메트릭 직교 3D 블록",
+        "소실점 없는 3D 디오라마 공간",
+        "심시티 입체 건물 레이아웃"
       ]
     },
     "signals": [
@@ -6473,14 +6713,20 @@ export const STYLES: UIStyle[] = [
         "wireframe-looking interface with no color fills",
         "monoline icons turned into whole buttons and cards",
         "technical drawing style ui made of clean black lines",
-        "that vector line-art look with no shading"
+        "that vector line-art look with no shading",
+        "single weight monoline outline",
+        "hollow vector contour drawing",
+        "clean line art UI"
       ],
       "ko": [
         "일정한 굵기의 단색 윤곽선 라인 아트 UI",
         "채색 채우기 없는 정갈한 와이어프레임 룩",
         "모노라인(Monoline) 아이콘 중심의 정교한 카트",
         "기술 도면 감성의 정교한 블랙 라인",
-        "여백과 섬세한 윤곽선 중심의 라인 디자인"
+        "여백과 섬세한 윤곽선 중심의 라인 디자인",
+        "단일 굵기 모노라인 윤곽선",
+        "면 채우기 없는 와이어프레임 룩",
+        "정갈한 라인 아트 디자인"
       ]
     },
     "signals": [
@@ -6627,14 +6873,20 @@ export const STYLES: UIStyle[] = [
         "doodle-style interface with pencil textures",
         "rough marker fills and shaky outlines",
         "the balsamiq wireframe look used in a real app",
-        "sketchy ui with uneven lines"
+        "sketchy ui with uneven lines",
+        "wobbly sketchy marker doodles",
+        "balsamiq paper notebook drawing",
+        "handwritten cute UI"
       ],
       "ko": [
         "손으로 직접 그린 듯한 자연스러운 핸드드로잉",
         "삐뚤빼뚤 불규칙한 스케치 라인과 손글씨 폰트",
         "마커 질감 채우기와 아날로그 종이 느낌",
         "발사믹(Balsamiq) 와이어프레임 감성의 UI",
-        "낙서(Doodle) 모티프와 친근한 노트 인터페이스"
+        "낙서(Doodle) 모티프와 친근한 노트 인터페이스",
+        "삐뚤빼뚤 손으로 그린 스케치",
+        "아날로그 종이 노트 낙서 감성",
+        "친근한 손글씨 핸드드로잉"
       ]
     },
     "signals": [
@@ -6794,14 +7046,20 @@ export const STYLES: UIStyle[] = [
         "rpg interface with red health and blue mana bars",
         "ancient rune font and metal borders",
         "inventory screen that looks like an old tome",
-        "fantasy ui with ornate gold frames"
+        "fantasy ui with ornate gold frames",
+        "medieval game inventory parchment",
+        "red health blue mana status bar",
+        "world of warcraft book UI"
       ],
       "ko": [
         "고전 및 모던 판타지 RPG 게임 인벤토리 UI",
         "양피지(Parchment) 질감과 황동 테두리 프레임",
         "붉은 HP 생명력 바와 푸른 MP 마나 바",
         "중세 룬 문자 서체와 석조 게이지 HUD",
-        "월드 오브 워크래프트 마법서 감성의 UI"
+        "월드 오브 워크래프트 마법서 감성의 UI",
+        "판타지 RPG 게임 인벤토리",
+        "양피지 질감과 HP MP 스탯 바",
+        "중세 룬 문자 마법서 패널"
       ]
     },
     "signals": [
@@ -6947,14 +7205,20 @@ export const STYLES: UIStyle[] = [
         "rounded colored panels on black spaceship displays",
         "the 24th century starfleet touch screen style",
         "sci fi ui with curved elbow headers and big buttons",
-        "michael okuda star trek console design"
+        "michael okuda star trek console design",
+        "star trek 24th century okuda console",
+        "orange purple rounded elbow blocks",
+        "starfleet touch panel"
       ],
       "ko": [
         "스타트렉 24세기 커맨드 콘솔 LCARS UI",
         "오렌지, 보라, 노랑의 둥근 L자 커브 블록",
         "블랙 바탕 위 터치 패널 인스트루먼트",
         "마이클 오쿠다 스타일의 스타트렉 컴퓨터 화면",
-        "스타플릿 대문자 산세리프 컨트롤"
+        "스타플릿 대문자 산세리프 컨트롤",
+        "스타트렉 커맨드 콘솔 LCARS",
+        "오렌지 보라 L자 커브 캡슐 블록",
+        "스타플릿 터치 화면"
       ]
     },
     "signals": [
