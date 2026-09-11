@@ -2,10 +2,10 @@
 한국어 데이터 파이프라인 및 TypeScript 모듈 자동 생성 스크립트.
 
 [동작 원리]
-1. `data/entries.json` 및 `data/styles.json` 파일의 원본 JSON 데이터 로드.
+1. `data/entries.json`, `data/styles.json`, `data/translate-table.json`, `data/ui.json` 원본 JSON 데이터 로드.
 2. `ENTRY_NAME_KO`, `STYLE_NAME_KO` 사전 매핑 정보를 참조하여 UI 엔트리 및 스타일의 한국어 명칭 동기화.
 3. `get_localized_obj` 유틸리티를 통해 단일 문자열 또는 객체 규격을 `{ "en": "...", "ko": "..." }` 다국어 데이터로 파싱.
-4. 정돈된 데이터를 `src/data/entries.ts` 및 `src/data/styles.ts` 파일로 자동 변환 및 출력.
+4. 정돈된 데이터를 `src/data/entries.ts`, `src/data/styles.ts`, `src/data/translateTable.ts`, `src/data/uiCopy.ts` 파일로 자동 변환 및 출력.
 """
 
 import json
@@ -284,11 +284,19 @@ def main():
     with open("data/styles.json", "r", encoding="utf-8") as f:
         raw_styles = json.load(f)
 
+    with open("data/translate-table.json", "r", encoding="utf-8") as f:
+        raw_translate = json.load(f)
+
+    with open("data/ui.json", "r", encoding="utf-8") as f:
+        raw_ui = json.load(f)
+
     clean_entries = [convert_entry(e) for e in raw_entries]
     clean_styles = [convert_style(s) for s in raw_styles]
 
     entries_ts = f'import {{ UIEntry }} from "../types/ui";\n\nexport const ENTRIES: UIEntry[] = {json.dumps(clean_entries, ensure_ascii=False, indent=2)};\n'
     styles_ts = f'import {{ UIStyle }} from "../types/ui";\n\nexport const STYLES: UIStyle[] = {json.dumps(clean_styles, ensure_ascii=False, indent=2)};\n'
+    translate_ts = f'import {{ TranslateTableItem }} from "../types/ui";\n\nexport const TRANSLATE_TABLE: TranslateTableItem[] = {json.dumps(raw_translate, ensure_ascii=False, indent=2)};\n'
+    ui_copy_ts = f'import {{ UICopy }} from "../types/ui";\n\nexport const UI_COPY: UICopy = {json.dumps(raw_ui, ensure_ascii=False, indent=2)};\n'
 
     with open("src/data/entries.ts", "w", encoding="utf-8") as f:
         f.write(entries_ts)
@@ -296,7 +304,13 @@ def main():
     with open("src/data/styles.ts", "w", encoding="utf-8") as f:
         f.write(styles_ts)
 
-    print("src/data/entries.ts 및 src/data/styles.ts 업데이트 성공!")
+    with open("src/data/translateTable.ts", "w", encoding="utf-8") as f:
+        f.write(translate_ts)
+
+    with open("src/data/uiCopy.ts", "w", encoding="utf-8") as f:
+        f.write(ui_copy_ts)
+
+    print("src/data/ 데이터 모듈 (entries.ts, styles.ts, translateTable.ts, uiCopy.ts) 업데이트 성공!")
 
 if __name__ == "__main__":
     main()

@@ -23,14 +23,13 @@ UI 요소의 정확한 공식 명칭과 사양을 확인하고, AI 코딩 에이
 
 ### 1. 데이터 파이프라인 & 단일 진실 출처 (Single Source of Truth)
 
-1. **원본 데이터**: `data/entries.json` (UI 엔트리 원본) 및 `data/styles.json` (스타일 원본)
+1. **원본 데이터**: `data/entries.json` (UI 엔트리 원본), `data/styles.json` (스타일 원본), `data/translate-table.json` (용어 번역표 원본), `data/ui.json` (UI 카피 문구 원본)
 2. **동기화 스크립트**: `scripts/build_korean_data.py`
-   - 원본 JSON 데이터를 읽어 한국어 명칭 매핑(`ENTRY_NAME_KO`, `STYLE_NAME_KO`)을 동기화합니다.
-   - 다국어 객체 규격 `{ "en": "...", "ko": "..." }`으로 변환 및 정돈합니다.
-   - 결과물을 TypeScript 모듈인 `src/data/entries.ts` 및 `src/data/styles.ts`로 자동 생성합니다.
+   - 원본 JSON 데이터 4종을 읽어 한국어 명칭 매핑(`ENTRY_NAME_KO`, `STYLE_NAME_KO`) 및 규격을 동기화합니다.
+   - 결과물을 TypeScript 모듈인 `src/data/entries.ts`, `src/data/styles.ts`, `src/data/translateTable.ts`, `src/data/uiCopy.ts`로 자동 생성합니다.
 3. **규칙**:
-   - UI 엔트리 및 스타일 데이터를 수정할 경우 `data/*.json` 또는 `scripts/build_korean_data.py`를 수정한 후 `npm run build:data`를 실행하여 TypeScript 파일에 반영해야 합니다.
-   - `src/data/entries.ts` 및 `src/data/styles.ts`는 자동 생성 결과물이므로 직접 수정하지 않습니다.
+   - 원본 데이터 수정 시 `data/*.json` 파일들을 수정한 후 `npm run build:data`를 실행하여 TypeScript 데이터 모듈에 반영해야 합니다.
+   - `src/data/*.ts` 파일들은 자동 생성 결과물이므로 직접 수정하지 않습니다.
 
 ### 2. 주요 경로 및 아키텍처
 
@@ -38,7 +37,9 @@ UI 요소의 정확한 공식 명칭과 사양을 확인하고, AI 코딩 에이
 .
 ├── data/                       # 원본 데이터 파일 (JSON)
 │   ├── entries.json            # UI 엔트리 원본
-│   └── styles.json             # 스타일 원본
+│   ├── styles.json             # 스타일 원본
+│   ├── translate-table.json    # 플랫폼 용어 대조표 원본
+│   └── ui.json                 # UI 카피 문구 원본
 ├── scripts/
 │   └── build_korean_data.py    # JSON -> TS 변환 파이프라인 스크립트
 ├── public/                     # PWA 파비콘, Manifest, Service Worker 및 정적 에셋
