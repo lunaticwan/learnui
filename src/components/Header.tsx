@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCmdPalette }) => {
           <NavLink to="/styles" onClick={() => console.log('[Header] Clicked NavLink -> 스타일 (/styles)')}>
             <span>{getCopyKo('stylesCrumb')}</span>
           </NavLink>
-          <NavLink to="/translate" onClick={() => console.log('[Header] Clicked NavLink -> 번역표 (/translate)')}>
+          <NavLink to="/translate" onClick={() => console.log('[Header] Clicked NavLink -> 용어 비교표 (/translate)')}>
             <span>{getCopyKo('translateTitle')}</span>
           </NavLink>
         </nav>
