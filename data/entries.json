@@ -1,5 +1,1205 @@
 [
   {
+    "slug": "ios-alert",
+    "platform": "ios",
+    "name": {
+      "en": "iOS Alert",
+      "ko": "iOS 알림창"
+    },
+    "tagline": {
+      "en": "Standard modal alert dialog in iOS / SwiftUI",
+      "ko": "iOS / SwiftUI 표준 모달 알림 대화상자"
+    },
+    "aka": {
+      "en": [
+        "UIAlertController",
+        "swiftui alert"
+      ],
+      "ko": [
+        "iOS 알림",
+        "SwiftUI 얼럿창"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "ios alert dialog",
+        "uialertcontroller"
+      ],
+      "ko": [
+        "아이폰 알림창",
+        "iOS 팝업"
+      ]
+    },
+    "api": [
+      {
+        "framework": "SwiftUI",
+        "symbol": ".alert(\"Title\", isPresented: )",
+        "note": {
+          "en": "SwiftUI alert modifier",
+          "ko": "SwiftUI 알림 수식어"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render a native iOS style modal alert with blur background and action buttons.",
+      "ko": "블러 배경 및 액션 버튼이 포함된 iOS 네이티브 모달 알림창 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug iOS alert modal overlay and button divider lines.",
+      "ko": "iOS 알림창 모달 오버레이 및 버튼 구분선 정렬 디버깅."
+    },
+    "description": {
+      "en": "An iOS Alert presents important information that requires an immediate user response or confirmation before proceeding.",
+      "ko": "iOS 알림창은 사용자가 계속 진행하기 전에 즉각적인 확인이나 선택을 요구하는 중요한 정보를 표시하는 모달 대화상자입니다."
+    },
+    "parts": [],
+    "related": [
+      "alert",
+      "dialog-drawer-sheet"
+    ],
+    "demo": "ios/alert"
+  },
+  {
+    "slug": "ios-button",
+    "platform": "ios",
+    "name": {
+      "en": "iOS Button",
+      "ko": "iOS 버튼"
+    },
+    "tagline": {
+      "en": "Standard interactive button in iOS / SwiftUI",
+      "ko": "iOS / SwiftUI 표준 인터랙티브 버튼"
+    },
+    "aka": {
+      "en": [
+        "UIButton",
+        "swiftui button"
+      ],
+      "ko": [
+        "iOS 버튼",
+        "UIButton"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "ios button style",
+        "uibutton"
+      ],
+      "ko": [
+        "아이폰 버튼",
+        "iOS 탭 버튼"
+      ]
+    },
+    "api": [
+      {
+        "framework": "SwiftUI",
+        "symbol": "Button(\"Action\") { }",
+        "note": {
+          "en": "SwiftUI Button component",
+          "ko": "SwiftUI Button 컴포넌트"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render iOS styled filled and plain buttons with subtle click scale effect.",
+      "ko": "클릭 시 미세한 축소 효과가 적용된 iOS 스타일 버튼 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug iOS button active scale and background tint.",
+      "ko": "iOS 버튼 눌림 상태 비율 및 배경 틴트 디버깅."
+    },
+    "description": {
+      "en": "iOS Buttons initiate app-specific actions and provide immediate visual feedback upon user interaction.",
+      "ko": "iOS 버튼은 앱 전용 동작을 실행하며 사용자 탭 터치 시 명확한 시각적 피드백을 제공합니다."
+    },
+    "parts": [],
+    "related": [
+      "button",
+      "segmented-control"
+    ],
+    "demo": "ios/button"
+  },
+  {
+    "slug": "ios-switch",
+    "platform": "ios",
+    "name": {
+      "en": "iOS Switch (Toggle)",
+      "ko": "iOS 스위치 (토글)"
+    },
+    "tagline": {
+      "en": "Standard on/off toggle switch in iOS / SwiftUI",
+      "ko": "iOS / SwiftUI 표준 켜기/끄기 토글 스위치"
+    },
+    "aka": {
+      "en": [
+        "UISwitch",
+        "swiftui toggle"
+      ],
+      "ko": [
+        "iOS 토글",
+        "UISwitch"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "ios toggle switch",
+        "uiswitch"
+      ],
+      "ko": [
+        "아이폰 토글 스위치",
+        "iOS 온오프 스위치"
+      ]
+    },
+    "api": [
+      {
+        "framework": "SwiftUI",
+        "symbol": "Toggle(\"Setting\", isOn: ).toggleStyle(.switch)",
+        "note": {
+          "en": "SwiftUI Switch Toggle style",
+          "ko": "SwiftUI 스위치 토글 스타일"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render an iOS native green toggle switch with smooth sliding knob animation.",
+      "ko": "부드러운 슬라이딩 노브 애니메이션이 적용된 iOS 네이티브 초록색 토글 스위치 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug iOS switch green active background and smooth transition.",
+      "ko": "iOS 스위치 활성 초록색 배경 및 노브 이동 전환 디버깅."
+    },
+    "description": {
+      "en": "An iOS Switch toggles between two mutually exclusive binary states: on and off.",
+      "ko": "iOS 스위치는 켜짐과 꺼짐이라는 두 가지 상호 배타적인 바이너리 상태를 전환하는 컨트롤입니다."
+    },
+    "parts": [],
+    "related": [
+      "switch-checkbox-radio",
+      "toggle-group"
+    ],
+    "demo": "ios/switch"
+  },
+  {
+    "slug": "ios-date-picker",
+    "platform": "ios",
+    "name": {
+      "en": "iOS Date Picker",
+      "ko": "iOS 날짜 선택기"
+    },
+    "tagline": {
+      "en": "Compact wheel and Graphical date picker in iOS",
+      "ko": "iOS 컴팩트 Wheel 및 그래픽 날짜 선택기"
+    },
+    "aka": {
+      "en": [
+        "UIDatePicker",
+        "swiftui datepicker"
+      ],
+      "ko": [
+        "iOS 휠 데이트피커",
+        "UIDatePicker"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "ios datepicker",
+        "ios wheel picker"
+      ],
+      "ko": [
+        "아이폰 날짜 선택기",
+        "iOS 달력 선택"
+      ]
+    },
+    "api": [
+      {
+        "framework": "SwiftUI",
+        "symbol": "DatePicker(\"Date\", selection: )",
+        "note": {
+          "en": "SwiftUI DatePicker view",
+          "ko": "SwiftUI DatePicker 뷰"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render iOS compact popup date picker container.",
+      "ko": "iOS 컴팩트 팝업 날짜 선택 뷰 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug iOS date picker inline popup modal alignment.",
+      "ko": "iOS 날짜 선택기 인라인 팝업 모달 정렬 디버깅."
+    },
+    "description": {
+      "en": "iOS Date Picker allows users to enter a specific date, time, or both using wheels or calendar popup views.",
+      "ko": "iOS 날짜 선택기는 Wheel 컨트롤이나 달력 팝업을 통해 특정 날짜와 시간을 손쉽게 입력할 수 있는 UI 요소입니다."
+    },
+    "parts": [],
+    "related": [
+      "popover",
+      "form-field"
+    ],
+    "demo": "ios/date-picker"
+  },
+  {
+    "slug": "ios-action-sheet",
+    "platform": "ios",
+    "name": {
+      "en": "iOS Action Sheet (Confirmation Dialog)",
+      "ko": "iOS 액션 시트 (확인 대화상자)"
+    },
+    "tagline": {
+      "en": "Bottom overlay menu for actions in iOS",
+      "ko": "iOS 하단 플로팅 액션 시트 메뉴"
+    },
+    "aka": {
+      "en": [
+        "UIActionSheet",
+        "confirmationDialog"
+      ],
+      "ko": [
+        "iOS 액션시트",
+        "확인 대화상자"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "ios action sheet",
+        "confirmationdialog"
+      ],
+      "ko": [
+        "아이폰 액션시트",
+        "iOS 바텀 모달"
+      ]
+    },
+    "api": [
+      {
+        "framework": "SwiftUI",
+        "symbol": ".confirmationDialog(\"Title\", isPresented: )",
+        "note": {
+          "en": "SwiftUI confirmationDialog modifier",
+          "ko": "SwiftUI confirmationDialog 수식어"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render an iOS bottom floating action sheet with destructive options.",
+      "ko": "파괴적 액션 옵션이 포함된 iOS 하단 플로팅 액션 시트 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug iOS action sheet bottom margin and blur style.",
+      "ko": "iOS 액션 시트 하단 여백 및 블러 스타일 디버깅."
+    },
+    "description": {
+      "en": "An Action Sheet displays a context-specific set of choices related to the current task on iOS.",
+      "ko": "iOS 액션 시트는 작업 흐름 중 선택할 수 있는 관련 조작 항목들을 화면 하단 모달 패널로 표시합니다."
+    },
+    "parts": [],
+    "related": [
+      "dialog-drawer-sheet",
+      "sheet"
+    ],
+    "demo": "ios/action-sheet"
+  },
+  {
+    "slug": "ios-navigation-bar",
+    "platform": "ios",
+    "name": {
+      "en": "iOS Navigation Bar",
+      "ko": "iOS 내비게이션 바"
+    },
+    "tagline": {
+      "en": "Top navigation title bar with large title support in iOS",
+      "ko": "iOS 라지 타이틀 지원 상단 내비게이션 바"
+    },
+    "aka": {
+      "en": [
+        "UINavigationBar",
+        "NavigationStack"
+      ],
+      "ko": [
+        "iOS 상단 바",
+        "내비게이션 바"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "ios top bar",
+        "ios navigation title"
+      ],
+      "ko": [
+        "아이폰 상단바",
+        "iOS 내비바"
+      ]
+    },
+    "api": [
+      {
+        "framework": "SwiftUI",
+        "symbol": "NavigationStack { ... }.navigationTitle(\"Title\")",
+        "note": {
+          "en": "SwiftUI NavigationStack title setup",
+          "ko": "SwiftUI NavigationStack 타이틀 설정"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render iOS large title navigation bar with back button.",
+      "ko": "뒤로가기 버튼과 라지 타이틀이 적용된 iOS 내비게이션 바 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug iOS navigation bar scroll blur transition.",
+      "ko": "iOS 내비게이션 바 스크롤 블러 전환 디버깅."
+    },
+    "description": {
+      "en": "iOS Navigation Bar appears at the top of an app screen, enabling navigation through a hierarchy of content.",
+      "ko": "iOS 내비게이션 바는 화면 최상단에 위치하며 뷰 계층 구조 탐색 및 제목, 주요 액션 버튼을 제공합니다."
+    },
+    "parts": [],
+    "related": [
+      "toolbar",
+      "menu-bar"
+    ],
+    "demo": "ios/navigation-bar"
+  },
+  {
+    "slug": "ios-progress-view",
+    "platform": "ios",
+    "name": {
+      "en": "iOS Progress View",
+      "ko": "iOS 진행 표시기 (ProgressView)"
+    },
+    "tagline": {
+      "en": "Linear progress bar and activity indicator spinner in iOS",
+      "ko": "iOS 선형 프로그레스 바 및 액티비티 인디케이터 스피너"
+    },
+    "aka": {
+      "en": [
+        "UIActivityIndicatorView",
+        "ProgressView"
+      ],
+      "ko": [
+        "iOS 로딩 스피너",
+        "UIActivityIndicatorView"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "ios spinner",
+        "ios progress bar"
+      ],
+      "ko": [
+        "아이폰 인디케이터",
+        "iOS 프로그레스 뷰"
+      ]
+    },
+    "api": [
+      {
+        "framework": "SwiftUI",
+        "symbol": "ProgressView(value: 0.7)",
+        "note": {
+          "en": "SwiftUI ProgressView component",
+          "ko": "SwiftUI ProgressView 컴포넌트"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render iOS linear progress bar and rotating iOS activity indicator.",
+      "ko": "iOS 선형 진행 바 및 회전하는 액티비티 인디케이터 스피너 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug iOS progress indicator smooth filling and continuous spin animation.",
+      "ko": "iOS 진행 표시기 채우기 효과 및 스피너 회전 디버깅."
+    },
+    "description": {
+      "en": "ProgressView shows that a task is underway, displaying either a definite progress bar or an indefinite spinner.",
+      "ko": "iOS ProgressView는 진행 중인 작업의 진척 상황을 비율 바 또는 불확정 스피너 형태로 시각화합니다."
+    },
+    "parts": [],
+    "related": [
+      "progress-indicators",
+      "skeleton-spinner"
+    ],
+    "demo": "ios/progress-view"
+  },
+  {
+    "slug": "ios-slider",
+    "platform": "ios",
+    "name": {
+      "en": "iOS Slider",
+      "ko": "iOS 슬라이더"
+    },
+    "tagline": {
+      "en": "Standard linear value range slider in iOS",
+      "ko": "iOS 표준 선형 범위 슬라이더"
+    },
+    "aka": {
+      "en": [
+        "UISlider",
+        "swiftui slider"
+      ],
+      "ko": [
+        "iOS 슬라이더",
+        "UISlider"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "ios range slider",
+        "uislider"
+      ],
+      "ko": [
+        "아이폰 슬라이더",
+        "iOS 볼륨 조절바"
+      ]
+    },
+    "api": [
+      {
+        "framework": "SwiftUI",
+        "symbol": "Slider(value: , in: 0...100)",
+        "note": {
+          "en": "SwiftUI Slider component",
+          "ko": "SwiftUI Slider 컴포넌트"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render an iOS native rounded thumb slider with filled track.",
+      "ko": "채워진 트랙과 둥근 썸(Thumb)을 가진 iOS 네이티브 슬라이더 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug iOS slider thumb shadow and active track color.",
+      "ko": "iOS 슬라이더 썸 그림자 및 활성 트랙 색상 디버깅."
+    },
+    "description": {
+      "en": "An iOS Slider is a control used to select a single value from a continuous or discrete range of values.",
+      "ko": "iOS 슬라이더는 연속되거나 불연속적인 범위 내에서 단일 값을 시각적으로 선택할 수 있는 입력 요소입니다."
+    },
+    "parts": [],
+    "related": [
+      "slider",
+      "level-indicator"
+    ],
+    "demo": "ios/slider"
+  },
+  {
+    "slug": "ios-tab-bar",
+    "platform": "ios",
+    "name": {
+      "en": "iOS Tab Bar",
+      "ko": "iOS 탭 바"
+    },
+    "tagline": {
+      "en": "Bottom tab navigation controller bar in iOS",
+      "ko": "iOS 하단 탭 내비게이션 바"
+    },
+    "aka": {
+      "en": [
+        "UITabBar",
+        "TabView"
+      ],
+      "ko": [
+        "iOS 하단 탭바",
+        "UITabBar"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "ios bottom tab",
+        "uitabbarcontroller"
+      ],
+      "ko": [
+        "아이폰 하단 메뉴",
+        "iOS 탭바"
+      ]
+    },
+    "api": [
+      {
+        "framework": "SwiftUI",
+        "symbol": "TabView { ... }.tabItem { Label(...) }",
+        "note": {
+          "en": "SwiftUI TabView setup",
+          "ko": "SwiftUI TabView 구성"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render iOS translucent bottom tab bar with active icon tint.",
+      "ko": "활성 아이콘 틴트가 적용된 iOS 반투명 하단 탭 바 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug iOS tab bar icon alignment and translucent blur.",
+      "ko": "iOS 탭 바 아이콘 정렬 및 반투명 블러 효과 디버깅."
+    },
+    "description": {
+      "en": "iOS Tab Bar is located at the bottom of an app screen and allows fast switching between different subviews.",
+      "ko": "iOS 탭 바는 앱 최하단에 항상 위치하여 주요 기능 섹션 간을 빠르게 전환할 수 있는 탐색 바입니다."
+    },
+    "parts": [],
+    "related": [
+      "tabs",
+      "segmented-control"
+    ],
+    "demo": "ios/tab-bar"
+  },
+  {
+    "slug": "ios-context-menu",
+    "platform": "ios",
+    "name": {
+      "en": "iOS Context Menu",
+      "ko": "iOS 컨텍스트 메뉴 (롱프레스 팝오버)"
+    },
+    "tagline": {
+      "en": "Long-press contextual quick action popup preview in iOS",
+      "ko": "iOS 롱프레스 퀵 액션 팝업 프리뷰 메뉴"
+    },
+    "aka": {
+      "en": [
+        "UIContextMenuConfiguration",
+        "contextMenu"
+      ],
+      "ko": [
+        "iOS 롱프레스 메뉴",
+        "iOS 팝오버"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "ios context menu",
+        "ios long press popup"
+      ],
+      "ko": [
+        "아이폰 컨텍스트 메뉴",
+        "iOS 길게누르기"
+      ]
+    },
+    "api": [
+      {
+        "framework": "SwiftUI",
+        "symbol": ".contextMenu { Button(...) }",
+        "note": {
+          "en": "SwiftUI contextMenu modifier",
+          "ko": "SwiftUI contextMenu 수식어"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render iOS long-press context menu popup with blurred background.",
+      "ko": "배경 블러 처리된 iOS 롱프레스 컨텍스트 팝업 메뉴 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug iOS context menu items scale and backdrop blur.",
+      "ko": "iOS 컨텍스트 메뉴 항목 비율 및 백드롭 블러 디버깅."
+    },
+    "description": {
+      "en": "iOS Context Menu reveals relevant actions and a preview frame when users press and hold an item.",
+      "ko": "iOS 컨텍스트 메뉴는 사용자가 항목을 길게 누를 때 관련된 빠른 실행 항목과 프리뷰 화면을 띄워줍니다."
+    },
+    "parts": [],
+    "related": [
+      "context-menu",
+      "popover"
+    ],
+    "demo": "ios/context-menu"
+  },
+  {
+    "slug": "android-alert-dialog",
+    "platform": "android",
+    "name": {
+      "en": "Android Alert Dialog",
+      "ko": "Android 알림 대화상자 (AlertDialog)"
+    },
+    "tagline": {
+      "en": "Material 3 modal alert dialog in Android",
+      "ko": "Android 머티리얼 3 모달 알림 대화상자"
+    },
+    "aka": {
+      "en": [
+        "AlertDialog",
+        "MaterialAlertDialog"
+      ],
+      "ko": [
+        "안드로이드 얼럿창",
+        "Material3 Dialog"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "android dialog",
+        "material alertdialog"
+      ],
+      "ko": [
+        "안드로이드 대화상자",
+        "머티리얼 팝업"
+      ]
+    },
+    "api": [
+      {
+        "framework": "Jetpack Compose",
+        "symbol": "AlertDialog(onDismissRequest = {}, confirmButton = {})",
+        "note": {
+          "en": "Jetpack Compose AlertDialog",
+          "ko": "Jetpack Compose AlertDialog 컴포넌트"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render Material 3 Android alert dialog with rounded surface container.",
+      "ko": "라운드 표면 컨테이너가 적용된 Android 머티리얼 3 알림 대화상자 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug Material 3 alert dialog corner radius and button alignment.",
+      "ko": "머티리얼 3 알림 대화상자 라운드 박스 및 버튼 정렬 디버깅."
+    },
+    "description": {
+      "en": "Android Alert Dialog informs the user about critical information or requires decisions within a Material surface.",
+      "ko": "Android 알림 대화상자는 머티리얼 3 카드 디자인 규칙에 맞게 중요한 안내나 결정을 요구할 때 사용됩니다."
+    },
+    "parts": [],
+    "related": [
+      "alert",
+      "dialog-drawer-sheet"
+    ],
+    "demo": "android/alert-dialog"
+  },
+  {
+    "slug": "android-button",
+    "platform": "android",
+    "name": {
+      "en": "Android Material Button",
+      "ko": "Android 머티리얼 버튼"
+    },
+    "tagline": {
+      "en": "Filled, Outlined, and Text buttons in Material 3",
+      "ko": "Android 머티리얼 3 채우기, 테두리, 텍스트 버튼"
+    },
+    "aka": {
+      "en": [
+        "MaterialButton",
+        "Button"
+      ],
+      "ko": [
+        "안드로이드 버튼",
+        "Material3 Button"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "android button",
+        "material3 filled button"
+      ],
+      "ko": [
+        "안드로이드 버튼",
+        "머티리얼 버튼"
+      ]
+    },
+    "api": [
+      {
+        "framework": "Jetpack Compose",
+        "symbol": "Button(onClick = {}) { Text(\"Action\") }",
+        "note": {
+          "en": "Jetpack Compose Button",
+          "ko": "Jetpack Compose Button 컴포넌트"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render Material 3 filled button with ripple effect.",
+      "ko": "리플 터치 효과가 포함된 머티리얼 3 채우기 버튼 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug Material 3 button color roles and ripple container.",
+      "ko": "머티리얼 3 버튼 컬러 롤 및 리플 컨테이너 디버깅."
+    },
+    "description": {
+      "en": "Android Material Buttons communicate actions that users can take, with options ranging from high to low emphasis.",
+      "ko": "Android 머티리얼 버튼은 강조도(High, Medium, Low)에 따라 채우기, 테두리, 텍스트 버튼으로 나뉩니다."
+    },
+    "parts": [],
+    "related": [
+      "button",
+      "toggle-group"
+    ],
+    "demo": "android/button"
+  },
+  {
+    "slug": "android-switch",
+    "platform": "android",
+    "name": {
+      "en": "Android Switch",
+      "ko": "Android 스위치"
+    },
+    "tagline": {
+      "en": "Material 3 binary switch with check icon thumb",
+      "ko": "Android 머티리얼 3 아이콘 썸 스위치"
+    },
+    "aka": {
+      "en": [
+        "Switch",
+        "MaterialSwitch"
+      ],
+      "ko": [
+        "안드로이드 스위치",
+        "머티리얼 토글"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "android switch",
+        "material switch"
+      ],
+      "ko": [
+        "안드로이드 온오프 스위치",
+        "머티리얼 3 스위치"
+      ]
+    },
+    "api": [
+      {
+        "framework": "Jetpack Compose",
+        "symbol": "Switch(checked = true, onCheckedChange = {})",
+        "note": {
+          "en": "Jetpack Compose Switch",
+          "ko": "Jetpack Compose Switch 컴포넌트"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render Material 3 styled switch with active thumb animation.",
+      "ko": "활성 썸 애니메이션이 적용된 머티리얼 3 스위치 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug Material 3 switch track color and thumb icon alignment.",
+      "ko": "머티리얼 3 스위치 트랙 색상 및 썸 아이콘 정렬 디버깅."
+    },
+    "description": {
+      "en": "Android Switch lets users select between two opposite states (on and off) for a single setting.",
+      "ko": "Android 스위치는 단일 설정 항목에 대한 켜짐과 꺼짐의 두 가지 대립되는 상태를 조작합니다."
+    },
+    "parts": [],
+    "related": [
+      "switch-checkbox-radio",
+      "toggle-group"
+    ],
+    "demo": "android/switch"
+  },
+  {
+    "slug": "android-date-picker",
+    "platform": "android",
+    "name": {
+      "en": "Android Date Picker",
+      "ko": "Android 날짜 선택기 (DatePicker)"
+    },
+    "tagline": {
+      "en": "Material 3 calendar modal and input date picker",
+      "ko": "Android 머티리얼 3 달력 모달 날짜 선택기"
+    },
+    "aka": {
+      "en": [
+        "DatePickerDialog",
+        "DatePicker"
+      ],
+      "ko": [
+        "안드로이드 데이트피커",
+        "Material 3 DatePicker"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "android date picker",
+        "material datepicker"
+      ],
+      "ko": [
+        "안드로이드 달력 선택",
+        "머티리얼 날짜"
+      ]
+    },
+    "api": [
+      {
+        "framework": "Jetpack Compose",
+        "symbol": "DatePicker(state = rememberDatePickerState())",
+        "note": {
+          "en": "Jetpack Compose DatePicker",
+          "ko": "Jetpack Compose DatePicker 컴포넌트"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render Material 3 Android calendar picker header and dialog frame.",
+      "ko": "머티리얼 3 안드로이드 달력 피커 헤더 및 대화상자 프레임 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug Material 3 date picker header date format and grid radius.",
+      "ko": "머티리얼 3 날짜 선택기 헤더 서식 및 그리드 포커스 디버깅."
+    },
+    "description": {
+      "en": "Android Date Picker lets users select a date or range of dates via an interactive calendar modal view.",
+      "ko": "Android 날짜 선택기는 머티리얼 3 달력 모달을 통해 특정 날짜 또는 기간을 직관적으로 선택할 수 있습니다."
+    },
+    "parts": [],
+    "related": [
+      "popover",
+      "form-field"
+    ],
+    "demo": "android/date-picker"
+  },
+  {
+    "slug": "android-bottom-sheet",
+    "platform": "android",
+    "name": {
+      "en": "Android Bottom Sheet",
+      "ko": "Android 바텀 시트 (ModalBottomSheet)"
+    },
+    "tagline": {
+      "en": "Material 3 expandable bottom sheet overlay",
+      "ko": "Android 머티리얼 3 슬라이드 바텀 시트 오버레이"
+    },
+    "aka": {
+      "en": [
+        "ModalBottomSheet",
+        "BottomSheetBehavior"
+      ],
+      "ko": [
+        "안드로이드 바텀시트",
+        "머티리얼 모달시트"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "android bottom sheet",
+        "material bottom sheet"
+      ],
+      "ko": [
+        "안드로이드 하단 시트",
+        "머티리얼 드로어"
+      ]
+    },
+    "api": [
+      {
+        "framework": "Jetpack Compose",
+        "symbol": "ModalBottomSheet(onDismissRequest = {}) { ... }",
+        "note": {
+          "en": "Jetpack Compose ModalBottomSheet",
+          "ko": "Jetpack Compose ModalBottomSheet 컴포넌트"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render Material 3 bottom sheet container with drag handle.",
+      "ko": "드래그 핸들이 포함된 머티리얼 3 바텀 시트 컨테이너 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug Material 3 bottom sheet drag handle radius and scrim background.",
+      "ko": "머티리얼 3 바텀 시트 핸들 모서리 및 스크림 오버레이 디버깅."
+    },
+    "description": {
+      "en": "Android Bottom Sheets are surfaces containing supplementary content anchored to the bottom of the screen.",
+      "ko": "Android 바텀 시트는 화면 하단에 고정되어 추가 정보나 조작 옵션을 보충해 주는 모달 패널입니다."
+    },
+    "parts": [],
+    "related": [
+      "dialog-drawer-sheet",
+      "sheet"
+    ],
+    "demo": "android/bottom-sheet"
+  },
+  {
+    "slug": "android-top-app-bar",
+    "platform": "android",
+    "name": {
+      "en": "Android Top App Bar",
+      "ko": "Android 상단 앱 바 (TopAppBar)"
+    },
+    "tagline": {
+      "en": "Material 3 small, center-aligned, or medium top app bar",
+      "ko": "Android 머티리얼 3 상단 도구 및 타이틀 바"
+    },
+    "aka": {
+      "en": [
+        "TopAppBar",
+        "CenterAlignedTopAppBar"
+      ],
+      "ko": [
+        "안드로이드 상단바",
+        "TopAppBar"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "android top bar",
+        "material top bar"
+      ],
+      "ko": [
+        "안드로이드 앱바",
+        "머티리얼 타이틀바"
+      ]
+    },
+    "api": [
+      {
+        "framework": "Jetpack Compose",
+        "symbol": "TopAppBar(title = { Text(\"Title\") })",
+        "note": {
+          "en": "Jetpack Compose TopAppBar",
+          "ko": "Jetpack Compose TopAppBar 컴포넌트"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render Material 3 Top App Bar with menu icon and title.",
+      "ko": "메뉴 아이콘과 타이틀이 있는 머티리얼 3 상단 앱 바 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug Material 3 top app bar height and action icon padding.",
+      "ko": "머티리얼 3 상단 앱 바 높이 및 액션 아이콘 패딩 디버깅."
+    },
+    "description": {
+      "en": "Android Top App Bar displays information and actions relating to the current screen.",
+      "ko": "Android 상단 앱 바는 현재 화면에 관한 제목, 내비게이션 아이콘 및 관련 액션을 최상단에 배치합니다."
+    },
+    "parts": [],
+    "related": [
+      "toolbar",
+      "menu-bar"
+    ],
+    "demo": "android/top-app-bar"
+  },
+  {
+    "slug": "android-progress-indicator",
+    "platform": "android",
+    "name": {
+      "en": "Android Progress Indicator",
+      "ko": "Android 진행 표시기 (ProgressIndicator)"
+    },
+    "tagline": {
+      "en": "Material 3 circular spinner and linear progress bar",
+      "ko": "Android 머티리얼 3 원형 스피너 및 선형 진행 바"
+    },
+    "aka": {
+      "en": [
+        "CircularProgressIndicator",
+        "LinearProgressIndicator"
+      ],
+      "ko": [
+        "안드로이드 로딩 스피너",
+        "머티리얼 프로그레스"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "android spinner",
+        "material progress indicator"
+      ],
+      "ko": [
+        "안드로이드 로딩바",
+        "머티리얼 인디케이터"
+      ]
+    },
+    "api": [
+      {
+        "framework": "Jetpack Compose",
+        "symbol": "CircularProgressIndicator()",
+        "note": {
+          "en": "Jetpack Compose CircularProgressIndicator",
+          "ko": "Jetpack Compose 원형 진행 표시기"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render Material 3 circular spinner and rounded linear progress bar.",
+      "ko": "머티리얼 3 원형 스피너 및 둥근 트랙의 선형 프로그레스 바 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug Material 3 progress stroke cap and animation curve.",
+      "ko": "머티리얼 3 진행 표시기 스트로크 캡 및 애니메이션 커브 디버깅."
+    },
+    "description": {
+      "en": "Progress Indicators inform users about the status of ongoing processes like loading or saving.",
+      "ko": "Android 진행 표시기는 데이터 로딩이나 처리 상태를 원형 또는 선형 형태로 시각적으로 전달합니다."
+    },
+    "parts": [],
+    "related": [
+      "progress-indicators",
+      "skeleton-spinner"
+    ],
+    "demo": "android/progress-indicator"
+  },
+  {
+    "slug": "android-slider",
+    "platform": "android",
+    "name": {
+      "en": "Android Slider",
+      "ko": "Android 슬라이더"
+    },
+    "tagline": {
+      "en": "Material 3 continuous slider with active stop indicators",
+      "ko": "Android 머티리얼 3 값 조절 슬라이더"
+    },
+    "aka": {
+      "en": [
+        "Slider",
+        "RangeSlider"
+      ],
+      "ko": [
+        "안드로이드 슬라이더",
+        "Material3 Slider"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "android range slider",
+        "material slider"
+      ],
+      "ko": [
+        "안드로이드 볼륨 슬라이더",
+        "머티리얼 슬라이더"
+      ]
+    },
+    "api": [
+      {
+        "framework": "Jetpack Compose",
+        "symbol": "Slider(value = position, onValueChange = {})",
+        "note": {
+          "en": "Jetpack Compose Slider",
+          "ko": "Jetpack Compose Slider 컴포넌트"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render Material 3 continuous slider with pill active track.",
+      "ko": "알약형 활성 트랙과 핸들을 가진 머티리얼 3 슬라이더 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug Material 3 slider thumb handle size and inactive track opacity.",
+      "ko": "머티리얼 3 슬라이더 핸들 크기 및 비활성 트랙 투명도 디버깅."
+    },
+    "description": {
+      "en": "Android Sliders allow users to make selections from a range of values along a bar.",
+      "ko": "Android 슬라이더는 수평 바 위에서 핸들을 움직여 특정 범위 내의 값을 손쉽게 선택할 수 있도록 해줍니다."
+    },
+    "parts": [],
+    "related": [
+      "slider",
+      "level-indicator"
+    ],
+    "demo": "android/slider"
+  },
+  {
+    "slug": "android-snackbar",
+    "platform": "android",
+    "name": {
+      "en": "Android Snackbar",
+      "ko": "Android 스낵바 (Snackbar)"
+    },
+    "tagline": {
+      "en": "Material 3 brief bottom message toast with action button",
+      "ko": "Android 머티리얼 3 하단 피드백 메시지 카드"
+    },
+    "aka": {
+      "en": [
+        "Snackbar",
+        "SnackbarHost"
+      ],
+      "ko": [
+        "안드로이드 스낵바",
+        "안드로이드 토스트"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "android snackbar",
+        "material snackbar"
+      ],
+      "ko": [
+        "안드로이드 알림창",
+        "머티리얼 스낵바"
+      ]
+    },
+    "api": [
+      {
+        "framework": "Jetpack Compose",
+        "symbol": "SnackbarHostState().showSnackbar(\"Message\")",
+        "note": {
+          "en": "Jetpack Compose SnackbarHostState",
+          "ko": "Jetpack Compose SnackbarHostState"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render Material 3 dark surface snackbar with action text link.",
+      "ko": "액션 텍스트 링크가 포함된 머티리얼 3 스낵바 카드 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug Material 3 snackbar surface color and action button spacing.",
+      "ko": "머티리얼 3 스낵바 표면 색상 및 액션 버튼 간격 디버깅."
+    },
+    "description": {
+      "en": "Android Snackbars provide brief messages about app processes at the bottom of the screen.",
+      "ko": "Android 스낵바는 화면 하단에 짧은 피드백 메시지를 노출하며 실행 취소 등의 텍스트 액션을 포함할 수 있습니다."
+    },
+    "parts": [],
+    "related": [
+      "toast",
+      "alert"
+    ],
+    "demo": "android/snackbar"
+  },
+  {
+    "slug": "android-fab",
+    "platform": "android",
+    "name": {
+      "en": "Android Floating Action Button (FAB)",
+      "ko": "Android 플로팅 액션 버튼 (FAB)"
+    },
+    "tagline": {
+      "en": "Material 3 primary call-to-action floating button",
+      "ko": "Android 머티리얼 3 플로팅 주요 실행 버튼"
+    },
+    "aka": {
+      "en": [
+        "FloatingActionButton",
+        "ExtendedFloatingActionButton"
+      ],
+      "ko": [
+        "안드로이드 FAB",
+        "머티리얼 플로팅 버튼"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "android fab",
+        "material fab"
+      ],
+      "ko": [
+        "안드로이드 둥근 버튼",
+        "머티리얼 FAB"
+      ]
+    },
+    "api": [
+      {
+        "framework": "Jetpack Compose",
+        "symbol": "FloatingActionButton(onClick = {}) { Icon(...) }",
+        "note": {
+          "en": "Jetpack Compose FloatingActionButton",
+          "ko": "Jetpack Compose FAB 컴포넌트"
+        }
+      }
+    ],
+    "prompt": {
+      "en": "Render Material 3 container-tinted floating action button with shadow.",
+      "ko": "그림자가 있는 머티리얼 3 플로팅 액션 버튼 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug Material 3 FAB container corner radius and elevation shadow.",
+      "ko": "머티리얼 3 FAB 모서리 둥글기 및 그림자 깊이 디버깅."
+    },
+    "description": {
+      "en": "Android Floating Action Button (FAB) represents the primary action on a screen using a prominent floating surface.",
+      "ko": "Android FAB는 화면 내에서 가장 핵심적이고 자주 일어나는 기본 대표 동작을 띄워주는 플로팅 버튼입니다."
+    },
+    "parts": [],
+    "related": [
+      "button",
+      "toggle-group"
+    ],
+    "demo": "android/fab"
+  },
+  {
     "slug": "ios-segmented-control",
     "platform": "ios",
     "name": "iOS Segmented Control",
@@ -8,12 +1208,24 @@
       "ko": "iOS 애플리케이션용 표준 세그먼티드 컨트롤 UI 요소"
     },
     "aka": {
-      "en": ["segmented picker", "tab switcher"],
-      "ko": ["세그먼트 피커", "탭 스위처"]
+      "en": [
+        "segmented picker",
+        "tab switcher"
+      ],
+      "ko": [
+        "세그먼트 피커",
+        "탭 스위처"
+      ]
     },
     "fuzzy": {
-      "en": ["ios tab control", "segmented picker"],
-      "ko": ["아이폰 세그먼트 버튼", "iOS 탭 컨트롤"]
+      "en": [
+        "ios tab control",
+        "segmented picker"
+      ],
+      "ko": [
+        "아이폰 세그먼트 버튼",
+        "iOS 탭 컨트롤"
+      ]
     },
     "api": [
       {
@@ -38,7 +1250,10 @@
       "ko": "iOS 세그먼티드 컨트롤은 단일 컨테이너 내에서 둘 이상의 상호 배타적인 옵션을 선택하는 표준 UI 컨트롤입니다."
     },
     "parts": [],
-    "related": ["segmented-control", "toggle-group"],
+    "related": [
+      "segmented-control",
+      "toggle-group"
+    ],
     "demo": "ios/segmented-control"
   },
   {
@@ -50,12 +1265,24 @@
       "ko": "머티리얼 디자인 3 안드로이드 하단 내비게이션 바"
     },
     "aka": {
-      "en": ["bottom nav", "navigation bar"],
-      "ko": ["하단 탭바", "안드로이드 네비바"]
+      "en": [
+        "bottom nav",
+        "navigation bar"
+      ],
+      "ko": [
+        "하단 탭바",
+        "안드로이드 네비바"
+      ]
     },
     "fuzzy": {
-      "en": ["android bottom navigation", "material navigation bar"],
-      "ko": ["안드로이드 하단 메뉴", "머티리얼 바텀 네비"]
+      "en": [
+        "android bottom navigation",
+        "material navigation bar"
+      ],
+      "ko": [
+        "안드로이드 하단 메뉴",
+        "머티리얼 바텀 네비"
+      ]
     },
     "api": [
       {
@@ -80,7 +1307,10 @@
       "ko": "안드로이드 하단 내비게이션 바는 모바일 앱의 최상위 주요 화면 간 이동을 제공하는 머티리얼 디자인 컨트롤입니다."
     },
     "parts": [],
-    "related": ["hamburger-menu", "tabs"],
+    "related": [
+      "hamburger-menu",
+      "tabs"
+    ],
     "demo": "android/bottom-nav"
   },
   {

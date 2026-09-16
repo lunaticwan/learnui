@@ -73,7 +73,27 @@ ENTRY_NAME_KO = {
     "hover-card": "호버 카드",
     "switch-checkbox-radio": "스위치, 체크박스 및 라디오 (Switch, Checkbox & Radio)",
     "toggle-group": "토글 그룹",
-    "menu-bar-extra": "메뉴 바 익스트라"
+    "menu-bar-extra": "메뉴 바 익스트라",
+    "ios-alert": "iOS 알림창",
+    "ios-button": "iOS 버튼",
+    "ios-switch": "iOS 스위치 (토글)",
+    "ios-date-picker": "iOS 날짜 선택기",
+    "ios-action-sheet": "iOS 액션 시트 (확인 대화상자)",
+    "ios-navigation-bar": "iOS 내비게이션 바",
+    "ios-progress-view": "iOS 진행 표시기 (ProgressView)",
+    "ios-slider": "iOS 슬라이더",
+    "ios-tab-bar": "iOS 탭 바",
+    "ios-context-menu": "iOS 컨텍스트 메뉴 (롱프레스 팝오버)",
+    "android-alert-dialog": "Android 알림 대화상자 (AlertDialog)",
+    "android-button": "Android 머티리얼 버튼",
+    "android-switch": "Android 스위치",
+    "android-date-picker": "Android 날짜 선택기 (DatePicker)",
+    "android-bottom-sheet": "Android 바텀 시트 (ModalBottomSheet)",
+    "android-top-app-bar": "Android 상단 앱 바 (TopAppBar)",
+    "android-progress-indicator": "Android 진행 표시기 (ProgressIndicator)",
+    "android-slider": "Android 슬라이더",
+    "android-snackbar": "Android 스낵바 (Snackbar)",
+    "android-fab": "Android 플로팅 액션 버튼 (FAB)"
 }
 
 # UI 비주얼 스타일 표준 한국어 명칭 매핑 사전
