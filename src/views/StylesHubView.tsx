@@ -63,8 +63,8 @@ export const StylesHubView: React.FC = () => {
         <span className="crumb-cur">{getCopyKo('stylesCrumb')}</span>
       </nav>
 
-      <section className="hero" style={{ paddingTop: '32px' }}>
-        <h1 className="hero-title" style={{ fontSize: 'clamp(32px, 4.6vw, 48px)' }}>
+      <section className="hero">
+        <h1 className="hero-title">
           <span>{getCopyKo('stylesTitle')}</span>
         </h1>
 

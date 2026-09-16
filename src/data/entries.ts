@@ -2,6 +2,124 @@ import { UIEntry } from "../types/ui";
 
 export const ENTRIES: UIEntry[] = [
   {
+    "slug": "ios-segmented-control",
+    "platform": "ios",
+    "name": {
+      "en": "iOS Segmented Control",
+      "ko": "iOS Segmented Control"
+    },
+    "tagline": {
+      "en": "Standard segmented control UI element for iOS applications",
+      "ko": "iOS 애플리케이션용 표준 세그먼티드 컨트롤 UI 요소"
+    },
+    "description": {
+      "en": "iOS Segmented Control displays two or more mutually exclusive options within a single container.",
+      "ko": "iOS 세그먼티드 컨트롤은 단일 컨테이너 내에서 둘 이상의 상호 배타적인 옵션을 선택하는 표준 UI 컨트롤입니다."
+    },
+    "aka": {
+      "en": [
+        "segmented picker",
+        "tab switcher"
+      ],
+      "ko": [
+        "세그먼트 피커",
+        "탭 스위처"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "ios tab control",
+        "segmented picker"
+      ],
+      "ko": [
+        "아이폰 세그먼트 버튼",
+        "iOS 탭 컨트롤"
+      ]
+    },
+    "api": [
+      {
+        "framework": "SwiftUI",
+        "symbol": "Picker(\"\", selection: $val).pickerStyle(.segmented)",
+        "note": {
+          "en": "SwiftUI segmented picker modifier",
+          "ko": "SwiftUI 세그먼티드 피커 수식어"
+        }
+      }
+    ],
+    "parts": [],
+    "prompt": {
+      "en": "Implement an iOS native style segmented control picker with smooth active sliding background.",
+      "ko": "부드러운 활성 영역 이동 애니메이션이 적용된 iOS 네이티브 스타일 세그먼티드 컨트롤 피커 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug iOS segmented control active state transition and background shadow.",
+      "ko": "iOS 세그먼티드 컨트롤 활성 상태 전환 및 배경 그림자 효과 디버깅."
+    },
+    "relatedSlugs": [
+      "segmented-control",
+      "toggle-group"
+    ]
+  },
+  {
+    "slug": "android-bottom-nav",
+    "platform": "android",
+    "name": {
+      "en": "Android Bottom Navigation Bar",
+      "ko": "Android Bottom Navigation Bar"
+    },
+    "tagline": {
+      "en": "Material Design 3 bottom navigation bar for Android",
+      "ko": "머티리얼 디자인 3 안드로이드 하단 내비게이션 바"
+    },
+    "description": {
+      "en": "Android Bottom Navigation Bar provides access to top-level destinations in a mobile app.",
+      "ko": "안드로이드 하단 내비게이션 바는 모바일 앱의 최상위 주요 화면 간 이동을 제공하는 머티리얼 디자인 컨트롤입니다."
+    },
+    "aka": {
+      "en": [
+        "bottom nav",
+        "navigation bar"
+      ],
+      "ko": [
+        "하단 탭바",
+        "안드로이드 네비바"
+      ]
+    },
+    "fuzzy": {
+      "en": [
+        "android bottom navigation",
+        "material navigation bar"
+      ],
+      "ko": [
+        "안드로이드 하단 메뉴",
+        "머티리얼 바텀 네비"
+      ]
+    },
+    "api": [
+      {
+        "framework": "Jetpack Compose",
+        "symbol": "NavigationBar { NavigationBarItem(...) }",
+        "note": {
+          "en": "Jetpack Compose Material 3 NavigationBar component",
+          "ko": "Jetpack Compose 머티리얼 3 NavigationBar 컴포넌트"
+        }
+      }
+    ],
+    "parts": [],
+    "prompt": {
+      "en": "Build a Material 3 Android bottom navigation bar with active pill indicator.",
+      "ko": "활성 알약 인디케이터가 포함된 안드로이드 머티리얼 3 하단 내비게이션 바 구현."
+    },
+    "debugPrompt": {
+      "en": "Debug Material 3 bottom navigation bar pill background indicator alignment.",
+      "ko": "머티리얼 3 바텀 내비게이션 바 알약 배경 인디케이터 정렬 디버깅."
+    },
+    "relatedSlugs": [
+      "hamburger-menu",
+      "tabs"
+    ]
+  },
+  {
     "slug": "text-scramble",
     "platform": "web",
     "name": {

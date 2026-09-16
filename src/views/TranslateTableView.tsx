@@ -45,16 +45,16 @@ export const TranslateTableView: React.FC = () => {
         <span className="crumb-cur">{getCopyKo('translateTitle')}</span>
       </nav>
 
-      <header className="entry-head">
-        <h1 className="entry-title">
+      <section className="hero">
+        <h1 className="hero-title">
           <span>{getCopyKo('translateTitle')}</span>
         </h1>
-        <p className="entry-tag">
+        <p className="hero-sub">
           <span>{getCopyKo('translateLede')}</span>
         </p>
 
-        <div className="table-search" style={{ marginTop: '24px' }}>
-          <div className="search-box" style={{ maxWidth: '480px' }}>
+        <div className="controls">
+          <div className="search-box">
             <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
               <circle cx="11" cy="11" r="7" />
               <path d="m21 21-4.3-4.3" />
@@ -65,19 +65,20 @@ export const TranslateTableView: React.FC = () => {
               autoComplete="off"
               value={searchQuery}
               onChange={(e) => {
-                console.log(`[Input] Translate table search: "${e.target.value}"`);
+                console.log(`[Input] Term comparison table search: "${e.target.value}"`);
                 setSearchQuery(e.target.value);
               }}
               placeholder="UI 명칭, 한국어, iOS, 안드로이드 명칭 검색..."
-              aria-label="Search translation table"
+              aria-label="Search term comparison table"
             />
             <kbd className="search-kbd">/</kbd>
           </div>
-          <p className="count-note" style={{ marginTop: '10px', fontSize: '13px', color: 'var(--gray-500)' }}>
+
+          <p className="count-note">
             <span>총 {TRANSLATE_TABLE.length}개 중 {filteredRows.length}개 항목 표시</span>
           </p>
         </div>
-      </header>
+      </section>
 
       <div className="translate-grid-wrap">
         <div className="translate-grid-header">

@@ -12,7 +12,7 @@ const NEW_SLUGS = new Set([
 
 export const HomeView: React.FC = () => {
   const navigate = useNavigate();
-  const [filter, setFilter] = useState<'all' | 'web' | 'macos'>('all');
+  const [filter, setFilter] = useState<'all' | 'web' | 'macos' | 'ios' | 'android'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
   // 단축키 '/' 포커스 처리
@@ -147,6 +147,26 @@ export const HomeView: React.FC = () => {
               }}
             >
               <span>{getCopyKo('tabMacos')}</span>
+            </button>
+            <button
+              type="button"
+              className={`tab ${filter === 'ios' ? 'active' : ''}`}
+              onClick={() => {
+                console.log('[HomeView] Tab selected: ios');
+                setFilter('ios');
+              }}
+            >
+              <span>IOS</span>
+            </button>
+            <button
+              type="button"
+              className={`tab ${filter === 'android' ? 'active' : ''}`}
+              onClick={() => {
+                console.log('[HomeView] Tab selected: android');
+                setFilter('android');
+              }}
+            >
+              <span>ANDROID</span>
             </button>
           </div>
 

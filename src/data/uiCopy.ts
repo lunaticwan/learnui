@@ -118,8 +118,8 @@ export const UI_COPY: UICopy = {
     "ko": "비고"
   },
   "translateTitle": {
-    "en": "The Translation Table",
-    "ko": "번역표"
+    "en": "The Term Comparison Table",
+    "ko": "용어 비교표"
   },
   "translateSubtitle": {
     "en": "Official UI Name · Korean · iPhone · Android",
