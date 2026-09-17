@@ -13,6 +13,8 @@ import {
   parseNaturalLanguageQuery,
 } from '../utils/search';
 
+const RECENT_SEARCHES_KEY = 'learnui_recent_searches';
+
 /** 커맨드 팔레트 검색 인덱스 항목 인터페이스 */
 interface SearchItem {
   id: string;
@@ -34,11 +36,49 @@ interface CommandPaletteProps {
 
 /**
  * 커맨드 팔레트 (⌘K / Ctrl+K) 모달 검색 컴포넌트.
- * es-hangul 기반 초성/자모 분해, 자연어 문맥 분석 파서, N-gram 매칭, Fuse.js 퍼지 매칭 하이브리드 검색 제공.
+ * 영한 오타 보정, 최근 검색어 기록, es-hangul 기반 초성/자모 분해, 자연어 문맥 파서 하이브리드 검색 제공.
  */
 export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChange }) => {
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+
+  // 초기 최근 검색어 불러오기
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(RECENT_SEARCHES_KEY);
+      if (saved) {
+        setRecentSearches(JSON.parse(saved));
+      }
+    } catch {
+      setRecentSearches([]);
+    }
+  }, []);
+
+  // 최근 검색어 저장 함수
+  const addRecentSearch = (searchTerm: string) => {
+    const trimmed = searchTerm.trim();
+    if (!trimmed) return;
+    const updated = [trimmed, ...recentSearches.filter((s) => s !== trimmed)].slice(0, 5);
+    setRecentSearches(updated);
+    try {
+      localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(updated));
+    } catch {
+      // 로컬 스토리지 에러 무시
+    }
+  };
+
+  // 최근 검색어 삭제 함수
+  const removeRecentSearch = (e: React.MouseEvent, searchTerm: string) => {
+    e.stopPropagation();
+    const updated = recentSearches.filter((s) => s !== searchTerm);
+    setRecentSearches(updated);
+    try {
+      localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(updated));
+    } catch {
+      // 로컬 스토리지 에러 무시
+    }
+  };
 
   // 단축키 (⌘K, Ctrl+K) 이벤트 리스너 등록
   useEffect(() => {
@@ -166,12 +206,17 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
     });
   }, [searchItems]);
 
+  // 자연어 분석 파서 정보
+  const parsedQueryInfo = useMemo(() => {
+    return parseNaturalLanguageQuery(query);
+  }, [query]);
+
   // 입력 쿼리에 따른 자연어 분석 및 검색 결과 필터링
   const filteredItems = useMemo(() => {
     const trimmed = query.trim();
     if (!trimmed) return searchItems.slice(0, 20);
 
-    const parsed = parseNaturalLanguageQuery(trimmed);
+    const parsed = parsedQueryInfo;
     console.log('[Search] Parsed Natural Language Query:', {
       raw: query,
       parsed,
@@ -280,7 +325,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
     results.sort((a, b) => getItemScore(b) - getItemScore(a));
 
     return results.slice(0, 30);
-  }, [query, searchItems, fuse]);
+  }, [query, searchItems, fuse, parsedQueryInfo]);
 
   if (!open) return null;
 
@@ -342,6 +387,69 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
             <kbd className="search-kbd">ESC</kbd>
           </div>
 
+          {/* 영한 자동 오타 보정 안내 바 */}
+          {parsedQueryInfo.convertedHangulQuery && (
+            <div
+              style={{
+                padding: '6px 16px',
+                background: '#f0fdf4',
+                borderBottom: '1px solid #dcfce7',
+                fontSize: '12px',
+                color: '#166534',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+              }}
+            >
+              <span>🔤 영문 오타 감지: </span>
+              <strong>"{parsedQueryInfo.convertedHangulQuery}"</strong> (으)로 자동 전환하여 검색 중
+            </div>
+          )}
+
+          {/* 감지된 문맥/플랫폼 배지 바 */}
+          {(parsedQueryInfo.platformFilter || parsedQueryInfo.intentFilter) && (
+            <div
+              style={{
+                padding: '6px 16px',
+                background: '#fafafa',
+                borderBottom: '1px solid #eaeaea',
+                fontSize: '11px',
+                color: '#737373',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+              }}
+            >
+              <span>분석된 필터:</span>
+              {parsedQueryInfo.platformFilter && (
+                <span
+                  style={{
+                    background: '#e0f2fe',
+                    color: '#0369a1',
+                    padding: '2px 6px',
+                    borderRadius: '4px',
+                    fontWeight: 500,
+                  }}
+                >
+                  플랫폼: {parsedQueryInfo.platformFilter.toUpperCase()}
+                </span>
+              )}
+              {parsedQueryInfo.intentFilter && (
+                <span
+                  style={{
+                    background: '#fef3c7',
+                    color: '#b45309',
+                    padding: '2px 6px',
+                    borderRadius: '4px',
+                    fontWeight: 500,
+                  }}
+                >
+                  의도: {parsedQueryInfo.intentFilter.toUpperCase()}
+                </span>
+              )}
+            </div>
+          )}
+
           <Command.List
             style={{
               maxHeight: '360px',
@@ -349,6 +457,46 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
               padding: '8px',
             }}
           >
+            {/* 최근 검색어 바 목록 (입력창이 비어있을 경우에만 노출) */}
+            {!query.trim() && recentSearches.length > 0 && (
+              <div style={{ marginBottom: '12px', padding: '0 4px' }}>
+                <div style={{ fontSize: '11px', color: '#a3a3a3', fontWeight: 600, padding: '4px 8px' }}>
+                  최근 검색어
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', padding: '4px 8px' }}>
+                  {recentSearches.map((s) => (
+                    <span
+                      key={s}
+                      onClick={() => {
+                        setQuery(s);
+                        console.log('[Search] Clicked Recent Search Chip:', s);
+                      }}
+                      style={{
+                        background: '#f5f5f5',
+                        border: '1px solid #e5e5e5',
+                        borderRadius: '16px',
+                        padding: '4px 10px',
+                        fontSize: '12px',
+                        color: '#404040',
+                        cursor: 'pointer',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                      }}
+                    >
+                      {s}
+                      <span
+                        onClick={(e) => removeRecentSearch(e, s)}
+                        style={{ color: '#a3a3a3', fontWeight: 'bold', fontSize: '10px' }}
+                      >
+                        ✕
+                      </span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <Command.Empty
               style={{
                 padding: '24px',
@@ -365,6 +513,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
                 key={item.id}
                 onSelect={() => {
                   console.log('[Search] Item Selected:', item);
+                  if (query.trim()) {
+                    addRecentSearch(query.trim());
+                  }
                   onOpenChange(false);
                   navigate(item.url);
                 }}
@@ -392,19 +543,37 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
                     </div>
                   )}
                 </div>
-                <span
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '10px',
-                    textTransform: 'uppercase',
-                    color: '#a3a3a3',
-                    border: '1px solid #eaeaea',
-                    padding: '2px 6px',
-                    borderRadius: '4px',
-                  }}
-                >
-                  {item.type}
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  {item.platform && (
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '10px',
+                        textTransform: 'uppercase',
+                        color: '#2563eb',
+                        border: '1px solid #bfdbfe',
+                        backgroundColor: '#eff6ff',
+                        padding: '2px 6px',
+                        borderRadius: '4px',
+                      }}
+                    >
+                      {item.platform}
+                    </span>
+                  )}
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '10px',
+                      textTransform: 'uppercase',
+                      color: '#a3a3a3',
+                      border: '1px solid #eaeaea',
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                    }}
+                  >
+                    {item.type}
+                  </span>
+                </div>
               </Command.Item>
             ))}
           </Command.List>

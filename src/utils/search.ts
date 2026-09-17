@@ -1,4 +1,4 @@
-import { getChoseong, disassemble } from 'es-hangul';
+import { getChoseong, disassemble, convertQwertyToHangul } from 'es-hangul';
 
 /**
  * 한글 문자열에서 자음 초성만 추출하는 유틸리티 (es-hangul 활용).
@@ -25,6 +25,21 @@ export function disassembleHangul(text: string): string {
   if (!text) return '';
   try {
     return disassemble(text);
+  } catch {
+    return text;
+  }
+}
+
+/**
+ * 영문 QWERTY 입력 문자열을 한글로 자동 변환하는 유틸리티. (예: "qjtm" -> "버튼")
+ *
+ * @param text 영문 입력 문자열
+ * @returns 한글 변환 문자열
+ */
+export function convertEnglishToHangul(text: string): string {
+  if (!text) return '';
+  try {
+    return convertQwertyToHangul(text);
   } catch {
     return text;
   }
@@ -85,6 +100,7 @@ const INTENT_MAP: Record<string, string> = {
 export interface ParsedQuery {
   rawQuery: string;
   normalizedQuery: string;
+  convertedHangulQuery?: string;
   platformFilter?: string;
   intentFilter?: string;
   cleanTokens: string[];
@@ -94,15 +110,26 @@ export interface ParsedQuery {
 }
 
 /**
- * 자연어 검색 쿼리를 입력받아 플랫폼, 의도, 키워드 토큰, N-gram 조합, 초성 및 자모 분해를 분석 분리하는 파서.
+ * 영문 오타(QWERTY 입력) 및 자연어 검색 쿼리를 분석하여 플랫폼, 의도, 키워드 토큰, N-gram, 초성, 자모 분해 결과를 리턴하는 파서.
  *
- * @param query 사용자가 입력한 자연어 검색어 (예: "iOS용 버튼 컴포넌트 찾아줘")
+ * @param query 사용자가 입력한 자연어 검색어 (예: "dlhdth qjtm" -> "이요소 버튼")
  * @returns 분석된 자연어 쿼리 객체
  */
 export function parseNaturalLanguageQuery(query: string): ParsedQuery {
   const rawQuery = query || '';
-  const normalized = normalizeKorean(rawQuery);
-  const rawTokens = rawQuery.toLowerCase().split(/\s+/).filter(Boolean);
+
+  // 영문 자판 입력 여부 확인 및 한글 오타 자동 변환
+  let convertedHangulQuery: string | undefined = undefined;
+  if (/^[a-zA-Z0-9\s.,/#!$%^&*;:{}=\-_`~()]+$/.test(rawQuery) && /[a-zA-Z]/.test(rawQuery)) {
+    const converted = convertEnglishToHangul(rawQuery);
+    if (converted !== rawQuery) {
+      convertedHangulQuery = converted;
+    }
+  }
+
+  const queryToParse = convertedHangulQuery ? `${rawQuery} ${convertedHangulQuery}` : rawQuery;
+  const normalized = normalizeKorean(queryToParse);
+  const rawTokens = queryToParse.toLowerCase().split(/\s+/).filter(Boolean);
   const normTokens = normalized.split(/\s+/).filter(Boolean);
 
   let platformFilter: string | undefined = undefined;
@@ -142,12 +169,13 @@ export function parseNaturalLanguageQuery(query: string): ParsedQuery {
     nGrams.push(`${cleanTokens[i]} ${cleanTokens[i + 1]}`);
   }
 
-  const chosungQuery = getChosung(rawQuery).replace(/\s+/g, '');
-  const disassembledQuery = disassembleHangul(rawQuery).replace(/\s+/g, '');
+  const chosungQuery = getChosung(queryToParse).replace(/\s+/g, '');
+  const disassembledQuery = disassembleHangul(queryToParse).replace(/\s+/g, '');
 
   return {
     rawQuery,
     normalizedQuery: normalized,
+    convertedHangulQuery,
     platformFilter,
     intentFilter,
     cleanTokens,
