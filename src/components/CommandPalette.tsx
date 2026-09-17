@@ -6,7 +6,12 @@ import { ENTRIES } from '../data/entries';
 import { STYLES } from '../data/styles';
 import { UI_COPY } from '../data/uiCopy';
 import { getLocalizedString } from '../types/ui';
-import { getChosung, normalizeKorean, parseNaturalLanguageQuery } from '../utils/search';
+import {
+  getChosung,
+  disassembleHangul,
+  normalizeKorean,
+  parseNaturalLanguageQuery,
+} from '../utils/search';
 
 /** 커맨드 팔레트 검색 인덱스 항목 인터페이스 */
 interface SearchItem {
@@ -19,6 +24,7 @@ interface SearchItem {
   url: string;
   keywords: string[];
   chosungKeywords: string[];
+  disassembledKeywords: string[];
 }
 
 interface CommandPaletteProps {
@@ -27,8 +33,8 @@ interface CommandPaletteProps {
 }
 
 /**
- * 커맨드 팔레트 (⌘K / Ctrl+K) 중앙 모달 검색 컴포넌트.
- * 초성 검색, 자연어 문맥/플랫폼 분리 분석 파서, N-gram 키워드 매칭, Fuse.js 퍼지 매칭 하이브리드 검색 제공.
+ * 커맨드 팔레트 (⌘K / Ctrl+K) 모달 검색 컴포넌트.
+ * es-hangul 기반 초성/자모 분해, 자연어 문맥 분석 파서, N-gram 매칭, Fuse.js 퍼지 매칭 하이브리드 검색 제공.
  */
 export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChange }) => {
   const navigate = useNavigate();
@@ -60,6 +66,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
       url: '/translate',
       keywords: ['translate', '번역', '대조표', '용어', 'swiftui', 'appkit', 'ios', 'android'],
       chosungKeywords: [getChosung('번역'), getChosung('대조표'), getChosung('용어')],
+      disassembledKeywords: [disassembleHangul('번역'), disassembleHangul('대조표'), disassembleHangul('용어')],
     });
 
     // 2. UI 컴포넌트 엔트리 (ENTRIES)
@@ -99,6 +106,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         url: `/${e.platform}/${e.slug}`,
         keywords: allKw,
         chosungKeywords: allKw.map((k) => getChosung(k)),
+        disassembledKeywords: allKw.map((k) => disassembleHangul(k)),
       });
     });
 
@@ -135,6 +143,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         url: `/styles/${s.slug}`,
         keywords: allKw,
         chosungKeywords: allKw.map((k) => getChosung(k)),
+        disassembledKeywords: allKw.map((k) => disassembleHangul(k)),
       });
     });
 
@@ -190,8 +199,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
 
     const normQuery = parsed.normalizedQuery.replace(/\s+/g, '');
     const chosungQuery = parsed.chosungQuery;
+    const disassembledQuery = parsed.disassembledQuery;
 
-    // 1단계: 전체/정규화/초성 매칭
+    // 1단계: 전체/정규화/초성/자모 매칭
     const directMatches = candidateItems.filter((item) => {
       const matchTarget = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')}`.toLowerCase().replace(/\s+/g, '');
       const normTarget = normalizeKorean(matchTarget).replace(/\s+/g, '');
@@ -203,34 +213,55 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
       return chosungQuery.length > 0 && chosungTarget.includes(chosungQuery);
     });
 
+    const disassembledMatches = candidateItems.filter((item) => {
+      const disTarget = item.disassembledKeywords.join(' ').replace(/\s+/g, '');
+      return disassembledQuery.length > 0 && disTarget.includes(disassembledQuery);
+    });
+
     const fuseResults = fuse.search(trimmed).map((res) => res.item).filter((item) => candidateItems.some((c) => c.id === item.id));
 
-    // 2단계: N-gram 및 토큰 매칭 가중치 스코어링
+    // 2단계: N-gram 및 토큰/자모/초성 매칭 가중치 스코어링
     const getItemScore = (item: SearchItem) => {
-      const target = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')} ${item.chosungKeywords.join(' ')}`.toLowerCase();
+      const target = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')}`.toLowerCase();
       const normTarget = normalizeKorean(target);
+      const chosungTarget = item.chosungKeywords.join(' ');
+      const disTarget = item.disassembledKeywords.join(' ');
       let score = 0;
+
+      let keywordMatched = false;
 
       // N-gram 보너스 매칭
       for (const ngram of parsed.nGrams) {
         const normNgram = normalizeKorean(ngram);
         if (normNgram && normTarget.includes(normNgram)) {
           score += 3;
+          keywordMatched = true;
         }
+      }
+
+      // 자모 완전 분해 매칭
+      if (disassembledQuery.length > 0 && disTarget.includes(disassembledQuery)) {
+        score += 4;
+        keywordMatched = true;
       }
 
       // 토큰 및 초성 매칭
       for (const token of parsed.cleanTokens) {
         const normToken = normalizeKorean(token);
         const chosungToken = getChosung(token);
-        if (target.includes(token.toLowerCase())) score += 2;
-        if (normToken && normTarget.includes(normToken)) score += 2;
-        if (item.chosungKeywords.some((ck) => ck.includes(chosungToken))) score += 1;
+        const disToken = disassembleHangul(token);
+
+        if (target.includes(token.toLowerCase())) { score += 2; keywordMatched = true; }
+        if (normToken && normTarget.includes(normToken)) { score += 2; keywordMatched = true; }
+        if (chosungToken && chosungTarget.includes(chosungToken)) { score += 1; keywordMatched = true; }
+        if (disToken && disTarget.includes(disToken)) { score += 2; keywordMatched = true; }
       }
 
-      // 플랫폼 및 의도 완벽 일치 추가 점수
-      if (parsed.platformFilter && item.platform === parsed.platformFilter) score += 5;
-      if (parsed.intentFilter && item.type === parsed.intentFilter) score += 3;
+      // 키워드 토큰이 포함되었거나 cleanTokens가 없을 때만 플랫폼 및 의도 완벽 일치 보너스 점수 부여
+      if (parsed.cleanTokens.length === 0 || keywordMatched) {
+        if (parsed.platformFilter && item.platform === parsed.platformFilter) score += 5;
+        if (parsed.intentFilter && item.type === parsed.intentFilter) score += 3;
+      }
 
       return score;
     };
@@ -238,7 +269,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
     const combinedSet = new Set<string>();
     const results: SearchItem[] = [];
 
-    [...directMatches, ...chosungMatches, ...fuseResults, ...candidateItems].forEach((item) => {
+    [...directMatches, ...chosungMatches, ...disassembledMatches, ...fuseResults, ...candidateItems].forEach((item) => {
       const score = getItemScore(item);
       if (score > 0 && !combinedSet.has(item.id)) {
         combinedSet.add(item.id);
@@ -296,7 +327,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
                 setQuery(val);
                 console.log('[Search] User Search Input Change:', val);
               }}
-              placeholder={getLocalizedString(UI_COPY['searchPlaceholder'] as any, 'ko') || '검색... (예: iOS 버튼 컴포넌트)'}
+              placeholder={getLocalizedString(UI_COPY['searchPlaceholder'] as any, 'ko') || '생각하고 있는 UI 요소를 설명해보세요 (예: iOS 버튼 컴포넌트)'}
               autoFocus
               style={{
                 width: '100%',

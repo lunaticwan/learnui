@@ -1,27 +1,33 @@
-/** 한글 유니코드 초성 배열 (ㄱ~ㅎ) */
-export const CHOSUNG_LIST = [
-  'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ',
-  'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'
-];
+import { getChoseong, disassemble } from 'es-hangul';
 
 /**
- * 한글 문자열에서 자음 초성만 추출하는 유틸리티.
+ * 한글 문자열에서 자음 초성만 추출하는 유틸리티 (es-hangul 활용).
  *
  * @param text 입력 문자열
  * @returns 초성 변환 문자열
  */
 export function getChosung(text: string): string {
-  let result = '';
-  for (let i = 0; i < text.length; i++) {
-    const code = text.charCodeAt(i);
-    if (code >= 0xac00 && code <= 0xd7a3) {
-      const chosungIndex = Math.floor((code - 0xac00) / 588);
-      result += CHOSUNG_LIST[chosungIndex];
-    } else {
-      result += text[i];
-    }
+  if (!text) return '';
+  try {
+    return getChoseong(text);
+  } catch {
+    return text;
   }
-  return result;
+}
+
+/**
+ * 한글 문자열의 자모를 완전히 분해하는 유틸리티 (es-hangul 활용).
+ *
+ * @param text 입력 문자열
+ * @returns 분해된 자모 문자열
+ */
+export function disassembleHangul(text: string): string {
+  if (!text) return '';
+  try {
+    return disassemble(text);
+  } catch {
+    return text;
+  }
 }
 
 /**
@@ -84,10 +90,11 @@ export interface ParsedQuery {
   cleanTokens: string[];
   nGrams: string[];
   chosungQuery: string;
+  disassembledQuery: string;
 }
 
 /**
- * 자연어 검색 쿼리를 입력받아 플랫폼, 의도, 키워드 토큰, N-gram 조합 및 초성을 분석 분리하는 파서.
+ * 자연어 검색 쿼리를 입력받아 플랫폼, 의도, 키워드 토큰, N-gram 조합, 초성 및 자모 분해를 분석 분리하는 파서.
  *
  * @param query 사용자가 입력한 자연어 검색어 (예: "iOS용 버튼 컴포넌트 찾아줘")
  * @returns 분석된 자연어 쿼리 객체
@@ -136,6 +143,7 @@ export function parseNaturalLanguageQuery(query: string): ParsedQuery {
   }
 
   const chosungQuery = getChosung(rawQuery).replace(/\s+/g, '');
+  const disassembledQuery = disassembleHangul(rawQuery).replace(/\s+/g, '');
 
   return {
     rawQuery,
@@ -145,5 +153,6 @@ export function parseNaturalLanguageQuery(query: string): ParsedQuery {
     cleanTokens,
     nGrams,
     chosungQuery,
+    disassembledQuery,
   };
 }
