@@ -93,7 +93,27 @@ ENTRY_NAME_KO = {
     "android-progress-indicator": "Android 진행 표시기 (ProgressIndicator)",
     "android-slider": "Android 슬라이더",
     "android-snackbar": "Android 스낵바 (Snackbar)",
-    "android-fab": "Android 플로팅 액션 버튼 (FAB)"
+    "android-fab": "Android 플로팅 액션 버튼 (FAB)",
+    "ios-checkbox": "iOS 체크박스 토글",
+    "ios-radio-group": "iOS 라디오 그룹 피커",
+    "ios-color-picker": "iOS 색상 선택기 (ColorPicker)",
+    "ios-menu": "iOS 메뉴 (풀다운)",
+    "ios-disclosure-group": "iOS 디스클로저 그룹 (아코디언)",
+    "ios-list": "iOS 리스트 (그룹화 테이블)",
+    "ios-search-bar": "iOS 검색 바 (.searchable)",
+    "ios-badge": "iOS 배지 인디케이터",
+    "ios-stepper": "iOS 스텝퍼",
+    "ios-popover": "iOS 팝오버 (말풍선 패널)",
+    "android-checkbox": "Android 체크박스",
+    "android-radio-button": "Android 라디오 버튼",
+    "android-color-picker": "Android 색상 선택기",
+    "android-dropdown-menu": "Android 드롭다운 메뉴 (ExposedDropdownMenu)",
+    "android-expandable-card": "Android 확장형 카드 (아코디언)",
+    "android-lazy-column": "Android 레이지 컬럼 리스트",
+    "android-search-bar": "Android 검색 바 (SearchBar)",
+    "android-chip": "Android 칩 (FilterChip / AssistChip)",
+    "android-segmented-button": "Android 세그먼트 버튼 (SegmentedButtonRow)",
+    "android-tooltip": "Android 툴팁 (PlainTooltip)"
 }
 
 # UI 비주얼 스타일 표준 한국어 명칭 매핑 사전
