@@ -6,62 +6,27 @@ import { ENTRIES } from '../data/entries';
 import { STYLES } from '../data/styles';
 import { UI_COPY } from '../data/uiCopy';
 import { getLocalizedString } from '../types/ui';
+import {
+  getChosung,
+  disassembleHangul,
+  normalizeKorean,
+  parseNaturalLanguageQuery,
+} from '../utils/search';
 
-/** 한글 유니코드 초성 배열 (ㄱ~ㅎ) */
-const CHOSUNG_LIST = [
-  'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ',
-  'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'
-];
-
-/**
- * 한글 문자열에서 자음 초성만 추출하는 유틸리티.
- * 한글 음절 유니코드 공식: (음절 코드 - 0xAC00) / 588 = 초성 인덱스
- *
- * @param text 입력 문자열
- * @returns 초성 변환 문자열
- */
-export function getChosung(text: string): string {
-  let result = '';
-  for (let i = 0; i < text.length; i++) {
-    const code = text.charCodeAt(i);
-    if (code >= 0xac00 && code <= 0xd7a3) {
-      const chosungIndex = Math.floor((code - 0xac00) / 588);
-      result += CHOSUNG_LIST[chosungIndex];
-    } else {
-      result += text[i];
-    }
-  }
-  return result;
-}
-
-/**
- * 한국어 검색을 위한 문장부호 및 조사 정규화 유틸리티.
- * 문장부호 및 주요 한국어 조사(은/는/이/가/을/를/에서/으로 등)를 제거하여 검색 키워드 매칭 정교화.
- *
- * @param text 원본 검색어 또는 대상 키워드
- * @returns 정규화된 키워드 문자열
- */
-export function normalizeKorean(text: string): string {
-  if (!text) return '';
-  const particleRegex = /(에서|으로|까지|부터|은|는|이|가|을|를|로|의|와|과|도|에|들|만)(?=\s|$)/g;
-  return text
-    .toLowerCase()
-    .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, ' ')
-    .replace(particleRegex, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
+const RECENT_SEARCHES_KEY = 'learnui_recent_searches';
 
 /** 커맨드 팔레트 검색 인덱스 항목 인터페이스 */
 interface SearchItem {
   id: string;
   type: 'component' | 'style' | 'page';
+  platform?: string;
   title: string;
   titleKo?: string;
   subtitle: string;
   url: string;
   keywords: string[];
   chosungKeywords: string[];
+  disassembledKeywords: string[];
 }
 
 interface CommandPaletteProps {
@@ -70,12 +35,85 @@ interface CommandPaletteProps {
 }
 
 /**
- * 커맨드 팔레트 (⌘K / Ctrl+K) 중앙 모달 검색 컴포넌트.
- * 초성 검색, 한국어 조사 제거 정규화, Fuse.js 퍼지 매칭의 3단계 하이브리드 자연어 검색 제공.
+ * 커맨드 팔레트 (⌘K / Ctrl+K) 모달 검색 컴포넌트.
+ * 영한 오타 보정, 최근 검색어 기록, es-hangul 기반 초성/자모 분해, 자연어 문맥 파서 하이브리드 검색 제공.
  */
+/**
+ * 검색어와 매칭되는 텍스트 부분을 <mark> 태그 스타일로 하이라이팅하는 헬퍼 컴포넌트
+ */
+const HighlightedText: React.FC<{ text: string; highlight: string }> = ({ text, highlight }) => {
+  if (!highlight.trim() || !text) return <>{text}</>;
+
+  // 특수문자 이스케이프 후 매칭
+  const cleanHighlight = highlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const parts = text.split(new RegExp(`(${cleanHighlight})`, 'gi'));
+
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === highlight.toLowerCase() ? (
+          <mark
+            key={i}
+            style={{
+              backgroundColor: '#fef08a',
+              color: '#854d0e',
+              padding: '0 2px',
+              borderRadius: '2px',
+              fontWeight: 600,
+            }}
+          >
+            {part}
+          </mark>
+        ) : (
+          part
+        )
+      )}
+    </>
+  );
+};
+
 export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChange }) => {
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'component' | 'style' | 'page'>('all');
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+
+  // 초기 최근 검색어 불러오기
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(RECENT_SEARCHES_KEY);
+      if (saved) {
+        setRecentSearches(JSON.parse(saved));
+      }
+    } catch {
+      setRecentSearches([]);
+    }
+  }, []);
+
+  // 최근 검색어 저장 함수
+  const addRecentSearch = (searchTerm: string) => {
+    const trimmed = searchTerm.trim();
+    if (!trimmed) return;
+    const updated = [trimmed, ...recentSearches.filter((s) => s !== trimmed)].slice(0, 5);
+    setRecentSearches(updated);
+    try {
+      localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(updated));
+    } catch {
+      // 로컬 스토리지 에러 무시
+    }
+  };
+
+  // 최근 검색어 삭제 함수
+  const removeRecentSearch = (e: React.MouseEvent, searchTerm: string) => {
+    e.stopPropagation();
+    const updated = recentSearches.filter((s) => s !== searchTerm);
+    setRecentSearches(updated);
+    try {
+      localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(updated));
+    } catch {
+      // 로컬 스토리지 에러 무시
+    }
+  };
 
   // 단축키 (⌘K, Ctrl+K) 이벤트 리스너 등록
   useEffect(() => {
@@ -103,6 +141,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
       url: '/translate',
       keywords: ['translate', '번역', '대조표', '용어', 'swiftui', 'appkit', 'ios', 'android'],
       chosungKeywords: [getChosung('번역'), getChosung('대조표'), getChosung('용어')],
+      disassembledKeywords: [disassembleHangul('번역'), disassembleHangul('대조표'), disassembleHangul('용어')],
     });
 
     // 2. UI 컴포넌트 엔트리 (ENTRIES)
@@ -135,12 +174,14 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
       items.push({
         id: `entry-${e.slug}`,
         type: 'component',
+        platform: e.platform,
         title: titleEn,
         titleKo,
         subtitle,
         url: `/${e.platform}/${e.slug}`,
         keywords: allKw,
         chosungKeywords: allKw.map((k) => getChosung(k)),
+        disassembledKeywords: allKw.map((k) => disassembleHangul(k)),
       });
     });
 
@@ -177,6 +218,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         url: `/styles/${s.slug}`,
         keywords: allKw,
         chosungKeywords: allKw.map((k) => getChosung(k)),
+        disassembledKeywords: allKw.map((k) => disassembleHangul(k)),
       });
     });
 
@@ -199,79 +241,143 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
     });
   }, [searchItems]);
 
-  // 입력 쿼리에 따른 결과 필터링 (3단계 하이브리드 및 다중 단어 토큰 검색)
+  // 자연어 분석 파서 정보
+  const parsedQueryInfo = useMemo(() => {
+    return parseNaturalLanguageQuery(query);
+  }, [query]);
+
+  // 입력 쿼리에 따른 자연어 분석 및 검색 결과 필터링
   const filteredItems = useMemo(() => {
     const trimmed = query.trim();
     if (!trimmed) return searchItems.slice(0, 20);
 
-    const tokens = trimmed.split(/\s+/).filter(Boolean);
-    const normQuery = normalizeKorean(trimmed).replace(/\s+/g, '');
-    const chosungQuery = getChosung(trimmed).replace(/\s+/g, '');
+    const parsed = parsedQueryInfo;
+    console.log('[Search] Parsed Natural Language Query:', {
+      raw: query,
+      parsed,
+    });
 
-    // 1단계: 전체 쿼리 기반 3단계 하이브리드 매칭
-    const directMatches = searchItems.filter((item) => {
+    let candidateItems = searchItems;
+
+    // 플랫폼 필터 적용
+    if (parsed.platformFilter) {
+      const platformFiltered = candidateItems.filter(
+        (item) => item.platform === parsed.platformFilter || item.keywords.includes(parsed.platformFilter!)
+      );
+      if (platformFiltered.length > 0) {
+        candidateItems = platformFiltered;
+      }
+    }
+
+    // 의도/카테고리 필터 적용
+    if (parsed.intentFilter) {
+      const intentFiltered = candidateItems.filter((item) => item.type === parsed.intentFilter);
+      if (intentFiltered.length > 0) {
+        candidateItems = intentFiltered;
+      }
+    }
+
+    // Quick Filter 탭 적용
+    if (selectedCategory !== 'all') {
+      const categoryFiltered = candidateItems.filter((item) => item.type === selectedCategory);
+      if (categoryFiltered.length > 0) {
+        candidateItems = categoryFiltered;
+      }
+    }
+
+    const normQuery = parsed.normalizedQuery.replace(/\s+/g, '');
+    const chosungQuery = parsed.chosungQuery;
+    const disassembledQuery = parsed.disassembledQuery;
+
+    // 1단계: 전체/정규화/초성/자모 매칭
+    const directMatches = candidateItems.filter((item) => {
       const matchTarget = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')}`.toLowerCase().replace(/\s+/g, '');
       const normTarget = normalizeKorean(matchTarget).replace(/\s+/g, '');
       return normTarget.includes(normQuery) || matchTarget.includes(trimmed.toLowerCase());
     });
 
-    const chosungMatches = searchItems.filter((item) => {
+    const chosungMatches = candidateItems.filter((item) => {
       const chosungTarget = item.chosungKeywords.join(' ').replace(/\s+/g, '');
-      return chosungTarget.includes(chosungQuery);
+      return chosungQuery.length > 0 && chosungTarget.includes(chosungQuery);
     });
 
-    const fuseResults = fuse.search(trimmed).map((res) => res.item);
-
-    // 2단계: 다중 단어 토큰 기반 각 토큰 매칭 및 가중치 계산
-    const tokenMatchedItems = searchItems.filter((item) => {
-      const target = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')} ${item.chosungKeywords.join(' ')}`.toLowerCase();
-      const normTarget = normalizeKorean(target);
-      return tokens.some((token) => {
-        const normToken = normalizeKorean(token);
-        const chosungToken = getChosung(token);
-        return (
-          target.includes(token.toLowerCase()) ||
-          (normToken && normTarget.includes(normToken)) ||
-          item.chosungKeywords.some((ck) => ck.includes(chosungToken))
-        );
-      });
+    const disassembledMatches = candidateItems.filter((item) => {
+      const disTarget = item.disassembledKeywords.join(' ').replace(/\s+/g, '');
+      return disassembledQuery.length > 0 && disTarget.includes(disassembledQuery);
     });
 
-    // 매칭 토큰 개수에 따른 가중치 점수 계산유틸
+    const fuseResults = fuse.search(trimmed).map((res) => res.item).filter((item) => candidateItems.some((c) => c.id === item.id));
+
+    // 2단계: N-gram 및 토큰/자모/초성 매칭 가중치 스코어링
     const getItemScore = (item: SearchItem) => {
-      const target = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')} ${item.chosungKeywords.join(' ')}`.toLowerCase();
+      const target = `${item.title} ${item.titleKo || ''} ${item.keywords.join(' ')}`.toLowerCase();
       const normTarget = normalizeKorean(target);
-      let count = 0;
-      for (const token of tokens) {
-        const normToken = normalizeKorean(token);
-        const chosungToken = getChosung(token);
-        if (
-          target.includes(token.toLowerCase()) ||
-          (normToken && normTarget.includes(normToken)) ||
-          item.chosungKeywords.some((ck) => ck.includes(chosungToken))
-        ) {
-          count++;
+      const chosungTarget = item.chosungKeywords.join(' ');
+      const disTarget = item.disassembledKeywords.join(' ');
+      let score = 0;
+
+      let keywordMatched = false;
+
+      // N-gram 보너스 매칭
+      for (const ngram of parsed.nGrams) {
+        const normNgram = normalizeKorean(ngram);
+        if (normNgram && normTarget.includes(normNgram)) {
+          score += 3;
+          keywordMatched = true;
         }
       }
-      return count;
+
+      // 자모 완전 분해 매칭
+      if (disassembledQuery.length > 0 && disTarget.includes(disassembledQuery)) {
+        score += 4;
+        keywordMatched = true;
+      }
+
+      // 토큰 및 초성 매칭
+      for (const token of parsed.cleanTokens) {
+        const normToken = normalizeKorean(token);
+        const chosungToken = getChosung(token);
+        const disToken = disassembleHangul(token);
+
+        if (target.includes(token.toLowerCase())) { score += 2; keywordMatched = true; }
+        if (normToken && normTarget.includes(normToken)) { score += 2; keywordMatched = true; }
+        if (chosungToken && chosungTarget.includes(chosungToken)) { score += 1; keywordMatched = true; }
+        if (disToken && disTarget.includes(disToken)) { score += 2; keywordMatched = true; }
+      }
+
+      // 유의어/동의어 매칭 보너스
+      for (const synToken of parsed.synonymTokens) {
+        const normSyn = normalizeKorean(synToken);
+        if (target.includes(synToken.toLowerCase()) || (normSyn && normTarget.includes(normSyn))) {
+          score += 3;
+          keywordMatched = true;
+        }
+      }
+
+      // 키워드 토큰이 포함되었거나 cleanTokens가 없을 때만 플랫폼 및 의도 완벽 일치 보너스 점수 부여
+      if (parsed.cleanTokens.length === 0 || keywordMatched) {
+        if (parsed.platformFilter && item.platform === parsed.platformFilter) score += 5;
+        if (parsed.intentFilter && item.type === parsed.intentFilter) score += 3;
+      }
+
+      return score;
     };
 
-    // 결과 합체 및 중복 제거
     const combinedSet = new Set<string>();
     const results: SearchItem[] = [];
 
-    [...directMatches, ...chosungMatches, ...fuseResults, ...tokenMatchedItems].forEach((item) => {
-      if (!combinedSet.has(item.id)) {
+    [...directMatches, ...chosungMatches, ...disassembledMatches, ...fuseResults, ...candidateItems].forEach((item) => {
+      const score = getItemScore(item);
+      if (score > 0 && !combinedSet.has(item.id)) {
         combinedSet.add(item.id);
         results.push(item);
       }
     });
 
-    // 매칭 토큰 수 기준 상위 정렬
     results.sort((a, b) => getItemScore(b) - getItemScore(a));
 
-    return results;
-  }, [query, searchItems, fuse]);
+    return results.slice(0, 30);
+  }, [query, searchItems, fuse, parsedQueryInfo]);
 
   if (!open) return null;
 
@@ -314,8 +420,11 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
           >
             <Command.Input
               value={query}
-              onValueChange={setQuery}
-              placeholder={getLocalizedString(UI_COPY['searchPlaceholder'] as any, 'ko') || '검색...'}
+              onValueChange={(val) => {
+                setQuery(val);
+                console.log('[Search] User Search Input Change:', val);
+              }}
+              placeholder={getLocalizedString(UI_COPY['searchPlaceholder'] as any, 'ko') || '생각하고 있는 UI 요소를 설명해보세요 (예: iOS 버튼 컴포넌트)'}
               autoFocus
               style={{
                 width: '100%',
@@ -330,6 +439,105 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
             <kbd className="search-kbd">ESC</kbd>
           </div>
 
+          {/* 영한 자동 오타 보정 안내 바 */}
+          {parsedQueryInfo.convertedHangulQuery && (
+            <div
+              style={{
+                padding: '6px 16px',
+                background: '#f0fdf4',
+                borderBottom: '1px solid #dcfce7',
+                fontSize: '12px',
+                color: '#166534',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+              }}
+            >
+              <span>🔤 영문 오타 감지: </span>
+              <strong>"{parsedQueryInfo.convertedHangulQuery}"</strong> (으)로 자동 전환하여 검색 중
+            </div>
+          )}
+
+          {/* Quick Filter 카테고리 탭 및 분석된 필터 배지 */}
+          <div
+            style={{
+              padding: '8px 16px',
+              background: '#fafafa',
+              borderBottom: '1px solid #eaeaea',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '8px',
+              flexWrap: 'wrap',
+            }}
+          >
+            {/* Quick Filter 탭 버튼 */}
+            <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+              {[
+                { id: 'all', label: '전체' },
+                { id: 'component', label: '컴포넌트' },
+                { id: 'style', label: '스타일' },
+                { id: 'page', label: '페이지' },
+              ].map((tab) => {
+                const isActive = selectedCategory === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => {
+                      setSelectedCategory(tab.id as any);
+                      console.log('[Search] Selected Quick Filter Tab:', tab.id);
+                    }}
+                    style={{
+                      padding: '3px 10px',
+                      borderRadius: '12px',
+                      border: 'none',
+                      fontSize: '12px',
+                      fontWeight: isActive ? 600 : 400,
+                      backgroundColor: isActive ? '#000000' : '#f0f0f0',
+                      color: isActive ? '#ffffff' : '#525252',
+                      cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    {tab.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* 자연어 파서가 추출한 플랫폼/의도 배지 */}
+            {(parsedQueryInfo.platformFilter || parsedQueryInfo.intentFilter) && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: '#737373' }}>
+                {parsedQueryInfo.platformFilter && (
+                  <span
+                    style={{
+                      background: '#e0f2fe',
+                      color: '#0369a1',
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                      fontWeight: 500,
+                    }}
+                  >
+                    플랫폼: {parsedQueryInfo.platformFilter.toUpperCase()}
+                  </span>
+                )}
+                {parsedQueryInfo.intentFilter && (
+                  <span
+                    style={{
+                      background: '#fef3c7',
+                      color: '#b45309',
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                      fontWeight: 500,
+                    }}
+                  >
+                    의도: {parsedQueryInfo.intentFilter.toUpperCase()}
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
+
           <Command.List
             style={{
               maxHeight: '360px',
@@ -337,21 +545,93 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
               padding: '8px',
             }}
           >
+            {/* 최근 검색어 바 목록 (입력창이 비어있을 경우에만 노출) */}
+            {!query.trim() && recentSearches.length > 0 && (
+              <div style={{ marginBottom: '12px', padding: '0 4px' }}>
+                <div style={{ fontSize: '11px', color: '#a3a3a3', fontWeight: 600, padding: '4px 8px' }}>
+                  최근 검색어
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', padding: '4px 8px' }}>
+                  {recentSearches.map((s) => (
+                    <span
+                      key={s}
+                      onClick={() => {
+                        setQuery(s);
+                        console.log('[Search] Clicked Recent Search Chip:', s);
+                      }}
+                      style={{
+                        background: '#f5f5f5',
+                        border: '1px solid #e5e5e5',
+                        borderRadius: '16px',
+                        padding: '4px 10px',
+                        fontSize: '12px',
+                        color: '#404040',
+                        cursor: 'pointer',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                      }}
+                    >
+                      {s}
+                      <span
+                        onClick={(e) => removeRecentSearch(e, s)}
+                        style={{ color: '#a3a3a3', fontWeight: 'bold', fontSize: '10px' }}
+                      >
+                        ✕
+                      </span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <Command.Empty
               style={{
-                padding: '24px',
+                padding: '28px 16px',
                 textAlign: 'center',
                 color: '#737373',
                 fontSize: '14px',
               }}
             >
-              검색 결과가 없습니다.
+              <div style={{ fontWeight: 600, color: '#404040', marginBottom: '6px' }}>
+                검색 결과가 없습니다.
+              </div>
+              <div style={{ fontSize: '12px', color: '#a3a3a3', marginBottom: '16px' }}>
+                검색어를 변경하거나 아래 인기 추천 키워드를 시도해보세요.
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', justifyContent: 'center' }}>
+                {['버튼', '다이얼로그', 'Glassmorphism', 'SwiftUI', '번역표', '토글'].map((keyword) => (
+                  <button
+                    key={keyword}
+                    onClick={() => {
+                      setQuery(keyword);
+                      console.log('[Search] Clicked Empty State Suggestion Keyword:', keyword);
+                    }}
+                    style={{
+                      padding: '4px 10px',
+                      borderRadius: '16px',
+                      border: '1px solid #e5e5e5',
+                      backgroundColor: '#f5f5f5',
+                      color: '#262626',
+                      fontSize: '12px',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.15s ease',
+                    }}
+                  >
+                    #{keyword}
+                  </button>
+                ))}
+              </div>
             </Command.Empty>
 
             {filteredItems.map((item) => (
               <Command.Item
                 key={item.id}
                 onSelect={() => {
+                  console.log('[Search] Item Selected:', item);
+                  if (query.trim()) {
+                    addRecentSearch(query.trim());
+                  }
                   onOpenChange(false);
                   navigate(item.url);
                 }}
@@ -368,30 +648,50 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
               >
                 <div>
                   <div style={{ fontWeight: 500, fontSize: '14px', color: '#0a0a0a' }}>
-                    {item.title}{' '}
+                    <HighlightedText text={item.title} highlight={query.trim()} />{' '}
                     {item.titleKo && (
-                      <span style={{ color: '#737373', fontWeight: 400, marginLeft: '6px' }}>{item.titleKo}</span>
+                      <span style={{ color: '#737373', fontWeight: 400, marginLeft: '6px' }}>
+                        <HighlightedText text={item.titleKo} highlight={query.trim()} />
+                      </span>
                     )}
                   </div>
                   {item.subtitle && (
                     <div style={{ fontSize: '12px', color: '#737373', marginTop: '2px' }}>
-                      {item.subtitle}
+                      <HighlightedText text={item.subtitle} highlight={query.trim()} />
                     </div>
                   )}
                 </div>
-                <span
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '10px',
-                    textTransform: 'uppercase',
-                    color: '#a3a3a3',
-                    border: '1px solid #eaeaea',
-                    padding: '2px 6px',
-                    borderRadius: '4px',
-                  }}
-                >
-                  {item.type}
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  {item.platform && (
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '10px',
+                        textTransform: 'uppercase',
+                        color: '#2563eb',
+                        border: '1px solid #bfdbfe',
+                        backgroundColor: '#eff6ff',
+                        padding: '2px 6px',
+                        borderRadius: '4px',
+                      }}
+                    >
+                      {item.platform}
+                    </span>
+                  )}
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '10px',
+                      textTransform: 'uppercase',
+                      color: '#a3a3a3',
+                      border: '1px solid #eaeaea',
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                    }}
+                  >
+                    {item.type}
+                  </span>
+                </div>
               </Command.Item>
             ))}
           </Command.List>
