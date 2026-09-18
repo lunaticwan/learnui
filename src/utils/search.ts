@@ -96,6 +96,29 @@ const INTENT_MAP: Record<string, string> = {
   용어: 'page',
 };
 
+/** UI 주요 개념 유의어/동의어 매핑 사전 */
+export const SYNONYM_MAP: Record<string, string[]> = {
+  알림: ['토스트', '스낵바', '노티', 'notification', 'toast', 'snackbar', 'alert'],
+  토스트: ['알림', '스낵바', 'notification', 'toast', 'snackbar'],
+  스낵바: ['토스트', '알림', 'snackbar', 'toast'],
+  toast: ['토스트', '알림', '스낵바', 'notification'],
+  모달: ['다이얼로그', '팝업', '대화상자', 'modal', 'dialog', 'popup'],
+  다이얼로그: ['모달', '팝업', '대화상자', 'dialog', 'modal'],
+  팝업: ['모달', '다이얼로그', '대화상자', 'popup', 'modal'],
+  modal: ['모달', '다이얼로그', '팝업'],
+  dialog: ['다이얼로그', '모달', '팝업'],
+  스위치: ['토글', '온오프', 'switch', 'toggle'],
+  토글: ['스위치', '온오프', 'toggle', 'switch'],
+  드롭다운: ['셀렉트', '콤보박스', '피커', 'dropdown', 'select', 'picker'],
+  피커: ['셀렉트', '드롭다운', 'picker', 'select'],
+  네비게이션: ['상단바', '헤더', '메뉴', 'navigation', 'header', 'navbar'],
+  탭: ['네비게이션', '카테고리', 'tab'],
+  로딩: ['인디케이터', '스피너', '프로그레스', 'progress', 'spinner', 'loader'],
+  스피너: ['로딩', '인디케이터', 'spinner', 'loading'],
+  글래스모피즘: ['투명', '유리', '아크릴', 'glassmorphic', 'glassmorphism'],
+  뉴모피즘: ['입체', 'neumorphic', 'neumorphism'],
+};
+
 /** 자연어 쿼리 분석 결과 인터페이스 */
 export interface ParsedQuery {
   rawQuery: string;
@@ -104,6 +127,7 @@ export interface ParsedQuery {
   platformFilter?: string;
   intentFilter?: string;
   cleanTokens: string[];
+  synonymTokens: string[];
   nGrams: string[];
   chosungQuery: string;
   disassembledQuery: string;
@@ -169,6 +193,14 @@ export function parseNaturalLanguageQuery(query: string): ParsedQuery {
     nGrams.push(`${cleanTokens[i]} ${cleanTokens[i + 1]}`);
   }
 
+  // 3. 유의어/동의어 확장 토큰 추출
+  const synonymSet = new Set<string>();
+  for (const token of cleanTokens) {
+    const synonyms = SYNONYM_MAP[token] || [];
+    synonyms.forEach((s) => synonymSet.add(s));
+  }
+  const synonymTokens = Array.from(synonymSet);
+
   const chosungQuery = getChosung(queryToParse).replace(/\s+/g, '');
   const disassembledQuery = disassembleHangul(queryToParse).replace(/\s+/g, '');
 
@@ -179,6 +211,7 @@ export function parseNaturalLanguageQuery(query: string): ParsedQuery {
     platformFilter,
     intentFilter,
     cleanTokens,
+    synonymTokens,
     nGrams,
     chosungQuery,
     disassembledQuery,

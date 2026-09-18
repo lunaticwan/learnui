@@ -38,9 +38,44 @@ interface CommandPaletteProps {
  * 커맨드 팔레트 (⌘K / Ctrl+K) 모달 검색 컴포넌트.
  * 영한 오타 보정, 최근 검색어 기록, es-hangul 기반 초성/자모 분해, 자연어 문맥 파서 하이브리드 검색 제공.
  */
+/**
+ * 검색어와 매칭되는 텍스트 부분을 <mark> 태그 스타일로 하이라이팅하는 헬퍼 컴포넌트
+ */
+const HighlightedText: React.FC<{ text: string; highlight: string }> = ({ text, highlight }) => {
+  if (!highlight.trim() || !text) return <>{text}</>;
+
+  // 특수문자 이스케이프 후 매칭
+  const cleanHighlight = highlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const parts = text.split(new RegExp(`(${cleanHighlight})`, 'gi'));
+
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === highlight.toLowerCase() ? (
+          <mark
+            key={i}
+            style={{
+              backgroundColor: '#fef08a',
+              color: '#854d0e',
+              padding: '0 2px',
+              borderRadius: '2px',
+              fontWeight: 600,
+            }}
+          >
+            {part}
+          </mark>
+        ) : (
+          part
+        )
+      )}
+    </>
+  );
+};
+
 export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChange }) => {
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'component' | 'style' | 'page'>('all');
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
 
   // 초기 최근 검색어 불러오기
@@ -242,6 +277,14 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
       }
     }
 
+    // Quick Filter 탭 적용
+    if (selectedCategory !== 'all') {
+      const categoryFiltered = candidateItems.filter((item) => item.type === selectedCategory);
+      if (categoryFiltered.length > 0) {
+        candidateItems = categoryFiltered;
+      }
+    }
+
     const normQuery = parsed.normalizedQuery.replace(/\s+/g, '');
     const chosungQuery = parsed.chosungQuery;
     const disassembledQuery = parsed.disassembledQuery;
@@ -300,6 +343,15 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
         if (normToken && normTarget.includes(normToken)) { score += 2; keywordMatched = true; }
         if (chosungToken && chosungTarget.includes(chosungToken)) { score += 1; keywordMatched = true; }
         if (disToken && disTarget.includes(disToken)) { score += 2; keywordMatched = true; }
+      }
+
+      // 유의어/동의어 매칭 보너스
+      for (const synToken of parsed.synonymTokens) {
+        const normSyn = normalizeKorean(synToken);
+        if (target.includes(synToken.toLowerCase()) || (normSyn && normTarget.includes(normSyn))) {
+          score += 3;
+          keywordMatched = true;
+        }
       }
 
       // 키워드 토큰이 포함되었거나 cleanTokens가 없을 때만 플랫폼 및 의도 완벽 일치 보너스 점수 부여
@@ -406,49 +458,85 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
             </div>
           )}
 
-          {/* 감지된 문맥/플랫폼 배지 바 */}
-          {(parsedQueryInfo.platformFilter || parsedQueryInfo.intentFilter) && (
-            <div
-              style={{
-                padding: '6px 16px',
-                background: '#fafafa',
-                borderBottom: '1px solid #eaeaea',
-                fontSize: '11px',
-                color: '#737373',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-              }}
-            >
-              <span>분석된 필터:</span>
-              {parsedQueryInfo.platformFilter && (
-                <span
-                  style={{
-                    background: '#e0f2fe',
-                    color: '#0369a1',
-                    padding: '2px 6px',
-                    borderRadius: '4px',
-                    fontWeight: 500,
-                  }}
-                >
-                  플랫폼: {parsedQueryInfo.platformFilter.toUpperCase()}
-                </span>
-              )}
-              {parsedQueryInfo.intentFilter && (
-                <span
-                  style={{
-                    background: '#fef3c7',
-                    color: '#b45309',
-                    padding: '2px 6px',
-                    borderRadius: '4px',
-                    fontWeight: 500,
-                  }}
-                >
-                  의도: {parsedQueryInfo.intentFilter.toUpperCase()}
-                </span>
-              )}
+          {/* Quick Filter 카테고리 탭 및 분석된 필터 배지 */}
+          <div
+            style={{
+              padding: '8px 16px',
+              background: '#fafafa',
+              borderBottom: '1px solid #eaeaea',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '8px',
+              flexWrap: 'wrap',
+            }}
+          >
+            {/* Quick Filter 탭 버튼 */}
+            <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+              {[
+                { id: 'all', label: '전체' },
+                { id: 'component', label: '컴포넌트' },
+                { id: 'style', label: '스타일' },
+                { id: 'page', label: '페이지' },
+              ].map((tab) => {
+                const isActive = selectedCategory === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => {
+                      setSelectedCategory(tab.id as any);
+                      console.log('[Search] Selected Quick Filter Tab:', tab.id);
+                    }}
+                    style={{
+                      padding: '3px 10px',
+                      borderRadius: '12px',
+                      border: 'none',
+                      fontSize: '12px',
+                      fontWeight: isActive ? 600 : 400,
+                      backgroundColor: isActive ? '#000000' : '#f0f0f0',
+                      color: isActive ? '#ffffff' : '#525252',
+                      cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    {tab.label}
+                  </button>
+                );
+              })}
             </div>
-          )}
+
+            {/* 자연어 파서가 추출한 플랫폼/의도 배지 */}
+            {(parsedQueryInfo.platformFilter || parsedQueryInfo.intentFilter) && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: '#737373' }}>
+                {parsedQueryInfo.platformFilter && (
+                  <span
+                    style={{
+                      background: '#e0f2fe',
+                      color: '#0369a1',
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                      fontWeight: 500,
+                    }}
+                  >
+                    플랫폼: {parsedQueryInfo.platformFilter.toUpperCase()}
+                  </span>
+                )}
+                {parsedQueryInfo.intentFilter && (
+                  <span
+                    style={{
+                      background: '#fef3c7',
+                      color: '#b45309',
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                      fontWeight: 500,
+                    }}
+                  >
+                    의도: {parsedQueryInfo.intentFilter.toUpperCase()}
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
 
           <Command.List
             style={{
@@ -499,13 +587,41 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
 
             <Command.Empty
               style={{
-                padding: '24px',
+                padding: '28px 16px',
                 textAlign: 'center',
                 color: '#737373',
                 fontSize: '14px',
               }}
             >
-              검색 결과가 없습니다.
+              <div style={{ fontWeight: 600, color: '#404040', marginBottom: '6px' }}>
+                검색 결과가 없습니다.
+              </div>
+              <div style={{ fontSize: '12px', color: '#a3a3a3', marginBottom: '16px' }}>
+                검색어를 변경하거나 아래 인기 추천 키워드를 시도해보세요.
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', justifyContent: 'center' }}>
+                {['버튼', '다이얼로그', 'Glassmorphism', 'SwiftUI', '번역표', '토글'].map((keyword) => (
+                  <button
+                    key={keyword}
+                    onClick={() => {
+                      setQuery(keyword);
+                      console.log('[Search] Clicked Empty State Suggestion Keyword:', keyword);
+                    }}
+                    style={{
+                      padding: '4px 10px',
+                      borderRadius: '16px',
+                      border: '1px solid #e5e5e5',
+                      backgroundColor: '#f5f5f5',
+                      color: '#262626',
+                      fontSize: '12px',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.15s ease',
+                    }}
+                  >
+                    #{keyword}
+                  </button>
+                ))}
+              </div>
             </Command.Empty>
 
             {filteredItems.map((item) => (
@@ -532,14 +648,16 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onOpenChan
               >
                 <div>
                   <div style={{ fontWeight: 500, fontSize: '14px', color: '#0a0a0a' }}>
-                    {item.title}{' '}
+                    <HighlightedText text={item.title} highlight={query.trim()} />{' '}
                     {item.titleKo && (
-                      <span style={{ color: '#737373', fontWeight: 400, marginLeft: '6px' }}>{item.titleKo}</span>
+                      <span style={{ color: '#737373', fontWeight: 400, marginLeft: '6px' }}>
+                        <HighlightedText text={item.titleKo} highlight={query.trim()} />
+                      </span>
                     )}
                   </div>
                   {item.subtitle && (
                     <div style={{ fontSize: '12px', color: '#737373', marginTop: '2px' }}>
-                      {item.subtitle}
+                      <HighlightedText text={item.subtitle} highlight={query.trim()} />
                     </div>
                   )}
                 </div>
