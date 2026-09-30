@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -43,13 +43,49 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Detect build directory and set build date
+        run: |
+          BUILD_DATE=$(date +'%Y%m%d')
+          echo "BUILD_DATE=${BUILD_DATE}" >> $GITHUB_ENV
+
+          BUILD_PATH=""
+          for dir in dist build out public; do
+            if [ -d "$dir" ]; then
+              BUILD_PATH="$dir"
+              break
+            fi
+          done
+
+          if [ -z "$BUILD_PATH" ]; then
+            echo "Error: 빌드 산출물 폴더(dist, build, out, public)를 찾을 수 없습니다." >&2
+            exit 1
+          fi
+
+          echo "감지된 빌드 경로: ${BUILD_PATH}"
+          echo "BUILD_PATH=${BUILD_PATH}" >> $GITHUB_ENV
+
+      - name: Archive build artifacts to zip
+        run: |
+          ZIP_NAME="${{ github.event.repository.name }}-${{ env.BUILD_DATE }}-run${{ github.run_number }}.zip"
+          (cd "${BUILD_PATH}" && zip -r "../${ZIP_NAME}" .)
+          echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG_NAME="v${{ env.BUILD_DATE }}-${{ github.run_number }}"
+          gh release create "${TAG_NAME}" "${ZIP_NAME}" \
+            --title "${TAG_NAME}" \
+            --generate-notes
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: './${{ env.BUILD_PATH }}'
 
       - name: Deploy to GitHub Pages
         id: deployment
