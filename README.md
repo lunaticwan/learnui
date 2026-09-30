@@ -143,3 +143,32 @@ npm run preview
 
 - **GitHub Pages**: `main` 브랜치에 코드가 푸시되면 `.github/workflows/deploy.yml`을 통해 `/dist` 정적 결과물이 GitHub Pages에 자동으로 배포됩니다.
 - 자세한 서버 배포 규격 및 Nginx 설정은 `DEPLOY.md` 문서를 참고하세요.
+
+---
+
+## 📄 라이선스
+
+이 프로젝트는 **[MIT License](LICENSE)**에 따라 자유롭게 이용, 수정 및 배포할 수 있습니다.
+
+### 주요 오픈소스 라이선스 준수
+
+이 프로젝트는 다음과 같은 핵심 오픈소스 라이브러리 및 폰트 자원을 활용하며, 각 오픈소스의 라이선스 규정을 준수합니다.
+
+| 분류 | 오픈소스 라이브러리 / 에셋 | 라이선스 | 비고 및 활용 목적 |
+| :--- | :--- | :--- | :--- |
+| **Core UI Engine** | [React](https://react.dev/), [React DOM](https://react.dev/) | MIT License | UI 라이프사이클 및 컴포넌트 렌더링 엔진 |
+| **Routing** | [React Router](https://reactrouter.com/) | MIT License | 클라이언트 사이드 싱글 페이지 라우팅 |
+| **Search & Utility** | [cmdk](https://cmdk.pavel.as/) | MIT License | 커맨드 팔레트(⌘K) 인터페이스 뼈대 구성 |
+| | [Fuse.js](https://fusejs.io/) | Apache-2.0 | 퍼지(Fuzzy) 문자열 검색 및 매칭 엔진 |
+| | [es-hangul](https://es-hangul.slash.page/) | MIT License | 한글 초성 추출, 자모 분리 및 QWERTY 오타 변환 처리 |
+| | [usehooks-ts](https://usehooks-ts.com/) | MIT License | 커스텀 React 훅 유틸리티 |
+| | [clsx](https://github.com/lukeed/clsx) | MIT License | 조건부 CSS 클래스명 조합 유틸리티 |
+| | [sonner](https://sonner.emilkowal.ski/) | MIT License | Toast 알림 UI 구현 |
+| **Icons & Typography** | [Lucide React](https://lucide.dev/) | ISC License | UI 아이콘 세트 |
+| | [Pretendard](https://github.com/orioncactus/pretendard) | SIL Open Font License 1.1 | 기본 애플리케이션 산세리프 폰트 |
+| | [Cascadia Code](https://github.com/microsoft/cascadia-code) | SIL Open Font License 1.1 | 고정폭 코드 및 심볼용 모노스페이스 폰트 |
+
+### 라이브러리 커스터마이징 및 확장 방식
+
+- **직접 수정 방지**: 본 프로젝트는 외부 `node_modules` 패키지의 원본 소스 코드를 직접 수정하지 않으며, 상위 래퍼 컴포넌트(`CommandPalette.tsx`, `SpecimenViewer.tsx` 등) 및 전역 CSS Custom Properties 레이어(`src/assets/site.css`)를 통해 기능 및 스타일을 확장 적용하였습니다.
+- **오픈소스 라이선스 존중**: 사용된 모든 오픈소스 라이브러리의 저작권 고지 및 라이선스 조건을 유지합니다.
